@@ -1,0 +1,136 @@
+---
+export interface Props {
+  lang?: string;
+  title?: string;
+}
+const { lang = 'zh-CN', title = 'Algebrica 中文' } = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang={lang}>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    <link rel="stylesheet" href="/theme/style.css" />
+    <link rel="stylesheet" href="/styles/zh-overrides.css" />
+  </head>
+  <body>
+    <div id="curtain" class="curtain"></div>
+
+    <header id="header" class="header only-mobile">
+      <div class="header-main-layout">
+        <div class="header-main-layout__layer--left only-mobile">
+          <details class="mobile-nav">
+            <summary class="menu-float__hamburger" aria-label="展开导航">
+              <div></div>
+              <div></div>
+              <div></div>
+            </summary>
+            <div class="mobile-nav__panel">
+              <div class="sidebar__brand">
+                <a href="/" aria-label="Algebrica 中文首页">
+                  <img src="/theme/images/icon-algebrica.svg" alt="" width="40" height="40" />
+                </a>
+              </div>
+              <div class="sidebar__section">
+                <div class="search__wrapper">
+                  <div id="search-mobile">
+                    <div class="search__container">
+                      <form id="searchform-mobile" action="/search/">
+                        <input id="search-input-mobile" name="s" class="search-input" type="text" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" placeholder="搜索…" />
+                        <button class="search__icon" type="submit" aria-label="搜索">
+                          <img alt="" src="/theme/images/icon-search.svg" width="22" height="22" />
+                        </button>
+                      </form>
+                      <div id="suggestions-wrap-mobile" class="search__suggestions">
+                        <ul id="suggestions-mobile"></ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="sidebar__section">
+                <div class="sidebar__menu">
+                  <div class="sidebar-list">
+                    <div class="sidebar-nav-li"><a href="/">首页 / 索引</a></div>
+                    <div class="sidebar-nav-li"><a href="/bibliography/">参考文献</a></div>
+                    <div class="sidebar-nav-li"><a href="/editorial-process/">编辑流程</a></div>
+                    <div class="sidebar-nav-li"><a href="/about/">关于</a></div>
+                    <div class="sidebar-nav-li"><a href="https://github.com/antoniolupetti/algebrica" target="_blank" rel="noopener noreferrer">GitHub 仓库</a></div>
+                  </div>
+                </div>
+              </div>
+              <div class="sidebar__bottom-links">
+                <div class="sidebar__license">
+                  内容采用 <a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener noreferrer">CC BY-NC 4.0</a> 许可，译自 <a href="https://algebrica.org" target="_blank" rel="noopener noreferrer">Algebrica.org</a>。
+                </div>
+              </div>
+            </div>
+          </details>
+        </div>
+        <div class="header-main-layout__layer--center">
+          <div class="only-mobile">
+            <a href="/" aria-label="Algebrica 中文首页">
+              <img src="/theme/images/icon-algebrica.svg" alt="" width="42" height="21" />
+            </a>
+          </div>
+        </div>
+        <div class="header-main-layout__layer--right"></div>
+      </div>
+    </header>
+
+    <div id="site-main" class="main">
+      <div id="site-container" class="container relative">
+        <div id="site-container-grid" class="site-container">
+          <aside id="site-sidebar-right" class="sidebar site-column no-mobile" aria-label="站点导航">
+            <div class="sidebar__brand">
+              <a href="/" aria-label="Algebrica 中文首页">
+                <img src="/theme/images/icon-algebrica.svg" alt="" width="40" height="40" />
+              </a>
+            </div>
+            <div class="sidebar__section">
+              <div class="search__wrapper">
+                <div id="search-desktop">
+                  <div class="search__container">
+                    <form id="searchform-desktop" action="/search/">
+                      <input id="search-input-desktop" name="s" class="search-input -desktop" type="text" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" placeholder="搜索…" />
+                      <button class="search__icon -desktop" type="submit" aria-label="搜索">
+                        <img alt="" src="/theme/images/icon-search.svg" width="22" height="22" />
+                      </button>
+                    </form>
+                    <div id="suggestions-wrap-desktop" class="search__suggestions">
+                      <ul id="suggestions-desktop"></ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="sidebar__section">
+              <div class="sidebar__menu">
+                <div class="sidebar-list">
+                  <div class="sidebar-nav-li"><a href="/">首页 / 索引</a></div>
+                  <div class="sidebar-nav-li"><a href="/bibliography/">参考文献</a></div>
+                  <div class="sidebar-nav-li"><a href="/editorial-process/">编辑流程</a></div>
+                  <div class="sidebar-nav-li"><a href="/about/">关于</a></div>
+                  <div class="sidebar-nav-li"><a href="https://github.com/antoniolupetti/algebrica" target="_blank" rel="noopener noreferrer">GitHub 仓库</a></div>
+                </div>
+              </div>
+            </div>
+            <div class="sidebar__bottom-links">
+              <div class="sidebar__license">
+                内容采用 <a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener noreferrer">CC BY-NC 4.0</a> 许可，译自 <a href="https://algebrica.org" target="_blank" rel="noopener noreferrer">Algebrica.org</a>。
+              </div>
+            </div>
+          </aside>
+
+          <div id="site-content" class="site-column-main">
+            <slot />
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer"></div>
+  </body>
+</html>

@@ -1,13 +1,26 @@
 ---
+import BaseLayout from '../layouts/BaseLayout.astro';
 ---
 
-<html lang="zh-CN">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Algebrica 中文</title>
-  </head>
-  <body>
-    <h1>Algebrica 中文</h1>
-  </body>
-</html>
+<BaseLayout title="Algebrica 中文">
+  <div class="ui-new-home-wrapper">
+    <div class="video-home-wrap">
+      <h1 class="video-home-headline">Algebrica 中文</h1>
+
+      <div class="untranslated-banner">
+        本文尚未翻译，以下为英文原文。
+        <span class="badge-untranslated">未翻译</span>
+      </div>
+
+      <p class="post-header-cat-description">
+        本站是 algebrica.org 的简体中文复刻，保留原站视觉骨架，移除账号、阅读历史、阅读量、贡献热力图、筹款活动与 AI 总结等动态模块。数学内容按 CC BY-NC 4.0 许可翻译。
+      </p>
+
+      <div class="video-home mb-x-30">
+        <video class="video-home-player" autoplay loop muted playsinline>
+          <source src="/media/algebrica-video-1.mp4" type="video/mp4" />
+        </video>
+      </div>
+    </div>
+  </div>
+</BaseLayout>
