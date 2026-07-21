@@ -1,10 +1,8 @@
 import type { APIRoute } from 'astro';
 import { getCollection } from 'astro:content';
-import { readFileSync } from 'node:fs';
-import { join } from 'node:path';
-import yaml from 'js-yaml';
 import { buildTranslationIndex } from '../lib/translation-index.mjs';
 import { getSections } from '../lib/sections.mjs';
+import { loadGlossary } from '../lib/glossary.mjs';
 import { getZhEntries } from './_zh-entries.mjs';
 
 interface GlossaryTerm {
@@ -25,11 +23,6 @@ interface SearchEntry {
   keywords_zh: string[];
   url: string;
   section: string;
-}
-
-function loadGlossary(): Glossary {
-  const raw = readFileSync(join(process.cwd(), 'glossary.yaml'), 'utf8');
-  return yaml.load(raw) as Glossary;
 }
 
 function normalizeTokens(text: string): string[] {
@@ -74,7 +67,7 @@ function buildKeywords(
 }
 
 export const GET: APIRoute = async () => {
-  const glossary = loadGlossary();
+  const glossary = loadGlossary() as Glossary;
   const articles = await getCollection('articles');
   const zhEntries = await getZhEntries();
   const rows = buildTranslationIndex(articles, zhEntries);

@@ -52,10 +52,17 @@ const source = entry.data.source;
         原文标题：
         <a href={source} target="_blank" rel="noopener noreferrer">{originalTitle}</a>
       </p>
-      <p>
-        本文译自 <a href="https://algebrica.org" target="_blank" rel="noopener noreferrer">Algebrica</a>，
-        <a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener noreferrer">CC BY-NC 4.0</a>，有翻译改动。
-      </p>
+      {isTranslated ? (
+        <p>
+          本文译自 <a href="https://algebrica.org" target="_blank" rel="noopener noreferrer">Algebrica</a>，
+          <a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener noreferrer">CC BY-NC 4.0</a>，有翻译改动。
+        </p>
+      ) : (
+        <p>
+          本文原文来自 <a href="https://algebrica.org" target="_blank" rel="noopener noreferrer">Algebrica</a>，
+          <a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener noreferrer">CC BY-NC 4.0</a>。
+        </p>
+      )}
     </footer>
   </article>
 </BaseLayout>

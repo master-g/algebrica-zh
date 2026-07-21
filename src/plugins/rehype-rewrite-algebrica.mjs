@@ -8,6 +8,11 @@ import { visit } from 'unist-util-visit';
  *   - dangling: { external: string[], text: string[] } known dangling classifications.
  *   - warn: function to emit build warnings (defaults to console.warn).
  *   - currentSection: optional override for the current markdown file's section.
+ *
+ * Section resolution precedence:
+ *   1. The explicit `currentSection` option, if provided.
+ *   2. Inference from the file path (history[0], path, or cwd + history[0]).
+ *   3. null, in which case relative SVG paths cannot be rewritten and a warning is emitted.
  */
 export default function rehypeRewriteAlgebrica({ slugMap = new Map(), dangling = { external: [], text: [] }, warn = console.warn, currentSection: currentSectionOverride } = {}) {
   const external = new Set(dangling.external || []);

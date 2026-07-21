@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-import { readFileSync, writeFileSync, existsSync, mkdirSync } from 'node:fs';
+import { readFileSync, writeFileSync, existsSync, mkdirSync, renameSync } from 'node:fs';
 import { execFile } from 'node:child_process';
 import { tmpdir } from 'node:os';
 import { resolve, dirname } from 'node:path';
@@ -9,7 +9,8 @@ import { promisify } from 'node:util';
 import { mask, restore } from './lib/mask-restore.mjs';
 import { glossaryPromptSection } from './lib/glossary.mjs';
 import { lintChineseCopywriting } from './lib/copywriting-lint.mjs';
-import { validateTranslation, checkGlossaryMapping, buildSlugMapFromUpstream, loadDangling } from './lib/validate.mjs';
+import { validateTranslation, checkGlossaryMapping, loadDangling } from './lib/validate.mjs';
+import { buildSlugMap } from '../src/lib/slug-map.mjs';
 
 const execFileAsync = promisify(execFile);
 
@@ -24,6 +25,7 @@ const PAGE_TITLES = {
 
 const MAX_RETRIES = 2;
 const OMP_TIMEOUT = '10m';
+const OMP_EXEC_OPTIONS = { timeout: 11 * 60 * 1000, maxBuffer: 16 * 1024 * 1024, killSignal: 'SIGTERM' };
 
 async function main() {
   const args = process.argv.slice(2);
@@ -61,7 +63,7 @@ function parseTarget(target) {
 }
 
 async function runAllMissing({ dryRun }) {
-  const slugMap = await buildSlugMapFromUpstream();
+  const slugMap = await buildSlugMap({ source: 'sections-yaml', strictCollisions: false, strictEmpty: false, unionFs: true, silent: true });
   const targets = [];
   for (const [slug, section] of slugMap) {
     const zhPath = resolve(CONTENT_ZH, section, `${slug}.md`);
@@ -79,14 +81,21 @@ async function runAllMissing({ dryRun }) {
   targets.sort((a, b) => `${a.section}/${a.slug}`.localeCompare(`${b.section}/${b.slug}`));
   console.log(`Translating ${targets.length} missing/stale entries (dry-run=${dryRun})`);
 
+  let okCount = 0;
+  let failCount = 0;
   for (const { section, slug } of targets) {
     const result = await translateOne(section, slug, { dryRun });
     if (!result.ok) {
       console.error(`FAIL ${section}/${slug}: ${result.reason}`);
-      recordFailure(section, slug, result.reason);
+      failCount++;
       continue;
     }
+    okCount++;
     console.log(`OK ${section}/${slug}${dryRun ? ' (dry-run)' : ''}`);
+  }
+  console.log(`Summary: ${okCount} ok, ${failCount} failed`);
+  if (failCount > 0) {
+    process.exit(1);
   }
 }
 
@@ -118,14 +127,14 @@ export async function translateOne(section, slug, { dryRun = false } = {}) {
   }
 
   const maskedBody = stripFrontmatter(masked);
-  const prompt = buildPrompt(frontmatter.title, maskedBody);
 
   let lastError = null;
   let translation = null;
+  let currentPrompt = buildPrompt(frontmatter.title, maskedBody);
   for (let attempt = 0; attempt <= MAX_RETRIES; attempt++) {
     const tmpFile = resolve(tmpdir(), `algebrica-zh-${process.pid}-${section}-${slug}-${attempt}.txt`);
     try {
-      writeFileSync(tmpFile, prompt, 'utf8');
+      writeFileSync(tmpFile, currentPrompt, 'utf8');
       const start = Date.now();
       const { stdout } = await execFileAsync('omp', [
         '-p',
@@ -134,7 +143,7 @@ export async function translateOne(section, slug, { dryRun = false } = {}) {
         '--max-time',
         OMP_TIMEOUT,
         `@${tmpFile}`,
-      ]);
+      ], OMP_EXEC_OPTIONS);
       const wallMs = Date.now() - start;
       const cleaned = cleanStdout(stdout);
       if (!cleaned || cleaned.trim().length === 0) {
@@ -171,6 +180,7 @@ export async function translateOne(section, slug, { dryRun = false } = {}) {
       lastError = err;
       if (attempt < MAX_RETRIES) {
         console.warn(`  retry ${attempt + 1} for ${section}/${slug}: ${err.message}`);
+        currentPrompt = buildPrompt(frontmatter.title, maskedBody, err.message);
       }
     } finally {
       try {
@@ -215,8 +225,8 @@ function rewriteImagePaths(markdown, section) {
     .replace(/(!\[[^\]]*\]\()\.\.\/([^/]+\/svg\/)/g, '$1/assets/$2');
 }
 
-function buildPrompt(title, maskedBody) {
-  return [
+function buildPrompt(title, maskedBody, previousError = null) {
+  const lines = [
     '输出仅译文正文，禁止前言、代码围栏、解释、工具调用。',
     '将以下数学文章翻译成简体中文。',
     '',
@@ -230,7 +240,15 @@ function buildPrompt(title, maskedBody) {
     '第一行必须是 "# 中文标题"，然后空一行，接着是译文正文。',
     '',
     maskedBody,
-  ].join('\n');
+  ];
+  if (previousError) {
+    lines.push(
+      '',
+      '上一轮输出存在以下问题,请修正后重新输出完整译文:',
+      previousError,
+    );
+  }
+  return lines.join('\n');
 }
 
 function cleanStdout(stdout) {
@@ -269,7 +287,7 @@ function assembleZhFile({ frontmatter, body, sourceHash }) {
     '  status: current',
     `  source_hash: ${sourceHash}`,
     '  translator: omp',
-    `  updated: "${updated}`,
+    `  updated: "${updated}",`,
     '---',
   ].join('\n');
 
@@ -290,6 +308,8 @@ function formatYamlValue(value) {
   return value;
 }
 
+const FAILURES_CAP = 100;
+
 function recordFailure(section, slug, reason) {
   const entry = { slug, section, reason, at: new Date().toISOString() };
   let list = [];
@@ -298,11 +318,19 @@ function recordFailure(section, slug, reason) {
       list = JSON.parse(readFileSync(FAILURES_FILE, 'utf8'));
       if (!Array.isArray(list)) list = [];
     } catch {
+      const corruptPath = `${FAILURES_FILE}.corrupt-${Date.now()}.json`;
+      renameSync(FAILURES_FILE, corruptPath);
       list = [];
     }
   }
+  list = list.filter((item) => !(item.section === section && item.slug === slug));
   list.push(entry);
-  writeFileSync(FAILURES_FILE, JSON.stringify(list, null, 2) + '\n', 'utf8');
+  if (list.length > FAILURES_CAP) {
+    list = list.slice(list.length - FAILURES_CAP);
+  }
+  const tmpFile = `${FAILURES_FILE}.tmp-${process.pid}-${Date.now()}`;
+  writeFileSync(tmpFile, JSON.stringify(list, null, 2) + '\n', 'utf8');
+  renameSync(tmpFile, FAILURES_FILE);
 }
 
 main().catch((err) => {

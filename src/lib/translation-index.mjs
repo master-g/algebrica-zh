@@ -1,5 +1,5 @@
 import { createHash } from 'node:crypto';
-import { readFileSync } from 'node:fs';
+import { readFileSync, existsSync } from 'node:fs';
 import { resolve } from 'node:path';
 
 /**
@@ -38,7 +38,11 @@ export function buildTranslationIndex(enEntries, zhEntries, { enBase = '../algeb
     let status = 'missing';
 
     if (zh) {
-      const raw = readFileSync(resolve(enBase, `${id}.md`), 'utf8');
+      const sourcePath = resolve(enBase, `${id}.md`);
+      if (!existsSync(sourcePath)) {
+        throw new Error(`source missing for EN entry ${id}`);
+      }
+      const raw = readFileSync(sourcePath, 'utf8');
       const expected = hashSource(raw);
       const actual = zh.data?.translation?.source_hash;
       status = actual === expected ? 'current' : 'stale';

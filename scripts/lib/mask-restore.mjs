@@ -1,5 +1,5 @@
 import { readFileSync } from 'node:fs';
-import yaml from 'js-yaml';
+import { splitFrontmatter, parseFrontmatter } from './frontmatter.mjs';
 
 const TOKEN_RE = /__(MATH|LINK|IMG|TITLE)_\d+__/g;
 
@@ -16,8 +16,22 @@ const TOKEN_RE = /__(MATH|LINK|IMG|TITLE)_\d+__/g;
  * `frontmatter` contains original title, source, license, tags, and rawTitle.
  */
 export function mask(markdown, { maskTitle = true } = {}) {
-  const { fmText, body, bodyStart } = splitFrontmatter(markdown);
-  const frontmatter = parseFrontmatter(fmText || '');
+  if (
+    (markdown.startsWith('---\n') || markdown.startsWith('---\r\n')) &&
+    markdown.indexOf('\n---', 3) === -1
+  ) {
+    throw new Error('frontmatter start marker without end marker');
+  }
+
+  const { frontmatter: fmText, body } = splitFrontmatter(markdown);
+  const parsed = parseFrontmatter(fmText || '') || {};
+  const frontmatter = {
+    title: parsed.title != null ? String(parsed.title) : null,
+    source: parsed.source != null ? String(parsed.source) : null,
+    license: parsed.license != null ? String(parsed.license) : null,
+    tags: Array.isArray(parsed.tags) ? parsed.tags.map((t) => String(t)) : [],
+    rawTitle: parsed.title !== undefined ? `title: ${parsed.title}` : null,
+  };
 
   const placeholders = {
     title: [],
@@ -115,43 +129,6 @@ function verifyCoverage(maskedTranslation, placeholders, seen) {
   if (extra.length) {
     throw new Error(`placeholder count/order mismatch: unexpected ${extra.join(', ')}`);
   }
-}
-
-function splitFrontmatter(markdown) {
-  if (!markdown.startsWith('---\n') && !markdown.startsWith('---\r\n')) {
-    return { fmText: null, body: markdown, bodyStart: 0 };
-  }
-  const end = markdown.indexOf('\n---', 3);
-  if (end === -1) {
-    throw new Error('frontmatter start marker without end marker');
-  }
-  const fmText = markdown.slice(4, end);
-  let bodyStart = end + 4;
-  if (markdown[bodyStart] === '\r') bodyStart++;
-  if (markdown[bodyStart] === '\n') bodyStart++;
-  const body = markdown.slice(bodyStart);
-  return { fmText, body, bodyStart };
-}
-
-function parseFrontmatter(fmText) {
-  const fm = { title: null, source: null, license: null, tags: [], rawTitle: null };
-  if (!fmText) return fm;
-
-  let parsed;
-  try {
-    parsed = yaml.load(fmText) || {};
-  } catch {
-    parsed = {};
-  }
-
-  for (const key of ['title', 'source', 'license']) {
-    if (parsed[key] !== undefined) fm[key] = String(parsed[key]);
-  }
-  if (parsed.title !== undefined) fm.rawTitle = `title: ${parsed.title}`;
-  if (Array.isArray(parsed.tags)) {
-    fm.tags = parsed.tags.map((t) => String(t));
-  }
-  return fm;
 }
 
 function maskTitleInFrontmatter(fmText, placeholders) {

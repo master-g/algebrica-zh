@@ -1,22 +1,55 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import { readFileSync } from 'node:fs';
-import { renderPageMarkdown } from './_render-page.mjs';
+import { readFileSync, existsSync } from 'node:fs';
+import { renderPageMarkdown, renderPageMarkdownWithFrontmatter } from './_render-page.mjs';
 
-const title = '编辑流程 | Algebrica 中文';
-const raw = readFileSync('../algebrica/pages/editorial-process.md', 'utf8');
-const html = await renderPageMarkdown(raw, { currentSection: null });
+const enPath = '../algebrica/pages/editorial-process.md';
+const zhPath = 'content-zh/pages/editorial-process.md';
+const isTranslated = existsSync(zhPath);
+const raw = readFileSync(isTranslated ? zhPath : enPath, 'utf8');
+
+let html;
+let zhData = {};
+if (isTranslated) {
+  const result = await renderPageMarkdownWithFrontmatter(raw, { currentSection: null });
+  html = result.html;
+  zhData = result.data;
+} else {
+  html = await renderPageMarkdown(raw, { currentSection: null });
+}
+
+const pageLang = isTranslated ? 'zh-CN' : 'en';
+const pageTitle = isTranslated ? `${zhData.title} | Algebrica 中文` : '编辑流程 | Algebrica 中文';
+const originalTitle = isTranslated ? zhData.title_en : 'Editorial Process';
+const source = isTranslated ? zhData.source : 'https://algebrica.org/editorial-process/';
 ---
 
-<BaseLayout title={title}>
-  <div class="post-header">
-    <nav class="post-header-breadcrumb" aria-label="Breadcrumb">编辑流程</nav>
-    <div class="post-header-section-title">
-      <h1 class="post-header-title">编辑流程</h1>
+<BaseLayout lang={pageLang} title={pageTitle}>
+  <article class="post" lang={pageLang}>
+    <div class="post-header">
+      <nav class="post-header-breadcrumb" aria-label="Breadcrumb">编辑流程</nav>
+      <div class="post-header-section-title">
+        <h1 class="post-header-title">{isTranslated ? zhData.title : '编辑流程'}</h1>
+      </div>
     </div>
-  </div>
 
-  <div class="untranslated-banner">本文尚未翻译，以下为英文原文。</div>
+    {!isTranslated && (
+      <div class="untranslated-banner">本文尚未翻译，以下为英文原文。</div>
+    )}
 
-  <div class="post-content" lang="en" set:html={html} />
+    <div class="post-content" lang={isTranslated ? undefined : 'en'} set:html={html} />
+
+    {isTranslated && (
+      <footer class="post-footer-attribution">
+        <p>
+          原文标题：
+          <a href={source} target="_blank" rel="noopener noreferrer">{originalTitle}</a>
+        </p>
+        <p>
+          本文译自 <a href="https://algebrica.org" target="_blank" rel="noopener noreferrer">Algebrica</a>，
+          <a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener noreferrer">CC BY-NC 4.0</a>，有翻译改动。
+        </p>
+      </footer>
+    )}
+  </article>
 </BaseLayout>

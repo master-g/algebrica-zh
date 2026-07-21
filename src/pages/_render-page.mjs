@@ -1,41 +1,13 @@
-import { readFileSync, readdirSync } from 'node:fs';
-import { join } from 'node:path';
+import yaml from 'js-yaml';
 import { createMarkdownProcessor } from '@astrojs/markdown-remark';
 import remarkMath from 'remark-math';
 import rehypeMathjax from 'rehype-mathjax/svg';
 import rehypeSanitize, { defaultSchema } from 'rehype-sanitize';
 import rehypeRewriteAlgebrica from '../plugins/rehype-rewrite-algebrica.mjs';
 import dangling from '../lib/dangling-links.json' with { type: 'json' };
+import { buildSlugMap } from '../lib/slug-map.mjs';
 
-const ALGEBRICA_BASE = '../algebrica';
-
-function buildSlugMap() {
-  const map = new Map();
-  const collisions = new Map();
-
-  for (const entry of readdirSync(ALGEBRICA_BASE, { withFileTypes: true })) {
-    if (!entry.isDirectory() || entry.name === 'pages') continue;
-    const section = entry.name;
-    const sectionPath = join(ALGEBRICA_BASE, section);
-
-    for (const file of readdirSync(sectionPath)) {
-      if (!file.endsWith('.md')) continue;
-      const slug = file.slice(0, -3);
-      if (map.has(slug)) {
-        if (!collisions.has(slug)) collisions.set(slug, [map.get(slug)]);
-        collisions.get(slug).push(section);
-      } else {
-        map.set(slug, section);
-      }
-    }
-  }
-
-  if (collisions.size > 0) {
-    const [slug, sections] = collisions.entries().next().value;
-    throw new Error(`slug collision: ${slug} (${[...new Set(sections)].join(', ')})`);
-  }
-  return map;
-}
+const slugMap = buildSlugMap({ source: 'fs', strictCollisions: true, strictEmpty: true, silent: true });
 
 function makeMathSchema(base) {
   return {
@@ -90,7 +62,7 @@ function makeMathSchema(base) {
       'mjx-assistive-mml': ['role'],
       'mjx-math': ['xmlns', 'display', 'alttext'],
       svg: ['xmlns', 'width', 'height', 'role', 'focusable', 'viewBox', 'xmlnsXlink', 'style', 'preserveAspectRatio'],
-      g: ['stroke', 'fill', 'strokeWidth', 'transform', 'dataMmlNode'],
+      g: ['stroke', 'fill', 'strokeWidth', 'transform', 'dataMmlNode', 'style'],
       path: ['id', 'd'],
       use: ['dataC', 'xlinkHref', 'href', 'transform'],
       line: ['x1', 'y1', 'x2', 'y2', 'stroke', 'strokeWidth'],
@@ -107,31 +79,44 @@ function makeMathSchema(base) {
       stop: ['offset', 'stopColor'],
       symbol: ['id'],
       a: ['href', 'title', 'target', 'rel', 'class'],
-      '*': [...(base.attributes?.['*'] || []), 'className', 'class', 'style'],
+      '*': [...(base.attributes?.['*'] || []), 'className', 'class'],
     },
   };
 }
 
-const slugMap = buildSlugMap();
-
-let processorPromise = null;
+const processors = new Map();
 
 function getProcessor(currentSection = null) {
-  if (!processorPromise) {
-    processorPromise = createMarkdownProcessor({
-      remarkPlugins: [remarkMath],
-      rehypePlugins: [
-        rehypeMathjax,
-        [rehypeRewriteAlgebrica, { slugMap, dangling, currentSection }],
-        [rehypeSanitize, makeMathSchema(defaultSchema)],
-      ],
-    });
+  if (!processors.has(currentSection)) {
+    processors.set(
+      currentSection,
+      createMarkdownProcessor({
+        remarkPlugins: [remarkMath],
+        rehypePlugins: [
+          rehypeMathjax,
+          [rehypeRewriteAlgebrica, { slugMap, dangling, currentSection }],
+          [rehypeSanitize, makeMathSchema(defaultSchema)],
+        ],
+      }),
+    );
   }
-  return processorPromise;
+  return processors.get(currentSection);
+}
+
+function parseFrontmatter(raw) {
+  const match = raw.match(/^---\r?\n([\s\S]*?)\r?\n---\r?\n([\s\S]*)$/);
+  if (!match) return { data: {}, body: raw };
+  return { data: yaml.load(match[1]) || {}, body: match[2] };
 }
 
 export async function renderPageMarkdown(raw, { currentSection } = {}) {
   const processor = await getProcessor(currentSection);
   const result = await processor.render(raw);
   return result.code;
+}
+
+export async function renderPageMarkdownWithFrontmatter(raw, { currentSection } = {}) {
+  const { data, body } = parseFrontmatter(raw);
+  const html = await renderPageMarkdown(body, { currentSection });
+  return { data, html };
 }

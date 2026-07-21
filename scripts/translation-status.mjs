@@ -1,14 +1,17 @@
 #!/usr/bin/env node
 import { readFileSync, readdirSync, existsSync } from 'node:fs';
-import { resolve } from 'node:path';
+import { dirname, resolve } from 'node:path';
+import { fileURLToPath } from 'node:url';
 import { createHash } from 'node:crypto';
 import yaml from 'js-yaml';
 import { validateTranslation } from './lib/validate.mjs';
+import { splitFrontmatter, parseFrontmatter } from './lib/frontmatter.mjs';
 
-const UPSTREAM = resolve('..', 'algebrica');
-const CONTENT_ZH = resolve('content-zh');
-const SECTIONS_YAML = resolve('sections.yaml');
-const DANGLING_FILE = resolve('src', 'lib', 'dangling-links.json');
+const __dirname = dirname(fileURLToPath(import.meta.url));
+const UPSTREAM = resolve(__dirname, '..', '..', 'algebrica');
+const CONTENT_ZH = resolve(__dirname, '..', 'content-zh');
+const SECTIONS_YAML = resolve(__dirname, '..', 'sections.yaml');
+const DANGLING_FILE = resolve(__dirname, '..', 'src', 'lib', 'dangling-links.json');
 
 function hashSource(raw) {
   return createHash('sha256').update(raw).digest('hex');
@@ -68,7 +71,8 @@ async function main() {
       continue;
     }
     const zhText = readFileSync(zhPath, 'utf8');
-    const fm = parseFrontmatter(zhText);
+    const { frontmatter } = splitFrontmatter(zhText);
+    const fm = parseFrontmatter(frontmatter);
     const actual = fm?.translation?.source_hash;
     if (actual === expected) {
       current.push({ section, slug });
@@ -94,17 +98,6 @@ async function main() {
   if (verify && validationFailures > 0) {
     console.error(`\n${validationFailures} current translations failed validation`);
     process.exit(1);
-  }
-}
-
-function parseFrontmatter(text) {
-  if (!text.startsWith('---\n') && !text.startsWith('---\r\n')) return null;
-  const end = text.indexOf('\n---', 3);
-  if (end === -1) return null;
-  try {
-    return yaml.load(text.slice(4, end));
-  } catch {
-    return null;
   }
 }
 

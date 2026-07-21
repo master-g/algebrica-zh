@@ -1,20 +1,68 @@
-import { readFileSync } from 'node:fs';
+import { readFileSync, readdirSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
 import { dirname, join } from 'node:path';
 import yaml from 'js-yaml';
 
 const SECTIONS_YAML = join(dirname(fileURLToPath(import.meta.url)), '..', '..', 'sections.yaml');
+const ALGEBRICA_BASE = '../algebrica';
 
 /**
- * Build a slug -> section map from Astro glob entries.
- * Entry ids are expected to be "section/slug" (e.g. "integrals/definite-integrals").
- * Throws on slug collisions and enforces the 234-entry build assertion.
+ * Build a slug -> section map.
+ *
+ * Sources:
+ *   - 'fs': scan ALGEBRICA_BASE by directory.
+ *   - 'sections-yaml': read sections.yaml entries.
+ *   - 'collection-entries': parse Astro collection entries with ids like 'section/slug'.
+ *
+ * Options:
+ *   - entries: array of collection entries (required for 'collection-entries').
+ *   - strictCollisions: throw on duplicate slugs (default true).
+ *   - strictEmpty: throw when the resulting map is empty (default true).
+ *   - unionFs: for 'sections-yaml', also scan ALGEBRICA_BASE and add any slugs not in yaml (default false).
+ *   - silent: skip the sections.yaml diff report (default false).
  */
-export function buildSlugMap(entries, { silent = false } = {}) {
-  if (!Array.isArray(entries)) {
-    throw new TypeError('buildSlugMap expects an array of entries');
+export function buildSlugMap({
+  source,
+  entries,
+  strictCollisions = true,
+  strictEmpty = true,
+  unionFs = false,
+  silent = false,
+} = {}) {
+  if (!source) {
+    throw new TypeError('buildSlugMap: source is required');
   }
 
+  let map;
+  switch (source) {
+    case 'collection-entries':
+      if (!Array.isArray(entries)) {
+        throw new TypeError('buildSlugMap collection-entries expects an array of entries');
+      }
+      map = buildFromEntries(entries, strictCollisions);
+      break;
+    case 'fs':
+      map = buildFromFs(strictCollisions);
+      break;
+    case 'sections-yaml':
+      map = buildFromSectionsYaml(strictCollisions, unionFs);
+      break;
+    default:
+      throw new TypeError(`unknown buildSlugMap source: ${source}`);
+  }
+
+  if (strictEmpty && map.size === 0) {
+    throw new Error(`buildSlugMap(${source}) produced an empty slug map`);
+  }
+
+  if (!silent) {
+    logDiff(map);
+  }
+
+  return map;
+}
+
+function buildFromEntries(entries, strictCollisions) {
   const map = new Map();
   const collisions = new Map();
 
@@ -27,32 +75,82 @@ export function buildSlugMap(entries, { silent = false } = {}) {
     if (!section || !slug) {
       throw new TypeError(`unexpected entry id: ${id}`);
     }
+    recordSlug(map, collisions, slug, section, strictCollisions);
+  }
 
-    if (map.has(slug)) {
-      if (!collisions.has(slug)) collisions.set(slug, [map.get(slug)]);
-      collisions.get(slug).push(section);
-    } else {
-      map.set(slug, section);
+  maybeThrowCollisions(collisions, strictCollisions);
+  return map;
+}
+
+function buildFromFs(strictCollisions) {
+  const map = new Map();
+  const collisions = new Map();
+
+  for (const entry of readdirSync(ALGEBRICA_BASE, { withFileTypes: true })) {
+    if (!entry.isDirectory() || entry.name === 'pages') continue;
+    const section = entry.name;
+    const sectionPath = join(ALGEBRICA_BASE, section);
+
+    for (const file of readdirSync(sectionPath)) {
+      if (!file.endsWith('.md')) continue;
+      const slug = file.slice(0, -3);
+      recordSlug(map, collisions, slug, section, strictCollisions);
     }
   }
 
-  if (collisions.size > 0) {
-    const [slug, sections] = collisions.entries().next().value;
-    throw new Error(`slug collision: ${slug} (sections: ${[...new Set(sections)].join(', ')})`);
+  maybeThrowCollisions(collisions, strictCollisions);
+  return map;
+}
+
+function buildFromSectionsYaml(strictCollisions, unionFs) {
+  const sections = yaml.load(readFileSync(SECTIONS_YAML, 'utf8')) || { sections: [] };
+  const map = new Map();
+  const collisions = new Map();
+
+  for (const sec of sections.sections || []) {
+    for (const slug of sec.entries || []) {
+      recordSlug(map, collisions, slug, sec.dir, strictCollisions);
+    }
   }
 
-  if (entries.length === 0) {
-    throw new Error('articles collection is empty');
-  }
-  if (entries.length !== 234) {
-    throw new Error(`expected 234 articles, got ${entries.length}`);
-  }
+  maybeThrowCollisions(collisions, strictCollisions);
 
-  if (!silent) {
-    logDiff(map);
+  if (unionFs) {
+    try {
+      for (const entry of readdirSync(ALGEBRICA_BASE, { withFileTypes: true })) {
+        if (!entry.isDirectory() || entry.name === 'pages') continue;
+        const section = entry.name;
+        const sectionPath = join(ALGEBRICA_BASE, section);
+        for (const file of readdirSync(sectionPath)) {
+          if (!file.endsWith('.md')) continue;
+          const slug = file.slice(0, -3);
+          if (!map.has(slug)) map.set(slug, section);
+        }
+      }
+    } catch {
+      // upstream read failure is handled downstream.
+    }
   }
 
   return map;
+}
+
+function recordSlug(map, collisions, slug, section, strictCollisions) {
+  if (map.has(slug)) {
+    if (strictCollisions) {
+      if (!collisions.has(slug)) collisions.set(slug, [map.get(slug)]);
+      collisions.get(slug).push(section);
+    }
+  } else {
+    map.set(slug, section);
+  }
+}
+
+function maybeThrowCollisions(collisions, strictCollisions) {
+  if (strictCollisions && collisions.size > 0) {
+    const [slug, sections] = collisions.entries().next().value;
+    throw new Error(`slug collision: ${slug} (sections: ${[...new Set(sections)].join(', ')})`);
+  }
 }
 
 function logDiff(map) {
@@ -73,8 +171,9 @@ function logDiff(map) {
   }
 
   const articleSlugs = new Set(map.keys());
-  const missing = [...yamlSlugs].filter((s) => !articleSlugs.has(s) && !knownAbsent.has(s));
-  const extra = [...articleSlugs].filter((s) => !yamlSlugs.has(s));
+  const expectedSlugs = new Set([...yamlSlugs].filter((s) => !knownAbsent.has(s)));
+  const missing = [...expectedSlugs].filter((s) => !articleSlugs.has(s)).sort();
+  const extra = [...articleSlugs].filter((s) => !yamlSlugs.has(s)).sort();
 
   console.log(
     `[slug-map] articles: ${articleSlugs.size}; sections.yaml entries: ${yamlSlugs.size}; missing: ${missing.length}; extra: ${extra.length}`,

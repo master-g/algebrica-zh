@@ -8,11 +8,10 @@ describe('slug-map', () => {
     assert.throws(
       () =>
         buildSlugMap(
-          [
+          { source: 'collection-entries', entries: [
             { id: 'integrals/definite-integrals' },
             { id: 'functions/definite-integrals' },
-          ],
-          { silent: true },
+          ], silent: true },
         ),
       /slug collision: definite-integrals/,
     );

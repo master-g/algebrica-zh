@@ -1,13 +1,12 @@
 import { readFileSync } from 'node:fs';
-import { readdir } from 'node:fs/promises';
 import { dirname, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
-import yaml from 'js-yaml';
 import katex from 'katex';
 import { fixedMappingChecks } from './glossary.mjs';
+import { buildSlugMap, getSectionDirs } from '../../src/lib/slug-map.mjs';
+import { splitFrontmatter, parseFrontmatter } from './frontmatter.mjs';
 
-const UPSTREAM = resolve(dirname(fileURLToPath(import.meta.url)), '..', '..', '..', 'algebrica');
-const SECTIONS_YAML = resolve(dirname(fileURLToPath(import.meta.url)), '..', '..', 'sections.yaml');
+const DANGLING_FILE = resolve(dirname(fileURLToPath(import.meta.url)), '..', '..', 'src', 'lib', 'dangling-links.json');
 
 /**
  * Validate a translated markdown file.
@@ -29,7 +28,7 @@ export async function validateTranslation(filePath, zhText, { dangling = { exter
     return { ok: false, errors, warnings };
   }
 
-  const fm = parseYamlFrontmatter(frontmatter);
+  const fm = parseFrontmatter(frontmatter) || {};
 
   // Schema checks
   const required = ['title', 'title_en', 'source', 'license', 'tags'];
@@ -68,8 +67,8 @@ export async function validateTranslation(filePath, zhText, { dangling = { exter
   }
 
   // Internal link targets
-  const slugMap = await buildSlugMapFromUpstream();
-  const sectionDirs = new Set(slugMap.values());
+  const slugMap = await buildSlugMap({ source: 'sections-yaml', strictCollisions: false, strictEmpty: false, unionFs: true, silent: true });
+  const sectionDirs = getSectionDirs(slugMap);
   for (const link of extractInternalLinks(body)) {
     const target = link.replace(/^\.\.\//, '').replace(/\/$/, '');
     if (externalDangling.has(target)) continue;
@@ -107,27 +106,6 @@ export function checkGlossaryMapping(enBody, zhBody) {
     }
   }
   return errors;
-}
-
-function splitFrontmatter(text) {
-  if (!text.startsWith('---\n') && !text.startsWith('---\r\n')) {
-    return { frontmatter: null, body: text };
-  }
-  const end = text.indexOf('\n---', 3);
-  if (end === -1) return { frontmatter: null, body: text };
-  const frontmatter = text.slice(4, end + 1); // YAML content only, excluding --- markers
-  let bodyStart = end + 4;
-  if (text[bodyStart] === '\r') bodyStart++;
-  if (text[bodyStart] === '\n') bodyStart++;
-  return { frontmatter, body: text.slice(bodyStart) };
-}
-
-function parseYamlFrontmatter(frontmatterText) {
-  try {
-    return yaml.load(frontmatterText.replace(/^---\n?/, '')) || {};
-  } catch (err) {
-    return { _parseError: err.message };
-  }
 }
 
 function checkMathPairing(text) {
@@ -182,38 +160,9 @@ function extractInternalLinks(text) {
   return links;
 }
 
-export async function buildSlugMapFromUpstream() {
-  const sections = yaml.load(readFileSync(SECTIONS_YAML, 'utf8')) || { sections: [] };
-  const map = new Map();
-  for (const sec of sections.sections || []) {
-    for (const slug of sec.entries || []) {
-      map.set(slug, sec.dir);
-    }
-  }
-
-  // Also scan actual upstream files for any slugs not in sections.yaml.
-  try {
-    const dirs = await readdir(UPSTREAM, { withFileTypes: true });
-    for (const dir of dirs) {
-      if (!dir.isDirectory() || dir.name === 'pages') continue;
-      const files = await readdir(resolve(UPSTREAM, dir.name), { withFileTypes: true });
-      for (const f of files) {
-        if (!f.isFile() || !f.name.endsWith('.md')) continue;
-        const slug = f.name.slice(0, -3);
-        if (!map.has(slug)) map.set(slug, dir.name);
-      }
-    }
-  } catch (err) {
-    // upstream read failure is handled downstream.
-  }
-  return map;
-}
-
 function escapeRegExp(s) {
   return s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
 }
-
-const DANGLING_FILE = resolve(dirname(fileURLToPath(import.meta.url)), '..', '..', 'src', 'lib', 'dangling-links.json');
 
 let danglingCache = null;
 export function loadDangling() {

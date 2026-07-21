@@ -3,52 +3,12 @@ import { unified } from '@astrojs/markdown-remark';
 import remarkMath from 'remark-math';
 import rehypeMathjax from 'rehype-mathjax/svg';
 import rehypeSanitize, { defaultSchema } from 'rehype-sanitize';
-import { readdirSync } from 'node:fs';
-import { join } from 'node:path';
 import rehypeRewriteAlgebrica from './src/plugins/rehype-rewrite-algebrica.mjs';
 import dangling from './src/lib/dangling-links.json' with { type: 'json' };
+import { buildSlugMap } from './src/lib/slug-map.mjs';
 
-const ALGEBRICA_BASE = '../algebrica';
-
-/**
- * Build a slug -> section map by scanning ../algebrica with plain fs.
- * Mirrors the logic in src/lib/slug-map.mjs but without Astro collection APIs.
- */
-function buildSlugMapFromFs() {
-  const map = new Map();
-  const collisions = new Map();
-
-  for (const entry of readdirSync(ALGEBRICA_BASE, { withFileTypes: true })) {
-    if (!entry.isDirectory() || entry.name === 'pages') continue;
-    const section = entry.name;
-    const sectionPath = join(ALGEBRICA_BASE, section);
-
-    for (const file of readdirSync(sectionPath)) {
-      if (!file.endsWith('.md')) continue;
-      const slug = file.slice(0, -3);
-
-      if (map.has(slug)) {
-        if (!collisions.has(slug)) collisions.set(slug, [map.get(slug)]);
-        collisions.get(slug).push(section);
-      } else {
-        map.set(slug, section);
-      }
-    }
-  }
-
-  if (collisions.size > 0) {
-    const [slug, sections] = collisions.entries().next().value;
-    throw new Error(`slug collision: ${slug} (sections: ${[...new Set(sections)].join(', ')})`);
-  }
-  if (map.size === 0) {
-    throw new Error('articles collection is empty');
-  }
-
-  console.log(`[astro-config] built slug map: ${map.size} articles`);
-  return map;
-}
-
-const slugMap = buildSlugMapFromFs();
+const slugMap = buildSlugMap({ source: 'fs', strictCollisions: true, strictEmpty: true, silent: true });
+console.log(`[astro-config] built slug map: ${slugMap.size} articles`);
 
 /**
  * Extend the default rehype-sanitize schema to allow MathJax SVG output.
@@ -107,7 +67,7 @@ function makeMathSchema(base) {
       'mjx-assistive-mml': ['role'],
       'mjx-math': ['xmlns', 'display', 'alttext'],
       svg: ['xmlns', 'width', 'height', 'role', 'focusable', 'viewBox', 'xmlnsXlink', 'style', 'preserveAspectRatio'],
-      g: ['stroke', 'fill', 'strokeWidth', 'transform', 'dataMmlNode'],
+      g: ['stroke', 'fill', 'strokeWidth', 'transform', 'dataMmlNode', 'style'],
       path: ['id', 'd'],
       use: ['dataC', 'xlinkHref', 'href', 'transform'],
       line: ['x1', 'y1', 'x2', 'y2', 'stroke', 'strokeWidth'],
@@ -124,7 +84,7 @@ function makeMathSchema(base) {
       stop: ['offset', 'stopColor'],
       symbol: ['id'],
       a: ['href', 'title', 'target', 'rel', 'class'],
-      '*': [...(base.attributes?.['*'] || []), 'className', 'class', 'style'],
+      '*': [...(base.attributes?.['*'] || []), 'className', 'class'],
     },
   };
 }
