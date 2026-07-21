@@ -1,0 +1,60 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import { getCollection } from 'astro:content';
+import { buildTranslationIndex } from '../../../lib/translation-index.mjs';
+import { getSections } from '../../../lib/sections.mjs';
+import { getZhEntries } from '../../_zh-entries.mjs';
+
+export async function getStaticPaths() {
+  return getSections().map((section) => ({
+    params: { section: section.dir },
+    props: { section },
+  }));
+}
+
+const { section } = Astro.props;
+const articles = await getCollection('articles');
+const zhEntries = await getZhEntries();
+const rows = buildTranslationIndex(articles, zhEntries).filter(
+  (r) => r.section === section.dir,
+);
+
+const title = `${section.name_zh} | Algebrica 中文`;
+const description = section.description_zh || section.description_en;
+const descLang = section.description_zh ? 'zh-CN' : 'en';
+const sectionNumber = `${section.order}.`;
+---
+
+<BaseLayout title={title}>
+  <div class="post-header">
+    <nav class="post-header-breadcrumb" aria-label="Breadcrumb">Category</nav>
+    <div class="post-header-section-title">
+      <h1 class="post-header-title">{section.name_zh}</h1>
+      <div class="post-header-meta">{rows.length} 个条目</div>
+      {
+        description && (
+          <div class="post-header-cat-description" lang={descLang}>
+            <p>{description}</p>
+          </div>
+        )
+      }
+    </div>
+  </div>
+
+  <div class="page-search-wrapper">
+    {
+      rows.map((row) => {
+        const titleText = row.zh?.data.title || row.en.data.title;
+        const isMissing = row.status === 'missing';
+        return (
+          <div class="search-results__item">
+            <div class="search-results__title">
+              <a href={`/${row.slug}/`}>{titleText}</a>
+              {isMissing && <span class="badge-untranslated">未翻译</span>}
+            </div>
+          </div>
+        );
+      })
+    }
+  </div>
+</BaseLayout>

@@ -1,0 +1,22 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { readFileSync } from 'node:fs';
+import { renderPageMarkdown } from './_render-page.mjs';
+
+const title = '编辑流程 | Algebrica 中文';
+const raw = readFileSync('../algebrica/pages/editorial-process.md', 'utf8');
+const html = await renderPageMarkdown(raw, { currentSection: null });
+---
+
+<BaseLayout title={title}>
+  <div class="post-header">
+    <nav class="post-header-breadcrumb" aria-label="Breadcrumb">编辑流程</nav>
+    <div class="post-header-section-title">
+      <h1 class="post-header-title">编辑流程</h1>
+    </div>
+  </div>
+
+  <div class="untranslated-banner">本文尚未翻译，以下为英文原文。</div>
+
+  <div class="post-content" lang="en" set:html={html} />
+</BaseLayout>

@@ -1,26 +1,85 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import { getCollection } from 'astro:content';
+import { buildTranslationIndex } from '../lib/translation-index.mjs';
+import { getSections } from '../lib/sections.mjs';
+import { getZhEntries } from './_zh-entries.mjs';
+
+const sections = getSections();
+const articles = await getCollection('articles');
+const zhEntries = await getZhEntries();
+const rows = buildTranslationIndex(articles, zhEntries);
+const rowsBySlug = new Map(rows.map((r) => [r.slug, r]));
 ---
 
 <BaseLayout title="Algebrica 中文">
   <div class="ui-new-home-wrapper">
     <div class="video-home-wrap">
-      <h1 class="video-home-headline">Algebrica 中文</h1>
-
-      <div class="untranslated-banner">
-        本文尚未翻译，以下为英文原文。
-        <span class="badge-untranslated">未翻译</span>
+      <div class="video-home-headline">万物皆数</div>
+      <div class="video-home-desc">
+        我们的宇宙并非由数学描述。<br />
+        它本身就是数学。—— Max Tegmark
       </div>
-
-      <p class="post-header-cat-description">
-        本站是 algebrica.org 的简体中文复刻，保留原站视觉骨架，移除账号、阅读历史、阅读量、贡献热力图、筹款活动与 AI 总结等动态模块。数学内容按 CC BY-NC 4.0 许可翻译。
-      </p>
-
       <div class="video-home mb-x-30">
-        <video class="video-home-player" autoplay loop muted playsinline>
+        <video class="video-home-player" autoplay loop muted playsinline preload="metadata">
           <source src="/media/algebrica-video-1.mp4" type="video/mp4" />
         </video>
       </div>
+    </div>
+
+    <div class="ui-new-home-heros">
+      <div class="ui-new-home-spacer"></div>
+      <div class="ui-new-home-cols">
+        <div class="ui-new-home-col">
+          <div style="text-align: center;">
+            Algebrica 是一个自由、开放的数学知识库，致力于让数学清晰、严谨、可亲近。
+          </div>
+        </div>
+        <div class="ui-new-home-col no-mobile">
+          <div style="text-align: center;">
+            全部内容以 <a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener noreferrer">CC BY-NC 4.0</a> 许可发布于
+            <a href="https://github.com/antoniolupetti/algebrica" target="_blank" rel="noopener noreferrer">GitHub</a>。
+          </div>
+        </div>
+        <div class="ui-new-home-col no-mobile">
+          <div style="text-align: center;">
+            本站是原站的简体中文镜像，保留视觉骨架并移除账号、阅读量、AI 总结等动态模块。
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="module-index">
+      {
+        sections.map((section) => (
+          <div class="module-index-section">
+            <div class="module-index-section-header">
+              <div class="module-index-heading">
+                <span class="module-index-number">{section.order}.</span>
+                <span class="module-index-heading__title">
+                  <a href={`/category/${section.dir}/`}>{section.name_zh}</a>
+                </span>
+              </div>
+            </div>
+            <div class="module-index-posts">
+              {section.entries.map((slug, idx) => {
+                const row = rowsBySlug.get(slug);
+                if (!row) return null;
+                const title = row.zh?.data.title || row.en.data.title;
+                const number = `${section.order}.${idx + 1}`;
+                return (
+                  <div class="module-index-post">
+                    <span class="module-index-number module-index-post__number">{number}</span>
+                    <div class="module-index-post__title">
+                      <a href={`/${slug}/`}>{title}</a>
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+        ))
+      }
     </div>
   </div>
 </BaseLayout>

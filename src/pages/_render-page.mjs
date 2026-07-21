@@ -1,20 +1,15 @@
-import { defineConfig } from 'astro/config';
-import { unified } from '@astrojs/markdown-remark';
+import { readFileSync, readdirSync } from 'node:fs';
+import { join } from 'node:path';
+import { createMarkdownProcessor } from '@astrojs/markdown-remark';
 import remarkMath from 'remark-math';
 import rehypeMathjax from 'rehype-mathjax/svg';
 import rehypeSanitize, { defaultSchema } from 'rehype-sanitize';
-import { readdirSync } from 'node:fs';
-import { join } from 'node:path';
-import rehypeRewriteAlgebrica from './src/plugins/rehype-rewrite-algebrica.mjs';
-import dangling from './src/lib/dangling-links.json' with { type: 'json' };
+import rehypeRewriteAlgebrica from '../plugins/rehype-rewrite-algebrica.mjs';
+import dangling from '../lib/dangling-links.json' with { type: 'json' };
 
 const ALGEBRICA_BASE = '../algebrica';
 
-/**
- * Build a slug -> section map by scanning ../algebrica with plain fs.
- * Mirrors the logic in src/lib/slug-map.mjs but without Astro collection APIs.
- */
-function buildSlugMapFromFs() {
+function buildSlugMap() {
   const map = new Map();
   const collisions = new Map();
 
@@ -26,7 +21,6 @@ function buildSlugMapFromFs() {
     for (const file of readdirSync(sectionPath)) {
       if (!file.endsWith('.md')) continue;
       const slug = file.slice(0, -3);
-
       if (map.has(slug)) {
         if (!collisions.has(slug)) collisions.set(slug, [map.get(slug)]);
         collisions.get(slug).push(section);
@@ -38,22 +32,11 @@ function buildSlugMapFromFs() {
 
   if (collisions.size > 0) {
     const [slug, sections] = collisions.entries().next().value;
-    throw new Error(`slug collision: ${slug} (sections: ${[...new Set(sections)].join(', ')})`);
+    throw new Error(`slug collision: ${slug} (${[...new Set(sections)].join(', ')})`);
   }
-  if (map.size === 0) {
-    throw new Error('articles collection is empty');
-  }
-
-  console.log(`[astro-config] built slug map: ${map.size} articles`);
   return map;
 }
 
-const slugMap = buildSlugMapFromFs();
-
-/**
- * Extend the default rehype-sanitize schema to allow MathJax SVG output.
- * Keeps script stripping and javascript: URL blocking intact.
- */
 function makeMathSchema(base) {
   return {
     ...base,
@@ -129,20 +112,26 @@ function makeMathSchema(base) {
   };
 }
 
-export default defineConfig({
-  compressHTML: true,
-  trailingSlash: 'always',
-  build: {
-    format: 'directory',
-  },
-  markdown: {
-    processor: unified({
+const slugMap = buildSlugMap();
+
+let processorPromise = null;
+
+function getProcessor(currentSection = null) {
+  if (!processorPromise) {
+    processorPromise = createMarkdownProcessor({
       remarkPlugins: [remarkMath],
       rehypePlugins: [
         rehypeMathjax,
-        [rehypeRewriteAlgebrica, { slugMap, dangling, warn: console.warn }],
+        [rehypeRewriteAlgebrica, { slugMap, dangling, currentSection }],
         [rehypeSanitize, makeMathSchema(defaultSchema)],
       ],
-    }),
-  },
-});
+    });
+  }
+  return processorPromise;
+}
+
+export async function renderPageMarkdown(raw, { currentSection } = {}) {
+  const processor = await getProcessor(currentSection);
+  const result = await processor.render(raw);
+  return result.code;
+}

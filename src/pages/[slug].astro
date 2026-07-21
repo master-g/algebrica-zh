@@ -1,0 +1,61 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { getCollection, render } from 'astro:content';
+import { buildTranslationIndex } from '../lib/translation-index.mjs';
+import { getSection } from '../lib/sections.mjs';
+import { getZhEntries } from './_zh-entries.mjs';
+
+export async function getStaticPaths() {
+  const articles = await getCollection('articles');
+  const zhEntries = await getZhEntries();
+  const rows = buildTranslationIndex(articles, zhEntries);
+  return rows.map((row) => ({
+    params: { slug: row.slug },
+    props: { row },
+  }));
+}
+
+const { row } = Astro.props;
+const { slug, section, en, zh } = row;
+const isTranslated = Boolean(zh);
+const entry = isTranslated ? zh : en;
+const { Content } = await render(entry);
+
+const sectionMeta = getSection(section);
+const pageLang = isTranslated ? 'zh-CN' : 'en';
+const pageTitle = `${entry.data.title} | Algebrica 中文`;
+const originalTitle = isTranslated ? zh.data.title_en : en.data.title;
+const source = entry.data.source;
+---
+
+<BaseLayout lang={pageLang} title={pageTitle}>
+  <article class="post" lang={pageLang}>
+    <div class="post-header">
+      <nav class="post-header-breadcrumb" aria-label="Breadcrumb">
+        <a href={`/category/${section}/`}>{sectionMeta?.name_zh || sectionMeta?.name_en || section}</a>
+      </nav>
+      <div class="post-header-section-title">
+        <h1 class="post-header-title">{entry.data.title}</h1>
+      </div>
+    </div>
+
+    {!isTranslated && (
+      <div class="untranslated-banner">本文尚未翻译，以下为英文原文。</div>
+    )}
+
+    <div class="post-content">
+      <Content />
+    </div>
+
+    <footer class="post-footer-attribution">
+      <p>
+        原文标题：
+        <a href={source} target="_blank" rel="noopener noreferrer">{originalTitle}</a>
+      </p>
+      <p>
+        本文译自 <a href="https://algebrica.org" target="_blank" rel="noopener noreferrer">Algebrica</a>，
+        <a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener noreferrer">CC BY-NC 4.0</a>，有翻译改动。
+      </p>
+    </footer>
+  </article>
+</BaseLayout>
