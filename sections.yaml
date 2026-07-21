@@ -1,0 +1,438 @@
+known_absent:
+  - kinematics
+
+sections:
+  - dir: sets-and-numbers
+    name_en: "Sets and Numbers"
+    name_zh: 集合与数
+    order: 1
+    entries:
+      - sets
+      - types-of-numbers
+      - natural-numbers
+      - integers
+      - modulo-operator
+      - rational-numbers
+      - irrational-numbers
+      - real-numbers
+      - properties-of-real-numbers
+      - absolute-value
+      - intervals
+      - supremum-and-infimum
+      - factorial
+      - binomial-coefficient
+    description_en: |
+      Archive of topics on sets and number systems, including natural numbers, integers, rational and irrational numbers, and the structure of the real and complex number systems.
+    description_zh: null
+
+  - dir: algebraic-structures
+    name_en: "Algebraic Structures"
+    name_zh: 代数结构
+    order: 2
+    entries:
+      - groups
+      - rings
+      - fields
+      - vector-spaces
+      - modules
+      - homomorphisms-and-isomorphisms
+    description_en: |
+      
+    description_zh: null
+
+  - dir: powers-radicals-logarithms
+    name_en: "Powers, Radicals and Logarithms"
+    name_zh: 幂根与对数
+    order: 3
+    entries:
+      - powers
+      - radicals
+      - logarithms
+    description_en: |
+      Entries on powers, radicals, and logarithms, covering exponent rules \(a^n\), root expressions \(\sqrt[n]{a}\), and logarithmic relationships \(\log_b x = y \iff b^y = x\).
+    description_zh: null
+
+  - dir: complex-numbers
+    name_en: "Complex Numbers"
+    name_zh: 复数
+    order: 4
+    entries:
+      - complex-numbers
+      - complex-number-operations
+      - complex-numbers-trigonometric-form
+      - euler-formula
+      - complex-numbers-exponential-form
+      - de-moivre-theorem
+      - roots-of-unity
+      - complex-number-fundamental-inequalities
+      - complex-logarithm
+    description_en: |
+      Complex numbers extend the real number system by introducing the imaginary unit \(I\), defined by \(i^2 = -1\). A complex number has the form \(z = a + bi\) with \(a, b \in \mathbb{R}\). This section covers their algebraic properties, geometric representation in the complex plane, modulus, conjugation, and polar form \(z = r(\cos \theta + i \sin \theta)\).
+    description_zh: null
+
+  - dir: trigonometry
+    name_en: Trigonometry
+    name_zh: 三角学
+    order: 5
+    entries:
+      - angles-and-angular-measure
+      - unit-circle
+      - sine-and-cosine
+      - tangent-and-cotangent
+      - secant-and-cosecant
+      - arcsine-and-arccosine
+      - arctangent-and-arccotangent
+      - hyperbolic-sine-and-cosine
+      - hyperbolic-tangent-and-cotangent
+      - hyperbolic-secant-and-cosecant
+      - pythagorean-theorem
+      - trigonometric-identities
+      - hyperbolic-identities
+      - pythagorean-identity
+      - right-triangle-trigonometry
+      - reduction-formulas-and-reference-angles
+      - law-of-sines
+      - law-of-cosines
+    description_en: |
+      This section collects topics on trigonometry, the branch of mathematics that studies the relationships between angles and sides of triangles and the trigonometric functions that arise from them. The entries explore functions such as sine, cosine, and tangent, their properties, identities, and applications in geometry and analysis.
+    description_zh: null
+
+  - dir: polynomials
+    name_en: Polynomials
+    name_zh: 多项式
+    order: 6
+    entries:
+      - polynomials
+      - monomials
+      - binomials
+      - trinomials
+      - adding-and-subtracting-polynomials
+      - multiplying-polynomials
+      - polynomial-division
+      - synthetic-division
+      - roots-of-a-polynomial
+      - vieta-formulas
+      - binomial-theorem
+      - completing-the-square
+      - factoring-polynomials-ac-method
+      - unique-factorization-of-polynomials
+      - notable-products
+      - partial-fraction-decomposition
+    description_en: |
+      A polynomial is a mathematical expression made up of terms consisting of a coefficient and a variable raised to a power, which are then summed together.
+    description_zh: null
+
+  - dir: equations
+    name_en: Equations
+    name_zh: 方程
+    order: 7
+    entries:
+      - equations
+      - polynomial-equations
+      - linear-equations
+      - quadratic-equations
+      - quadratic-formula
+      - factoring-quadratic-equations
+      - incomplete-quadratic-equations
+      - geometric-interpretation-quadratic-equations
+      - loss-of-roots
+      - quadratic-equations-with-complex-solutions
+      - binomial-equations
+      - trinomial-equations
+      - rational-equations
+      - irrational-equations
+      - absolute-value-equations
+      - exponential-equations
+      - logarithmic-equations
+      - homogeneous-trigonometric-equations
+      - trigonometric-equations
+      - equations-with-parameters
+      - linear-equations-with-parameters
+      - quadratic-equations-with-parameters
+    description_en: |
+      An equation is a mathematical equality between two expressions containing one or more variables, called unknowns. Solving an equation means finding all its solutions in the definition set of the variables.
+    description_zh: null
+
+  - dir: inequalities
+    name_en: Inequalities
+    name_zh: 不等式
+    order: 8
+    entries:
+      - inequalities
+      - polynomial-inequalities
+      - linear-inequalities
+      - quadratic-inequalities
+      - geometric-interpretation-quadratic-inequalities
+      - sign-analysis-in-inequalities
+      - rational-inequalities
+      - irrational-inequalities
+      - exponential-inequalities
+      - logarithmic-inequalities
+      - inequalities-with-absolute-value
+      - trigonometric-inequalities
+      - loss-of-solutions-in-inequalities
+      - systems-of-inequalities
+    description_en: |
+      Archive of topics on mathematical inequalities, covering methods to compare algebraic expressions, solve inequalities, and describe ranges of values that satisfy given conditions.
+    description_zh: null
+
+  - dir: lines-planes-conic-sections
+    name_en: "Lines, Planes and Conic Sections"
+    name_zh: 直线平面与圆锥曲线
+    order: 9
+    entries:
+      - lines
+      - vector-and-parametric-equations-of-a-line
+      - polar-coordinates
+      - parabola
+      - circumference
+      - ellipse
+      - hyperbola
+    description_en: |
+      This section collects topics from analytic geometry concerning lines, planes, and conic sections. The entries explore the algebraic representation of geometric objects in the coordinate plane and the study of curves such as circles, parabolas, ellipses, and hyperbolas. These concepts connect geometric shapes with equations and provide the foundation for analyzing curves and intersections in the Cartesian plane.
+    description_zh: null
+
+  - dir: vectors-and-matrices
+    name_en: "Vectors and Matrices"
+    name_zh: 向量与矩阵
+    order: 10
+    entries:
+      - vectors
+      - matrices
+      - determinant-of-a-square-matrix
+      - inverse-matrix
+      - rank-of-a-matrix
+      - linear-combinations
+      - eigenvalues-and-eigenvectors
+      - matrix-diagonalization
+    description_en: |
+      Vectors and matrices in basic linear algebra, including vector representation and operations, matrix notation ( A = (a_{ij}) ), dimensions ( m times n ), matrix operations, determinants, and linear transformations.
+    description_zh: null
+
+  - dir: linear-systems
+    name_en: "Linear Systems"
+    name_zh: 线性方程组
+    order: 11
+    entries:
+      - systems-of-linear-equations
+      - cramers-rule
+      - gaussian-elimination
+      - rouche-capelli-theorem
+    description_en: |
+      Archive of topics on linear systems, covering systems of linear equations, solution methods, matrix representation, and the relationships between variables in algebraic models.
+    description_zh: null
+
+  - dir: sequences
+    name_en: Sequences
+    name_zh: 数列
+    order: 12
+    entries:
+      - principle-of-mathematical-induction
+      - sequences
+      - convergent-and-divergent-sequences
+      - monotone-sequences
+      - arithmetic-sequence
+      - geometric-sequence
+      - cauchy-sequence
+      - euler-number-limit-sequence
+      - superior-and-inferior-limits-of-a-sequence
+      - sequences-of-functions
+    description_en: |
+      Archive of topics on mathematical sequences, covering definitions, notation, convergence, divergence, and the fundamental properties that describe ordered numerical patterns.
+    description_zh: null
+
+  - dir: series
+    name_en: Series
+    name_zh: 级数
+    order: 13
+    entries:
+      - series
+      - series-with-positive-terms
+      - harmonic-series
+      - geometric-series
+      - telescoping-series
+      - arithmetic-series
+      - cauchy-convergence-criterion-series
+      - integral-test-for-series-convergence
+      - root-test-for-series-convergence
+      - ratio-test-for-series-convergence
+      - asymptotic-comparison-test
+      - leibniz-criterion
+      - function-series
+      - power-series
+      - taylor-series
+      - fourier-series
+    description_en: |
+      This section collects topics on mathematical series, defined as sums of the terms of a sequence. The entries explore infinite series, convergence, divergence, and the main criteria used to analyze infinite sums in calculus.
+    description_zh: null
+
+  - dir: functions
+    name_en: Functions
+    name_zh: 函数
+    order: 14
+    entries:
+      - functions
+      - determining-the-domain-of-a-function
+      - even-and-odd-functions
+      - increasing-and-decreasing-functions
+      - convexity-and-concavity-of-functions
+      - composite-functions
+      - inverse-function
+      - continuous-functions
+      - uniform-continuity
+      - discontinuities-of-real-functions
+      - analyzing-the-graphs-of-functions
+      - polynomial-function
+      - rational-functions
+      - logarithmic-function
+      - exponential-function
+      - absolute-value-function
+      - sign-function
+      - sine-function
+      - cosine-function
+      - tangent-function
+      - cotangent-function
+      - secant-function
+      - cosecant-function
+      - dirichlet-function
+      - sigmoid-function
+    description_en: |
+      Archive of topics on mathematical functions, including definitions, domain, codomain, range, and the fundamental properties that describe how inputs are mapped to outputs.
+    description_zh: null
+
+  - dir: limits
+    name_en: Limits
+    name_zh: 极限
+    order: 15
+    entries:
+      - limits
+      - theorems-on-limits
+      - algebra-of-limits
+      - squeeze-theorem
+      - remarkable-limits
+      - asymptotes
+      - indeterminate-forms
+      - little-o-notation
+      - big-o-notation
+    description_en: |
+      Archive of topics on limits in calculus, covering the behavior of functions as variables approach a value, with key concepts such as limit laws, continuity, and limits at infinity.
+    description_zh: null
+
+  - dir: derivatives
+    name_en: Derivatives
+    name_zh: 导数
+    order: 16
+    entries:
+      - difference-quotient
+      - derivatives
+      - differentiation-rules
+      - points-of-non-differentiability
+      - chain-rule
+      - derivative-of-composite-power-functions
+      - differential-of-a-function
+      - higher-order-derivatives
+      - maximum-minimum-and-inflection-points
+      - partial-derivatives
+    description_en: |
+      Derivatives measure how a function changes with respect to its variable and describe the instantaneous rate of change of \(f(x)\). The derivative of a function is defined by the limit: \[ f'(x)=\lim_{h\to0}\frac{f(x+h)-f(x)}{h} \]
+    description_zh: null
+
+  - dir: differential-calculus-theorems
+    name_en: "Differential Calculus Theorems"
+    name_zh: 微分学定理
+    order: 17
+    entries:
+      - weierstrass-theorem
+      - fermat-theorem
+      - rolle-theorem
+      - lagrange-theorem
+      - cauchy-theorem
+      - hopital-rule
+      - darboux-theorem
+    description_en: |
+      This section collects the main theorems of differential calculus that describe the behavior of differentiable functions. Topics include foundational results such as Rolle’s theorem, the Mean Value Theorem, and related statements that connect derivatives with the global properties of functions on an interval.
+    description_zh: null
+
+  - dir: integrals
+    name_en: Integrals
+    name_zh: 积分
+    order: 18
+    entries:
+      - indefinite-integrals
+      - definite-integrals
+      - fundamental-theorem-of-calculus
+      - integration-by-substitution
+      - integration-by-parts
+      - finding-areas-by-integration
+      - integral-of-the-exponential-function
+      - integral-of-trigonometric-functions
+      - integral-of-rational-functions
+      - trigonometric-substitution-for-integrals
+      - the-weierstrass-substitution
+      - riemann-integrability-criteria
+      - improper-integrals
+      - arc-length-of-a-curve
+      - numerical-integration
+      - the-disc-method
+    description_en: |
+      Archive of topics on integrals and integral calculus, covering the concept of integration, antiderivatives, definite and indefinite integrals, and applications such as area and accumulated change.
+    description_zh: null
+
+  - dir: differential-equations
+    name_en: "Differential Equations"
+    name_zh: 微分方程
+    order: 19
+    entries:
+      - differential-equations
+      - first-order-differential-equations
+    description_en: |
+      This section collects topics on differential equations, which describe relationships between functions and their derivatives. The entries explore equations that model rates of change and the methods used to analyze and solve them in mathematics and applied sciences.
+    description_zh: null
+
+  - dir: probability-and-statistics
+    name_en: "Probability and Statistics"
+    name_zh: 概率与统计
+    order: 20
+    entries:
+      - introduction-to-the-mean
+      - arithmetic-mean
+      - geometric-mean
+      - harmonic-mean
+      - root-mean-square
+      - median-and-quantiles
+      - variance
+      - discrete-random-variables
+      - continuous-random-variables
+      - mean-or-expected-value-of-a-random-variable
+      - variance-and-covariance-of-a-random-variable
+      - bernoulli-distribution
+      - binomial-distribution
+      - hypergeometric-distribution
+      - geometric-distribution
+      - poisson-distribution
+      - uniform-distribution
+      - beta-distribution
+      - normal-distribution
+      - standard-normal-z-table
+      - gamma-distribution
+      - chi-square-distribution
+      - student-t-distribution
+      - exponential-distribution
+      - sampling-distributions
+      - bayes-theorem
+      - confidence-intervals
+    description_en: |
+      Archive of topics on probability and statistics, covering random events, probability models, distributions, and statistical methods for analyzing and interpreting data.
+    description_zh: null
+
+  - dir: various
+    name_en: Various
+    name_zh: 杂项
+    order: 22
+    entries:
+      - cosine-similarity
+      - propositional-logic
+      - backpropagation
+    description_en: |
+      
+    description_zh: null
