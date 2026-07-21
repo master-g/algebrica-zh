@@ -1,4 +1,6 @@
 ---
+import SearchBox from '../components/SearchBox.astro';
+
 export interface Props {
   lang?: string;
   title?: string;
@@ -36,17 +38,7 @@ const { lang = 'zh-CN', title = 'Algebrica 中文' } = Astro.props;
               <div class="sidebar__section">
                 <div class="search__wrapper">
                   <div id="search-mobile">
-                    <div class="search__container">
-                      <form id="searchform-mobile" action="/search/">
-                        <input id="search-input-mobile" name="s" class="search-input" type="text" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" placeholder="搜索…" />
-                        <button class="search__icon" type="submit" aria-label="搜索">
-                          <img alt="" src="/theme/images/icon-search.svg" width="22" height="22" />
-                        </button>
-                      </form>
-                      <div id="suggestions-wrap-mobile" class="search__suggestions">
-                        <ul id="suggestions-mobile"></ul>
-                      </div>
-                    </div>
+                    <SearchBox variant="mobile" />
                   </div>
                 </div>
               </div>
@@ -92,17 +84,7 @@ const { lang = 'zh-CN', title = 'Algebrica 中文' } = Astro.props;
             <div class="sidebar__section">
               <div class="search__wrapper">
                 <div id="search-desktop">
-                  <div class="search__container">
-                    <form id="searchform-desktop" action="/search/">
-                      <input id="search-input-desktop" name="s" class="search-input -desktop" type="text" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" placeholder="搜索…" />
-                      <button class="search__icon -desktop" type="submit" aria-label="搜索">
-                        <img alt="" src="/theme/images/icon-search.svg" width="22" height="22" />
-                      </button>
-                    </form>
-                    <div id="suggestions-wrap-desktop" class="search__suggestions">
-                      <ul id="suggestions-desktop"></ul>
-                    </div>
-                  </div>
+                  <SearchBox variant="desktop" />
                 </div>
               </div>
             </div>

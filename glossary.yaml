@@ -1,0 +1,47 @@
+terms:
+  - en: function
+    zh: 函数
+  - en: derivative
+    zh: 导数
+  - en: integral
+    zh: 积分
+  - en: definite integral
+    zh: 定积分
+  - en: limit
+    zh: 极限
+  - en: series
+    zh: 级数
+  - en: sequence
+    zh: 数列
+  - en: polynomial
+    zh: 多项式
+  - en: equation
+    zh: 方程
+  - en: inequality
+    zh: 不等式
+  - en: set
+    zh: 集合
+  - en: vector
+    zh: 向量
+  - en: matrix
+    zh: 矩阵
+  - en: probability
+    zh: 概率
+  - en: logarithm
+    zh: 对数
+  - en: trigonometry
+    zh: 三角学
+  - en: complex number
+    zh: 复数
+  - en: absolute value
+    zh: 绝对值
+  - en: interval
+    zh: 区间
+  - en: factorial
+    zh: 阶乘
+  - en: theorem
+    zh: 定理
+do_not_translate:
+  - KaTeX
+  - Algebrica
+  - MathJax
