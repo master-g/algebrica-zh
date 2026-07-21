@@ -259,7 +259,7 @@ function cleanStdout(stdout) {
   return text.trim();
 }
 
-function assembleZhFile({ frontmatter, body, sourceHash }) {
+export function assembleZhFile({ frontmatter, body, sourceHash }) {
   // Extract Chinese title from the leading H1.
   const titleMatch = body.match(/^#\s+(.+)\n?/m);
   let title = titleMatch ? titleMatch[1].trim() : frontmatter.title;
@@ -287,7 +287,7 @@ function assembleZhFile({ frontmatter, body, sourceHash }) {
     '  status: current',
     `  source_hash: ${sourceHash}`,
     '  translator: omp',
-    `  updated: "${updated}",`,
+    `  updated: "${updated}"`,
     '---',
   ].join('\n');
 
@@ -333,7 +333,9 @@ function recordFailure(section, slug, reason) {
   renameSync(tmpFile, FAILURES_FILE);
 }
 
-main().catch((err) => {
-  console.error(err);
-  process.exit(1);
-});
+if (process.argv[1] === fileURLToPath(import.meta.url)) {
+  main().catch((err) => {
+    console.error(err);
+    process.exit(1);
+  });
+}
