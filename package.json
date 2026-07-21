@@ -7,8 +7,8 @@
     "dev": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "prebuild": "node -e \"true\"",
-    "test": "node --test tests/"
+    "prebuild": "node scripts/sync-svg.mjs",
+    "test": "node --test $(find tests -name '*.test.mjs')"
   },
   "dependencies": {
     "astro": "~7.1.0"
