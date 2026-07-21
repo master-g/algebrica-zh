@@ -22,7 +22,17 @@ export default function rehypeRewriteAlgebrica({ slugMap = new Map(), dangling =
         const href = node.properties?.href;
         if (typeof href !== 'string' || !href.startsWith('../')) return;
 
-        const target = href.slice(3).replace(/\/$/, '');
+        const target = href.replace(/^(\.\.\/)+/, '').replace(/\/$/, '');
+
+        // Repo-relative ../../<section>/<slug>/ form (e.g. equations/loss-of-roots.md
+        // links ../../polynomials/roots-of-a-polynomial/) resolves to the article route.
+        if (target.includes('/')) {
+          const [sec, slug] = target.split('/');
+          if (sectionDirs.has(sec) && slugMap.get(slug) === sec) {
+            node.properties.href = `/${slug}/`;
+            return;
+          }
+        }
 
         // Section directories take precedence over article slugs when a name is
         // both (e.g. functions/ has both a section index and functions/functions.md).
@@ -45,12 +55,9 @@ export default function rehypeRewriteAlgebrica({ slugMap = new Map(), dangling =
         }
 
         if (text.has(target)) {
-          const value = (node.children || [])
-            .filter((c) => c.type === 'text')
-            .map((c) => c.value)
-            .join('');
+          // Unwrap the link, preserving all children (including math spans).
           if (parent && typeof index === 'number') {
-            parent.children.splice(index, 1, { type: 'text', value });
+            parent.children.splice(index, 1, ...(node.children || []));
           }
           return;
         }

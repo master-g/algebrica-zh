@@ -55,6 +55,14 @@ describe('rehype-rewrite-algebrica', () => {
     assert.equal(a.properties.href, '/definite-integrals/');
   });
 
+  it('rewrites repo-relative ../../<section>/<slug>/ link to /<slug>/', () => {
+    const tree = { type: 'root', children: [makeLink('roots', '../../polynomials/roots-of-a-polynomial/')] };
+    const slugMap = new Map([['roots-of-a-polynomial', 'polynomials']]);
+    run(tree, { slugMap, dangling: { external: [], text: [] } });
+    const [a] = find(tree, 'a');
+    assert.equal(a.properties.href, '/roots-of-a-polynomial/');
+  });
+
   it('rewrites external dangling to algebrica.org with target/rel/class', () => {
     const tree = { type: 'root', children: [makeLink('velocity', '../velocity/')] };
     const slugMap = new Map();

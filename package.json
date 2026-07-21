@@ -11,6 +11,11 @@
     "test": "node --test $(find tests -name '*.test.mjs')"
   },
   "dependencies": {
-    "astro": "~7.1.0"
+    "@astrojs/markdown-remark": "^7.2.1",
+    "astro": "~7.1.0",
+    "mathjax-full": "^3.2.1",
+    "rehype-mathjax": "^7.1.0",
+    "rehype-sanitize": "^6.0.0",
+    "remark-math": "^6.0.0"
   }
 }
