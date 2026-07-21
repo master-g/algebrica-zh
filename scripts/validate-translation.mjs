@@ -1,20 +1,10 @@
 #!/usr/bin/env node
 import { readFileSync, readdirSync, existsSync } from 'node:fs';
 import { resolve } from 'node:path';
-import { validateTranslation } from './lib/validate.mjs';
+import { validateTranslation, loadDangling } from './lib/validate.mjs';
 import { lintChineseCopywriting } from './lib/copywriting-lint.mjs';
 
 const CONTENT_ZH = resolve('content-zh');
-const DANGLING_FILE = resolve('src', 'lib', 'dangling-links.json');
-
-function loadDangling() {
-  if (!existsSync(DANGLING_FILE)) return { external: [], text: [] };
-  try {
-    return JSON.parse(readFileSync(DANGLING_FILE, 'utf8'));
-  } catch {
-    return { external: [], text: [] };
-  }
-}
 
 async function main() {
   const args = process.argv.slice(2);

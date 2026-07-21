@@ -9,7 +9,7 @@ import { promisify } from 'node:util';
 import { mask, restore } from './lib/mask-restore.mjs';
 import { glossaryPromptSection } from './lib/glossary.mjs';
 import { lintChineseCopywriting } from './lib/copywriting-lint.mjs';
-import { validateTranslation, checkGlossaryMapping, buildSlugMapFromUpstream } from './lib/validate.mjs';
+import { validateTranslation, checkGlossaryMapping, buildSlugMapFromUpstream, loadDangling } from './lib/validate.mjs';
 
 const execFileAsync = promisify(execFile);
 
@@ -17,20 +17,6 @@ const __dirname = dirname(fileURLToPath(import.meta.url));
 const UPSTREAM = resolve(__dirname, '..', '..', 'algebrica');
 const CONTENT_ZH = resolve(__dirname, '..', 'content-zh');
 const FAILURES_FILE = resolve(__dirname, '..', 'translation-failures.json');
-const DANGLING_FILE = resolve(__dirname, '..', 'src', 'lib', 'dangling-links.json');
-
-let danglingCache = null;
-function loadDangling() {
-  if (danglingCache) return danglingCache;
-  if (!existsSync(DANGLING_FILE)) return { external: [], text: [] };
-  try {
-    danglingCache = JSON.parse(readFileSync(DANGLING_FILE, 'utf8'));
-  } catch {
-    danglingCache = { external: [], text: [] };
-  }
-  return danglingCache;
-}
-
 const PAGE_TITLES = {
   bibliography: { title_en: 'Bibliography', title_zh: '参考文献' },
   'editorial-process': { title_en: 'Editorial Process', title_zh: '编辑流程' },

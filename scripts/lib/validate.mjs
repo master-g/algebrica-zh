@@ -212,3 +212,16 @@ export async function buildSlugMapFromUpstream() {
 function escapeRegExp(s) {
   return s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
 }
+
+const DANGLING_FILE = resolve(dirname(fileURLToPath(import.meta.url)), '..', '..', 'src', 'lib', 'dangling-links.json');
+
+let danglingCache = null;
+export function loadDangling() {
+  if (danglingCache) return danglingCache;
+  try {
+    danglingCache = JSON.parse(readFileSync(DANGLING_FILE, 'utf8'));
+  } catch {
+    danglingCache = { external: [], text: [] };
+  }
+  return danglingCache;
+}
