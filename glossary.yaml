@@ -7,6 +7,8 @@ terms:
     zh: 积分
   - en: definite integral
     zh: 定积分
+  - en: indefinite integral
+    zh: 不定积分
   - en: limit
     zh: 极限
   - en: series
@@ -41,7 +43,77 @@ terms:
     zh: 阶乘
   - en: theorem
     zh: 定理
+  - en: median
+    zh: 中位数
+  - en: quantile
+    zh: 分位数
+  - en: quartile
+    zh: 四分位数
+  - en: mean
+    zh: 均值
+  - en: arithmetic mean
+    zh: 算术平均数
+  - en: geometric mean
+    zh: 几何平均数
+  - en: variance
+    zh: 方差
+  - en: standard deviation
+    zh: 标准差
+  - en: distribution
+    zh: 分布
+  - en: random variable
+    zh: 随机变量
+  - en: domain
+    zh: 定义域
+  - en: codomain
+    zh: 上域
+  - en: range
+    zh: 值域
+  - en: continuity
+    zh: 连续性
+  - en: convergence
+    zh: 收敛
+  - en: divergence
+    zh: 发散
+  - en: monotonic
+    zh: 单调
+  - en: injective
+    zh: 单射
+  - en: surjective
+    zh: 满射
+  - en: bijective
+    zh: 双射
+  - en: permutation
+    zh: 排列
+  - en: combination
+    zh: 组合
+  - en: binomial coefficient
+    zh: 二项式系数
+  - en: exponent
+    zh: 指数
+  - en: radical
+    zh: 根式
+  - en: slope
+    zh: 斜率
+  - en: tangent line
+    zh: 切线
+  - en: asymptote
+    zh: 渐近线
+  - en: hypothesis
+    zh: 假设
+  - en: proof
+    zh: 证明
+  - en: sufficient condition
+    zh: 充分条件
+  - en: necessary condition
+    zh: 必要条件
 do_not_translate:
   - KaTeX
   - Algebrica
   - MathJax
+  - LaTeX
+  - Markdown
+  - GitHub
+  - Grammarly
+  - Codex
+  - Claude
