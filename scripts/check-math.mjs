@@ -48,7 +48,10 @@ async function renderWithConfig(source, fileURL) {
 function countRenderedMath(html) {
   const containers = (html.match(/<mjx-container/g) || []).length;
   const errors = (html.match(/mjx-error/g) || []).length;
-  return { containers, errors };
+  // Sanitize 把 MathJax 伴随 <style> 剥成裸文本的回归信号:CSS 选择器出现在标签外
+  const visibleText = html.replace(/<style[\s\S]*?<\/style>/g, ' ').replace(/<[^>]+>/g, ' ');
+  const cssLeaks = (visibleText.match(/data-mml-node|stroke-width: 3/g) || []).length;
+  return { containers, errors, cssLeaks };
 }
 
 async function checkFile(path) {
@@ -76,6 +79,9 @@ async function runTorture() {
 
     if (result.rendered.errors > 0) {
       console.error(`FAIL: ${rel} has ${result.rendered.errors} mjx-error(s)`);
+    }
+    if (result.rendered.cssLeaks > 0) {
+      console.error(`FAIL: ${rel} leaks ${result.rendered.cssLeaks} CSS fragment(s) as visible text`);
       failed = true;
     }
 
@@ -146,8 +152,8 @@ async function runCorpus() {
     const result = await checkFile(article.path);
     totalSrc += result.srcTotal;
     totalRendered += result.rendered.containers;
-    totalErrors += result.rendered.errors;
-    if (result.deviation !== 0 || result.rendered.errors > 0) {
+    totalErrors += result.rendered.errors + result.rendered.cssLeaks;
+    if (result.deviation !== 0 || result.rendered.errors > 0 || result.rendered.cssLeaks > 0) {
       deviations.push(formatResult(result));
     }
   }

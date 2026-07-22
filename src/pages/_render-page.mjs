@@ -14,6 +14,8 @@ function makeMathSchema(base) {
     ...base,
     tagNames: [
       ...(base.tagNames || []),
+      // MathJax SVG 的伴随 <style> 块必须保留为元素(同 astro.config.mjs)。
+      'style',
       'mjx-container',
       'mjx-assistive-mml',
       'mjx-math',

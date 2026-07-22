@@ -19,6 +19,9 @@ function makeMathSchema(base) {
     ...base,
     tagNames: [
       ...(base.tagNames || []),
+      // MathJax SVG 的伴随 <style> 块必须保留为元素——标签被剥掉会把整段 CSS 以文本泄漏进页面。
+      // remark 默认不允许原始 HTML,LLM 内容无法注入元素,放行 <style> 无注入面。
+      'style',
       'mjx-container',
       'mjx-assistive-mml',
       'mjx-math',
