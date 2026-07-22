@@ -4,6 +4,7 @@ import remarkMath from 'remark-math';
 import rehypeMathjax from 'rehype-mathjax/svg';
 import rehypeSanitize, { defaultSchema } from 'rehype-sanitize';
 import rehypeRewriteAlgebrica from '../plugins/rehype-rewrite-algebrica.mjs';
+import rehypeSectionizeAlgebrica from '../plugins/rehype-sectionize-algebrica.mjs';
 import dangling from '../lib/dangling-links.json' with { type: 'json' };
 import { buildSlugMap } from '../lib/slug-map.mjs';
 
@@ -83,6 +84,7 @@ function makeMathSchema(base) {
       stop: ['offset', 'stopColor'],
       symbol: ['id'],
       a: ['href', 'title', 'target', 'rel', 'class'],
+      section: ['dataFootnotes', ['className', 'footnotes', 'post-section']],
       '*': [...(base.attributes?.['*'] || []), 'className', 'class'],
     },
   };
@@ -99,6 +101,7 @@ function getProcessor(currentSection = null) {
         rehypePlugins: [
           rehypeMathjax,
           [rehypeRewriteAlgebrica, { slugMap, dangling, currentSection }],
+          rehypeSectionizeAlgebrica,
           [rehypeSanitize, makeMathSchema(defaultSchema)],
         ],
       }),

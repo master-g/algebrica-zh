@@ -1,6 +1,8 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import ArticleGraph from '../components/ArticleGraph.astro';
 import { getCollection, render } from 'astro:content';
+import { getArticleGraph } from '../lib/article-graphs.mjs';
 import { buildTranslationIndex } from '../lib/translation-index.mjs';
 import { getSection } from '../lib/sections.mjs';
 import { getZhEntries } from './_zh-entries.mjs';
@@ -26,6 +28,7 @@ const pageLang = isTranslated ? 'zh-CN' : 'en';
 const pageTitle = `${entry.data.title} | Algebrica 中文`;
 const originalTitle = isTranslated ? zh.data.title_en : en.data.title;
 const source = entry.data.source;
+const graph = getArticleGraph(slug);
 ---
 
 <BaseLayout lang={pageLang} title={pageTitle}>
@@ -46,6 +49,8 @@ const source = entry.data.source;
     <div class="post-content">
       <Content />
     </div>
+
+    <ArticleGraph graph={graph} />
 
     <footer class="post-footer-attribution">
       <p>

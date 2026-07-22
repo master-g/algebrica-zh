@@ -1,0 +1,99 @@
+---
+import { layoutArticleGraph } from '../lib/article-graph.mjs';
+
+const { graph } = Astro.props;
+const layout = graph ? layoutArticleGraph(graph.dataset, { height: graph.canvasHeight }) : null;
+const difficultyDots = [1, 2, 3, 4];
+---
+
+{graph && layout && (
+  <section class="collapsible-tree no-mobile" aria-label="知识图谱">
+    <div class="collapsible-tree__content">
+      <div
+        class="collapsible-tree__canvas has-fixed-height"
+        style={`height:${graph.canvasHeight}px`}
+      >
+        <svg
+          class="collapsible-tree__svg"
+          viewBox={`0,0,798,${graph.canvasHeight}`}
+          width="798"
+          height={graph.canvasHeight}
+          role="img"
+          aria-label="本文概念之间的关系"
+          preserveAspectRatio="xMinYMid meet"
+        >
+          <g class="collapsible-tree__links">
+            {layout.links.map((link) => (
+              <path class="collapsible-tree__link" d={link.path} />
+            ))}
+          </g>
+          <g class="collapsible-tree__nodes">
+            {layout.nodes.map((node) => (
+              <g
+                class:list={[
+                  'collapsible-tree__node',
+                  node.depth === 0 && 'is-root',
+                  node.children.length === 0 && 'is-leaf',
+                ]}
+                transform={`translate(${node.x},${node.y})`}
+              >
+                <circle
+                  class:list={[
+                    'collapsible-tree__node-dot',
+                    node.children.length === 0 && 'is-leaf',
+                  ]}
+                  r={node.children.length > 0 ? 3 : 2.5}
+                />
+                <text class="collapsible-tree__node-label" x="10" dy="0.32em" text-anchor="start">
+                  {node.name}
+                </text>
+              </g>
+            ))}
+          </g>
+        </svg>
+      </div>
+    </div>
+
+    <aside class="collapsible-tree__canvas-wrap" style={`height:${graph.canvasHeight}px`}>
+      <div class="s-c-t-c-node-type-sub">知识图谱</div>
+      <div class="shrt-coll-three-cols mb-x-30">
+        <div class="shrt-coll-three-col">
+          <div class="s-c-t-c-item">
+            <div class="s-c-t-c-node-type">{graph.type}</div>
+          </div>
+        </div>
+      </div>
+      <div class="collapsible-tree-description">{graph.description}</div>
+      <div class="shrt-coll-three-cols">
+        <div class="shrt-coll-three-col">
+          <div class="s-c-t-c-item">
+            <div class="difficult-level">
+              <div class:list={['difficulty-level', `dl-${graph.difficulty.level}`]}>
+                {difficultyDots.map(() => <div class="difficulty-level-item"></div>)}
+                {graph.difficulty.label}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="shrt-coll-three-cols">
+        <div class="shrt-coll-three-col">
+          <div class="s-c-t-c-item">
+            <div class="s-c-t-c-item-count">{graph.requires}</div>
+            <div class="s-c-t-c-label">先修</div>
+            <div class="s-c-t-c-icon-requires" aria-hidden="true"></div>
+          </div>
+        </div>
+      </div>
+      <div class="shrt-coll-three-cols">
+        <div class="shrt-coll-three-col">
+          <div class="s-c-t-c-item">
+            <div class="s-c-t-c-item-count">{graph.enables}</div>
+            <div class="s-c-t-c-label">后续</div>
+            <div class="s-c-t-c-icon-enables" aria-hidden="true"></div>
+          </div>
+        </div>
+      </div>
+    </aside>
+  </section>
+)}

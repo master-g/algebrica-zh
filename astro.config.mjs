@@ -4,6 +4,7 @@ import remarkMath from 'remark-math';
 import rehypeMathjax from 'rehype-mathjax/svg';
 import rehypeSanitize, { defaultSchema } from 'rehype-sanitize';
 import rehypeRewriteAlgebrica from './src/plugins/rehype-rewrite-algebrica.mjs';
+import rehypeSectionizeAlgebrica from './src/plugins/rehype-sectionize-algebrica.mjs';
 import dangling from './src/lib/dangling-links.json' with { type: 'json' };
 import { buildSlugMap } from './src/lib/slug-map.mjs';
 
@@ -90,6 +91,7 @@ function makeMathSchema(base) {
       stop: ['offset', 'stopColor'],
       symbol: ['id'],
       a: ['href', 'title', 'target', 'rel', 'class'],
+      section: ['dataFootnotes', ['className', 'footnotes', 'post-section']],
       '*': [...(base.attributes?.['*'] || []), 'className', 'class'],
     },
   };
@@ -107,6 +109,7 @@ export default defineConfig({
       rehypePlugins: [
         rehypeMathjax,
         [rehypeRewriteAlgebrica, { slugMap, dangling, warn: console.warn }],
+        rehypeSectionizeAlgebrica,
         [rehypeSanitize, makeMathSchema(defaultSchema)],
       ],
     }),
