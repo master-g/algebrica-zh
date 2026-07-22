@@ -3,6 +3,7 @@ import { unified } from '@astrojs/markdown-remark';
 import remarkMath from 'remark-math';
 import rehypeMathjax from 'rehype-mathjax/svg';
 import rehypeSanitize, { defaultSchema } from 'rehype-sanitize';
+import rehypeMarkStandaloneMath from './src/plugins/rehype-mark-standalone-math.mjs';
 import rehypeRewriteAlgebrica from './src/plugins/rehype-rewrite-algebrica.mjs';
 import rehypeSectionizeAlgebrica from './src/plugins/rehype-sectionize-algebrica.mjs';
 import dangling from './src/lib/dangling-links.json' with { type: 'json' };
@@ -108,6 +109,7 @@ export default defineConfig({
       remarkPlugins: [remarkMath],
       rehypePlugins: [
         rehypeMathjax,
+        rehypeMarkStandaloneMath,
         [rehypeRewriteAlgebrica, { slugMap, dangling, warn: console.warn }],
         rehypeSectionizeAlgebrica,
         [rehypeSanitize, makeMathSchema(defaultSchema)],

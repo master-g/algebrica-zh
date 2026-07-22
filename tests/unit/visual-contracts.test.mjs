@@ -28,6 +28,13 @@ describe('visual theme contracts', () => {
     );
   });
 
+  it('centers paragraph-only MathJax formulas without changing inline math', () => {
+    assert.match(
+      overrides,
+      /\.post-section p\.standalone-math > mjx-container\s*\{[^}]*display:\s*block;[^}]*text-align:\s*center;/s,
+    );
+  });
+
   it('renders the optional article graph before the attribution footer', () => {
     assert.match(articlePage, /import ArticleGraph from/);
     assert.match(articlePage, /<ArticleGraph graph=\{graph\}/);

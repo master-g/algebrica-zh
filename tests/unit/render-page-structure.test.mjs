@@ -35,4 +35,19 @@ $x + y$
     assert.match(html, /<\/style>$/);
     assert.equal((html.match(/<section class="post-section">/g) || []).length, 1);
   });
+
+  it('marks paragraph-only inline MathJax output for display-style centering', async () => {
+    const html = await renderPageMarkdown(`## Formula
+
+$$x + y$$
+
+The value $x + y$ stays inline.
+`);
+
+    assert.match(
+      html,
+      /<p class="standalone-math"><mjx-container class="MathJax" jax="SVG">/,
+    );
+    assert.doesNotMatch(html, /<p class="standalone-math">The value/);
+  });
 });

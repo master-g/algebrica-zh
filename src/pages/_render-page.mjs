@@ -3,6 +3,7 @@ import { createMarkdownProcessor } from '@astrojs/markdown-remark';
 import remarkMath from 'remark-math';
 import rehypeMathjax from 'rehype-mathjax/svg';
 import rehypeSanitize, { defaultSchema } from 'rehype-sanitize';
+import rehypeMarkStandaloneMath from '../plugins/rehype-mark-standalone-math.mjs';
 import rehypeRewriteAlgebrica from '../plugins/rehype-rewrite-algebrica.mjs';
 import rehypeSectionizeAlgebrica from '../plugins/rehype-sectionize-algebrica.mjs';
 import dangling from '../lib/dangling-links.json' with { type: 'json' };
@@ -100,6 +101,7 @@ function getProcessor(currentSection = null) {
         remarkPlugins: [remarkMath],
         rehypePlugins: [
           rehypeMathjax,
+          rehypeMarkStandaloneMath,
           [rehypeRewriteAlgebrica, { slugMap, dangling, currentSection }],
           rehypeSectionizeAlgebrica,
           [rehypeSanitize, makeMathSchema(defaultSchema)],
