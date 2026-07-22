@@ -51,7 +51,11 @@ function countRenderedMath(html) {
   // Sanitize 把 MathJax 伴随 <style> 剥成裸文本的回归信号:CSS 选择器出现在标签外
   const visibleText = html.replace(/<style[\s\S]*?<\/style>/g, ' ').replace(/<[^>]+>/g, ' ');
   const cssLeaks = (visibleText.match(/data-mml-node|stroke-width: 3/g) || []).length;
-  return { containers, errors, cssLeaks };
+  // <use> 必须携带 xlink:href/href,否则字形引用为空、公式不可见(xLinkHref 大小写回归)
+  const useTotal = (html.match(/<use[\s>]/g) || []).length;
+  const useWithRef = (html.match(/<use[^>]*(xlink:href|href)=/g) || []).length;
+  const brokenRefs = containers > 0 && useTotal > 0 && useWithRef === 0 ? 1 : 0;
+  return { containers, errors, cssLeaks, brokenRefs };
 }
 
 async function checkFile(path) {
@@ -152,8 +156,8 @@ async function runCorpus() {
     const result = await checkFile(article.path);
     totalSrc += result.srcTotal;
     totalRendered += result.rendered.containers;
-    totalErrors += result.rendered.errors + result.rendered.cssLeaks;
-    if (result.deviation !== 0 || result.rendered.errors > 0 || result.rendered.cssLeaks > 0) {
+    totalErrors += result.rendered.errors + result.rendered.cssLeaks + result.rendered.brokenRefs;
+    if (result.deviation !== 0 || result.rendered.errors > 0 || result.rendered.cssLeaks > 0 || result.rendered.brokenRefs > 0) {
       deviations.push(formatResult(result));
     }
   }
