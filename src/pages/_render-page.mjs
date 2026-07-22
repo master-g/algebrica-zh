@@ -12,6 +12,8 @@ const slugMap = buildSlugMap({ source: 'fs', strictCollisions: true, strictEmpty
 function makeMathSchema(base) {
   return {
     ...base,
+    // 关闭 id/name 的 user-content- 前缀改写(同 astro.config.mjs:防止字形引用悬空)。
+    clobber: [],
     tagNames: [
       ...(base.tagNames || []),
       // MathJax SVG 的伴随 <style> 块必须保留为元素(同 astro.config.mjs)。

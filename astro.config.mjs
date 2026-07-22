@@ -17,6 +17,9 @@ console.log(`[astro-config] built slug map: ${slugMap.size} articles`);
 function makeMathSchema(base) {
   return {
     ...base,
+    // 关闭 id/name 的 user-content- 前缀改写:MathJax 的 <path id> 与 <use xlink:href>
+    // 必须逐字对应,前缀化会让全部字形引用悬空(公式空白)。元素均为管线产出,无注入面。
+    clobber: [],
     tagNames: [
       ...(base.tagNames || []),
       // MathJax SVG 的伴随 <style> 块必须保留为元素——标签被剥掉会把整段 CSS 以文本泄漏进页面。

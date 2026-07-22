@@ -55,7 +55,12 @@ function countRenderedMath(html) {
   const useTotal = (html.match(/<use[\s>]/g) || []).length;
   const useWithRef = (html.match(/<use[^>]*(xlink:href|href)=/g) || []).length;
   const brokenRefs = containers > 0 && useTotal > 0 && useWithRef === 0 ? 1 : 0;
-  return { containers, errors, cssLeaks, brokenRefs };
+  // 端到端字形完整性:每个 xlink:href="#X" 必须有 id="X" 存在(clobber 前缀化回归)
+  const ids = new Set((html.match(/ id="[^"]+"/g) || []).map((s) => s.slice(5, -1)));
+  const refs = (html.match(/<use[^>]*(?:xlink:href|href)="(#[^"]+)"/g) || [])
+    .map((s) => s.match(/="(#[^"]+)"/)[1].slice(1));
+  const dangling = refs.filter((r) => !ids.has(r)).length;
+  return { containers, errors, cssLeaks, brokenRefs, dangling };
 }
 
 async function checkFile(path) {
@@ -156,8 +161,8 @@ async function runCorpus() {
     const result = await checkFile(article.path);
     totalSrc += result.srcTotal;
     totalRendered += result.rendered.containers;
-    totalErrors += result.rendered.errors + result.rendered.cssLeaks + result.rendered.brokenRefs;
-    if (result.deviation !== 0 || result.rendered.errors > 0 || result.rendered.cssLeaks > 0 || result.rendered.brokenRefs > 0) {
+    totalErrors += result.rendered.errors + result.rendered.cssLeaks + result.rendered.brokenRefs + result.rendered.dangling;
+    if (result.deviation !== 0 || result.rendered.errors > 0 || result.rendered.cssLeaks > 0 || result.rendered.brokenRefs > 0 || result.rendered.dangling > 0) {
       deviations.push(formatResult(result));
     }
   }
