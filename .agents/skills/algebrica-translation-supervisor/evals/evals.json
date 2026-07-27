@@ -18,6 +18,12 @@
       "prompt": "OMP 已经生成 synthetic-division 的译文。帮我验收；如果公式数量、知识图谱或移动端布局有问题，不要继续下一篇。",
       "expected_output": "Runs deterministic translation and LaTeX topology gates, performs source-level mathematical/editorial review and desktop/mobile browser acceptance, reports PASS or FAIL with evidence, and does not start another article after a failure.",
       "files": []
+    },
+    {
+      "id": 4,
+      "prompt": "验收通过了，提交这篇文章并合回 main。",
+      "expected_output": "Creates a short-lived feat/zh-<slug> branch, stages only the admitted article and zh graph paths, commits, fast-forwards main, pushes, deletes the feature branch, and verifies only main remains; never commits directly on main or creates a merge commit.",
+      "files": []
     }
   ]
 }

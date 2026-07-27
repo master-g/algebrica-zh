@@ -181,7 +181,46 @@ candidate if the retry regresses. Never skip directly to acceptance.
 
 Stop and ask for user judgment when the proposed correction changes the source mathematics, removes a source section, adds new explanatory content, or makes a visible design choice.
 
-## 7. Pause and hand off cleanly
+## 7. Land accepted work
+
+Only after the user asks to commit. Never commit directly on `main`.
+
+1. Create a short-lived branch named after the article:
+
+   ```bash
+   git checkout -b feat/zh-<slug>
+   ```
+
+2. Stage only the admitted paths and commit:
+
+   ```bash
+   git add content-zh/<section>/<slug>.md src/data/article-graphs-zh.json
+   git commit -m "feat(content): translate <section>/<slug> to zh"
+   ```
+
+   The commit body lists the gates run and any reviewer edits.
+
+3. Fast-forward `main`, push, and delete the branch:
+
+   ```bash
+   git checkout main
+   git merge --ff-only feat/zh-<slug>
+   git push origin main
+   git branch -d feat/zh-<slug>
+   ```
+
+   If the branch was pushed, also `git push origin --delete feat/zh-<slug>` and `git fetch --prune origin`.
+
+4. Verify the end state: working tree clean, and only `main` exists locally and remotely:
+
+   ```bash
+   git branch -a
+   gh api repos/<owner>/<repo>/branches --jq '.[].name'
+   ```
+
+Routine admitted translations land as fast-forwards with no merge commit or PR; history on `main` stays linear. If the fast-forward is not possible, stop and report instead of merging.
+
+## 8. Pause and hand off cleanly
 
 When pausing, state:
 
