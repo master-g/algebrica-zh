@@ -1,6 +1,110 @@
 import { describe, it } from 'node:test';
 import assert from 'node:assert/strict';
-import { validateTranslation, checkGlossaryMapping } from '../../scripts/lib/validate.mjs';
+import {
+  validateTranslation,
+  validateMathSyntax,
+  validateVisibleMathText,
+  validateShortcodeIntegrity,
+  validateMarkdownStructureIntegrity,
+  checkGlossaryMapping,
+} from '../../scripts/lib/validate.mjs';
+
+describe('validateMathSyntax', () => {
+  it('can validate a translated fragment without frontmatter', () => {
+    assert.deepEqual(validateMathSyntax('## 例子\n\n公式 $x + 1$。'), []);
+    assert.ok(validateMathSyntax('## 例子\n\n错误 $，正文$。').some((error) => /KaTeX error/.test(error)));
+  });
+
+  it('does not parse display math a second time as inline math', () => {
+    assert.deepEqual(
+      validateMathSyntax('编号公式：\n\n$$x^2 + 1 \\tag{1}$$\n\n行内公式 $x+1$。'),
+      [],
+    );
+  });
+});
+
+describe('validateVisibleMathText', () => {
+  it('rejects English prose that remains visible inside math text', () => {
+    assert.deepEqual(
+      validateVisibleMathText('$$x > 0 \\quad \\text{for all } x$$'),
+      ['unlocalized English in math text: "for all"'],
+    );
+  });
+
+  it('accepts localized labels and conventional mathematical notation', () => {
+    assert.deepEqual(
+      validateVisibleMathText(
+        '$$x > 0 \\quad \\text{对所有 } x$$\n\n' +
+        '$\\text{Log} x + \\text{colog}_a x + \\text{P}$',
+      ),
+      [],
+    );
+  });
+});
+
+describe('validateShortcodeIntegrity', () => {
+  const block = `[shortcode="intervals"]
+| | $0$ | |
+|---|---|---|
+| | sign+r-in-c-h | |
+[/shortcode]`;
+
+  it('passes when the translated shortcode block is byte-identical', () => {
+    assert.deepEqual(
+      validateShortcodeIntegrity(`Before\n${block}\nAfter`, `之前\n${block}\n之后`),
+      [],
+    );
+  });
+
+  it('rejects changed or missing shortcode blocks', () => {
+    assert.match(
+      validateShortcodeIntegrity(block, block.replace('sign+r-in-c-h', 'sign+r-in-o-h'))[0],
+      /shortcode block mismatch/,
+    );
+    assert.match(validateShortcodeIntegrity(block, '没有数轴')[0], /shortcode block mismatch/);
+  });
+
+  it('rejects malformed or orphan markers even when both sides contain them', () => {
+    assert.match(
+      validateShortcodeIntegrity('| [/shortcode] |', '| [/shortcode] |')[0],
+      /orphan or malformed shortcode marker/,
+    );
+    assert.match(
+      validateShortcodeIntegrity(
+        '[shortcode=“intervals"]\n| sign+s |\n[/shortcode]',
+        '[shortcode=“intervals"]\n| sign+s |\n[/shortcode]',
+      )[0],
+      /orphan or malformed shortcode marker/,
+    );
+  });
+});
+
+describe('validateMarkdownStructureIntegrity', () => {
+  it('passes when headings, links, and images are structurally preserved', () => {
+    const source = '## Definition\n\nRead [sets](../sets/) and ![diagram](svg/a.svg).';
+    const translated = '## 定义\n\n阅读[集合](../sets/)以及![图示](/assets/a.svg)。';
+    assert.deepEqual(validateMarkdownStructureIntegrity(source, translated), []);
+  });
+
+  it('preserves class table wrappers byte-for-byte while allowing table translation', () => {
+    const source = '[class="table-1"]\n\n| Identity | Result |\n|---|---|\n\n[/class]';
+    const translated = '[class="table-1"]\n\n| 恒等式 | 结果 |\n|---|---|\n\n[/class]';
+    assert.deepEqual(validateMarkdownStructureIntegrity(source, translated), []);
+    assert.match(
+      validateMarkdownStructureIntegrity(source, translated.replace('table-1', 'table-sign'))[0],
+      /class wrapper mismatch/,
+    );
+  });
+
+  it('rejects a Markdown link converted into quoted text followed by a URL', () => {
+    const source = 'Read [equations](../equations/).';
+    const translated = '阅读「方程」(../equations/)。';
+    assert.match(
+      validateMarkdownStructureIntegrity(source, translated)[0],
+      /Markdown link count mismatch/,
+    );
+  });
+});
 
 function makeZhFile(overrides = {}) {
   const fm = {
@@ -100,6 +204,28 @@ describe('validateTranslation', () => {
     assert.deepEqual(result.errors, []);
   });
 
+  it('allows internal link to dangling-links.json text-class slug', async () => {
+    const body = `[符号函数](../sign-functions/)`;
+    const result = await validateTranslation('example.md', makeZhFile({ body }), {
+      dangling: { external: [], text: ['sign-functions'] },
+    });
+    assert.equal(result.ok, true);
+    assert.deepEqual(result.errors, []);
+  });
+
+  it('allows an internal link whose explicit alias resolves to an article', async () => {
+    const body = `[欧拉公式](../eulers-formula/)`;
+    const result = await validateTranslation('example.md', makeZhFile({ body }), {
+      dangling: {
+        aliases: { 'eulers-formula': 'euler-formula' },
+        external: [],
+        text: [],
+      },
+    });
+    assert.equal(result.ok, true);
+    assert.deepEqual(result.errors, []);
+  });
+
   it('warns on raw HTML tags', async () => {
     const body = `<div>原始 HTML</div>`;
     const result = await validateTranslation('example.md', makeZhFile({ body }), { dangling: { external: [], text: [] } });
@@ -124,6 +250,14 @@ describe('checkGlossaryMapping', () => {
 
   it('passes when source contains "function" and translation contains "函数"', () => {
     const errors = checkGlossaryMapping('This is a function.', '这是一个函数。');
+    assert.deepEqual(errors, []);
+  });
+
+  it('does not require component terms inside a matched longer glossary term', () => {
+    const errors = checkGlossaryMapping(
+      'A commutative ring can be an integral domain.',
+      '交换环可以是整环。',
+    );
     assert.deepEqual(errors, []);
   });
 });

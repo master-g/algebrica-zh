@@ -4621,6 +4621,95 @@
     "enables": 0,
     "canvasHeight": 390
   },
+  "euler-formula": {
+    "source": "https://algebrica.org/euler-formula/",
+    "dataset": {
+      "name": "root",
+      "children": [
+        {
+          "name": "formula",
+          "children": [
+            {
+              "name": "Euler's formula"
+            },
+            {
+              "name": "complex exponential"
+            },
+            {
+              "name": "unit circle"
+            },
+            {
+              "name": "modulus"
+            },
+            {
+              "name": "argument"
+            },
+            {
+              "name": "periodicity"
+            }
+          ]
+        },
+        {
+          "name": "proofs",
+          "children": [
+            {
+              "name": "Taylor series"
+            },
+            {
+              "name": "absolute convergence"
+            },
+            {
+              "name": "powers of i"
+            },
+            {
+              "name": "even and odd terms"
+            },
+            {
+              "name": "differential equation"
+            },
+            {
+              "name": "uniqueness"
+            }
+          ]
+        },
+        {
+          "name": "applications",
+          "children": [
+            {
+              "name": "Euler's identity"
+            },
+            {
+              "name": "trigonometric form"
+            },
+            {
+              "name": "exponential form"
+            },
+            {
+              "name": "De Moivre's theorem"
+            },
+            {
+              "name": "roots of unity"
+            },
+            {
+              "name": "addition formulas"
+            },
+            {
+              "name": "complex conjugation"
+            }
+          ]
+        }
+      ]
+    },
+    "type": "Identity",
+    "description": "The structure of the entry is shown in the conceptual map, where each branch represents a core component and the sub-nodes highlight the specific notions discussed.",
+    "difficulty": {
+      "level": 3,
+      "label": "Advanced"
+    },
+    "requires": 3,
+    "enables": 0,
+    "canvasHeight": 440
+  },
   "euler-number-limit-sequence": {
     "source": "https://algebrica.org/euler-number-limit-sequence/",
     "dataset": {

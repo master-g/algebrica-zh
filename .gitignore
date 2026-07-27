@@ -3,3 +3,5 @@ dist/
 .env
 public/assets/
 .astro/
+browser-data/
+translation-failures.json

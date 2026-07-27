@@ -1,7 +1,7 @@
 import { readFile, readdir, writeFile } from 'node:fs/promises';
 import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { extractArticleGraph } from '../src/lib/article-graph.mjs';
+import { fetchArticleGraph } from '../src/lib/article-graph.mjs';
 import { parseFrontmatter, splitFrontmatter } from './lib/frontmatter.mjs';
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), '..');
@@ -21,11 +21,16 @@ async function articleSources() {
       if (!filename.endsWith('.md')) continue;
       const markdown = await readFile(join(dir, filename), 'utf8');
       const data = parseFrontmatter(splitFrontmatter(markdown).frontmatter);
-      if (data?.source) entries.push(data.source);
+      if (data?.source) {
+        entries.push({
+          slug: filename.slice(0, -3),
+          source: data.source,
+        });
+      }
     }
   }
 
-  return [...new Set(entries)].sort();
+  return entries.sort((left, right) => left.slug.localeCompare(right.slug));
 }
 
 async function fetchHtml(url) {
@@ -52,10 +57,6 @@ async function fetchHtml(url) {
   throw new Error(`${url}: ${lastError?.message ?? 'request failed'}`);
 }
 
-function slugFromUrl(url) {
-  return new URL(url).pathname.split('/').filter(Boolean).at(-1);
-}
-
 async function main() {
   const sources = await articleSources();
   const graphs = {};
@@ -67,13 +68,13 @@ async function main() {
 
   async function worker() {
     while (cursor < sources.length) {
-      const source = sources[cursor];
+      const article = sources[cursor];
       cursor += 1;
       try {
-        const graph = extractArticleGraph(await fetchHtml(source));
-        if (graph) graphs[slugFromUrl(source)] = { source, ...graph };
+        const graph = await fetchArticleGraph({ ...article, fetchHtml });
+        if (graph) graphs[article.slug] = graph;
       } catch (error) {
-        errors.push(error.message);
+        errors.push(`${article.source}: ${error.message}`);
       }
       completed += 1;
       if (completed % 20 === 0 || completed === sources.length) {

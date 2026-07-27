@@ -1,0 +1,23 @@
+{
+  "skill_name": "algebrica-translation-supervisor",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "继续监工翻译接下来的两篇文章，使用 omp 和 zhipu-coding-plan/glm-5.2，质量不过关就重试。",
+      "expected_output": "Reads repository status, selects only one target, explains that the workspace command invokes OMP, requests immediate approval before that invocation, and describes sequential admission rather than launching an unreviewed batch.",
+      "files": []
+    },
+    {
+      "id": 2,
+      "prompt": "先审计 intervals，不要开始新翻译。表格里出现了 [shortcode=“intervals”] 和孤立的 [/shortcode]，同时检查公式里的 \\\\ 和 //。",
+      "expected_output": "Performs a read-only source/candidate/render audit, treats complete shortcode blocks as opaque, rejects orphan markers, distinguishes LaTeX row breaks from escaped braces and literal slashes, and stops without invoking OMP.",
+      "files": []
+    },
+    {
+      "id": 3,
+      "prompt": "OMP 已经生成 synthetic-division 的译文。帮我验收；如果公式数量、知识图谱或移动端布局有问题，不要继续下一篇。",
+      "expected_output": "Runs deterministic translation and LaTeX topology gates, performs source-level mathematical/editorial review and desktop/mobile browser acceptance, reports PASS or FAIL with evidence, and does not start another article after a failure.",
+      "files": []
+    }
+  ]
+}

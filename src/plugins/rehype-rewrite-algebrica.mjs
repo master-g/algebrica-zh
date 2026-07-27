@@ -5,7 +5,8 @@ import { visit } from 'unist-util-visit';
  *
  * Options:
  *   - slugMap: Map<slug, section> for articles.
- *   - dangling: { external: string[], text: string[] } known dangling classifications.
+ *   - dangling: { aliases: Record<string, string>, external: string[], text: string[] }
+ *     known renamed and dangling classifications.
  *   - warn: function to emit build warnings (defaults to console.warn).
  *   - currentSection: optional override for the current markdown file's section.
  *
@@ -17,6 +18,7 @@ import { visit } from 'unist-util-visit';
 export default function rehypeRewriteAlgebrica({ slugMap = new Map(), dangling = { external: [], text: [] }, warn = console.warn, currentSection: currentSectionOverride } = {}) {
   const external = new Set(dangling.external || []);
   const text = new Set(dangling.text || []);
+  const aliases = new Map(Object.entries(dangling.aliases || {}));
 
   return (tree, file) => {
     const currentSection = currentSectionOverride ?? inferCurrentSection(file);
@@ -28,6 +30,16 @@ export default function rehypeRewriteAlgebrica({ slugMap = new Map(), dangling =
         if (typeof href !== 'string' || !href.startsWith('../')) return;
 
         const target = href.replace(/^(\.\.\/)+/, '').replace(/\/$/, '');
+
+        if (aliases.has(target)) {
+          const canonical = aliases.get(target);
+          if (slugMap.has(canonical)) {
+            node.properties.href = `/${canonical}/`;
+          } else {
+            warn(`alias target missing: ${target} -> ${canonical}`);
+          }
+          return;
+        }
 
         // Repo-relative ../../<section>/<slug>/ form (e.g. equations/loss-of-roots.md
         // links ../../polynomials/roots-of-a-polynomial/) resolves to the article route.

@@ -1,9 +1,12 @@
 import { describe, it } from 'node:test';
 import assert from 'node:assert/strict';
 import {
+  articleGraphSourceCandidates,
   extractArticleGraph,
+  fetchArticleGraph,
   layoutArticleGraph,
 } from '../../src/lib/article-graph.mjs';
+import { applyArticleGraphTranslation } from '../../src/lib/article-graphs.mjs';
 
 const graphHtml = `
 <section class="collapsible-tree no-mobile">
@@ -43,6 +46,34 @@ describe('article graph data', () => {
     assert.equal(extractArticleGraph('<article>No graph here.</article>'), null);
   });
 
+  it('falls back from a stale source slug to the local article slug', async () => {
+    const requests = [];
+    const result = await fetchArticleGraph({
+      source: 'https://algebrica.org/eulers-formula/',
+      slug: 'euler-formula',
+      fetchHtml: async (url) => {
+        requests.push(url);
+        return url.endsWith('/euler-formula/')
+          ? graphHtml
+          : '<article>No graph here.</article>';
+      },
+    });
+
+    assert.deepEqual(articleGraphSourceCandidates(
+      'https://algebrica.org/eulers-formula/',
+      'euler-formula',
+    ), [
+      'https://algebrica.org/eulers-formula/',
+      'https://algebrica.org/euler-formula/',
+    ]);
+    assert.deepEqual(requests, [
+      'https://algebrica.org/eulers-formula/',
+      'https://algebrica.org/euler-formula/',
+    ]);
+    assert.equal(result.source, 'https://algebrica.org/euler-formula/');
+    assert.equal(result.type, 'Concept');
+  });
+
   it('lays out every node and link without invalid coordinates', () => {
     const graph = extractArticleGraph(graphHtml);
     const layout = layoutArticleGraph(graph.dataset, { height: graph.canvasHeight });
@@ -55,5 +86,33 @@ describe('article graph data', () => {
     assert.equal(layout.nodes.find((node) => node.name === 'membership').y, 238);
     assert.ok(layout.nodes.every((node) => Number.isFinite(node.x) && Number.isFinite(node.y)));
     assert.ok(layout.links.every((link) => !link.path.includes('NaN')));
+  });
+
+  it('applies Chinese graph text without losing upstream numeric metadata', () => {
+    const source = {
+      ...extractArticleGraph(graphHtml),
+      source: 'https://algebrica.org/example/',
+    };
+    const translated = applyArticleGraphTranslation(source, {
+      dataset: {
+        name: '根',
+        children: [
+          {
+            name: '基础',
+            children: [{ name: '定义' }, { name: '隶属关系' }],
+          },
+        ],
+      },
+      type: '概念',
+      description: '本文概念之间的关系图。',
+      difficulty: { label: '中级' },
+    });
+
+    assert.equal(translated.dataset.children[0].name, '基础');
+    assert.equal(translated.difficulty.level, 2);
+    assert.equal(translated.difficulty.label, '中级');
+    assert.equal(translated.requires, 0);
+    assert.equal(translated.enables, 11);
+    assert.equal(translated.source, 'https://algebrica.org/example/');
   });
 });

@@ -3,6 +3,8 @@ terms:
     zh: 函数
   - en: derivative
     zh: 导数
+  - en: integral domain
+    zh: 整环
   - en: integral
     zh: 积分
   - en: definite integral
@@ -23,8 +25,50 @@ terms:
     zh: 不等式
   - en: set
     zh: 集合
+  - en: ordered pair
+    zh: 有序对
+  - en: equivalence class
+    zh: 等价类
   - en: vector
     zh: 向量
+  - en: vector space
+    zh: 向量空间
+  - en: scalar multiplication
+    zh: 数乘
+  - en: scalar
+    zh: 标量
+  - en: zero vector
+    zh: 零向量
+  - en: linear combination
+    zh: 线性组合
+  - en: linearly independent
+    zh: 线性无关
+  - en: linear independence
+    zh: 线性无关
+  - en: linearly dependent
+    zh: 线性相关
+  - en: subspace
+    zh: 子空间
+  - en: standard basis
+    zh: 标准基
+  - en: basis
+    zh: 基
+  - en: dimension
+    zh: 维数
+  - en: finite-dimensional
+    zh: 有限维
+  - en: linear transformation
+    zh: 线性变换
+  - en: linear map
+    zh: 线性映射
+  - en: linear isomorphism
+    zh: 线性同构
+  - en: rank-nullity theorem
+    zh: 秩-零化度定理
+  - en: nullity
+    zh: 零化度
+  - en: rank
+    zh: 秩
   - en: matrix
     zh: 矩阵
   - en: probability
@@ -43,6 +87,428 @@ terms:
     zh: 阶乘
   - en: theorem
     zh: 定理
+  - en: divisibility
+    zh: 整除性
+  - en: Euclidean division
+    zh: 欧几里得除法
+  - en: modulo operator
+    zh: 取模运算符
+  - en: modular arithmetic
+    zh: 模运算
+  - en: quotient
+    zh: 商
+  - en: remainder
+    zh: 余数
+  - en: total order
+    zh: 全序
+  - en: additive opposite
+    zh: 相反数
+  - en: natural number
+    zh: 自然数
+  - en: rational number
+    zh: 有理数
+  - en: irrational number
+    zh: 无理数
+  - en: real number
+    zh: 实数
+  - en: real line
+    zh: 实数轴
+  - en: order of operations
+    zh: 运算顺序
+  - en: parentheses
+    zh: 括号
+  - en: closure property
+    zh: 封闭性
+  - en: closure
+    zh: 封闭性
+  - en: commutative property
+    zh: 交换律
+  - en: commutativity
+    zh: 交换律
+  - en: associative property
+    zh: 结合律
+  - en: associativity
+    zh: 结合律
+  - en: distributive property
+    zh: 分配律
+  - en: distributivity
+    zh: 分配律
+  - en: additive identity
+    zh: 加法单位元
+  - en: multiplicative identity
+    zh: 乘法单位元
+  - en: additive inverse
+    zh: 加法逆元
+  - en: identity element
+    zh: 单位元
+  - en: inverse element
+    zh: 逆元
+  - en: order relation
+    zh: 序关系
+  - en: trichotomy law
+    zh: 三歧律
+  - en: trichotomy
+    zh: 三歧性
+  - en: transitivity
+    zh: 传递性
+  - en: binary operation
+    zh: 二元运算
+  - en: abelian group
+    zh: 阿贝尔群
+  - en: group
+    zh: 群
+  - en: subgroup
+    zh: 子群
+  - en: cyclic group
+    zh: 循环群
+  - en: symmetric group
+    zh: 对称群
+  - en: group homomorphism
+    zh: 群同态
+  - en: homomorphism
+    zh: 同态
+  - en: monomorphism
+    zh: 单态射
+  - en: epimorphism
+    zh: 满态射
+  - en: isomorphism
+    zh: 同构
+  - en: kernel
+    zh: 核
+  - en: endomorphism
+    zh: 自同态
+  - en: automorphism
+    zh: 自同构
+  - en: first isomorphism theorem
+    zh: 第一同构定理
+  - en: identity map
+    zh: 恒等映射
+  - en: coset
+    zh: 陪集
+  - en: generator
+    zh: 生成元
+  - en: order of an element
+    zh: 元素的阶
+  - en: cancellation law
+    zh: 消去律
+  - en: finite group
+    zh: 有限群
+  - en: monoid
+    zh: 幺半群
+  - en: left module
+    zh: 左模
+  - en: right module
+    zh: 右模
+  - en: free module
+    zh: 自由模
+  - en: torsion element
+    zh: 挠元
+  - en: torsion-free
+    zh: 无挠
+  - en: torsion module
+    zh: 挠模
+  - en: submodule
+    zh: 子模
+  - en: proper submodule
+    zh: 真子模
+  - en: module homomorphism
+    zh: 模同态
+  - en: module isomorphism
+    zh: 模同构
+  - en: module
+    zh: 模
+  - en: ring of scalars
+    zh: 标量环
+  - en: commutative ring
+    zh: 交换环
+  - en: polynomial ring
+    zh: 多项式环
+  - en: quotient ring
+    zh: 商环
+  - en: ring homomorphism
+    zh: 环同态
+  - en: ring isomorphism
+    zh: 环同构
+  - en: ring with unity
+    zh: 含幺环
+  - en: unital ring
+    zh: 含幺环
+  - en: ring
+    zh: 环
+  - en: zero divisor
+    zh: 零因子
+  - en: proper subring
+    zh: 真子环
+  - en: subring
+    zh: 子环
+  - en: left ideal
+    zh: 左理想
+  - en: right ideal
+    zh: 右理想
+  - en: two-sided ideal
+    zh: 双边理想
+  - en: ideal
+    zh: 理想
+  - en: strictly increasing
+    zh: 严格递增
+  - en: rational exponent
+    zh: 有理指数
+  - en: real exponent
+    zh: 实指数
+  - en: power rule
+    zh: 幂运算律
+  - en: power
+    zh: 幂
+  - en: base
+    zh: 底数
+  - en: density
+    zh: 稠密性
+  - en: completeness
+    zh: 完备性
+  - en: number line
+    zh: 数轴
+  - en: vertical bars
+    zh: 竖线
+  - en: sign function
+    zh: 符号函数
+  - en: reverse triangle inequality
+    zh: 反三角不等式
+  - en: even function
+    zh: 偶函数
+  - en: norm
+    zh: 范数
+  - en: principal square root
+    zh: 主平方根
+  - en: distance
+    zh: 距离
+  - en: strict inequality
+    zh: 严格不等式
+  - en: open interval
+    zh: 开区间
+  - en: closed interval
+    zh: 闭区间
+  - en: half-open interval
+    zh: 半开区间
+  - en: bounded interval
+    zh: 有界区间
+  - en: unbounded interval
+    zh: 无界区间
+  - en: degenerate interval
+    zh: 退化区间
+  - en: endpoint
+    zh: 端点
+  - en: neighborhood
+    zh: 邻域
+  - en: epsilon-neighborhood
+    zh: ε-邻域
+  - en: interior point
+    zh: 内点
+  - en: connectedness
+    zh: 连通性
+  - en: connected
+    zh: 连通
+  - en: convexity
+    zh: 凸性
+  - en: image
+    zh: 像
+  - en: irrationality
+    zh: 无理性
+  - en: partition
+    zh: 划分
+  - en: completion
+    zh: 完备化
+  - en: proof by contradiction
+    zh: 反证法
+  - en: infinite descent
+    zh: 无限递降法
+  - en: algebraic number
+    zh: 代数数
+  - en: transcendental number
+    zh: 超越数
+  - en: golden ratio
+    zh: 黄金分割比
+  - en: Lindemann-Weierstrass theorem
+    zh: 林德曼–魏尔斯特拉斯定理
+  - en: perfect square
+    zh: 完全平方数
+  - en: perfect cube
+    zh: 完全立方数
+  - en: natural logarithm
+    zh: 自然对数
+  - en: Bernoulli's inequality
+    zh: 伯努利不等式
+  - en: hierarchy of growth rates
+    zh: 增长阶层级
+  - en: growth rate
+    zh: 增长率
+  - en: relatively prime
+    zh: 互素
+  - en: Cauchy sequence
+    zh: 柯西数列
+  - en: positive sequence
+    zh: 正项数列
+  - en: upper bound
+    zh: 上界
+  - en: bounded above
+    zh: 有上界
+  - en: supremum
+    zh: 上确界
+  - en: lower bound
+    zh: 下界
+  - en: bounded below
+    zh: 有下界
+  - en: greatest lower bound
+    zh: 最大下界
+  - en: infimum
+    zh: 下确界
+  - en: maximum
+    zh: 最大值
+  - en: minimum
+    zh: 最小值
+  - en: bounded set
+    zh: 有界集
+  - en: approximation property
+    zh: 逼近性质
+  - en: attained
+    zh: 取到
+  - en: antisymmetry
+    zh: 反对称性
+  - en: floor function
+    zh: 下取整函数
+  - en: integer part
+    zh: 整数部分
+  - en: Dedekind cut
+    zh: 戴德金分割
+  - en: n-th root
+    zh: n 次方根
+  - en: rational exponentiation
+    zh: 有理指数幂
+  - en: triangle inequality
+    zh: 三角不等式
+  - en: termwise
+    zh: 逐项
+  - en: isomorphic
+    zh: 同构
+  - en: nested interval theorem
+    zh: 区间套定理
+  - en: nested intervals
+    zh: 区间套
+  - en: non-decreasing
+    zh: 单调不减
+  - en: singleton
+    zh: 单点集
+  - en: Cantor's diagonal argument
+    zh: 康托尔对角线论证
+  - en: Bolzano-Weierstrass theorem
+    zh: 波尔查诺–魏尔斯特拉斯定理
+  - en: convergent subsequence
+    zh: 收敛子列
+  - en: accumulation point
+    zh: 聚点
+  - en: complete ordered field
+    zh: 完备有序域
+  - en: Euclidean space
+    zh: 欧几里得空间
+  - en: scalar field
+    zh: 标量域
+  - en: bijection
+    zh: 双射
+  - en: uncountable
+    zh: 不可数
+  - en: Pythagorean school
+    zh: 毕达哥拉斯学派
+  - en: unit square
+    zh: 单位正方形
+  - en: regular pentagon
+    zh: 正五边形
+  - en: numerator
+    zh: 分子
+  - en: denominator
+    zh: 分母
+  - en: lowest terms
+    zh: 最简形式
+  - en: reduced form
+    zh: 最简形式
+  - en: equivalence relation
+    zh: 等价关系
+  - en: greatest common divisor
+    zh: 最大公约数
+  - en: canonical representative
+    zh: 规范代表元
+  - en: field
+    zh: 域
+  - en: finite field
+    zh: 有限域
+  - en: prime field
+    zh: 素域
+  - en: subfield
+    zh: 子域
+  - en: field extension
+    zh: 域扩张
+  - en: degree of the extension
+    zh: 扩张次数
+  - en: characteristic of a field
+    zh: 域的特征
+  - en: characteristic
+    zh: 特征
+  - en: field homomorphism
+    zh: 域同态
+  - en: field isomorphism
+    zh: 域同构
+  - en: algebraically closed
+    zh: 代数闭
+  - en: fundamental theorem of algebra
+    zh: 代数学基本定理
+  - en: prime power
+    zh: 素数幂
+  - en: ordered field
+    zh: 有序域
+  - en: multiplicative inverse
+    zh: 乘法逆元
+  - en: reciprocal
+    zh: 倒数
+  - en: decimal expansion
+    zh: 小数展开
+  - en: terminating decimal
+    zh: 有限小数
+  - en: periodic decimal
+    zh: 循环小数
+  - en: long division
+    zh: 长除法
+  - en: prime factorisation
+    zh: 质因数分解
+  - en: Euler's totient function
+    zh: 欧拉函数
+  - en: Archimedean property
+    zh: 阿基米德性质
+  - en: dense
+    zh: 稠密
+  - en: countable
+    zh: 可数
+  - en: one-to-one correspondence
+    zh: 一一对应
+  - en: enumeration
+    zh: 枚举
+  - en: cardinality
+    zh: 基数
+  - en: uncountability
+    zh: 不可数性
+  - en: completeness axiom
+    zh: 完备性公理
+  - en: least upper bound
+    zh: 最小上界
+  - en: Peano axioms
+    zh: 皮亚诺公理
+  - en: principle of mathematical induction
+    zh: 数学归纳法原理
+  - en: successor function
+    zh: 后继函数
+  - en: well-ordering principle
+    zh: 良序原理
+  - en: John von Neumann
+    zh: 约翰·冯·诺伊曼
+  - en: Dedekind
+    zh: 戴德金
   - en: median
     zh: 中位数
   - en: quantile
@@ -66,7 +532,7 @@ terms:
   - en: domain
     zh: 定义域
   - en: codomain
-    zh: 上域
+    zh: 陪域
   - en: range
     zh: 值域
   - en: continuity
@@ -89,10 +555,44 @@ terms:
     zh: 组合
   - en: binomial coefficient
     zh: 二项式系数
+  - en: generalized binomial coefficient
+    zh: 广义二项式系数
+  - en: Pascal's triangle
+    zh: 杨辉三角
+  - en: Vandermonde identity
+    zh: 范德蒙德恒等式
+  - en: recurrence relation
+    zh: 递推关系
+  - en: memoization
+    zh: 记忆化
+  - en: mutually exclusive
+    zh: 互斥
+  - en: binomial distribution
+    zh: 二项分布
+  - en: gamma function
+    zh: 伽马函数
+  - en: Stirling's approximation
+    zh: 斯特林近似
+  - en: recursive definition
+    zh: 递归定义
+  - en: asymptotic analysis
+    zh: 渐近分析
+  - en: improper integral
+    zh: 反常积分
+  - en: normalizing constant
+    zh: 归一化常数
+  - en: Poisson distribution
+    zh: 泊松分布
   - en: exponent
     zh: 指数
   - en: radical
     zh: 根式
+  - en: indeterminate form
+    zh: 未定式
+  - en: Euler's formula
+    zh: 欧拉公式
+  - en: Euler's identity
+    zh: 欧拉恒等式
   - en: slope
     zh: 斜率
   - en: tangent line
@@ -108,6 +608,7 @@ terms:
   - en: necessary condition
     zh: 必要条件
 do_not_translate:
+  - PEMDAS
   - KaTeX
   - Algebrica
   - MathJax

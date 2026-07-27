@@ -74,6 +74,34 @@ export function extractArticleGraph(html) {
   };
 }
 
+export function articleGraphSourceCandidates(source, slug) {
+  const candidates = [source];
+  const sourceUrl = new URL(source);
+  const sourceSlug = sourceUrl.pathname.split('/').filter(Boolean).at(-1);
+  if (sourceSlug !== slug) {
+    candidates.push(new URL(`/${slug}/`, sourceUrl.origin).href);
+  }
+  return candidates;
+}
+
+export async function fetchArticleGraph({ source, slug, fetchHtml }) {
+  let fetched = false;
+  let lastError = null;
+
+  for (const candidate of articleGraphSourceCandidates(source, slug)) {
+    try {
+      const graph = extractArticleGraph(await fetchHtml(candidate));
+      fetched = true;
+      if (graph) return { source: candidate, ...graph };
+    } catch (error) {
+      lastError = error;
+    }
+  }
+
+  if (!fetched && lastError) throw lastError;
+  return null;
+}
+
 /** Produce a stable, dependency-free left-to-right tree layout for static SVG. */
 export function layoutArticleGraph(dataset, { height = 440 } = {}) {
   const nodes = [];

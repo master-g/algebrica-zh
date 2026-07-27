@@ -3,6 +3,7 @@ import { createMarkdownProcessor } from '@astrojs/markdown-remark';
 import remarkMath from 'remark-math';
 import rehypeMathjax from 'rehype-mathjax/svg';
 import rehypeSanitize, { defaultSchema } from 'rehype-sanitize';
+import remarkIntervalsShortcode from '../plugins/remark-intervals-shortcode.mjs';
 import rehypeMarkStandaloneMath from '../plugins/rehype-mark-standalone-math.mjs';
 import rehypeRewriteAlgebrica from '../plugins/rehype-rewrite-algebrica.mjs';
 import rehypeSectionizeAlgebrica from '../plugins/rehype-sectionize-algebrica.mjs';
@@ -98,7 +99,7 @@ function getProcessor(currentSection = null) {
     processors.set(
       currentSection,
       createMarkdownProcessor({
-        remarkPlugins: [remarkMath],
+        remarkPlugins: [remarkMath, remarkIntervalsShortcode],
         rehypePlugins: [
           rehypeMathjax,
           rehypeMarkStandaloneMath,

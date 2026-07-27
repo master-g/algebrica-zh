@@ -1,10 +1,18 @@
 #!/usr/bin/env node
 import { readFileSync, readdirSync, existsSync } from 'node:fs';
-import { resolve } from 'node:path';
-import { validateTranslation, loadDangling } from './lib/validate.mjs';
+import { dirname, relative, resolve } from 'node:path';
+import { fileURLToPath } from 'node:url';
+import {
+  validateTranslation,
+  validateShortcodeIntegrity,
+  validateMarkdownStructureIntegrity,
+  loadDangling,
+} from './lib/validate.mjs';
 import { lintChineseCopywriting } from './lib/copywriting-lint.mjs';
 
-const CONTENT_ZH = resolve('content-zh');
+const __dirname = dirname(fileURLToPath(import.meta.url));
+const CONTENT_ZH = resolve(__dirname, '..', 'content-zh');
+const UPSTREAM = resolve(__dirname, '..', '..', 'algebrica');
 
 async function main() {
   const args = process.argv.slice(2);
@@ -41,15 +49,28 @@ async function main() {
   for (const file of files) {
     const text = readFileSync(file, 'utf8');
     const result = await validateTranslation(file, text, { dangling });
+    const relativePath = relative(CONTENT_ZH, file);
+    const sourcePath = resolve(UPSTREAM, relativePath);
+    if (!existsSync(sourcePath)) {
+      result.errors.push(`upstream source not found: ${sourcePath}`);
+      result.ok = false;
+    } else {
+      const sourceText = readFileSync(sourcePath, 'utf8');
+      result.errors.push(...validateShortcodeIntegrity(sourceText, text));
+      result.errors.push(...validateMarkdownStructureIntegrity(sourceText, text));
+      result.ok = result.errors.length === 0;
+    }
     const lint = lintChineseCopywriting(text);
     const id = file.replace(`${CONTENT_ZH}/`, '').replace(/\.md$/, '');
+    if (lint.errors.length) result.ok = false;
     const hasReports = result.errors.length || result.warnings.length;
-    const hasLint = lint.reports.length > 0;
+    const hasLint = lint.reports.length > 0 || lint.errors.length > 0;
     if (hasReports || hasLint) {
       console.log(`${result.ok ? 'WARN' : 'FAIL'} ${id}`);
       for (const e of result.errors) console.log(`  ERROR: ${e}`);
       for (const w of result.warnings) console.log(`  WARN: ${w}`);
       for (const r of lint.reports) console.log(`  LINT: line ${r.line}: ${r.message}`);
+      for (const e of lint.errors) console.log(`  LINT-ERROR: line ${e.line}: ${e.message}`);
     } else {
       console.log(`OK ${id}`);
     }

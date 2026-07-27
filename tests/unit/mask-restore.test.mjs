@@ -1,6 +1,12 @@
 import { describe, it } from 'node:test';
 import assert from 'node:assert/strict';
-import { mask, restore } from '../../scripts/lib/mask-restore.mjs';
+import {
+  localizeMathText,
+  mask,
+  normalizeInlineMathPunctuation,
+  normalizeInlineMathSpacing,
+  restore,
+} from '../../scripts/lib/mask-restore.mjs';
 
 const FIXTURE = `---
 title: Median and Quantiles
@@ -63,10 +69,61 @@ describe('mask-restore', () => {
     assert.throws(() => restore(corrupted, placeholders), /placeholder count\/order mismatch/);
   });
 
-  it('throws when placeholder order is wrong', () => {
+  it('throws when a placeholder ID is unknown', () => {
     const { masked, placeholders } = mask(FIXTURE);
     const corrupted = masked.replace('__MATH_0__', '__MATH_9__');
     assert.throws(() => restore(corrupted, placeholders), /__MATH_9__ has no stored original value/);
+  });
+
+  it('allows valid placeholders to move with translated sentence structure', () => {
+    const { masked, placeholders } = mask('First $x$, then $y$.');
+    const corrupted = masked
+      .replace('__MATH_0__', '__SWAP__')
+      .replace('__MATH_1__', '__MATH_0__')
+      .replace('__SWAP__', '__MATH_1__');
+
+    assert.equal(restore(corrupted, placeholders), 'First $y$, then $x$.');
+  });
+
+  it('moves trailing prose punctuation outside inline math before translation', () => {
+    const { masked, placeholders } = mask('For $x,$ then $y.$ Up to $n:$');
+
+    assert.equal(masked, 'For __MATH_0__, then __MATH_1__. Up to __MATH_2__:');
+    assert.deepEqual(placeholders.math, ['$x$', '$y$', '$n$']);
+    assert.equal(
+      restore('对于 __MATH_0__，然后是 __MATH_1__。直到 __MATH_2__：', placeholders),
+      '对于 $x$，然后是 $y$。直到 $n$：',
+    );
+  });
+
+  it('preserves factorial operators while extracting prose punctuation', () => {
+    const { masked, placeholders } = mask('Define $a_n=n!$; use $n!,$ then compare $k!.$');
+
+    assert.equal(masked, 'Define __MATH_0__; use __MATH_1__, then compare __MATH_2__.');
+    assert.deepEqual(placeholders.math, ['$a_n=n!$', '$n!$', '$k!$']);
+    assert.equal(
+      restore('定义 __MATH_0__；使用 __MATH_1__，再比较 __MATH_2__。', placeholders),
+      '定义 $a_n=n!$；使用 $n!$，再比较 $k!$。',
+    );
+  });
+
+  it('normalizes legacy inline-math punctuation without duplicating existing Chinese punctuation', () => {
+    assert.equal(
+      normalizeInlineMathPunctuation('若 $x,$，则 $y.$ Next；并令 $z,$ follows。'),
+      '若 $x$，则 $y$。 Next；并令 $z$， follows。',
+    );
+  });
+
+  it('adds spaces only between CJK prose and inline math', () => {
+    assert.equal(
+      normalizeInlineMathSpacing('若$x<y$则成立；见[$n$ 次根](../radicals/)。\n\n$$x<y$$'),
+      '若 $x<y$ 则成立；见[$n$ 次根](../radicals/)。\n\n$$x<y$$',
+    );
+    assert.equal(normalizeInlineMathSpacing('若 $x$，则 $y$。'), '若 $x$，则 $y$。');
+    assert.equal(
+      normalizeInlineMathSpacing('取[有理指数](../powers/)$q$，且$x$为[实数](../real-numbers/)，$y$[亦然](../same/)。'),
+      '取[有理指数](../powers/) $q$，且 $x$ 为[实数](../real-numbers/)，$y$ [亦然](../same/)。',
+    );
   });
 
   it('preserves escaped dollar signs as text', () => {
@@ -74,5 +131,104 @@ describe('mask-restore', () => {
     assert.equal(placeholders.math.length, 0);
     assert.ok(masked.includes('\\$1,500'));
     assert.equal(restore(masked, placeholders), '| \\$1,500 |');
+  });
+
+  it('localizes visible prose inside math text without changing notation', () => {
+    assert.equal(
+      localizeMathText(
+        '$$x > 0 \\quad \\text{if } y > 0 \\quad \\text{and} \\quad ' +
+        'N_{\\text{invalid}} \\quad \\text{Log} x$$',
+      ),
+      '$$x > 0 \\quad \\text{若 } y > 0 \\quad \\text{且} \\quad ' +
+      'N_{\\text{不合条件}} \\quad \\text{Log} x$$',
+    );
+  });
+
+  it('masks an intervals shortcode as one opaque placeholder and restores it byte-for-byte', () => {
+    const block = `[shortcode="intervals"]
+|     | $a$ | $b$ |     |
+|:----|-----|-----|-----|
+|     | sign+l-in-o-h | sign+r-in-c |     |
+[/shortcode]`;
+    const source = `Before.\n\n${block}\n\nAfter.`;
+    const { masked, placeholders } = mask(source);
+
+    assert.equal(masked, 'Before.\n\n__SHORTCODE_0__\n\nAfter.');
+    assert.deepEqual(placeholders.shortcode, [block]);
+    assert.equal(restore(masked, placeholders), source);
+  });
+
+  it('also masks smart-quoted shortcode blocks byte-for-byte', () => {
+    const block = `[shortcode=“intervals”]
+| $a$ | $b$ |
+|---|---|
+| sign+l-in-o-h | sign+r-in-o-h |
+[/shortcode]`;
+    const { masked, placeholders } = mask(block);
+
+    assert.equal(masked, '__SHORTCODE_0__');
+    assert.deepEqual(placeholders.shortcode, [block]);
+    assert.equal(restore(masked, placeholders), block);
+  });
+
+  it('rejects an unclosed shortcode before translation starts', () => {
+    assert.throws(
+      () => mask('[shortcode="intervals"]\n| $a$ |\n|---|\n| sign+s |'),
+      /unclosed shortcode/,
+    );
+  });
+
+  it('rejects an orphan closing shortcode hidden inside a table cell', () => {
+    assert.throws(
+      () => mask('| [/shortcode] |'),
+      /orphan closing shortcode/,
+    );
+  });
+
+  it('also masks the upstream field_math alias as an opaque structural block', () => {
+    const block = `[field_math]
+| | $-4$ | $k^2-4$ | |
+|---|---|---|---|
+| | sign+l-in-c-h | sign+r-in-c-h | |
+[/field_math]`;
+    const { masked, placeholders } = mask(block);
+
+    assert.equal(masked, '__SHORTCODE_0__');
+    assert.deepEqual(placeholders.shortcode, [block]);
+    assert.equal(restore(masked, placeholders), block);
+  });
+
+  it('rejects link placeholders that are moved outside Markdown link syntax', () => {
+    const { masked, placeholders } = mask('Read [equations](../equations/).');
+    const corrupted = masked.replace('[equations]', '「方程」');
+
+    assert.throws(
+      () => restore(corrupted, placeholders),
+      /link placeholder lost Markdown link structure/,
+    );
+  });
+
+  it('rejects image placeholders that are moved outside Markdown image syntax', () => {
+    const { masked, placeholders } = mask('![diagram](svg/example.svg)');
+    const corrupted = masked.replace('![diagram]', 'diagram');
+
+    assert.throws(
+      () => restore(corrupted, placeholders),
+      /image placeholder lost Markdown image structure/,
+    );
+  });
+
+  it('requires structural shortcode placeholders to remain on their own line', () => {
+    const source = `[shortcode="intervals"]
+| | $a$ |
+|---|---|
+| | sign+s |
+[/shortcode]`;
+    const { masked, placeholders } = mask(source);
+
+    assert.throws(
+      () => restore(`Prefix ${masked}`, placeholders),
+      /shortcode placeholder must remain on its own line/,
+    );
   });
 });

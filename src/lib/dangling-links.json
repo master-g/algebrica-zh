@@ -1,4 +1,8 @@
 {
+  "aliases": {
+    "complex-numbers-introduction": "complex-numbers",
+    "eulers-formula": "euler-formula"
+  },
   "external": [
     "acceleration",
     "beta-distribution",
@@ -16,12 +20,10 @@
     "autonomous-differential-equations",
     "bernoulli-differential-equation",
     "boundary-value-problems",
-    "complex-numbers-introduction",
     "complex-numbers-roots",
     "cubic-equations",
     "determinant",
     "euler-method",
-    "eulers-formula",
     "exact-differential-equations",
     "exponential-functions",
     "factoring-ac-method",

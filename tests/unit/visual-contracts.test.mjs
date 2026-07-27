@@ -33,6 +33,48 @@ describe('visual theme contracts', () => {
       overrides,
       /\.post-section p\.standalone-math > mjx-container\s*\{[^}]*display:\s*block;[^}]*text-align:\s*center;/s,
     );
+    assert.match(
+      overrides,
+      /@media screen and \(max-width: 480px\)\s*\{[^}]*\.post-section mjx-container\[display="true"\] > svg,[^}]*\.post-section p\.standalone-math > mjx-container > svg\s*\{[^}]*max-width:\s*100%;[^}]*height:\s*auto;/s,
+    );
+    assert.match(
+      overrides,
+      /@media screen and \(max-width: 480px\)\s*\{[\s\S]*?\.post-section mjx-container\[display="true"\]\[width="full"\] > svg\s*\{[^}]*min-width:\s*0\s*!important;/s,
+    );
+    assert.match(
+      overrides,
+      /\.post-section mjx-container\[display="true"\]\[width="full"\]\s*\{[^}]*width:\s*100%\s*!important;[^}]*min-width:\s*0\s*!important;/s,
+    );
+  });
+
+  it('contains long inline MathJax expressions inside mobile list items', () => {
+    assert.match(
+      overrides,
+      /\.post-section li > mjx-container:not\(\[display="true"\]\)\s*\{[^}]*display:\s*inline-block;[^}]*max-width:\s*100%;[^}]*overflow-x:\s*auto;/s,
+    );
+    assert.match(
+      overrides,
+      /\.post-section li:has\(> mjx-container:not\(\[display="true"\]\)\)\s*\{[^}]*text-align:\s*left;/s,
+    );
+    assert.match(
+      overrides,
+      /\.post-section li > mjx-container:not\(\[display="true"\]\) > svg\s*\{[^}]*max-width:\s*100%;[^}]*height:\s*auto;/s,
+    );
+  });
+
+  it('contains wide article tables without widening the mobile page', () => {
+    assert.match(
+      overrides,
+      /\.post-section table\s*\{[^}]*display:\s*block;[^}]*max-width:\s*100%;[^}]*overflow-x:\s*auto;/s,
+    );
+    assert.match(
+      overrides,
+      /\.post-section \.table-1,[^}]*\.post-section \.table-sign\s*\{[^}]*overflow-x:\s*auto;/s,
+    );
+    assert.match(
+      overrides,
+      /\.post-section \.table-1 > table,[^}]*\.post-section \.table-sign > table\s*\{[^}]*width:\s*max-content;[^}]*min-width:\s*100%;/s,
+    );
   });
 
   it('renders the optional article graph before the attribution footer', () => {
