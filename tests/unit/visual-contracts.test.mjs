@@ -75,6 +75,10 @@ describe('visual theme contracts', () => {
       overrides,
       /\.post-section \.table-1 > table,[^}]*\.post-section \.table-sign > table\s*\{[^}]*width:\s*max-content;[^}]*min-width:\s*100%;/s,
     );
+    assert.match(
+      overrides,
+      /\.post-section \.table-domain > table,[^}]*\.post-section \.table-intervals > table\s*\{[^}]*display:\s*table;[^}]*width:\s*100%;[^}]*overflow:\s*hidden;/s,
+    );
   });
 
   it('renders the optional article graph before the attribution footer', () => {

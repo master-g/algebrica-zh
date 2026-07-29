@@ -233,7 +233,7 @@ x^2 - 2 \geq 0 \\[6pt]
 \end{cases}
 $$
 
-求解[二次](../quadratic-equations/)不等式 $x^2 - 2 \geq 0$ 得解 $x_{1,2} = \pm\sqrt{2}$，因此第一个[不等式](../inequalities/)的定义域由以下区间构成：
+求解[二次](../quadratic-equations/)不等式 $x^2 - 2 \geq 0$ 时，先求得边界点 $x_{1,2} = \pm\sqrt{2}$，因此第一个[不等式](../inequalities/)的解集为：
 
 $$(-\infty, -\sqrt{2}] \ \cup \ [\sqrt{2}, +\infty)$$
 
@@ -247,7 +247,7 @@ $$(-\infty, -\sqrt{2}] \ \cup \ [\sqrt{2}, +\infty)$$
 |     |             |          | sign+l-o-h  |     |
 [/shortcode]
 
-该方程组在区间 $[\sqrt{2}, +\infty)$ 内有解。
+该不等式组的解集为 $[\sqrt{2}, +\infty)$。
 
 - - -
 
