@@ -137,10 +137,10 @@ describe('mask-restore', () => {
     assert.equal(
       localizeMathText(
         '$$x > 0 \\quad \\text{if } y > 0 \\quad \\text{and} \\quad ' +
-        'N_{\\text{invalid}} \\quad \\text{Log} x$$',
+        'N_{\\text{invalid}} \\quad \\text{undefined} \\quad \\text{Log} x$$',
       ),
       '$$x > 0 \\quad \\text{若 } y > 0 \\quad \\text{且} \\quad ' +
-      'N_{\\text{不合条件}} \\quad \\text{Log} x$$',
+      'N_{\\text{不合条件}} \\quad \\text{未定义} \\quad \\text{Log} x$$',
     );
   });
 

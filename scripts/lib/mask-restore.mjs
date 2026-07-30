@@ -198,6 +198,7 @@ const MATH_TEXT_TRANSLATIONS = new Map([
   ['summands', '个加数'],
   ['times', '次'],
   ['total', '总计'],
+  ['undefined', '未定义'],
   ['valid', '符合条件'],
   ['where', '其中'],
   ['with', '其中'],
