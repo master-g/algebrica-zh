@@ -7,11 +7,13 @@ import yaml from 'js-yaml';
 import { validateTranslation } from './lib/validate.mjs';
 import { splitFrontmatter, parseFrontmatter } from './lib/frontmatter.mjs';
 
-const __dirname = dirname(fileURLToPath(import.meta.url));
+const MODULE_PATH = fileURLToPath(import.meta.url);
+const __dirname = dirname(MODULE_PATH);
 const UPSTREAM = resolve(__dirname, '..', '..', 'algebrica');
 const CONTENT_ZH = resolve(__dirname, '..', 'content-zh');
 const SECTIONS_YAML = resolve(__dirname, '..', 'sections.yaml');
 const DANGLING_FILE = resolve(__dirname, '..', 'src', 'lib', 'dangling-links.json');
+const FAILURES_FILE = resolve(__dirname, '..', 'translation-failures.json');
 
 function hashSource(raw) {
   return createHash('sha256').update(raw).digest('hex');
@@ -46,12 +48,86 @@ function sourcePath(section, slug) {
   return resolve(UPSTREAM, section, `${slug}.md`);
 }
 
-async function main() {
-  const args = process.argv.slice(2);
-  const verify = args.includes('--verify');
+function normalizeTargetPart(value, label) {
+  if (typeof value !== 'string') {
+    throw new Error(`${label} must be a string`);
+  }
+  const normalized = value
+    .trim()
+    .replaceAll('\\', '/')
+    .replace(/^\/+|\/+$/g, '')
+    .replace(/\/+/g, '/');
+  if (!normalized) {
+    throw new Error(`${label} must not be empty`);
+  }
+  return normalized;
+}
 
-  const targets = listSourceTargets();
-  const dangling = loadDangling();
+export function normalizeTargetKey(section, slug) {
+  return [
+    normalizeTargetPart(section, 'section'),
+    normalizeTargetPart(slug, 'slug'),
+  ].join('/');
+}
+
+export function readFailureLedger(failuresFile = FAILURES_FILE) {
+  if (!existsSync(failuresFile)) {
+    return [];
+  }
+
+  let failures;
+  try {
+    failures = JSON.parse(readFileSync(failuresFile, 'utf8'));
+  } catch (error) {
+    throw new Error(`failure ledger contains invalid JSON: ${error.message}`);
+  }
+  if (!Array.isArray(failures)) {
+    throw new Error('failure ledger must contain an array');
+  }
+
+  const seen = new Set();
+  return failures.map((failure, index) => {
+    if (!failure || typeof failure !== 'object' || Array.isArray(failure)) {
+      throw new Error(`failure ledger entry ${index} must be an object`);
+    }
+
+    let section;
+    let slug;
+    try {
+      section = normalizeTargetPart(failure.section, 'section');
+      slug = normalizeTargetPart(failure.slug, 'slug');
+    } catch (error) {
+      throw new Error(`failure ledger entry ${index}: ${error.message}`);
+    }
+
+    const key = normalizeTargetKey(section, slug);
+    if (seen.has(key)) {
+      throw new Error(`duplicate failure target: ${key}`);
+    }
+    seen.add(key);
+    return { ...failure, section, slug };
+  });
+}
+
+export function findCurrentFailureConflicts(status, failures) {
+  const currentKeys = new Set(
+    (status.current || []).map(({ section, slug }) => normalizeTargetKey(section, slug)),
+  );
+  return [
+    ...new Set(
+      failures
+        .map(({ section, slug }) => normalizeTargetKey(section, slug))
+        .filter((key) => currentKeys.has(key)),
+    ),
+  ].sort();
+}
+
+export async function collectTranslationStatus({
+  verify = false,
+  targets = listSourceTargets(),
+  dangling = loadDangling(),
+  log = console.log,
+} = {}) {
   const current = [];
   const stale = [];
   const missing = [];
@@ -80,7 +156,7 @@ async function main() {
         const result = await validateTranslation(zhPath, zhText, { dangling });
         if (!result.ok) {
           validationFailures++;
-          console.log(`FAIL ${section}/${slug}: ${result.errors.join('; ')}`);
+          log(`FAIL ${section}/${slug}: ${result.errors.join('; ')}`);
         }
       }
     } else {
@@ -88,20 +164,67 @@ async function main() {
     }
   }
 
-  console.log(`current: ${current.length}`);
-  for (const t of current) console.log(`  ${t.section}/${t.slug}`);
-  console.log(`stale: ${stale.length}`);
-  for (const t of stale) console.log(`  ${t.section}/${t.slug}`);
-  console.log(`missing: ${missing.length}`);
-  for (const t of missing) console.log(`  ${t.section}/${t.slug}${t.note ? ` (${t.note})` : ''}`);
+  return { current, stale, missing, validationFailures };
+}
 
-  if (verify && validationFailures > 0) {
-    console.error(`\n${validationFailures} current translations failed validation`);
-    process.exit(1);
+function printStatus(status, log) {
+  log(`current: ${status.current.length}`);
+  for (const t of status.current) log(`  ${t.section}/${t.slug}`);
+  log(`stale: ${status.stale.length}`);
+  for (const t of status.stale) log(`  ${t.section}/${t.slug}`);
+  log(`missing: ${status.missing.length}`);
+  for (const t of status.missing) {
+    log(`  ${t.section}/${t.slug}${t.note ? ` (${t.note})` : ''}`);
   }
 }
 
-main().catch((err) => {
-  console.error(err);
-  process.exit(1);
-});
+export async function runTranslationStatus({
+  args = process.argv.slice(2),
+  failuresFile = FAILURES_FILE,
+  collectStatus = collectTranslationStatus,
+  log = console.log,
+  error = console.error,
+} = {}) {
+  const verify = args.includes('--verify');
+  const status = await collectStatus({ verify, log });
+  printStatus(status, log);
+
+  let failed = false;
+
+  if (verify && status.validationFailures > 0) {
+    error(`\n${status.validationFailures} current translations failed validation`);
+    failed = true;
+  }
+
+  if (verify) {
+    let failures;
+    try {
+      failures = readFailureLedger(failuresFile);
+    } catch (ledgerError) {
+      error(`\nFailure ledger verification failed: ${ledgerError.message}`);
+      return 1;
+    }
+
+    const conflicts = findCurrentFailureConflicts(status, failures);
+    for (const key of conflicts) {
+      error(`FAIL failure ledger conflict: ${key}`);
+    }
+    if (conflicts.length > 0) {
+      error(`\n${conflicts.length} current translations remain in the failure ledger`);
+      failed = true;
+    }
+  }
+
+  return failed ? 1 : 0;
+}
+
+if (process.argv[1] && resolve(process.argv[1]) === MODULE_PATH) {
+  runTranslationStatus()
+    .then((exitCode) => {
+      process.exitCode = exitCode;
+    })
+    .catch((err) => {
+      console.error(err);
+      process.exitCode = 1;
+    });
+}
