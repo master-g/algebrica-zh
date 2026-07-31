@@ -2074,6 +2074,90 @@
     },
     "canvasHeight": 500
   },
+  "inequalities-with-absolute-value": {
+    "dataset": {
+      "name": "含绝对值的不等式",
+      "children": [
+        {
+          "name": "定义",
+          "children": [
+            {
+              "name": "绝对值"
+            },
+            {
+              "name": "实数轴上的距离"
+            },
+            {
+              "name": "到定点的距离"
+            },
+            {
+              "name": "绝对值表达式"
+            },
+            {
+              "name": "非负性"
+            },
+            {
+              "name": "对称性"
+            }
+          ]
+        },
+        {
+          "name": "情形",
+          "children": [
+            {
+              "name": "小于型"
+            },
+            {
+              "name": "大于型"
+            },
+            {
+              "name": "非正界值"
+            },
+            {
+              "name": "复合不等式"
+            },
+            {
+              "name": "区间解"
+            },
+            {
+              "name": "分段形式"
+            }
+          ]
+        },
+        {
+          "name": "方法",
+          "children": [
+            {
+              "name": "求解步骤"
+            },
+            {
+              "name": "分类讨论"
+            },
+            {
+              "name": "区间表示"
+            },
+            {
+              "name": "多重绝对值"
+            },
+            {
+              "name": "含参情形"
+            },
+            {
+              "name": "变量界值"
+            },
+            {
+              "name": "解的检验"
+            }
+          ]
+        }
+      ]
+    },
+    "type": "概念",
+    "description": "本文知识图谱围绕含绝对值的不等式展开，涵盖绝对值的定义与基本性质、小于和大于两类基本情形的求解，以及分类讨论、区间表示和含参不等式等常用解法。",
+    "difficulty": {
+      "label": "初级"
+    }
+  },
   "irrational-equations": {
     "dataset": {
       "name": "无理方程",
