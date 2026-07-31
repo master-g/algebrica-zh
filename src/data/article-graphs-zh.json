@@ -3903,6 +3903,90 @@
       "label": "初级"
     }
   },
+  "rational-inequalities": {
+    "dataset": {
+      "name": "分式不等式",
+      "children": [
+        {
+          "name": "基础",
+          "children": [
+            {
+              "name": "有理式"
+            },
+            {
+              "name": "标准形式"
+            },
+            {
+              "name": "自然定义域"
+            },
+            {
+              "name": "排除值"
+            },
+            {
+              "name": "解集"
+            },
+            {
+              "name": "临界点"
+            }
+          ]
+        },
+        {
+          "name": "符号分析",
+          "children": [
+            {
+              "name": "符号表"
+            },
+            {
+              "name": "分子零点"
+            },
+            {
+              "name": "分母零点"
+            },
+            {
+              "name": "正号区间"
+            },
+            {
+              "name": "负号区间"
+            },
+            {
+              "name": "重数"
+            },
+            {
+              "name": "符号变化"
+            }
+          ]
+        },
+        {
+          "name": "方法",
+          "children": [
+            {
+              "name": "归零法"
+            },
+            {
+              "name": "通分"
+            },
+            {
+              "name": "倒数法则"
+            },
+            {
+              "name": "严格不等式"
+            },
+            {
+              "name": "非严格不等式"
+            },
+            {
+              "name": "常见错误"
+            }
+          ]
+        }
+      ]
+    },
+    "type": "概念",
+    "description": "本文知识图谱展示分式不等式的求解体系，涵盖有理式与定义域等基础概念、利用符号表分析正负区间的符号分析方法，以及归零法、通分、倒数法则等求解技巧与常见错误。",
+    "difficulty": {
+      "label": "初级"
+    }
+  },
   "reduction-formulas-and-reference-angles": {
     "dataset": {
       "name": "诱导公式与参考角",
