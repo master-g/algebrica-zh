@@ -1167,6 +1167,90 @@
       "label": "中级"
     }
   },
+  "exponential-inequalities": {
+    "dataset": {
+      "name": "指数不等式",
+      "children": [
+        {
+          "name": "基础",
+          "children": [
+            {
+              "name": "定义"
+            },
+            {
+              "name": "正底数"
+            },
+            {
+              "name": "底数不为一"
+            },
+            {
+              "name": "单调性"
+            },
+            {
+              "name": "递增情形"
+            },
+            {
+              "name": "递减情形"
+            },
+            {
+              "name": "解集"
+            }
+          ]
+        },
+        {
+          "name": "方法",
+          "children": [
+            {
+              "name": "同底数"
+            },
+            {
+              "name": "指数比较"
+            },
+            {
+              "name": "倒数底数"
+            },
+            {
+              "name": "对数法"
+            },
+            {
+              "name": "根式法"
+            },
+            {
+              "name": "同指数"
+            },
+            {
+              "name": "底数选择"
+            }
+          ]
+        },
+        {
+          "name": "可化简形式",
+          "children": [
+            {
+              "name": "换元"
+            },
+            {
+              "name": "二次型"
+            },
+            {
+              "name": "正变量"
+            },
+            {
+              "name": "相反指数"
+            },
+            {
+              "name": "符号约束"
+            }
+          ]
+        }
+      ]
+    },
+    "type": "概念",
+    "description": "本文围绕指数不等式的求解展开，涵盖定义与单调性等基础、同底数比较与对数法等方法，以及换元化为二次型等可化简形式的处理技巧。",
+    "difficulty": {
+      "label": "初级"
+    }
+  },
   "factoring-polynomials-ac-method": {
     "dataset": {
       "name": "多项式因式分解：AC 法",
