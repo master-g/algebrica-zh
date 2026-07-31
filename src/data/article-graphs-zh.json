@@ -5235,6 +5235,93 @@
       "label": "中级"
     }
   },
+  "trigonometric-inequalities": {
+    "dataset": {
+      "name": "三角不等式",
+      "children": [
+        {
+          "name": "结构",
+          "children": [
+            {
+              "name": "三角函数"
+            },
+            {
+              "name": "周期性"
+            },
+            {
+              "name": "单位圆"
+            },
+            {
+              "name": "参考角"
+            },
+            {
+              "name": "定义域"
+            },
+            {
+              "name": "值域"
+            }
+          ]
+        },
+        {
+          "name": "方法",
+          "children": [
+            {
+              "name": "分离法"
+            },
+            {
+              "name": "三角恒等式"
+            },
+            {
+              "name": "换元法"
+            },
+            {
+              "name": "降次法"
+            },
+            {
+              "name": "因式分解"
+            },
+            {
+              "name": "区间解"
+            },
+            {
+              "name": "解集"
+            }
+          ]
+        },
+        {
+          "name": "类型",
+          "children": [
+            {
+              "name": "正弦不等式"
+            },
+            {
+              "name": "余弦不等式"
+            },
+            {
+              "name": "正切不等式"
+            },
+            {
+              "name": "周期解"
+            },
+            {
+              "name": "单调性"
+            },
+            {
+              "name": "不等式组"
+            },
+            {
+              "name": "通解"
+            }
+          ]
+        }
+      ]
+    },
+    "type": "概念",
+    "description": "本图围绕三角不等式展开，涵盖三角函数的结构基础、求解方法，以及正弦、余弦、正切等常见类型的解法与解集表示。",
+    "difficulty": {
+      "label": "中级"
+    }
+  },
   "trinomial-equations": {
     "dataset": {
       "name": "三项式方程",
