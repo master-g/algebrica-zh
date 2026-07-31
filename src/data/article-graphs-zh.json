@@ -1338,6 +1338,90 @@
       "label": "初级"
     }
   },
+  "geometric-interpretation-quadratic-inequalities": {
+    "dataset": {
+      "name": "二次不等式的几何意义",
+      "children": [
+        {
+          "name": "基础",
+          "children": [
+            {
+              "name": "二次不等式"
+            },
+            {
+              "name": "对应函数"
+            },
+            {
+              "name": "抛物线"
+            },
+            {
+              "name": "横轴"
+            },
+            {
+              "name": "正值"
+            },
+            {
+              "name": "负值"
+            },
+            {
+              "name": "解集"
+            }
+          ]
+        },
+        {
+          "name": "几何判据",
+          "children": [
+            {
+              "name": "判别式"
+            },
+            {
+              "name": "两个根"
+            },
+            {
+              "name": "重根"
+            },
+            {
+              "name": "无实根"
+            },
+            {
+              "name": "开口方向"
+            },
+            {
+              "name": "顶点"
+            },
+            {
+              "name": "对称轴"
+            }
+          ]
+        },
+        {
+          "name": "解的读取",
+          "children": [
+            {
+              "name": "交点"
+            },
+            {
+              "name": "外部区间"
+            },
+            {
+              "name": "内部区间"
+            },
+            {
+              "name": "严格不等式"
+            },
+            {
+              "name": "非严格不等式"
+            }
+          ]
+        }
+      ]
+    },
+    "type": "概念",
+    "description": "本图围绕二次不等式的几何意义展开，含基础、几何判据、解的读取三部分：基础部分说明二次不等式、对应函数、抛物线与横轴、正负值及解集；几何判据部分讨论判别式、根的个数、开口方向、顶点与对称轴；解的读取部分区分交点、内外部区间及严格与非严格不等式。",
+    "difficulty": {
+      "label": "中级"
+    }
+  },
   "homogeneous-trigonometric-equations": {
     "dataset": {
       "name": "齐次三角方程",
