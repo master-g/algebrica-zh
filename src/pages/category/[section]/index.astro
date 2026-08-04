@@ -2,7 +2,7 @@
 import BaseLayout from '../../../layouts/BaseLayout.astro';
 import { getCollection } from 'astro:content';
 import { buildTranslationIndex } from '../../../lib/translation-index.mjs';
-import { getSections } from '../../../lib/sections.mjs';
+import { getSections, orderSectionRows } from '../../../lib/sections.mjs';
 import { getZhEntries } from '../../_zh-entries.mjs';
 
 export async function getStaticPaths() {
@@ -15,9 +15,7 @@ export async function getStaticPaths() {
 const { section } = Astro.props;
 const articles = await getCollection('articles');
 const zhEntries = await getZhEntries();
-const rows = buildTranslationIndex(articles, zhEntries).filter(
-  (r) => r.section === section.dir,
-);
+const rows = orderSectionRows(section, buildTranslationIndex(articles, zhEntries));
 
 const title = `${section.name_zh} | Algebrica 中文`;
 const description = section.description_zh || section.description_en;

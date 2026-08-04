@@ -4,6 +4,7 @@ import { readFileSync } from 'node:fs';
 
 const baseLayout = readFileSync('src/layouts/BaseLayout.astro', 'utf8');
 const homePage = readFileSync('src/pages/index.astro', 'utf8');
+const categoryPage = readFileSync('src/pages/category/[section]/index.astro', 'utf8');
 const articlePage = readFileSync('src/pages/[slug].astro', 'utf8');
 const overrides = readFileSync('public/styles/zh-overrides.css', 'utf8');
 
@@ -19,6 +20,11 @@ describe('visual theme contracts', () => {
       overrides,
       /\.module-index-heading__title a\s*\{[^}]*color:\s*#312f2f;/s,
     );
+  });
+
+  it('keeps category children in one ordered, shared index path', () => {
+    assert.match(homePage, /orderSectionRows\(section, rows\)/);
+    assert.match(categoryPage, /orderSectionRows\(section, buildTranslationIndex\(articles, zhEntries\)\)/);
   });
 
   it('centers standalone Markdown illustrations inside article sections', () => {

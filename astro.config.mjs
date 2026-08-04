@@ -100,6 +100,9 @@ function makeMathSchema(base) {
 }
 
 export default defineConfig({
+  experimental: {
+    collectionStorage: 'chunked',
+  },
   compressHTML: true,
   trailingSlash: 'always',
   build: {
