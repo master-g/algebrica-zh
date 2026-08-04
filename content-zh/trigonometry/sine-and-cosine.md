@@ -11,9 +11,9 @@ tags:
   - unit-circle
 translation:
   status: current
-  source_hash: df378bb20023ffa091277fbb1953b5cf142f16c3b1d032e80ba677ed01af30ec
-  translator: omp
-  updated: "2026-07-24T15:30:48.065Z"
+  source_hash: b8fe9198d1c66f1aabc5efcecc6165a8ec50751d2ba906eb5e581ea8edf0fdae
+  translator: codex
+  updated: "2026-08-04T00:00:00.000Z"
 ---
 ## 定义
 
@@ -27,7 +27,7 @@ $$
 
 - - -
 
-**定义 1。** 考虑有向角 $\theta$ 及其在[单位圆](../unit-circle/)上对应的点 $P$，并设 $Q$ 为 $P$ 在 $y$ 轴上的垂足。$\theta$ 的正弦定义为 $P$ 的 $y$ 坐标。在第一象限中，该值等于直角三角形 $OQP$ 的直角边 $\overline{OQ}$ 与斜边 $\overline{OP}$ 之比；由于 $\overline{OP} = 1$，可得：
+**定义 1。** 考虑有向角 $\theta$ 及[单位圆](../unit-circle/)上与 $\theta$ 对应的点 $P$。$\theta$ 的正弦定义为 $P$ 的 $y$ 坐标。它等于内接于单位圆的直角三角形中直角边 $\overline{OQ}$ 与斜边 $\overline{OP}$ 的比值；由于 $\overline{OP} = 1$，可得：
 
 $$
 \sin(\theta) = \frac{\overline{OQ}}{\overline{OP}} = \frac{\overline{OQ}}{1} = y_P
@@ -35,7 +35,7 @@ $$
 
 ![单位圆上点的正弦几何意义](/assets/trigonometry/svg/sine-and-cosine-1.zh.svg)
 
-**定义 2。** 同理，设 $R$ 为 $P$ 在 $x$ 轴上的垂足，则 $\theta$ 的余弦定义为 $P$ 的 $x$ 坐标。在第一象限中，该值等于直角三角形 $ORP$ 的直角边 $\overline{OR}$ 与斜边 $\overline{OP}$ 之比，故有：
+**定义 2。** 类似地，$\theta$ 的余弦定义为 $P$ 的 $x$ 坐标。它等于直角边 $\overline{OR}$ 与斜边 $\overline{OP}$ 的比值，因此：
 
 $$
 \cos(\theta) = \frac{\overline{OR}}{\overline{OP}} = \frac{\overline{OR}}{1} = x_P
@@ -59,7 +59,7 @@ $$
 
 - - -
 
-**定义 3。** 对 $-1 \leq x \leq 1$，设 $A(x)$ 为一个圆扇形的面积，该扇形以水平轴、从原点到点 $(x, \sqrt{1-x^2})$ 的射线以及单位圆上从该点到 $(1, 0)$ 的弧为边界。面积 $A(x)$ 可分解为一个直角三角形项与位于圆上半部分下方的一个区域的面积之和。注意，当自变量为负时，三角形项为有向面积；自变量非负时，该分解即为两个普通面积之和，而分解公式在整个定义区间上均成立：
+**定义 3。** 对 $-1 \leq x \leq 1$，设 $A(x)$ 表示由水平轴、连接原点与点 $(x, \sqrt{1-x^2})$ 的半射线，以及连接该点和 $(1, 0)$ 的单位圆弧所围成的圆扇形面积。面积 $A(x)$ 分解为一个直角三角形面积与位于上半圆下方区域的面积之和：
 
 $$
 A(x) = \frac{x\sqrt{1-x^2}}{2} + \int_x^1 \sqrt{1-t^2} \ dt
@@ -89,7 +89,7 @@ $$
 \sin\theta = \sqrt{1 - \cos^2\theta}
 $$
 
-函数 $A$ 在 $[-1,1]$ 上连续且严格递减，并满足 $A(-1)=\pi/2$、$A(1)=0$。因此，对每个 $\theta/2\in[0,\pi/2]$，介值定理保证相应的 $\cos\theta\in[-1,1]$ 存在，严格单调性保证它唯一。[基本三角恒等式](../pythagorean-identity/) $\sin^2\theta + \cos^2\theta = 1$ 由构造直接成立。
+由 $A$ 在 $[-1, 1]$ 上的连续性，以及将[介值定理](../intermediate-value-theorem/)应用于它在 $0$ 与 $\pi/2$ 之间取得的值，可保证 $\cos\theta$ 的存在性与唯一性。[基本三角恒等式](../pythagorean-identity/) $\sin^2\theta + \cos^2\theta = 1$ 由构造成立。
 
 - - -
 
@@ -102,7 +102,7 @@ $$
 \end{align}
 $$
 
-对任意实数 $\theta$，可唯一地写成 $\theta = 2k\pi + \theta'$，其中 $k \in \mathbb{Z}$ 且 $\theta' \in [0, 2\pi)$，并令：
+对任意实数 $\theta$，写成 $\theta = 2k\pi + \theta'$，其中 $k \in \mathbb{Z}$ 且 $\theta' \in [0, 2\pi]$，并令：
 
 $$
 \begin{align}
@@ -113,7 +113,7 @@ $$
 
 此过程所定义的函数在整个 $\mathbb{R}$ 上有定义，且以 $2\pi$ 为周期，与前文给出的几何描述完全一致。
 
-> 在此解析框架中，[导数](../derivatives/) $\sin'(\theta) = \cos\theta$ 和 $\cos'(\theta) = -\sin\theta$ 并非公设，而是作为定理推导得出。其推导方式是将 $\cos$ 视为函数 $B(x) = 2A(x)$ 的反函数，并应用[反函数](../inverse-function/)的求导法则。
+> 在此解析框架中，[导数](../derivatives/) $\sin'(\theta) = \cos\theta$ 和 $\cos'(\theta) = -\sin\theta$ 并非公设，而是作为定理推导得出。其推导方式是将 $\cos$ 视为函数 $B(x) = 2A(x)$ 的反函数，并应用[反函数](../inverse-functions/)的求导法则。
 
 ## 基本三角恒等式
 
@@ -121,7 +121,7 @@ $$
 
 $$ \sin^2\theta + \cos^2\theta = 1 $$
 
-从几何上看，当终边不落在坐标轴上时，可将[勾股定理](../pythagorean-theorem/)应用于与单位圆相关的直角三角形 $OPR$：两条直角边的长度分别为 $|\sin\theta|$ 和 $|\cos\theta|$，斜边 $\overline{OP}$ 的长度为 $1$。终边落在坐标轴上的退化情形也可直接验证。
+从几何上看，这个恒等式表示将[勾股定理](../pythagorean-theorem/)应用于内接在单位圆中的三角形 $OPR$，其中 $\overline{PR}$ 和 $\overline{OR}$ 对应两条直角边，$\overline{OP}$ 是长度为 1 的斜边。
 
 ## 三角恒等式
 
@@ -182,9 +182,9 @@ $$
 
 ## 周期性
 
-正弦与余弦的取值介于 $-1$ 与 $1$ 之间，因为单位圆上点 $P$ 的横、纵坐标绝对值都不超过半径 $1$。
+正弦与余弦的取值介于 $-1$ 与 $1$ 之间，因为线段 $\overline{OR}$ 与 $\overline{PR}$ 的长度不能超过半径，而半径等于 1。
 
-将 $\theta$ 加上任意[整数](../integers/)倍的周角 $2\pi$，正弦与余弦的值保持不变，因为点 $P$ 会回到单位圆上的同一位置。由此可知，正弦与余弦是以 $2 \pi$ 为周期的[函数](../functions/)：
+将 $\theta$ 加上任意[整数](../integers/)倍的周角，正弦与余弦的值保持不变，因为点 $P$ 会回到单位圆上的同一位置。由此可知，正弦与余弦是以 $2 \pi$ 为周期的[函数](../functions/)：
 
 $$
 \begin{align}
@@ -245,24 +245,24 @@ $$
 
 ## 正弦与余弦函数
 
-[正弦函数](../sine-function/) $f(x) = \sin(x)$ 把每个实数 $x$（视为以弧度表示的角）映射到对应的正弦值。其图像是一条周期波形，周期为 $2 \pi$，振幅为 1，在 $-1$ 与 $1$ 之间振荡。函数 $f(x) = \sin x$ 的[定义域](../determining-the-domain-of-a-function/)为全体实数，值域为 $[-1,1]$。
+[正弦函数](../sine-function/) $f(x) = \sin(x)$ 将每个用弧度表示的角 $x$ 映射到相应的正弦值。其图像是一条周期波形，周期为 $2 \pi$，振幅为 1，在 -1 与 1 之间振荡。函数 $f(x) = \sin x$ 的[定义域](../determining-the-domain-of-a-function/)包含所有实数，但其值域为 $-1 \leq \sin(x) \leq 1$。
 
 ![正弦函数图像](/assets/trigonometry/svg/sine-and-cosine-3.zh.svg)
 
 + 定义域：$x \in \mathbb{R}$
-+ 值域：$y \in [-1,1]$
-+ 周期性：最小正周期为 $2 \pi$
++ 值域：$y \in \mathbb{R} : -1 \leq y \leq 1$
++ 周期性：关于 $x$ 的周期函数，周期为 $2 \pi$
 + 奇偶性：[奇函数](../even-and-odd-functions/)，$\sin(-x) = -\sin(x)$
 
 - - -
 
-[余弦函数](../cosine-function/) $f(x) = \cos(x)$ 把每个实数 $x$（视为以弧度表示的角）映射到对应的余弦值。其图像是一条周期波形，周期为 $2 \pi$，振幅为 1，在 $-1$ 与 $1$ 之间振荡。函数 $f(x) = \cos x$ 的定义域为全体实数，值域为 $[-1,1]$。
+[余弦函数](../cosine-function/) $f(x) = \cos(x)$ 将每个用弧度表示的角 $x$ 映射到相应的余弦值。其图像是一条周期波形，周期为 $2 \pi$，振幅为 1，在 -1 与 1 之间振荡。函数 $f(x) = \cos x$ 的定义域包含所有实数，但其值域为 $-1 \leq \cos(x) \leq 1$。
 
 ![余弦函数图像](/assets/trigonometry/svg/sine-and-cosine-4.zh.svg)
 
 + 定义域：$x \in \mathbb{R}$
-+ 值域：$y \in [-1,1]$
-+ 周期性：最小正周期为 $2\pi$
++ 值域：$y \in \mathbb{R} : -1 \leq y \leq 1$
++ 周期性：关于 $x$ 的周期函数，周期为 $2\pi$
 + 奇偶性：[偶函数](../even-and-odd-functions/)，$\cos(-x) = \cos(x)$
 
 > 有关[正弦函数](../sine-function/)和[余弦函数](../cosine-function/)的详细讨论，包括特殊值、极限、导数和积分，参见各自的词条。
@@ -288,11 +288,11 @@ $$
 
 ## 复数的三角结构
 
-正弦和余弦也是[复数三角形式](../complex-numbers-trigonometric-form/)的基本构成要素。任意非零复数 $z = a + bi$ 均可写成：
+正弦和余弦也是[复数的三角形式](../complex-numbers-trigonometric-form/)的基本构成要素。任意复数 $z = a + bi$ 均可写成：
 
 $$z = r(\cos\theta + i\sin\theta)$$
 
-其中 $r = \sqrt{a^2 + b^2}=|z|$ 为模，$\theta=\arg z$ 为复数的辐角；可用 $\operatorname{atan2}(b,a)$ 选取一个代表值，而所有辐角相差 $2\pi$ 的整数倍。在这种表示中，$r$ 给出[复数](../complex-numbers/)的大小，$\cos\theta$ 与 $\sin\theta$ 给出其方向分量。
+其中 $r = \sqrt{a^2 + b^2}$ 是模，$\theta = \arctan(b/a)$ 是辐角。在这种表示中，正弦和余弦不再描述圆上的点，而是描述平面中[复数](../complex-numbers-introduction/)的方向与大小。
 
 ## 在积分中的应用
 
@@ -306,11 +306,11 @@ $$
 \end{align}
 $$
 
-可通过将变量 $x$ 替换为适当的三角函数来化简。设 $a>0$：对上述三类根式，常分别取 $x=a\sin\theta$ 且 $\theta\in[-\pi/2,\pi/2]$、取 $x=a\tan\theta$ 且 $\theta\in(-\pi/2,\pi/2)$，或取 $x=a\sec\theta$ 并按积分区间选择使 $\tan\theta$ 符号固定的分支。三角函数之间的勾股型恒等式会把根号内化为平方，但开方后一般得到绝对值；上述区间或分支限制用于确定其符号，从而正确去除根号。
+将变量 $x$ 替换为适当的三角函数即可化简这些表达式。这一方法之所以有效，正是因为正弦和余弦的勾股恒等式会把根号下的表达式变成完全平方，从而完全消去根号。
 
 ## 正弦与余弦的正交性
 
-除了在单位圆上的几何意义之外，正弦和余弦还具有更深层的分析性质，这一性质在考察整个周期时才会显现。在 $[-\pi,\pi]$ 这样覆盖完整周期的对称区间上积分时，正弦与余弦函数族呈现出正交性。更精确地说，对于任意正整数 $n$ 和 $m$，在区间 $[-\pi, \pi]$ 上成立如下关系：
+除了在单位圆上的几何意义之外，正弦和余弦还具有更深层的分析性质，这一性质在考察整个周期时才会显现。在一个完整的对称区间上积分时，不同频率的三角函数彼此独立。这种现象称为正交性。更精确地说，对于任意整数 $n$ 和 $m$，在区间 $[-\pi, \pi]$ 上成立如下关系：
 
 $$
 \begin{aligned}
@@ -328,13 +328,13 @@ $$
 \end{aligned}
 $$
 
-这些恒等式表明，正弦与余弦函数族中不同基函数的内积为零，因而彼此正交。这与欧几里得几何中[向量](../vectors/)的正交性相似：两个向量的点积为零时，它们相互正交。在函数空间中，相应的内积定义为
+这些恒等式表达了这样的事实：不同频率的三角波在 $[-\pi,\pi]$ 上通过积分取平均时不会重叠。换言之，在一个完整周期上用不同频率进行检验时，一个频率的贡献会消失。这类似于欧几里得几何中[向量](../vectors/)的正交性：两个向量的点积为零时，它们相互正交。对 $[-\pi,\pi]$ 上的连续函数，相应的[内积](../inner-product-spaces/)为
 
 $$
 \langle f, g \rangle =
 \int_{-\pi}^{\pi} f(x)g(x) \ dx
 $$
 
-当该积分为零时，就称函数 $f$ 与 $g$ 正交。
+当该积分为零时，就称这些函数在这个函数空间中正交。
 
-> 借助这种正交性，可以通过内积从周期函数中提取各个谐波分量；这一方法在[傅里叶级数](../fourier-series/)理论中得到系统发展。
+> 这一性质表明正弦和余弦构成了一个结构上相互独立的振荡系统。正因为存在这种正交性，我们才能从周期函数中分离出各个谐波分量；这一思想在[傅里叶级数](../fourier-series/)理论中得到了系统发展。

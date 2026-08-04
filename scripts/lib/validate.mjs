@@ -14,6 +14,9 @@ const DANGLING_FILE = resolve(dirname(fileURLToPath(import.meta.url)), '..', '..
  * Options:
  *  - dangling: { aliases: Record<string, string>, external: string[], text: string[] }
  *    known renamed and dangling targets.
+ *  - checkVisibleMathText: reject prose inside LaTeX `\text{...}`. Keep this
+ *    enabled for strict, per-target admission; repository-wide status checks
+ *    may disable it while legacy content is remediated separately.
  *
  * Returns { ok: boolean, errors: string[], warnings: string[] }.
  */
@@ -107,6 +110,19 @@ export function validateMathSyntax(body) {
 
   const mathSpans = extractMathSpans(body);
   for (const span of mathSpans) {
+    const control = [...(span.rawContent ?? span.content)].find((char) => {
+      const code = char.charCodeAt(0);
+      return code < 0x20 && code !== 0x0a && code !== 0x0d;
+    });
+    if (control) {
+      errors.push(
+        'control character in ' +
+        (span.display ? 'display' : 'inline') +
+        ' math: U+' +
+        control.charCodeAt(0).toString(16).padStart(4, '0').toUpperCase(),
+      );
+      continue;
+    }
     try {
       katex.renderToString(span.content, {
         throwOnError: true,
@@ -127,8 +143,14 @@ export function validateVisibleMathText(body) {
   for (const span of extractMathSpans(body)) {
     for (const match of span.content.matchAll(/\\text\{([^{}]*)\}/g)) {
       const value = match[1].trim();
+      if (/[\u3400-\u9fff]/.test(value)) {
+        errors.add(
+          'unsupported CJK in math text: "' + value +
+          '"; use mathematical symbols or move the wording into prose',
+        );
+        continue;
+      }
       if (!/[A-Za-z]/.test(value)) continue;
-      if (/[\u3400-\u9fff]/.test(value)) continue;
       if (notation.test(value)) continue;
       errors.add(`unlocalized English in math text: "${value}"`);
     }
@@ -297,7 +319,7 @@ function extractMathSpans(text) {
   const displayRe = /(?<!\\)\$\$([\s\S]*?)(?<!\\)\$\$/g;
   let m;
   while ((m = displayRe.exec(text)) !== null) {
-    spans.push({ content: m[1].trim(), display: true });
+    spans.push({ content: m[1].trim(), rawContent: m[1], display: true });
   }
   const withoutDisplayMath = text.replace(
     /(?<!\\)\$\$[\s\S]*?(?<!\\)\$\$/g,
@@ -305,7 +327,7 @@ function extractMathSpans(text) {
   );
   const inlineRe = /(?<!\\)\$([^$\n]+)(?<!\\)\$/g;
   while ((m = inlineRe.exec(withoutDisplayMath)) !== null) {
-    spans.push({ content: m[1].trim(), display: false });
+    spans.push({ content: m[1].trim(), rawContent: m[1], display: false });
   }
   return spans;
 }

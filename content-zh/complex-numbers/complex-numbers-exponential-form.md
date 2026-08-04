@@ -16,9 +16,9 @@ tags:
   - roots-of-unity
 translation:
   status: current
-  source_hash: 713ee97ec6158a5a5598f9ffe9b7fe0029a940647f31d048c50a3aaef95be13f
-  translator: omp
-  updated: "2026-07-23T10:32:43.065Z"
+  source_hash: bee9efd4a1bae7657644e81c9d14e6d825212cd40aba26de5a3c3287601a9b22
+  translator: codex
+  updated: "2026-08-04T00:00:00.000Z"
 ---
 ## 引言
 
@@ -50,6 +50,8 @@ $$z = r(\cos\theta + i\sin\theta)$$
 欧拉公式本身可以通过将 $e^{ix}$、$\cos x$、$\sin x$ 展开为[泰勒级数](../taylor-series/)，并注意到 $e^{ix}$ 的级数分成实部与虚部而得到证明：
 
 $$e^{ix} = \sum_{n=0}^{\infty} \frac{(ix)^n}{n!} = \cos x + i\sin x$$
+
+逆方程 $e^w = z$ 定义了非零复数的多值[复对数](../complex-logarithm/)。
 
 > 该公式中出现的欧拉数 $e$ 是分析学中的一个基本常数。它作为数列极限的起源，在[欧拉数](../euler-number-limit-sequence/)词条中有所讨论。
 
@@ -132,7 +134,7 @@ $$
 
 $$\arctan\left(\frac{b}{a}\right) = \arctan\left(\frac{1}{-1}\right) = \arctan(-1) = -\frac{\pi}{4}$$
 
-该值对应第四象限，因此不是 $z$ 的正确辐角。为修正反正切值所在的象限，需要加上 $\pi$：
+该值对应第四象限，因此不是 $z$ 的正确辐角。实际辐角通过加上 $\pi$ 来补偿 $a$ 的符号：
 
 $$\theta = -\frac{\pi}{4} + \pi = \frac{3\pi}{4}$$
 

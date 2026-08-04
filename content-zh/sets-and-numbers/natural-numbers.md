@@ -15,9 +15,9 @@ tags:
   - well-ordering
 translation:
   status: current
-  source_hash: f34e9c02f2e4565cc86fec3ff92c6c11f1ca73f6ad1d84a25927d3c87a644017
-  translator: omp
-  updated: "2026-07-22T08:59:05.057Z"
+  source_hash: 8eea3622e1f80db1450e418ce546d49f9fedbb1f1d5dc8cb27286307f1d834bc
+  translator: codex
+  updated: "2026-08-04T00:00:00.000Z"
 ---
 ## 引言
 
@@ -43,7 +43,7 @@ $$
 &\text{(P2)} \quad \forall \ n \in \mathbb{N}, \ S(n) \in \mathbb{N} \\[6pt]
 &\text{(P3)} \quad \forall \ n \in \mathbb{N}, \ S(n) \neq 0 \\[6pt]
 &\text{(P4)} \quad \forall \ m, n \in \mathbb{N}, \ S(m) = S(n) \implies m = n \\[6pt]
-&\text{(P5)} \quad \text{归纳公理}
+&\text{(P5)} \quad \mathrm{Ind}
 \end{align}
 $$
 
@@ -76,6 +76,8 @@ $$
 $$
 
 在此构造中，每个自然数恰好等于其所有前驱组成的集合，因此数 $n$ 恰好有 $n$ 个元素。这直接将 $\mathbb{N}$ 的序数性质与基数性质联系起来。
+
+集合 $\mathbb{N}$ 还可以为每个可数无限集提供索引。[基数与可数集](../cardinality-and-countable-sets/)利用这一性质区分有限集、可数集和不可数集。
 
 ## 算术运算
 

@@ -10,9 +10,9 @@ tags:
   - trigonometry
 translation:
   status: current
-  source_hash: ba7fc798cd0b0b1c2bb702365445ad996184a02e6b448da8399b11adc0d711a8
-  translator: omp
-  updated: "2026-07-24T17:40:43.312Z"
+  source_hash: ed8ffd67925a4abf9ddc2d36f13f02117f287cab5a5605a2cf0fa6795c466579
+  translator: codex
+  updated: "2026-08-04T00:00:00.000Z"
 ---
 ## 双曲正弦与双曲余弦简介
 
@@ -90,7 +90,7 @@ $$
 \sinh x = \sqrt{\cosh^{2} x - 1}
 $$
 
-$\cosh x$ 的存在性与唯一性由介值定理以及 $A$ 在 $[1, +\infty)$ 上的连续性与严格单调性保证。基本双曲恒等式 $\cosh^{2} x - \sinh^{2} x = 1$ 由构造直接成立。
+$\cosh x$ 的存在性与唯一性由 $A$ 在 $[1, +\infty)$ 上的连续性与严格单调性，以及[介值定理](../intermediate-value-theorem/)保证。基本双曲恒等式 $\cosh^{2} x - \sinh^{2} x = 1$ 由构造直接成立。
 
 - - -
 
@@ -140,10 +140,15 @@ $$
 
 ## 双曲正弦的解析表达式
 
-第一种推导直接来自[指数函数](../exponential-function/)。需要说明的是，这里的指数表示要到下一节才由双曲扇形面积关系严格建立；因此本段应理解为对该表示的代数拆分与验证，而非独立的证明。观察 $e^{x}$ 和 $e^{-x}$ 的行为可以发现，它们自然地分解为一个对称部分和一个反对称部分。将其写作：
+第一种推导直接来自[指数函数](../exponential-function/)。观察 $e^{x}$ 和 $e^{-x}$ 的行为可以发现，它们自然地分解为一个对称部分和一个反对称部分。将其写作：
 
-$$e^{x} = \cosh(x) + \sinh(x)$$
-$$e^{-x} = \cosh(x) - \sinh(x)$$
+$$
+e^{x} = \cosh(x) + \sinh(x)
+$$
+
+$$
+e^{-x} = \cosh(x) - \sinh(x)
+$$
 
 我们可以把这两个表达式看作以 $\cosh(x)$ 和 $\sinh(x)$ 为未知量的简单方程组。从一个方程中减去另一个方程即可分离出反对称部分，得到：
 
@@ -163,7 +168,7 @@ $$
 X^{2} - Y^{2} = 1
 $$
 
-由于我们已经知道横坐标满足以下关系（其严格推导见下一节）：
+由于我们已经知道横坐标满足以下关系：
 
 $$
 X = \cosh(x) = \frac{e^{x} + e^{-x}}{2}
@@ -194,7 +199,7 @@ $$
 Y = \frac{e^{x} - e^{-x}}{2}
 $$
 
-因此，在引用下一节由扇形面积推出的双曲余弦公式后，双曲正弦的解析表达式也可由双曲线方程得到：
+因此，双曲正弦的解析表达式从双曲线的几何中自然产生：
 
 $$
 \sinh(x) = \frac{e^{x} - e^{-x}}{2}
@@ -289,7 +294,7 @@ $$
 ![图 5](/assets/trigonometry/svg/hyperbolic-sine-and-cosine-5.zh.svg)
 
 + 定义域：$x \in \mathbb{R}$
-+ 值域：$y \in [1,+\infty)$
++ 值域：$y \in \mathbb{R} : y \geq 1$
 + 周期性：非周期；当 $|x|$ 增大时按指数速度增长
 + 奇偶性：[偶函数](../even-and-odd-functions/)，$\cosh(-x) = \cosh(x)$
 

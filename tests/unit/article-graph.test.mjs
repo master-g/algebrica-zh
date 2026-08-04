@@ -6,7 +6,11 @@ import {
   fetchArticleGraph,
   layoutArticleGraph,
 } from '../../src/lib/article-graph.mjs';
-import { applyArticleGraphTranslation } from '../../src/lib/article-graphs.mjs';
+import {
+  applyArticleGraphTranslation,
+  getArticleGraph,
+  resolveArticleGraphEntry,
+} from '../../src/lib/article-graphs.mjs';
 
 const graphHtml = `
 <section class="collapsible-tree no-mobile">
@@ -44,6 +48,23 @@ describe('article graph data', () => {
 
   it('returns null when an article has no graph module', () => {
     assert.equal(extractArticleGraph('<article>No graph here.</article>'), null);
+  });
+
+  it('resolves a translated graph by source URL when the local slug differs', () => {
+    const entry = resolveArticleGraphEntry(
+      'determinant-of-a-square-matrix',
+      'https://algebrica.org/determinant/',
+    );
+    assert.equal(entry?.key, 'determinant');
+    assert.equal(entry?.graph?.source, 'https://algebrica.org/determinant/');
+
+    const graph = getArticleGraph(
+      'determinant-of-a-square-matrix',
+      'https://algebrica.org/determinant/',
+    );
+    assert.equal(graph?.dataset?.name, '行列式');
+    assert.equal(graph?.type, '概念');
+    assert.equal(graph?.difficulty?.label, '中级');
   });
 
   it('falls back from a stale source slug to the local article slug', async () => {

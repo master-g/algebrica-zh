@@ -20,9 +20,9 @@ tags:
   - uncountability
 translation:
   status: current
-  source_hash: fdf5effa391fa3f9d7cad9d897d53167c2cc4fed98027a81f8872d40b096dcd9
-  translator: omp
-  updated: "2026-07-22T14:01:18.768Z"
+  source_hash: 8dac4b527812a107d8a05a35ced83226c3eb52d83a89b9a2b2542a5ba7559940
+  translator: codex
+  updated: "2026-08-04T00:00:00.000Z"
 ---
 ## 域与序结构
 
@@ -61,12 +61,12 @@ $$
 
 该集合在 $\mathbb{Q}$ 中非空且有上界，但在 $\mathbb{Q}$ 中没有最小上界。它在 $\mathbb{R}$ 中的上确界是无理数 $\sqrt{2}$。
 
-数 $\sqrt{2}$ 的存在性由完备性保证。在 $\mathbb{R}$ 中构造的集合 $\{x \in \mathbb{R} \mid x \geq 0 \text{ 且 } x^2 \leq 2\}$ 非空且有上界，因此它有上确界 $r$。若 $r^2<2$，则存在正数 $h$，使得 $h<1$ 且 $h<(2-r^2)/(2r+1)$。于是 $(r+h)^2<2$，这与 $r$ 是上界矛盾。若 $r^2>2$，则存在正数 $h$，使得 $h<r$ 且 $h<(r^2-2)/(2r)$。于是 $(r-h)^2>2$，因此 $r-h$ 仍然是上界，这与 $r$ 的最小性矛盾。故 $r^2=2$。
+数 $\sqrt{2}$ 的存在性由完备性保证。在 $\mathbb{R}$ 中构造的集合 $\{x \in \mathbb{R} \mid x \geq 0 \land x^2 \leq 2\}$ 非空且有上界，因此它有上确界 $r$。若 $r^2<2$，则存在正数 $h$，使得 $h<1$ 且 $h<(2-r^2)/(2r+1)$。于是 $(r+h)^2<2$，这与 $r$ 是上界矛盾。若 $r^2>2$，则存在正数 $h$，使得 $h<r$ 且 $h<(r^2-2)/(2r)$。于是 $(r-h)^2>2$，因此 $r-h$ 仍然是上界，这与 $r$ 的最小性矛盾。故 $r^2=2$。
 
 同样的构造定义了每个非负实数 $c$ 的[$n$ 次方根](../radicals/)：
 
 $$
-c^{1/n}:=\sup\{x\in\mathbb{R}\mid x\geq0\text{ 且 }x^n\leq c\}
+c^{1/n}:=\sup\{x\in\mathbb{R}\mid x\geq0\land x^n\leq c\}
 $$
 
 对于每个正[自然数](../natural-numbers/)$n$，该上确界是唯一的非负实数，其 $n$ 次幂为 $c$。若 $x>0$ 且 $q=a/b$，其中 $a\in\mathbb{Z}$ 为任意整数，$b\in\mathbb{N}$ 为正，则[有理指数幂](../powers/)由 $x^q=(x^{1/b})^a$ 定义。若 $a/b=c/d$ 是另一种表示，其中 $c\in\mathbb{Z}$ 为任意整数，$d\in\mathbb{N}$ 为正，则两个候选值具有相同的 $bd$ 次幂，因为 $ad=bc$，所以正根的唯一性使定义不依赖于所选的分数表示。对任意有理数 $q,r$，它满足 $x^{q+r}=x^qx^r$、$(x^q)^r=x^{qr}$ 和 $x^{-q}=1/x^q$。
@@ -111,7 +111,7 @@ $$
 举例来说，有理数 $r \in \mathbb{Q}$ 对应于分割 $A_r = \{q \in \mathbb{Q} \mid q<r\}$。而无理数（如 $\sqrt{2}$）则对应于分割：
 
 $$
-A = \{q \in \mathbb{Q} \mid q\leq0\} \cup \{q \in \mathbb{Q} \mid q>0 \text{ 且 } q^2<2\}
+A = \{q \in \mathbb{Q} \mid q\leq0\} \cup \{q \in \mathbb{Q} \mid q>0 \land q^2<2\}
 $$
 
 该集合满足所有三个条件，且没有有理上确界。这一构造将分割 $A$ 本身定义为填补有理序中这一空缺的实数。
@@ -212,7 +212,7 @@ $$
 
 若实数 $x$ 对每个 $\varepsilon>0$ 都满足 $x\leq\varepsilon$，则 $x\leq0$，因为 $x$ 若为正，便会超过 $\varepsilon=x/2$。类似地，对所有 $\varepsilon>0$ 都有 $|x|\leq\varepsilon$ 蕴含 $x=0$。这一判据通过将差的绝对值限制在每个正数阈值以下来证明等式，它在[极限](../limits/)的研究中反复出现。
 
-尽管 $\mathbb{Q}$ 在 $\mathbb{R}$ 中稠密，这两个集合的基数不同。有理数是可数的，而实数是不可数的。因此[无理数](../irrational-numbers/)$\mathbb{R}\setminus\mathbb{Q}$ 是不可数的。
+尽管 $\mathbb{Q}$ 在 $\mathbb{R}$ 中稠密，这两个集合的基数不同。有理数是可数的，而实数是不可数的。这些结果及其与康托尔对角线论证的关系详见[基数与可数集](../cardinality-and-countable-sets/)。因此[无理数](../irrational-numbers/)$\mathbb{R}\setminus\mathbb{Q}$ 是不可数的。
 
 下面的不可数性证明使用区间套定理。闭区间序列 $I_n = [a_n, b_n]$ 构成区间套，是指 $I_1 \supseteq I_2 \supseteq I_3 \supseteq \cdots$。完备性保证它们的交集至少包含一个点：
 
@@ -226,7 +226,7 @@ $$
 
 第二个证明是康托尔对角线论证，直接从小数展开入手。将假设列表中的每个数写成 $x_k=0.d_{k1}d_{k2}d_{k3}\ldots$，并通过选取 $e_k\neq d_{kk}$ 来定义 $y=0.e_1e_2e_3\ldots$。例如，当 $d_{kk}\neq1$ 时取 $e_k=1$，当 $d_{kk}=1$ 时取 $e_k=2$。数 $y$ 对每个 $k$ 都在第 $k$ 位上与 $x_k$ 不同，因此它不在列表中。从 $\{1,2\}$ 中选取数字可以避免诸如 $0.4999\ldots=0.5000\ldots$ 这样的数有两种小数展开的问题。
 
-波尔查诺–魏尔斯特拉斯定理是完备性的另一个推论。每个有界的实数列都有收敛子列。等价地，$\mathbb{R}$ 的每个有界无限子集都有聚点。
+波尔查诺–魏尔斯特拉斯定理是完备性的另一个推论。每个有界的实数列都有收敛子列。等价地，$\mathbb{R}$ 的每个有界无限子集都有[聚点](../topology-of-the-real-line/)。
 
 ## $\mathbb{R}$ 的唯一性
 

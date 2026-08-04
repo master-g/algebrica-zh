@@ -13,13 +13,13 @@ tags:
   - vertex
 translation:
   status: current
-  source_hash: b64b10e0feae49f561f7890b61c1798e87a9b0c6e177c111fdc189c8f11f85fe
-  translator: omp
-  updated: "2026-07-31T09:48:57.262Z"
+  source_hash: 50a4bdc02a8fb9d2093b1dd3cd9dfabbdd039a61601fbfc429a3bd210760ffe0
+  translator: codex
+  updated: "2026-08-04T00:00:00.000Z"
 ---
 ## 圆锥曲线
 
-当平面切割圆锥时，投影到该平面上的交线是[圆周](../circumference/)、抛物线、[椭圆](../ellipse/)或[双曲线](../hyperbola/)。这些曲线统称为圆锥曲线。圆锥曲线是二次平面代数曲线，即满足关于 $x$ 和 $y$ 的二次方程的点 $(x, y) \in \mathbb{R}^2$ 的集合：
+当[平面](../planes/)切割圆锥时，投影到该平面上的交线是[圆周](../circumference/)、抛物线、[椭圆](../ellipse/)或[双曲线](../hyperbola/)。这些曲线统称为圆锥曲线。圆锥曲线是二次平面代数曲线，即满足关于 $x$ 和 $y$ 的二次方程的点 $(x, y) \in \mathbb{R}^2$ 的集合：
 
 $$f(x, y) = a_{11}x^2 + 2a_{12}xy + a_{22}y^2 + 2a_{13}x + 2a_{23}y + a_{33} = 0$$
 
@@ -157,7 +157,7 @@ $$x = \pm\frac{1}{2|a|}$$
 
 端点为：
 
-$$\left(-\frac{1}{2|a|}, \frac{1}{4a}\right) \quad \text{且} \quad \left(\frac{1}{2|a|}, \frac{1}{4a}\right)$$
+$$\left(-\frac{1}{2|a|}, \frac{1}{4a}\right), \qquad \left(\frac{1}{2|a|}, \frac{1}{4a}\right)$$
 
 通径的长度为：
 

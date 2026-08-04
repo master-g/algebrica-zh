@@ -10,9 +10,9 @@ tags:
   - sign-rule
 translation:
   status: current
-  source_hash: 00f6fb103d03cfd24fd285e4776b5837021824c3183d4687cbc0d0fa89609fe3
-  translator: omp
-  updated: "2026-07-31T04:12:02.309Z"
+  source_hash: 7abf1e50724d0f7537c2dc2f6aaf7f56b37105f7df9414adecdf9751c7532afc
+  translator: codex
+  updated: "2026-08-04T00:00:00.000Z"
 ---
 ## 什么是符号分析
 
@@ -55,7 +55,7 @@ $$\begin{align}
 
 最后一行的每一项是通过将相应区间内两个因子的符号相乘得到的。满足初始不等式 $(x - 1)(x + 2) > 0$ 的区间为：
 
-$$x < -2 \quad \text{或} \quad x > 1$$
+$$x < -2 \quad \lor \quad x > 1$$
 
 用区间记法表示，解集为：
 
@@ -82,13 +82,13 @@ $$(-\infty, -2) \cup (1, +\infty)$$
 当不等式形如 $ax^2 + bx + c \ge 0$ 或 $ax^2 + bx + c > 0$（其中 $a > 0$），且对应的[二次方程](../quadratic-equations/) $ax^2 + bx + c = 0$ 有两个不同的实数解 $x_1 < x_2$ 时，有：
 
 $$\begin{align}
-&x \leq x_1 \lor x \geq x_2  &&\text{当} \quad ax^2+bx+c \geq 0 \\[6pt]
-&x < x_1 \lor x > x_2  &&\text{当} \quad ax^2+bx+c > 0
+&x \leq x_1 \lor x \geq x_2  && ax^2+bx+c \geq 0 \\[6pt]
+&x < x_1 \lor x > x_2  && ax^2+bx+c > 0
 \end{align}$$
 
 条件 $a > 0$ 对应开口向上的抛物线，它在两根所确定的区间之外取正值，在两根之间取负值。若 $a < 0$，则将不等式两边乘以 $-1$ 并反转不等号方向，即可将问题归约为前述情形。
 
-若函数 $f(x)$ 在区间 $[a,b]$ 上[连续](../continuous-functions/)，且 $f(a)$ 与 $f(b)$ 异号，则由介值定理知存在至少一点 $c \in (a,b)$ 使得 $f(c) = 0$。
+若函数 $f(x)$ 在区间 $[a,b]$ 上[连续](../continuous-functions/)，且 $f(a)$ 与 $f(b)$ 异号，则由[介值定理](../intermediate-value-theorem/)知存在至少一点 $c \in (a,b)$ 使得 $f(c) = 0$。
 
 ![图 1](/assets/inequalities/svg/sign-analysis-in-inequalities-1.zh.svg)
 

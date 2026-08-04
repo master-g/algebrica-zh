@@ -153,7 +153,14 @@ export async function collectTranslationStatus({
     if (actual === expected) {
       current.push({ section, slug });
       if (verify) {
-        const result = await validateTranslation(zhPath, zhText, { dangling });
+        // Status verification covers repository-wide structural validity and the
+        // failure ledger. Editorial math-text rules are enforced by the strict,
+        // per-target admission command so legacy debt does not redefine whether
+        // an otherwise current translation is current.
+        const result = await validateTranslation(zhPath, zhText, {
+          dangling,
+          checkVisibleMathText: false,
+        });
         if (!result.ok) {
           validationFailures++;
           log(`FAIL ${section}/${slug}: ${result.errors.join('; ')}`);

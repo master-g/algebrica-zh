@@ -22,7 +22,7 @@ translation:
 + 从 $O$ 出发的一条参考半直线，称为极轴
 + 一个逆时针方向
 
-每一个点 $Q\neq O$ 都确定了一个到极点的距离 $\rho=|OQ|$，以及极轴与射线 $OQ$ 之间的一个有向[角](../angles-and-angular-measure/) $\theta$。有序对 $(\rho,\theta)$ 是 $Q$ 的一组极坐标。第一个分量 $\rho$ 是[径矢](../vectors/)，第二个分量 $\theta$ 是幅角。
+每一个点 $Q\neq O$ 都确定了一个到极点的距离 $\rho=|OQ|$，以及极轴与射线 $OQ$ 之间的一个有向[角](../angles-and-angular-measure/) $\theta$。有序对 $(\rho,\theta)$ 是 $Q$ 的一组极坐标。第一个分量 $\rho$ 是[径矢](../vectors/)，第二个分量 $\theta$ 是极角。
 
 ![图 1](/assets/lines-planes-conic-sections/svg/polar-coordinates-1.zh.svg)
 
@@ -103,7 +103,7 @@ $$\rho=\sqrt{(-3)^2+(\sqrt{3})^2}=\sqrt{9+3}=2\sqrt{3}$$
 
 $$\tan\theta=\frac{\sqrt{3}}{-3}=-\frac{\sqrt{3}}{3}$$
 
-该[方程](../equations/) 在 $[0,2\pi)$ 中有两个解，相差 $\pi$。为了选择正确的解，我们注意到该点具有 $x<0$ 和 $y>0$，因此位于第二象限。与该象限一致的角是：
+该[方程](../equations/)在 $[0,2\pi)$ 中有两个解，相差 $\pi$。为了选择正确的解，我们注意到该点具有 $x<0$ 和 $y>0$，因此位于第二象限。与该象限一致的角是：
 
 $$\theta=\frac{5\pi}{6}$$
 

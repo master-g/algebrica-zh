@@ -10,9 +10,9 @@ tags:
   - linear-equations
 translation:
   status: current
-  source_hash: 6b54bc7337e6d490cc4eabde54ad4681fd3b96eccebc51e21f79ee2a13debf77
-  translator: omp
-  updated: "2026-07-26T03:31:14.974Z"
+  source_hash: b71ebada12b8294088517361599efe63849527685ba5c757bc9fffac75b9a3da
+  translator: codex
+  updated: "2026-08-04T00:00:00.000Z"
 ---
 ## 定义
 
@@ -39,7 +39,7 @@ $$L(x + y) = L(x) + L(y)$$
 
 $$L(\lambda x) = \lambda L(x)$$
 
-这两个恒等式正是如下几何事实的代数对应：使解集成为一条直线、一个平面，或更一般地一个超平面。同样的线性概念构成了[向量空间](../vector-spaces/)与线性映射的基础，也解释了为何线性方程在数学中占据如此核心的地位。
+这两个恒等式正是如下几何事实的代数对应：使解集成为一条直线、一个平面，或更一般地一个超平面。同样的线性概念构成了[向量空间](../vector-spaces/)与[线性映射](../linear-maps/)的基础，也解释了为何线性方程在数学中占据如此核心的地位。
 
 线性方程可含有任意有限个未知数。例如，表达式 $ax + by + c = 0$ 是关于两个变量 $x$ 与 $y$ 的线性方程，写成标准形式后其常数项为 $-c$。
 
@@ -51,7 +51,7 @@ $$L(\lambda x) = \lambda L(x)$$
 
 + 含一个未知数时，解退化为实数轴上的单个点。
 + 含两个未知数时，解构成平面内的一条[直线](../lines/)，若方程为齐次则经过原点。
-+ 含三个未知数时，解构成空间中的一个平面，齐次情形下同样经过原点。
++ 含三个未知数时，解构成空间中的一个[平面](../planes/)，齐次情形下同样经过原点。
 + 含 $n > 3$ 个未知数时，解集是 $\mathbb{R}^n$ 的一个超平面，即维数为 $n - 1$ 的仿射子空间。
 
 > 维数恰好下降一，反映了一个线性方程对 $n$ 个未知数施加了一个标量约束这一事实。施加更多独立的线性条件相当于对各超平面求交，自然地引出[线性方程组](../systems-of-linear-equations/)的理论。
@@ -222,6 +222,8 @@ $$(x, y, z) = (\lambda, \mu, \lambda + 2\mu), \qquad \lambda, \mu \in \mathbb{R}
 方程 $x + 2y - z = 0$ 的解集合即过原点的平面，其方程为：
 
 $$(x, y, z) = (\lambda, \mu, \lambda + 2\mu), \qquad \lambda, \mu \in \mathbb{R}$$
+
+[三元线性方程组](../systems-of-linear-equations-in-three-variables/)页面讨论多个此类平面的交集及其初等求解方法。
 
 ## 含参线性方程
 

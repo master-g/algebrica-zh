@@ -8,155 +8,243 @@ tags:
   - algebraic-structures
   - basis
   - dimension
+  - direct-sum
   - field
+  - homomorphism-theorem
   - linear-combination
   - linear-independence
   - linear-map
+  - quotient-space
   - rank-nullity-theorem
   - subspace
   - vector-space
 translation:
   status: current
-  source_hash: d0b4695a906b7e487da75cd4b7b388b5294b53679d4b7a95b6eb37c6c7010bf8
-  translator: omp
-  updated: "2026-07-23T05:50:27.214Z"
+  source_hash: 05de49c439c64262c5661f2e84aa37b8615fe1dba3b93d0624c2fcf203f430a6
+  translator: codex
+  updated: "2026-08-04T00:00:00.000Z"
 ---
-## 定义
+## 具体模型
 
-向量空间是一种代数结构，它将可被缩放并可[线性组合](../linear-combinations/)的量的概念加以形式化。这一概念出现在任何需要处理能够以一致方式相加和乘以数的对象之处：平面上的几何箭头、实系数[多项式](../polynomials/)、[实数](../real-numbers/)数列以及区间上的[连续函数](../continuous-functions/)都具有这一共同模式。
+平面 $\mathbb{R}^2$ 是一个向量空间，其元素是有序对。它的加法与数乘为：
 
-与定义在单一集合上的[群](../groups/)或[环](../rings/)不同，向量空间涉及两个不同的集合：一个[域](../fields/) $F$，其元素称为标量；以及一个集合 $V$，其元素称为[向量](../vectors/)。$F$ 上的向量空间是一个集合 $V$，连同两个运算：向量加法 $+ : V \times V \to V$ 和数乘 $\cdot : F \times V \to V$，满足以下公理：
+$$(a_1, a_2) + (b_1, b_2) = (a_1 + b_1, a_2 + b_2)$$
 
-+ $(V, +)$ 是一个阿贝尔群。存在一个零向量 $\mathbf{0} \in V$，使得对所有 $\mathbf{v} \in V$ 都有 $\mathbf{v} + \mathbf{0} = \mathbf{v}$，且每个向量 $\mathbf{v}$ 都有加法逆元 $-\mathbf{v}$。
-+ 与域乘法的相容性：对所有 $\alpha, \beta \in F$ 和 $\mathbf{v} \in V$，恒等式 $\alpha \cdot (\beta \cdot \mathbf{v}) = (\alpha\beta) \cdot \mathbf{v}$ 成立。
-+ 数乘的单位元：对所有 $\mathbf{v} \in V$，乘法单位元 $1 \in F$ 满足 $1 \cdot \mathbf{v} = \mathbf{v}$。
-+ 数乘对向量加法的分配律：对所有 $\alpha \in F$ 和 $\mathbf{u}, \mathbf{v} \in V$，恒等式 $\alpha \cdot (\mathbf{u} + \mathbf{v}) = \alpha \cdot \mathbf{u} + \alpha \cdot \mathbf{v}$ 成立。
-+ 数乘对域加法的分配律：对所有 $\alpha, \beta \in F$ 和 $\mathbf{v} \in V$，恒等式 $(\alpha + \beta) \cdot \mathbf{v} = \alpha \cdot \mathbf{v} + \beta \cdot \mathbf{v}$ 成立。
+$$\alpha(a_1, a_2) = (\alpha a_1, \alpha a_2)$$
 
-> 定义 $V$ 所依据的域 $F$ 称为 $V$ 的标量域。在本科阶段遇到的大多数应用中，$F$ 要么是 $\mathbb{R}$，要么是 $\mathbb{C}$，相应地称为实向量空间或复向量空间。
+加法把两个[向量](../vectors/)相结合，而[实数](../real-numbers/) $\alpha$ 对向量进行缩放。按分量定义加法与数乘后，对任意[域](../fields/)，$F^n$ 都是 $F$ 上的向量空间。例如，$\mathbb{Q}^n$ 是 $\mathbb{Q}$ 上的向量空间，$\mathbb{R}^n$ 是 $\mathbb{R}$ 上的向量空间，$\mathbb{F}_p^n$ 是有限域 $\mathbb{F}_p$ 上的向量空间。
 
-## 性质
+向量空间的元素不一定是数表。所有元素取自 $F$ 的 $m \times n$ [矩阵](../matrices/)组成的集合 $M_{m \times n}(F)$，带有逐元素加法与数乘。$F[x]$ 是所有[多项式](../polynomials/)组成的集合，带有多项式加法以及乘以 $F$ 中常数的运算。若 $X$ 是非空集合，则 $F^X$ 是由[函数](../functions/) $f : X \to F$ 组成的集合，带有逐点运算：
 
-由公理可直接推出若干基本结论。对任意标量 $\alpha \in F$ 和任意向量 $\mathbf{v} \in V$，乘以零满足 $0 \cdot \mathbf{v} = \mathbf{0}$。理由如下：
+$$(f + g)(x) = f(x) + g(x)$$
+
+$$(\alpha f)(x) = \alpha f(x)$$
+
+实数的[数列](../sequences/)是 $\mathbb{R}^{\mathbb{N}}$ 的元素。对区间 $I$，从 $I$ 到 $\mathbb{R}$ 的[连续函数](../continuous-functions/)与[可微函数](../derivatives/)是 $\mathbb{R}^I$ 中对两种运算都封闭的子集。在每种情形中，加法与数乘都满足同样的恒等式。这些运算并不定义长度或角度；后者需要额外的[内积](../inner-product-spaces/)结构。抽象定义列出了向量空间公理。
+
+## 抽象定义
+
+域 $F$ 上的向量空间是一个集合 $V$，配备向量加法 $+ : V \times V \to V$ 与数乘 $\cdot : F \times V \to V$。这些运算满足以下公理：
+
++ $(V, +)$ 是一个阿贝尔群。
++ 对所有 $\alpha, \beta \in F$ 与 $\mathbf{v} \in V$，有 $\alpha \cdot (\beta \cdot \mathbf{v}) = (\alpha\beta) \cdot \mathbf{v}$。
++ 对所有 $\mathbf{v} \in V$，有 $1 \cdot \mathbf{v} = \mathbf{v}$。
++ 对所有 $\alpha \in F$ 与 $\mathbf{u}, \mathbf{v} \in V$，有 $\alpha \cdot (\mathbf{u} + \mathbf{v}) = \alpha \cdot \mathbf{u} + \alpha \cdot \mathbf{v}$。
++ 对所有 $\alpha, \beta \in F$ 与 $\mathbf{v} \in V$，有 $(\alpha + \beta) \cdot \mathbf{v} = \alpha \cdot \mathbf{v} + \beta \cdot \mathbf{v}$。
+
+阿贝尔群的单位元是零向量 $\mathbf{0}$，$F$ 中的元素称为标量。选择 $F$ 是结构的一部分。例如，$\mathbb{C}^n$ 既是[复数](../complex-numbers/)域上的向量空间，也是 $\mathbb{R}$ 上的向量空间，但这两个结构的维数不同。
+
+公理蕴含了关于零元与加法逆元的运算法则。对标量加法的分配律给出：
 
 $$0 \cdot \mathbf{v} = (0 + 0) \cdot \mathbf{v} = 0 \cdot \mathbf{v} + 0 \cdot \mathbf{v}$$
 
-再利用 $(V, +)$ 的群结构从两边消去 $0 \cdot \mathbf{v}$ 即得结论。类似地，对任意 $\mathbf{v} \in V$ 有 $\alpha \cdot \mathbf{0} = \mathbf{0}$ 和 $(-1) \cdot \mathbf{v} = -\mathbf{v}$，更一般地，对任意 $\alpha \in F$ 有 $(-\alpha) \cdot \mathbf{v} = -(\alpha \cdot \mathbf{v})$。
+阿贝尔群中的消去律给出 $0 \cdot \mathbf{v} = \mathbf{0}$。将分配律应用于 $\alpha \cdot (\mathbf{0} + \mathbf{0})$，得到 $\alpha \cdot \mathbf{0} = \mathbf{0}$。分配律还给出 $(-1) \cdot \mathbf{v} = -\mathbf{v}$ 以及 $(-\alpha) \cdot \mathbf{v} = -(\alpha \cdot \mathbf{v})$。
 
-当 $\alpha \cdot \mathbf{v} = \mathbf{0}$ 时，要么 $\alpha = 0$，要么 $\mathbf{v} = \mathbf{0}$。这是非零标量可逆的直接推论：当 $\alpha \neq 0$ 时，
+设 $\alpha \cdot \mathbf{v} = \mathbf{0}$ 且 $\alpha \neq 0$。乘以 $\alpha^{-1}$ 得到：
 
-$$\mathbf{v} = 1 \cdot \mathbf{v} = (\alpha^{-1}\alpha) \cdot \mathbf{v} = \alpha^{-1} \cdot (\alpha \cdot \mathbf{v}) = \alpha^{-1} \cdot \mathbf{0} = \mathbf{0}$$
+$$\mathbf{v} = (\alpha^{-1}\alpha) \cdot \mathbf{v} = \alpha^{-1} \cdot (\alpha \cdot \mathbf{v}) = \mathbf{0}$$
 
-这一性质是「域中无零因子」在向量空间中的对应，线性无关的理论正以此为基础。
+因此，$\alpha \cdot \mathbf{v} = \mathbf{0}$ 蕴含 $\alpha = 0$ 或 $\mathbf{v} = \mathbf{0}$。不同的标量给出非零向量的不同倍数，所以每个无限域上的非零向量空间都是无限的。
 
-不同的标量给出同一个固定非零向量的不同倍数。当 $\mathbf{v} \neq \mathbf{0}$ 且 $\alpha \neq \beta$ 时，由刚才证明的性质，差 $(\alpha - \beta) \cdot \mathbf{v}$ 非零，故 $\alpha \cdot \mathbf{v} \neq \beta \cdot \mathbf{v}$。在诸如 $\mathbb{R}$ 这样的无限域上，这迫使每个非平凡空间都是无限的，因为单个非零向量 $\mathbf{v}$ 已经可以为每个标量 $\alpha$ 生成一个不同的倍数 $\alpha \cdot \mathbf{v}$。因此实向量空间要么只有一个元素，要么有无穷多个元素，而平凡空间 $\\{\ \mathbf{0} \ \\}$ 是唯一有限的情形。
+> 向量空间具有底层的阿贝尔[群](../groups/)以及独立的标量域。[模](../modules/)使用标量[环](../rings/)而非域，因此下面的若干结果对模不再成立。
 
-## 代数层级
+## 子空间与张成
 
-在代数结构的标准分类中，向量空间位于群、环和域之上，因为它依赖于一个标量域的存在。
+[子空间](../subspaces/)是 $V$ 的非空子集 $W \subseteq V$，并且对加法与数乘封闭。继承运算后，$W$ 是同一域上的向量空间。零向量属于 $W$，因为对任意 $\mathbf{w} \in W$ 有 $0 \cdot \mathbf{w} = \mathbf{0}$。
 
-群由一个集合配备一个允许逆元的运算构成。环引入了第二个运算，但该运算不必可逆。域要求两种运算在非零元素上都完全可逆。向量空间则以一个域为既定前提，在其之上构建新的结构，其中域通过缩放作用于另一个独立的向量集合。三种基础结构构成一条刚性递增的链：
+给定子集 $S \subseteq V$，它的张成由 $S$ 中元素的所有有限[线性组合](../linear-combinations/)组成：
 
-+ 群具有一个带逆元的运算。
-+ 环具有两个运算，但仅对加法保证逆元存在。
-+ 域具有两个运算，对加法以及乘法下所有非零元素均保证逆元存在。
+$$\mathrm{span}(S) = \{\ \alpha_1\mathbf{v}_1 + \cdots + \alpha_n\mathbf{v}_n \mid n \geq 1,\ \alpha_i \in F,\ \mathbf{v}_i \in S\ \}$$
 
-> 向量空间本身并不是这条链的进一步延伸，而是一种以域为前提的结构。每一个建立在 $\mathbb{R}$ 或 $\mathbb{C}$ 之上的向量空间，都依赖域公理成立才能使其数乘有良好定义。当标量取自[环](../rings/)而非域时，所得到的结构是[模](../modules/)，它推广了向量空间的概念，将在专门页面中讨论。
+约定 $\mathrm{span}(\varnothing) = \{\ \mathbf{0} \ \}$，以涵盖空集。$S$ 的张成是包含 $S$ 的最小子空间，因为每个这样的子空间都包含 $S$ 中元素的所有有限线性组合。
 
-## 示例
+例如，向量 $(1, 2)$ 生成子空间：
 
-最小的向量空间是平凡空间 $\\{\ \mathbf{0} \ \\}$，仅由零向量构成，建立在任意域 $F$ 之上。其运算是唯一确定的：对每个 $\alpha \in F$，有 $\mathbf{0} + \mathbf{0} = \mathbf{0}$ 和 $\alpha \cdot \mathbf{0} = \mathbf{0}$。它的基是空集，因此其维数为 $0$，且它是唯一一个维数为 $0$ 的向量空间。
+$$W = \mathrm{span}\{\ (1, 2)\ \} = \{\ (t, 2t) \mid t \in \mathbb{R}\ \}$$
 
-所有实数的有序 $n$ 元组的集合 $\mathbb{R}^n$，在逐分量加法与数乘下构成 $\mathbb{R}$ 上的向量空间。对于 $n = 2$，加法定义为 $(a_1, a_2) + (b_1, b_2) = (a_1 + b_1, a_2 + b_2)$，数乘定义为 $\alpha \cdot (a_1, a_2) = (\alpha a_1, \alpha a_2)$。零向量为 $(0, 0)$。这是有限维实向量空间的原型，为一般理论提供了几何直观。
-
-所有复数的有序 $n$ 元组的集合 $\mathbb{C}^n$，在类似的运算下构成 $\mathbb{C}$ 上的向量空间。它也可以被视为 $\mathbb{R}$ 上的向量空间，但此时其维数加倍：$\mathbb{C}^n$ 作为实向量空间的维数为 $2n$。
-
-所有 $m$ 行 $n$ 列实元素的[矩阵](../matrices/)的集合 $M_{m \times n}(\mathbb{R})$，在逐元素加法与数乘下构成 $\mathbb{R}$ 上的向量空间。$A = (a_{ij})$ 与 $B = (b_{ij})$ 的和是元素为 $a_{ij} + b_{ij}$ 的矩阵，标量倍数 $\alpha A$ 的元素为 $\alpha a_{ij}$。零向量是每个元素都等于 $0$ 的矩阵。一组基由 $mn$ 个仅有一个元素等于 $1$ 而其余均为 $0$ 的矩阵构成，因此该空间的维数为 $mn$。取单行时重现 $\mathbb{R}^n$ 为 $M_{1 \times n}(\mathbb{R})$，取单列时给出与 $M_{n \times 1}(\mathbb{R})$ 相同的空间，因此[行向量与列向量](../vectors/)是特殊的矩阵。当 $m = n$ 时，矩阵为 $n$ 阶方阵，且 $M_{n \times n}(\mathbb{R})$ 的维数为 $n^2$。
-
-- - -
-
-所有次数不超过 $n$ 的实系数[多项式](../polynomials/)的集合 $\mathbb{R}[x]_{\leq n}$，在多项式的通常加法及多项式与实常数的乘法下构成 $\mathbb{R}$ 上的向量空间。零向量为零多项式。该空间的一组自然基是 $\\{\ 1, x, x^2, \ldots, x^n \ \\}$，它包含 $n + 1$ 个元素，因此该空间的维数为 $n + 1$。去掉次数的上界限制，便得到所有实多项式构成的空间 $\mathbb{R}[x]$，其基为 $\\{\ 1, x, x^2, \ldots \ \\}$，维数为无穷。
-
-闭区间 $[a, b]$ 上所有连续实值函数的集合 $\mathcal{C}([a, b])$，在逐点加法与数乘下构成 $\mathbb{R}$ 上的向量空间：$(f + g)(x) = f(x) + g(x)$ 和 $(\alpha f)(x) = \alpha f(x)$。该空间是无限维的，因为各次单项式构成线性无关子集，因此不存在有限生成集。
-
-## 子空间
-
-非空子集 $W \subseteq V$ 当 $W$ 在从 $V$ 继承的运算下本身构成 $F$ 上的向量空间时，称为 $V$ 的子空间。与其逐一验证所有公理，只须检验两个条件：对所有 $\mathbf{u}, \mathbf{v} \in W$ 与所有 $\alpha \in F$，成员关系 $\mathbf{u} + \mathbf{v} \in W$ 与 $\alpha \cdot \mathbf{v} \in W$ 必须成立。这两个条件合起来称为对线性组合的封闭性。零向量 $\mathbf{0}$ 必属于每个子空间，因为令 $\alpha = 0$ 即得 $0 \cdot \mathbf{v} = \mathbf{0} \in W$。
-
-举例来说，集合 $W = \\{\ (x, y) \in \mathbb{R}^2 : y = 2x \ \\}$ 是 $\mathbb{R}^2$ 的子空间。对于 $W$ 中任意两个向量 $(x_1, 2x_1)$ 与 $(x_2, 2x_2)$，它们的和 $(x_1 + x_2, 2x_1 + 2x_2) = (x_1 + x_2, 2(x_1 + x_2))$ 属于 $W$；而对任意标量 $\alpha \in \mathbb{R}$，向量 $\alpha(x_1, 2x_1) = (\alpha x_1, 2\alpha x_1)$ 也属于 $W$。两个条件均满足，故 $W$ 是 $\mathbb{R}^2$ 的子空间。从几何上看，$W$ 是过原点且斜率为 $2$ 的直线。
+这是斜率为 $2$ 的[过原点直线](../vector-and-parametric-equations-of-a-line/)。若 $s, t, \alpha \in \mathbb{R}$，则 $(s, 2s) + (t, 2t) = (s + t, 2(s + t))$ 且 $\alpha(t, 2t) = (\alpha t, 2\alpha t)$，所以该集合对两种运算都封闭。
 
 ![IMG. 1](/assets/algebraic-structures/svg/vector-spaces-1.svg)
 
-> $W$ 中的任一向量都位于过原点且斜率为 $2$ 的直线上。将两个这样的向量相加或将其中一个乘以标量，所得向量始终落在同一直线上，因此 $W$ 对两种运算都封闭。
-
-## 基与维数
-
-$V$ 中的一组向量 $\\{\ \mathbf{v}_1, \mathbf{v}_2, \ldots, \mathbf{v}_n \ \\}$ 称为线性无关，当且仅当方程：
-
-$$\alpha_1 \mathbf{v}_1 + \alpha_2 \mathbf{v}_2 + \cdots + \alpha_n \mathbf{v}_n = \mathbf{0}$$
-
-的唯一解为 $\alpha_1 = \alpha_2 = \cdots = \alpha_n = 0$。不是线性无关的向量集合称为线性相关，这意味着集合中至少有一个向量可以表示为其余向量的[线性组合](../linear-combinations/)。$V$ 的基是张成 $V$ 的线性无关向量集合，即 $V$ 中的每个向量都可以表示为基向量的线性组合。任意向量在给定基下的表示是唯一的。若：
-
-$$\mathbf{v} = \alpha_1 \mathbf{v}_1 + \cdots + \alpha_n \mathbf{v}_n = \beta_1 \mathbf{v}_1 + \cdots + \beta_n \mathbf{v}_n$$
-
-则相减得到：
-
-$$(\alpha_1 - \beta_1)\mathbf{v}_1 + \cdots + (\alpha_n - \beta_n)\mathbf{v}_n = \mathbf{0}$$
-
-由线性无关性可得对所有 $k$ 都有 $\alpha_k = \beta_k$。
-
-- - -
-
-同一向量空间的任意两组基包含相同个数的元素。这一论证基于如下观察：当 $m$ 个向量的集合张成 $V$，而 $n$ 个向量的集合在 $V$ 中线性无关时，不等式 $n \leq m$ 成立。将此不等式沿两个方向各应用一次，便迫使任意两组基的基数相等。这个共同的基数称为 $V$ 的维数，记作 $\dim V$。
-
-$\mathbb{R}^n$ 的标准基由 $n$ 个向量 $\mathbf{e}_1, \mathbf{e}_2, \ldots, \mathbf{e}_n$ 组成，其中 $\mathbf{e}_k$ 在第 $k$ 个位置取 $1$，其余位置取 $0$。例如，$\mathbb{R}^3$ 的标准基为：
-
-$$\mathbf{e}_1 = (1, 0, 0), \quad \mathbf{e}_2 = (0, 1, 0), \quad \mathbf{e}_3 = (0, 0, 1)$$
-
-每个[向量](../vectors/) $(a, b, c) \in \mathbb{R}^3$ 都可以唯一地表示为 $a \mathbf{e}_1 + b \mathbf{e}_2 + c \mathbf{e}_3$，这证实了这三个向量构成一组基，且 $\dim \mathbb{R}^3 = 3$。
+[子空间](../subspaces/)页面包含封闭性判据、和与交、格拉斯曼公式、直和与补空间。
 
 ## 线性映射
 
-线性映射，又称线性变换，是同一域 $F$ 上两个向量空间之间的[函数](../functions/) $\varphi : V \to W$，它保持向量空间的结构。具体而言，$\varphi$ 是线性的，当且仅当对所有 $\mathbf{u}, \mathbf{v} \in V$ 和所有 $\alpha \in F$ 下列两个条件成立：
+同一域上两个向量空间之间的[函数](../functions/) $T : V \to W$，若保持加法与数乘，则称为[线性映射](../linear-maps/)：
 
-$$\varphi(\mathbf{u} + \mathbf{v}) = \varphi(\mathbf{u}) + \varphi(\mathbf{v})$$
+$$T(\mathbf{u} + \mathbf{v}) = T(\mathbf{u}) + T(\mathbf{v})$$
 
-$$\varphi(\alpha \cdot \mathbf{v}) = \alpha \cdot \varphi(\mathbf{v})$$
+$$T(\alpha \mathbf{v}) = \alpha T(\mathbf{v})$$
 
-这两个条件可以合并为单一要求：对所有 $\alpha, \beta \in F$ 和 $\mathbf{u}, \mathbf{v} \in V$ 都有 $\varphi(\alpha \mathbf{u} + \beta \mathbf{v}) = \alpha\varphi(\mathbf{u}) + \beta\varphi(\mathbf{v})$。双射的线性映射称为线性同构，当两个向量空间之间存在线性同构时，称它们同构。$F$ 上每个 $n$ 维向量空间都与 $F^n$ 同构，因此有限维向量空间完全由其维数和标量域分类。
+等价地，对所有向量 $\mathbf{u}, \mathbf{v}$ 与标量 $\alpha, \beta$，有 $T(\alpha\mathbf{u} + \beta\mathbf{v}) = \alpha T(\mathbf{u}) + \beta T(\mathbf{v})$。线性映射的复合仍是线性的，从一个空间到自身的线性映射称为自同态。双射线性映射是一个[线性同构](../homomorphisms-and-isomorphisms/)，其逆映射也是线性的。
 
-线性映射 $\varphi : V \to W$ 的[核](../homomorphisms-and-isomorphisms/)和像定义如下：
+坐标投影 $P : F^3 \to F^2$ 定义为 $P(x, y, z) = (x, y)$，它是线性的。迹映射 $\mathrm{tr} : M_n(F) \to F$ 是线性的，因为 $\mathrm{tr}(A + B) = \mathrm{tr}(A) + \mathrm{tr}(B)$ 且 $\mathrm{tr}(\alpha A) = \alpha\mathrm{tr}(A)$。[形式导数](../derivatives/) $D : F[x] \to F[x]$ 是线性的，并满足：
 
-$$\ker(\varphi) = \\{\ \mathbf{v} \in V : \varphi(\mathbf{v}) = \mathbf{0} \ \\}$$
+$$D\left(\sum_{k=0}^n a_kx^k\right) = \sum_{k=1}^n ka_kx^{k-1}$$
 
-$$\mathrm{im}(\varphi) = \\{\ \varphi(\mathbf{v}) : \mathbf{v} \in V \ \\}$$
+$T$ 的[核与像](../kernel-and-image-of-a-linear-map/)为：
 
-$\ker(\varphi)$ 和 $\mathrm{im}(\varphi)$ 分别是 $V$ 和 $W$ 的子空间。维数定理，又称秩-零化度定理，断言对于有限维空间之间的任意线性映射，下列恒等式成立：
+$$\ker(T) = \{\ \mathbf{v} \in V \mid T(\mathbf{v}) = \mathbf{0} \ \}$$
 
-$$\dim V = \dim \ker(\varphi) + \dim \mathrm{im}(\varphi)$$
+$$\mathrm{im}(T) = \{\ T(\mathbf{v}) \mid \mathbf{v} \in V \ \}$$
 
-$\mathrm{im}(\varphi)$ 的维数称为 $\varphi$ 的秩，$\ker(\varphi)$ 的维数称为其零化度。秩-零化度定理是[线性方程组](../systems-of-linear-equations/)理论、[矩阵](../matrices/)分析以及有限维空间之间线性映射分类的基础。
+这两个集合都是子空间。若 $T(\mathbf{u}) = T(\mathbf{v}) = \mathbf{0}$，则 $T(\alpha\mathbf{u} + \beta\mathbf{v}) = \mathbf{0}$。对于像，$\alpha T(\mathbf{u}) + \beta T(\mathbf{v}) = T(\alpha\mathbf{u} + \beta\mathbf{v})$，而该元素属于 $\mathrm{im}(T)$。
+
+## 基、坐标与维数
+
+当 $B \subseteq V$ 中任意不同元素构成的有限线性组合为零时，其所有系数都为零，则称 $B$ 线性无关。空集线性无关，而包含 $\mathbf{0}$ 的集合线性相关。$V$ 的基是张成 $V$ 的线性无关子集。
+
+若 $B = \{\ \mathbf{v}_1, \ldots, \mathbf{v}_n \ \}$ 是一组基，则每个向量都有唯一展开式：
+
+$$\mathbf{v} = \alpha_1\mathbf{v}_1 + \cdots + \alpha_n\mathbf{v}_n$$
+
+存在性来自张成性质。若另一个展开式的系数为 $\beta_1, \ldots, \beta_n$，相减得到：
+
+$$(\alpha_1 - \beta_1)\mathbf{v}_1 + \cdots + (\alpha_n - \beta_n)\mathbf{v}_n = \mathbf{0}$$
+
+线性无关性随后给出对每个 $i$ 都有 $\alpha_i = \beta_i$。
+
+$F^n$ 的标准基由向量 $\mathbf{e}_1, \ldots, \mathbf{e}_n$ 组成，其中 $\mathbf{e}_i$ 在位置 $i$ 的元素为 $1$，其他位置为零。在 $M_{m \times n}(F)$ 中，恰有一个元素为 $1$ 而其他元素为零的矩阵组成一组基。次数至多为 $n$ 的多项式的基是单项式 $1, x, \ldots, x^n$。这些基分别含有 $n$、$mn$ 与 $n + 1$ 个元素。
+
+多项式空间 $F[x]$ 有无限基 $\{\ 1, x, x^2, \ldots\ \}$。含有多于一个点的区间上的连续实值函数空间是无限维的，因为它包含任意次数的线性无关单项式。标量域会影响维数。向量 $\mathbf{e}_1, \ldots, \mathbf{e}_n$ 构成 $\mathbb{C}^n$ 在 $\mathbb{C}$ 上的一组基，而 $\mathbf{e}_1, \ldots, \mathbf{e}_n, i\mathbf{e}_1, \ldots, i\mathbf{e}_n$ 构成它在 $\mathbb{R}$ 上的一组基。因此 $\dim_{\mathbb{C}}\mathbb{C}^n = n$ 且 $\dim_{\mathbb{R}}\mathbb{C}^n = 2n$。
+
+当向量空间具有有限张成集时，称为有限维空间。从这样的集合中去掉相关向量即可得到一组基。若 $m$ 个向量张成 $V$，而 $n$ 个向量线性无关，交换论证给出 $n \leq m$。将这个不等式沿两个方向应用于两组基，说明它们有相同的元素个数。这个数就是维数 $\dim V$。零空间 $\{\ \mathbf{0} \ \}$ 的基是空集，维数为 $0$。
+
+基有两个等价刻画：
+
++ 它是极小张成集。
++ 它是极大线性无关集。
+
+从基中去掉一个向量后，所得集合不再张成 $V$。向基中加入一个向量会得到相关集合。反过来，极大线性无关集张成 $V$，因为其张成之外的向量可以加入而不会产生关系。
+
+若 $W$ 是有限维空间 $V$ 的子空间，则 $W$ 中的线性无关子集可以扩充为 $W$ 的一组基，而这组基还可以扩充为 $V$ 的一组基。因此 $\dim W \leq \dim V$，且只有 $W = V$ 时等号成立。
+
+> 假设选择公理，佐恩引理可以把任意向量空间中的线性无关子集扩充为一组基。有限维空间使用上面的有限扩充过程。
+
+给基 $B = (\mathbf{v}_1, \ldots, \mathbf{v}_n)$ 排序，就能把向量的系数变成其坐标向量：
+
+$$[\mathbf{v}]_B = (\alpha_1, \ldots, \alpha_n)$$
+
+坐标映射 $C_B : V \to F^n$ 定义为 $C_B(\mathbf{v}) = [\mathbf{v}]_B$，是一个线性同构。因此，每个 $F$ 上的 $n$ 维向量空间都同构于 $F^n$，尽管这个同构依赖于所选的有序基。
+
+在基上的函数决定了整个空间上的一个线性映射。给定 $f : B \to U$，公式
+
+$$T\left(\sum_i \alpha_i\mathbf{v}_i\right) = \sum_i \alpha_i f(\mathbf{v}_i)$$
+
+定义了唯一的线性映射 $T : V \to U$，其在 $B$ 上的限制是 $f$。坐标的唯一性保证了该公式良定义。
+
+设 $T : V \to U$ 的定义域是有限维的。若 $\mathbf{k}_1, \ldots, \mathbf{k}_r$ 是 $\ker(T)$ 的一组基，将其扩展为 $V$ 的一组基 $\mathbf{k}_1, \ldots, \mathbf{k}_r, \mathbf{v}_{r+1}, \ldots, \mathbf{v}_n$。向量 $T(\mathbf{v}_{r+1}), \ldots, T(\mathbf{v}_n)$ 张成 $\mathrm{im}(T)$，因为 $T$ 把核分量映为零。若这些像的某个线性组合为零，则对应的 $\mathbf{v}_{r+1}, \ldots, \mathbf{v}_n$ 的组合属于核，因而是 $\mathbf{k}_1, \ldots, \mathbf{k}_r$ 的线性组合。扩展基的线性无关性迫使所有系数为零。这些像构成 $\mathrm{im}(T)$ 的一组基，所以：
+
+$$\dim V = \dim \ker(T) + \dim \mathrm{im}(T)$$
+
+这就是秩-零化度定理。右侧两项分别是 $T$ 的零化度与秩。
+
+对于矩阵映射 $A : F^n \to F^m$，$\dim \mathrm{im}(A)$ 是[矩阵的秩](../rank-of-a-matrix/)，而 $\ker(A)$ 是[齐次方程组](../systems-of-linear-equations/) $A\mathbf{x} = \mathbf{0}$ 的解空间。
+
+## 商空间
+
+当两个向量之差落在子空间 $N$ 中时，商空间把它们视为等价。$\mathbf{v}$ 的等价类是陪集 $\mathbf{v} + N$，所有等价类组成的集合为：
+
+$$V/N = \{\ \mathbf{v} + N \mid \mathbf{v} \in V \ \}$$
+
+商空间上的向量运算定义为：
+
+$$(\mathbf{u} + N) + (\mathbf{v} + N) = (\mathbf{u} + \mathbf{v}) + N$$
+
+$$\alpha(\mathbf{v} + N) = \alpha\mathbf{v} + N$$
+
+若 $\mathbf{v} + N = \mathbf{v}' + N$，则 $\mathbf{v} - \mathbf{v}' \in N$。$N$ 对加法与数乘封闭，说明替换代表元不会改变任一结果。商映射 $\pi_N : V \to V/N$ 定义为 $\pi_N(\mathbf{v}) = \mathbf{v} + N$，它是线性满射，核为 $N$。
+
+商映射具有因子分解性质。若 $T : V \to U$ 线性且 $N \subseteq \ker(T)$，则同一 $N$ 陪集中的向量在 $T$ 下有相同的像。公式
+
+$$\widetilde{T}(\mathbf{v} + N) = T(\mathbf{v})$$
+
+由此定义唯一的线性映射 $\widetilde{T} : V/N \to U$，使得 $T = \widetilde{T} \circ \pi_N$。取 $N = \ker(T)$ 并将陪域限制为 $\mathrm{im}(T)$，得到同态基本定理：
+
+$$V/\ker(T) \cong \mathrm{im}(T)$$
+
+该同构把 $\mathbf{v} + \ker(T)$ 映到 $T(\mathbf{v})$。根据 $\mathrm{im}(T)$ 的定义，它的核为零且是满射。
+
+当 $T : V \to U$ 为满射时，逆像给出 $U$ 的子空间与包含 $\ker(T)$ 的 $V$ 的子空间之间的双射。逆向对应把 $L \subseteq U$ 映为 $T^{-1}(L)$，把 $M \subseteq V$ 映为 $T(M)$。这就是向量空间的对应定理。
+
+同态基本定理给出两个商空间恒等式。若 $N \subseteq M \subseteq V$，则：
+
+$$(V/N)/(M/N) \cong V/M$$
+
+若 $A$ 与 $N$ 是 $V$ 的子空间，将商映射限制在 $A$ 上得到：
+
+$$(A + N)/N \cong A/(A \cap N)$$
+
+受限映射的核是 $A \cap N$，而 $(A + N)/N$ 中的每个陪集都有一个来自 $A$ 的代表元。
+
+## 直和与补空间
+
+对两个子空间 $A$ 与 $B$，当 $A \cap B = \{\ \mathbf{0} \ \}$ 时，称和 $A + B$ 为直和。此时 $A + B$ 中每个向量都有唯一表示 $\mathbf{a} + \mathbf{b}$，其中 $\mathbf{a} \in A$ 且 $\mathbf{b} \in B$。有限维子空间的格拉斯曼公式为：
+
+$$\dim(A + B) = \dim A + \dim B - \dim(A \cap B)$$
+
+当交为平凡交时，公式化为 $\dim(A \oplus B) = \dim A + \dim B$。
+
+设 $N$ 是有限维向量空间 $V$ 的子空间。取 $N$ 的一组基 $\mathbf{n}_1, \ldots, \mathbf{n}_r$，并将其扩展为基：
+
+$$\mathbf{n}_1, \ldots, \mathbf{n}_r, \mathbf{m}_{r+1}, \ldots, \mathbf{m}_n$$
+
+这是 $V$ 的一组基。令 $M = \mathrm{span}\{\ \mathbf{m}_{r+1}, \ldots, \mathbf{m}_n\ \}$。那么每个 $\mathbf{v} \in V$ 都有唯一表示 $\mathbf{v} = \mathbf{n} + \mathbf{m}$，其中 $\mathbf{n} \in N$ 且 $\mathbf{m} \in M$。因此 $V = N \oplus M$，而 $M$ 是 $N$ 的[补空间](../subspaces/)。维数满足：
+
+$$\dim V = \dim N + \dim M$$
+
+对于线性映射 $T : V \to U$，取 $N = \ker(T)$。限制映射 $T|_M : M \to \mathrm{im}(T)$ 是同构。它是单射，因为 $M \cap \ker(T) = \{\ \mathbf{0}\ \}$；它是满射，因为 $V$ 的每个向量都有一个位于 $M$ 中且像相同的分量。因此：
+
+$$V \cong \ker(T) \oplus \mathrm{im}(T)$$
+
+若 $T$ 是满射，则 $T|_M$ 的逆映射再复合包含映射 $M \subseteq V$，给出一个线性映射 $S : U \to V$，满足 $T \circ S = \mathrm{id}_U$。因此，每个定义域有限维的满射线性映射都有右逆。
+
+商映射在 $M$ 上的限制是同构 $M \cong V/N$。这些对应依赖于所选的补空间，并给出：
+
+$$V \cong N \oplus V/N$$
+
+$$\dim V = \dim N + \dim(V/N)$$
 
 ## 示例
 
-考虑由以下定义的线性映射 $\varphi : \mathbb{R}^3 \to \mathbb{R}^2$：
+考虑线性映射 $T : \mathbb{R}^3 \to \mathbb{R}^2$：
 
-$$\varphi(x, y, z) = (x + y, y + z)$$
+$$T(x, y, z) = (x + y, y + z)$$
 
-为验证线性性，需验证：
+每个输出坐标都是 $x,y,z$ 的线性组合，因此 $T$ 是线性的。当 $x + y = 0$ 且 $y + z = 0$ 时，向量属于核。因此：
 
-$$\varphi(\mathbf{u} + \mathbf{v}) = \varphi(\mathbf{u}) + \varphi(\mathbf{v})$$
+$$\ker(T) = \mathrm{span}\{\ (-1, 1, -1)\ \}$$
 
-$$\varphi(\alpha \mathbf{v}) = \alpha \varphi(\mathbf{v})$$
+对任意 $(a, b) \in \mathbb{R}^2$，向量 $(a, 0, b)$ 映为 $(a, b)$，所以 $T$ 是满射。秩-零化度恒等式变为：
 
-对所有向量和标量均成立，这由 $\mathbb{R}^3$ 中加法与数乘的线性性立得。核由所有满足 $x + y = 0$ 与 $y + z = 0$ 的向量 $(x, y, z)$ 构成，即 $x = -y$ 与 $z = -y$。因此 $\ker(\varphi)$ 的每个元素都具有以下形式：
+$$3 = \dim \ker(T) + \dim \mathrm{im}(T) = 1 + 2$$
 
-$$(-y, y, -y) = y(-1, 1, -1)$$
+平面 $M = \{\ (a, 0, b) \mid a, b \in \mathbb{R}\ \}$ 与核只在原点相交。每个向量都有分解：
 
-其中 $y \in \mathbb{R}$，故核是由 $(-1, 1, -1)$ 张成的一维子空间。像为整个 $\mathbb{R}^2$，因为对任意 $(a, b) \in \mathbb{R}^2$，向量 $(a, 0, b)$ 都满足 $\varphi(a, 0, b) = (a, b)$，这表明 $\varphi$ 是满射，从而 $\dim \mathrm{im}(\varphi) = 2$。秩-零化度定理得到验证：
+$$(x, y, z) = (-y, y, -y) + (x + y, 0, y + z)$$
 
-$$\dim \mathbb{R}^3 = \dim \ker(\varphi) + \dim \mathrm{im}(\varphi) = 1 + 2 = 3$$
+第一项属于 $\ker(T)$，第二项属于 $M$，所以 $\mathbb{R}^3 = \ker(T) \oplus M$。限制映射 $T|_M$ 是同构 $(a, 0, b) \mapsto (a, b)$，其逆映射给出右逆 $S(a, b) = (a, 0, b)$。同态基本定理把商空间 $\mathbb{R}^3/\ker(T)$ 与 $\mathbb{R}^2$ 对应起来。
 
-因此 $\varphi$ 的核是过原点、方向为 $(-1, 1, -1)$ 的直线，而 $\mathrm{im}(\varphi) = \mathbb{R}^2$。
+> 子空间、基、维数与线性映射都可以推广到环上的[模](../modules/)，但系数一般不能除以非零标量。因此，模不一定有基，子模不一定有补空间，上述维数论证也不再适用。
 
-> 子空间、基、维数以及线性映射等概念，经过适当调整后，都可推广到环上的[模](../modules/)这一更一般的框架中；由于标量不再具有乘法逆元，会出现域上的线性代数中所没有的现象。关于各类代数结构之间保结构映射的统一视角，汇集于[同态与同构](../homomorphisms-and-isomorphisms/)页面。
+> 若要从群论出发发展向量空间理论，可参见 Frederick M. Goodman，《Algebra: Abstract and Concrete》第 3.3 节，书目列于[参考文献](/bibliography/)中。

@@ -15,9 +15,9 @@ tags:
   - types-of-numbers
 translation:
   status: current
-  source_hash: 9f5fe7d1603002613d68e687405ef27d4d12b0c0d2ff3375012ddf0176e2a49e
-  translator: omp
-  updated: "2026-07-22T08:35:06.966Z"
+  source_hash: a75ea02c05e4c6c56364951ac1309ca34bf73f3bfcc0fc381531c960e94eb54c
+  translator: codex
+  updated: "2026-08-04T00:00:00.000Z"
 ---
 ## 引言
 
@@ -137,7 +137,7 @@ $$
 
 $\mathbb{Q}$ 和 $\mathbb{I}$ 都在 $\mathbb{R}$ 中稠密：每一个开区间，无论多么小，都既包含有理数又包含无理数。这两个族在实数轴的每一个尺度上交织在一起，尽管它们在数量上有所不同。
 
-$\mathbb{Q}$ 与 $\mathbb{R}$ 之间的进一步区别在于基数。有理数是可数的，即其元素可以与 $\mathbb{N}$ 建立一一对应。而实数是不可数的，这一点由康托尔的对角线论证所证明。在这个精确的意义上，几乎每一个实数都是无理数。实数系的性质在[实数的性质](../properties-of-real-numbers/)条目中进一步讨论。
+$\mathbb{Q}$ 与 $\mathbb{R}$ 之间的进一步区别在于基数。有理数是可数的，即其元素可以与 $\mathbb{N}$ 建立一一对应。而实数是不可数的，这一点由康托尔的对角线论证所证明。这些无限基数的证明与比较见[基数与可数集](../cardinality-and-countable-sets/)。在这个精确的意义上，几乎每一个实数都是无理数。实数系的性质在[实数的性质](../properties-of-real-numbers/)条目中进一步讨论。
 
 由于零没有符号，它既不属于正实数也不属于负实数。以下术语是标准的：非负实数满足 $x \geq 0$，而非正实数满足 $x \leq 0$。
 

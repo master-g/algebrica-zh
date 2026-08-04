@@ -1,22 +1,22 @@
 ---
 name: algebrica-translation-supervisor
-description: "Supervise the Algebrica Chinese translation pipeline in this workspace: select one article, delegate a protected candidate translation to OMP using zhipu-coding-plan/glm-5.2, independently review mathematical and editorial fidelity, enforce Markdown/shortcode/LaTeX/article-graph/build/browser gates, revise through feedback, and admit only accepted work. Use this skill whenever the user asks to continue, supervise, audit, review, fix, or accept Algebrica translations, mentions OMP/GLM translation work, asks about untranslated Markdown, or reports formula, shortcode, image, layout, or knowledge-graph defects in translated articles."
-compatibility: "Requires this repository, its sibling ../algebrica source checkout, Node.js/npm, OMP for approved translation calls, and agent-browser for visual acceptance."
+description: "Supervise the Algebrica Chinese translation pipeline in this workspace: select one article, translate it directly, independently review mathematical and editorial fidelity, enforce Markdown/shortcode/LaTeX/article-graph/build/browser gates, revise through feedback, and admit only accepted work. Use this skill whenever the user asks to continue, supervise, audit, review, fix, or accept Algebrica translations, asks about untranslated Markdown, or reports formula, shortcode, image, layout, or knowledge-graph defects in translated articles."
+compatibility: "Requires this repository, its sibling ../algebrica source checkout, Node.js/npm, and agent-browser for visual acceptance."
 ---
 
 # Algebrica Translation Supervisor
 
-Act as the independent editor and admission controller. OMP produces a candidate; it does not decide whether the candidate is correct or whether work may continue.
+Act as the translator, independent editor, and admission controller. Translation is performed directly from the sibling English source; automated gates do not decide whether the wording or mathematics is acceptable.
 
 ## Non-negotiable boundaries
 
 - Work on one `section/slug` at a time. Do not use `--all-missing` in supervised work.
 - Preserve the user's dirty worktree. Scope every diff, validation, and eventual staging action to the current article and its graph entry.
-- Do not invoke OMP automatically. The repository translation command invokes an external model CLI, so obtain the user's explicit confirmation immediately before each invocation, including feedback retries.
-- Do not call OMP directly with an ad-hoc prompt. Use `scripts/translate.mjs`; it supplies the glossary, masks formulas/links/images/shortcodes, pins `zhipu-coding-plan/glm-5.2`, and rejects malformed output.
-- A successful OMP process is only candidate generation. Independently run every applicable gate below.
-- If any gate fails, stop admission and do not begin another article. Diagnose, prepare precise feedback, and wait for approval before the next OMP invocation.
-- Never discard a previously better candidate merely because a retry failed or produced a weaker automatic-pass result. Snapshot the current candidate outside the worktree before a feedback retry, compare revisions, and retain the stronger file.
+- Do not invoke external translation models or model CLIs. Translate and revise the candidate directly in the workspace using the source article, glossary, and existing Chinese conventions.
+- Preserve the source's formulas, links, images, shortcodes, and graph topology while translating visible prose yourself.
+- Direct translation is still only a candidate until every applicable gate below passes and the article receives visual review.
+- If any gate fails, stop admission and do not begin another article. Diagnose, prepare a precise revision, and rerun the applicable gates before continuing.
+- Never discard a previously better candidate merely because a revision regressed or produced a weaker automatic-pass result. Snapshot the current candidate outside the worktree before a substantial revision, compare revisions, and retain the stronger file.
 - Do not commit, push, publish, or begin a new translation after a requested pause unless the user separately asks.
 
 ## 1. Establish the current state
@@ -42,22 +42,16 @@ test -f ../algebrica/<section>/<slug>.md
 
 For `pages/*`, use `../algebrica/pages/<slug>.md`.
 
-## 2. Generate exactly one candidate through OMP
+## 2. Produce exactly one self-translated candidate
 
-Explain which target will be sent and ask for explicit approval immediately before running:
+Read the complete sibling source and the relevant glossary entries before editing. Create or update only the current article, its graph entry, and any localized SVG assets. Translate section by section while preserving the source's Markdown structure and all opaque placeholders.
 
-```bash
-node scripts/translate.mjs <section>/<slug>
-```
-
-This command may also translate and store the article knowledge graph. It performs bounded retries internally, but those retries belong to the single explicitly approved invocation.
-
-For long-running calls, avoid noisy polling. Check external process state roughly every three minutes when practical; send concise progress updates without repeatedly re-running probes.
-
-After completion, inspect only the candidate's paths:
+Before validation, inspect only the candidate's paths:
 
 ```bash
 git diff -- content-zh/<section>/<slug>.md src/data/article-graphs-zh.json translation-failures.json
+git ls-files --others --ignored --exclude-standard \
+  public/assets/<section>/svg/<slug>-*.zh.svg
 ```
 
 If unrelated graph entries changed, treat that as a scope failure.
@@ -80,6 +74,8 @@ node scripts/translation-status.mjs --verify
 ```
 
 Interpret warnings instead of silently ignoring them. A known raw-HTML warning is not automatically fatal, but inspect the exact tag and rendered output.
+
+`validate-translation.mjs <section>/<slug>` is the strict editorial admission gate and must never be skipped for a candidate. `translation-status.mjs --verify` checks repository-wide structural validity, current/stale/missing state, and the failure ledger; it intentionally does not reclassify legacy visible-math-text debt as a translation-state failure. Audit that legacy debt explicitly with `node scripts/validate-translation.mjs --all` and report it as backlog.
 
 ### Structural invariants
 
@@ -117,6 +113,7 @@ Read the English source and Chinese candidate side by side. Confirm:
 - formulas are mathematically equivalent to the source unless a documented reviewer correction intentionally fixes a source error;
 - terminology follows `glossary.yaml` and common mainland Chinese mathematical usage;
 - visible English prose is not left inside `\text{...}`, diagrams, tables, link labels, or the article graph;
+- never put Chinese prose inside `\text{...}`. With the site's sanitized MathJax SVG output, CJK text glyphs collapse to subpixel size. Replace conjunctions and conditions with conventional symbols such as `\land`, `\lor`, commas, or surrounding prose, then require `validate-translation.mjs` to pass;
 - Chinese prose is concise, grammatical, and free of half-width punctuation, duplicated clauses, generic AI filler, and unsupported elaboration;
 - added formulas or explanatory paragraphs are explicitly justified. Unexplained additions are fidelity failures even if they render correctly;
 - graph node count/order matches the source graph, names and descriptions are specific, and difficulty/type labels use the repository's fixed mappings.
@@ -138,7 +135,7 @@ Check the article top, every unusual table/figure/formula section, and the artic
 - intended `\\` rows are visually separate;
 - escaped braces display as braces;
 - breadcrumbs and section headings follow the site visual contract;
-- the localized knowledge graph is present and readable at the end when the source has one.
+- the localized knowledge graph is present and readable at the end on desktop when the source has one; on mobile, confirm either a readable responsive graph or the source theme's explicit `no-mobile` contract rather than treating an intentional upstream hide as missing content.
 
 Do not substitute automated bounding-box checks for screenshots and visual judgment.
 
@@ -154,7 +151,7 @@ Report:
 - current/stale/missing counts after admission;
 - exact files changed.
 
-Only then move to another article, and only if the user's requested scope still authorizes it. Each next OMP invocation still requires immediate confirmation.
+Only then move to another article, and only if the user's requested scope still authorizes it.
 
 ### Fail
 
@@ -164,20 +161,14 @@ Classify the failure as structural, LaTeX, mathematical, editorial, graph, or vi
 /tmp/algebrica-<slug>-review.txt
 ```
 
-After the user explicitly approves the retry, run:
+Before a substantial revision, snapshot the current candidate outside the worktree:
 
 ```bash
 cp content-zh/<section>/<slug>.md \
-  /tmp/algebrica-<slug>-candidate-before-retry.md
-
-node scripts/translate.mjs \
-  --feedback-file /tmp/algebrica-<slug>-review.txt \
-  <section>/<slug>
+  /tmp/algebrica-<slug>-candidate-before-revision.md
 ```
 
-The snapshot is a recovery copy, not an admitted revision. Compare it with the
-new candidate, return to deterministic admission gates, and restore the prior
-candidate if the retry regresses. Never skip directly to acceptance.
+The snapshot is a recovery copy, not an admitted revision. Compare revisions, return to deterministic admission gates, and restore the stronger wording if a revision regresses. Never skip directly to acceptance.
 
 Stop and ask for user judgment when the proposed correction changes the source mathematics, removes a source section, adds new explanatory content, or makes a visible design choice.
 
@@ -195,6 +186,7 @@ Only after the user asks to commit. Never commit directly on `main`.
 
    ```bash
    git add content-zh/<section>/<slug>.md src/data/article-graphs-zh.json
+   git add -f public/assets/<section>/svg/<slug>-*.zh.svg  # when localized SVGs exist
    git commit -m "feat(content): translate <section>/<slug> to zh"
    ```
 

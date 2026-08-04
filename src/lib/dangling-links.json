@@ -5,6 +5,7 @@
   },
   "external": [
     "acceleration",
+    "asymptotic-expansion",
     "beta-distribution",
     "exponential-distribution",
     "normal-distribution",
@@ -14,6 +15,7 @@
     "velocity"
   ],
   "text": [
+    "bibliography",
     "arccosine-function",
     "arcsine-function",
     "arctangent-function",
@@ -30,6 +32,7 @@
     "first-order-linear-differential-equations",
     "geometrical-meaning-quadratic-equations",
     "heaviside-function",
+    "homogeneous-differential-equations",
     "hyperbolic-cosecant-function",
     "hyperbolic-functions",
     "hyperbolic-secant-function",

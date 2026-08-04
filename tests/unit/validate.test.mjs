@@ -21,6 +21,13 @@ describe('validateMathSyntax', () => {
       [],
     );
   });
+
+  it('rejects control characters that can corrupt LaTeX commands', () => {
+    assert.deepEqual(
+      validateMathSyntax('行内公式 $\u000cfrac{a}{b}$。'),
+      ['control character in inline math: U+000C'],
+    );
+  });
 });
 
 describe('validateVisibleMathText', () => {
@@ -31,10 +38,18 @@ describe('validateVisibleMathText', () => {
     );
   });
 
-  it('accepts localized labels and conventional mathematical notation', () => {
+  it('rejects CJK text because MathJax SVG sanitization makes it unreadable', () => {
+    assert.deepEqual(
+      validateVisibleMathText('$$x > 0 \\quad \\text{对所有 } x$$'),
+      [
+        'unsupported CJK in math text: "对所有"; use mathematical symbols or move the wording into prose',
+      ],
+    );
+  });
+
+  it('accepts conventional mathematical notation', () => {
     assert.deepEqual(
       validateVisibleMathText(
-        '$$x > 0 \\quad \\text{对所有 } x$$\n\n' +
         '$\\text{Log} x + \\text{colog}_a x + \\text{P}$',
       ),
       [],

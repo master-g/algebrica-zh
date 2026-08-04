@@ -15,6 +15,8 @@
  *  - half-width punctuation after a closing math `$`
  *  - sentence punctuation ,.;: trapped at the end of an inline math span
  *    (e.g. "$\mathbb{Z}:$") — display math is exempt
+ *  - ASCII spaces inserted between Chinese prose and a Markdown link
+ *  - the nonstandard typo “幅角”
  *
  * Reports (not auto-fixed):
  *  - straight quotes instead of 「」
@@ -106,6 +108,31 @@ export function lintChineseCopywriting(text) {
           `该标点属于句子而非公式，应移出数学区或删除`,
       });
     }
+  }
+
+  const cjkSpaceBeforeLink =
+    /[\u3400-\u9fff，。；：？！、）】》][ \t]+(?=\[[^\]\r\n]+\]\([^)\r\n]+\))/g;
+  while ((m = cjkSpaceBeforeLink.exec(lintableText)) !== null) {
+    errors.push({
+      line: lineOf(text, m.index),
+      message: '中文与 Markdown 链接之间不应插入半角空格',
+    });
+  }
+
+  const cjkSpaceAfterLink = /\]\([^)\r\n]+\)[ \t]+(?=[\u3400-\u9fff，。；：？！、（【《])/g;
+  while ((m = cjkSpaceAfterLink.exec(lintableText)) !== null) {
+    errors.push({
+      line: lineOf(text, m.index),
+      message: 'Markdown 链接与中文之间不应插入半角空格',
+    });
+  }
+
+  const nonstandardArgumentTerm = /幅角/g;
+  while ((m = nonstandardArgumentTerm.exec(lintableText)) !== null) {
+    errors.push({
+      line: lineOf(text, m.index),
+      message: '“幅角”不是规范术语；极坐标使用“极角”，复数 argument 使用“辐角”',
+    });
   }
 
   // Straight quotes in Chinese text.

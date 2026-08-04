@@ -86,11 +86,30 @@ describe('lintChineseCopywriting', () => {
   });
 
   it('does not mangle inline math, display math, URLs, or markdown links', () => {
-    const input = '令 $a<b$ 且 $$\\sum_{i=1}^{n} i$$，访问 https://example.com/foo 或 [链接](https://example.com/bar)。';
+    const input = '令 $a<b$ 且 $$\\sum_{i=1}^{n} i$$，访问 https://example.com/foo 或[链接](https://example.com/bar)。';
     const { text, reports, errors } = lintChineseCopywriting(input);
     assert.equal(text, input);
     assert.ok(!reports.some((r) => /半角标点|建议改用|全角数字/.test(r.message)));
     assert.equal(errors.length, 0);
+  });
+
+  it('errors on ASCII spaces between Chinese prose and Markdown links', () => {
+    const input = '参见 [定义](../definition/) 以及后续内容。';
+    const { errors } = lintChineseCopywriting(input);
+    assert.equal(errors.length, 2);
+    assert.ok(errors.every((error) => error.message.includes('Markdown 链接')));
+  });
+
+  it('does not mistake a spaced bracket expression for a Markdown link', () => {
+    const { errors } = lintChineseCopywriting('取值为 [a, b]。');
+    assert.equal(errors.length, 0);
+  });
+
+  it('rejects the nonstandard term 幅角', () => {
+    const { errors } = lintChineseCopywriting('第二个分量称为幅角。');
+    assert.equal(errors.length, 1);
+    assert.ok(errors[0].message.includes('极角'));
+    assert.ok(errors[0].message.includes('辐角'));
   });
 
   it('treats escaped dollar signs as text, not math', () => {

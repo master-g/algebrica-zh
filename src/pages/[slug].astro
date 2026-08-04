@@ -28,7 +28,7 @@ const pageLang = isTranslated ? 'zh-CN' : 'en';
 const pageTitle = `${entry.data.title} | Algebrica 中文`;
 const originalTitle = isTranslated ? zh.data.title_en : en.data.title;
 const source = entry.data.source;
-const graph = getArticleGraph(slug);
+const graph = getArticleGraph(slug, entry.data.source);
 ---
 
 <BaseLayout lang={pageLang} title={pageTitle}>

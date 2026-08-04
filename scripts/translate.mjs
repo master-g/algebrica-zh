@@ -53,6 +53,13 @@ const OMP_MODEL = 'zhipu-coding-plan/glm-5.2';
 const OMP_TIMEOUT = '20m';
 const OMP_EXEC_OPTIONS = { timeout: 21 * 60 * 1000, maxBuffer: 16 * 1024 * 1024, killSignal: 'SIGTERM' };
 
+function resolveArticleGraphEntry(slug, source) {
+  if (ARTICLE_GRAPHS[slug]) return { key: slug, graph: ARTICLE_GRAPHS[slug] };
+  if (!source) return null;
+  const match = Object.entries(ARTICLE_GRAPHS).find(([, graph]) => graph.source === source);
+  return match ? { key: match[0], graph: match[1] } : null;
+}
+
 async function main() {
   const { allMissing, dryRun, feedbackFile, target } = parseTranslateArgs(
     process.argv.slice(2),
@@ -313,15 +320,15 @@ export async function translateOne(
     console.warn(`  glossary warnings for ${section}/${slug}: ${glossaryWarnings.join('; ')}`);
   }
   let articleGraphTranslation = null;
+  const articleGraphEntry = isPage ? null : resolveArticleGraphEntry(slug, frontmatter.source);
   if (
-    !isPage &&
-    ARTICLE_GRAPHS[slug] &&
-    (!hasArticleGraphTranslation(slug) || reviewFeedback)
+    articleGraphEntry &&
+    (!hasArticleGraphTranslation(articleGraphEntry.key) || reviewFeedback)
   ) {
     try {
       const graphResult = await translateArticleGraph(
         frontmatter.title,
-        ARTICLE_GRAPHS[slug],
+        articleGraphEntry.graph,
         reviewFeedback,
       );
       articleGraphTranslation = graphResult.translation;
@@ -348,7 +355,7 @@ export async function translateOne(
   const zhPath = resolve(zhDir, `${slug}.md`);
   writeFileSync(zhPath, translation.zhFile, 'utf8');
   if (translation.articleGraphTranslation) {
-    writeArticleGraphTranslation(slug, translation.articleGraphTranslation);
+    writeArticleGraphTranslation(articleGraphEntry.key, translation.articleGraphTranslation);
   }
   clearFailure(section, slug);
   return { ok: true, path: zhPath, wallMs: translation.wallMs, lintReports: translation.lintReports };
