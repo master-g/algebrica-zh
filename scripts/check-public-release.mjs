@@ -6,7 +6,7 @@ import { fileURLToPath } from 'node:url';
 import { checkLicenseMetadata } from './check-licenses.mjs';
 import { checkStaticSite } from './check-static-site.mjs';
 
-const FORBIDDEN_PATHS = [
+export const FORBIDDEN_PATHS = [
   /^public\/theme\//,
   /^public\/media\//,
   /^public\/styles\/zh-overrides\.css$/,

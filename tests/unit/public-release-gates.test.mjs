@@ -4,10 +4,20 @@ import { mkdtempSync, mkdirSync, writeFileSync } from 'node:fs';
 import { join } from 'node:path';
 import { tmpdir } from 'node:os';
 import { checkLicenseMetadata } from '../../scripts/check-licenses.mjs';
+import { forbiddenHistoryPaths } from '../../scripts/check-public-history.mjs';
 import { checkSourceReleaseBoundary } from '../../scripts/check-public-release.mjs';
 import { checkStaticSite } from '../../scripts/check-static-site.mjs';
 
 describe('public release gates', () => {
+  it('rejects forbidden paths anywhere in reachable history', () => {
+    const forbidden = forbiddenHistoryPaths([
+      '1111111111111111111111111111111111111111 README.md',
+      '2222222222222222222222222222222222222222 public/media/algebrica-video-1.mp4',
+      '3333333333333333333333333333333333333333 reference/home.html',
+    ]);
+    assert.deepEqual(forbidden, ['public/media/algebrica-video-1.mp4', 'reference/home.html']);
+  });
+
   it('rejects forbidden tracked assets and missing derivative provenance', () => {
     const result = checkSourceReleaseBoundary({
       trackedFiles: ['public/theme/style.css', 'public/assets/demo.zh.svg'],
