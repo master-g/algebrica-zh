@@ -1,0 +1,695 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Algebrica 中文译本 · 公开版视觉重构原型</title>
+<style>
+  :root {
+    --canvas: #e9e6dc;
+    --paper: #f8f6ef;
+    --paper-strong: #fffefa;
+    --ink: #171b1f;
+    --ink-soft: #4e555b;
+    --muted: #565f65;
+    --blue: #315f7d;
+    --blue-dark: #23465e;
+    --blue-soft: #e4edf2;
+    --rule: #d5d2c8;
+    --rule-strong: #a7abb0;
+    --notice: #eee9dc;
+    --serif: ui-serif, "Songti SC", "Noto Serif CJK SC", Georgia, serif;
+    --sans: system-ui, -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif;
+    --mono: ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace;
+  }
+
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0;
+    background: var(--canvas);
+    color: var(--ink);
+    font-family: var(--sans);
+    line-height: 1.65;
+  }
+  button, a { font: inherit; }
+  button:focus-visible, a:focus-visible {
+    outline: 3px solid rgba(49,95,125,.28);
+    outline-offset: 3px;
+  }
+
+  .prototype-bar {
+    width: min(1180px, calc(100% - 32px));
+    margin: 18px auto 14px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 18px;
+  }
+  .prototype-id { min-width: 0; }
+  .prototype-kicker {
+    margin: 0 0 2px;
+    color: var(--muted);
+    font: 600 10px/1.2 var(--mono);
+    letter-spacing: .12em;
+    text-transform: uppercase;
+  }
+  .prototype-title {
+    margin: 0;
+    font: 500 14px/1.4 var(--sans);
+  }
+  .controls {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    gap: 8px;
+  }
+  .control-group {
+    display: flex;
+    padding: 3px;
+    border: 1px solid #c7c3b8;
+    border-radius: 8px;
+    background: rgba(255,255,255,.54);
+  }
+  .control {
+    border: 0;
+    border-radius: 5px;
+    padding: 6px 10px;
+    background: transparent;
+    color: var(--ink-soft);
+    cursor: pointer;
+    font-size: 12px;
+  }
+  .control[aria-selected="true"] {
+    background: var(--ink);
+    color: #fff;
+  }
+
+  .stage {
+    width: 100%;
+    padding: 0 16px 36px;
+    display: flex;
+    justify-content: center;
+  }
+  .frame {
+    width: min(1180px, 100%);
+    min-width: 0;
+    overflow: hidden;
+    border: 1px solid #cbc7bb;
+    border-radius: 12px;
+    background: var(--paper);
+    box-shadow: 0 18px 48px rgba(35,38,40,.14);
+    transition: width 220ms ease;
+  }
+  .frame.mobile { width: min(390px, 100%); }
+
+  .site-header {
+    min-height: 76px;
+    padding: 0 44px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+    border-bottom: 1px solid var(--rule);
+    background: rgba(248,246,239,.97);
+  }
+  .wordmark {
+    color: var(--ink);
+    text-decoration: none;
+    white-space: nowrap;
+  }
+  .wordmark-main {
+    display: block;
+    font: 500 18px/1.2 var(--serif);
+    letter-spacing: .02em;
+  }
+  .wordmark-sub {
+    display: block;
+    margin-top: 3px;
+    color: var(--muted);
+    font: 600 9px/1 var(--mono);
+    letter-spacing: .13em;
+    text-transform: uppercase;
+  }
+  .site-nav {
+    display: flex;
+    align-items: center;
+    gap: 26px;
+  }
+  .site-nav a, .search-button {
+    border: 0;
+    padding: 8px 0;
+    background: transparent;
+    color: var(--ink-soft);
+    text-decoration: none;
+    cursor: pointer;
+    font-size: 13px;
+  }
+  .site-nav a:hover, .search-button:hover { color: var(--blue-dark); }
+  .search-button {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+  }
+  .search-mark {
+    width: 14px;
+    height: 14px;
+    border: 1.5px solid currentColor;
+    border-radius: 50%;
+    position: relative;
+  }
+  .search-mark::after {
+    content: "";
+    position: absolute;
+    width: 5px;
+    height: 1.5px;
+    right: -4px;
+    bottom: -2px;
+    background: currentColor;
+    transform: rotate(45deg);
+  }
+
+  .page { display: none; }
+  .page.active { display: block; }
+  .page-inner {
+    width: min(100% - 88px, 1030px);
+    margin: 0 auto;
+    padding: 56px 0 76px;
+  }
+  .breadcrumbs {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 26px;
+    color: var(--muted);
+    font: 600 10px/1.4 var(--mono);
+    letter-spacing: .08em;
+    text-transform: uppercase;
+  }
+  .breadcrumbs button {
+    border: 0;
+    padding: 0;
+    background: transparent;
+    color: var(--blue-dark);
+    cursor: pointer;
+    font: inherit;
+    letter-spacing: inherit;
+    text-transform: inherit;
+  }
+  .breadcrumb-sep { color: var(--muted); }
+
+  h1, h2, h3, p { margin-top: 0; }
+  .category-heading {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(230px, 340px);
+    gap: 56px;
+    align-items: end;
+    padding-bottom: 38px;
+    border-bottom: 1px solid var(--rule-strong);
+  }
+  .section-number {
+    display: block;
+    margin-bottom: 12px;
+    color: var(--blue);
+    font: 600 11px/1 var(--mono);
+    letter-spacing: .1em;
+  }
+  .category-heading h1, .article-heading h1 {
+    margin: 0;
+    font: 500 clamp(38px, 5vw, 64px)/1.08 var(--serif);
+    letter-spacing: -.025em;
+  }
+  .category-heading p {
+    margin: 0;
+    color: var(--ink-soft);
+    font: 400 15px/1.75 var(--serif);
+  }
+  .chapter-list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+  .chapter-row {
+    display: grid;
+    grid-template-columns: 52px minmax(0, 1fr) 30px;
+    align-items: center;
+    gap: 14px;
+    min-height: 70px;
+    border-bottom: 1px solid var(--rule);
+  }
+  .chapter-index {
+    color: var(--muted);
+    font: 500 11px/1 var(--mono);
+  }
+  .chapter-link {
+    width: 100%;
+    border: 0;
+    padding: 18px 0;
+    background: transparent;
+    color: var(--ink);
+    text-align: left;
+    cursor: pointer;
+    font: 500 18px/1.35 var(--serif);
+  }
+  .chapter-link small {
+    display: block;
+    margin-top: 4px;
+    color: var(--muted);
+    font: 400 11px/1.4 var(--sans);
+  }
+  .chapter-arrow {
+    color: var(--blue-dark);
+    font-size: 17px;
+    transition: transform 160ms ease;
+  }
+  .chapter-row:hover .chapter-arrow { transform: translateX(4px); }
+
+  .article-heading {
+    padding: 0 0 40px;
+    border-bottom: 1px solid var(--rule-strong);
+  }
+  .article-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px 20px;
+    margin-top: 20px;
+    color: var(--muted);
+    font: 500 11px/1.4 var(--mono);
+  }
+  .article-grid {
+    display: grid;
+    grid-template-columns: 178px minmax(0, 680px);
+    justify-content: space-between;
+    gap: 54px;
+    padding-top: 42px;
+  }
+  .toc {
+    position: sticky;
+    top: 20px;
+    align-self: start;
+  }
+  .toc-title {
+    margin-bottom: 13px;
+    color: var(--muted);
+    font: 600 10px/1.2 var(--mono);
+    letter-spacing: .1em;
+    text-transform: uppercase;
+  }
+  .toc a {
+    display: block;
+    padding: 6px 0 6px 12px;
+    border-left: 1px solid var(--rule);
+    color: var(--ink-soft);
+    text-decoration: none;
+    font-size: 12px;
+  }
+  .toc a:first-of-type {
+    border-left-color: var(--blue);
+    color: var(--blue-dark);
+  }
+  .prose { min-width: 0; }
+  .prose section { scroll-margin-top: 24px; }
+  .prose h2 {
+    margin: 52px 0 18px;
+    font: 500 27px/1.25 var(--serif);
+  }
+  .prose h2:first-child { margin-top: 0; }
+  .prose p {
+    margin-bottom: 20px;
+    color: #30363a;
+    font: 400 16px/1.95 var(--serif);
+  }
+  .formula {
+    margin: 28px auto;
+    padding: 19px 22px;
+    overflow-x: auto;
+    border-top: 1px solid var(--rule);
+    border-bottom: 1px solid var(--rule);
+    color: var(--ink);
+    text-align: center;
+    font: 500 21px/1.5 Georgia, "Times New Roman", serif;
+    white-space: nowrap;
+  }
+  .note {
+    margin: 28px 0;
+    padding: 18px 20px;
+    border-left: 3px solid var(--blue);
+    background: var(--notice);
+    color: var(--ink-soft);
+    font: 400 14px/1.75 var(--sans);
+  }
+  .venn-figure {
+    margin: 34px auto;
+    padding: 26px 18px 16px;
+    border: 1px solid var(--rule);
+    background: var(--paper-strong);
+    text-align: center;
+  }
+  .venn-figure svg { width: min(100%, 440px); height: auto; }
+  .venn-figure figcaption {
+    margin-top: 8px;
+    color: var(--muted);
+    font: 500 11px/1.5 var(--mono);
+  }
+  .article-graph {
+    margin-top: 62px;
+    padding-top: 34px;
+    border-top: 1px solid var(--rule-strong);
+  }
+  .graph-head {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 170px;
+    gap: 26px;
+    align-items: end;
+    margin-bottom: 22px;
+  }
+  .graph-head h2 {
+    margin: 0 0 6px;
+    font: 500 27px/1.2 var(--serif);
+  }
+  .graph-head p {
+    margin: 0;
+    color: var(--muted);
+    font-size: 12px;
+  }
+  .graph-stat {
+    padding-left: 16px;
+    border-left: 1px solid var(--rule);
+    color: var(--muted);
+    font: 500 10px/1.6 var(--mono);
+  }
+  .graph-stat strong { color: var(--ink); font-size: 13px; }
+  .graph-scroll {
+    overflow-x: auto;
+    border: 1px solid var(--rule);
+    background: var(--paper-strong);
+  }
+  .graph-scroll svg {
+    display: block;
+    width: 100%;
+    min-width: 620px;
+    height: auto;
+  }
+  .attribution {
+    margin-top: 44px;
+    padding-top: 22px;
+    border-top: 1px solid var(--rule);
+    color: var(--muted);
+    font-size: 11px;
+  }
+  .attribution a { color: var(--blue-dark); }
+
+  .site-footer {
+    padding: 26px 44px;
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+    border-top: 1px solid var(--rule);
+    color: var(--muted);
+    font-size: 11px;
+  }
+  .site-footer strong { color: var(--ink-soft); font-weight: 600; }
+
+  .frame.mobile .site-header {
+    min-height: 64px;
+    padding: 0 20px;
+  }
+  .frame.mobile .wordmark-main { font-size: 16px; }
+  .frame.mobile .wordmark-sub { font-size: 8px; }
+  .frame.mobile .site-nav a { display: none; }
+  .frame.mobile .search-button span:last-child { display: none; }
+  .frame.mobile .page-inner {
+    width: calc(100% - 40px);
+    padding: 34px 0 50px;
+  }
+  .frame.mobile .category-heading { grid-template-columns: 1fr; gap: 20px; }
+  .frame.mobile .category-heading h1,
+  .frame.mobile .article-heading h1 { font-size: 42px; }
+  .frame.mobile .chapter-row { grid-template-columns: 38px minmax(0, 1fr) 20px; }
+  .frame.mobile .chapter-link { font-size: 17px; }
+  .frame.mobile .article-grid { grid-template-columns: 1fr; gap: 26px; }
+  .frame.mobile .toc {
+    position: static;
+    display: flex;
+    overflow-x: auto;
+    padding-bottom: 8px;
+  }
+  .frame.mobile .toc-title { display: none; }
+  .frame.mobile .toc a {
+    flex: 0 0 auto;
+    padding: 6px 12px;
+    border-left: 0;
+    border-bottom: 1px solid var(--rule);
+  }
+  .frame.mobile .toc a:first-of-type { border-bottom-color: var(--blue); }
+  .frame.mobile .prose p { font-size: 15px; }
+  .frame.mobile .graph-head { grid-template-columns: 1fr; }
+  .frame.mobile .graph-stat { padding: 0; border: 0; }
+  .frame.mobile .graph-scroll svg { width: 620px; }
+  .frame.mobile .site-footer { padding: 22px 20px; flex-direction: column; gap: 8px; }
+
+  @media (max-width: 700px) {
+    .prototype-bar { align-items: flex-start; flex-direction: column; }
+    .controls { justify-content: flex-start; }
+    .stage { padding: 0 8px 24px; }
+    .frame:not(.mobile) .site-header { padding: 0 20px; }
+    .frame:not(.mobile) .site-nav a { display: none; }
+    .frame:not(.mobile) .page-inner { width: calc(100% - 40px); padding: 34px 0 50px; }
+    .frame:not(.mobile) .category-heading { grid-template-columns: 1fr; gap: 20px; }
+    .frame:not(.mobile) .category-heading h1,
+    .frame:not(.mobile) .article-heading h1 { font-size: 42px; }
+    .frame:not(.mobile) .article-grid { grid-template-columns: 1fr; gap: 26px; }
+    .frame:not(.mobile) .toc { position: static; }
+    .frame:not(.mobile) .graph-head { grid-template-columns: 1fr; }
+    .frame:not(.mobile) .site-footer { padding: 22px 20px; flex-direction: column; gap: 8px; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    *, *::before, *::after { transition-duration: .01ms !important; }
+  }
+</style>
+</head>
+<body>
+  <header class="prototype-bar">
+    <div class="prototype-id">
+      <p class="prototype-kicker">视觉原型 · 非生产页面</p>
+      <p class="prototype-title">公开版独立视觉外壳：分类索引、文章正文与知识图谱</p>
+    </div>
+    <div class="controls" aria-label="原型控制">
+      <div class="control-group" role="tablist" aria-label="页面">
+        <button class="control" type="button" role="tab" aria-selected="true" data-page="category">分类页</button>
+        <button class="control" type="button" role="tab" aria-selected="false" data-page="article">文章页</button>
+      </div>
+      <div class="control-group" role="tablist" aria-label="预览宽度">
+        <button class="control" type="button" role="tab" aria-selected="true" data-viewport="desktop">桌面</button>
+        <button class="control" type="button" role="tab" aria-selected="false" data-viewport="mobile">移动端</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="stage">
+    <div class="frame" id="prototype-frame">
+      <header class="site-header">
+        <a class="wordmark" href="#" data-go="category" aria-label="返回集合与数分类页">
+          <span class="wordmark-main">Algebrica 中文译本</span>
+          <span class="wordmark-sub">开放数学条目</span>
+        </a>
+        <nav class="site-nav" aria-label="主导航">
+          <a href="#category" data-go="category">章节索引</a>
+          <a href="#about">关于译本</a>
+          <button class="search-button" type="button" aria-label="搜索，原型中不提供输入">
+            <span class="search-mark" aria-hidden="true"></span>
+            <span>搜索</span>
+          </button>
+        </nav>
+      </header>
+
+      <section class="page active" id="category-page" aria-labelledby="category-title">
+        <div class="page-inner">
+          <nav class="breadcrumbs" aria-label="面包屑">
+            <span>章节索引</span><span class="breadcrumb-sep">/</span><span>集合与数</span>
+          </nav>
+          <header class="category-heading">
+            <div>
+              <span class="section-number">01 / 14 篇</span>
+              <h1 id="category-title">集合与数</h1>
+            </div>
+            <p>从集合的基本语言开始，依次建立自然数、整数、有理数、实数与区间等基础结构。</p>
+          </header>
+
+          <ol class="chapter-list" aria-label="集合与数章节">
+            <li class="chapter-row"><span class="chapter-index">01</span><button class="chapter-link" type="button" data-go="article">集合<small>元素、子集、运算与划分</small></button><span class="chapter-arrow">→</span></li>
+            <li class="chapter-row"><span class="chapter-index">02</span><button class="chapter-link" type="button">数的类型<small>数系的范围与包含关系</small></button><span class="chapter-arrow">→</span></li>
+            <li class="chapter-row"><span class="chapter-index">03</span><button class="chapter-link" type="button">自然数</button><span class="chapter-arrow">→</span></li>
+            <li class="chapter-row"><span class="chapter-index">04</span><button class="chapter-link" type="button">整数</button><span class="chapter-arrow">→</span></li>
+            <li class="chapter-row"><span class="chapter-index">05</span><button class="chapter-link" type="button">模运算</button><span class="chapter-arrow">→</span></li>
+            <li class="chapter-row"><span class="chapter-index">06</span><button class="chapter-link" type="button">有理数</button><span class="chapter-arrow">→</span></li>
+            <li class="chapter-row"><span class="chapter-index">07</span><button class="chapter-link" type="button">无理数</button><span class="chapter-arrow">→</span></li>
+            <li class="chapter-row"><span class="chapter-index">08</span><button class="chapter-link" type="button">实数</button><span class="chapter-arrow">→</span></li>
+            <li class="chapter-row"><span class="chapter-index">09</span><button class="chapter-link" type="button">实数的性质</button><span class="chapter-arrow">→</span></li>
+            <li class="chapter-row"><span class="chapter-index">10</span><button class="chapter-link" type="button">绝对值</button><span class="chapter-arrow">→</span></li>
+            <li class="chapter-row"><span class="chapter-index">11</span><button class="chapter-link" type="button">区间</button><span class="chapter-arrow">→</span></li>
+            <li class="chapter-row"><span class="chapter-index">12</span><button class="chapter-link" type="button">上确界与下确界</button><span class="chapter-arrow">→</span></li>
+            <li class="chapter-row"><span class="chapter-index">13</span><button class="chapter-link" type="button">阶乘</button><span class="chapter-arrow">→</span></li>
+            <li class="chapter-row"><span class="chapter-index">14</span><button class="chapter-link" type="button">二项式系数</button><span class="chapter-arrow">→</span></li>
+          </ol>
+        </div>
+      </section>
+
+      <section class="page" id="article-page" aria-labelledby="article-title">
+        <div class="page-inner">
+          <nav class="breadcrumbs" aria-label="面包屑">
+            <button type="button" data-go="category">章节索引</button><span class="breadcrumb-sep">/</span>
+            <button type="button" data-go="category">集合与数</button><span class="breadcrumb-sep">/</span><span>集合</span>
+          </nav>
+          <header class="article-heading">
+            <span class="section-number">集合与数 · 01</span>
+            <h1 id="article-title">集合</h1>
+            <div class="article-meta">
+              <span>难度：中级</span><span>译文状态：当前</span><span>许可：CC BY-NC 4.0</span>
+            </div>
+          </header>
+
+          <div class="article-grid">
+            <nav class="toc" aria-label="文章目录">
+              <div class="toc-title">本文目录</div>
+              <a href="#intro">引言</a>
+              <a href="#universe">全集</a>
+              <a href="#cardinality">有限集合的基数</a>
+              <a href="#subsets">子集与幂集</a>
+              <a href="#knowledge-graph">知识图谱</a>
+            </nav>
+
+            <article class="prose">
+              <section id="intro">
+                <h2>引言</h2>
+                <p>集合是由称为元素的对象组成的整体，并且完全由哪些对象属于它决定。两个集合相等，当且仅当它们拥有相同的元素。列出元素时所用的顺序以及列表中的重复项都不会改变集合。</p>
+                <div class="formula" role="math" aria-label="集合一二三等于集合三一二，也等于含重复元素的一二三集合">{1, 2, 3} = {3, 1, 2} = {1, 1, 2, 3, 3}</div>
+                <p>记号 <i>x</i> ∈ <i>A</i> 表示 <i>x</i> 属于 <i>A</i>，而 <i>x</i> ∉ <i>A</i> 表示 <i>x</i> 不属于 <i>A</i>。对于所考虑的每个对象，其成员关系都必须具有明确无歧义的真值。</p>
+                <aside class="note">在朴素集合论中，任意条件不一定定义一个集合。集合构造式需要从已经存在的背景集合中抽取元素。</aside>
+              </section>
+
+              <section id="universe">
+                <h2>全集</h2>
+                <p>包含所考虑的全部对象的主集合称为全集，记为 <i>U</i>。在给定语境中，所有集合都是 <i>U</i> 的子集。全集的选择取决于具体情形。</p>
+                <figure class="venn-figure">
+                  <svg viewBox="0 0 440 230" role="img" aria-labelledby="venn-title venn-desc">
+                    <title id="venn-title">全集中的两个集合</title>
+                    <desc id="venn-desc">矩形全集 U 中有相交的集合 A 与集合 B。</desc>
+                    <rect x="10" y="10" width="420" height="190" rx="4" fill="#f8f6ef" stroke="#727a80" stroke-width="1.5"/>
+                    <circle cx="184" cy="107" r="72" fill="#e4edf2" fill-opacity=".8" stroke="#315f7d" stroke-width="1.7"/>
+                    <circle cx="262" cy="107" r="72" fill="#eee9dc" fill-opacity=".72" stroke="#4e555b" stroke-width="1.7"/>
+                    <text x="25" y="35" fill="#4e555b" font-family="ui-monospace,monospace" font-size="13">U</text>
+                    <text x="145" y="108" fill="#23465e" font-family="ui-serif,serif" font-size="20">A</text>
+                    <text x="292" y="108" fill="#30363a" font-family="ui-serif,serif" font-size="20">B</text>
+                    <text x="211" y="110" fill="#171b1f" font-family="ui-monospace,monospace" font-size="13">A ∩ B</text>
+                  </svg>
+                  <figcaption>图 1 · 全集 U、集合 A、集合 B 及其交集</figcaption>
+                </figure>
+              </section>
+
+              <section id="cardinality">
+                <h2>有限集合的基数</h2>
+                <p>有限集合 <i>A</i> 的基数记为 |<i>A</i>|，表示 <i>A</i> 中元素的数量。两个有限集合的并集基数满足容斥关系：</p>
+                <div class="formula" role="math" aria-label="A 并 B 的基数等于 A 的基数加 B 的基数减去 A 交 B 的基数">|A ∪ B| = |A| + |B| − |A ∩ B|</div>
+                <p>交集中的元素在前两项中被计算两次，因此需要减去一次。这个结构可以继续推广到三个或更多集合。</p>
+              </section>
+
+              <section id="subsets">
+                <h2>子集与幂集</h2>
+                <p>如果 <i>A</i> 的每个元素也是 <i>B</i> 的元素，则 <i>A</i> 是 <i>B</i> 的子集。集合 <i>A</i> 的幂集由 <i>A</i> 的所有子集组成，记为 𝒫(<i>A</i>)。若 <i>A</i> 有 <i>n</i> 个元素，则幂集有 2<sup><i>n</i></sup> 个元素。</p>
+              </section>
+
+              <section class="article-graph" id="knowledge-graph">
+                <div class="graph-head">
+                  <div>
+                    <h2>知识图谱</h2>
+                    <p>展示本文的三个概念分支及其主要节点。</p>
+                  </div>
+                  <div class="graph-stat"><strong>3 个分支</strong><br>基础 · 运算 · 结构</div>
+                </div>
+                <div class="graph-scroll" tabindex="0" aria-label="集合知识图谱，可横向滚动">
+                  <svg viewBox="0 0 760 360" role="img" aria-labelledby="graph-title graph-desc">
+                    <title id="graph-title">集合知识图谱</title>
+                    <desc id="graph-desc">集合连接到基础、运算和结构三个分支，各分支连接对应概念。</desc>
+                    <g fill="none" stroke="#a7abb0" stroke-width="1.4">
+                      <path d="M106 180H198M198 180V65M198 180V295M198 65H286M198 180H286M198 295H286"/>
+                      <path d="M406 65H470M406 180H470M406 295H470"/>
+                    </g>
+                    <g font-family="system-ui,sans-serif" font-size="12">
+                      <rect x="28" y="154" width="78" height="52" rx="4" fill="#315f7d"/>
+                      <text x="67" y="185" text-anchor="middle" fill="#fff" font-family="ui-serif,serif" font-size="17">集合</text>
+                      <rect x="286" y="42" width="120" height="46" rx="4" fill="#fffefa" stroke="#315f7d" stroke-width="1.5"/>
+                      <text x="346" y="70" text-anchor="middle" fill="#23465e">基础</text>
+                      <rect x="286" y="157" width="120" height="46" rx="4" fill="#fffefa" stroke="#315f7d" stroke-width="1.5"/>
+                      <text x="346" y="185" text-anchor="middle" fill="#23465e">运算</text>
+                      <rect x="286" y="272" width="120" height="46" rx="4" fill="#fffefa" stroke="#315f7d" stroke-width="1.5"/>
+                      <text x="346" y="300" text-anchor="middle" fill="#23465e">结构</text>
+                      <g fill="#f8f6ef" stroke="#d5d2c8">
+                        <rect x="470" y="27" width="106" height="32" rx="4"/><rect x="590" y="27" width="120" height="32" rx="4"/>
+                        <rect x="470" y="68" width="106" height="32" rx="4"/><rect x="590" y="68" width="120" height="32" rx="4"/>
+                        <rect x="470" y="142" width="106" height="32" rx="4"/><rect x="590" y="142" width="120" height="32" rx="4"/>
+                        <rect x="470" y="183" width="106" height="32" rx="4"/><rect x="590" y="183" width="120" height="32" rx="4"/>
+                        <rect x="470" y="257" width="106" height="32" rx="4"/><rect x="590" y="257" width="120" height="32" rx="4"/>
+                        <rect x="470" y="298" width="106" height="32" rx="4"/><rect x="590" y="298" width="120" height="32" rx="4"/>
+                      </g>
+                      <g fill="#30363a" text-anchor="middle">
+                        <text x="523" y="48">定义</text><text x="650" y="48">成员关系</text>
+                        <text x="523" y="89">空集</text><text x="650" y="89">基数</text>
+                        <text x="523" y="163">并集</text><text x="650" y="163">交集</text>
+                        <text x="523" y="204">补集</text><text x="650" y="204">德摩根律</text>
+                        <text x="523" y="278">子集</text><text x="650" y="278">幂集</text>
+                        <text x="523" y="319">划分</text><text x="650" y="319">笛卡尔积</text>
+                      </g>
+                    </g>
+                  </svg>
+                </div>
+              </section>
+
+              <footer class="attribution">
+                原文：Antonio Lupetti，Algebrica「Sets」。中文翻译和视觉改编按
+                <a href="https://creativecommons.org/licenses/by-nc/4.0/">CC BY-NC 4.0</a> 提供。本项目为非官方、非商业中文译本。
+              </footer>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <footer class="site-footer" id="about">
+        <span><strong>Algebrica 中文译本</strong> · 独立视觉外壳原型</span>
+        <span>无远程字体 · 无分析脚本 · 无视频</span>
+      </footer>
+    </div>
+  </main>
+
+<script>
+  const frame = document.getElementById('prototype-frame');
+  const pageButtons = Array.from(document.querySelectorAll('[data-page]'));
+  const viewportButtons = Array.from(document.querySelectorAll('[data-viewport]'));
+  const pages = {
+    category: document.getElementById('category-page'),
+    article: document.getElementById('article-page')
+  };
+
+  function showPage(name) {
+    Object.entries(pages).forEach(([key, page]) => page.classList.toggle('active', key === name));
+    pageButtons.forEach(button => button.setAttribute('aria-selected', String(button.dataset.page === name)));
+    frame.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
+
+  function setViewport(name) {
+    frame.classList.toggle('mobile', name === 'mobile');
+    viewportButtons.forEach(button => button.setAttribute('aria-selected', String(button.dataset.viewport === name)));
+  }
+
+  pageButtons.forEach(button => button.addEventListener('click', () => showPage(button.dataset.page)));
+  viewportButtons.forEach(button => button.addEventListener('click', () => setViewport(button.dataset.viewport)));
+  document.querySelectorAll('[data-go]').forEach(control => control.addEventListener('click', event => {
+    event.preventDefault();
+    showPage(control.dataset.go);
+  }));
+</script>
+</body>
+</html>
