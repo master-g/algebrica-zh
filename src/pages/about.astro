@@ -2,46 +2,37 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 ---
 
-<BaseLayout title="关于 | Algebrica 中文">
-  <div class="post-header">
-    <nav class="post-header-breadcrumb" aria-label="Breadcrumb">关于</nav>
-    <div class="post-header-section-title">
-      <h1 class="post-header-title">关于 Algebrica 中文</h1>
+<BaseLayout title="关于 | Algebrica 中文译本">
+  <article class="static-page">
+    <nav class="breadcrumbs" aria-label="面包屑"><a href="/">首页</a><span>/</span><span>关于</span></nav>
+    <header class="static-page__header">
+      <span class="page-kicker">项目说明</span>
+      <h1>关于 Algebrica 中文译本</h1>
+      <p>一个独立排版、非官方、非商业的简体中文数学译本。</p>
+    </header>
+
+    <div class="article-content">
+      <section class="article-section">
+        <h2>项目说明</h2>
+        <p>本站由社区志愿者根据 <a href="https://github.com/antoniolupetti/algebrica" target="_blank" rel="noopener noreferrer">Algebrica Markdown 源文件</a>翻译。原作由 Antonio Lupetti 创建，并按 <a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener noreferrer">CC BY-NC 4.0</a> 发布。</p>
+        <p>本站保留数学内容、章节结构、公式、插图和知识图谱，并使用独立设计与中文排版。本站不代表原作者或 algebrica.org 的立场。</p>
+      </section>
+
+      <section class="article-section">
+        <h2>署名与许可</h2>
+        <p>翻译内容和标记为衍生的中文插图继续遵循 CC BY-NC 4.0。转载时必须署名 Antonio Lupetti 与 Algebrica，链接原文和许可，并说明翻译或视觉改动。</p>
+        <p>本站原创软件代码适用仓库单独声明的软件许可证。第三方依赖与字体按各自许可证分发。</p>
+      </section>
+
+      <section class="article-section">
+        <h2>排版原则</h2>
+        <ul>
+          <li>中文正文使用 OFL 许可的 Noto Serif SC 字体子集。</li>
+          <li>界面使用系统无衬线字体，数学公式保留 MathJax 字形。</li>
+          <li>中文标题、导语和标签使用正体；只有数学变量与语义明确的拉丁内容使用斜体。</li>
+          <li>桌面与移动端提供相同的目录、搜索、插图、公式和知识图谱功能。</li>
+        </ul>
+      </section>
     </div>
-  </div>
-
-  <div class="post-content">
-    <section class="post-section">
-      <h2>项目说明</h2>
-      <p class="post-paragraph"><span class="post-paragraph-content">Algebrica 中文是 <a href="https://algebrica.org" target="_blank" rel="noopener noreferrer">Algebrica.org</a> 的简体中文非官方镜像，由社区志愿者基于原站 <a href="https://github.com/antoniolupetti/algebrica" target="_blank" rel="noopener noreferrer">GitHub 仓库</a> 中的 Markdown 源文件翻译而成。原站由 Antonio Lupetti 创建，采用 <a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener noreferrer">CC BY-NC 4.0</a> 许可发布。</span></p>
-      <p class="post-paragraph"><span class="post-paragraph-content">本站目前处于早期阶段：流水线与视觉骨架已就绪，绝大多数条目仍显示英文原文并标注“未翻译”。随着 U6 翻译流水线的运行，中文译文将逐步替换英文原文。</span></p>
-    </section>
-
-    <section class="post-section">
-      <h2>署名与许可</h2>
-      <p class="post-paragraph"><span class="post-paragraph-content">全部数学内容译自 Algebrica，保留 CC BY-NC 4.0 许可：您可以非商业性地分享、改编，但必须署名原作者 Antonio Lupetti 与原站链接，并说明改动之处。每篇文章页尾均提供原文标题与 source 链接。</span></p>
-    </section>
-
-    <section class="post-section">
-      <h2>与原站的关系</h2>
-      <p class="post-paragraph"><span class="post-paragraph-content">本站不是 algebrica.org 官方运营，也不代表原站作者立场。它是一个独立的翻译镜像，仅在内容层面进行简体中文适配，不参与原站的账号、编辑或运营。</span></p>
-    </section>
-
-    <section class="post-section">
-      <h2>已知偏离清单</h2>
-      <p class="post-paragraph"><span class="post-paragraph-content">为适配中文读者，本站对原站做了以下有意偏离：</span></p>
-      <ul>
-        <li>字体栈追加 CJK 回退：正文为 <code>EB Garamond → Noto Serif SC → Songti SC → STSong → SimSun</code>，UI 为 <code>Geist → Noto Sans SC → PingFang SC → Microsoft YaHei</code>。</li>
-        <li>正文行高从 23px 提升至约 1.7（约 29px），以改善中文阅读体验。</li>
-        <li>页面根元素使用 <code>lang="zh-CN"</code>；未翻译的英文文章单独标记 <code>lang="en"</code>。</li>
-        <li>正文 <code>hyphens: manual</code>，并启用 <code>text-autospace</code> 渐进增强。</li>
-        <li>移除了原站的账号/登录、阅读历史、阅读量计数、贡献热力图、筹款活动、AI 总结、Global views 等动态模块。</li>
-      </ul>
-    </section>
-
-    <section class="post-section">
-      <h2>主题权利声明</h2>
-      <p class="post-paragraph"><span class="post-paragraph-content">内容采用 CC BY-NC 4.0 许可，但原站主题、设计与视觉代码的权利并不属于本站。本站逐字复刻原站 CSS 仅出于个人非商业镜像目的；如原作者提出异议，我们将立即替换外壳。</span></p>
-    </section>
-  </div>
+  </article>
 </BaseLayout>

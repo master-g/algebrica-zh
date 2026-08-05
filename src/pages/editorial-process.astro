@@ -25,22 +25,21 @@ const source = isTranslated ? zhData.source : 'https://algebrica.org/editorial-p
 ---
 
 <BaseLayout lang={pageLang} title={pageTitle}>
-  <article class="post" lang={pageLang}>
-    <div class="post-header">
-      <nav class="post-header-breadcrumb" aria-label="Breadcrumb">编辑流程</nav>
-      <div class="post-header-section-title">
-        <h1 class="post-header-title">{isTranslated ? zhData.title : '编辑流程'}</h1>
-      </div>
-    </div>
+  <article class="static-page" lang={pageLang}>
+    <nav class="breadcrumbs" aria-label="面包屑"><a href="/">首页</a><span>/</span><span>编辑流程</span></nav>
+    <header class="static-page__header">
+      <span class="page-kicker">项目方法</span>
+      <h1>{isTranslated ? zhData.title : '编辑流程'}</h1>
+    </header>
 
     {!isTranslated && (
-      <div class="untranslated-banner">本文尚未翻译，以下为英文原文。</div>
+      <div class="translation-notice">本文尚未翻译，以下为英文原文。</div>
     )}
 
-    <div class="post-content" lang={isTranslated ? undefined : 'en'} set:html={html} />
+    <div class="article-content" lang={isTranslated ? undefined : 'en'} set:html={html} />
 
     {isTranslated && (
-      <footer class="post-footer-attribution">
+      <footer class="article-attribution">
         <p>
           原文标题：
           <a href={source} target="_blank" rel="noopener noreferrer">{originalTitle}</a>

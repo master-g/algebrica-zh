@@ -1,0 +1,26 @@
+Creative Commons Attribution-NonCommercial 4.0 International
+================================================================
+
+Scope in this repository
+------------------------
+
+This license applies to the Chinese translations under `content-zh/` and to
+Chinese derivative illustrations identified in `public/assets/provenance.json`.
+The source work is Algebrica by Antonio Lupetti.
+
+Every redistribution or adaptation must:
+
+1. credit Antonio Lupetti and Algebrica;
+2. link to the corresponding original Algebrica page or source file;
+3. link to the CC BY-NC 4.0 license;
+4. identify translation, typography, or visual changes; and
+5. remain non-commercial as defined by the license.
+
+Canonical license text:
+https://creativecommons.org/licenses/by-nc/4.0/legalcode
+
+Human-readable summary:
+https://creativecommons.org/licenses/by-nc/4.0/
+
+This scope notice does not replace or modify the canonical Creative Commons
+legal code.

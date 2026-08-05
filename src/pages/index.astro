@@ -9,74 +9,54 @@ const sections = getSections();
 const articles = await getCollection('articles');
 const zhEntries = await getZhEntries();
 const rows = buildTranslationIndex(articles, zhEntries);
+const translatedCount = rows.filter((row) => row.zh).length;
 ---
 
-<BaseLayout title="Algebrica 中文">
-  <div class="ui-new-home-wrapper">
-    <div class="video-home-wrap">
-      <div class="video-home-headline">万物皆数</div>
-      <div class="video-home-desc">
-        我们的宇宙并非由数学描述。<br />
-        它本身就是数学。—— Max Tegmark
+<BaseLayout title="Algebrica 中文译本">
+  <div class="home-page">
+    <header class="home-hero">
+      <span class="page-kicker">非官方 · 非商业 · 开放阅读</span>
+      <h1>一本持续生长的<br />中文数学参考书</h1>
+      <p>从集合、代数和几何出发，沿着清晰的章节结构阅读公式、证明、插图与知识图谱。</p>
+      <div class="home-hero__stats" aria-label="译本进度">
+        <span><strong>{sections.length}</strong> 个分类</span>
+        <span><strong>{rows.length}</strong> 篇条目</span>
+        <span><strong>{translatedCount}</strong> 篇中文译文</span>
       </div>
-      <div class="video-home mb-x-30">
-        <video class="video-home-player" autoplay loop muted playsinline preload="metadata">
-          <source src="/media/algebrica-video-1.mp4" type="video/mp4" />
-        </video>
-      </div>
-    </div>
+    </header>
 
-    <div class="ui-new-home-heros">
-      <div class="ui-new-home-spacer"></div>
-      <div class="ui-new-home-cols">
-        <div class="ui-new-home-col">
-          <div style="text-align: center;">
-            Algebrica 是一个自由、开放的数学知识库，致力于让数学清晰、严谨、可亲近。
-          </div>
-        </div>
-        <div class="ui-new-home-col no-mobile">
-          <div style="text-align: center;">
-            全部内容以 <a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener noreferrer">CC BY-NC 4.0</a> 许可发布于
-            <a href="https://github.com/antoniolupetti/algebrica" target="_blank" rel="noopener noreferrer">GitHub</a>。
-          </div>
-        </div>
-        <div class="ui-new-home-col no-mobile">
-          <div style="text-align: center;">
-            本站是原站的简体中文镜像，保留视觉骨架并移除账号、阅读量、AI 总结等动态模块。
-          </div>
-        </div>
+    <section class="section-index" aria-labelledby="section-index-title">
+      <div class="section-index__head">
+        <span class="page-kicker">全书目录</span>
+        <h2 id="section-index-title">按分类阅读</h2>
       </div>
-    </div>
 
-    <div class="module-index">
-      {
-        sections.map((section) => (
-          <div class="module-index-section">
-            <div class="module-index-section-header">
-              <div class="module-index-heading">
-                <span class="module-index-number">{section.order}.</span>
-                <span class="module-index-heading__title">
-                  <a href={`/category/${section.dir}/`}>{section.name_zh}</a>
-                </span>
+      {sections.map((section) => {
+        const sectionRows = orderSectionRows(section, rows);
+        return (
+          <section class="section-index__group">
+            <header class="section-index__group-head">
+              <span class="section-index__number">{String(section.order).padStart(2, '0')}</span>
+              <div>
+                <h3><a href={`/category/${section.dir}/`}>{section.name_zh}</a></h3>
+                <p lang={section.description_zh ? 'zh-CN' : 'en'}>{section.description_zh || section.description_en}</p>
               </div>
-            </div>
-            <div class="module-index-posts">
-              {orderSectionRows(section, rows).map((row, idx) => {
+            </header>
+            <ol class="section-index__entries">
+              {sectionRows.map((row, index) => {
                 const title = row.zh?.data.title || row.en.data.title;
-                const number = `${section.order}.${idx + 1}`;
                 return (
-                  <div class="module-index-post">
-                    <span class="module-index-number module-index-post__number">{number}</span>
-                    <div class="module-index-post__title">
-                      <a href={`/${row.slug}/`}>{title}</a>
-                    </div>
-                  </div>
+                  <li>
+                    <span>{section.order}.{index + 1}</span>
+                    <a href={`/${row.slug}/`} lang={row.zh ? 'zh-CN' : 'en'}>{title}</a>
+                    {!row.zh && <small>英文</small>}
+                  </li>
                 );
               })}
-            </div>
-          </div>
-        ))
-      }
-    </div>
+            </ol>
+          </section>
+        );
+      })}
+    </section>
   </div>
 </BaseLayout>

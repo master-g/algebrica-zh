@@ -93,7 +93,7 @@ function makeMathSchema(base) {
       stop: ['offset', 'stopColor'],
       symbol: ['id'],
       a: ['href', 'title', 'target', 'rel', 'class'],
-      section: ['dataFootnotes', ['className', 'footnotes', 'post-section']],
+      section: ['dataFootnotes', ['className', 'footnotes', 'article-section']],
       '*': [...(base.attributes?.['*'] || []), 'className', 'class'],
     },
   };

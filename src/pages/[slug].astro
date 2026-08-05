@@ -4,70 +4,85 @@ import ArticleGraph from '../components/ArticleGraph.astro';
 import { getCollection, render } from 'astro:content';
 import { getArticleGraph } from '../lib/article-graphs.mjs';
 import { buildTranslationIndex } from '../lib/translation-index.mjs';
-import { getSection } from '../lib/sections.mjs';
+import { getSection, getSections, orderSectionRows } from '../lib/sections.mjs';
 import { getZhEntries } from './_zh-entries.mjs';
 
 export async function getStaticPaths() {
   const articles = await getCollection('articles');
   const zhEntries = await getZhEntries();
   const rows = buildTranslationIndex(articles, zhEntries);
+  const navigation = new Map();
+
+  for (const section of getSections()) {
+    const sectionRows = orderSectionRows(section, rows);
+    sectionRows.forEach((row, index) => {
+      navigation.set(row.slug, {
+        articleNumber: index + 1,
+        nextSlug: sectionRows[index + 1]?.slug,
+      });
+    });
+  }
+
   return rows.map((row) => ({
     params: { slug: row.slug },
-    props: { row },
+    props: { row, navigation: navigation.get(row.slug) },
   }));
 }
 
-const { row } = Astro.props;
+const { row, navigation } = Astro.props;
 const { slug, section, en, zh } = row;
 const isTranslated = Boolean(zh);
 const entry = isTranslated ? zh : en;
 const { Content } = await render(entry);
-
 const sectionMeta = getSection(section);
+const articleNumber = navigation?.articleNumber ?? 1;
+const nextSlug = navigation?.nextSlug;
 const pageLang = isTranslated ? 'zh-CN' : 'en';
-const pageTitle = `${entry.data.title} | Algebrica 中文`;
+const deckLang = sectionMeta?.description_zh ? 'zh-CN' : 'en';
+const pageTitle = `${entry.data.title} | Algebrica 中文译本`;
 const originalTitle = isTranslated ? zh.data.title_en : en.data.title;
 const source = entry.data.source;
 const graph = getArticleGraph(slug, entry.data.source);
 ---
 
-<BaseLayout lang={pageLang} title={pageTitle}>
-  <article class="post" lang={pageLang}>
-    <div class="post-header">
-      <nav class="post-header-breadcrumb" aria-label="Breadcrumb">
-        <a href={`/category/${section}/`}>{sectionMeta?.name_zh || sectionMeta?.name_en || section}</a>
-      </nav>
-      <div class="post-header-section-title">
-        <h1 class="post-header-title">{entry.data.title}</h1>
+<BaseLayout title={pageTitle}>
+  <article class="article-page">
+    <nav class="breadcrumbs" aria-label="面包屑">
+      <a href="/">全书目录</a><span>/</span>
+      <a href={`/category/${section}/`}>{sectionMeta?.name_zh || sectionMeta?.name_en || section}</a><span>/</span>
+      <span lang={pageLang}>{entry.data.title}</span>
+    </nav>
+
+    <header class="article-header">
+      <div>
+        <span class="page-kicker">第 {sectionMeta?.order || '—'} 编 · 第 {articleNumber} 篇</span>
+        <h1 class="article-title" lang={pageLang}>{entry.data.title}</h1>
+        <p class="article-deck" lang={deckLang}>{sectionMeta?.description_zh || sectionMeta?.description_en}</p>
       </div>
-    </div>
+      <aside class="article-meta">
+        <strong>文章资料</strong>
+        <span>语言：{isTranslated ? '简体中文' : '英文原文'}</span>
+        <span>状态：{isTranslated ? '当前译文' : '待翻译'}</span>
+        <span>主题：{entry.data.tags.length}</span>
+      </aside>
+    </header>
 
-    {!isTranslated && (
-      <div class="untranslated-banner">本文尚未翻译，以下为英文原文。</div>
-    )}
+    {!isTranslated && <div class="translation-notice">本文尚未翻译，以下为英文原文。</div>}
 
-    <div class="post-content">
+    <div class="article-content" lang={pageLang}>
       <Content />
     </div>
 
     <ArticleGraph graph={graph} />
 
-    <footer class="post-footer-attribution">
-      <p>
-        原文标题：
-        <a href={source} target="_blank" rel="noopener noreferrer">{originalTitle}</a>
-      </p>
-      {isTranslated ? (
-        <p>
-          本文译自 <a href="https://algebrica.org" target="_blank" rel="noopener noreferrer">Algebrica</a>，
-          <a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener noreferrer">CC BY-NC 4.0</a>，有翻译改动。
-        </p>
-      ) : (
-        <p>
-          本文原文来自 <a href="https://algebrica.org" target="_blank" rel="noopener noreferrer">Algebrica</a>，
-          <a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener noreferrer">CC BY-NC 4.0</a>。
-        </p>
-      )}
+    <footer class="article-attribution">
+      <p>原文：Antonio Lupetti，<a href={source} target="_blank" rel="noopener noreferrer">Algebrica「{originalTitle}」</a>。</p>
+      <p>中文翻译与视觉改编按 <a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener noreferrer">CC BY-NC 4.0</a> 提供。本项目为非官方、非商业中文译本。</p>
     </footer>
+
+    <nav class="chapter-nav" aria-label="章节导航">
+      <a href={`/category/${section}/`}>← 返回本编目录</a>
+      {nextSlug ? <a href={`/${nextSlug}/`}>下一篇 →</a> : <span>本编结束</span>}
+    </nav>
   </article>
 </BaseLayout>

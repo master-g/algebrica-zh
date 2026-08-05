@@ -1,0 +1,195 @@
+{
+  "schema_version": 1,
+  "upstream_commit": "66b40a8f19a727d619ef324a9ee6a6b1c6299638",
+  "assets": [
+    {
+      "path": "public/assets/equations/svg/exponential-equations-1.zh.svg",
+      "source": "https://github.com/antoniolupetti/algebrica/blob/66b40a8f19a727d619ef324a9ee6a6b1c6299638/equations/svg/exponential-equations-1.svg",
+      "author": "Antonio Lupetti / Algebrica",
+      "license": "CC BY-NC 4.0",
+      "changes": "Chinese labels and/or typography"
+    },
+    {
+      "path": "public/assets/inequalities/svg/geometric-interpretation-quadratic-inequalities-1.zh.svg",
+      "source": "https://github.com/antoniolupetti/algebrica/blob/66b40a8f19a727d619ef324a9ee6a6b1c6299638/inequalities/svg/geometric-interpretation-quadratic-inequalities-1.svg",
+      "author": "Antonio Lupetti / Algebrica",
+      "license": "CC BY-NC 4.0",
+      "changes": "Chinese labels and/or typography"
+    },
+    {
+      "path": "public/assets/inequalities/svg/geometric-interpretation-quadratic-inequalities-2.zh.svg",
+      "source": "https://github.com/antoniolupetti/algebrica/blob/66b40a8f19a727d619ef324a9ee6a6b1c6299638/inequalities/svg/geometric-interpretation-quadratic-inequalities-2.svg",
+      "author": "Antonio Lupetti / Algebrica",
+      "license": "CC BY-NC 4.0",
+      "changes": "Chinese labels and/or typography"
+    },
+    {
+      "path": "public/assets/inequalities/svg/irrational-inequalities-1.zh.svg",
+      "source": "https://github.com/antoniolupetti/algebrica/blob/66b40a8f19a727d619ef324a9ee6a6b1c6299638/inequalities/svg/irrational-inequalities-1.svg",
+      "author": "Antonio Lupetti / Algebrica",
+      "license": "CC BY-NC 4.0",
+      "changes": "Chinese labels and/or typography"
+    },
+    {
+      "path": "public/assets/inequalities/svg/quadratic-inequalities-1.zh.svg",
+      "source": "https://github.com/antoniolupetti/algebrica/blob/66b40a8f19a727d619ef324a9ee6a6b1c6299638/inequalities/svg/quadratic-inequalities-1.svg",
+      "author": "Antonio Lupetti / Algebrica",
+      "license": "CC BY-NC 4.0",
+      "changes": "Chinese labels and/or typography"
+    },
+    {
+      "path": "public/assets/inequalities/svg/quadratic-inequalities-2.zh.svg",
+      "source": "https://github.com/antoniolupetti/algebrica/blob/66b40a8f19a727d619ef324a9ee6a6b1c6299638/inequalities/svg/quadratic-inequalities-2.svg",
+      "author": "Antonio Lupetti / Algebrica",
+      "license": "CC BY-NC 4.0",
+      "changes": "Chinese labels and/or typography"
+    },
+    {
+      "path": "public/assets/inequalities/svg/quadratic-inequalities-3.zh.svg",
+      "source": "https://github.com/antoniolupetti/algebrica/blob/66b40a8f19a727d619ef324a9ee6a6b1c6299638/inequalities/svg/quadratic-inequalities-3.svg",
+      "author": "Antonio Lupetti / Algebrica",
+      "license": "CC BY-NC 4.0",
+      "changes": "Chinese labels and/or typography"
+    },
+    {
+      "path": "public/assets/inequalities/svg/quadratic-inequalities-4.zh.svg",
+      "source": "https://github.com/antoniolupetti/algebrica/blob/66b40a8f19a727d619ef324a9ee6a6b1c6299638/inequalities/svg/quadratic-inequalities-4.svg",
+      "author": "Antonio Lupetti / Algebrica",
+      "license": "CC BY-NC 4.0",
+      "changes": "Chinese labels and/or typography"
+    },
+    {
+      "path": "public/assets/inequalities/svg/quadratic-inequalities-5.zh.svg",
+      "source": "https://github.com/antoniolupetti/algebrica/blob/66b40a8f19a727d619ef324a9ee6a6b1c6299638/inequalities/svg/quadratic-inequalities-5.svg",
+      "author": "Antonio Lupetti / Algebrica",
+      "license": "CC BY-NC 4.0",
+      "changes": "Chinese labels and/or typography"
+    },
+    {
+      "path": "public/assets/inequalities/svg/sign-analysis-in-inequalities-1.zh.svg",
+      "source": "https://github.com/antoniolupetti/algebrica/blob/66b40a8f19a727d619ef324a9ee6a6b1c6299638/inequalities/svg/sign-analysis-in-inequalities-1.svg",
+      "author": "Antonio Lupetti / Algebrica",
+      "license": "CC BY-NC 4.0",
+      "changes": "Chinese labels and/or typography"
+    },
+    {
+      "path": "public/assets/inequalities/svg/trigonometric-inequalities-1.zh.svg",
+      "source": "https://github.com/antoniolupetti/algebrica/blob/66b40a8f19a727d619ef324a9ee6a6b1c6299638/inequalities/svg/trigonometric-inequalities-1.svg",
+      "author": "Antonio Lupetti / Algebrica",
+      "license": "CC BY-NC 4.0",
+      "changes": "Chinese labels and/or typography"
+    },
+    {
+      "path": "public/assets/inequalities/svg/trigonometric-inequalities-2.zh.svg",
+      "source": "https://github.com/antoniolupetti/algebrica/blob/66b40a8f19a727d619ef324a9ee6a6b1c6299638/inequalities/svg/trigonometric-inequalities-2.svg",
+      "author": "Antonio Lupetti / Algebrica",
+      "license": "CC BY-NC 4.0",
+      "changes": "Chinese labels and/or typography"
+    },
+    {
+      "path": "public/assets/inequalities/svg/trigonometric-inequalities-3.zh.svg",
+      "source": "https://github.com/antoniolupetti/algebrica/blob/66b40a8f19a727d619ef324a9ee6a6b1c6299638/inequalities/svg/trigonometric-inequalities-3.svg",
+      "author": "Antonio Lupetti / Algebrica",
+      "license": "CC BY-NC 4.0",
+      "changes": "Chinese labels and/or typography"
+    },
+    {
+      "path": "public/assets/lines-planes-conic-sections/svg/lines-1.zh.svg",
+      "source": "https://github.com/antoniolupetti/algebrica/blob/66b40a8f19a727d619ef324a9ee6a6b1c6299638/lines-planes-conic-sections/svg/lines-1.svg",
+      "author": "Antonio Lupetti / Algebrica",
+      "license": "CC BY-NC 4.0",
+      "changes": "Chinese labels and/or typography"
+    },
+    {
+      "path": "public/assets/lines-planes-conic-sections/svg/lines-2.zh.svg",
+      "source": "https://github.com/antoniolupetti/algebrica/blob/66b40a8f19a727d619ef324a9ee6a6b1c6299638/lines-planes-conic-sections/svg/lines-2.svg",
+      "author": "Antonio Lupetti / Algebrica",
+      "license": "CC BY-NC 4.0",
+      "changes": "Chinese labels and/or typography"
+    },
+    {
+      "path": "public/assets/lines-planes-conic-sections/svg/lines-3.zh.svg",
+      "source": "https://github.com/antoniolupetti/algebrica/blob/66b40a8f19a727d619ef324a9ee6a6b1c6299638/lines-planes-conic-sections/svg/lines-3.svg",
+      "author": "Antonio Lupetti / Algebrica",
+      "license": "CC BY-NC 4.0",
+      "changes": "Chinese labels and/or typography"
+    },
+    {
+      "path": "public/assets/lines-planes-conic-sections/svg/parabola-1.zh.svg",
+      "source": "https://github.com/antoniolupetti/algebrica/blob/66b40a8f19a727d619ef324a9ee6a6b1c6299638/lines-planes-conic-sections/svg/parabola-1.svg",
+      "author": "Antonio Lupetti / Algebrica",
+      "license": "CC BY-NC 4.0",
+      "changes": "Chinese labels and/or typography"
+    },
+    {
+      "path": "public/assets/lines-planes-conic-sections/svg/parabola-2.zh.svg",
+      "source": "https://github.com/antoniolupetti/algebrica/blob/66b40a8f19a727d619ef324a9ee6a6b1c6299638/lines-planes-conic-sections/svg/parabola-2.svg",
+      "author": "Antonio Lupetti / Algebrica",
+      "license": "CC BY-NC 4.0",
+      "changes": "Chinese labels and/or typography"
+    },
+    {
+      "path": "public/assets/lines-planes-conic-sections/svg/parabola-3.zh.svg",
+      "source": "https://github.com/antoniolupetti/algebrica/blob/66b40a8f19a727d619ef324a9ee6a6b1c6299638/lines-planes-conic-sections/svg/parabola-3.svg",
+      "author": "Antonio Lupetti / Algebrica",
+      "license": "CC BY-NC 4.0",
+      "changes": "Chinese labels and/or typography"
+    },
+    {
+      "path": "public/assets/lines-planes-conic-sections/svg/parabola-4.zh.svg",
+      "source": "https://github.com/antoniolupetti/algebrica/blob/66b40a8f19a727d619ef324a9ee6a6b1c6299638/lines-planes-conic-sections/svg/parabola-4.svg",
+      "author": "Antonio Lupetti / Algebrica",
+      "license": "CC BY-NC 4.0",
+      "changes": "Chinese labels and/or typography"
+    },
+    {
+      "path": "public/assets/lines-planes-conic-sections/svg/parabola-5.zh.svg",
+      "source": "https://github.com/antoniolupetti/algebrica/blob/66b40a8f19a727d619ef324a9ee6a6b1c6299638/lines-planes-conic-sections/svg/parabola-5.svg",
+      "author": "Antonio Lupetti / Algebrica",
+      "license": "CC BY-NC 4.0",
+      "changes": "Chinese labels and/or typography"
+    },
+    {
+      "path": "public/assets/lines-planes-conic-sections/svg/parabola-6.zh.svg",
+      "source": "https://github.com/antoniolupetti/algebrica/blob/66b40a8f19a727d619ef324a9ee6a6b1c6299638/lines-planes-conic-sections/svg/parabola-6.svg",
+      "author": "Antonio Lupetti / Algebrica",
+      "license": "CC BY-NC 4.0",
+      "changes": "Chinese labels and/or typography"
+    },
+    {
+      "path": "public/assets/lines-planes-conic-sections/svg/parabola-7.zh.svg",
+      "source": "https://github.com/antoniolupetti/algebrica/blob/66b40a8f19a727d619ef324a9ee6a6b1c6299638/lines-planes-conic-sections/svg/parabola-7.svg",
+      "author": "Antonio Lupetti / Algebrica",
+      "license": "CC BY-NC 4.0",
+      "changes": "Chinese labels and/or typography"
+    },
+    {
+      "path": "public/assets/lines-planes-conic-sections/svg/parabola-8.zh.svg",
+      "source": "https://github.com/antoniolupetti/algebrica/blob/66b40a8f19a727d619ef324a9ee6a6b1c6299638/lines-planes-conic-sections/svg/parabola-8.svg",
+      "author": "Antonio Lupetti / Algebrica",
+      "license": "CC BY-NC 4.0",
+      "changes": "Chinese labels and/or typography"
+    },
+    {
+      "path": "public/assets/lines-planes-conic-sections/svg/polar-coordinates-1.zh.svg",
+      "source": "https://github.com/antoniolupetti/algebrica/blob/66b40a8f19a727d619ef324a9ee6a6b1c6299638/lines-planes-conic-sections/svg/polar-coordinates-1.svg",
+      "author": "Antonio Lupetti / Algebrica",
+      "license": "CC BY-NC 4.0",
+      "changes": "Chinese labels and/or typography"
+    },
+    {
+      "path": "public/assets/lines-planes-conic-sections/svg/polar-coordinates-2.zh.svg",
+      "source": "https://github.com/antoniolupetti/algebrica/blob/66b40a8f19a727d619ef324a9ee6a6b1c6299638/lines-planes-conic-sections/svg/polar-coordinates-2.svg",
+      "author": "Antonio Lupetti / Algebrica",
+      "license": "CC BY-NC 4.0",
+      "changes": "Chinese labels and/or typography"
+    },
+    {
+      "path": "public/assets/lines-planes-conic-sections/svg/vector-and-parametric-equations-of-a-line-1.zh.svg",
+      "source": "https://github.com/antoniolupetti/algebrica/blob/66b40a8f19a727d619ef324a9ee6a6b1c6299638/lines-planes-conic-sections/svg/vector-and-parametric-equations-of-a-line-1.svg",
+      "author": "Antonio Lupetti / Algebrica",
+      "license": "CC BY-NC 4.0",
+      "changes": "Chinese labels and/or typography"
+    }
+  ]
+}

@@ -7,93 +7,56 @@ const difficultyDots = [1, 2, 3, 4];
 ---
 
 {graph && layout && (
-  <section class="collapsible-tree no-mobile" aria-label="知识图谱">
-    <div class="collapsible-tree__content">
-      <div
-        class="collapsible-tree__canvas has-fixed-height"
-        style={`height:${graph.canvasHeight}px`}
-      >
-        <svg
-          class="collapsible-tree__svg"
-          viewBox={`0,0,798,${graph.canvasHeight}`}
-          width="798"
-          height={graph.canvasHeight}
-          role="img"
-          aria-label="本文概念之间的关系"
-          preserveAspectRatio="xMinYMid meet"
-        >
-          <g class="collapsible-tree__links">
-            {layout.links.map((link) => (
-              <path class="collapsible-tree__link" d={link.path} />
+  <section class="article-graph" aria-labelledby="article-graph-title">
+    <header class="article-graph__header">
+      <div>
+        <span class="page-kicker">概念结构</span>
+        <h2 id="article-graph-title">知识图谱</h2>
+        <p>{graph.description}</p>
+      </div>
+      <strong>{layout.nodes.length} 个概念</strong>
+    </header>
+
+    <div class="article-graph__scroll" tabindex="0" aria-label="知识图谱，可横向滚动">
+      <div class="article-graph__layout" style={`height:${graph.canvasHeight}px`}>
+        <div class="article-graph__canvas" style={`height:${graph.canvasHeight}px`}>
+          <svg
+            viewBox={`0,0,798,${graph.canvasHeight}`}
+            width="798"
+            height={graph.canvasHeight}
+            role="img"
+            aria-label="本文概念之间的关系"
+            preserveAspectRatio="xMinYMid meet"
+          >
+            <g aria-hidden="true">
+              {layout.links.map((link) => <path class="article-graph__link" d={link.path} />)}
+            </g>
+            <g>
+              {layout.nodes.map((node) => (
+                <g class="article-graph__node" transform={`translate(${node.x},${node.y})`}>
+                  <circle r={node.children.length > 0 ? 3 : 2.5} />
+                  <text x="10" dy="0.32em" text-anchor="start">{node.name}</text>
+                </g>
+              ))}
+            </g>
+          </svg>
+        </div>
+        <aside class="article-graph__meta" aria-label="知识图谱资料">
+          <span class="article-graph__meta-kicker">知识图谱</span>
+          <strong>{graph.type}</strong>
+          <p>{graph.description}</p>
+          <div class="article-graph__difficulty" aria-label={`难度：${graph.difficulty.label}`}>
+            {difficultyDots.map((dot) => (
+              <span class:list={['article-graph__dot', dot <= graph.difficulty.level && 'is-active']}></span>
             ))}
-          </g>
-          <g class="collapsible-tree__nodes">
-            {layout.nodes.map((node) => (
-              <g
-                class:list={[
-                  'collapsible-tree__node',
-                  node.depth === 0 && 'is-root',
-                  node.children.length === 0 && 'is-leaf',
-                ]}
-                transform={`translate(${node.x},${node.y})`}
-              >
-                <circle
-                  class:list={[
-                    'collapsible-tree__node-dot',
-                    node.children.length === 0 && 'is-leaf',
-                  ]}
-                  r={node.children.length > 0 ? 3 : 2.5}
-                />
-                <text class="collapsible-tree__node-label" x="10" dy="0.32em" text-anchor="start">
-                  {node.name}
-                </text>
-              </g>
-            ))}
-          </g>
-        </svg>
+            <span>{graph.difficulty.label}</span>
+          </div>
+          <dl>
+            <div><dt>先修</dt><dd>{graph.requires}</dd></div>
+            <div><dt>后续</dt><dd>{graph.enables}</dd></div>
+          </dl>
+        </aside>
       </div>
     </div>
-
-    <aside class="collapsible-tree__canvas-wrap" style={`height:${graph.canvasHeight}px`}>
-      <div class="s-c-t-c-node-type-sub">知识图谱</div>
-      <div class="shrt-coll-three-cols mb-x-30">
-        <div class="shrt-coll-three-col">
-          <div class="s-c-t-c-item">
-            <div class="s-c-t-c-node-type">{graph.type}</div>
-          </div>
-        </div>
-      </div>
-      <div class="collapsible-tree-description">{graph.description}</div>
-      <div class="shrt-coll-three-cols">
-        <div class="shrt-coll-three-col">
-          <div class="s-c-t-c-item">
-            <div class="difficult-level">
-              <div class:list={['difficulty-level', `dl-${graph.difficulty.level}`]}>
-                {difficultyDots.map(() => <div class="difficulty-level-item"></div>)}
-                {graph.difficulty.label}
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="shrt-coll-three-cols">
-        <div class="shrt-coll-three-col">
-          <div class="s-c-t-c-item">
-            <div class="s-c-t-c-item-count">{graph.requires}</div>
-            <div class="s-c-t-c-label">先修</div>
-            <div class="s-c-t-c-icon-requires" aria-hidden="true"></div>
-          </div>
-        </div>
-      </div>
-      <div class="shrt-coll-three-cols">
-        <div class="shrt-coll-three-col">
-          <div class="s-c-t-c-item">
-            <div class="s-c-t-c-item-count">{graph.enables}</div>
-            <div class="s-c-t-c-label">后续</div>
-            <div class="s-c-t-c-icon-enables" aria-hidden="true"></div>
-          </div>
-        </div>
-      </div>
-    </aside>
   </section>
 )}

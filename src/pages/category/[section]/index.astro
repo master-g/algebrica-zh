@@ -16,43 +16,39 @@ const { section } = Astro.props;
 const articles = await getCollection('articles');
 const zhEntries = await getZhEntries();
 const rows = orderSectionRows(section, buildTranslationIndex(articles, zhEntries));
-
-const title = `${section.name_zh} | Algebrica 中文`;
+const title = `${section.name_zh} | Algebrica 中文译本`;
 const description = section.description_zh || section.description_en;
 const descLang = section.description_zh ? 'zh-CN' : 'en';
-const sectionNumber = `${section.order}.`;
 ---
 
 <BaseLayout title={title}>
-  <div class="post-header">
-    <nav class="post-header-breadcrumb" aria-label="Breadcrumb">分类</nav>
-    <div class="post-header-section-title">
-      <h1 class="post-header-title">{section.name_zh}</h1>
-      <div class="post-header-meta">{rows.length} 个条目</div>
-      {
-        description && (
-          <div class="post-header-cat-description" lang={descLang}>
-            <p>{description}</p>
-          </div>
-        )
-      }
-    </div>
-  </div>
+  <div class="category-page">
+    <nav class="breadcrumbs" aria-label="面包屑">
+      <a href="/">全书目录</a><span>/</span><span>{section.name_zh}</span>
+    </nav>
 
-  <div class="page-search-wrapper">
-    {
-      rows.map((row) => {
-        const titleText = row.zh?.data.title || row.en.data.title;
-        const isMissing = row.status === 'missing';
-        return (
-          <div class="search-results__item">
-            <div class="search-results__title">
-              <a href={`/${row.slug}/`}>{titleText}</a>
-              {isMissing && <span class="badge-untranslated">未翻译</span>}
-            </div>
-          </div>
-        );
-      })
-    }
+    <header class="category-header">
+      <span class="page-kicker">第 {section.order} 编 · {rows.length} 篇</span>
+      <h1>{section.name_zh}</h1>
+      {description && <p lang={descLang}>{description}</p>}
+    </header>
+
+    <section class="category-contents" aria-labelledby="category-contents-title">
+      <h2 id="category-contents-title">本编目录</h2>
+      <ol class="chapter-list">
+        {rows.map((row, index) => {
+          const titleText = row.zh?.data.title || row.en.data.title;
+          return (
+            <li>
+              <a href={`/${row.slug}/`}>
+                <span>{String(index + 1).padStart(2, '0')}</span>
+                <strong lang={row.zh ? 'zh-CN' : 'en'}>{titleText}</strong>
+                {row.status === 'missing' && <small>英文原文</small>}
+              </a>
+            </li>
+          );
+        })}
+      </ol>
+    </section>
   </div>
 </BaseLayout>
