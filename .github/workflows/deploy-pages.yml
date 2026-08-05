@@ -1,0 +1,90 @@
+name: Validate and deploy GitHub Pages
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out the Chinese site
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+
+      - name: Set up Node.js
+        uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Read the pinned upstream source
+        id: upstream
+        shell: bash
+        run: node -e "const lock=require('./upstream-lock.json'); const repository=lock.repository.replace(/^https:\/\/github\.com\//, '').replace(/\.git$/, ''); console.log('repository='+repository); console.log('commit='+lock.commit)" >> "$GITHUB_OUTPUT"
+
+      - name: Check out the pinned Algebrica source
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          repository: ${{ steps.upstream.outputs.repository }}
+          ref: ${{ steps.upstream.outputs.commit }}
+          path: upstream
+          persist-credentials: false
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Run unit gates
+        env:
+          ALGEBRICA_SOURCE_DIR: upstream
+        run: npm run test:unit
+
+      - name: Run dual-base development smoke gates
+        env:
+          ALGEBRICA_SOURCE_DIR: upstream
+        run: npm run test:smoke
+
+      - name: Build the project-base site
+        env:
+          ALGEBRICA_SOURCE_DIR: upstream
+          SITE_URL: https://${{ github.repository_owner }}.github.io
+          SITE_BASE: /${{ github.event.repository.name }}/
+        run: npm run build
+
+      - name: Run public release gates
+        env:
+          SITE_BASE: /${{ github.event.repository.name }}/
+        run: npm run check:public-release
+
+      - name: Upload the Pages artifact
+        if: github.event_name != 'pull_request' && github.ref == 'refs/heads/main'
+        uses: actions/upload-pages-artifact@fc324d3547104276b827a68afc52ff2a11cc49c9 # v5.0.0
+        with:
+          path: dist
+
+  deploy:
+    if: github.event_name != 'pull_request' && github.ref == 'refs/heads/main'
+    needs: validate
+    runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    concurrency:
+      group: github-pages
+      cancel-in-progress: false
+    steps:
+      - name: Configure GitHub Pages
+        uses: actions/configure-pages@45bfe0192ca1faeb007ade9deae92b16b8254a0d # v6.0.0
+
+      - name: Deploy GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@cd2ce8fcbc39b97be8ca5fce6e763baed58fa128 # v5.0.0

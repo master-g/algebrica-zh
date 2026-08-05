@@ -22,12 +22,22 @@ npm run dev
 默认上游目录为 `../algebrica`。公开发布流程会使用固定的上游提交，避免构建
 结果随上游分支变化。
 
+## GitHub Pages
+
+公开仓库的 `main` 分支通过全部门禁后，会部署到
+[master-g.github.io/algebrica-zh](https://master-g.github.io/algebrica-zh/)。仓库设置中
+需要将 Pages 的来源设为 **GitHub Actions**。拉取请求只执行测试与构建，不会部署。
+
+工作流从 [upstream-lock.json](upstream-lock.json) 读取固定的 Algebrica 上游提交。
+更新上游内容时，先在本地验证新提交，再单独修改该文件。
+
 ## 质量门禁
 
 ```bash
 npm run test:unit
 npm run test:smoke
 npm run build
+npm run check:public-release
 ```
 
 门禁覆盖翻译状态、术语、Markdown、LaTeX、内部链接、插图、知识图谱、开发
