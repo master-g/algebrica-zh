@@ -17,7 +17,7 @@ translation:
 ---
 ## 函数列
 
-取一个集合 $A \subseteq \mathbb{R}$，并规定对每个自然数 $n$ 都对应一个[函数](../functions/) $f_n$。这样得到的不再是数字列表，而是一列[定义域](.../determining-the-domain-of-a-function/)相同、都定义在 $A$ 上的函数：
+取一个集合 $A \subseteq \mathbb{R}$，并规定对每个自然数 $n$ 都对应一个[函数](../functions/) $f_n$。这样得到的不再是数字列表，而是一列[定义域](../determining-the-domain-of-a-function/)相同、都定义在 $A$ 上的函数：
 
 $$
 f_0(x), \ f_1(x), \ f_2(x), \ \dots, \ f_n(x), \ \dots

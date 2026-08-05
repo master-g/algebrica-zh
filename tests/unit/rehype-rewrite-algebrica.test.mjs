@@ -129,7 +129,9 @@ describe('rehype-rewrite-algebrica', () => {
       children: [
         makeLink('function', '../functions/'),
         makeLink('integral', '../definite-integrals/'),
+        makeLink('bibliography', '/bibliography/'),
         makeImg('svg/x.svg'),
+        makeImg('/assets/integrals/svg/y.svg'),
       ],
     };
     const slugMap = new Map([
@@ -145,6 +147,9 @@ describe('rehype-rewrite-algebrica', () => {
     const [img] = find(tree, 'img');
     assert.equal(links[0].properties.href, '/algebrica-zh/category/functions/');
     assert.equal(links[1].properties.href, '/algebrica-zh/definite-integrals/');
-    assert.equal(img.properties.src, '/algebrica-zh/assets/integrals/svg/x.svg');
+    assert.equal(links[2].properties.href, '/algebrica-zh/bibliography/');
+    const images = find(tree, 'img');
+    assert.equal(images[0].properties.src, '/algebrica-zh/assets/integrals/svg/x.svg');
+    assert.equal(images[1].properties.src, '/algebrica-zh/assets/integrals/svg/y.svg');
   });
 });

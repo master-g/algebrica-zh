@@ -1,6 +1,3 @@
-known_absent:
-  - kinematics
-
 sections:
   - dir: sets-and-numbers
     name_en: "Sets and Numbers"
@@ -424,6 +421,17 @@ sections:
     description_en: |
       Archive of topics on probability and statistics, covering random events, probability models, distributions, and statistical methods for analyzing and interpreting data.
     description_zh: null
+
+  - dir: kinematics
+    name_en: Kinematics
+    name_zh: 运动学
+    order: 21
+    entries:
+      - velocity
+    description_en: |
+      Topics on motion described through position, velocity, and related rates of change.
+    description_zh: |
+      研究位置、速度及相关变化率所描述的运动。
 
   - dir: various
     name_en: Various

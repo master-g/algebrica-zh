@@ -12,7 +12,10 @@
     "test": "node --test 'tests/**/*.test.mjs' && node scripts/check-dev-smoke.mjs",
     "test:unit": "node --test 'tests/**/*.test.mjs'",
     "test:smoke": "node scripts/check-dev-smoke.mjs",
-    "check:upstream": "node scripts/check-upstream.mjs"
+    "check:upstream": "node scripts/check-upstream.mjs",
+    "check:licenses": "node scripts/check-licenses.mjs",
+    "check:static-site": "node scripts/check-static-site.mjs",
+    "check:public-release": "node scripts/check-public-release.mjs"
   },
   "dependencies": {
     "@astrojs/markdown-remark": "^7.2.1",

@@ -28,7 +28,12 @@ export default function rehypeRewriteAlgebrica({ slugMap = new Map(), dangling =
     visit(tree, 'element', (node, index, parent) => {
       if (node.tagName === 'a') {
         const href = node.properties?.href;
-        if (typeof href !== 'string' || !href.startsWith('../')) return;
+        if (typeof href !== 'string') return;
+        if (href.startsWith('/')) {
+          node.properties.href = withSiteBase(href, siteBase);
+          return;
+        }
+        if (!href.startsWith('../')) return;
 
         const target = href.replace(/^(\.\.\/)+/, '').replace(/\/$/, '');
 
@@ -87,6 +92,11 @@ export default function rehypeRewriteAlgebrica({ slugMap = new Map(), dangling =
       if (node.tagName === 'img') {
         const src = node.properties?.src;
         if (typeof src !== 'string') return;
+
+        if (src.startsWith('/')) {
+          node.properties.src = withSiteBase(src, siteBase);
+          return;
+        }
 
         if (src.startsWith('svg/')) {
           if (!currentSection) {
