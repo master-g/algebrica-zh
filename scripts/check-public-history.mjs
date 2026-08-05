@@ -16,10 +16,14 @@ export function forbiddenHistoryPaths(objectLines) {
 }
 
 export function checkPublicHistory(repoDir = process.cwd()) {
-  const output = execFileSync('git', ['-C', resolve(repoDir), 'rev-list', '--objects', '--all'], {
+  const output = execFileSync(
+    'git',
+    ['-C', resolve(repoDir), 'rev-list', '--objects', '--branches', '--tags', '--remotes'],
+    {
     encoding: 'utf8',
     stdio: ['ignore', 'pipe', 'pipe'],
-  });
+    },
+  );
   return forbiddenHistoryPaths(output.split('\n'));
 }
 
