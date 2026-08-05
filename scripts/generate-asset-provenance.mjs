@@ -8,9 +8,13 @@ const upstreamLock = loadUpstreamLock();
 const upstreamSourceUrl = upstreamLock.repository.replace(/\.git\/?$/, '');
 
 function trackedChineseSvgFiles() {
-  const output = execFileSync('git', ['ls-files', 'public/assets/**/*.zh.svg'], {
+  const output = execFileSync(
+    'git',
+    ['-c', 'core.quotePath=false', 'ls-files', 'public/assets/**/*.zh.svg'],
+    {
     encoding: 'utf8',
-  }).trim();
+    },
+  ).trim();
   return output ? output.split('\n').sort() : [];
 }
 

@@ -1,7 +1,8 @@
 node_modules/
 dist/
 .env
-public/assets/*/
+public/assets/*/svg/*
+!public/assets/*/svg/*.zh.svg
 .astro/
 browser-data/
 translation-failures.json

@@ -4,7 +4,9 @@ import { execFileSync } from 'node:child_process';
 import { existsSync, readFileSync } from 'node:fs';
 
 function trackedFiles(pattern) {
-  const output = execFileSync('git', ['ls-files', pattern], { encoding: 'utf8' }).trim();
+  const args = ['-c', 'core.quotePath=false', 'ls-files'];
+  if (pattern) args.push(pattern);
+  const output = execFileSync('git', args, { encoding: 'utf8' }).trim();
   return output ? output.split('\n') : [];
 }
 
@@ -54,6 +56,17 @@ describe('public repository release boundary', () => {
       assert.equal(entry.license, 'CC BY-NC 4.0');
       assert.match(entry.source, /^https:\/\/github\.com\/antoniolupetti\/algebrica\/blob\/[0-9a-f]{40}\//);
       assert.match(entry.changes, /Chinese/);
+    }
+  });
+
+  it('tracks every localized SVG referenced by translated content', () => {
+    const tracked = new Set(trackedFiles());
+    for (const contentPath of trackedFiles('content-zh/**/*.md')) {
+      const content = readFileSync(contentPath, 'utf8');
+      for (const match of content.matchAll(/\/assets\/[^)\s"'<>]+\.zh\.svg/g)) {
+        const assetPath = `public${match[0]}`;
+        assert.ok(tracked.has(assetPath), `${contentPath} references untracked ${assetPath}`);
+      }
     }
   });
 

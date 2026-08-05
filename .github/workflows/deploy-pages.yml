@@ -45,6 +45,9 @@ jobs:
           ALGEBRICA_SOURCE_DIR: upstream
         run: npm run test:unit
 
+      - name: Check public Git history
+        run: npm run check:public-history
+
       - name: Run dual-base development smoke gates
         env:
           ALGEBRICA_SOURCE_DIR: upstream
