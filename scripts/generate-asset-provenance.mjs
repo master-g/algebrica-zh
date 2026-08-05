@@ -1,9 +1,11 @@
 import { execFileSync } from 'node:child_process';
 import { mkdirSync, writeFileSync } from 'node:fs';
 import { dirname } from 'node:path';
+import { loadUpstreamLock } from '../src/lib/upstream-source.mjs';
 
-const UPSTREAM_COMMIT = '66b40a8f19a727d619ef324a9ee6a6b1c6299638';
 const OUTPUT = 'public/assets/provenance.json';
+const upstreamLock = loadUpstreamLock();
+const upstreamSourceUrl = upstreamLock.repository.replace(/\.git\/?$/, '');
 
 function trackedChineseSvgFiles() {
   const output = execFileSync('git', ['ls-files', 'public/assets/**/*.zh.svg'], {
@@ -18,7 +20,7 @@ function makeEntry(path) {
   const file = parts.at(-1).replace(/\.zh\.svg$/, '.svg');
   return {
     path,
-    source: `https://github.com/antoniolupetti/algebrica/blob/${UPSTREAM_COMMIT}/${section}/svg/${file}`,
+    source: `${upstreamSourceUrl}/blob/${upstreamLock.commit}/${section}/svg/${file}`,
     author: 'Antonio Lupetti / Algebrica',
     license: 'CC BY-NC 4.0',
     changes: 'Chinese labels and/or typography',
@@ -27,7 +29,7 @@ function makeEntry(path) {
 
 const manifest = {
   schema_version: 1,
-  upstream_commit: UPSTREAM_COMMIT,
+  upstream_commit: upstreamLock.commit,
   assets: trackedChineseSvgFiles().map(makeEntry),
 };
 

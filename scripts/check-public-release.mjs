@@ -14,7 +14,7 @@ const FORBIDDEN_PATHS = [
   /^scripts\/fetch-assets\.mjs$/,
 ];
 
-export function checkSourceReleaseBoundary({ trackedFiles, packageJson, notices, provenance }) {
+export function checkSourceReleaseBoundary({ trackedFiles, provenance }) {
   const errors = [];
   for (const path of trackedFiles) {
     if (FORBIDDEN_PATHS.some((pattern) => pattern.test(path))) {
@@ -30,11 +30,6 @@ export function checkSourceReleaseBoundary({ trackedFiles, packageJson, notices,
     }
   }
 
-  for (const name of Object.keys(packageJson.dependencies || {})) {
-    if (!notices.includes(`\`${name}\``)) {
-      errors.push(`direct dependency not documented in THIRD_PARTY_NOTICES.md: ${name}`);
-    }
-  }
   return { errors };
 }
 
@@ -50,7 +45,7 @@ function main() {
   const notices = readFileSync('THIRD_PARTY_NOTICES.md', 'utf8');
   const provenance = JSON.parse(readFileSync('public/assets/provenance.json', 'utf8'));
 
-  const source = checkSourceReleaseBoundary({ trackedFiles: files, packageJson, notices, provenance });
+  const source = checkSourceReleaseBoundary({ trackedFiles: files, provenance });
   const licenses = checkLicenseMetadata({ packageJson, lock, notices });
   const errors = [...source.errors, ...licenses.errors];
   for (const entry of licenses.attention) console.warn(`license attention: ${entry}`);

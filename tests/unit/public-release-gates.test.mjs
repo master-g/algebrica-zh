@@ -11,8 +11,6 @@ describe('public release gates', () => {
   it('rejects forbidden tracked assets and missing derivative provenance', () => {
     const result = checkSourceReleaseBoundary({
       trackedFiles: ['public/theme/style.css', 'public/assets/demo.zh.svg'],
-      packageJson: { dependencies: {} },
-      notices: '',
       provenance: { assets: [] },
     });
     assert.ok(result.errors.some((error) => error.includes('public/theme/style.css')));
