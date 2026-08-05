@@ -18,8 +18,7 @@ const articles = await getCollection('articles');
 const zhEntries = await getZhEntries();
 const rows = orderSectionRows(section, buildTranslationIndex(articles, zhEntries));
 const title = `${section.name_zh} | Algebrica 中文译本`;
-const description = section.description_zh || section.description_en;
-const descLang = section.description_zh ? 'zh-CN' : 'en';
+const description = section.description_zh;
 const path = (value) => withSiteBase(value, import.meta.env.BASE_URL);
 ---
 
@@ -32,7 +31,7 @@ const path = (value) => withSiteBase(value, import.meta.env.BASE_URL);
     <header class="category-header">
       <span class="page-kicker">第 {section.order} 编 · {rows.length} 篇</span>
       <h1>{section.name_zh}</h1>
-      {description && <p lang={descLang}>{description}</p>}
+      {description && <p lang="zh-CN">{description}</p>}
     </header>
 
     <section class="category-contents" aria-labelledby="category-contents-title">

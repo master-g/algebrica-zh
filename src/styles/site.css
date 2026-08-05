@@ -7,14 +7,15 @@
 }
 
 :root {
-  --canvas: #eeede6;
-  --paper: #fffff8;
-  --ink: #111111;
-  --body: #292925;
-  --muted: #6c6b64;
-  --hairline: #d8d7cf;
-  --hairline-dark: #aaa9a1;
-  --note: #f4f3eb;
+  --canvas: #faf9f5;
+  --paper: #faf9f5;
+  --ink: #141413;
+  --body: #3d3d3a;
+  --muted: #6c6a64;
+  --hairline: #e6dfd8;
+  --hairline-dark: #c8bfb3;
+  --note: #f5f0e8;
+  --accent: #a9583e;
   --font-serif: "Noto Serif SC Algebrica", "Source Han Serif SC", "Songti SC", STSong, SimSun, serif;
   --font-sans: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif;
   --font-mono: ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace;
@@ -22,7 +23,7 @@
 }
 
 html[data-theme="black"] {
-  --canvas: #0f0f0f;
+  --canvas: #151515;
   --paper: #151515;
   --ink: #f0efe8;
   --body: #deddd6;
@@ -30,6 +31,7 @@ html[data-theme="black"] {
   --hairline: #3f3f3a;
   --hairline-dark: #66665f;
   --note: #20201d;
+  --accent: #cc785c;
   color-scheme: dark;
 }
 
@@ -532,7 +534,6 @@ summary {
   letter-spacing: -0.025em;
 }
 
-.article-deck,
 .static-page__header > p {
   max-width: 660px;
   margin: 20px 0 0;
@@ -611,13 +612,25 @@ summary {
   font-weight: 650;
 }
 
-.article-section blockquote {
+.article-section .sidenote {
   margin: 30px 0;
-  padding-left: 24px;
+  padding: 16px 18px;
   border-left: 1px solid var(--hairline-dark);
   color: var(--muted);
+  background: var(--note);
+  font-family: var(--font-serif);
   font-size: 15px;
   line-height: 1.75;
+  text-wrap: pretty;
+}
+
+.article-section .sidenote::before {
+  content: "旁注";
+  display: block;
+  margin-bottom: 8px;
+  color: var(--ink);
+  font: 600 9px/1 var(--font-mono);
+  letter-spacing: 0.12em;
 }
 
 .article-section ul,
@@ -1053,6 +1066,27 @@ summary {
   }
 }
 
+@media (min-width: 1040px) {
+  .article-section::after {
+    content: "";
+    display: block;
+    clear: both;
+  }
+
+  .article-section .sidenote {
+    float: right;
+    clear: right;
+    width: 240px;
+    margin: 4px -320px 28px 40px;
+    padding: 13px 0 0;
+    border-top: 1px solid var(--hairline-dark);
+    border-left: 0;
+    background: transparent;
+    font-size: 13px;
+    line-height: 1.7;
+  }
+}
+
 @media (max-width: 900px) {
   .site-nav {
     display: none;
@@ -1176,7 +1210,6 @@ summary {
   }
 
   .home-hero > p,
-  .article-deck,
   .static-page__header > p,
   .category-header p {
     font-size: 16px;

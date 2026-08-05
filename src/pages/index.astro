@@ -41,7 +41,7 @@ const path = (value) => withSiteBase(value, import.meta.env.BASE_URL);
               <span class="section-index__number">{String(section.order).padStart(2, '0')}</span>
               <div>
                 <h3><a href={path(`/category/${section.dir}/`)}>{section.name_zh}</a></h3>
-                <p lang={section.description_zh ? 'zh-CN' : 'en'}>{section.description_zh || section.description_en}</p>
+                <p lang="zh-CN">{section.description_zh}</p>
               </div>
             </header>
             <ol class="section-index__entries">

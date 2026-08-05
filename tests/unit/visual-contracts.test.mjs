@@ -35,6 +35,15 @@ describe('public redesign visual contracts', () => {
     assert.doesNotMatch(searchBox, /\/theme\/|<img/);
   });
 
+  it('uses a warm parchment light palette without pure-white surfaces', () => {
+    const lightTokens = siteCss.match(/:root\s*\{([^}]*)\}/)?.[1] || '';
+    assert.match(siteCss, /:root\s*\{[^}]*--canvas:\s*#faf9f5;[^}]*--paper:\s*#faf9f5;/s);
+    assert.match(siteCss, /html\[data-theme="black"\]\s*\{[^}]*--canvas:\s*#151515;[^}]*--paper:\s*#151515;/s);
+    assert.match(siteCss, /:root\s*\{[^}]*--note:\s*#f5f0e8;/s);
+    assert.match(siteCss, /:root\s*\{[^}]*--hairline:\s*#e6dfd8;/s);
+    assert.doesNotMatch(lightTokens, /(?:--canvas|--paper):\s*#(?:fff|ffffff);/);
+  });
+
   it('uses an accessible inline search icon without an icon runtime', () => {
     assert.match(
       searchBox,
@@ -67,6 +76,24 @@ describe('public redesign visual contracts', () => {
     assert.match(articlePage, /<BaseLayout title=\{pageTitle\}>/);
     assert.match(articlePage, /<div class="article-content" lang=\{pageLang\}>/);
     assert.doesNotMatch(articlePage, /<BaseLayout lang=\{pageLang\}/);
+  });
+
+  it('keeps section descriptions in Chinese and removes the repeated article deck', () => {
+    assert.match(homePage, /<p lang="zh-CN">\{section\.description_zh\}<\/p>/);
+    assert.doesNotMatch(homePage, /description_zh \|\| section\.description_en/);
+    assert.doesNotMatch(categoryPage, /description_zh \|\| section\.description_en/);
+    assert.doesNotMatch(articlePage, /article-deck|description_en/);
+  });
+
+  it('uses editorial supplements as desktop sidenotes and inline mobile notes', () => {
+    assert.match(
+      siteCss,
+      /\.article-section \.sidenote\s*\{[^}]*background:\s*var\(--note\);/s,
+    );
+    assert.match(
+      siteCss,
+      /@media \(min-width: 1040px\)[\s\S]*\.article-section \.sidenote\s*\{[^}]*float:\s*right;[^}]*width:\s*240px;[^}]*margin:\s*4px -320px 28px 40px;[^}]*background:\s*transparent;/s,
+    );
   });
 
   it('centers illustrations and standalone formulas without changing inline math', () => {

@@ -6,6 +6,7 @@ import rehypeMathjax from 'rehype-mathjax/svg';
 import rehypeSanitize, { defaultSchema } from 'rehype-sanitize';
 import remarkIntervalsShortcode from './src/plugins/remark-intervals-shortcode.mjs';
 import rehypeMarkStandaloneMath from './src/plugins/rehype-mark-standalone-math.mjs';
+import rehypeNotesToSidenotes from './src/plugins/rehype-notes-to-sidenotes.mjs';
 import rehypeRewriteAlgebrica from './src/plugins/rehype-rewrite-algebrica.mjs';
 import rehypeSectionizeAlgebrica from './src/plugins/rehype-sectionize-algebrica.mjs';
 import dangling from './src/lib/dangling-links.json' with { type: 'json' };
@@ -32,6 +33,7 @@ function makeMathSchema(base) {
       // MathJax SVG 的伴随 <style> 块必须保留为元素——标签被剥掉会把整段 CSS 以文本泄漏进页面。
       // remark 默认不允许原始 HTML,LLM 内容无法注入元素,放行 <style> 无注入面。
       'style',
+      'aside',
       'mjx-container',
       'mjx-assistive-mml',
       'mjx-math',
@@ -97,6 +99,7 @@ function makeMathSchema(base) {
       stop: ['offset', 'stopColor'],
       symbol: ['id'],
       a: ['href', 'title', 'target', 'rel', 'class'],
+      aside: ['className', 'role'],
       section: ['dataFootnotes', ['className', 'footnotes', 'article-section']],
       '*': [...(base.attributes?.['*'] || []), 'className', 'class'],
     },
@@ -125,6 +128,7 @@ export default defineConfig({
         rehypeMarkStandaloneMath,
         [rehypeRewriteAlgebrica, { slugMap, dangling, warn: console.warn, siteBase }],
         rehypeSectionizeAlgebrica,
+        rehypeNotesToSidenotes,
         [rehypeSanitize, makeMathSchema(defaultSchema)],
       ],
     }),

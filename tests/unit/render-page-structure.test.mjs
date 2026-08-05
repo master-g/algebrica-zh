@@ -51,6 +51,21 @@ The value $x + y$ stays inline.
     assert.doesNotMatch(html, /<p class="standalone-math">The value/);
   });
 
+  it('renders editorial supplements as semantic sidenotes', async () => {
+    const html = await renderPageMarkdown(`## Definition
+
+Main text.
+
+> This is a supplement, not an attributed quotation.
+`);
+
+    assert.match(
+      html,
+      /<aside class="sidenote" role="note">\s*<p>This is a supplement, not an attributed quotation\.<\/p>\s*<\/aside>/,
+    );
+    assert.doesNotMatch(html, /<blockquote>/);
+  });
+
   it('applies class wrappers to Markdown tables without leaking markers', async () => {
     const html = await renderPageMarkdown(`[class="table-1 -right"]
 | 恒等式 | 结果 |

@@ -5,6 +5,7 @@ import rehypeMathjax from 'rehype-mathjax/svg';
 import rehypeSanitize, { defaultSchema } from 'rehype-sanitize';
 import remarkIntervalsShortcode from '../plugins/remark-intervals-shortcode.mjs';
 import rehypeMarkStandaloneMath from '../plugins/rehype-mark-standalone-math.mjs';
+import rehypeNotesToSidenotes from '../plugins/rehype-notes-to-sidenotes.mjs';
 import rehypeRewriteAlgebrica from '../plugins/rehype-rewrite-algebrica.mjs';
 import rehypeSectionizeAlgebrica from '../plugins/rehype-sectionize-algebrica.mjs';
 import dangling from '../lib/dangling-links.json' with { type: 'json' };
@@ -22,6 +23,7 @@ function makeMathSchema(base) {
       ...(base.tagNames || []),
       // MathJax SVG 的伴随 <style> 块必须保留为元素(同 astro.config.mjs)。
       'style',
+      'aside',
       'mjx-container',
       'mjx-assistive-mml',
       'mjx-math',
@@ -87,6 +89,7 @@ function makeMathSchema(base) {
       stop: ['offset', 'stopColor'],
       symbol: ['id'],
       a: ['href', 'title', 'target', 'rel', 'class'],
+      aside: ['className', 'role'],
       section: ['dataFootnotes', ['className', 'footnotes', 'article-section']],
       '*': [...(base.attributes?.['*'] || []), 'className', 'class'],
     },
@@ -108,6 +111,7 @@ function getProcessor(currentSection = null) {
           rehypeMarkStandaloneMath,
           [rehypeRewriteAlgebrica, { slugMap, dangling, currentSection, siteBase }],
           rehypeSectionizeAlgebrica,
+          rehypeNotesToSidenotes,
           [rehypeSanitize, makeMathSchema(defaultSchema)],
         ],
       }),

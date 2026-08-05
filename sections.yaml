@@ -20,7 +20,8 @@ sections:
       - binomial-coefficient
     description_en: |
       Archive of topics on sets and number systems, including natural numbers, integers, rational and irrational numbers, and the structure of the real and complex number systems.
-    description_zh: null
+    description_zh: |
+      集合与数系主题，包括自然数、整数、有理数、无理数，以及实数系与复数系的结构。
 
   - dir: algebraic-structures
     name_en: "Algebraic Structures"
@@ -35,7 +36,8 @@ sections:
       - homomorphisms-and-isomorphisms
     description_en: |
       
-    description_zh: null
+    description_zh: |
+      介绍群、环、域、向量空间与模等代数结构，以及保持这些结构的同态与同构。
 
   - dir: powers-radicals-logarithms
     name_en: "Powers, Radicals and Logarithms"
@@ -47,7 +49,8 @@ sections:
       - logarithms
     description_en: |
       Entries on powers, radicals, and logarithms, covering exponent rules \(a^n\), root expressions \(\sqrt[n]{a}\), and logarithmic relationships \(\log_b x = y \iff b^y = x\).
-    description_zh: null
+    description_zh: |
+      介绍幂、根式与对数，包括指数运算法则、根式表达式和对数关系。
 
   - dir: complex-numbers
     name_en: "Complex Numbers"
@@ -65,7 +68,8 @@ sections:
       - complex-logarithm
     description_en: |
       Complex numbers extend the real number system by introducing the imaginary unit \(I\), defined by \(i^2 = -1\). A complex number has the form \(z = a + bi\) with \(a, b \in \mathbb{R}\). This section covers their algebraic properties, geometric representation in the complex plane, modulus, conjugation, and polar form \(z = r(\cos \theta + i \sin \theta)\).
-    description_zh: null
+    description_zh: |
+      复数将实数系扩展到包含虚数单位。本编介绍复数的代数性质、复平面上的几何表示、模、共轭与极坐标形式。
 
   - dir: trigonometry
     name_en: Trigonometry
@@ -92,7 +96,8 @@ sections:
       - law-of-cosines
     description_en: |
       This section collects topics on trigonometry, the branch of mathematics that studies the relationships between angles and sides of triangles and the trigonometric functions that arise from them. The entries explore functions such as sine, cosine, and tangent, their properties, identities, and applications in geometry and analysis.
-    description_zh: null
+    description_zh: |
+      研究三角形的边角关系及由此产生的三角函数，包括正弦、余弦、正切及其性质、恒等式和应用。
 
   - dir: polynomials
     name_en: Polynomials
@@ -117,7 +122,8 @@ sections:
       - partial-fraction-decomposition
     description_en: |
       A polynomial is a mathematical expression made up of terms consisting of a coefficient and a variable raised to a power, which are then summed together.
-    description_zh: null
+    description_zh: |
+      介绍由系数与变量幂构成的多项式，以及多项式的运算、因式分解、根与基本定理。
 
   - dir: equations
     name_en: Equations
@@ -148,7 +154,8 @@ sections:
       - quadratic-equations-with-parameters
     description_en: |
       An equation is a mathematical equality between two expressions containing one or more variables, called unknowns. Solving an equation means finding all its solutions in the definition set of the variables.
-    description_zh: null
+    description_zh: |
+      介绍含有一个或多个未知量的等式，以及在变量定义域内求出全部解的方法。
 
   - dir: inequalities
     name_en: Inequalities
@@ -171,7 +178,8 @@ sections:
       - systems-of-inequalities
     description_en: |
       Archive of topics on mathematical inequalities, covering methods to compare algebraic expressions, solve inequalities, and describe ranges of values that satisfy given conditions.
-    description_zh: null
+    description_zh: |
+      介绍代数表达式的大小比较、不等式的求解方法，以及满足给定条件的取值范围。
 
   - dir: lines-planes-conic-sections
     name_en: "Lines, Planes and Conic Sections"
@@ -187,7 +195,8 @@ sections:
       - hyperbola
     description_en: |
       This section collects topics from analytic geometry concerning lines, planes, and conic sections. The entries explore the algebraic representation of geometric objects in the coordinate plane and the study of curves such as circles, parabolas, ellipses, and hyperbolas. These concepts connect geometric shapes with equations and provide the foundation for analyzing curves and intersections in the Cartesian plane.
-    description_zh: null
+    description_zh: |
+      介绍解析几何中的直线、平面与圆锥曲线，研究几何对象的代数表示及其交点与性质。
 
   - dir: vectors-and-matrices
     name_en: "Vectors and Matrices"
@@ -204,7 +213,8 @@ sections:
       - matrix-diagonalization
     description_en: |
       Vectors and matrices in basic linear algebra, including vector representation and operations, matrix notation ( A = (a_{ij}) ), dimensions ( m times n ), matrix operations, determinants, and linear transformations.
-    description_zh: null
+    description_zh: |
+      介绍线性代数中的向量与矩阵，包括表示、运算、行列式、秩、特征值和线性变换。
 
   - dir: linear-systems
     name_en: "Linear Systems"
@@ -217,7 +227,8 @@ sections:
       - rouche-capelli-theorem
     description_en: |
       Archive of topics on linear systems, covering systems of linear equations, solution methods, matrix representation, and the relationships between variables in algebraic models.
-    description_zh: null
+    description_zh: |
+      介绍线性方程组、矩阵表示、解法，以及代数模型中各变量之间的线性关系。
 
   - dir: sequences
     name_en: Sequences
@@ -236,7 +247,8 @@ sections:
       - sequences-of-functions
     description_en: |
       Archive of topics on mathematical sequences, covering definitions, notation, convergence, divergence, and the fundamental properties that describe ordered numerical patterns.
-    description_zh: null
+    description_zh: |
+      介绍数列的定义与记号，以及收敛、发散、单调性和常见数列类型。
 
   - dir: series
     name_en: Series
@@ -261,7 +273,8 @@ sections:
       - fourier-series
     description_en: |
       This section collects topics on mathematical series, defined as sums of the terms of a sequence. The entries explore infinite series, convergence, divergence, and the main criteria used to analyze infinite sums in calculus.
-    description_zh: null
+    description_zh: |
+      介绍由数列各项求和得到的级数，以及无穷级数的收敛、发散和主要判别法。
 
   - dir: functions
     name_en: Functions
@@ -295,7 +308,8 @@ sections:
       - sigmoid-function
     description_en: |
       Archive of topics on mathematical functions, including definitions, domain, codomain, range, and the fundamental properties that describe how inputs are mapped to outputs.
-    description_zh: null
+    description_zh: |
+      介绍函数的定义、定义域、陪域、值域，以及输入与输出之间映射关系的基本性质。
 
   - dir: limits
     name_en: Limits
@@ -313,7 +327,8 @@ sections:
       - big-o-notation
     description_en: |
       Archive of topics on limits in calculus, covering the behavior of functions as variables approach a value, with key concepts such as limit laws, continuity, and limits at infinity.
-    description_zh: null
+    description_zh: |
+      介绍函数在自变量趋近某一取值时的行为，包括极限定律、连续性和无穷远处的极限。
 
   - dir: derivatives
     name_en: Derivatives
@@ -332,7 +347,8 @@ sections:
       - partial-derivatives
     description_en: |
       Derivatives measure how a function changes with respect to its variable and describe the instantaneous rate of change of \(f(x)\). The derivative of a function is defined by the limit: \[ f'(x)=\lim_{h\to0}\frac{f(x+h)-f(x)}{h} \]
-    description_zh: null
+    description_zh: |
+      导数刻画函数相对于自变量的瞬时变化率。本编介绍导数的定义、计算规则与几何应用。
 
   - dir: differential-calculus-theorems
     name_en: "Differential Calculus Theorems"
@@ -348,7 +364,8 @@ sections:
       - darboux-theorem
     description_en: |
       This section collects the main theorems of differential calculus that describe the behavior of differentiable functions. Topics include foundational results such as Rolle’s theorem, the Mean Value Theorem, and related statements that connect derivatives with the global properties of functions on an interval.
-    description_zh: null
+    description_zh: |
+      介绍刻画可微函数行为的主要定理，包括罗尔定理、中值定理及其相关结论。
 
   - dir: integrals
     name_en: Integrals
@@ -373,7 +390,8 @@ sections:
       - the-disc-method
     description_en: |
       Archive of topics on integrals and integral calculus, covering the concept of integration, antiderivatives, definite and indefinite integrals, and applications such as area and accumulated change.
-    description_zh: null
+    description_zh: |
+      介绍积分、原函数、定积分与不定积分，以及面积和累积变化等应用。
 
   - dir: differential-equations
     name_en: "Differential Equations"
@@ -384,7 +402,8 @@ sections:
       - first-order-differential-equations
     description_en: |
       This section collects topics on differential equations, which describe relationships between functions and their derivatives. The entries explore equations that model rates of change and the methods used to analyze and solve them in mathematics and applied sciences.
-    description_zh: null
+    description_zh: |
+      介绍函数及其导数之间的方程，以及分析和求解变化率模型的基本方法。
 
   - dir: probability-and-statistics
     name_en: "Probability and Statistics"
@@ -420,7 +439,8 @@ sections:
       - confidence-intervals
     description_en: |
       Archive of topics on probability and statistics, covering random events, probability models, distributions, and statistical methods for analyzing and interpreting data.
-    description_zh: null
+    description_zh: |
+      介绍随机事件、概率模型、概率分布，以及分析和解释数据的统计方法。
 
   - dir: kinematics
     name_en: Kinematics
@@ -443,4 +463,5 @@ sections:
       - backpropagation
     description_en: |
       
-    description_zh: null
+    description_zh: |
+      收录余弦相似度、命题逻辑和反向传播等跨越多个数学领域的独立主题。

@@ -39,7 +39,6 @@ const sectionMeta = getSection(section);
 const articleNumber = navigation?.articleNumber ?? 1;
 const nextSlug = navigation?.nextSlug;
 const pageLang = isTranslated ? 'zh-CN' : 'en';
-const deckLang = sectionMeta?.description_zh ? 'zh-CN' : 'en';
 const pageTitle = `${entry.data.title} | Algebrica 中文译本`;
 const originalTitle = isTranslated ? zh.data.title_en : en.data.title;
 const source = entry.data.source;
@@ -59,7 +58,6 @@ const path = (value) => withSiteBase(value, import.meta.env.BASE_URL);
       <div>
         <span class="page-kicker">第 {sectionMeta?.order || '—'} 编 · 第 {articleNumber} 篇</span>
         <h1 class="article-title" lang={pageLang}>{entry.data.title}</h1>
-        <p class="article-deck" lang={deckLang}>{sectionMeta?.description_zh || sectionMeta?.description_en}</p>
       </div>
       <aside class="article-meta">
         <strong>文章资料</strong>

@@ -1,8 +1,22 @@
 import { describe, it } from 'node:test';
 import assert from 'node:assert/strict';
-import { orderSectionRows } from '../../src/lib/sections.mjs';
+import { getSections, orderSectionRows } from '../../src/lib/sections.mjs';
 
 describe('section index ordering', () => {
+  it('provides a Chinese description for every public section', () => {
+    for (const section of getSections()) {
+      assert.equal(
+        typeof section.description_zh,
+        'string',
+        `${section.dir} must provide description_zh`,
+      );
+      assert.ok(
+        section.description_zh.trim(),
+        `${section.dir} must not have an empty description_zh`,
+      );
+    }
+  });
+
   it('keeps manifest order and appends collection-only articles', () => {
     const section = {
       dir: 'sets-and-numbers',
