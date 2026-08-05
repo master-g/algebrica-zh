@@ -122,4 +122,29 @@ describe('rehype-rewrite-algebrica', () => {
     const [img] = find(tree, 'img');
     assert.equal(img.properties.src, '/assets/trigonometry/svg/y.svg');
   });
+
+  it('prefixes internal articles, categories, and SVG assets for a project site', () => {
+    const tree = {
+      type: 'root',
+      children: [
+        makeLink('function', '../functions/'),
+        makeLink('integral', '../definite-integrals/'),
+        makeImg('svg/x.svg'),
+      ],
+    };
+    const slugMap = new Map([
+      ['functions', 'functions'],
+      ['definite-integrals', 'integrals'],
+    ]);
+    run(tree, {
+      slugMap,
+      siteBase: '/algebrica-zh/',
+      dangling: { external: [], text: [] },
+    });
+    const links = find(tree, 'a');
+    const [img] = find(tree, 'img');
+    assert.equal(links[0].properties.href, '/algebrica-zh/category/functions/');
+    assert.equal(links[1].properties.href, '/algebrica-zh/definite-integrals/');
+    assert.equal(img.properties.src, '/algebrica-zh/assets/integrals/svg/x.svg');
+  });
 });

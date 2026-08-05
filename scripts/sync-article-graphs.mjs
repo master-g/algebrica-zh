@@ -3,9 +3,10 @@ import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { fetchArticleGraph } from '../src/lib/article-graph.mjs';
 import { parseFrontmatter, splitFrontmatter } from './lib/frontmatter.mjs';
+import { resolveUpstreamSourceDir } from '../src/lib/upstream-source.mjs';
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), '..');
-const SOURCE_ROOT = join(ROOT, '..', 'algebrica');
+const SOURCE_ROOT = resolveUpstreamSourceDir();
 const OUTPUT = join(ROOT, 'src/data/article-graphs.json');
 const CONCURRENCY = 8;
 const MAX_ATTEMPTS = 3;

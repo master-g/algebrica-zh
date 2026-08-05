@@ -1,10 +1,13 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import { withSiteBase } from '../lib/site-path.mjs';
+
+const homeUrl = withSiteBase('/', import.meta.env.BASE_URL);
 ---
 
 <BaseLayout title="关于 | Algebrica 中文译本">
   <article class="static-page">
-    <nav class="breadcrumbs" aria-label="面包屑"><a href="/">首页</a><span>/</span><span>关于</span></nav>
+    <nav class="breadcrumbs" aria-label="面包屑"><a href={homeUrl}>首页</a><span>/</span><span>关于</span></nav>
     <header class="static-page__header">
       <span class="page-kicker">项目说明</span>
       <h1>关于 Algebrica 中文译本</h1>

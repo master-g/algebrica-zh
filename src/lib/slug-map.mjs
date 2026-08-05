@@ -2,9 +2,10 @@ import { readFileSync, readdirSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
 import { dirname, join } from 'node:path';
 import yaml from 'js-yaml';
+import { resolveUpstreamSourceDir } from './upstream-source.mjs';
 
 const SECTIONS_YAML = join(dirname(fileURLToPath(import.meta.url)), '..', '..', 'sections.yaml');
-const ALGEBRICA_BASE = '../algebrica';
+const ALGEBRICA_BASE = resolveUpstreamSourceDir();
 
 /**
  * Build a slug -> section map.

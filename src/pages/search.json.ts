@@ -4,6 +4,7 @@ import { buildTranslationIndex } from '../lib/translation-index.mjs';
 import { getSections } from '../lib/sections.mjs';
 import { loadGlossary } from '../lib/glossary.mjs';
 import { getZhEntries } from './_zh-entries.mjs';
+import { withSiteBase } from '../lib/site-path.mjs';
 
 interface GlossaryTerm {
   en: string;
@@ -67,6 +68,7 @@ function buildKeywords(
 }
 
 export const GET: APIRoute = async () => {
+  const base = import.meta.env.BASE_URL;
   const glossary = loadGlossary() as Glossary;
   const articles = await getCollection('articles');
   const zhEntries = await getZhEntries();
@@ -78,7 +80,7 @@ export const GET: APIRoute = async () => {
     title_en: row.en.data.title,
     tags: row.en.data.tags,
     keywords_zh: buildKeywords(row.en.data.title, row.en.data.tags, glossary.terms),
-    url: `/${row.slug}/`,
+    url: withSiteBase(`/${row.slug}/`, base),
     section: row.section,
   }));
 
@@ -88,7 +90,7 @@ export const GET: APIRoute = async () => {
       title_en: section.name_en,
       tags: [],
       keywords_zh: [],
-      url: `/category/${section.dir}/`,
+      url: withSiteBase(`/category/${section.dir}/`, base),
       section: section.dir,
     });
   }

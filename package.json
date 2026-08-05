@@ -8,10 +8,11 @@
     "build": "astro build",
     "postbuild": "node scripts/check-rendered-content.mjs",
     "preview": "astro preview",
-    "prebuild": "node scripts/sync-svg.mjs",
+    "prebuild": "node scripts/check-upstream.mjs && node scripts/sync-svg.mjs",
     "test": "node --test 'tests/**/*.test.mjs' && node scripts/check-dev-smoke.mjs",
     "test:unit": "node --test 'tests/**/*.test.mjs'",
-    "test:smoke": "node scripts/check-dev-smoke.mjs"
+    "test:smoke": "node scripts/check-dev-smoke.mjs",
+    "check:upstream": "node scripts/check-upstream.mjs"
   },
   "dependencies": {
     "@astrojs/markdown-remark": "^7.2.1",

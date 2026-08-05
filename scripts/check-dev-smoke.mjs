@@ -3,6 +3,7 @@ import { once } from 'node:events';
 import { spawn } from 'node:child_process';
 import { createServer } from 'node:net';
 import { fileURLToPath } from 'node:url';
+import { normalizeSiteBase, withSiteBase } from '../src/lib/site-path.mjs';
 
 const HOST = '127.0.0.1';
 const STARTUP_TIMEOUT_MS = 180_000;
@@ -54,14 +55,14 @@ async function requestPage(baseUrl, path) {
   const response = await fetch(new URL(path, baseUrl), {
     signal: AbortSignal.timeout(REQUEST_TIMEOUT_MS),
   });
-  const body = await response.arrayBuffer();
+  const body = await response.text();
   if (response.status !== 200) {
-    throw new Error(`${path} returned HTTP ${response.status} (${body.byteLength} bytes).`);
+    throw new Error(`${path} returned HTTP ${response.status} (${Buffer.byteLength(body)} bytes).`);
   }
-  return body.byteLength;
+  return body;
 }
 
-async function main() {
+async function runScenario(siteBase) {
   const port = await reservePort();
   const baseUrl = `http://${HOST}:${port}`;
   const child = spawn(
@@ -69,7 +70,7 @@ async function main() {
     [ASTRO_CLI, 'dev', '--host', HOST, '--port', String(port)],
     {
       cwd: ROOT,
-      env: { ...process.env, ASTRO_DEV_BACKGROUND: '1' },
+      env: { ...process.env, ASTRO_DEV_BACKGROUND: '1', SITE_BASE: siteBase },
       stdio: ['ignore', 'pipe', 'pipe'],
     },
   );
@@ -116,9 +117,20 @@ async function main() {
     }
 
     const checks = [];
-    for (const path of ['/', '/sets/']) {
-      const bytes = await requestPage(baseUrl, path);
-      checks.push(`${path} HTTP 200 (${bytes} bytes)`);
+    for (const path of ['/', '/sets/', '/category/sets-and-numbers/', '/search.json']) {
+      const requestPath = withSiteBase(path, siteBase);
+      const body = await requestPage(baseUrl, requestPath);
+      checks.push(`${requestPath} HTTP 200 (${Buffer.byteLength(body)} bytes)`);
+      if (path === '/') {
+        const expectedArticle = withSiteBase('/sets/', siteBase);
+        const expectedSearch = withSiteBase('/search.json', siteBase);
+        if (!body.includes(`href="${expectedArticle}"`)) {
+          throw new Error(`${requestPath} is missing the prefixed article link ${expectedArticle}`);
+        }
+        if (!body.includes(`data-search-url="${expectedSearch}"`)) {
+          throw new Error(`${requestPath} is missing the prefixed search index ${expectedSearch}`);
+        }
+      }
     }
 
     await delay(250);
@@ -128,12 +140,18 @@ async function main() {
       );
     }
 
-    console.log(`Astro development smoke gate passed: ${checks.join('; ')}`);
+    console.log(`Astro development smoke gate passed for ${siteBase}: ${checks.join('; ')}`);
   } catch (error) {
     const detail = error instanceof Error ? error.stack || error.message : String(error);
     throw new Error(`${detail}\n\nLast Astro output:\n${logs || '(no output)'}`);
   } finally {
     await stopServer(child);
+  }
+}
+
+async function main() {
+  for (const siteBase of ['/', '/algebrica-zh/'].map(normalizeSiteBase)) {
+    await runScenario(siteBase);
   }
 }
 

@@ -1,14 +1,18 @@
 ---
+import { withSiteBase } from '../lib/site-path.mjs';
+
 export interface Props {
   variant: 'desktop' | 'mobile';
 }
 
 const { variant } = Astro.props;
 const formClass = variant === 'desktop' ? 'site-search__form is-compact' : 'site-search__form';
+const searchPageUrl = withSiteBase('/search/', import.meta.env.BASE_URL);
+const searchIndexUrl = withSiteBase('/search.json', import.meta.env.BASE_URL);
 ---
 
-<div class="site-search" data-search-role="container">
-  <form class={formClass} action="/search/" data-search-role="form">
+<div class="site-search" data-search-role="container" data-search-url={searchIndexUrl}>
+  <form class={formClass} action={searchPageUrl} data-search-role="form">
     <input
       name="s"
       class="site-search__input"
@@ -50,7 +54,6 @@ const formClass = variant === 'desktop' ? 'site-search__form is-compact' : 'site
   const ERROR_TEXT = '搜索不可用';
   const UNTRANSLATED_TEXT = '未翻译';
   const MAX_SUGGESTIONS = 5;
-  const SEARCH_URL = '/search.json';
 
   function initSearch(container) {
     const form = container.querySelector('[data-search-role="form"]');
@@ -89,7 +92,7 @@ const formClass = variant === 'desktop' ? 'site-search__form is-compact' : 'site
       status = 'loading';
       showMessage(LOADING_TEXT);
 
-      fetch(SEARCH_URL)
+      fetch(container.dataset.searchUrl)
         .then((res) => {
           if (!res.ok) throw new Error(`HTTP ${res.status}`);
           return res.json();

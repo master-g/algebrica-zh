@@ -9,6 +9,7 @@ import rehypeRewriteAlgebrica from '../plugins/rehype-rewrite-algebrica.mjs';
 import rehypeSectionizeAlgebrica from '../plugins/rehype-sectionize-algebrica.mjs';
 import dangling from '../lib/dangling-links.json' with { type: 'json' };
 import { buildSlugMap } from '../lib/slug-map.mjs';
+import { normalizeSiteBase } from '../lib/site-path.mjs';
 
 const slugMap = buildSlugMap({ source: 'fs', strictCollisions: true, strictEmpty: true, silent: true });
 
@@ -95,22 +96,24 @@ function makeMathSchema(base) {
 const processors = new Map();
 
 function getProcessor(currentSection = null) {
-  if (!processors.has(currentSection)) {
+  const siteBase = normalizeSiteBase(process.env.SITE_BASE);
+  const processorKey = `${currentSection ?? ''}:${siteBase}`;
+  if (!processors.has(processorKey)) {
     processors.set(
-      currentSection,
+      processorKey,
       createMarkdownProcessor({
         remarkPlugins: [remarkMath, remarkIntervalsShortcode],
         rehypePlugins: [
           rehypeMathjax,
           rehypeMarkStandaloneMath,
-          [rehypeRewriteAlgebrica, { slugMap, dangling, currentSection }],
+          [rehypeRewriteAlgebrica, { slugMap, dangling, currentSection, siteBase }],
           rehypeSectionizeAlgebrica,
           [rehypeSanitize, makeMathSchema(defaultSchema)],
         ],
       }),
     );
   }
-  return processors.get(currentSection);
+  return processors.get(processorKey);
 }
 
 function parseFrontmatter(raw) {

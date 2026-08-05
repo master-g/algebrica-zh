@@ -8,8 +8,9 @@ import {
   statSync,
 } from 'node:fs';
 import { join } from 'node:path';
+import { resolveUpstreamSourceDir } from '../src/lib/upstream-source.mjs';
 
-const SRC_ROOT = '../algebrica';
+const SRC_ROOT = resolveUpstreamSourceDir();
 const DEST_ROOT = 'public/assets';
 
 function loadSectionDirs() {

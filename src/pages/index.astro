@@ -4,12 +4,14 @@ import { getCollection } from 'astro:content';
 import { buildTranslationIndex } from '../lib/translation-index.mjs';
 import { getSections, orderSectionRows } from '../lib/sections.mjs';
 import { getZhEntries } from './_zh-entries.mjs';
+import { withSiteBase } from '../lib/site-path.mjs';
 
 const sections = getSections();
 const articles = await getCollection('articles');
 const zhEntries = await getZhEntries();
 const rows = buildTranslationIndex(articles, zhEntries);
 const translatedCount = rows.filter((row) => row.zh).length;
+const path = (value) => withSiteBase(value, import.meta.env.BASE_URL);
 ---
 
 <BaseLayout title="Algebrica 中文译本">
@@ -38,7 +40,7 @@ const translatedCount = rows.filter((row) => row.zh).length;
             <header class="section-index__group-head">
               <span class="section-index__number">{String(section.order).padStart(2, '0')}</span>
               <div>
-                <h3><a href={`/category/${section.dir}/`}>{section.name_zh}</a></h3>
+                <h3><a href={path(`/category/${section.dir}/`)}>{section.name_zh}</a></h3>
                 <p lang={section.description_zh ? 'zh-CN' : 'en'}>{section.description_zh || section.description_en}</p>
               </div>
             </header>
@@ -48,7 +50,7 @@ const translatedCount = rows.filter((row) => row.zh).length;
                 return (
                   <li>
                     <span>{section.order}.{index + 1}</span>
-                    <a href={`/${row.slug}/`} lang={row.zh ? 'zh-CN' : 'en'}>{title}</a>
+                    <a href={path(`/${row.slug}/`)} lang={row.zh ? 'zh-CN' : 'en'}>{title}</a>
                     {!row.zh && <small>英文</small>}
                   </li>
                 );

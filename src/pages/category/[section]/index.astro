@@ -4,6 +4,7 @@ import { getCollection } from 'astro:content';
 import { buildTranslationIndex } from '../../../lib/translation-index.mjs';
 import { getSections, orderSectionRows } from '../../../lib/sections.mjs';
 import { getZhEntries } from '../../_zh-entries.mjs';
+import { withSiteBase } from '../../../lib/site-path.mjs';
 
 export async function getStaticPaths() {
   return getSections().map((section) => ({
@@ -19,12 +20,13 @@ const rows = orderSectionRows(section, buildTranslationIndex(articles, zhEntries
 const title = `${section.name_zh} | Algebrica 中文译本`;
 const description = section.description_zh || section.description_en;
 const descLang = section.description_zh ? 'zh-CN' : 'en';
+const path = (value) => withSiteBase(value, import.meta.env.BASE_URL);
 ---
 
 <BaseLayout title={title}>
   <div class="category-page">
     <nav class="breadcrumbs" aria-label="面包屑">
-      <a href="/">全书目录</a><span>/</span><span>{section.name_zh}</span>
+      <a href={path('/')}>全书目录</a><span>/</span><span>{section.name_zh}</span>
     </nav>
 
     <header class="category-header">
@@ -40,7 +42,7 @@ const descLang = section.description_zh ? 'zh-CN' : 'en';
           const titleText = row.zh?.data.title || row.en.data.title;
           return (
             <li>
-              <a href={`/${row.slug}/`}>
+              <a href={path(`/${row.slug}/`)}>
                 <span>{String(index + 1).padStart(2, '0')}</span>
                 <strong lang={row.zh ? 'zh-CN' : 'en'}>{titleText}</strong>
                 {row.status === 'missing' && <small>英文原文</small>}

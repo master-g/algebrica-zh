@@ -6,8 +6,9 @@ import remarkGfm from 'remark-gfm';
 import remarkMath from 'remark-math';
 import { visit } from 'unist-util-visit';
 import config from '../astro.config.mjs';
+import { resolveUpstreamSourceDir } from '../src/lib/upstream-source.mjs';
 
-const ALGEBRICA_BASE = '../algebrica';
+const ALGEBRICA_BASE = resolveUpstreamSourceDir();
 const TORTURE_FILES = [
   'sets-and-numbers/properties-of-real-numbers.md',
   'probability-and-statistics/median-and-quantiles.md',
@@ -74,7 +75,9 @@ async function checkFile(path) {
 }
 
 function formatResult(result) {
-  const rel = result.path.replace(`${ALGEBRICA_BASE}/`, '');
+  const rel = result.path.startsWith(`${ALGEBRICA_BASE}/`)
+    ? result.path.slice(ALGEBRICA_BASE.length + 1)
+    : result.path;
   return `${rel}: source ${result.srcTotal} (inline ${result.src.inline}, display ${result.src.display}), rendered ${result.rendered.containers}, deviation ${result.deviation}, errors ${result.rendered.errors}`;
 }
 

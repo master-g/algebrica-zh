@@ -1,4 +1,5 @@
 import { visit } from 'unist-util-visit';
+import { withSiteBase } from '../lib/site-path.mjs';
 
 /**
  * Rehype plugin that rewrites Algebrica internal links and SVG image paths.
@@ -15,7 +16,7 @@ import { visit } from 'unist-util-visit';
  *   2. Inference from the file path (history[0], path, or cwd + history[0]).
  *   3. null, in which case relative SVG paths cannot be rewritten and a warning is emitted.
  */
-export default function rehypeRewriteAlgebrica({ slugMap = new Map(), dangling = { external: [], text: [] }, warn = console.warn, currentSection: currentSectionOverride } = {}) {
+export default function rehypeRewriteAlgebrica({ slugMap = new Map(), dangling = { external: [], text: [] }, warn = console.warn, currentSection: currentSectionOverride, siteBase = '/' } = {}) {
   const external = new Set(dangling.external || []);
   const text = new Set(dangling.text || []);
   const aliases = new Map(Object.entries(dangling.aliases || {}));
@@ -34,7 +35,7 @@ export default function rehypeRewriteAlgebrica({ slugMap = new Map(), dangling =
         if (aliases.has(target)) {
           const canonical = aliases.get(target);
           if (slugMap.has(canonical)) {
-            node.properties.href = `/${canonical}/`;
+            node.properties.href = withSiteBase(`/${canonical}/`, siteBase);
           } else {
             warn(`alias target missing: ${target} -> ${canonical}`);
           }
@@ -46,7 +47,7 @@ export default function rehypeRewriteAlgebrica({ slugMap = new Map(), dangling =
         if (target.includes('/')) {
           const [sec, slug] = target.split('/');
           if (sectionDirs.has(sec) && slugMap.get(slug) === sec) {
-            node.properties.href = `/${slug}/`;
+            node.properties.href = withSiteBase(`/${slug}/`, siteBase);
             return;
           }
         }
@@ -54,12 +55,12 @@ export default function rehypeRewriteAlgebrica({ slugMap = new Map(), dangling =
         // Section directories take precedence over article slugs when a name is
         // both (e.g. functions/ has both a section index and functions/functions.md).
         if (sectionDirs.has(target)) {
-          node.properties.href = `/category/${target}/`;
+          node.properties.href = withSiteBase(`/category/${target}/`, siteBase);
           return;
         }
 
         if (slugMap.has(target)) {
-          node.properties.href = `/${target}/`;
+          node.properties.href = withSiteBase(`/${target}/`, siteBase);
           return;
         }
 
@@ -92,14 +93,14 @@ export default function rehypeRewriteAlgebrica({ slugMap = new Map(), dangling =
             warn(`cannot rewrite relative SVG path without current section: ${src}`);
             return;
           }
-          node.properties.src = `/assets/${currentSection}/svg/${src.slice(4)}`;
+          node.properties.src = withSiteBase(`/assets/${currentSection}/svg/${src.slice(4)}`, siteBase);
           return;
         }
 
         const cross = src.match(/^\.\.\/([^/]+)\/svg\/(.*)$/);
         if (cross) {
           const [, section, rest] = cross;
-          node.properties.src = `/assets/${section}/svg/${rest}`;
+          node.properties.src = withSiteBase(`/assets/${section}/svg/${rest}`, siteBase);
         }
       }
     });

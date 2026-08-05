@@ -6,6 +6,7 @@ import { getArticleGraph } from '../lib/article-graphs.mjs';
 import { buildTranslationIndex } from '../lib/translation-index.mjs';
 import { getSection, getSections, orderSectionRows } from '../lib/sections.mjs';
 import { getZhEntries } from './_zh-entries.mjs';
+import { withSiteBase } from '../lib/site-path.mjs';
 
 export async function getStaticPaths() {
   const articles = await getCollection('articles');
@@ -43,13 +44,14 @@ const pageTitle = `${entry.data.title} | Algebrica 中文译本`;
 const originalTitle = isTranslated ? zh.data.title_en : en.data.title;
 const source = entry.data.source;
 const graph = getArticleGraph(slug, entry.data.source);
+const path = (value) => withSiteBase(value, import.meta.env.BASE_URL);
 ---
 
 <BaseLayout title={pageTitle}>
   <article class="article-page">
     <nav class="breadcrumbs" aria-label="面包屑">
-      <a href="/">全书目录</a><span>/</span>
-      <a href={`/category/${section}/`}>{sectionMeta?.name_zh || sectionMeta?.name_en || section}</a><span>/</span>
+      <a href={path('/')}>全书目录</a><span>/</span>
+      <a href={path(`/category/${section}/`)}>{sectionMeta?.name_zh || sectionMeta?.name_en || section}</a><span>/</span>
       <span lang={pageLang}>{entry.data.title}</span>
     </nav>
 
@@ -81,8 +83,8 @@ const graph = getArticleGraph(slug, entry.data.source);
     </footer>
 
     <nav class="chapter-nav" aria-label="章节导航">
-      <a href={`/category/${section}/`}>← 返回本编目录</a>
-      {nextSlug ? <a href={`/${nextSlug}/`}>下一篇 →</a> : <span>本编结束</span>}
+      <a href={path(`/category/${section}/`)}>← 返回本编目录</a>
+      {nextSlug ? <a href={path(`/${nextSlug}/`)}>下一篇 →</a> : <span>本编结束</span>}
     </nav>
   </article>
 </BaseLayout>

@@ -1,6 +1,7 @@
 import { createHash } from 'node:crypto';
 import { readFileSync, existsSync } from 'node:fs';
 import { resolve } from 'node:path';
+import { resolveUpstreamSourceDir } from './upstream-source.mjs';
 
 /**
  * Shared hash function used by the translation index and U6 status scripts.
@@ -19,7 +20,7 @@ export function hashSource(raw) {
  * @param {string} options.enBase - Directory where the EN markdown source lives.
  * @returns {Array<>} One row per EN article: { slug, section, en, zh, status }.
  */
-export function buildTranslationIndex(enEntries, zhEntries, { enBase = '../algebrica' } = {}) {
+export function buildTranslationIndex(enEntries, zhEntries, { enBase = resolveUpstreamSourceDir() } = {}) {
   const zhBySlug = new Map();
   for (const entry of zhEntries || []) {
     const slug = entry?.id?.split('/')?.[1];

@@ -1,6 +1,7 @@
 import { defineCollection } from 'astro:content';
 import { glob } from 'astro/loaders';
 import { z } from 'astro/zod';
+import { resolveUpstreamSourceDir } from './lib/upstream-source.mjs';
 
 const translationSchema = z.object({
   status: z.enum(['current', 'stale']),
@@ -11,7 +12,7 @@ const translationSchema = z.object({
 
 const articles = defineCollection({
   loader: glob({
-    base: '../algebrica',
+    base: resolveUpstreamSourceDir(),
     pattern: ['*/*.md', '!pages/*.md'],
   }),
   schema: z.object({

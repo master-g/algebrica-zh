@@ -1,12 +1,15 @@
 ---
 import SearchBox from '../components/SearchBox.astro';
 import '../styles/site.css';
+import { withSiteBase } from '../lib/site-path.mjs';
 
 export interface Props {
   lang?: string;
   title?: string;
 }
 const { lang = 'zh-CN', title = 'Algebrica 中文' } = Astro.props;
+const base = import.meta.env.BASE_URL;
+const path = (value) => withSiteBase(value, base);
 ---
 
 <!DOCTYPE html>
@@ -33,15 +36,15 @@ const { lang = 'zh-CN', title = 'Algebrica 中文' } = Astro.props;
 
     <header class="site-header">
       <div class="site-header__inner">
-        <a class="site-brand" href="/" aria-label="Algebrica 中文译本首页">
+        <a class="site-brand" href={path('/')} aria-label="Algebrica 中文译本首页">
           <span class="site-brand__name">Algebrica 中文译本</span>
           <span class="site-brand__tagline">开放数学条目</span>
         </a>
 
         <nav class="site-nav" aria-label="主导航">
-          <a href="/">章节目录</a>
-          <a href="/bibliography/">参考文献</a>
-          <a href="/about/">关于</a>
+          <a href={path('/')}>章节目录</a>
+          <a href={path('/bibliography/')}>参考文献</a>
+          <a href={path('/about/')}>关于</a>
           <SearchBox variant="desktop" />
           <div class="theme-switch" role="group" aria-label="黑白主题">
             <button type="button" data-theme-choice="white" aria-pressed="true" title="白色主题">白</button>
@@ -53,10 +56,10 @@ const { lang = 'zh-CN', title = 'Algebrica 中文' } = Astro.props;
           <summary aria-label="展开导航"><span></span><span></span><span></span></summary>
           <div class="site-menu__panel">
             <SearchBox variant="mobile" />
-            <a href="/">章节目录</a>
-            <a href="/bibliography/">参考文献</a>
-            <a href="/editorial-process/">编辑流程</a>
-            <a href="/about/">关于</a>
+            <a href={path('/')}>章节目录</a>
+            <a href={path('/bibliography/')}>参考文献</a>
+            <a href={path('/editorial-process/')}>编辑流程</a>
+            <a href={path('/about/')}>关于</a>
             <div class="theme-switch" role="group" aria-label="黑白主题">
               <button type="button" data-theme-choice="white" aria-pressed="true">白色</button>
               <button type="button" data-theme-choice="black" aria-pressed="false">黑色</button>

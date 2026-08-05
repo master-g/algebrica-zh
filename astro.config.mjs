@@ -9,8 +9,10 @@ import rehypeRewriteAlgebrica from './src/plugins/rehype-rewrite-algebrica.mjs';
 import rehypeSectionizeAlgebrica from './src/plugins/rehype-sectionize-algebrica.mjs';
 import dangling from './src/lib/dangling-links.json' with { type: 'json' };
 import { buildSlugMap } from './src/lib/slug-map.mjs';
+import { normalizeSiteBase } from './src/lib/site-path.mjs';
 
 const slugMap = buildSlugMap({ source: 'fs', strictCollisions: true, strictEmpty: true, silent: true });
+const siteBase = normalizeSiteBase(process.env.SITE_BASE);
 console.log(`[astro-config] built slug map: ${slugMap.size} articles`);
 
 /**
@@ -100,6 +102,8 @@ function makeMathSchema(base) {
 }
 
 export default defineConfig({
+  site: process.env.SITE_URL || 'http://localhost:4321',
+  base: siteBase,
   experimental: {
     collectionStorage: 'chunked',
   },
@@ -114,7 +118,7 @@ export default defineConfig({
       rehypePlugins: [
         rehypeMathjax,
         rehypeMarkStandaloneMath,
-        [rehypeRewriteAlgebrica, { slugMap, dangling, warn: console.warn }],
+        [rehypeRewriteAlgebrica, { slugMap, dangling, warn: console.warn, siteBase }],
         rehypeSectionizeAlgebrica,
         [rehypeSanitize, makeMathSchema(defaultSchema)],
       ],
