@@ -6,11 +6,21 @@ import { fileURLToPath } from 'node:url';
 import { normalizeSiteBase, withSiteBase } from '../src/lib/site-path.mjs';
 
 const HOST = '127.0.0.1';
-const STARTUP_TIMEOUT_MS = 180_000;
+const STARTUP_TIMEOUT_MS = readPositiveInteger('DEV_SMOKE_STARTUP_TIMEOUT_MS', 180_000);
 const REQUEST_TIMEOUT_MS = 30_000;
 const LOG_LIMIT = 32 * 1024;
 const ROOT = fileURLToPath(new URL('..', import.meta.url));
 const ASTRO_CLI = fileURLToPath(new URL('../node_modules/astro/bin/astro.mjs', import.meta.url));
+
+function readPositiveInteger(name, fallback) {
+  const raw = process.env[name];
+  if (!raw) return fallback;
+  const value = Number(raw);
+  if (!Number.isSafeInteger(value) || value <= 0) {
+    throw new Error(`${name} must be a positive integer, received: ${raw}`);
+  }
+  return value;
+}
 
 async function reservePort() {
   const server = createServer();

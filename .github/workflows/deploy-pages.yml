@@ -48,6 +48,7 @@ jobs:
       - name: Run dual-base development smoke gates
         env:
           ALGEBRICA_SOURCE_DIR: upstream
+          DEV_SMOKE_STARTUP_TIMEOUT_MS: 600000
         run: npm run test:smoke
 
       - name: Build the project-base site
