@@ -23,7 +23,7 @@
     "astro": "~7.1.0",
     "js-yaml": "^4.1.0",
     "katex": "^0.16.22",
-    "mathjax-full": "^3.2.1",
+    "mathjax-full": "^3.2.2",
     "rehype-mathjax": "^7.1.0",
     "rehype-sanitize": "^6.0.0",
     "remark-math": "^6.0.0"
