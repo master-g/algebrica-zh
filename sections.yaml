@@ -189,6 +189,7 @@ sections:
       - lines
       - vector-and-parametric-equations-of-a-line
       - polar-coordinates
+      - introduction-to-conics
       - parabola
       - circumference
       - ellipse
@@ -209,6 +210,7 @@ sections:
       - inverse-matrix
       - rank-of-a-matrix
       - linear-combinations
+      - change-of-basis-matrix
       - eigenvalues-and-eigenvectors
       - matrix-diagonalization
     description_en: |
@@ -288,12 +290,18 @@ sections:
       - convexity-and-concavity-of-functions
       - composite-functions
       - inverse-function
+      - injective-surjective-and-bijective-functions
       - continuous-functions
       - uniform-continuity
       - discontinuities-of-real-functions
       - analyzing-the-graphs-of-functions
       - polynomial-function
+      - power-function
       - rational-functions
+      - irrational-functions
+      - piecewise-functions
+      - floor-and-ceiling-functions
+      - heaviside-function
       - logarithmic-function
       - exponential-function
       - absolute-value-function
@@ -304,6 +312,8 @@ sections:
       - cotangent-function
       - secant-function
       - cosecant-function
+      - arcsine-function
+      - arccosine-function
       - dirichlet-function
       - sigmoid-function
     description_en: |
@@ -374,7 +384,9 @@ sections:
     entries:
       - indefinite-integrals
       - definite-integrals
+      - mean-value-theorem-for-integrals
       - fundamental-theorem-of-calculus
+      - integration-strategies
       - integration-by-substitution
       - integration-by-parts
       - finding-areas-by-integration
@@ -400,6 +412,7 @@ sections:
     entries:
       - differential-equations
       - first-order-differential-equations
+      - first-order-linear-differential-equations
     description_en: |
       This section collects topics on differential equations, which describe relationships between functions and their derivatives. The entries explore equations that model rates of change and the methods used to analyze and solve them in mathematics and applied sciences.
     description_zh: |
@@ -410,6 +423,7 @@ sections:
     name_zh: 概率与统计
     order: 20
     entries:
+      - probability
       - introduction-to-the-mean
       - arithmetic-mean
       - geometric-mean
@@ -453,15 +467,28 @@ sections:
     description_zh: |
       研究位置、速度及相关变化率所描述的运动。
 
+  - dir: logic
+    name_en: Logic
+    name_zh: 数理逻辑
+    order: 22
+    entries:
+      - propositional-logic
+      - first-order-logic
+      - automated-deduction-in-propositional-logic
+      - automated-deduction-in-first-order-logic
+    description_en: |
+      Topics on formal logic, including propositional logic, first-order logic, and automated deduction.
+    description_zh: |
+      介绍命题逻辑、一阶逻辑与自动演绎等形式逻辑主题。
+
   - dir: various
     name_en: Various
     name_zh: 杂项
-    order: 22
+    order: 23
     entries:
       - cosine-similarity
-      - propositional-logic
       - backpropagation
     description_en: |
       
     description_zh: |
-      收录余弦相似度、命题逻辑和反向传播等跨越多个数学领域的独立主题。
+      收录余弦相似度和反向传播等跨越多个数学领域的独立主题。

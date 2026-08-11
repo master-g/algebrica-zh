@@ -12,7 +12,7 @@ tags:
   - vectors
 translation:
   status: current
-  source_hash: 3bc22733cd388c473a5011b50e1206aef3c1fecfc5984f069568fcc22d851964
+  source_hash: 2bf5138b2bff27fe46ab2e713892fc28cfe11086961fc2637915e3b6309c4e12
   translator: codex
   updated: "2026-08-04T00:00:00.000Z"
 ---
@@ -157,7 +157,7 @@ $$
 
 ## 向量之间的夹角
 
-[反余弦](../arcsine-and-arccosine/)函数根据 $C_s(V_x, V_y) = \cos\theta$ 给出夹角：
+[反余弦](../arccosine-function/)函数根据 $C_s(V_x, V_y) = \cos\theta$ 给出夹角：
 
 $$
 \theta = \arccos(0.75) \approx 41.4^\circ

@@ -11,7 +11,7 @@ tags:
   - taylor-polynomial
 translation:
   status: current
-  source_hash: 2ec56211eafcc7cf71ddf594486ccf750fedaa6d82b91a989e5eca461e772b1b
+  source_hash: 46bb9e1d87f2debfe339fc0b65b9e341770fcd60b837b6eb9f42c2e2701b6167
   translator: codex
   updated: "2026-08-04T00:00:00.000Z"
 ---
@@ -220,7 +220,7 @@ $$\cosh x = 1 + \frac{x^2}{2!} + \frac{x^4}{4!} + \cdots + \frac{x^{2n}}{(2n)!} 
 
 $$\ln(1+x) = x - \frac{x^2}{2} + \frac{x^3}{3} - \cdots + (-1)^{n-1} \frac{x^n}{n} + o(x^n)$$
 
-任意实指数 $\alpha$ 的幂函数以广义[二项式系数](../binomial-coefficient/)作为系数：
+广义[二项式系数](../binomial-coefficient/)是[幂函数](../power-function/) $t^\alpha$ 在 $t = 1$ 处展开的系数。令 $t = 1+x$，该展开为：
 
 $$(1+x)^{\alpha} = 1 + \alpha x + \binom{\alpha}{2} x^2 + \cdots + \binom{\alpha}{n} x^n + o(x^n)$$
 

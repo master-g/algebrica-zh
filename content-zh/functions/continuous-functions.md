@@ -11,7 +11,7 @@ tags:
   - uniform-continuity
 translation:
   status: current
-  source_hash: 29b2851dfeffb8280694c18de3dedc1d87c08387ed414c4104cffa9d4a60c755
+  source_hash: af467de2678bcc25e99f0a7c355d8339120483865f5f0f0031d8d468b6737134
   translator: codex
   updated: "2026-08-02T00:00:00.000Z"
 ---
@@ -96,7 +96,7 @@ $$
 \end{align}
 $$
 
-例如，定义在区间 $[0, 4]$ 上的函数 $f(x) = \sqrt{x}$ 在每个内部点处连续，因为平方根函数在 $(0, +\infty)$ 上连续。
+例如，将[平方根函数](../irrational-functions/) $f(x) = \sqrt{x}$ 限制在 $[0, 4]$ 上，它在每个内部点处连续，因为 $\sqrt{x}$ 在 $(0, +\infty)$ 上连续。
 
 ![图 3](/assets/functions/svg/continuous-functions-3.zh.svg)
 

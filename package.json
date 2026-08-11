@@ -16,7 +16,10 @@
     "check:licenses": "node scripts/check-licenses.mjs",
     "check:public-history": "node scripts/check-public-history.mjs",
     "check:static-site": "node scripts/check-static-site.mjs",
-    "check:public-release": "node scripts/check-public-release.mjs"
+    "check:public-release": "node scripts/check-public-release.mjs",
+    "audit:upstream": "node scripts/audit-upstream-sync.mjs",
+    "sync:localized-svg-palette": "node scripts/sync-localized-svg-palette.mjs",
+    "sync:localized-svg-structure": "node scripts/sync-localized-svg-structure.mjs"
   },
   "dependencies": {
     "@astrojs/markdown-remark": "^7.2.1",

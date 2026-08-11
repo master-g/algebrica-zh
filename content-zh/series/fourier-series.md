@@ -11,7 +11,7 @@ tags:
   - trigonometric-series
 translation:
   status: current
-  source_hash: c05cdaf3ae11ac94324dd370dbbb80fd74c6776e793ad653d4829f154a1ad014
+  source_hash: 1a205626858df74ec6fe70a871ac502d668a3bdc1941c0bb1cea65036d1b1e17
   translator: codex
   updated: "2026-08-04T00:00:00.000Z"
 ---
@@ -237,7 +237,7 @@ $$
 
 ## 傅里叶级数的收敛性
 
-傅里叶级数的定义本身并不能保证它收敛到原函数。一个充分条件是：$f$ 为周期函数，并且 $f$ 与其导数 $f'$ 在一个周期上分段连续。具体来说，在 $[-\pi,\pi]$ 上，函数应满足：
+傅里叶级数的定义本身并不能保证它收敛到原函数。一个充分条件是：$f$ 为周期函数，并且 $f$ 与其导数 $f'$ 在一个周期上[分段连续](../piecewise-functions/)。具体来说，在 $[-\pi,\pi]$ 上，函数应满足：
 
 + $f$ 有界，并且只有有限个极大值和极小值；
 + $f$ 只有有限个间断点，且这些间断点都属于跳跃间断。

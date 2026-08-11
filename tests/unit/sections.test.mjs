@@ -1,6 +1,6 @@
 import { describe, it } from 'node:test';
 import assert from 'node:assert/strict';
-import { getSections, orderSectionRows } from '../../src/lib/sections.mjs';
+import { getSection, getSections, orderSectionRows } from '../../src/lib/sections.mjs';
 
 describe('section index ordering', () => {
   it('provides a Chinese description for every public section', () => {
@@ -44,5 +44,18 @@ describe('section index ordering', () => {
       ),
       ['sets'],
     );
+  });
+
+  it('routes the new upstream articles through their public sections', () => {
+    assert.deepEqual(getSection('logic')?.entries, [
+      'propositional-logic',
+      'first-order-logic',
+      'automated-deduction-in-propositional-logic',
+      'automated-deduction-in-first-order-logic',
+    ]);
+    assert.ok(getSection('functions').entries.includes('arccosine-function'));
+    assert.ok(getSection('integrals').entries.includes('integration-strategies'));
+    assert.ok(getSection('vectors-and-matrices').entries.includes('change-of-basis-matrix'));
+    assert.ok(!getSection('various').entries.includes('propositional-logic'));
   });
 });

@@ -14,7 +14,7 @@ tags:
   - symmetry
 translation:
   status: current
-  source_hash: 4ba456c01d587307ec39b2692738fcb2e3ec1dc6ade8fe7a6b0a5dfbab2968d5
+  source_hash: e4ebfc2e576042fc06aa803241e90c2a1e47a043c8d77602a346a2894a9460e4
   translator: codex
   updated: "2026-08-02T00:00:00.000Z"
 ---
@@ -126,7 +126,7 @@ $$
 
 ## 端行为
 
-多项式函数的端行为由首项 $a_n x^n$ 决定。当 $|x|$ 无界增大时，与首项相比，次数较低的项可以忽略，$f(x)$ 会趋近幂函数 $a_n x^n$ 的行为。写成下面的形式可以说明原因：
+多项式函数的端行为由首项 $a_n x^n$ 决定。当 $|x|$ 无界增大时，与首项相比，次数较低的项可以忽略，$f(x)$ 会趋近[幂函数](../power-function/) $a_n x^n$ 的行为。写成下面的形式可以说明原因：
 
 $$
 f(x) = a_n x^n \left( 1 + \frac{a_{n-1}}{a_n x} + \dotsb + \frac{a_0}{a_n x^n} \right)

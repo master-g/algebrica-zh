@@ -45,6 +45,7 @@ const path = (value) => withSiteBase(value, import.meta.env.BASE_URL);
                 <span>{String(index + 1).padStart(2, '0')}</span>
                 <strong lang={row.zh ? 'zh-CN' : 'en'}>{titleText}</strong>
                 {row.status === 'missing' && <small>英文原文</small>}
+                {row.status === 'stale' && <small>待同步</small>}
               </a>
             </li>
           );

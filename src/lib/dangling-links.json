@@ -12,13 +12,10 @@
     "sampling-distributions",
     "simple-harmonic-motion",
     "standard-normal-z-table",
-    "student-t-distribution",
     "velocity"
   ],
   "text": [
     "bibliography",
-    "arccosine-function",
-    "arcsine-function",
     "arctangent-function",
     "autonomous-differential-equations",
     "bernoulli-differential-equation",
@@ -30,9 +27,7 @@
     "exact-differential-equations",
     "exponential-functions",
     "factoring-ac-method",
-    "first-order-linear-differential-equations",
     "geometrical-meaning-quadratic-equations",
-    "heaviside-function",
     "homogeneous-differential-equations",
     "hyperbolic-cosecant-function",
     "hyperbolic-functions",

@@ -3,6 +3,7 @@ dist/
 .env
 public/assets/*/svg/*
 !public/assets/*/svg/*.zh.svg
+public/assets/github-assets/*
 .astro/
 browser-data/
 translation-failures.json

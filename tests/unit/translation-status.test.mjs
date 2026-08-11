@@ -1,6 +1,7 @@
 import { describe, it } from 'node:test';
 import assert from 'node:assert/strict';
 import {
+  mkdirSync,
   mkdtempSync,
   rmSync,
   writeFileSync,
@@ -8,11 +9,13 @@ import {
 import { tmpdir } from 'node:os';
 import { join } from 'node:path';
 import {
+  collectTranslationStatus,
   findCurrentFailureConflicts,
   normalizeTargetKey,
   readFailureLedger,
   runTranslationStatus,
 } from '../../scripts/translation-status.mjs';
+import { hashSource } from '../../src/lib/translation-index.mjs';
 
 function createTempDirectory(t) {
   const directory = mkdtempSync(join(tmpdir(), 'algebrica-status-'));
@@ -23,10 +26,11 @@ function createTempDirectory(t) {
 function statusWith({
   current = [],
   stale = [],
-  missing = [],
+  missingTranslation = [],
+  sourceAbsent = [],
   validationFailures = 0,
 } = {}) {
-  return { current, stale, missing, validationFailures };
+  return { current, stale, missingTranslation, sourceAbsent, validationFailures };
 }
 
 describe('translation status failure ledger', () => {
@@ -75,7 +79,7 @@ describe('translation status failure ledger', () => {
     const status = statusWith({
       current: [{ section: 'algebraic-structures', slug: 'groups' }],
       stale: [{ section: 'algebraic-structures', slug: 'rings' }],
-      missing: [{ section: 'inequalities', slug: 'inequalities' }],
+      missingTranslation: [{ section: 'inequalities', slug: 'inequalities' }],
     });
     const failures = [
       { section: 'algebraic-structures', slug: 'groups', reason: 'historical' },
@@ -125,7 +129,7 @@ describe('translation status failure ledger', () => {
       failuresFile,
       collectStatus: async () => statusWith({
         stale: [{ section: 'algebraic-structures', slug: 'rings' }],
-        missing: [{ section: 'inequalities', slug: 'inequalities' }],
+        missingTranslation: [{ section: 'inequalities', slug: 'inequalities' }],
       }),
       log: () => {},
       error: () => {},
@@ -148,5 +152,51 @@ describe('translation status failure ledger', () => {
     });
 
     assert.equal(exitCode, 0);
+  });
+
+  it('reports current, stale, missing_translation, and source_absent separately', async (t) => {
+    const root = createTempDirectory(t);
+    const upstream = join(root, 'upstream');
+    const contentZh = join(root, 'content-zh');
+    for (const directory of [
+      join(upstream, 'functions'),
+      join(contentZh, 'functions'),
+    ]) {
+      mkdirSync(directory, { recursive: true });
+    }
+
+    const currentSource = '---\ntitle: Current\n---\n\nCurrent.\n';
+    const staleSource = '---\ntitle: Stale\n---\n\nUpdated.\n';
+    writeFileSync(join(upstream, 'functions', 'current.md'), currentSource);
+    writeFileSync(join(upstream, 'functions', 'stale.md'), staleSource);
+    writeFileSync(join(upstream, 'functions', 'missing.md'), 'source');
+    writeFileSync(join(contentZh, 'functions', 'current.md'), `---\ntranslation:\n  source_hash: ${hashSource(currentSource)}\n---\n`);
+    writeFileSync(join(contentZh, 'functions', 'stale.md'), `---\ntranslation:\n  source_hash: old\n---\n`);
+
+    const status = await collectTranslationStatus({
+      upstream,
+      contentZh,
+      inventory: {
+        sourceTargets: [
+          { section: 'functions', slug: 'current' },
+          { section: 'functions', slug: 'missing' },
+          { section: 'functions', slug: 'stale' },
+        ],
+        sourceAbsentTargets: [{ section: 'functions', slug: 'planned' }],
+      },
+    });
+
+    assert.deepEqual(status.current.map(({ section, slug }) => ({ section, slug })), [
+      { section: 'functions', slug: 'current' },
+    ]);
+    assert.deepEqual(status.stale.map(({ section, slug }) => ({ section, slug })), [
+      { section: 'functions', slug: 'stale' },
+    ]);
+    assert.deepEqual(status.missingTranslation, [
+      { section: 'functions', slug: 'missing' },
+    ]);
+    assert.deepEqual(status.sourceAbsent, [
+      { section: 'functions', slug: 'planned' },
+    ]);
   });
 });

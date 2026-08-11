@@ -33,7 +33,13 @@ export default function rehypeRewriteAlgebrica({ slugMap = new Map(), dangling =
           node.properties.href = withSiteBase(href, siteBase);
           return;
         }
-        if (!href.startsWith('../')) return;
+        if (!href.startsWith('../')) {
+          const bareTarget = href.replace(/\/$/, '');
+          if (!bareTarget.includes('/') && slugMap.has(bareTarget)) {
+            node.properties.href = withSiteBase(`/${bareTarget}/`, siteBase);
+          }
+          return;
+        }
 
         const target = href.replace(/^(\.\.\/)+/, '').replace(/\/$/, '');
 

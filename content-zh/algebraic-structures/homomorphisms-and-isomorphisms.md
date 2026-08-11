@@ -18,7 +18,7 @@ tags:
   - permutation
 translation:
   status: current
-  source_hash: 9a7659cc04bf46d7a50fefc785d751a878a9376c2e7078c915c6f7fdd76a113c
+  source_hash: 382a5d9ab3c7cc31bb4cb8384d6f2b8abbb0b057eb22492f4791e102b99b17ba
   translator: codex
   updated: "2026-08-04T00:00:00.000Z"
 ---
@@ -26,7 +26,7 @@ translation:
 
 本文讨论的每种代数结构都有一个底层[集合](../sets/)，一个或多个运算（例如加法、乘法或标量乘法），有时还带有一些指定元素，例如单位元或零元。
 
-同态是相同类型的两个代数结构之间的一个[函数](../functions/)。它与每个运算交换，并保持定义所要求的每个指定元素。具体条件取决于结构是群、环、[模](../modules/)，还是[向量空间](../vector-spaces/)。单射性与满射性是彼此独立的性质，并不属于同态的定义。
+同态是相同类型的两个代数结构之间的一个[函数](../functions/)。它与每个运算交换，并保持定义所要求的每个指定元素。具体条件取决于结构是群、环、[模](../modules/)，还是[向量空间](../vector-spaces/)。[单射性与满射性](../injective-surjective-and-bijective-functions/)是彼此独立的性质，并不属于同态的定义。
 
 > 在范畴论中，代数结构是对象，它们之间的同态是态射。在这一语言下，只要相应范畴具有所需的构造，核、像与商就有统一的定义。
 

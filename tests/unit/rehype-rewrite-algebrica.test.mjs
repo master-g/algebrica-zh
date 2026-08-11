@@ -55,6 +55,14 @@ describe('rehype-rewrite-algebrica', () => {
     assert.equal(a.properties.href, '/definite-integrals/');
   });
 
+  it('rewrites a bare known article slug to its public route', () => {
+    const tree = { type: 'root', children: [makeLink('mean', 'mean-or-expected-value-of-a-random-variable')] };
+    const slugMap = new Map([['mean-or-expected-value-of-a-random-variable', 'probability-and-statistics']]);
+    run(tree, { slugMap, dangling: { external: [], text: [] } });
+    const [a] = find(tree, 'a');
+    assert.equal(a.properties.href, '/mean-or-expected-value-of-a-random-variable/');
+  });
+
   it('rewrites a stale article slug through an explicit alias', () => {
     const tree = { type: 'root', children: [makeLink('Euler formula', '../eulers-formula/')] };
     const slugMap = new Map([['euler-formula', 'complex-numbers']]);

@@ -25,14 +25,14 @@ tags:
   - zero-divisor
 translation:
   status: current
-  source_hash: 4d577f1d532d45e6397b836b847e2ead7c8f894d5f1e84d17e76c7911ba5feb4
+  source_hash: ba82c8802813798366ff74eafd9c5edf52b13cac971518d00f55bdb1c77b0f66
   translator: codex
   updated: "2026-08-04T00:00:00.000Z"
 ---
 
 ## 定义
 
-对于两个整数 $a$ 和 $n$（其中 $n > 0$），取模运算符给出 $a$ 除以 $n$ 做欧几里得除法时的余数：
+对于两个整数 $a$ 和 $n$（其中 $n > 0$），取模运算符给出 $a$ 除以 $n$ 做[欧几里得除法](../floor-and-ceiling-functions/)时的余数：
 
 $$
 a \bmod n = r

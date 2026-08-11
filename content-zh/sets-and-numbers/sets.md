@@ -21,7 +21,7 @@ tags:
   - universal-set
 translation:
   status: current
-  source_hash: 1f11fabcea446833a98bb7a9d139268d576b5f493043b72b8072b0a8980796ad
+  source_hash: 3d6246854ead51e3f2ebd88e53aa3451ee1c2b98e857f4d464aea4a85179e732
   translator: codex
   updated: "2026-08-04T00:00:00.000Z"
 ---
@@ -65,7 +65,7 @@ $$
 
 ## 有限集合的基数
 
-有限集合 $A$ 的基数记为 $|A|$，表示 $A$ 中元素的数量。基数也可以通过[函数](../functions/)进行比较。当存在从 $A$ 到 $B$ 的双射时，两个集合 $A$ 和 $B$ 具有相同的基数。这一条件写作：
+有限集合 $A$ 的基数记为 $|A|$，表示 $A$ 中元素的数量。基数也可以通过[函数](../functions/)进行比较。当存在从 $A$ 到 $B$ 的[双射](../injective-surjective-and-bijective-functions/)时，两个集合 $A$ 和 $B$ 具有相同的基数。这一条件写作：
 
 $$
 |A|=|B| \iff \exists f\colon A \overset{\sim}{\longrightarrow} B

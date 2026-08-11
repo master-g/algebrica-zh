@@ -16,13 +16,13 @@ tags:
   - transposition
 translation:
   status: current
-  source_hash: 94fed9d170306b533c4ce8bffeb89c3a670e2953aef57ae1d3bb30f237ade152
+  source_hash: ff606345e1516bdde10a273804176d3b94cdf3bb8a5a101d36f512f13387a229
   translator: codex
   updated: "2026-08-04T00:00:00.000Z"
 ---
 ## 定义
 
-令 $X_n = \{\ 1, 2, \ldots, n \ \}$。$X_n$ 的一个排列是一个[双射](../inverse-function/) $\sigma : X_n \to X_n$。$X_n$ 的所有排列组成的集合配以[函数复合](../composite-functions/)运算后，就是 $n$ 个元素上的对称群，记作 $S_n$。
+令 $X_n = \{\ 1, 2, \ldots, n \ \}$。$X_n$ 的一个排列是一个[双射](../injective-surjective-and-bijective-functions/) $\sigma : X_n \to X_n$。$X_n$ 的所有排列组成的集合配以[函数复合](../composite-functions/)运算后，就是 $n$ 个元素上的对称群，记作 $S_n$。
 
 群公理来自函数的性质。$X_n$ 上两个双射的复合仍是 $X_n$ 上的双射，因此复合是 $S_n$ 上的一个运算。复合满足结合律，恒等映射是单位元，而每个双射的逆映射仍是 $X_n$ 上的双射。因此 $S_n$ 是一个[群](../groups/)。凯莱定理指出，每个阶为 $n$ 的有限群都[同构](../homomorphisms-and-isomorphisms/)于 $S_n$ 的某个子群。
 

@@ -14,7 +14,7 @@ tags:
   - trigonometric-integrals
 translation:
   status: current
-  source_hash: cfff8f2b248d3b3fa5635c7d72a2020881625874aa754cb69a2dcf8467aae32a
+  source_hash: 87b373611d17fb5f417b3c440d4648bc9802191a2d897b12921573130e886c17
   translator: codex
   updated: "2026-08-03T00:00:00.000Z"
 ---
@@ -24,7 +24,7 @@ translation:
 
 $$\int f(x)g'(x) \ dx = f(x)g(x) - \int f'(x)g(x) \ dx + c$$
 
-对于[定积分](../definite-integrals/)，公式为：
+对于[定积分](../definite-integrals/)，把[微积分基本定理](../fundamental-theorem-of-calculus/)应用于乘积法则可得：
 
 $$\int_a^b f(x)g'(x) \ dx = [f(x)g(x)]_a^b - \int_a^b f'(x)g(x) \ dx$$
 

@@ -12,7 +12,7 @@ tags:
   - taylor-series
 translation:
   status: current
-  source_hash: d074ad7bfe7bbb2f1da73a7c8b62b29d966ee4a2e12889e336f7e7a78ad66d48
+  source_hash: 68009b5fdcc249818875545303b1c0825036454017b68ff69040b72cf0c32830
   translator: codex
   updated: "2026-08-04T00:00:00.000Z"
 ---
@@ -54,7 +54,7 @@ $$\lim_{x \to \infty} \frac{x}{x^2} = \lim_{x \to \infty} \frac{1}{x} = 0$$
 
 $$x = o(x^2) \quad x \to \infty$$
 
-对于任意两个满足 $a < b$ 的幂函数 $x^a$ 和 $x^b$，同样的关系成立：
+对于任意两个满足 $a < b$ 的[幂函数](../power-function/) $x^a$ 和 $x^b$，同样的关系成立：
 
 $$x^a = o(x^b) \quad x \to \infty$$
 

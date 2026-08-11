@@ -9,17 +9,17 @@ tags:
   - systems-of-inequalities
 translation:
   status: current
-  source_hash: e003bd768c0ac50e1885c941ed511f2bd7a039355a0827a16c9cc10994283363
+  source_hash: 3d5f1c7649a86185374f401e87986bf539e6110b380f1ed10beaef7516a1e588
   translator: omp
   updated: "2026-07-26T15:40:19.713Z"
 ---
 ## 无理方程的定义
 
-无理方程，又称为根式方程，是这样一类[方程](../equations/)：其未知数 $x$ 出现在[根式](../radicals/)内，或者被提升为分数[指数](../powers/)幂。它们构成一类独特的问题，仅凭标准的代数变形无法求解。根式与非整数指数的存在对 $x$ 的可取值施加了额外的限制，因此[定义域分析](../determining-the-domain-of-a-function/)成为必不可少的预备步骤。
+无理方程，又称为根式方程，是含有未知数的[无理函数](../irrational-functions/)的[方程](../equations/)，通常写成未知数位于[根式](../radicals/)内或具有分数[指数](../powers/)的形式。它们构成一类独特的问题，仅凭标准的代数变形无法求解。根式与非整数指数的存在对 $x$ 的可取值施加了额外的限制，因此[定义域分析](../determining-the-domain-of-a-function/)成为必不可少的预备步骤。
 
 无理方程是形如 $F(x) = 0$ 的方程，其中至少有一项含有函数的分数幂，即指数的分母大于一的幂。等价地，这些方程含有根式表达式。其定义项具有如下形式：
 
-$$f(x)^{\frac{p}{q}} \quad \text{其中 } q > 1$$
+$$f(x)^{\frac{p}{q}}, \qquad q > 1$$
 
 以根式符号记作：
 

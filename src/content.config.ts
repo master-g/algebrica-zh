@@ -13,7 +13,7 @@ const translationSchema = z.object({
 const articles = defineCollection({
   loader: glob({
     base: resolveUpstreamSourceDir(),
-    pattern: ['*/*.md', '!pages/*.md'],
+    pattern: ['*/*.md', '!category/*.md', '!pages/*.md'],
   }),
   schema: z.object({
     title: z.string(),

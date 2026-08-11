@@ -705,6 +705,77 @@
     "enables": 0,
     "canvasHeight": 440
   },
+  "arccosine-function": {
+    "source": "https://algebrica.org/arccosine-function/",
+    "dataset": {
+      "name": "arccosine function",
+      "children": [
+        {
+          "name": "definition",
+          "children": [
+            {
+              "name": "inverse cosine"
+            },
+            {
+              "name": "notation"
+            },
+            {
+              "name": "principal value"
+            }
+          ]
+        },
+        {
+          "name": "domain and range",
+          "children": [
+            {
+              "name": "domain [−1, 1]"
+            },
+            {
+              "name": "range [0, π]"
+            },
+            {
+              "name": "graph"
+            },
+            {
+              "name": "endpoints"
+            }
+          ]
+        },
+        {
+          "name": "properties",
+          "children": [
+            {
+              "name": "monotonicity"
+            },
+            {
+              "name": "limits"
+            },
+            {
+              "name": "derivative"
+            },
+            {
+              "name": "integral"
+            },
+            {
+              "name": "Maclaurin series"
+            },
+            {
+              "name": "inverse relation"
+            }
+          ]
+        }
+      ]
+    },
+    "type": "Concept",
+    "description": "The structure of the entry is shown in the conceptual map, where each branch represents a core component and the sub-nodes highlight the specific notions discussed.",
+    "difficulty": {
+      "level": 2,
+      "label": "Intermediate"
+    },
+    "requires": 2,
+    "enables": 0,
+    "canvasHeight": 420
+  },
   "arcsine-and-arccosine": {
     "source": "https://algebrica.org/arcsine-and-arccosine/",
     "dataset": {
@@ -791,8 +862,85 @@
       "label": "Easy"
     },
     "requires": 3,
-    "enables": 0,
+    "enables": 1,
     "canvasHeight": 440
+  },
+  "arcsine-function": {
+    "source": "https://algebrica.org/arcsine-function/",
+    "dataset": {
+      "name": "root",
+      "children": [
+        {
+          "name": "definition",
+          "children": [
+            {
+              "name": "inverse of sine"
+            },
+            {
+              "name": "principal interval"
+            },
+            {
+              "name": "domain"
+            },
+            {
+              "name": "range"
+            },
+            {
+              "name": "graph"
+            }
+          ]
+        },
+        {
+          "name": "properties",
+          "children": [
+            {
+              "name": "continuity"
+            },
+            {
+              "name": "strict increase"
+            },
+            {
+              "name": "odd symmetry"
+            },
+            {
+              "name": "notable values"
+            },
+            {
+              "name": "inverse identities"
+            }
+          ]
+        },
+        {
+          "name": "calculus",
+          "children": [
+            {
+              "name": "limits"
+            },
+            {
+              "name": "derivative"
+            },
+            {
+              "name": "endpoint behavior"
+            },
+            {
+              "name": "indefinite integral"
+            },
+            {
+              "name": "definite integral"
+            }
+          ]
+        }
+      ]
+    },
+    "type": "Concept",
+    "description": "The structure of the entry is shown in the conceptual map, where each branch represents a core component and the sub-nodes highlight the specific notions discussed.",
+    "difficulty": {
+      "level": 2,
+      "label": "Intermediate"
+    },
+    "requires": 1,
+    "enables": 0,
+    "canvasHeight": 420
   },
   "arctangent-and-arccotangent": {
     "source": "https://algebrica.org/arctangent-and-arccotangent/",
@@ -880,7 +1028,7 @@
       "label": "Intermediate"
     },
     "requires": 3,
-    "enables": 0,
+    "enables": 2,
     "canvasHeight": 440
   },
   "arithmetic-mean": {
@@ -1135,7 +1283,274 @@
       "label": "Intermediate"
     },
     "requires": 2,
-    "enables": 1,
+    "enables": 2,
+    "canvasHeight": 440
+  },
+  "asymptotic-expansion": {
+    "source": "https://algebrica.org/asymptotic-expansion/",
+    "dataset": {
+      "name": "root",
+      "children": [
+        {
+          "name": "foundations",
+          "children": [
+            {
+              "name": "definition"
+            },
+            {
+              "name": "asymptotic sequence"
+            },
+            {
+              "name": "asymptotic relation"
+            },
+            {
+              "name": "limit point"
+            },
+            {
+              "name": "little-o notation"
+            },
+            {
+              "name": "asymptotic equivalence"
+            }
+          ]
+        },
+        {
+          "name": "construction",
+          "children": [
+            {
+              "name": "leading term"
+            },
+            {
+              "name": "successive terms"
+            },
+            {
+              "name": "remainder"
+            },
+            {
+              "name": "truncation"
+            },
+            {
+              "name": "order of approximation"
+            },
+            {
+              "name": "taylor expansion"
+            },
+            {
+              "name": "error estimate"
+            }
+          ]
+        },
+        {
+          "name": "properties",
+          "children": [
+            {
+              "name": "convergence"
+            },
+            {
+              "name": "divergence"
+            },
+            {
+              "name": "accuracy"
+            },
+            {
+              "name": "validity range"
+            }
+          ]
+        }
+      ]
+    },
+    "type": "Concept",
+    "description": "The structure of the entry is shown in the conceptual map, where each branch represents a core component and the sub-nodes highlight the specific notions discussed.",
+    "difficulty": {
+      "level": 3,
+      "label": "Advanced"
+    },
+    "requires": 2,
+    "enables": 0,
+    "canvasHeight": 400
+  },
+  "automated-deduction-in-first-order-logic": {
+    "source": "https://algebrica.org/automated-deduction-in-first-order-logic/",
+    "dataset": {
+      "name": "root",
+      "children": [
+        {
+          "name": "foundations",
+          "children": [
+            {
+              "name": "first-order logic"
+            },
+            {
+              "name": "automated deduction"
+            },
+            {
+              "name": "soundness"
+            },
+            {
+              "name": "completeness"
+            },
+            {
+              "name": "refutation"
+            }
+          ]
+        },
+        {
+          "name": "resolution",
+          "children": [
+            {
+              "name": "clausal form"
+            },
+            {
+              "name": "prenex form"
+            },
+            {
+              "name": "skolemization"
+            },
+            {
+              "name": "unification"
+            },
+            {
+              "name": "resolution rule"
+            },
+            {
+              "name": "empty clause"
+            },
+            {
+              "name": "proof search"
+            }
+          ]
+        },
+        {
+          "name": "methods",
+          "children": [
+            {
+              "name": "herbrand theorem"
+            },
+            {
+              "name": "herbrand universe"
+            },
+            {
+              "name": "herbrand base"
+            },
+            {
+              "name": "semantic tableau"
+            },
+            {
+              "name": "forward chaining"
+            },
+            {
+              "name": "backward chaining"
+            },
+            {
+              "name": "prolog"
+            }
+          ]
+        }
+      ]
+    },
+    "type": "Concept",
+    "description": "The structure of the entry is shown in the conceptual map, where each branch represents a core component and the sub-nodes highlight the specific notions discussed.",
+    "difficulty": {
+      "level": 3,
+      "label": "Advanced"
+    },
+    "requires": 1,
+    "enables": 0,
+    "canvasHeight": 440
+  },
+  "automated-deduction-in-propositional-logic": {
+    "source": "https://algebrica.org/automated-deduction-in-propositional-logic/",
+    "dataset": {
+      "name": "root",
+      "children": [
+        {
+          "name": "resolution",
+          "children": [
+            {
+              "name": "refutation"
+            },
+            {
+              "name": "CNF"
+            },
+            {
+              "name": "clause"
+            },
+            {
+              "name": "resolvent"
+            },
+            {
+              "name": "empty clause"
+            },
+            {
+              "name": "saturation"
+            },
+            {
+              "name": "countermodel"
+            }
+          ]
+        },
+        {
+          "name": "semantic tableaux",
+          "children": [
+            {
+              "name": "alpha rule"
+            },
+            {
+              "name": "beta rule"
+            },
+            {
+              "name": "branch expansion"
+            },
+            {
+              "name": "closed branch"
+            },
+            {
+              "name": "open branch"
+            },
+            {
+              "name": "saturation"
+            },
+            {
+              "name": "countermodel"
+            }
+          ]
+        },
+        {
+          "name": "Horn deduction",
+          "children": [
+            {
+              "name": "Horn clause"
+            },
+            {
+              "name": "fact"
+            },
+            {
+              "name": "rule"
+            },
+            {
+              "name": "goal"
+            },
+            {
+              "name": "unit resolution"
+            },
+            {
+              "name": "forward chaining"
+            },
+            {
+              "name": "backward chaining"
+            }
+          ]
+        }
+      ]
+    },
+    "type": "Technique",
+    "description": "The structure of the entry is shown in the conceptual map, where each branch represents a core component and the sub-nodes highlight the specific notions discussed.",
+    "difficulty": {
+      "level": 2,
+      "label": "Intermediate"
+    },
+    "requires": 1,
+    "enables": 0,
     "canvasHeight": 440
   },
   "bernoulli-distribution": {
@@ -1225,6 +1640,92 @@
     },
     "requires": 0,
     "enables": 1,
+    "canvasHeight": 440
+  },
+  "beta-distribution": {
+    "source": "https://algebrica.org/beta-distribution/",
+    "dataset": {
+      "name": "root",
+      "children": [
+        {
+          "name": "definition",
+          "children": [
+            {
+              "name": "continuous distribution"
+            },
+            {
+              "name": "unit interval"
+            },
+            {
+              "name": "shape parameters"
+            },
+            {
+              "name": "probability density"
+            },
+            {
+              "name": "beta function"
+            },
+            {
+              "name": "normalization"
+            }
+          ]
+        },
+        {
+          "name": "properties",
+          "children": [
+            {
+              "name": "expected value"
+            },
+            {
+              "name": "variance"
+            },
+            {
+              "name": "mode"
+            },
+            {
+              "name": "skewness"
+            },
+            {
+              "name": "distribution shapes"
+            },
+            {
+              "name": "cumulative distribution"
+            }
+          ]
+        },
+        {
+          "name": "relations and uses",
+          "children": [
+            {
+              "name": "uniform distribution"
+            },
+            {
+              "name": "gamma distribution"
+            },
+            {
+              "name": "order statistics"
+            },
+            {
+              "name": "Bayesian inference"
+            },
+            {
+              "name": "conjugate prior"
+            },
+            {
+              "name": "probability modeling"
+            }
+          ]
+        }
+      ]
+    },
+    "type": "Concept",
+    "description": "The structure of the entry is shown in the conceptual map, where each branch represents a core component and the sub-nodes highlight the specific notions discussed.",
+    "difficulty": {
+      "level": 3,
+      "label": "Advanced"
+    },
+    "requires": 3,
+    "enables": 0,
     "canvasHeight": 440
   },
   "binomial-coefficient": {
@@ -1660,6 +2161,95 @@
     "enables": 3,
     "canvasHeight": 440
   },
+  "cardinality-and-countable-sets": {
+    "source": "https://algebrica.org/cardinality-and-countable-sets/",
+    "dataset": {
+      "name": "root",
+      "children": [
+        {
+          "name": "cardinality",
+          "children": [
+            {
+              "name": "definition"
+            },
+            {
+              "name": "finite sets"
+            },
+            {
+              "name": "infinite sets"
+            },
+            {
+              "name": "cardinal number"
+            },
+            {
+              "name": "natural numbers"
+            },
+            {
+              "name": "bijection"
+            }
+          ]
+        },
+        {
+          "name": "countability",
+          "children": [
+            {
+              "name": "countable sets"
+            },
+            {
+              "name": "uncountable sets"
+            },
+            {
+              "name": "enumeration"
+            },
+            {
+              "name": "countably infinite"
+            },
+            {
+              "name": "Cantor's theorem"
+            },
+            {
+              "name": "diagonal argument"
+            }
+          ]
+        },
+        {
+          "name": "functions",
+          "children": [
+            {
+              "name": "injection"
+            },
+            {
+              "name": "surjection"
+            },
+            {
+              "name": "bijection"
+            },
+            {
+              "name": "one-to-one correspondence"
+            },
+            {
+              "name": "cardinality comparison"
+            },
+            {
+              "name": "power set"
+            },
+            {
+              "name": "continuum"
+            }
+          ]
+        }
+      ]
+    },
+    "type": "Concept",
+    "description": "The structure of the entry is shown in the conceptual map, where each branch represents a core component and the sub-nodes highlight the specific notions discussed.",
+    "difficulty": {
+      "level": 3,
+      "label": "Advanced"
+    },
+    "requires": 2,
+    "enables": 0,
+    "canvasHeight": 440
+  },
   "cauchy-sequence": {
     "source": "https://algebrica.org/cauchy-sequence/",
     "dataset": {
@@ -1925,6 +2515,181 @@
     },
     "requires": 2,
     "enables": 1,
+    "canvasHeight": 440
+  },
+  "change-of-basis-matrix": {
+    "source": "https://algebrica.org/change-of-basis-matrix/",
+    "dataset": {
+      "name": "root",
+      "children": [
+        {
+          "name": "coordinates",
+          "children": [
+            {
+              "name": "ordered basis"
+            },
+            {
+              "name": "coordinate column"
+            },
+            {
+              "name": "unique expansion"
+            },
+            {
+              "name": "coordinate map"
+            },
+            {
+              "name": "basis dependence"
+            },
+            {
+              "name": "isomorphism"
+            }
+          ]
+        },
+        {
+          "name": "change of basis",
+          "children": [
+            {
+              "name": "transition matrix"
+            },
+            {
+              "name": "matrix columns"
+            },
+            {
+              "name": "coordinate conversion"
+            },
+            {
+              "name": "direction convention"
+            },
+            {
+              "name": "identity map"
+            },
+            {
+              "name": "linear map matrix"
+            }
+          ]
+        },
+        {
+          "name": "properties",
+          "children": [
+            {
+              "name": "invertibility"
+            },
+            {
+              "name": "inverse matrix"
+            },
+            {
+              "name": "composition law"
+            },
+            {
+              "name": "identity matrix"
+            },
+            {
+              "name": "nonzero determinant"
+            },
+            {
+              "name": "general linear group"
+            }
+          ]
+        }
+      ]
+    },
+    "type": "Concept",
+    "description": "The structure of the entry is shown in the conceptual map, where each branch represents a core component and the sub-nodes highlight the specific notions discussed.",
+    "difficulty": {
+      "level": 3,
+      "label": "Advanced"
+    },
+    "requires": 1,
+    "enables": 0,
+    "canvasHeight": 440
+  },
+  "chi-square-distribution": {
+    "source": "https://algebrica.org/chi-square-distribution/",
+    "dataset": {
+      "name": "root",
+      "children": [
+        {
+          "name": "distribution",
+          "children": [
+            {
+              "name": "definition"
+            },
+            {
+              "name": "gamma relation"
+            },
+            {
+              "name": "degrees of freedom"
+            },
+            {
+              "name": "support"
+            },
+            {
+              "name": "moments"
+            },
+            {
+              "name": "critical values"
+            }
+          ]
+        },
+        {
+          "name": "properties",
+          "children": [
+            {
+              "name": "sample variance"
+            },
+            {
+              "name": "sum of squares"
+            },
+            {
+              "name": "normal samples"
+            },
+            {
+              "name": "mean"
+            },
+            {
+              "name": "variance"
+            },
+            {
+              "name": "additivity"
+            },
+            {
+              "name": "quantiles"
+            }
+          ]
+        },
+        {
+          "name": "applications",
+          "children": [
+            {
+              "name": "hypothesis tests"
+            },
+            {
+              "name": "independence test"
+            },
+            {
+              "name": "variance test"
+            },
+            {
+              "name": "confidence intervals"
+            },
+            {
+              "name": "contingency tables"
+            },
+            {
+              "name": "likelihood methods"
+            }
+          ]
+        }
+      ]
+    },
+    "type": "Concept",
+    "description": "The structure of the entry is shown in the conceptual map, where each branch represents a core component and the sub-nodes highlight the specific notions discussed.",
+    "difficulty": {
+      "level": 3,
+      "label": "Advanced"
+    },
+    "requires": 3,
+    "enables": 0,
     "canvasHeight": 440
   },
   "circumference": {
@@ -2808,7 +3573,7 @@
       "label": "Intermediate"
     },
     "requires": 3,
-    "enables": 11,
+    "enables": 13,
     "canvasHeight": 420
   },
   "continuous-random-variables": {
@@ -2897,7 +3662,7 @@
       "label": "Advanced"
     },
     "requires": 1,
-    "enables": 1,
+    "enables": 6,
     "canvasHeight": 440
   },
   "convergent-and-divergent-sequences": {
@@ -3425,7 +4190,7 @@
       "label": "Advanced"
     },
     "requires": 5,
-    "enables": 7,
+    "enables": 8,
     "canvasHeight": 440
   },
   "derivative-of-composite-power-functions": {
@@ -3503,6 +4268,80 @@
     },
     "requires": 1,
     "enables": 1,
+    "canvasHeight": 400
+  },
+  "derivative-of-the-inverse-function": {
+    "source": "https://algebrica.org/derivative-of-the-inverse-function/",
+    "dataset": {
+      "name": "root",
+      "children": [
+        {
+          "name": "foundations",
+          "children": [
+            {
+              "name": "inverse function"
+            },
+            {
+              "name": "invertibility"
+            },
+            {
+              "name": "domain and range"
+            },
+            {
+              "name": "inverse notation"
+            },
+            {
+              "name": "differentiability"
+            }
+          ]
+        },
+        {
+          "name": "derivative rule",
+          "children": [
+            {
+              "name": "inverse derivative formula"
+            },
+            {
+              "name": "chain rule"
+            },
+            {
+              "name": "nonzero derivative"
+            },
+            {
+              "name": "evaluation point"
+            },
+            {
+              "name": "reciprocal slope"
+            }
+          ]
+        },
+        {
+          "name": "applications",
+          "children": [
+            {
+              "name": "trigonometric functions"
+            },
+            {
+              "name": "logarithmic functions"
+            },
+            {
+              "name": "implicit differentiation"
+            },
+            {
+              "name": "local behavior"
+            }
+          ]
+        }
+      ]
+    },
+    "type": "Concept",
+    "description": "The structure of the entry is shown in the conceptual map, where each branch represents a core component and the sub-nodes highlight the specific notions discussed.",
+    "difficulty": {
+      "level": 2,
+      "label": "Intermediate"
+    },
+    "requires": 2,
+    "enables": 0,
     "canvasHeight": 400
   },
   "determinant": {
@@ -3843,7 +4682,7 @@
       "label": "Expert"
     },
     "requires": 0,
-    "enables": 0,
+    "enables": 1,
     "canvasHeight": 420
   },
   "differential-of-a-function": {
@@ -4011,6 +4850,83 @@
     "requires": 1,
     "enables": 0,
     "canvasHeight": 440
+  },
+  "dihedral-groups": {
+    "source": "https://algebrica.org/dihedral-groups/",
+    "dataset": {
+      "name": "dihedral groups",
+      "children": [
+        {
+          "name": "symmetries",
+          "children": [
+            {
+              "name": "regular polygons"
+            },
+            {
+              "name": "rotations"
+            },
+            {
+              "name": "reflections"
+            },
+            {
+              "name": "order 2n"
+            },
+            {
+              "name": "symmetry axes"
+            }
+          ]
+        },
+        {
+          "name": "generators and relations",
+          "children": [
+            {
+              "name": "generators r and s"
+            },
+            {
+              "name": "defining relations"
+            },
+            {
+              "name": "normal form"
+            },
+            {
+              "name": "group presentation"
+            },
+            {
+              "name": "Coxeter presentation"
+            }
+          ]
+        },
+        {
+          "name": "algebraic structure",
+          "children": [
+            {
+              "name": "matrix representation"
+            },
+            {
+              "name": "rotation subgroup"
+            },
+            {
+              "name": "normal subgroup"
+            },
+            {
+              "name": "semidirect product"
+            },
+            {
+              "name": "orthogonal group"
+            }
+          ]
+        }
+      ]
+    },
+    "type": "Concept",
+    "description": "The structure of the entry is shown in the conceptual map, where each branch represents a core component and the sub-nodes highlight the specific notions discussed.",
+    "difficulty": {
+      "level": 4,
+      "label": "Expert"
+    },
+    "requires": 2,
+    "enables": 0,
+    "canvasHeight": 420
   },
   "dirichlet-function": {
     "source": "https://algebrica.org/dirichlet-function/",
@@ -4528,7 +5444,7 @@
       "label": "Easy"
     },
     "requires": 3,
-    "enables": 6,
+    "enables": 7,
     "canvasHeight": 440
   },
   "equations-with-parameters": {
@@ -5507,7 +6423,7 @@
       "label": "Intermediate"
     },
     "requires": 3,
-    "enables": 4,
+    "enables": 5,
     "canvasHeight": 440
   },
   "finding-areas-by-integration": {
@@ -5685,8 +6601,254 @@
       "label": "Expert"
     },
     "requires": 0,
-    "enables": 0,
+    "enables": 2,
     "canvasHeight": 440
+  },
+  "first-order-linear-differential-equations": {
+    "source": "https://algebrica.org/first-order-linear-differential-equations/",
+    "dataset": {
+      "name": "root",
+      "children": [
+        {
+          "name": "equation",
+          "children": [
+            {
+              "name": "definition"
+            },
+            {
+              "name": "first order"
+            },
+            {
+              "name": "linearity"
+            },
+            {
+              "name": "standard form"
+            },
+            {
+              "name": "coefficients"
+            },
+            {
+              "name": "homogeneous"
+            },
+            {
+              "name": "nonhomogeneous"
+            }
+          ]
+        },
+        {
+          "name": "method",
+          "children": [
+            {
+              "name": "integrating factor"
+            },
+            {
+              "name": "product rule"
+            },
+            {
+              "name": "integration"
+            },
+            {
+              "name": "integration constant"
+            },
+            {
+              "name": "general solution"
+            },
+            {
+              "name": "particular solution"
+            }
+          ]
+        },
+        {
+          "name": "properties",
+          "children": [
+            {
+              "name": "existence"
+            },
+            {
+              "name": "uniqueness"
+            },
+            {
+              "name": "initial value"
+            },
+            {
+              "name": "solution interval"
+            },
+            {
+              "name": "verification"
+            }
+          ]
+        }
+      ]
+    },
+    "type": "Concept",
+    "description": "The structure of the entry is shown in the conceptual map, where each branch represents a core component and the sub-nodes highlight the specific notions discussed.",
+    "difficulty": {
+      "level": 3,
+      "label": "Advanced"
+    },
+    "requires": 1,
+    "enables": 0,
+    "canvasHeight": 420
+  },
+  "first-order-logic": {
+    "source": "https://algebrica.org/first-order-logic/",
+    "dataset": {
+      "name": "root",
+      "children": [
+        {
+          "name": "language",
+          "children": [
+            {
+              "name": "definition"
+            },
+            {
+              "name": "syntax"
+            },
+            {
+              "name": "term"
+            },
+            {
+              "name": "predicate"
+            },
+            {
+              "name": "function"
+            },
+            {
+              "name": "variable"
+            },
+            {
+              "name": "quantifier"
+            },
+            {
+              "name": "formula"
+            }
+          ]
+        },
+        {
+          "name": "semantics",
+          "children": [
+            {
+              "name": "interpretation"
+            },
+            {
+              "name": "domain"
+            },
+            {
+              "name": "assignment"
+            },
+            {
+              "name": "model"
+            },
+            {
+              "name": "satisfaction"
+            },
+            {
+              "name": "logical consequence"
+            }
+          ]
+        },
+        {
+          "name": "reasoning",
+          "children": [
+            {
+              "name": "free variable"
+            },
+            {
+              "name": "bound variable"
+            },
+            {
+              "name": "universal quantifier"
+            },
+            {
+              "name": "existential quantifier"
+            }
+          ]
+        }
+      ]
+    },
+    "type": "Concept",
+    "description": "The structure of the entry is shown in the conceptual map, where each branch represents a core component and the sub-nodes highlight the specific notions discussed.",
+    "difficulty": {
+      "level": 2,
+      "label": "Intermediate"
+    },
+    "requires": 1,
+    "enables": 1,
+    "canvasHeight": 440
+  },
+  "floor-and-ceiling-functions": {
+    "source": "https://algebrica.org/floor-and-ceiling-functions/",
+    "dataset": {
+      "name": "floor and ceiling functions",
+      "children": [
+        {
+          "name": "rounding",
+          "children": [
+            {
+              "name": "rounding down"
+            },
+            {
+              "name": "rounding up"
+            },
+            {
+              "name": "fractional part"
+            },
+            {
+              "name": "nearest integer"
+            }
+          ]
+        },
+        {
+          "name": "properties",
+          "children": [
+            {
+              "name": "reflection and translation"
+            },
+            {
+              "name": "comparison with integers"
+            },
+            {
+              "name": "monotonicity"
+            },
+            {
+              "name": "jumps"
+            },
+            {
+              "name": "differentiation and integration"
+            }
+          ]
+        },
+        {
+          "name": "applications",
+          "children": [
+            {
+              "name": "division with remainder"
+            },
+            {
+              "name": "counting multiples"
+            },
+            {
+              "name": "digit counting"
+            },
+            {
+              "name": "rounding in functions"
+            },
+            {
+              "name": "prime exponent in factorials"
+            }
+          ]
+        }
+      ]
+    },
+    "type": "Concept",
+    "description": "The structure of the entry is shown in the conceptual map, where each branch represents a core component and the sub-nodes highlight the specific notions discussed.",
+    "difficulty": {
+      "level": 2,
+      "label": "Intermediate"
+    },
+    "requires": 3,
+    "enables": 0,
+    "canvasHeight": 360
   },
   "fourier-series": {
     "source": "https://algebrica.org/fourier-series/",
@@ -5952,7 +7114,7 @@
       "label": "Intermediate"
     },
     "requires": 1,
-    "enables": 38,
+    "enables": 45,
     "canvasHeight": 440
   },
   "fundamental-theorem-of-calculus": {
@@ -6042,6 +7204,95 @@
     },
     "requires": 2,
     "enables": 1,
+    "canvasHeight": 440
+  },
+  "gamma-distribution": {
+    "source": "https://algebrica.org/gamma-distribution/",
+    "dataset": {
+      "name": "root",
+      "children": [
+        {
+          "name": "distribution",
+          "children": [
+            {
+              "name": "definition"
+            },
+            {
+              "name": "parameters"
+            },
+            {
+              "name": "support"
+            },
+            {
+              "name": "probability density"
+            },
+            {
+              "name": "cumulative distribution"
+            },
+            {
+              "name": "moments"
+            }
+          ]
+        },
+        {
+          "name": "properties",
+          "children": [
+            {
+              "name": "mean"
+            },
+            {
+              "name": "variance"
+            },
+            {
+              "name": "mode"
+            },
+            {
+              "name": "skewness"
+            },
+            {
+              "name": "moment generating function"
+            },
+            {
+              "name": "characteristic function"
+            }
+          ]
+        },
+        {
+          "name": "relationships",
+          "children": [
+            {
+              "name": "exponential distribution"
+            },
+            {
+              "name": "chi-square distribution"
+            },
+            {
+              "name": "Erlang distribution"
+            },
+            {
+              "name": "beta distribution"
+            },
+            {
+              "name": "Poisson process"
+            },
+            {
+              "name": "sum of variables"
+            },
+            {
+              "name": "parameter estimation"
+            }
+          ]
+        }
+      ]
+    },
+    "type": "Concept",
+    "description": "The structure of the entry is shown in the conceptual map, where each branch represents a core component and the sub-nodes highlight the specific notions discussed.",
+    "difficulty": {
+      "level": 3,
+      "label": "Advanced"
+    },
+    "requires": 1,
+    "enables": 0,
     "canvasHeight": 440
   },
   "gaussian-elimination": {
@@ -6747,7 +7998,7 @@
       "label": "Intermediate"
     },
     "requires": 2,
-    "enables": 6,
+    "enables": 8,
     "canvasHeight": 465
   },
   "harmonic-mean": {
@@ -6916,6 +8167,95 @@
       "label": "Advanced"
     },
     "requires": 1,
+    "enables": 0,
+    "canvasHeight": 440
+  },
+  "heaviside-function": {
+    "source": "https://algebrica.org/heaviside-function/",
+    "dataset": {
+      "name": "root",
+      "children": [
+        {
+          "name": "definition",
+          "children": [
+            {
+              "name": "step function"
+            },
+            {
+              "name": "piecewise definition"
+            },
+            {
+              "name": "value at zero"
+            },
+            {
+              "name": "graph"
+            },
+            {
+              "name": "domain and range"
+            }
+          ]
+        },
+        {
+          "name": "properties",
+          "children": [
+            {
+              "name": "boundedness"
+            },
+            {
+              "name": "monotonicity"
+            },
+            {
+              "name": "symmetry relation"
+            },
+            {
+              "name": "jump discontinuity"
+            },
+            {
+              "name": "one-sided limits"
+            },
+            {
+              "name": "horizontal asymptotes"
+            }
+          ]
+        },
+        {
+          "name": "applications",
+          "children": [
+            {
+              "name": "derivative and dirac delta"
+            },
+            {
+              "name": "integrals and ramp function"
+            },
+            {
+              "name": "sign function"
+            },
+            {
+              "name": "absolute value"
+            },
+            {
+              "name": "translated step"
+            },
+            {
+              "name": "piecewise functions"
+            },
+            {
+              "name": "rectangular pulse"
+            },
+            {
+              "name": "laplace transform"
+            }
+          ]
+        }
+      ]
+    },
+    "type": "Concept",
+    "description": "The structure of the entry is shown in the conceptual map, where each branch represents a core component and the sub-nodes highlight the specific notions discussed.",
+    "difficulty": {
+      "level": 2,
+      "label": "Intermediate"
+    },
+    "requires": 2,
     "enables": 0,
     "canvasHeight": 440
   },
@@ -8132,7 +9472,7 @@
       "label": "Advanced"
     },
     "requires": 1,
-    "enables": 8,
+    "enables": 9,
     "canvasHeight": 440
   },
   "indeterminate-forms": {
@@ -8402,6 +9742,166 @@
       "label": "Easy"
     },
     "requires": 4,
+    "enables": 0,
+    "canvasHeight": 440
+  },
+  "injective-surjective-and-bijective-functions": {
+    "source": "https://algebrica.org/injective-surjective-and-bijective-functions/",
+    "dataset": {
+      "name": "root",
+      "children": [
+        {
+          "name": "function mapping",
+          "children": [
+            {
+              "name": "domain"
+            },
+            {
+              "name": "codomain"
+            },
+            {
+              "name": "image"
+            },
+            {
+              "name": "preimage"
+            },
+            {
+              "name": "fibre"
+            }
+          ]
+        },
+        {
+          "name": "function types",
+          "children": [
+            {
+              "name": "injective function"
+            },
+            {
+              "name": "surjective function"
+            },
+            {
+              "name": "bijective function"
+            },
+            {
+              "name": "one-to-one correspondence"
+            }
+          ]
+        },
+        {
+          "name": "properties",
+          "children": [
+            {
+              "name": "uniqueness of outputs"
+            },
+            {
+              "name": "coverage of codomain"
+            },
+            {
+              "name": "inverse function"
+            },
+            {
+              "name": "composition"
+            }
+          ]
+        }
+      ]
+    },
+    "type": "Concept",
+    "description": "The structure of the entry is shown in the conceptual map, where each branch represents a core component and the sub-nodes highlight the specific notions discussed.",
+    "difficulty": {
+      "level": 2,
+      "label": "Intermediate"
+    },
+    "requires": 2,
+    "enables": 0,
+    "canvasHeight": 320
+  },
+  "inner-product-spaces": {
+    "source": "https://algebrica.org/inner-product-spaces/",
+    "dataset": {
+      "name": "root",
+      "children": [
+        {
+          "name": "foundations",
+          "children": [
+            {
+              "name": "vector spaces"
+            },
+            {
+              "name": "dot product"
+            },
+            {
+              "name": "inner product"
+            },
+            {
+              "name": "axioms"
+            },
+            {
+              "name": "sesquilinearity"
+            },
+            {
+              "name": "real spaces"
+            },
+            {
+              "name": "complex spaces"
+            }
+          ]
+        },
+        {
+          "name": "geometry",
+          "children": [
+            {
+              "name": "induced norm"
+            },
+            {
+              "name": "orthogonality"
+            },
+            {
+              "name": "Pythagorean identity"
+            },
+            {
+              "name": "line projection"
+            },
+            {
+              "name": "weighted products"
+            },
+            {
+              "name": "Gram matrix"
+            }
+          ]
+        },
+        {
+          "name": "inequalities",
+          "children": [
+            {
+              "name": "Cauchy–Schwarz"
+            },
+            {
+              "name": "equality cases"
+            },
+            {
+              "name": "triangle inequality"
+            },
+            {
+              "name": "parallelogram law"
+            },
+            {
+              "name": "induced metric"
+            },
+            {
+              "name": "normed spaces"
+            }
+          ]
+        }
+      ]
+    },
+    "type": "Concept",
+    "description": "The structure of the entry is shown in the conceptual map, where each branch represents a core component and the sub-nodes highlight the specific notions discussed.",
+    "difficulty": {
+      "level": 3,
+      "label": "Advanced"
+    },
+    "requires": 2,
     "enables": 0,
     "canvasHeight": 440
   },
@@ -9010,6 +10510,157 @@
     "enables": 2,
     "canvasHeight": 440
   },
+  "integration-strategies": {
+    "source": "https://algebrica.org/integration-strategies/",
+    "dataset": {
+      "name": "root",
+      "children": [
+        {
+          "name": "methods",
+          "children": [
+            {
+              "name": "substitution"
+            },
+            {
+              "name": "integration by parts"
+            },
+            {
+              "name": "partial fractions"
+            },
+            {
+              "name": "trigonometric identities"
+            },
+            {
+              "name": "trigonometric substitution"
+            },
+            {
+              "name": "reduction formulas"
+            }
+          ]
+        },
+        {
+          "name": "selection",
+          "children": [
+            {
+              "name": "recognition"
+            },
+            {
+              "name": "integrand form"
+            },
+            {
+              "name": "algebraic functions"
+            },
+            {
+              "name": "rational functions"
+            },
+            {
+              "name": "trigonometric functions"
+            },
+            {
+              "name": "exponential and logarithmic"
+            }
+          ]
+        },
+        {
+          "name": "practice",
+          "children": [
+            {
+              "name": "simplification"
+            },
+            {
+              "name": "combining methods"
+            },
+            {
+              "name": "verification"
+            },
+            {
+              "name": "constant of integration"
+            },
+            {
+              "name": "common pitfalls"
+            }
+          ]
+        }
+      ]
+    },
+    "type": "Concept",
+    "description": "The structure of the entry is shown in the conceptual map, where each branch represents a core component and the sub-nodes highlight the specific notions discussed.",
+    "difficulty": {
+      "level": 2,
+      "label": "Intermediate"
+    },
+    "requires": 1,
+    "enables": 0,
+    "canvasHeight": 440
+  },
+  "intermediate-value-theorem": {
+    "source": "https://algebrica.org/intermediate-value-theorem/",
+    "dataset": {
+      "name": "root",
+      "children": [
+        {
+          "name": "conditions",
+          "children": [
+            {
+              "name": "continuous function"
+            },
+            {
+              "name": "closed interval"
+            },
+            {
+              "name": "endpoint values"
+            },
+            {
+              "name": "intermediate value"
+            }
+          ]
+        },
+        {
+          "name": "theorem",
+          "children": [
+            {
+              "name": "statement"
+            },
+            {
+              "name": "existence result"
+            },
+            {
+              "name": "value between endpoints"
+            },
+            {
+              "name": "Bolzano theorem"
+            }
+          ]
+        },
+        {
+          "name": "applications",
+          "children": [
+            {
+              "name": "existence of roots"
+            },
+            {
+              "name": "sign change"
+            },
+            {
+              "name": "equations"
+            },
+            {
+              "name": "real analysis"
+            }
+          ]
+        }
+      ]
+    },
+    "type": "Theorem",
+    "description": "The structure of the entry is shown in the conceptual map, where each branch represents a core component and the sub-nodes highlight the specific notions discussed.",
+    "difficulty": {
+      "level": 2,
+      "label": "Intermediate"
+    },
+    "requires": 2,
+    "enables": 0,
+    "canvasHeight": 340
+  },
   "intervals": {
     "source": "https://algebrica.org/intervals/",
     "dataset": {
@@ -9099,6 +10750,95 @@
     "enables": 1,
     "canvasHeight": 440
   },
+  "introduction-to-conics": {
+    "source": "https://algebrica.org/introduction-to-conics/",
+    "dataset": {
+      "name": "root",
+      "children": [
+        {
+          "name": "equation and matrices",
+          "children": [
+            {
+              "name": "second-degree equation"
+            },
+            {
+              "name": "conic matrix"
+            },
+            {
+              "name": "quadratic form"
+            },
+            {
+              "name": "homogeneous coordinates"
+            },
+            {
+              "name": "quadratic block"
+            },
+            {
+              "name": "degenerate conics"
+            }
+          ]
+        },
+        {
+          "name": "classification",
+          "children": [
+            {
+              "name": "invariants"
+            },
+            {
+              "name": "determinant"
+            },
+            {
+              "name": "trace"
+            },
+            {
+              "name": "eigenvalues"
+            },
+            {
+              "name": "discriminant"
+            },
+            {
+              "name": "conic types"
+            },
+            {
+              "name": "degeneracy"
+            }
+          ]
+        },
+        {
+          "name": "geometry and reduction",
+          "children": [
+            {
+              "name": "center"
+            },
+            {
+              "name": "principal directions"
+            },
+            {
+              "name": "asymptotic directions"
+            },
+            {
+              "name": "rigid motions"
+            },
+            {
+              "name": "diagonalization"
+            },
+            {
+              "name": "canonical form"
+            }
+          ]
+        }
+      ]
+    },
+    "type": "Concept",
+    "description": "The structure of the entry is shown in the conceptual map, where each branch represents a core component and the sub-nodes highlight the specific notions discussed.",
+    "difficulty": {
+      "level": 2,
+      "label": "Intermediate"
+    },
+    "requires": 2,
+    "enables": 0,
+    "canvasHeight": 440
+  },
   "introduction-to-the-mean": {
     "source": "https://algebrica.org/introduction-to-the-mean/",
     "dataset": {
@@ -9182,7 +10922,7 @@
       "label": "Intermediate"
     },
     "requires": 1,
-    "enables": 7,
+    "enables": 8,
     "canvasHeight": 420
   },
   "inverse-function": {
@@ -9268,7 +11008,7 @@
       "label": "Intermediate"
     },
     "requires": 1,
-    "enables": 1,
+    "enables": 2,
     "canvasHeight": 440
   },
   "inverse-matrix": {
@@ -9446,6 +11186,92 @@
       "label": "Easy"
     },
     "requires": 4,
+    "enables": 1,
+    "canvasHeight": 440
+  },
+  "irrational-functions": {
+    "source": "https://algebrica.org/irrational-functions/",
+    "dataset": {
+      "name": "root",
+      "children": [
+        {
+          "name": "foundations",
+          "children": [
+            {
+              "name": "definition"
+            },
+            {
+              "name": "algebraic functions"
+            },
+            {
+              "name": "rational radicand"
+            },
+            {
+              "name": "domain"
+            },
+            {
+              "name": "even index"
+            },
+            {
+              "name": "odd index"
+            }
+          ]
+        },
+        {
+          "name": "root behavior",
+          "children": [
+            {
+              "name": "square root"
+            },
+            {
+              "name": "odd roots"
+            },
+            {
+              "name": "fractional exponents"
+            },
+            {
+              "name": "index reduction"
+            },
+            {
+              "name": "continuity"
+            },
+            {
+              "name": "differentiability"
+            }
+          ]
+        },
+        {
+          "name": "analysis",
+          "children": [
+            {
+              "name": "monotonicity"
+            },
+            {
+              "name": "extrema"
+            },
+            {
+              "name": "concavity"
+            },
+            {
+              "name": "vertical tangents"
+            },
+            {
+              "name": "asymptotes"
+            },
+            {
+              "name": "equations and inequalities"
+            }
+          ]
+        }
+      ]
+    },
+    "type": "Concept",
+    "description": "The structure of the entry is shown in the conceptual map, where each branch represents a core component and the sub-nodes highlight the specific notions discussed.",
+    "difficulty": {
+      "level": 2,
+      "label": "Intermediate"
+    },
+    "requires": 2,
     "enables": 0,
     "canvasHeight": 440
   },
@@ -9619,6 +11445,95 @@
     "difficulty": {
       "level": 0,
       "label": ""
+    },
+    "requires": 2,
+    "enables": 0,
+    "canvasHeight": 440
+  },
+  "kernel-and-image-of-a-linear-map": {
+    "source": "https://algebrica.org/kernel-and-image-of-a-linear-map/",
+    "dataset": {
+      "name": "root",
+      "children": [
+        {
+          "name": "kernel",
+          "children": [
+            {
+              "name": "definition"
+            },
+            {
+              "name": "null vector"
+            },
+            {
+              "name": "subspace"
+            },
+            {
+              "name": "nullity"
+            },
+            {
+              "name": "basis"
+            },
+            {
+              "name": "dimension"
+            }
+          ]
+        },
+        {
+          "name": "image",
+          "children": [
+            {
+              "name": "definition"
+            },
+            {
+              "name": "range"
+            },
+            {
+              "name": "column space"
+            },
+            {
+              "name": "subspace"
+            },
+            {
+              "name": "basis"
+            },
+            {
+              "name": "dimension"
+            }
+          ]
+        },
+        {
+          "name": "relationships",
+          "children": [
+            {
+              "name": "linear map"
+            },
+            {
+              "name": "rank"
+            },
+            {
+              "name": "rank-nullity"
+            },
+            {
+              "name": "injectivity"
+            },
+            {
+              "name": "surjectivity"
+            },
+            {
+              "name": "isomorphism"
+            },
+            {
+              "name": "matrix representation"
+            }
+          ]
+        }
+      ]
+    },
+    "type": "Concept",
+    "description": "The structure of the entry is shown in the conceptual map, where each branch represents a core component and the sub-nodes highlight the specific notions discussed.",
+    "difficulty": {
+      "level": 3,
+      "label": "Advanced"
     },
     "requires": 2,
     "enables": 0,
@@ -10398,6 +12313,95 @@
     "enables": 2,
     "canvasHeight": 440
   },
+  "linear-maps": {
+    "source": "https://algebrica.org/linear-maps/",
+    "dataset": {
+      "name": "root",
+      "children": [
+        {
+          "name": "foundations",
+          "children": [
+            {
+              "name": "definition"
+            },
+            {
+              "name": "vector spaces"
+            },
+            {
+              "name": "linearity"
+            },
+            {
+              "name": "notation"
+            },
+            {
+              "name": "properties"
+            }
+          ]
+        },
+        {
+          "name": "properties",
+          "children": [
+            {
+              "name": "additivity"
+            },
+            {
+              "name": "homogeneity"
+            },
+            {
+              "name": "kernel"
+            },
+            {
+              "name": "image"
+            },
+            {
+              "name": "injectivity"
+            },
+            {
+              "name": "surjectivity"
+            },
+            {
+              "name": "isomorphisms"
+            },
+            {
+              "name": "rank-nullity"
+            }
+          ]
+        },
+        {
+          "name": "representations",
+          "children": [
+            {
+              "name": "matrix form"
+            },
+            {
+              "name": "basis"
+            },
+            {
+              "name": "change of basis"
+            },
+            {
+              "name": "composition"
+            },
+            {
+              "name": "inverse"
+            },
+            {
+              "name": "eigenvectors"
+            }
+          ]
+        }
+      ]
+    },
+    "type": "Concept",
+    "description": "The structure of the entry is shown in the conceptual map, where each branch represents a core component and the sub-nodes highlight the specific notions discussed.",
+    "difficulty": {
+      "level": 2,
+      "label": "Intermediate"
+    },
+    "requires": 1,
+    "enables": 0,
+    "canvasHeight": 440
+  },
   "lines": {
     "source": "https://algebrica.org/lines/",
     "dataset": {
@@ -10484,7 +12488,7 @@
       "label": "Easy"
     },
     "requires": 0,
-    "enables": 2,
+    "enables": 3,
     "canvasHeight": 440
   },
   "little-o-notation": {
@@ -11107,7 +13111,7 @@
       "label": "Intermediate"
     },
     "requires": 4,
-    "enables": 10,
+    "enables": 12,
     "canvasHeight": 480
   },
   "matrix-diagonalization": {
@@ -11371,8 +13375,94 @@
       "label": "Advanced"
     },
     "requires": 1,
-    "enables": 1,
+    "enables": 3,
     "canvasHeight": 440
+  },
+  "mean-value-theorem-for-integrals": {
+    "source": "https://algebrica.org/mean-value-theorem-for-integrals/",
+    "dataset": {
+      "name": "root",
+      "children": [
+        {
+          "name": "theorem",
+          "children": [
+            {
+              "name": "statement"
+            },
+            {
+              "name": "continuity"
+            },
+            {
+              "name": "definite integral"
+            },
+            {
+              "name": "geometric meaning"
+            },
+            {
+              "name": "proof"
+            },
+            {
+              "name": "minimum and maximum"
+            },
+            {
+              "name": "intermediate value"
+            }
+          ]
+        },
+        {
+          "name": "average value",
+          "children": [
+            {
+              "name": "integral mean"
+            },
+            {
+              "name": "arithmetic mean"
+            },
+            {
+              "name": "Riemann sums"
+            },
+            {
+              "name": "Lagrange theorem"
+            },
+            {
+              "name": "counterexample"
+            }
+          ]
+        },
+        {
+          "name": "forms and uses",
+          "children": [
+            {
+              "name": "weighted form"
+            },
+            {
+              "name": "constant-sign weight"
+            },
+            {
+              "name": "weighted average"
+            },
+            {
+              "name": "fundamental theorem"
+            },
+            {
+              "name": "accumulation function"
+            },
+            {
+              "name": "difference quotient"
+            }
+          ]
+        }
+      ]
+    },
+    "type": "Theorem",
+    "description": "The structure of the entry is shown in the conceptual map, where each branch represents a core component and the sub-nodes highlight the specific notions discussed.",
+    "difficulty": {
+      "level": 2,
+      "label": "Intermediate"
+    },
+    "requires": 1,
+    "enables": 0,
+    "canvasHeight": 420
   },
   "median-and-quantiles": {
     "source": "https://algebrica.org/median-and-quantiles/",
@@ -11988,6 +14078,95 @@
     "enables": 0,
     "canvasHeight": 440
   },
+  "normal-distribution": {
+    "source": "https://algebrica.org/normal-distribution/",
+    "dataset": {
+      "name": "root",
+      "children": [
+        {
+          "name": "foundations",
+          "children": [
+            {
+              "name": "definition"
+            },
+            {
+              "name": "Gaussian distribution"
+            },
+            {
+              "name": "mean μ"
+            },
+            {
+              "name": "standard deviation σ"
+            },
+            {
+              "name": "bell-shaped curve"
+            },
+            {
+              "name": "symmetry"
+            },
+            {
+              "name": "inflection points"
+            }
+          ]
+        },
+        {
+          "name": "density and probability",
+          "children": [
+            {
+              "name": "probability density"
+            },
+            {
+              "name": "normal random variable"
+            },
+            {
+              "name": "total area"
+            },
+            {
+              "name": "interval probability"
+            },
+            {
+              "name": "definite integral"
+            },
+            {
+              "name": "expected value"
+            },
+            {
+              "name": "variance"
+            }
+          ]
+        },
+        {
+          "name": "standardization and results",
+          "children": [
+            {
+              "name": "standard normal"
+            },
+            {
+              "name": "68–95–99.7 rule"
+            },
+            {
+              "name": "three-sigma rule"
+            },
+            {
+              "name": "sample mean"
+            },
+            {
+              "name": "central limit theorem"
+            }
+          ]
+        }
+      ]
+    },
+    "type": "Concept",
+    "description": "The structure of the entry is shown in the conceptual map, where each branch represents a core component and the sub-nodes highlight the specific notions discussed.",
+    "difficulty": {
+      "level": 3,
+      "label": "Advanced"
+    },
+    "requires": 3,
+    "enables": 2,
+    "canvasHeight": 440
+  },
   "notable-products": {
     "source": "https://algebrica.org/notable-products/",
     "dataset": {
@@ -12431,6 +14610,166 @@
     },
     "requires": 1,
     "enables": 1,
+    "canvasHeight": 440
+  },
+  "piecewise-functions": {
+    "source": "https://algebrica.org/piecewise-functions/",
+    "dataset": {
+      "name": "root",
+      "children": [
+        {
+          "name": "definition",
+          "children": [
+            {
+              "name": "piecewise function"
+            },
+            {
+              "name": "domain partition"
+            },
+            {
+              "name": "subdomains"
+            },
+            {
+              "name": "piecewise notation"
+            },
+            {
+              "name": "conditions"
+            }
+          ]
+        },
+        {
+          "name": "properties",
+          "children": [
+            {
+              "name": "junction points"
+            },
+            {
+              "name": "continuity"
+            },
+            {
+              "name": "discontinuity"
+            },
+            {
+              "name": "differentiability"
+            },
+            {
+              "name": "piecewise continuity"
+            }
+          ]
+        },
+        {
+          "name": "examples",
+          "children": [
+            {
+              "name": "absolute value"
+            },
+            {
+              "name": "sign function"
+            },
+            {
+              "name": "step function"
+            },
+            {
+              "name": "piecewise linear function"
+            },
+            {
+              "name": "graph representation"
+            }
+          ]
+        }
+      ]
+    },
+    "type": "Concept",
+    "description": "The structure of the entry is shown in the conceptual map, where each branch represents a core component and the sub-nodes highlight the specific notions discussed.",
+    "difficulty": {
+      "level": 2,
+      "label": "Intermediate"
+    },
+    "requires": 3,
+    "enables": 2,
+    "canvasHeight": 420
+  },
+  "planes": {
+    "source": "https://algebrica.org/planes/",
+    "dataset": {
+      "name": "root",
+      "children": [
+        {
+          "name": "foundations",
+          "children": [
+            {
+              "name": "plane definition"
+            },
+            {
+              "name": "determining a plane"
+            },
+            {
+              "name": "normal vector"
+            },
+            {
+              "name": "point-normal form"
+            },
+            {
+              "name": "half-spaces"
+            }
+          ]
+        },
+        {
+          "name": "equations",
+          "children": [
+            {
+              "name": "scalar equation"
+            },
+            {
+              "name": "three-point plane"
+            },
+            {
+              "name": "vector equation"
+            },
+            {
+              "name": "parametric equations"
+            },
+            {
+              "name": "coordinate planes"
+            },
+            {
+              "name": "intercept form"
+            }
+          ]
+        },
+        {
+          "name": "relations",
+          "children": [
+            {
+              "name": "parallel planes"
+            },
+            {
+              "name": "perpendicular planes"
+            },
+            {
+              "name": "angle between planes"
+            },
+            {
+              "name": "point-plane distance"
+            },
+            {
+              "name": "distance between planes"
+            },
+            {
+              "name": "plane intersection"
+            }
+          ]
+        }
+      ]
+    },
+    "type": "Concept",
+    "description": "The structure of the entry is shown in the conceptual map, where each branch represents a core component and the sub-nodes highlight the specific notions discussed.",
+    "difficulty": {
+      "level": 2,
+      "label": "Intermediate"
+    },
+    "requires": 3,
+    "enables": 0,
     "canvasHeight": 440
   },
   "points-of-non-differentiability": {
@@ -13142,6 +15481,95 @@
     "enables": 20,
     "canvasHeight": 460
   },
+  "power-function": {
+    "source": "https://algebrica.org/power-function/",
+    "dataset": {
+      "name": "root",
+      "children": [
+        {
+          "name": "definition and domain",
+          "children": [
+            {
+              "name": "power function"
+            },
+            {
+              "name": "real exponent"
+            },
+            {
+              "name": "integer exponent"
+            },
+            {
+              "name": "rational exponent"
+            },
+            {
+              "name": "irrational exponent"
+            },
+            {
+              "name": "domain"
+            },
+            {
+              "name": "range"
+            }
+          ]
+        },
+        {
+          "name": "properties",
+          "children": [
+            {
+              "name": "parity"
+            },
+            {
+              "name": "monotonicity"
+            },
+            {
+              "name": "continuity"
+            },
+            {
+              "name": "limits"
+            },
+            {
+              "name": "asymptotes"
+            },
+            {
+              "name": "intercepts"
+            },
+            {
+              "name": "inverse function"
+            }
+          ]
+        },
+        {
+          "name": "calculus and graphs",
+          "children": [
+            {
+              "name": "derivative"
+            },
+            {
+              "name": "increasing behavior"
+            },
+            {
+              "name": "decreasing behavior"
+            },
+            {
+              "name": "concavity"
+            },
+            {
+              "name": "convexity"
+            }
+          ]
+        }
+      ]
+    },
+    "type": "Concept",
+    "description": "The structure of the entry is shown in the conceptual map, where each branch represents a core component and the sub-nodes highlight the specific notions discussed.",
+    "difficulty": {
+      "level": 2,
+      "label": "Intermediate"
+    },
+    "requires": 3,
+    "enables": 0,
+    "canvasHeight": 440
+  },
   "power-series": {
     "source": "https://algebrica.org/power-series/",
     "dataset": {
@@ -13308,8 +15736,8 @@
       "label": "Easy"
     },
     "requires": 3,
-    "enables": 9,
-    "canvasHeight": 400
+    "enables": 10,
+    "canvasHeight": 430
   },
   "principle-of-mathematical-induction": {
     "source": "https://algebrica.org/principle-of-mathematical-induction/",
@@ -13400,6 +15828,98 @@
     "enables": 1,
     "canvasHeight": 440
   },
+  "probability": {
+    "source": "https://algebrica.org/probability/",
+    "dataset": {
+      "name": "root",
+      "children": [
+        {
+          "name": "foundations",
+          "children": [
+            {
+              "name": "definition"
+            },
+            {
+              "name": "random experiment"
+            },
+            {
+              "name": "sample space"
+            },
+            {
+              "name": "event"
+            },
+            {
+              "name": "outcome"
+            },
+            {
+              "name": "probability"
+            }
+          ]
+        },
+        {
+          "name": "probability rules",
+          "children": [
+            {
+              "name": "complement"
+            },
+            {
+              "name": "union"
+            },
+            {
+              "name": "intersection"
+            },
+            {
+              "name": "conditional probability"
+            },
+            {
+              "name": "independence"
+            },
+            {
+              "name": "law of total probability"
+            },
+            {
+              "name": "Bayes theorem"
+            }
+          ]
+        },
+        {
+          "name": "applications",
+          "children": [
+            {
+              "name": "counting"
+            },
+            {
+              "name": "random variable"
+            },
+            {
+              "name": "distribution"
+            },
+            {
+              "name": "expectation"
+            },
+            {
+              "name": "variance"
+            },
+            {
+              "name": "simulation"
+            },
+            {
+              "name": "statistical inference"
+            }
+          ]
+        }
+      ]
+    },
+    "type": "Concept",
+    "description": "The structure of the entry is shown in the conceptual map, where each branch represents a core component and the sub-nodes highlight the specific notions discussed.",
+    "difficulty": {
+      "level": 2,
+      "label": "Intermediate"
+    },
+    "requires": 0,
+    "enables": 0,
+    "canvasHeight": 440
+  },
   "properties-of-real-numbers": {
     "source": "https://algebrica.org/properties-of-real-numbers/",
     "dataset": {
@@ -13478,6 +15998,95 @@
     },
     "requires": 1,
     "enables": 13,
+    "canvasHeight": 440
+  },
+  "propositional-logic": {
+    "source": "https://algebrica.org/propositional-logic/",
+    "dataset": {
+      "name": "root",
+      "children": [
+        {
+          "name": "syntax",
+          "children": [
+            {
+              "name": "atomic propositions"
+            },
+            {
+              "name": "connectives"
+            },
+            {
+              "name": "well-formed formulas"
+            },
+            {
+              "name": "formation rules"
+            },
+            {
+              "name": "propositional language"
+            }
+          ]
+        },
+        {
+          "name": "semantics",
+          "children": [
+            {
+              "name": "truth values"
+            },
+            {
+              "name": "truth tables"
+            },
+            {
+              "name": "interpretations"
+            },
+            {
+              "name": "models"
+            },
+            {
+              "name": "satisfiability"
+            },
+            {
+              "name": "tautology"
+            },
+            {
+              "name": "inconsistency"
+            }
+          ]
+        },
+        {
+          "name": "inference",
+          "children": [
+            {
+              "name": "logical consequence"
+            },
+            {
+              "name": "modus ponens"
+            },
+            {
+              "name": "modus tollens"
+            },
+            {
+              "name": "hypothetical syllogism"
+            },
+            {
+              "name": "equivalences"
+            },
+            {
+              "name": "normal forms"
+            },
+            {
+              "name": "CNF and DNF"
+            }
+          ]
+        }
+      ]
+    },
+    "type": "Concept",
+    "description": "The structure of the entry is shown in the conceptual map, where each branch represents a core component and the sub-nodes highlight the specific notions discussed.",
+    "difficulty": {
+      "level": 2,
+      "label": "Intermediate"
+    },
+    "requires": 2,
+    "enables": 2,
     "canvasHeight": 440
   },
   "pythagorean-identity": {
@@ -13747,7 +16356,7 @@
       "label": "Easy"
     },
     "requires": 1,
-    "enables": 12,
+    "enables": 13,
     "canvasHeight": 460
   },
   "quadratic-equations-with-complex-solutions": {
@@ -14195,7 +16804,7 @@
       "label": "Easy"
     },
     "requires": 2,
-    "enables": 2,
+    "enables": 4,
     "canvasHeight": 440
   },
   "rank-of-a-matrix": {
@@ -14723,7 +17332,7 @@
       "label": ""
     },
     "requires": 3,
-    "enables": 15,
+    "enables": 18,
     "canvasHeight": 420
   },
   "reduction-formulas-and-reference-angles": {
@@ -15776,6 +18385,83 @@
     "enables": 1,
     "canvasHeight": 420
   },
+  "separable-differential-equations": {
+    "source": "https://algebrica.org/separable-differential-equations/",
+    "dataset": {
+      "name": "root",
+      "children": [
+        {
+          "name": "foundations",
+          "children": [
+            {
+              "name": "definition"
+            },
+            {
+              "name": "standard form"
+            },
+            {
+              "name": "separability condition"
+            },
+            {
+              "name": "equilibrium solutions"
+            },
+            {
+              "name": "initial conditions"
+            }
+          ]
+        },
+        {
+          "name": "solution method",
+          "children": [
+            {
+              "name": "separation of variables"
+            },
+            {
+              "name": "integration"
+            },
+            {
+              "name": "implicit solution"
+            },
+            {
+              "name": "explicit solution"
+            },
+            {
+              "name": "constant of integration"
+            }
+          ]
+        },
+        {
+          "name": "applications",
+          "children": [
+            {
+              "name": "initial value problems"
+            },
+            {
+              "name": "growth and decay"
+            },
+            {
+              "name": "homogeneous equations"
+            },
+            {
+              "name": "singular solutions"
+            },
+            {
+              "name": "solution intervals"
+            }
+          ]
+        }
+      ]
+    },
+    "type": "Technique",
+    "description": "The structure of the entry is shown in the conceptual map, where each branch represents a core component and the sub-nodes highlight the specific notions discussed.",
+    "difficulty": {
+      "level": 3,
+      "label": "Advanced"
+    },
+    "requires": 2,
+    "enables": 0,
+    "canvasHeight": 440
+  },
   "sequences": {
     "source": "https://algebrica.org/sequences/",
     "dataset": {
@@ -15863,6 +18549,95 @@
     },
     "requires": 1,
     "enables": 10,
+    "canvasHeight": 440
+  },
+  "sequences-of-functions": {
+    "source": "https://algebrica.org/sequences-of-functions/",
+    "dataset": {
+      "name": "root",
+      "children": [
+        {
+          "name": "foundations",
+          "children": [
+            {
+              "name": "pointwise limit"
+            },
+            {
+              "name": "limit function"
+            },
+            {
+              "name": "pointwise convergence"
+            },
+            {
+              "name": "uniform convergence"
+            },
+            {
+              "name": "epsilon condition"
+            },
+            {
+              "name": "convergence set"
+            }
+          ]
+        },
+        {
+          "name": "examples",
+          "children": [
+            {
+              "name": "x over n"
+            },
+            {
+              "name": "zero function"
+            },
+            {
+              "name": "interval (-1,1)"
+            },
+            {
+              "name": "continuous functions"
+            },
+            {
+              "name": "discontinuous limit"
+            },
+            {
+              "name": "oscillating functions"
+            },
+            {
+              "name": "spike sequences"
+            }
+          ]
+        },
+        {
+          "name": "properties",
+          "children": [
+            {
+              "name": "uniqueness of limits"
+            },
+            {
+              "name": "monotonicity"
+            },
+            {
+              "name": "continuity"
+            },
+            {
+              "name": "integration"
+            },
+            {
+              "name": "differentiation"
+            },
+            {
+              "name": "triangle inequality"
+            }
+          ]
+        }
+      ]
+    },
+    "type": "Concept",
+    "description": "The structure of the entry is shown in the conceptual map, where each branch represents a core component and the sub-nodes highlight the specific notions discussed.",
+    "difficulty": {
+      "level": 4,
+      "label": "Expert"
+    },
+    "requires": 2,
+    "enables": 0,
     "canvasHeight": 440
   },
   "series": {
@@ -16126,7 +18901,7 @@
       "label": "Intermediate"
     },
     "requires": 0,
-    "enables": 11,
+    "enables": 13,
     "canvasHeight": 440
   },
   "sigmoid-function": {
@@ -16479,7 +19254,7 @@
       "label": "Intermediate"
     },
     "requires": 1,
-    "enables": 17,
+    "enables": 18,
     "canvasHeight": 440
   },
   "squeeze-theorem": {
@@ -16569,6 +19344,264 @@
     },
     "requires": 3,
     "enables": 0,
+    "canvasHeight": 440
+  },
+  "standard-normal-z-table": {
+    "source": "https://algebrica.org/standard-normal-z-table/",
+    "dataset": {
+      "name": "root",
+      "children": [
+        {
+          "name": "foundations",
+          "children": [
+            {
+              "name": "standard normal"
+            },
+            {
+              "name": "z-score"
+            },
+            {
+              "name": "notation"
+            },
+            {
+              "name": "symmetry"
+            },
+            {
+              "name": "cumulative probability"
+            },
+            {
+              "name": "probability density"
+            }
+          ]
+        },
+        {
+          "name": "table usage",
+          "children": [
+            {
+              "name": "lookup"
+            },
+            {
+              "name": "left-tail"
+            },
+            {
+              "name": "right-tail"
+            },
+            {
+              "name": "interval probability"
+            },
+            {
+              "name": "negative z"
+            },
+            {
+              "name": "interpolation"
+            }
+          ]
+        },
+        {
+          "name": "applications",
+          "children": [
+            {
+              "name": "normal distribution"
+            },
+            {
+              "name": "standardization"
+            },
+            {
+              "name": "confidence intervals"
+            },
+            {
+              "name": "hypothesis testing"
+            },
+            {
+              "name": "percentiles"
+            },
+            {
+              "name": "statistical inference"
+            }
+          ]
+        }
+      ]
+    },
+    "type": "Concept",
+    "description": "The structure of the entry is shown in the conceptual map, where each branch represents a core component and the sub-nodes highlight the specific notions discussed.",
+    "difficulty": {
+      "level": 3,
+      "label": "Advanced"
+    },
+    "requires": 2,
+    "enables": 0,
+    "canvasHeight": 440
+  },
+  "student-t-distribution": {
+    "source": "https://algebrica.org/student-t-distribution/",
+    "dataset": {
+      "name": "root",
+      "children": [
+        {
+          "name": "foundations",
+          "children": [
+            {
+              "name": "definition"
+            },
+            {
+              "name": "density function"
+            },
+            {
+              "name": "degrees of freedom"
+            },
+            {
+              "name": "support"
+            },
+            {
+              "name": "symmetry"
+            },
+            {
+              "name": "normal relation"
+            }
+          ]
+        },
+        {
+          "name": "properties",
+          "children": [
+            {
+              "name": "mean"
+            },
+            {
+              "name": "variance"
+            },
+            {
+              "name": "heavy tails"
+            },
+            {
+              "name": "moments"
+            },
+            {
+              "name": "limiting behavior"
+            },
+            {
+              "name": "normal approximation"
+            }
+          ]
+        },
+        {
+          "name": "inference",
+          "children": [
+            {
+              "name": "t-statistic"
+            },
+            {
+              "name": "sample mean"
+            },
+            {
+              "name": "unknown variance"
+            },
+            {
+              "name": "confidence intervals"
+            },
+            {
+              "name": "t-tests"
+            },
+            {
+              "name": "critical values"
+            }
+          ]
+        }
+      ]
+    },
+    "type": "Concept",
+    "description": "The structure of the entry is shown in the conceptual map, where each branch represents a core component and the sub-nodes highlight the specific notions discussed.",
+    "difficulty": {
+      "level": 3,
+      "label": "Advanced"
+    },
+    "requires": 3,
+    "enables": 0,
+    "canvasHeight": 440
+  },
+  "subspaces": {
+    "source": "https://algebrica.org/subspaces/",
+    "dataset": {
+      "name": "root",
+      "children": [
+        {
+          "name": "foundations",
+          "children": [
+            {
+              "name": "definition"
+            },
+            {
+              "name": "subspace criterion"
+            },
+            {
+              "name": "zero vector"
+            },
+            {
+              "name": "closure under addition"
+            },
+            {
+              "name": "closure under scalar multiplication"
+            },
+            {
+              "name": "linear combinations"
+            }
+          ]
+        },
+        {
+          "name": "examples",
+          "children": [
+            {
+              "name": "homogeneous systems"
+            },
+            {
+              "name": "lines through the origin"
+            },
+            {
+              "name": "planes through the origin"
+            },
+            {
+              "name": "polynomial subspaces"
+            },
+            {
+              "name": "matrix subspaces"
+            },
+            {
+              "name": "function subspaces"
+            }
+          ]
+        },
+        {
+          "name": "operations",
+          "children": [
+            {
+              "name": "intersection"
+            },
+            {
+              "name": "union"
+            },
+            {
+              "name": "sum of subspaces"
+            },
+            {
+              "name": "Grassmann formula"
+            },
+            {
+              "name": "direct sums"
+            },
+            {
+              "name": "complements"
+            }
+          ]
+        }
+      ]
+    },
+    "type": "Concept",
+    "description": "The structure of the entry is shown in the conceptual map, where each branch represents a core component and the sub-nodes highlight the specific notions discussed.",
+    "difficulty": {
+      "level": 3,
+      "label": "Advanced"
+    },
+    "requires": 1,
+    "enables": 1,
     "canvasHeight": 440
   },
   "superior-and-inferior-limits-of-a-sequence": {
@@ -16749,6 +19782,89 @@
     "enables": 2,
     "canvasHeight": 440
   },
+  "symmetric-group": {
+    "source": "https://algebrica.org/symmetric-group/",
+    "dataset": {
+      "name": "root",
+      "children": [
+        {
+          "name": "foundations",
+          "children": [
+            {
+              "name": "definition"
+            },
+            {
+              "name": "permutations"
+            },
+            {
+              "name": "composition"
+            },
+            {
+              "name": "identity"
+            },
+            {
+              "name": "inverse"
+            },
+            {
+              "name": "order"
+            }
+          ]
+        },
+        {
+          "name": "elements",
+          "children": [
+            {
+              "name": "cycle notation"
+            },
+            {
+              "name": "transpositions"
+            },
+            {
+              "name": "cycle decomposition"
+            },
+            {
+              "name": "disjoint cycles"
+            },
+            {
+              "name": "parity"
+            },
+            {
+              "name": "generators"
+            }
+          ]
+        },
+        {
+          "name": "properties",
+          "children": [
+            {
+              "name": "subgroups"
+            },
+            {
+              "name": "alternating group"
+            },
+            {
+              "name": "conjugacy classes"
+            },
+            {
+              "name": "Cayley theorem"
+            },
+            {
+              "name": "applications"
+            }
+          ]
+        }
+      ]
+    },
+    "type": "Concept",
+    "description": "The structure of the entry is shown in the conceptual map, where each branch represents a core component and the sub-nodes highlight the specific notions discussed.",
+    "difficulty": {
+      "level": 3,
+      "label": "Advanced"
+    },
+    "requires": 1,
+    "enables": 1,
+    "canvasHeight": 420
+  },
   "synthetic-division": {
     "source": "https://algebrica.org/synthetic-division/",
     "dataset": {
@@ -16927,6 +20043,175 @@
     "enables": 2,
     "canvasHeight": 440
   },
+  "systems-of-linear-equations-in-three-variables": {
+    "source": "https://algebrica.org/systems-of-linear-equations-in-three-variables/",
+    "dataset": {
+      "name": "root",
+      "children": [
+        {
+          "name": "formulation",
+          "children": [
+            {
+              "name": "three unknowns"
+            },
+            {
+              "name": "ordered triples"
+            },
+            {
+              "name": "solution set"
+            },
+            {
+              "name": "planes in space"
+            },
+            {
+              "name": "common intersection"
+            }
+          ]
+        },
+        {
+          "name": "elimination",
+          "children": [
+            {
+              "name": "equation operations"
+            },
+            {
+              "name": "variable elimination"
+            },
+            {
+              "name": "two-variable reduction"
+            },
+            {
+              "name": "back substitution"
+            },
+            {
+              "name": "solution verification"
+            }
+          ]
+        },
+        {
+          "name": "solution types",
+          "children": [
+            {
+              "name": "unique solution"
+            },
+            {
+              "name": "no solution"
+            },
+            {
+              "name": "infinitely many solutions"
+            },
+            {
+              "name": "contradictions"
+            },
+            {
+              "name": "free variables"
+            },
+            {
+              "name": "parametric form"
+            }
+          ]
+        }
+      ]
+    },
+    "type": "Concept",
+    "description": "The structure of the entry is shown in the conceptual map, where each branch represents a core component and the sub-nodes highlight the specific notions discussed.",
+    "difficulty": {
+      "level": 3,
+      "label": "Advanced"
+    },
+    "requires": 2,
+    "enables": 0,
+    "canvasHeight": 420
+  },
+  "systems-of-linear-equations-in-two-variables": {
+    "source": "https://algebrica.org/systems-of-linear-equations-in-two-variables/",
+    "dataset": {
+      "name": "root",
+      "children": [
+        {
+          "name": "foundations",
+          "children": [
+            {
+              "name": "linear system"
+            },
+            {
+              "name": "two variables"
+            },
+            {
+              "name": "linear equation"
+            },
+            {
+              "name": "consistent system"
+            },
+            {
+              "name": "inconsistent system"
+            }
+          ]
+        },
+        {
+          "name": "solution methods",
+          "children": [
+            {
+              "name": "graphical method"
+            },
+            {
+              "name": "substitution"
+            },
+            {
+              "name": "elimination"
+            },
+            {
+              "name": "comparison"
+            },
+            {
+              "name": "verification"
+            },
+            {
+              "name": "unique solution"
+            },
+            {
+              "name": "infinitely many solutions"
+            }
+          ]
+        },
+        {
+          "name": "geometry",
+          "children": [
+            {
+              "name": "lines"
+            },
+            {
+              "name": "intersection"
+            },
+            {
+              "name": "parallel lines"
+            },
+            {
+              "name": "coincident lines"
+            },
+            {
+              "name": "no solution"
+            },
+            {
+              "name": "one solution"
+            },
+            {
+              "name": "solution set"
+            }
+          ]
+        }
+      ]
+    },
+    "type": "Concept",
+    "description": "The structure of the entry is shown in the conceptual map, where each branch represents a core component and the sub-nodes highlight the specific notions discussed.",
+    "difficulty": {
+      "level": 2,
+      "label": "Intermediate"
+    },
+    "requires": 1,
+    "enables": 1,
+    "canvasHeight": 440
+  },
   "tangent-and-cotangent": {
     "source": "https://algebrica.org/tangent-and-cotangent/",
     "dataset": {
@@ -17013,6 +20298,92 @@
     "enables": 6,
     "canvasHeight": 420
   },
+  "taylor-formula-with-remainder": {
+    "source": "https://algebrica.org/taylor-formula-with-remainder/",
+    "dataset": {
+      "name": "root",
+      "children": [
+        {
+          "name": "taylor polynomial",
+          "children": [
+            {
+              "name": "expansion centre"
+            },
+            {
+              "name": "polynomial order"
+            },
+            {
+              "name": "derivatives"
+            },
+            {
+              "name": "coefficients"
+            },
+            {
+              "name": "maclaurin polynomial"
+            },
+            {
+              "name": "local approximation"
+            }
+          ]
+        },
+        {
+          "name": "remainder forms",
+          "children": [
+            {
+              "name": "remainder term"
+            },
+            {
+              "name": "peano form"
+            },
+            {
+              "name": "little-o notation"
+            },
+            {
+              "name": "lagrange form"
+            },
+            {
+              "name": "intermediate point"
+            },
+            {
+              "name": "error estimate"
+            }
+          ]
+        },
+        {
+          "name": "properties",
+          "children": [
+            {
+              "name": "uniqueness"
+            },
+            {
+              "name": "matching derivatives"
+            },
+            {
+              "name": "approximation error"
+            },
+            {
+              "name": "regularity conditions"
+            },
+            {
+              "name": "mean value theorem"
+            },
+            {
+              "name": "error bounds"
+            }
+          ]
+        }
+      ]
+    },
+    "type": "Technique",
+    "description": "The structure of the entry is shown in the conceptual map, where each branch represents a core component and the sub-nodes highlight the specific notions discussed.",
+    "difficulty": {
+      "level": 3,
+      "label": "Advanced"
+    },
+    "requires": 2,
+    "enables": 0,
+    "canvasHeight": 420
+  },
   "taylor-series": {
     "source": "https://algebrica.org/taylor-series/",
     "dataset": {
@@ -17096,7 +20467,7 @@
       "label": "Expert"
     },
     "requires": 4,
-    "enables": 1,
+    "enables": 2,
     "canvasHeight": 420
   },
   "telescoping-series": {
@@ -17422,6 +20793,95 @@
       ]
     },
     "type": "Theorem",
+    "description": "The structure of the entry is shown in the conceptual map, where each branch represents a core component and the sub-nodes highlight the specific notions discussed.",
+    "difficulty": {
+      "level": 2,
+      "label": "Intermediate"
+    },
+    "requires": 1,
+    "enables": 0,
+    "canvasHeight": 440
+  },
+  "topology-of-the-real-line": {
+    "source": "https://algebrica.org/topology-of-the-real-line/",
+    "dataset": {
+      "name": "root",
+      "children": [
+        {
+          "name": "local structure",
+          "children": [
+            {
+              "name": "neighborhoods"
+            },
+            {
+              "name": "punctured neighborhoods"
+            },
+            {
+              "name": "interior points"
+            },
+            {
+              "name": "exterior points"
+            },
+            {
+              "name": "boundary points"
+            }
+          ]
+        },
+        {
+          "name": "open and closed sets",
+          "children": [
+            {
+              "name": "open sets"
+            },
+            {
+              "name": "closed sets"
+            },
+            {
+              "name": "unions"
+            },
+            {
+              "name": "intersections"
+            },
+            {
+              "name": "accumulation points"
+            },
+            {
+              "name": "isolated points"
+            },
+            {
+              "name": "derived set"
+            }
+          ]
+        },
+        {
+          "name": "closure and compactness",
+          "children": [
+            {
+              "name": "closure"
+            },
+            {
+              "name": "dense sets"
+            },
+            {
+              "name": "open covers"
+            },
+            {
+              "name": "finite subcovers"
+            },
+            {
+              "name": "compact sets"
+            },
+            {
+              "name": "bounded sets"
+            },
+            {
+              "name": "Heine–Borel theorem"
+            }
+          ]
+        }
+      ]
+    },
+    "type": "Concept",
     "description": "The structure of the entry is shown in the conceptual map, where each branch represents a core component and the sub-nodes highlight the specific notions discussed.",
     "difficulty": {
       "level": 2,
@@ -18110,7 +21570,7 @@
       "label": "Intermediate"
     },
     "requires": 3,
-    "enables": 0,
+    "enables": 1,
     "canvasHeight": 400
   },
   "uniform-distribution": {
@@ -18555,7 +22015,7 @@
       "label": "Advanced"
     },
     "requires": 1,
-    "enables": 0,
+    "enables": 3,
     "canvasHeight": 440
   },
   "vector-and-parametric-equations-of-a-line": {
@@ -18733,7 +22193,7 @@
       "label": "Intermediate"
     },
     "requires": 3,
-    "enables": 5,
+    "enables": 8,
     "canvasHeight": 440
   },
   "vectors": {
@@ -18810,7 +22270,7 @@
       "label": "Intermediate"
     },
     "requires": 2,
-    "enables": 10,
+    "enables": 12,
     "canvasHeight": 380
   },
   "vieta-formulas": {

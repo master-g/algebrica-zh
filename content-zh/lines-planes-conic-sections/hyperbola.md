@@ -13,7 +13,7 @@ tags:
   - vertex
 translation:
   status: current
-  source_hash: 4ce633429853d55dbd3dd006e849e6e4dca44ecc8f08584a307a02a44db04148
+  source_hash: 2c1fc9776bbd708966662ad5af9a57989a9828ac76ff4fa0825980bb4a0b2058
   translator: codex
   updated: "2026-08-04T00:00:00.000Z"
 ---
@@ -23,7 +23,24 @@ translation:
 
 $$f(x, y) = a_{11}x^2 + 2a_{12}xy + a_{22}y^2 + 2a_{13}x + 2a_{23}y + a_{33} = 0$$
 
-系数 $a_{ij}$ 是[实数](../real-numbers/)，当 $a_{11}$ 和 $a_{22}$ 均不为零时曲线为二次曲线。
+系数 $a_{ij}$ 是[实数](../real-numbers/)，且 $a_{11}$、$a_{12}$、$a_{22}$ 不全为零，因此多项式的次数为二次。
+
+在[圆锥曲线的矩阵分类](../introduction-to-conics/)中，完整系数矩阵 $A$ 及其二次项主块 $A_0$ 为：
+
+$$
+A = \begin{pmatrix}
+a_{11} & a_{12} & a_{13} \\[6pt]
+a_{12} & a_{22} & a_{23} \\[6pt]
+a_{13} & a_{23} & a_{33}
+\end{pmatrix}
+\qquad
+A_0 = \begin{pmatrix}
+a_{11} & a_{12} \\[6pt]
+a_{12} & a_{22}
+\end{pmatrix}
+$$
+
+当且仅当 $\det A\neq0$ 且 $\det A_0<0$ 时，该方程定义非退化双曲线。此时 $A_0$ 的特征值异号，对应的特征向量给出主轴方向。平移到中心后，$\mathbf{w}^{\mathrm{T}}A_0\mathbf{w}=0$ 是两条渐近线的方程。
 
 双曲线是当截切平面与圆锥的两个对顶面都相交时得到的圆锥截线，因此交线是两条分离的无界曲线，即双曲线的两支。
 

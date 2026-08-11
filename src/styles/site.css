@@ -688,6 +688,7 @@ summary {
   overflow-y: hidden;
 }
 
+.article-section p > mjx-container:not([display="true"]),
 .article-section li > mjx-container:not([display="true"]) {
   display: inline-block;
   max-width: 100%;

@@ -11,6 +11,10 @@ import {
   getArticleGraph,
   resolveArticleGraphEntry,
 } from '../../src/lib/article-graphs.mjs';
+import { syncArticleGraphs } from '../../scripts/sync-article-graphs.mjs';
+import { mkdirSync, mkdtempSync, readFileSync, rmSync, writeFileSync } from 'node:fs';
+import { tmpdir } from 'node:os';
+import { join } from 'node:path';
 
 const graphHtml = `
 <section class="collapsible-tree no-mobile">
@@ -24,6 +28,18 @@ const graphHtml = `
   var dataset = {"name":"root","children":[{"name":"foundations","children":[{"name":"definition"},{"name":"membership"}]}]};
   var fixedCanvasHeight = 440;
 </script>`;
+
+const dataAttributeGraphHtml = `
+<section class="collapsible-tree no-mobile">
+  <div class="collapsible-tree-description">A current conceptual map.</div>
+  <div class="s-c-t-c-node-type">Concept</div>
+  <div class="difficulty-level dl-1"><div class="difficulty-level-item"></div>Basic</div>
+  <div class="s-c-t-c-item-count">1</div><div class="s-c-t-c-label">Requires</div>
+  <div class="s-c-t-c-item-count">3</div><div class="s-c-t-c-label">Enables</div>
+  <div class="collapsible-tree__canvas"
+    data-collapsible-tree-data="{&quot;name&quot;:&quot;root&quot;,&quot;children&quot;:[{&quot;name&quot;:&quot;current&quot;}]}"
+    data-collapsible-tree-height="420"></div>
+</section>`;
 
 describe('article graph data', () => {
   it('extracts the upstream graph dataset and presentation metadata', () => {
@@ -48,6 +64,20 @@ describe('article graph data', () => {
 
   it('returns null when an article has no graph module', () => {
     assert.equal(extractArticleGraph('<article>No graph here.</article>'), null);
+  });
+
+  it('extracts the current data-attribute graph payload', () => {
+    const graph = extractArticleGraph(dataAttributeGraphHtml);
+    assert.deepEqual(graph.dataset, {
+      name: 'root',
+      children: [{ name: 'current' }],
+    });
+    assert.equal(graph.description, 'A current conceptual map.');
+    assert.equal(graph.difficulty.level, 1);
+    assert.equal(graph.difficulty.label, 'Basic');
+    assert.equal(graph.requires, 1);
+    assert.equal(graph.enables, 3);
+    assert.equal(graph.canvasHeight, 420);
   });
 
   it('resolves a translated graph by source URL when the local slug differs', () => {
@@ -135,5 +165,88 @@ describe('article graph data', () => {
     assert.equal(translated.requires, 0);
     assert.equal(translated.enables, 11);
     assert.equal(translated.source, 'https://algebrica.org/example/');
+  });
+
+  it('updates one requested graph without modifying sibling entries', async (t) => {
+    const root = mkdtempSync(join(tmpdir(), 'algebrica-graphs-'));
+    t.after(() => rmSync(root, { recursive: true, force: true }));
+    const sourceRoot = join(root, 'source');
+    const output = join(root, 'graphs.json');
+    mkdirSync(join(sourceRoot, 'logic'), { recursive: true });
+    writeFileSync(join(sourceRoot, 'logic', 'propositional-logic.md'), `---\ntitle: Propositional Logic\nsource: https://algebrica.org/propositional-logic/\n---\n`);
+    writeFileSync(output, `${JSON.stringify({ untouched: { source: 'https://algebrica.org/untouched/' } }, null, 2)}\n`);
+
+    await syncArticleGraphs({
+      target: 'logic/propositional-logic',
+      sourceRoot,
+      output,
+      fetchHtml: async () => graphHtml,
+      log: () => {},
+    });
+
+    const graphs = JSON.parse(readFileSync(output, 'utf8'));
+    assert.equal(graphs.untouched.source, 'https://algebrica.org/untouched/');
+    assert.equal(graphs['propositional-logic'].dataset.name, 'root');
+  });
+
+  it('preserves an existing graph key that is linked by a legacy source URL', async (t) => {
+    const root = mkdtempSync(join(tmpdir(), 'algebrica-graphs-'));
+    t.after(() => rmSync(root, { recursive: true, force: true }));
+    const sourceRoot = join(root, 'source');
+    const output = join(root, 'graphs.json');
+    mkdirSync(join(sourceRoot, 'vectors'), { recursive: true });
+    writeFileSync(join(sourceRoot, 'vectors', 'determinant-of-a-square-matrix.md'), `---\ntitle: Determinant\nsource: https://algebrica.org/determinant/\n---\n`);
+    writeFileSync(output, `${JSON.stringify({ determinant: { source: 'https://algebrica.org/determinant/' } }, null, 2)}\n`);
+
+    await syncArticleGraphs({
+      target: 'vectors/determinant-of-a-square-matrix',
+      sourceRoot,
+      output,
+      fetchHtml: async () => graphHtml,
+      log: () => {},
+    });
+
+    const graphs = JSON.parse(readFileSync(output, 'utf8'));
+    assert.deepEqual(Object.keys(graphs), ['determinant']);
+    assert.equal(graphs.determinant.dataset.name, 'root');
+  });
+
+  it('does not overwrite graph data when a single-target fetch fails', async (t) => {
+    const root = mkdtempSync(join(tmpdir(), 'algebrica-graphs-'));
+    t.after(() => rmSync(root, { recursive: true, force: true }));
+    const sourceRoot = join(root, 'source');
+    const output = join(root, 'graphs.json');
+    mkdirSync(join(sourceRoot, 'logic'), { recursive: true });
+    writeFileSync(join(sourceRoot, 'logic', 'propositional-logic.md'), `---\ntitle: Propositional Logic\nsource: https://algebrica.org/propositional-logic/\n---\n`);
+    const original = '{\n  "existing": true\n}\n';
+    writeFileSync(output, original);
+
+    await assert.rejects(() => syncArticleGraphs({
+      target: 'logic/propositional-logic',
+      sourceRoot,
+      output,
+      fetchHtml: async () => { throw new Error('offline'); },
+      log: () => {},
+    }), /offline/);
+    assert.equal(readFileSync(output, 'utf8'), original);
+  });
+
+  it('does not overwrite graph data when a full sync parses no graph modules', async (t) => {
+    const root = mkdtempSync(join(tmpdir(), 'algebrica-graphs-'));
+    t.after(() => rmSync(root, { recursive: true, force: true }));
+    const sourceRoot = join(root, 'source');
+    const output = join(root, 'graphs.json');
+    mkdirSync(join(sourceRoot, 'logic'), { recursive: true });
+    writeFileSync(join(sourceRoot, 'logic', 'propositional-logic.md'), `---\ntitle: Propositional Logic\nsource: https://algebrica.org/propositional-logic/\n---\n`);
+    const original = '{\n  "existing": true\n}\n';
+    writeFileSync(output, original);
+
+    await assert.rejects(() => syncArticleGraphs({
+      sourceRoot,
+      output,
+      fetchHtml: async () => '<article>No graph here.</article>',
+      log: () => {},
+    }), /no graph modules were parsed/);
+    assert.equal(readFileSync(output, 'utf8'), original);
   });
 });

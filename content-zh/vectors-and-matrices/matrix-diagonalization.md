@@ -14,7 +14,7 @@ tags:
   - spectral-theorem
 translation:
   status: current
-  source_hash: bce1137d05b0d7388b9ceaf7b78ec32557c6ba8e629f653a10cb2df56e5ac92d
+  source_hash: d4665172224d4b66bd79305aff2e01305c9890a9803919dd62b698e43b9606c2
   translator: codex
   updated: "2026-08-04T00:00:00.000Z"
 ---
@@ -40,7 +40,7 @@ $$P^{-1} A P = D$$
 
 $$B = P^{-1} A P$$
 
-相似矩阵表示同一[线性映射](../linear-maps/)在不同基下的表示，其中 $P$ 是它们之间的换基矩阵。因此，不依赖于基的选择的量为相似矩阵所共有：$A$ 和 $B$ 具有相同的特征多项式，从而具有相同的特征值及其相同的代数重数，特别地具有相同的[行列式](../determinant/)、相同的迹和相同的[秩](../rank-of-a-matrix/)。
+相似矩阵表示同一[线性映射](../linear-maps/)在不同基下的表示，其中 $P$ 是它们之间的[换基矩阵](../change-of-basis-matrix/)。因此，不依赖于基的选择的量为相似矩阵所共有：$A$ 和 $B$ 具有相同的特征多项式，从而具有相同的特征值及其相同的代数重数，特别地具有相同的[行列式](../determinant/)、相同的迹和相同的[秩](../rank-of-a-matrix/)。
 
 用这种语言来说，一个矩阵可对角化当且仅当它与一个对角矩阵相似。该矩阵的对角元是 $A$ 的特征值，$P$ 的列是构成新基的特征向量。
 

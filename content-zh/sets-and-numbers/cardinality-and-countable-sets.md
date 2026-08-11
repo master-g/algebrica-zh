@@ -17,7 +17,7 @@ tags:
   - uncountable-sets
 translation:
   status: current
-  source_hash: 079b4b6673c1a775fa896215b0f6fd771de72931910b1116d50198d032942481
+  source_hash: d9849e76baf4032f7fe38652b9769e3357865900d893f06dcbb48360703a6ef1
   translator: codex
   updated: "2026-08-04T00:00:00.000Z"
 ---
@@ -30,7 +30,7 @@ translation:
 
 ## 等势集
 
-对有限集合计数，意味着把它的元素依次与 $1,2,\ldots,n$ 配对，直到集合中的元素全部用尽。当且仅当两边的元素都能配对且没有剩余时，两个有限集合的元素个数相同。这样的配对是一个[双射](../functions/)，而这个定义同样适用于有限集和无限集。
+对有限集合计数，意味着把它的元素依次与 $1,2,\ldots,n$ 配对，直到集合中的元素全部用尽。当且仅当两边的元素都能配对且没有剩余时，两个有限集合的元素个数相同。这样的配对是一个[双射](../injective-surjective-and-bijective-functions/)，而这个定义同样适用于有限集和无限集。
 
 当存在双射 $f\colon A\to B$ 时，称集合 $A$ 与 $B$ 等势。此时记作 $A\sim B$，并称 $A$ 与 $B$ 具有相同的基数。关系 $\sim$ 具有等价关系的三个形式性质。$A$ 上的恒等映射给出 $A\sim A$。如果 $f\colon A\to B$ 是双射，那么它的[逆函数](../inverse-function/)是从 $B$ 到 $A$ 的双射，因此 $A\sim B$ 蕴含 $B\sim A$。如果 $f\colon A\to B$ 和 $g\colon B\to C$ 是双射，那么[复合函数](../composite-functions/) $g\circ f$ 是从 $A$ 到 $C$ 的双射，因此 $A\sim B$ 且 $B\sim C$ 蕴含 $A\sim C$。
 

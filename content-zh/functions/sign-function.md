@@ -11,13 +11,13 @@ tags:
   - sign-function
 translation:
   status: current
-  source_hash: 9a9b6a14d0ba2a6d262152fed955ab53f1ed1665d8c4b744636e4d63a971dc5e
+  source_hash: 3c679c0e7996d50ead1c0bf1fae5455ff377697c83cb8e8bee51b78cdaf710c2
   translator: codex
   updated: "2026-08-02T00:00:00.000Z"
 ---
 ## 符号函数的引入
 
-符号函数把每个实数对应到它的符号，而忽略其大小。函数定义如下：
+符号函数把每个实数对应到它的符号，而忽略其大小。函数具有如下[分段定义](../piecewise-functions/)：
 
 $$
 \mathrm{sgn}(x) =

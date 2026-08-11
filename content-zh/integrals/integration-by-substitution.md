@@ -15,52 +15,52 @@ tags:
   - trigonometric-substitution
 translation:
   status: current
-  source_hash: bc5258dde9d452d4cad34f38d08c359b10407e8eee22319559f211b55b7aa0b3
+  source_hash: ddeb0c13c59d1682efb642e0a577f99f64f6a8138053924e603d76cf22da765e
   translator: codex
   updated: "2026-08-03T00:00:00.000Z"
 ---
 ## 换元如何简化积分
 
-换元积分是一种通过改变变量来简化[积分](../indefinite-integrals/)的技巧。当积分不容易直接计算时，这种方法可以将函数 $f(x)$ 的积分改写为关于新变量 $u$ 的积分，通常会得到简单得多的计算：
+换元积分通过改变积分变量来简化[积分](../indefinite-integrals/)。如果 $F' = f$，换元 $u = g(x)$ 给出：
 
-$$\int f(g(x)) g'(x) \ dx = \int f(u) \ du$$
+$$\int f(g(x))g'(x) \ dx = F(g(x)) + c$$
 
-具体步骤如下：
+该过程包含四步：
 
-+ 通过定义 $u = g(x)$ 引入变量替换，其中 $g(x)$ 是适当选取的函数。
-+ 计算微分变换，即 $du = g'(x) \ dx$。
-+ 将积分改写为关于 $u$ 的形式，并相应地替换 $x$ 和 $dx$，使所得表达式更容易处理。
-+ 计算出关于 $u$ 的积分后，换回原变量 $x$，将最终结果写回原来的形式。
++ 令 $u = g(x)$，根据被积函数的结构选择 $g(x)$。
++ 求导得到 $du = g'(x) \ dx$。
++ 将每个因子和微分都改写为关于 $u$ 的形式。
++ 关于 $u$ 积分。对于不定积分，将 $u$ 换回 $g(x)$；对于定积分，使用以 $u$ 表示的上下限。
 
-> 换元积分是[链式法则](../the-derivative-of-a-composite-function/)的逆过程；认识到这一联系，有助于判断何时以及如何应用该技巧。
+> 换元积分是[链式法则](../the-derivative-of-a-composite-function/)的逆过程。内函数及其导数决定变量替换。
 
 - - -
 
-换元法直接来自[导数](../derivatives/)的链式法则。如果 $F(x) = H(g(x))$，那么根据链式法则：
+换元法则来自[导数](../derivatives/)的链式法则。如果 $F(x) = H(g(x))$，链式法则给出：
 
 $$F'(x) = H'(g(x)) g'(x)$$
 
-因此，只要被积函数具有 $H'(g(x)) g'(x)$ 的形式，它就是复合函数 $H(g(x))$ 的导数。换元积分通过引入 $u = g(x)$ 简单地逆转这一过程，将积分化为：
+因此，形如 $H'(g(x))g'(x)$ 的被积函数是复合函数 $H(g(x))$ 的导数。令 $u = g(x)$，其反导数为：
 
 $$\int H'(u) \ du = H(u) + c$$
 
 ## 识别何时使用换元
 
-在进入具体例子之前，先理解换元何时可能有效会很有帮助。当被积函数包含[复合函数](../composite-functions/)时，使用这种技巧最为自然。很多积分具有如下的一般形式：
+当被积函数包含[复合函数](../composite-functions/)，并且还包含与其内函数导数成比例的因子时，换元很有用。基本模式为：
 
 $$f(g(x)) g'(x)$$
 
-或者只与它相差一个常数因子。当出现这种模式时，选取 $u = g(x)$ 可以将复合结构化为单个变量，从而简化表达式。一个常见信号是出现 $(ax + b)^n$、$\sqrt{ax + b}$、$\ln(ax + b)$ 或 $e^{ax + b}$ 这样的表达式。在这些情形中，内部的线性函数 $ax + b$ 是自然的换元候选。同样地，对于如下形式的有理表达式：
+被积函数可以只与该模式相差一个常数因子。换元 $u = g(x)$ 用 $u$ 替换 $g(x)$，并用 $du$ 替换 $g'(x) \ dx$。$(ax + b)^n$、$\sqrt{ax + b}$、$\ln(ax + b)$ 和 $e^{ax + b}$ 等表达式提示将内部线性函数 $ax + b$ 作为新变量。有理表达式可能具有如下形式：
 
 $$\frac{g'(x)}{g(x)}$$
 
-分母的导数提示我们选取换元 $u = g(x)$。
+如果分子只与 $g'(x)$ 相差常数因子，就令 $u = g(x)$。
 
-> 实际应用中的关键，是寻找一个内部表达式，使它的导数也在被积函数的其他位置出现，完全相同或只相差一个乘法常数。当存在这种关系时，换元通常能将积分变成更简单的形式。
+> 选择一个内表达式，使其导数在被积函数的其他位置出现，完全相同或只相差非零常数因子。完整换元后，变换所得积分中不再出现原变量。
 
 ## 换元模式
 
-这些积分呈现出反复出现的结构模式；适当的换元可以将被积函数化为更简单的表达式，从而更直接地完成积分：
+下表列出常见被积函数模式及对应的适当换元：
 
 [class="table-1"]
 
@@ -80,27 +80,25 @@ $$\frac{g'(x)}{g(x)}$$
 
 $$\int (2x + 1)^3 \ dx$$
 
-令 $u = 2x + 1$，这样可以简化幂运算。对等式两边关于 $x$ 求导：
+令 $u = 2x + 1$，将三次表达式替换为 $u^3$。求导得：
 
 $$du = 2 \ dx$$
 
-解出 $dx$：
+该关系等价于：
 
 $$dx = \frac{du}{2}$$
 
-- - -
+换元后的积分为：
 
-将积分完全改写为关于 $u$ 的形式：
+$$\int \frac{u^3}{2} \ du = \frac{1}{2}\int u^3 \ du$$
 
-$$\int u^3 \cdot \frac{du}{2} = \frac{1}{2} \int u^3 \ du$$
+幂法则给出：
 
-关于 $u$ 的积分可以使用幂法则。计算得：
+$$\frac{1}{2}\left(\frac{u^4}{4}\right) + c = \frac{u^4}{8} + c$$
 
-$$\frac{1}{2} \cdot \frac{u^4}{4} + c = \frac{1}{8} u^4 + c$$
+用 $2x + 1$ 替换 $u$，得：
 
-代回 $u = 2x + 1$：
-
-$$\int (2x + 1)^3 \ dx = \frac{1}{8} (2x + 1)^4 + c$$
+$$\int (2x + 1)^3 \ dx = \frac{1}{8}(2x + 1)^4 + c$$
 
 ## 例 2
 
@@ -108,29 +106,25 @@ $$\int (2x + 1)^3 \ dx = \frac{1}{8} (2x + 1)^4 + c$$
 
 $$\int \frac{1}{3x - 5} \ dx$$
 
-令 $u = 3x - 5$，这样可以简化分母。对等式两边关于 $x$ 求导：
+令 $u = 3x - 5$，将分母替换为 $u$。求导得：
 
 $$du = 3 \ dx$$
 
-解出 $dx$：
+该关系等价于：
 
 $$dx = \frac{du}{3}$$
 
-- - -
+换元后的积分为：
 
-将积分完全改写为关于 $u$ 的形式：
+$$\int \frac{1}{3u} \ du = \frac{1}{3}\int \frac{du}{u}$$
 
-$$\int \frac{1}{u} \cdot \frac{du}{3} = \frac{1}{3} \int \frac{du}{u}$$
+对数公式给出：
 
-关于 $u$ 的积分属于对数情形。计算得：
+$$\frac{1}{3}\ln|u| + c$$
 
-$$\frac{1}{3} \ln |u| + c$$
+用 $3x - 5$ 替换 $u$，得：
 
-代回 $u = 3x - 5$：
-
-$$\int \frac{1}{3x - 5} \ dx = \frac{1}{3} \ln |3x - 5| + c$$
-
-> 换元积分是一种有效的技巧，但选择正确的换元需要练习，也需要能够识别被积函数的结构。
+$$\int \frac{1}{3x - 5} \ dx = \frac{1}{3}\ln|3x - 5| + c$$
 
 ## 例 3
 
@@ -138,65 +132,51 @@ $$\int \frac{1}{3x - 5} \ dx = \frac{1}{3} \ln |3x - 5| + c$$
 
 $$\int x \sin(x^2) \ dx$$
 
-这里的换元不那么直接，因为被积函数不像前两个例子那样直接符合标准模式。令 $u = x^2$，这样可以简化正弦函数的自变量。对等式两边关于 $x$ 求导：
+内表达式 $x^2$ 的导数为 $2x$，因此被积函数包含其微分的一半。令 $u = x^2$，则：
 
-$$du = 2x \ dx$$
+$$du = 2x \ dx \qquad x \ dx = \frac{1}{2} \ du$$
 
-解出 $dx$：
+换元得到：
 
-$$dx = \frac{du}{2x}$$
+$$\int x\sin(x^2) \ dx = \frac{1}{2}\int \sin u \ du$$
 
-- - -
+变换后的反导数为：
 
-将所有内容改写为关于 $u$ 的形式后，原被积函数中的因子 $x$ 与 $dx$ 分母中的 $x$ 抵消：
+$$\frac{1}{2}\int \sin u \ du = -\frac{1}{2}\cos u + c$$
 
-$$\int x \sin(u) \cdot \frac{du}{2x} = \frac{1}{2} \int \sin(u) \ du$$
+用 $x^2$ 替换 $u$，得：
 
-关于 $u$ 的积分是标准积分：
-
-$$\int \sin u \ du = -\cos u$$
-
-因此：
-
-$$\frac{1}{2} (-\cos u) + c = -\frac{1}{2} \cos u + c$$
-
-代回 $u = x^2$：
-
-$$\int x \sin(x^2) \ dx = -\frac{1}{2} \cos(x^2) + c$$
+$$\int x\sin(x^2) \ dx = -\frac{1}{2}\cos(x^2) + c$$
 
 ## 例 4
 
-计算如下积分：
+在 $\sin x > 0$ 的开区间上，计算如下积分：
 
 $$\int \cos x \sqrt{\sin x} \ dx$$
 
-令 $u = \sin x$，这样可以简化平方根。对等式两边关于 $x$ 求导：
+换元 $u = \sin x$ 将根式替换为 $\sqrt{u}$。其微分为：
 
 $$du = \cos x \ dx$$
 
-被积函数中出现了因子 $\cos x \ dx$，可以直接用 $du$ 替换。
-
-- - -
-
-代入 $u = \sin x$ 和 $du = \cos x \ dx$：
+换元后的积分为：
 
 $$\int \sqrt{u} \ du = \int u^{1/2} \ du$$
 
-应用幂法则：
+幂法则给出：
 
 $$\int u^{1/2} \ du = \frac{u^{3/2}}{3/2} = \frac{2}{3} u^{3/2} + c$$
 
-代回 $u = \sin x$：
+用 $\sin x$ 替换 $u$，得：
 
-$$\int \cos x \sqrt{\sin x} \ dx = \frac{2}{3} (\sin x)^{3/2} + c$$
+$$\int \cos x\sqrt{\sin x} \ dx = \frac{2}{3}(\sin x)^{3/2} + c$$
 
 ## 三角换元
 
-当积分涉及[多项式](../polynomials/)、[有理函数](../rational-functions/)或代数表达式，且可以利用[三角恒等式](../pythagorean-identity/)化简时，可以使用三角换元：
+对于含有 $a^2 - x^2$、$a^2 + x^2$ 或 $x^2 - a^2$ 的根式，且 $a > 0$ 时，三角换元很有用。相关公式来自[三角恒等式](../pythagorean-identity/)：
 
 $$\sin^2 x + \cos^2 x = 1$$
 
-它还可以改写为以下形式：
+该恒等式具有以下等价形式：
 
 $$
 \begin{align}
@@ -206,13 +186,13 @@ $$
 \end{align}
 $$
 
-换元的选择取决于根式下表达式的形式：
+对于 $a > 0$，标准换元取决于根式下的表达式：
 
-+ 当被积函数包含 $1 - x^2$ 时，使用 $x = \sin u$。
-+ 当被积函数包含 $1 + x^2$ 时，使用 $x = \tan u$。
-+ 当被积函数包含 $x^2 - 1$ 时，使用 $x = \sec u$。
++ 对于 $a^2 - x^2$，令 $x = a\sin u$。
++ 对于 $a^2 + x^2$，令 $x = a\tan u$。
++ 对于 $x^2 - a^2$，令 $x = a\sec u$。
 
-> 关于三角换元的完整讨论，包括几何依据和完整的例题，见专门介绍[积分的三角换元](../trigonometric-substitution-for-integrals/)的页面。
+> [积分的三角换元](../trigonometric-substitution-for-integrals/)页面介绍几何依据并给出完整例题。
 
 ## 例 5
 
@@ -220,45 +200,39 @@ $$
 
 $$\int \frac{1}{\sqrt{9 - x^2}} \ dx$$
 
-对于 $a^2 - x^2$ 形式的表达式，自然的换元是：
+对于 $|x| < 3$，选择 $u \in (-\pi/2, \pi/2)$ 并令：
 
 $$x = 3\sin u$$
 
-对等式两边求导：
+微分为：
 
 $$dx = 3\cos u \ du$$
 
-- - -
-
-将 $x = 3\sin u$ 代入分母：
+换元后的分母为：
 
 $$\sqrt{9 - x^2} = \sqrt{9 - 9\sin^2 u} = \sqrt{9(1 - \sin^2 u)}$$
 
-由于 $\sin^2 u + \cos^2 u = 1$：
+在所选区间上 $\cos u > 0$。恒等式 $\sin^2 u + \cos^2 u = 1$ 给出：
 
-$$\sqrt{9(1 - \sin^2 u)} = \sqrt{9\cos^2 u} = 3\cos u$$
+$$\sqrt{9(1 - \sin^2 u)} = \sqrt{9\cos^2 u} = 3\lvert\cos u\rvert = 3\cos u$$
 
 积分变为：
 
-$$\int \frac{3\cos u \ du}{3\cos u} = \int du = u + c$$
+$$\int \frac{3\cos u \ du}{3\cos u} = \int \ du = u + c$$
 
-> 这一步假设 $\cos u \geq 0$。这是成立的，因为换元 $x = 3\sin u$ 蕴含 $u \in [-\pi/2, \pi/2]$。
-
-- - -
-
-由换元 $x = 3\sin u$，通过[反正弦](../arcsine-and-arccosine/)函数解出 $u$：
+由于 $u$ 位于[反正弦函数](../arcsine-function/)的主值区间，方程 $x = 3\sin u$ 蕴含：
 
 $$u = \arcsin\left(\frac{x}{3}\right)$$
 
-因此最终结果为：
+原变量下的反导数为：
 
 $$\int \frac{1}{\sqrt{9 - x^2}} \ dx = \arcsin\left(\frac{x}{3}\right) + c$$
 
 ## 定积分的换元法则
 
-使用换元计算[定积分](../definite-integrals/)时，必须调整积分上下限，以反映新变量。如果不改变上下限，结果就会错误。给定换元 $u = g(x)$：
+如果在 $u$ 中计算变换后的[定积分](../definite-integrals/)，上下限必须是 $u$ 的取值。另一种方法是先在 $u$ 中求反导数，再把 $u$ 换回 $g(x)$，然后使用 $x$ 的原上下限。设 $g$ 在 $[a,b]$ 上连续可导，并且 $f$ 在包含 $g([a,b])$ 的区间上连续。在这些假设下，换元法则为：
 
-$$\int_{a}^{b} f(g(x)) g'(x) \ dx = \int_{g(a)}^{g(b)} f(u) \ du$$
+$$\int_a^b f(g(x))g'(x) \ dx = \int_{g(a)}^{g(b)} f(u) \ du$$
 
 - - -
 
@@ -266,25 +240,164 @@ $$\int_{a}^{b} f(g(x)) g'(x) \ dx = \int_{g(a)}^{g(b)} f(u) \ du$$
 
 $$\int_{0}^{1} x\cos(x^2) \ dx$$
 
-使用换元 $u = x^2$：
+令 $u = x^2$，则：
 
-$$du = 2x \ dx \qquad dx = \frac{du}{2x}$$
+$$du = 2x \ dx \qquad x \ dx = \frac{1}{2} \ du$$
 
-必须更新积分上下限。当 $x = 0$ 时，$u = 0$；当 $x = 1$ 时，$u = 1$。在这个例子中，变换后的上下限与原上下限重合，但一般并不一定如此。积分变为：
+变换后的端点为 $u(0) = 0$ 和 $u(1) = 1$。这里它们与原上下限在数值上相同。积分为：
 
-$$\int_{0}^{1} x\cos(x^2) \ dx = \int_{0}^{1} \cos u \cdot \frac{du}{2} = \frac{1}{2}\int_{0}^{1} \cos u \ du$$
+$$\int_0^1 x\cos(x^2) \ dx = \frac{1}{2}\int_0^1 \cos u \ du$$
 
-计算得：
+[微积分基本定理](../fundamental-theorem-of-calculus/)给出：
 
 $$\frac{1}{2}\Bigl[\sin u\Bigr]_{0}^{1} = \frac{1}{2}(\sin 1 - \sin 0) = \frac{\sin 1}{2}$$
 
 ## 决策流程
 
-下面的分步流程总结了如何对一般积分应用换元积分。
+以下步骤说明何时应用换元，以及如何完成换元。
 
-+ 识别被积函数的结构。当它符合标准形式（幂函数、指数函数、对数函数或三角函数）时，直接使用[不定积分](../indefinite-integrals/)页面汇总的相应公式积分。
-+ 当被积函数包含 $a^2 - x^2$、$a^2 + x^2$ 或 $x^2 - a^2$ 形式的根式表达式时，应用相应的三角换元：分别取 $x = a\sin u$、$x = a\tan u$ 或 $x = a\sec u$。[积分的三角换元](../trigonometric-substitution-for-integrals/)页面给出了详细处理。
-+ 当被积函数具有 $f(g(x)) g'(x)$ 的形式时，令 $u = g(x)$，计算 $du = g'(x) \ dx$，将积分完全改写为关于 $u$ 的形式，并使用适当的标准公式积分。
-+ 对于定积分，计算前将积分上下限更新为 $g(a)$ 和 $g(b)$，这样就不需要代回原变量。
-+ 对于不定积分，代回 $u = g(x)$，将反导数写成关于原变量的形式。
-+ 当被积函数是两个不符合换元模式的函数之积时，[分部积分](../integration-by-parts/)通常是适当的替代方法。对于 $\sin x$ 和 $\cos x$ 的有理函数，[魏尔斯特拉斯换元](../weierstrass-substitution/)提供了一条系统路径。
++ 识别被积函数的结构。当它符合标准形式（幂函数、指数函数、对数函数或三角函数）时，使用[不定积分](../indefinite-integrals/)中的相应公式。
++ 检查直接换元后，如果根式含有 $a^2 - x^2$、$a^2 + x^2$ 或 $x^2 - a^2$，其中 $a > 0$，则考虑三角换元。标准选择分别为 $x = a\sin u$、$x = a\tan u$ 和 $x = a\sec u$。[积分的三角换元](../trigonometric-substitution-for-integrals/)页面给出完整步骤。
++ 当被积函数具有 $f(g(x))g'(x)$ 的形式时，令 $u = g(x)$，计算 $du = g'(x) \ dx$，将积分完全改写为关于 $u$ 的形式，并使用对应的标准公式。
++ 对于在 $u$ 中计算的定积分，将原上下限替换为 $g(a)$ 和 $g(b)$。如果先在 $x$ 中表示反导数，则保留原上下限。
++ 对于不定积分，用 $g(x)$ 替换 $u$，将反导数表示为关于 $x$ 的形式。
++ 对于两个函数的乘积，当求导会简化一个因子，而另一个因子的反导数容易计算时，可使用[分部积分](../integration-by-parts/)。[魏尔斯特拉斯换元](../weierstrass-substitution/)把 $\sin x$ 和 $\cos x$ 的每个有理函数转化为新变量的有理函数。
+
+## 更多完整例题
+
+下表按难度递增列出积分。每个解答前的句子指出被积函数中提示换元的特征。后面的例题还会变换上下限、改写代数因子或使用三角换元。
+
+[class="table-1"]
+
+|                                             |
+| :------------------------------------------ |
+| $\int \dfrac{dt}{(1 - 6t)^4}$               |
+| $\int x^3(2 + x^4)^5 \ dx$                  |
+| $\int \cos^3\theta\sin\theta \ d\theta$     |
+| $\int \dfrac{2^{\ln x}}{x} \ dx$            |
+| $\int_0^{\ln 4} \dfrac{e^t}{1 + 2e^t} \ dt$ |
+| $\int_{\pi/4}^{\pi/3} \csc^2(5x) \ dx$      |
+| $\int \dfrac{9x^3}{\sqrt{1 + x^2}} \ dx$    |
+| $\int_0^1 \sqrt{4 - x^2} \ dx$              |
+[/class]
+
+分母是线性表达式 $1 - 6t$ 的幂，而该表达式的导数是常数。
+
+$$u = 1 - 6t \qquad du = -6 \ dt$$
+
+$$
+\begin{align}
+\int \frac{dt}{(1 - 6t)^4} &= -\frac{1}{6} \int u^{-4} \ du \\[6pt]
+&= \frac{1}{18}u^{-3} + c \\[6pt]
+&= \frac{1}{18(1 - 6t)^3} + c
+\end{align}
+$$
+
+- - -
+
+因子 $x^3$ 与内表达式 $2 + x^4$ 的导数成比例。
+
+$$u = 2 + x^4 \qquad du = 4x^3 \ dx$$
+
+$$
+\begin{align}
+\int x^3(2 + x^4)^5 \ dx &= \frac{1}{4} \int u^5 \ du \\[6pt]
+&= \frac{u^6}{24} + c \\[6pt]
+&= \frac{(2 + x^4)^6}{24} + c
+\end{align}
+$$
+
+- - -
+
+因子 $\sin\theta$ 是 $\cos\theta$ 的负导数。
+
+$$u = \cos\theta \qquad du = -\sin\theta \ d\theta$$
+
+$$
+\begin{align}
+\int \cos^3\theta\sin\theta \ d\theta &= -\int u^3 \ du \\[6pt]
+&= -\frac{u^4}{4} + c \\[6pt]
+&= -\frac{\cos^4\theta}{4} + c
+\end{align}
+$$
+
+- - -
+
+当 $x > 0$ 时，指数 $\ln x$ 的导数为 $1/x$，即被积函数中的另一个因子。
+
+$$u = \ln x \qquad du = \frac{1}{x} \ dx$$
+
+$$
+\begin{align}
+\int \frac{2^{\ln x}}{x} \ dx &= \int 2^u \ du \\[6pt]
+&= \frac{2^u}{\ln 2} + c \\[6pt]
+&= \frac{2^{\ln x}}{\ln 2} + c
+\end{align}
+$$
+
+- - -
+
+分母 $1 + 2e^t$ 的导数为 $2e^t$，是分子的两倍。变量和上下限一起变换。
+
+$$u = 1 + 2e^t \qquad du = 2e^t \ dt$$
+
+$$t = 0 \Longrightarrow u = 3 \qquad t = \ln 4 \Longrightarrow u = 9$$
+
+$$
+\begin{align}
+\int_0^{\ln 4} \frac{e^t}{1 + 2e^t} \ dt &= \frac{1}{2} \int_3^9 \frac{1}{u} \ du \\[6pt]
+&= \frac{1}{2}\Bigl[\ln u\Bigr]_3^9 \\[6pt]
+&= \frac{1}{2}\ln 3
+\end{align}
+$$
+
+- - -
+
+线性自变量 $5x$ 的导数为常数。在积分 $\csc^2u$ 前先变换上下限。
+
+$$u = 5x \qquad du = 5 \ dx$$
+
+$$x = \frac{\pi}{4} \Longrightarrow u = \frac{5\pi}{4} \qquad x = \frac{\pi}{3} \Longrightarrow u = \frac{5\pi}{3}$$
+
+$$
+\begin{align}
+\int_{\pi/4}^{\pi/3} \csc^2(5x) \ dx &= \frac{1}{5} \int_{5\pi/4}^{5\pi/3} \csc^2u \ du \\[6pt]
+&= -\frac{1}{5}\Bigl[\cot u\Bigr]_{5\pi/4}^{5\pi/3} \\[6pt]
+&= \frac{1}{5}\left[\cot\left(\frac{5\pi}{4}\right) - \cot\left(\frac{5\pi}{3}\right)\right] \\[6pt]
+&= \frac{1}{5}\left(1 + \frac{\sqrt{3}}{3}\right)
+\end{align}
+$$
+
+- - -
+
+表达式 $1 + x^2$ 的导数为 $2x$。换元 $u = 1 + x^2$ 后，剩余因子为 $x^2 = u - 1$。
+
+$$u = 1 + x^2 \qquad du = 2x \ dx \qquad x^2 = u - 1$$
+
+$$
+\begin{align}
+\int \frac{9x^3}{\sqrt{1 + x^2}} \ dx &= \frac{9}{2} \int \frac{u - 1}{\sqrt{u}} \ du \\[6pt]
+&= \frac{9}{2} \int \left(u^{1/2} - u^{-1/2}\right) \ du \\[6pt]
+&= 3u^{3/2} - 9u^{1/2} + c \\[6pt]
+&= 3(x^2 - 2)\sqrt{1 + x^2} + c
+\end{align}
+$$
+
+- - -
+
+根式具有 $\sqrt{a^2 - x^2}$ 的形式，因此令 $x = 2\sin\theta$。变换后的区间为 $[0, \pi/6]$，在该区间上 $\cos\theta \geq 0$。
+
+$$x = 2\sin\theta \qquad dx = 2\cos\theta \ d\theta$$
+
+$$x = 0 \Longrightarrow \theta = 0 \qquad x = 1 \Longrightarrow \theta = \frac{\pi}{6}$$
+
+$$\sqrt{4 - x^2} = \sqrt{4 - 4\sin^2\theta} = \sqrt{4\cos^2\theta} = 2\cos\theta$$
+
+$$
+\begin{align}
+\int_0^1 \sqrt{4 - x^2} \ dx &= 4 \int_0^{\pi/6} \cos^2\theta \ d\theta \\[6pt]
+&= 2 \int_0^{\pi/6} \left(1 + \cos(2\theta)\right) \ d\theta \\[6pt]
+&= \Bigl[2\theta + \sin(2\theta)\Bigr]_0^{\pi/6} \\[6pt]
+&= \frac{\pi}{3} + \frac{\sqrt{3}}{2}
+\end{align}
+$$

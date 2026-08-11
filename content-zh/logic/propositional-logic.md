@@ -7,6 +7,7 @@ tags:
   - atomic-proposition
   - conjunctive-normal-form
   - contradiction
+  - deductive-closure
   - disjunctive-normal-form
   - inference-rules
   - interpretation
@@ -15,6 +16,7 @@ tags:
   - logical-equivalence
   - modus-ponens
   - modus-tollens
+  - propositional-constants
   - propositional-logic
   - satisfiability
   - semantics
@@ -24,9 +26,9 @@ tags:
   - well-formed-formula
 translation:
   status: current
-  source_hash: 33252e2e672d16be08654d6705d361ca1afb3dcf1a2ab16c778444427c400548
+  source_hash: 8c521bda9fc61773bdd3210d456b13d1239952ba0cb97707dbac8627f3e3f0a1
   translator: codex
-  updated: "2026-08-04T00:00:00.000Z"
+  updated: "2026-08-11T00:00:00.000Z"
 ---
 ## 命题语言
 
@@ -46,6 +48,8 @@ translation:
 + 异或 $\oplus$
 
 原始联结词的选择是约定俗成的。双条件和异或可以用其他联结词定义，但使用独立符号可以缩短常见公式。
+
+该语言还包含两个命题常量 $\top$ 和 $\bot$。前者在每个解释下都为真，后者在每个解释下都为假。它们不接受参数，因此是零元联结词；它们各自具有一个复合公式的真值：$\top$ 与 $p \lor \neg p$ 同值，$\bot$ 与 $p \wedge \neg p$ 同值。
 
 根据形成规则，由 $P$ 中的符号构成的公式称为良构公式（WFF）。原子命题是最简单的 WFF，而每个其他 WFF 都以一个或多个 WFF 作为直接组成部分。
 
@@ -88,7 +92,7 @@ translation:
 
 形成规则是 $\mathrm{Prop}[P]$ 中良构公式的归纳定义。
 
-+ 每个原子命题 $p \in P$ 都是 WFF。
++ 每个原子命题 $p \in P$ 都是 WFF，常量 $\top$ 和 $\bot$ 也是 WFF。
 + 如果 $\varphi$ 是 WFF，那么 $\neg\varphi$ 是 WFF。
 + 如果 $\varphi$ 和 $\psi$ 是 WFF，那么 $(\varphi \wedge \psi)$、$(\varphi \lor \psi)$、$(\varphi \rightarrow \psi)$、$(\varphi \leftrightarrow \psi)$ 和 $(\varphi \oplus \psi)$ 都是 WFF。
 + 没有其他表达式是 WFF。
@@ -96,6 +100,16 @@ translation:
 最后一条排除了所有无法通过有限次应用前述条款得到的字符串。这些条款也确定了每个公式的结构。每个复合 WFF 都有唯一的主联结词，即在构造的最后一步应用的联结词。
 
 在不致产生歧义时，我们省略最外层的一对括号。按照这一约定，$\neg(p \wedge q)$ 的主联结词是 $\neg$，而 $\neg p \wedge q$ 的主联结词是 $\wedge$。某次联结词出现的作用域，是该次出现所作用的子公式。因此，括号同时决定主联结词和内部联结词的作用域。
+
+另外两项约定可以省略其余括号。联结词的优先级从高到低为：
+
+$$
+\neg \quad \wedge \quad \lor \quad \rightarrow \quad \leftrightarrow
+$$
+
+因此，公式 $\neg p \wedge q \rightarrow r$ 是 $((\neg p) \wedge q) \rightarrow r$ 的简写。优先级相同的联结词按左结合处理，所以 $p \wedge q \wedge r$ 是 $(p \wedge q) \wedge r$ 的简写。由于 $\wedge$ 和 $\lor$ 满足结合律，这种分组对它们没有影响；对于 $\rightarrow$，分组会影响结果。在 $M(p) = M(q) = M(r) = F$ 下，公式 $(p \rightarrow q) \rightarrow r$ 为假，而 $p \rightarrow (q \rightarrow r)$ 为真。
+
+> 有些文献把条件句链按右结合解读，即把 $p \rightarrow q \rightarrow r$ 作为 $p \rightarrow (q \rightarrow r)$ 的简写。这两种约定并不一致；对嵌套条件句明确使用括号，可以消除歧义。
 
 ## 语义
 
@@ -105,7 +119,7 @@ $$
 \mathrm{Bool} := \{\ T, F\ \}
 $$
 
-特征真值表定义了这些联结词。六个联结词的单一真值表如下：
+命题常量在所有情形下取相同的值：$\top$ 取 $T$，$\bot$ 取 $F$。特征真值表定义了这些联结词。六个联结词的单一真值表如下：
 
 $$
 \begin{array}{cc|cccccc}
@@ -197,11 +211,25 @@ $$
 
 只有第一行使 $S$ 的两个成员都为真，而该行也使 $q$ 为真。因此 $S \models q$。相应的推理规则是肯定前件。
 
+逻辑后承还可以用第三种方式表述：把检查 $S$ 的模型，转换为判断一个公式集合是否不可满足：
+
+$$
+S \models \varphi \Longleftrightarrow \operatorname{Unsat}\bigl(S \cup \{\neg\varphi\}\bigr)
+$$
+
+假设 $S \models \varphi$，并设 $M$ 满足 $S \cup \{\neg\varphi\}$ 中的每个公式。由 $M \models S$ 可得 $M \models \varphi$，而 $M \models \neg\varphi$ 又给出 $M \not\models \varphi$，两个结论相互矛盾。反过来，假设 $S \cup \{\neg\varphi\}$ 不可满足，并设 $M \models S$。如果 $\varphi$ 在 $M$ 下为假，则 $M$ 会满足 $\neg\varphi$，进而满足整个集合。因此，$S$ 的每个模型都是 $\varphi$ 的模型。[自动演绎过程](../automated-deduction-in-propositional-logic/)检验这个不可满足性条件，因为可以机械地搜索不可满足性的证明。
+
 ## 推理规则
 
 推理规则是从一个或多个前提推出结论的模式。如果 $S \vdash \varphi$，那么在选定的证明系统中，$\varphi$ 可以由 $S$ 中的前提推导出来。符号 $\vdash$ 关注推导，而 $\models$ 关注解释。
 
-如果 $S \vdash \varphi$ 蕴含 $S \models \varphi$，则称证明系统是可靠的；如果 $S \models \varphi$ 蕴含 $S \vdash \varphi$，则称证明系统是完备的。命题逻辑的标准证明系统同时具有这两个性质。
+如果 $S \vdash \varphi$ 蕴含 $S \models \varphi$，则称证明系统是可靠的；如果 $S \models \varphi$ 蕴含 $S \vdash \varphi$，则称证明系统是完备的。命题逻辑的标准证明系统同时具有这两个性质。$S$ 的演绎闭包是其所有逻辑后承组成的集合：
+
+$$
+\mathrm{Cn}(S) := \{\ \varphi \mid S \models \varphi \ \}
+$$
+
+对于可靠且完备的系统，$\mathrm{Cn}(S)$ 也等于可由 $S$ 推导出的全部公式组成的集合。每个 $S$ 的演绎闭包都是无限集，因为其中包含该语言的所有重言式。
 
 肯定前件从 $p$ 和 $p \rightarrow q$ 推出 $q$：
 
@@ -224,6 +252,14 @@ $$
 在每个模式中，横线以上的公式是前提，横线以下的公式是结论。
 
 例如，令 $p$ 表示正在下雨，$q$ 表示地面是湿的，$r$ 表示比赛被取消。由 $p \rightarrow q$ 和 $q \rightarrow r$，假言三段论给出 $p \rightarrow r$。如果 $p$ 也是一个前提，那么肯定前件给出 $r$。
+
+其他规则处理其余联结词。合取消去与合取引入把合取式和它的合取项联系起来；析取引入把公式扩展为析取式；析取三段论则删除一个析取项：
+
+$$
+\frac{\varphi \wedge \psi}{\varphi} \qquad \frac{\varphi \qquad \psi}{\varphi \wedge \psi} \qquad \frac{\varphi}{\varphi \lor \psi} \qquad \frac{\varphi \lor \psi \qquad \neg\varphi}{\psi}
+$$
+
+一条[归结规则](../automated-deduction-in-propositional-logic/)可以同时涵盖肯定前件、否定后件和析取三段论，机械证明搜索正是以该规则为基础。
 
 ## 范式
 
@@ -255,4 +291,4 @@ $$
 
 完整真值表还可以证明范式定理。对于 DNF，取原公式为真的每一行，为该行构造一个仅在该行取真的项，再把这些项析取起来。对于 CNF，取公式为假的每一行，为该行构造一个仅在该行取假的子句，再把这些子句合取起来。当公式是矛盾式时，$p \wedge \neg p$ 是一个等价的范式；当公式是重言式时，$p \lor \neg p$ 是一个等价的范式。
 
-DPLL 过程和其他几个相关的可满足性方法都以 CNF 公式作为输入。
+DPLL 过程和其他几个相关的可满足性方法都以 CNF 公式作为输入，[归结过程](../automated-deduction-in-propositional-logic/)也是如此。

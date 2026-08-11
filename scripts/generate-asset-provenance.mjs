@@ -1,21 +1,19 @@
-import { execFileSync } from 'node:child_process';
-import { mkdirSync, writeFileSync } from 'node:fs';
-import { dirname } from 'node:path';
+import { mkdirSync, readdirSync, writeFileSync } from 'node:fs';
+import { dirname, join } from 'node:path';
 import { loadUpstreamLock } from '../src/lib/upstream-source.mjs';
 
 const OUTPUT = 'public/assets/provenance.json';
 const upstreamLock = loadUpstreamLock();
 const upstreamSourceUrl = upstreamLock.repository.replace(/\.git\/?$/, '');
 
-function trackedChineseSvgFiles() {
-  const output = execFileSync(
-    'git',
-    ['-c', 'core.quotePath=false', 'ls-files', 'public/assets/**/*.zh.svg'],
-    {
-    encoding: 'utf8',
-    },
-  ).trim();
-  return output ? output.split('\n').sort() : [];
+function chineseSvgFiles(directory = 'public/assets') {
+  const paths = [];
+  for (const entry of readdirSync(directory, { withFileTypes: true })) {
+    const path = join(directory, entry.name);
+    if (entry.isDirectory()) paths.push(...chineseSvgFiles(path));
+    else if (entry.isFile() && entry.name.endsWith('.zh.svg')) paths.push(path);
+  }
+  return paths.sort();
 }
 
 function makeEntry(path) {
@@ -34,7 +32,7 @@ function makeEntry(path) {
 const manifest = {
   schema_version: 1,
   upstream_commit: upstreamLock.commit,
-  assets: trackedChineseSvgFiles().map(makeEntry),
+  assets: chineseSvgFiles().map(makeEntry),
 };
 
 mkdirSync(dirname(OUTPUT), { recursive: true });

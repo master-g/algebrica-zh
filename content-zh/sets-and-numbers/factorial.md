@@ -14,7 +14,7 @@ tags:
   - stirling-approximation
 translation:
   status: current
-  source_hash: 3a5faa959c394b4fda9499879a5b5807fa45b5a61761ec29f3fd84edfa14a4c0
+  source_hash: 819cda6c3eacb99d49af80ec747741fa11dd37db0dae2b3fc6c7650a9dda860f
   translator: omp
   updated: "2026-07-22T16:23:45.738Z"
 ---
@@ -40,8 +40,8 @@ $$
 $$
 n! =
 \begin{cases}
-n \cdot (n-1)! & \text{若 } n \in \mathbb{N},\ n > 0 \\[6pt]
-1 & \text{若 } n = 0
+n \cdot (n-1)! & n \in \mathbb{N},\ n > 0 \\[6pt]
+1 & n = 0
 \end{cases}
 $$
 
@@ -50,12 +50,12 @@ $$
 $$
 n! =
 \begin{cases}
-\displaystyle\prod_{k=1}^{n} k & \text{若 } n \in \mathbb{N},\ n > 0 \\[6pt]
-1 & \text{若 } n = 0
+\displaystyle\prod_{k=1}^{n} k & n \in \mathbb{N},\ n > 0 \\[6pt]
+1 & n = 0
 \end{cases}
 $$
 
-阶乘用于计算[二项式系数](../binomial-coefficient/)，即从一个更大的集合中选取给定数目元素的方法数。表达式 $a_n = n!$ 也定义了一个自然数的[数列](../sequences/)。
+阶乘用于计算[二项式系数](../binomial-coefficient/)，即从一个更大的集合中选取给定数目元素的方法数。表达式 $a_n = n!$ 也定义了一个自然数的[数列](../sequences/)。对于每个素数 $p$，$n!$ 中 $p$ 的指数是[向下取整函数](../floor-and-ceiling-functions/)若干取值的有限和。
 
 ## 阶乘比的约分
 

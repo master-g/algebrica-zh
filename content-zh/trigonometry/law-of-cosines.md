@@ -9,7 +9,7 @@ tags:
   - trigonometry
 translation:
   status: current
-  source_hash: 2f3006ee5cf9e36eadab8eda3d6cc8c8bdb40f0439b7628c97db7b394977c902
+  source_hash: 3eb3488ddbb86b19df1374723a435b85d3dcd9402f1326a3031cd52194c78538
   translator: codex
   updated: "2026-08-04T00:00:00.000Z"
 ---
@@ -80,7 +80,7 @@ $$
 \end{align}
 $$
 
-由于 $\cos(\theta) < 0$，角 $\theta$ 为钝角。取反余弦，得到：
+由于 $\cos(\theta) < 0$，角 $\theta$ 为钝角。取[反余弦](../arccosine-function/)，得到：
 
 $$
 \theta = \arccos(-0.1) \approx 95.7^\circ

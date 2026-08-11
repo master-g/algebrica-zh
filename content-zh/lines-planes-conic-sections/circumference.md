@@ -14,7 +14,7 @@ tags:
   - tangent-line
 translation:
   status: current
-  source_hash: c4f1b7efb632cbf0a12cc30030c10ba246f050558f795e26070cd500dcfc43e0
+  source_hash: 1a0e3cba54b6cf0563bea0c855c6116bd806944c97e7825345872c67af48cfe6
   translator: codex
   updated: "2026-08-04T00:00:00.000Z"
 ---
@@ -27,11 +27,28 @@ $$f(x, y) = a_{11}x^2 + 2a_{12}xy + a_{22}y^2 + 2a_{13}x + 2a_{23}y + a_{33} = 0
 + 系数 $a_{ij}$ 为实数。
 + 混合项和一次项前面的因子 $2$ 是一种约定选择，用于简化圆锥曲线的矩阵表示。
 
-要使该方程描述二次曲线，$a_{11}$、$a_{12}$ 和 $a_{22}$ 中至少有一个必须非零；否则该表达式退化为[线性方程](../linear-equations/)，轨迹退化为一条直线。
+要使该方程的次数为二次，$a_{11}$、$a_{12}$ 和 $a_{22}$ 中至少有一个必须非零。如果三者全为零，则多项式的次数至多为一次，不能定义圆锥曲线。
 
 - - -
 
-所得到的圆锥曲线的具体类型取决于这些系数的相对取值，特别是与二次部分相关的[判别式](../quadratic-formula/)的符号。圆周对应于最简单且最对称的情形，其中 $x^2$ 和 $y^2$ 的系数相等，且混合项 $a_{12}xy$ 为零。
+二次曲线的类型取决于与二次部分相关的[判别式](../quadratic-formula/)的符号。对于圆周，$x^2$ 和 $y^2$ 的系数相等，且混合项 $a_{12}xy$ 为零。
+
+对于圆周，[圆锥曲线的矩阵分类](../introduction-to-conics/)中的矩阵具有如下形式：
+
+$$
+A = \begin{pmatrix}
+\lambda & 0 & a_{13} \\[6pt]
+0 & \lambda & a_{23} \\[6pt]
+a_{13} & a_{23} & a_{33}
+\end{pmatrix}
+\qquad
+A_0 = \lambda I = \begin{pmatrix}
+\lambda & 0 \\[6pt]
+0 & \lambda
+\end{pmatrix}
+$$
+
+其中 $\lambda\neq0$，$I$ 是 $2\times2$ 单位矩阵。当且仅当 $\det A\cdot\mathrm{tr}(A_0)<0$ 时，该方程定义非退化圆周。恒等式 $A_0=\lambda I$ 表明二次部分为 $\lambda(x^2+y^2)$，符号条件则保证平移到圆心后半径的平方为正。
 
 ![图 1](/assets/lines-planes-conic-sections/svg/circumference-1.zh.svg)
 

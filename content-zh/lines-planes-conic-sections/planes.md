@@ -14,7 +14,7 @@ tags:
   - planes
 translation:
   status: current
-  source_hash: 7b68936ded09865b98ad82a199c3986cca9eae99bcf405ce815843e2df2715ec
+  source_hash: 5e27c1e3ddf6fc76e5ed46a1055d589c333e02df98ad230a6b41f8e07483ded4
   translator: codex
   updated: "2026-08-04T00:00:00.000Z"
 ---
@@ -254,7 +254,7 @@ $$\mathbf{n}\cdot\mathbf{n}' = 2(1) + (-1)(2) + 2(-2) = -4$$
 
 $$\cos\theta = \frac{|-4|}{3 \cdot 3} = \frac{4}{9}$$
 
-[反余弦](../arcsine-and-arccosine/)给出角 $\theta=\arccos\frac{4}{9} \approx 1.11$ 弧度，即 $63.61°$。
+[反余弦](../arccosine-function/)给出角 $\theta=\arccos\frac{4}{9} \approx 1.11$ 弧度，即 $63.61°$。
 
 ## 点到平面的距离
 

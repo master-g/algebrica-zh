@@ -16,7 +16,7 @@ tags:
   - vector-space
 translation:
   status: current
-  source_hash: 2911e68e4ae1ea92cbd5a93a9e4842c61c2c4c51a69ecbe3c222459f141a75a3
+  source_hash: 88a8de43bcec535c6c98eb30e16d379b1afed4c79f5ec62992ad08a4f7990c47
   translator: codex
   updated: "2026-08-04T00:00:00.000Z"
 ---
@@ -235,7 +235,7 @@ $$\langle\mathbf{u},\mathbf{v}\rangle=\frac{1}{4}\sum_{k=0}^{3}i^k\|\mathbf{u}+i
 
 $$-1\leq\frac{\langle\mathbf{u},\mathbf{v}\rangle}{\|\mathbf{u}\|\|\mathbf{v}\|}\leq1$$
 
-对于非零向量，中间的商属于[反余弦函数](../arcsine-and-arccosine/)的定义域。$\mathbf{u}$ 与 $\mathbf{v}$ 之间的[角度](../angles-and-angular-measure/)是满足下式的唯一 $\theta\in[0,\pi]$：
+对于非零向量，中间的商属于[反余弦函数](../arccosine-function/)的定义域。$\mathbf{u}$ 与 $\mathbf{v}$ 之间的[角度](../angles-and-angular-measure/)是满足下式的唯一 $\theta\in[0,\pi]$：
 
 $$\cos\theta=\frac{\langle\mathbf{u},\mathbf{v}\rangle}{\|\mathbf{u}\|\|\mathbf{v}\|}$$
 

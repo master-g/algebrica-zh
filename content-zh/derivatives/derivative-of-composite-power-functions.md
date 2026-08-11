@@ -10,17 +10,17 @@ tags:
   - power-functions
 translation:
   status: current
-  source_hash: bda31536b1a4088ada9e80c5e95a7dd64445c198204434206c7ae165faad32cb
+  source_hash: 3bc7eba69fa0cc50b9b481ad57b8f2c387f25276d3e062cfd67a84612c3ba13c
   translator: codex
   updated: "2026-08-03T00:00:00.000Z"
 ---
 ## 复合幂函数
 
-前面我们已经介绍了如何用[差商](../difference-quotient/)的定义计算函数在一点处的[导数](../derivatives/)，如何通过基本的[求导法则](../differentiation-rules/)组合导数，以及如何通过[链式法则](../chain-rule/)对复合函数求导。对于底数和指数都依赖于变量的幂函数，也就是形如下面的函数，需要使用单独的技巧：
+前面我们已经介绍了如何用[差商](../difference-quotient/)的定义计算函数在一点处的[导数](../derivatives/)，如何通过基本的[求导法则](../differentiation-rules/)组合导数，以及如何通过[链式法则](../chain-rule/)对复合函数求导。对于底数和指数都依赖于变量的表达式，也就是形如下面的表达式，需要使用单独的技巧：
 
 $$y = f(x)^{g(x)}$$
 
-该表达式要求 $f(x) > 0$ 才有定义。由于变量同时出现在底数和指数中，幂法则和指数函数求导法则都不能直接应用。标准技巧称为对数求导，它将[对数](../logarithms/)的性质与链式法则结合起来。对于 $f$ 和 $g$ 均可导的情形，$f(x)^{g(x)}$ 的导数通式如下：
+该表达式要求 $f(x) > 0$ 才有定义。由于变量同时出现在底数和指数中，[幂函数](../power-function/)求导法则和指数函数求导法则都不能直接应用。标准技巧称为对数求导，它将[对数](../logarithms/)的性质与链式法则结合起来。对于 $f$ 和 $g$ 均可导的情形，$f(x)^{g(x)}$ 的导数通式如下：
 
 $$D\left[f(x)^{g(x)}\right] = f(x)^{g(x)} \left[ g'(x) \ln f(x) + g(x) \frac{f'(x)}{f(x)} \right]$$
 

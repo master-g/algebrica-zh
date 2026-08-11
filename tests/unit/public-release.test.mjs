@@ -1,7 +1,7 @@
 import { describe, it } from 'node:test';
 import assert from 'node:assert/strict';
 import { execFileSync } from 'node:child_process';
-import { existsSync, readFileSync } from 'node:fs';
+import { existsSync, readFileSync, readdirSync } from 'node:fs';
 
 function trackedFiles(pattern) {
   const args = ['-c', 'core.quotePath=false', 'ls-files'];
@@ -59,13 +59,18 @@ describe('public repository release boundary', () => {
     }
   });
 
-  it('tracks every localized SVG referenced by translated content', () => {
-    const tracked = new Set(trackedFiles());
-    for (const contentPath of trackedFiles('content-zh/**/*.md')) {
+  it('provides every localized SVG referenced by translated content with provenance', () => {
+    const manifest = JSON.parse(readFileSync('public/assets/provenance.json', 'utf8'));
+    const provenancePaths = new Set(manifest.assets.map(({ path }) => path));
+    const contentPaths = readdirSync('content-zh', { recursive: true, withFileTypes: true })
+      .filter((entry) => entry.isFile() && entry.name.endsWith('.md'))
+      .map((entry) => `${entry.parentPath}/${entry.name}`);
+    for (const contentPath of contentPaths) {
       const content = readFileSync(contentPath, 'utf8');
       for (const match of content.matchAll(/\/assets\/[^)\s"'<>]+\.zh\.svg/g)) {
         const assetPath = `public${match[0]}`;
-        assert.ok(tracked.has(assetPath), `${contentPath} references untracked ${assetPath}`);
+        assert.ok(existsSync(assetPath), `${contentPath} references missing ${assetPath}`);
+        assert.ok(provenancePaths.has(assetPath), `${contentPath} references ${assetPath} without provenance`);
       }
     }
   });

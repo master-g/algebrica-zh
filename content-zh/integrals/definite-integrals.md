@@ -18,7 +18,7 @@ tags:
   - riemann-sum
 translation:
   status: current
-  source_hash: 3e12cb08b6da4062eaf3a8b9ca4070f736849409c22ff1e13c2f2d5f6f287298
+  source_hash: 56704eec08d5c250c87c2b2c2f04b3c2f64f773511cbd8acec9eb3b140064996
   translator: codex
   updated: "2026-08-03T00:00:00.000Z"
 ---
@@ -58,7 +58,12 @@ $$s_n^{-} = \sum_{i=1}^{n} m_i \Delta x \qquad s_n^{+} = \sum_{i=1}^{n} M_i \Del
 
 等宽划分是一般划分的特殊情形；一般划分的子区间不必等宽。对于任意划分 $P$，记作 $a = x_0 < x_1 < \cdots < x_n = b$，其下和与上和为：
 
-$$L(f, P) = \sum_{i=1}^{n} m_i(x_i - x_{i-1}) \qquad U(f, P) = \sum_{i=1}^{n} M_i(x_i - x_{i-1})$$
+$$
+\begin{align}
+L(f, P) &= \sum_{i=1}^{n} m_i(x_i - x_{i-1}) \\[6pt]
+U(f, P) &= \sum_{i=1}^{n} M_i(x_i - x_{i-1})
+\end{align}
+$$
 
 如果划分 $P'$ 通过添加分割点细化了 $P$，那么下和不会减小，上和不会增大。因此：
 
@@ -66,11 +71,45 @@ $$L(f, P) \leq L(f, P') \leq U(f, P') \leq U(f, P)$$
 
 对于定义在 $[a, b]$ 上的有界函数 $f(x)$，下积分和上积分收集所有可能划分所得到的最佳估计：
 
-$$L(f, [a, b]) = \sup_P L(f, P) \qquad U(f, [a, b]) = \inf_P U(f, P)$$
+$$
+\begin{align}
+L(f, [a, b]) &= \sup_P L(f, P) \\[6pt]
+U(f, [a, b]) &= \inf_P U(f, P)
+\end{align}
+$$
 
 每个下和都不大于每个上和，因此 $L(f, [a, b]) \leq U(f, [a, b])$。函数 $f(x)$ [黎曼可积](../riemann-integrability-criteria/)当且仅当这两个值相等。它们的公共值就是定积分：
 
 $$L(f, [a, b]) = U(f, [a, b]) = \int_{a}^{b} f(x) \ dx$$
+
+定积分还有一个等价定义，它使用带标记的黎曼和。对于划分 $P$，记作 $a = x_0 < x_1 < \cdots < x_n = b$，在每个子区间中选取一点 $\xi_i \in [x_{i-1},x_i]$，并令 $\Delta x_i = x_i - x_{i-1}$。点 $\xi_i$ 称为第 $i$ 个子区间的标记，$P$ 的网格定义为：
+
+$$
+\|P\| = \max_{1 \leq i \leq n} \Delta x_i
+$$
+
+如果对每个 $\varepsilon>0$，都存在 $\delta>0$，使每个划分 $P$ 和每种标记选择均满足下式，则有界函数 $f$ 黎曼可积，且积分为 $I$：
+
+$$
+\|P\|<\delta
+\implies
+\left|\sum_{i=1}^{n}f(\xi_i)\Delta x_i-I\right|<\varepsilon
+$$
+
+该条件要求网格充分小时，所有带标记的黎曼和都趋近同一个值。它通常简写为：
+
+$$
+\int_a^b f(x) \ dx
+=
+\lim_{\|P\| \to 0}
+\sum_{i=1}^{n} f(\xi_i)\Delta x_i
+$$
+
+因此，上式的极限遍历所有带标记的划分，而非某个预先指定的序列。本文将继续使用通过 $L(f,P)$ 和 $U(f,P)$ 表述的达布定义。每个带标记的黎曼和都位于对应的下和与上和之间。结合对充分细划分的估计，这个界证明了定义在 $[a,b]$ 上的有界函数在一个定义下可积，当且仅当它在另一个定义下可积，并且两个定义给出相同的值。
+
+> John K. Hunter 在列于[参考书目](../bibliography/)的 Introduction to Analysis 中使用带标记划分给出这一表述，并证明它与达布定义等价。
+
+- - -
 
 在 $[a, b]$ 上的每个连续实值函数都是黎曼可积的。在该区间上的连续性蕴含一致连续性；当子区间足够短时，这会使振幅 $M_i - m_i$ 一致地变小。$a$ 和 $b$ 是积分的下限与上限，而 $f(x)$ 是被积函数。记号 $f(x) \ dx$ 来自每个近似矩形的面积 $f(x)\Delta x$。符号 $dx$ 标识 $x$ 是积分变量，并记录子区间宽度在取极限过程中的作用。
 
@@ -117,11 +156,15 @@ $$\int_{a}^{b} (f(x) + g(x)) \ dx = \int_{a}^{b} f(x) \ dx + \int_{a}^{b} g(x) \
 
 $$\int_{a}^{c} f(x) \ dx = \int_{a}^{b} f(x) \ dx + \int_{b}^{c} f(x) \ dx$$
 
+这一可加性允许在连接点处分割区间，从而[积分分段函数](../piecewise-functions/)。
+
 如果对每个 $x \in [a, b]$ 都有 $f(x) \leq g(x)$，则同样的不等式会传递到积分：
 
 $$\int_{a}^{b} f(x) \ dx \leq \int_{a}^{b} g(x) \ dx$$
 
 > 这就是积分的比较性质。竖直差值 $g(x) - f(x)$ 在整个区间上非负，因此它的积分也非负。
+
+- - -
 
 对于在 $[a, b]$ 上有界且黎曼可积的函数 $f(x)$，将比较性质应用于恒等于其下确界和上确界的常函数，可得界：
 
@@ -137,7 +180,7 @@ $$\left|\int_{a}^{b} f(x) \ dx\right| \leq \int_{a}^{b} |f(x)| \ dx$$
 
 ## 积分中值定理
 
-如果 $f(x)$ 在 $[a, b]$ 上连续，那么至少存在一个点 $c \in (a, b)$，使得：
+[积分中值定理](../mean-value-theorem-for-integrals/)指出，如果 $f(x)$ 在 $[a, b]$ 上连续，那么至少存在一个点 $c \in (a, b)$，使得：
 
 $$\int_{a}^{b} f(x) \ dx = f(c)(b - a)$$
 

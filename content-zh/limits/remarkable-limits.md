@@ -14,7 +14,7 @@ tags:
   - taylor-series
 translation:
   status: current
-  source_hash: 447f9c4760b2bfe4435575f60b5688e62b66b0d1b662f0a31e02d558820a35ac
+  source_hash: 6f045838e1c6c70b32ae7055516b44d461406ab5276465835eb85127f186bfa1
   translator: codex
   updated: "2026-08-03T00:00:00.000Z"
 ---
@@ -194,7 +194,7 @@ $$\lim_{x \to 0} (1 + a x)^{\frac{1}{x}} = e^{a}$$
 
 ## 涉及幂函数的极限
 
-对于任意实指数 $\alpha$：
+对于实指数 $\alpha$ 的[幂函数](../power-function/)，下列极限成立：
 
 $$\lim_{x \to 0} \frac{(1 + x)^\alpha - 1}{x} = \alpha$$
 

@@ -11,6 +11,30 @@ export function hashSource(raw) {
   return createHash('sha256').update(raw).digest('hex');
 }
 
+const DISPLAY_STATES = {
+  current: {
+    language: '简体中文',
+    label: '当前译文',
+    notice: null,
+  },
+  stale: {
+    language: '简体中文',
+    label: '待同步译文',
+    notice: '本文译文对应较早的英文版本，正在等待同步。',
+  },
+  missing: {
+    language: '英文原文',
+    label: '待翻译',
+    notice: '本文尚未翻译，以下为英文原文。',
+  },
+};
+
+export function translationDisplayState(status) {
+  const state = DISPLAY_STATES[status];
+  if (!state) throw new TypeError(`unknown translation status: ${status}`);
+  return state;
+}
+
 /**
  * Build the single source-of-truth join view for the site.
  *

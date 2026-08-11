@@ -3,7 +3,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import ArticleGraph from '../components/ArticleGraph.astro';
 import { getCollection, render } from 'astro:content';
 import { getArticleGraph } from '../lib/article-graphs.mjs';
-import { buildTranslationIndex } from '../lib/translation-index.mjs';
+import { buildTranslationIndex, translationDisplayState } from '../lib/translation-index.mjs';
 import { getSection, getSections, orderSectionRows } from '../lib/sections.mjs';
 import { getZhEntries } from './_zh-entries.mjs';
 import { withSiteBase } from '../lib/site-path.mjs';
@@ -33,6 +33,7 @@ export async function getStaticPaths() {
 const { row, navigation } = Astro.props;
 const { slug, section, en, zh } = row;
 const isTranslated = Boolean(zh);
+const displayState = translationDisplayState(row.status);
 const entry = isTranslated ? zh : en;
 const { Content } = await render(entry);
 const sectionMeta = getSection(section);
@@ -61,13 +62,13 @@ const path = (value) => withSiteBase(value, import.meta.env.BASE_URL);
       </div>
       <aside class="article-meta">
         <strong>文章资料</strong>
-        <span>语言：{isTranslated ? '简体中文' : '英文原文'}</span>
-        <span>状态：{isTranslated ? '当前译文' : '待翻译'}</span>
+        <span>语言：{displayState.language}</span>
+        <span>状态：{displayState.label}</span>
         <span>主题：{entry.data.tags.length}</span>
       </aside>
     </header>
 
-    {!isTranslated && <div class="translation-notice">本文尚未翻译，以下为英文原文。</div>}
+    {displayState.notice && <div class="translation-notice">{displayState.notice}</div>}
 
     <div class="article-content" lang={pageLang}>
       <Content />

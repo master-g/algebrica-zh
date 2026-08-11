@@ -11,7 +11,7 @@ tags:
   - vertical-tangent
 translation:
   status: current
-  source_hash: c80ac6ef44006d4b16ce78607555890bb2014a191129151c16e49a3a8d391aa4
+  source_hash: bdf5bbe1584f78e8aee7bc08ed0d2f2805934a2ab9b375841a9d8b486ec544c1
   translator: codex
   updated: "2026-08-04T00:00:00.000Z"
 ---
@@ -115,7 +115,7 @@ $$D[\log_a(x)] = \frac{1}{a^{\log_a(x)}\ln(a)} = \frac{1}{x\ln(a)}$$
 
 ## 反三角函数的导数
 
-[正弦函数](../sine-function/)在 $\mathbb{R}$ 上不是单射，而[反正弦函数](../arcsine-and-arccosine/)按定义是它在 $[-\pi/2, \pi/2]$ 上的限制的逆函数，在这个区间上正弦严格递增。在该区间内，导数 $\cos(t)$ 除两个端点外均为正，因此对 $x \in (-1, 1)$ 可应用该定理。令 $t = \arcsin(x)$，[勾股恒等式](../pythagorean-identity/)给出 $\cos(t) = \sqrt{1 - \sin^2(t)}$；由于 $t$ 落在余弦为正的区间内，应取正根：
+[正弦函数](../sine-function/)在 $\mathbb{R}$ 上不是单射，而[反正弦函数](../arcsine-function/)按定义是它在 $[-\pi/2, \pi/2]$ 上的限制的逆函数，在这个区间上正弦严格递增。在该区间内，导数 $\cos(t)$ 除两个端点外均为正，因此对 $x \in (-1, 1)$ 可应用该定理。令 $t = \arcsin(x)$，[勾股恒等式](../pythagorean-identity/)给出 $\cos(t) = \sqrt{1 - \sin^2(t)}$；由于 $t$ 落在余弦为正的区间内，应取正根：
 
 $$
 \begin{align}
@@ -127,7 +127,7 @@ $$
 
 在 $x = \pm 1$ 时，对应的点为 $t = \pm\pi/2$，此处正弦的导数为零。因此，反正弦函数在其定义域的端点处不可微，并且其图像在那里有竖直切线。
 
-反余弦函数是[余弦函数](../cosine-function/)在 $[0, \pi]$ 上的限制的逆函数，其导数 $-\sin(t)$ 在内部为负。令 $t = \arccos(x)$，并利用 $\sin(t) = \sqrt{1 - \cos^2(t)} = \sqrt{1 - x^2}$，同样的代入得到：
+[反余弦函数](../arccosine-function/)是[余弦函数](../cosine-function/)在 $[0, \pi]$ 上的限制的逆函数，其导数 $-\sin(t)$ 在内部为负。令 $t = \arccos(x)$，并利用 $\sin(t) = \sqrt{1 - \cos^2(t)} = \sqrt{1 - x^2}$，同样的代入得到：
 
 $$D[\arccos(x)] = \frac{1}{-\sin(\arccos(x))} = -\frac{1}{\sqrt{1 - x^2}}$$
 

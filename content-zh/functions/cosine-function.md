@@ -10,7 +10,7 @@ tags:
   - trigonometry
 translation:
   status: current
-  source_hash: 0f6f9b43be9c45a0e1202f0ef79ac5ec96db94e13dcff5cadba02d43b5df5dc9
+  source_hash: d1c529590accbb219f2ff992ca12c7ce561a036aede5f567f6f0bf8ddbfb0a15
   translator: codex
   updated: "2026-08-02T00:00:00.000Z"
 ---
@@ -18,7 +18,7 @@ translation:
 
 由[单位圆](../unit-circle/)构造余弦的几何过程见[正弦与余弦](../sine-and-cosine/)。本节把余弦视为实变量的实值[函数](../functions/)。
 
-余弦函数 $f(x) = \cos(x)$ 把每个角 $x$ 映射为其对应的[余弦](../sine-and-cosine/)值，其中角度用[弧度](../angles-and-angular-measure/)来度量。它的图像是一条周期为 $2\pi$、振幅为 $1$ 的周期波，在 $-1$ 与 $1$ 之间振荡。函数的[定义域](../determining-the-domain-of-a-function/)包含所有实数，值域是[区间](../intervals/) $[-1, 1]$。
+余弦函数 $f(x) = \cos(x)$ 把每个角 $x$ 映射为其对应的[余弦](../sine-and-cosine/)值，其中角度用[弧度](../angles-and-angular-measure/)来度量。它的图像是一条周期为 $2\pi$、振幅为 $1$ 的周期波，在 $-1$ 与 $1$ 之间振荡。函数的[定义域](../determining-the-domain-of-a-function/)包含所有实数，值域是[区间](../intervals/) $[-1, 1]$。在 $[0, \pi]$ 上，余弦从 $1$ 严格递减到 $-1$；这一限制的反函数是[反余弦函数](../arccosine-function/)。
 
 ![图 1](/assets/trigonometry/svg/sine-and-cosine-4.zh.svg)
 

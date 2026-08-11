@@ -11,13 +11,13 @@ tags:
   - thomae-function
 translation:
   status: current
-  source_hash: 0b06bef89d198f373377aba5ab8e9d0c846da89a73cca72efa33c33be875e186
+  source_hash: 095c7fa145d2ff15b6e0d6d6a743685b6edab3e3691e566368b603e7d10ea6db
   translator: codex
   updated: "2026-08-02T00:00:00.000Z"
 ---
 ## 定义
 
-狄利克雷函数在 $\mathbb{R}$ 上按以下规则定义：
+狄利克雷函数在 $\mathbb{R}$ 上按以下[分段规则](../piecewise-functions/)定义：
 
 $$
 D(x) =
@@ -40,6 +40,8 @@ $$\lim_{x \to x_0} D(x)$$
 对任意 $x_0$ 都不存在，从而证明函数处处不连续。由于处处不连续的函数不可能在任何非退化区间上[黎曼可积](../riemann-integrability-criteria/)，还可以注意到：对区间的任意划分，上达布和与下达布和始终分别为 $1$ 和 $0$。
 
 > 达布和是这样得到的和：将函数在划分的每个子区间上的最大值或最小值乘以该子区间的长度，再把所得结果相加。这些和用于从上方和下方逼近积分。
+
+- - -
 
 狄利克雷最初的构造把 $D$ 表示为连续函数的二重极限：
 

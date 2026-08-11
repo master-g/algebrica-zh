@@ -14,7 +14,7 @@ tags:
   - trigonometric-substitution
 translation:
   status: current
-  source_hash: 8f24f610d09307f6b1f8c45a23bd9ff220df01eb19c1887724239e325d6dd7fe
+  source_hash: fb88dc24114c6e964848843aa6112180be7c562e0718216981b5e6e555743640
   translator: codex
   updated: "2026-08-03T00:00:00.000Z"
 ---
@@ -50,7 +50,7 @@ $$\sec^2\theta - 1 = \tan^2\theta$$
 
 ## 从换元到几何
 
-从几何角度看，这些换元可以解释为圆锥曲线的参数化。每个勾股恒等式与其所描述曲线之间的对应关系如下。
+从几何角度看，这些换元可以解释为[圆锥曲线](../introduction-to-conics/)的参数化。每个勾股恒等式与其所描述曲线之间的对应关系如下。
 
 + 恒等式 $\sin^2\theta + \cos^2\theta = 1$ 对应[单位圆](../unit-circle/)，并支撑 $\sqrt{a^2 - x^2}$ 这一情形。
 + 恒等式 $1 + \tan^2\theta = \sec^2\theta$ 和 $\sec^2\theta - 1 = \tan^2\theta$ 与[双曲线](../hyperbola/) $x^2 - y^2 = a^2$ 的几何性质有关，并支撑 $\sqrt{x^2 + a^2}$ 和 $\sqrt{x^2 - a^2}$ 这两种形式。
@@ -91,7 +91,7 @@ $$\sqrt{a^2 - x^2} = a\cos\theta$$
 
 $$\sin\theta = \frac{x}{a} \qquad \cos\theta = \frac{\sqrt{a^2 - x^2}}{a}$$
 
-角可以通过[反正弦](../arcsine-and-arccosine/)表示为：
+角可以通过[反正弦](../arcsine-function/)表示为：
 
 $$\theta = \arcsin\left(\frac{x}{a}\right)$$
 

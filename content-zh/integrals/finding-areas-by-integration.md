@@ -14,7 +14,7 @@ tags:
   - riemann-integral
 translation:
   status: current
-  source_hash: 4a47b8d1b3b92c28fcf24040897813376d80c1bfbb308f5baa5f5bc52b7aca04
+  source_hash: fc2fa8224763a789d88e20fb6bba1cae23056a5d5cd157baa1784be3c1d9c109
   translator: codex
   updated: "2026-08-04T00:00:00.000Z"
 ---
@@ -166,7 +166,7 @@ $$A = \int_a^b [f(x) - g(x)] \ dx$$
 
 $$A = \int_a^c [f(x) - g(x)] \ dx + \int_c^b [g(x) - f(x)] \ dx$$
 
-+ 使用被积函数的一个[反导数](../indefinite-integrals/)计算每个定积分。当反导数不是初等函数时，[换元积分](../integration-by-substitution/)或[分部积分](../integration-by-parts/)提供合适的工具。
++ 使用被积函数的一个[反导数](../indefinite-integrals/)和[微积分基本定理](../fundamental-theorem-of-calculus/)计算每个定积分。当反导数不是初等函数时，[换元积分](../integration-by-substitution/)或[分部积分](../integration-by-parts/)提供合适的工具。
 
 > 这个构造可以推广到由两条以上曲线围成的区域，也可以推广到描述为 $y$ 关于 $x$ 的函数的区域。在所有情形中，基本思想相同：面积等于上边界与下边界之差的积分。
 

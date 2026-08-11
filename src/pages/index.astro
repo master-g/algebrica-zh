@@ -10,7 +10,7 @@ const sections = getSections();
 const articles = await getCollection('articles');
 const zhEntries = await getZhEntries();
 const rows = buildTranslationIndex(articles, zhEntries);
-const translatedCount = rows.filter((row) => row.zh).length;
+const translatedCount = rows.filter((row) => row.status === 'current').length;
 const path = (value) => withSiteBase(value, import.meta.env.BASE_URL);
 ---
 
@@ -51,7 +51,8 @@ const path = (value) => withSiteBase(value, import.meta.env.BASE_URL);
                   <li>
                     <span>{section.order}.{index + 1}</span>
                     <a href={path(`/${row.slug}/`)} lang={row.zh ? 'zh-CN' : 'en'}>{title}</a>
-                    {!row.zh && <small>英文</small>}
+                    {row.status === 'missing' && <small>英文</small>}
+                    {row.status === 'stale' && <small>待同步</small>}
                   </li>
                 );
               })}

@@ -10,7 +10,7 @@ tags:
   - differentiation-rules
 translation:
   status: current
-  source_hash: 53121345a55f444ec76e0433996de50c35cf3217ff37a9b5c144e54f24c95530
+  source_hash: 05cb8aced68927c0cd2add595c5423de745068472510eaff2c648e2972874e8a
   translator: codex
   updated: "2026-08-03T00:00:00.000Z"
 ---
@@ -115,7 +115,7 @@ $$\frac{dy}{dx} = \frac{2x}{x^2 + 1}$$
 
 ## 特殊情形
 
-当外层函数是幂函数、指数函数或对数函数时，链式法则会产生计算中反复出现的公式。对于可导函数 $f$：
+当外层函数是[幂函数](../power-function/)、指数函数或对数函数时，链式法则会产生计算中反复出现的公式。对于可导函数 $f$：
 
 $$
 \begin{align}
@@ -131,7 +131,7 @@ $$
 
 $$D[(x^3 + 2)^{50}] = 50(x^3 + 2)^{49} \cdot 3x^2 = 150x^2(x^3 + 2)^{49}$$
 
-幂函数公式也适用于根式，因为 $\sqrt{f(x)} = f(x)^{1/2}$。要对 $y = \sqrt{x^2 + 1}$ 求导，我们对 $f(x) = x^2 + 1$ 和 $a = \frac{1}{2}$ 应用该公式：
+幂函数公式也适用于用根式表示的[无理函数](../irrational-functions/)，因为 $\sqrt{f(x)} = f(x)^{1/2}$。要对 $y = \sqrt{x^2 + 1}$ 求导，我们对 $f(x) = x^2 + 1$ 和 $a = \frac{1}{2}$ 应用该公式：
 
 $$D\left[\sqrt{x^2 + 1}\right] = \frac{1}{2}(x^2 + 1)^{-1/2} \cdot 2x = \frac{x}{\sqrt{x^2 + 1}}$$
 

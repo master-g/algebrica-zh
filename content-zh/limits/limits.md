@@ -12,7 +12,7 @@ tags:
   - neighbourhood
 translation:
   status: current
-  source_hash: ebb9908329529ace537a7f6be217c5bbfda5483f769b9de65860e8a8ebc62a87
+  source_hash: 14fce8dc763b6e44b6411bf9c01527a160184e3fab31a7e715316809e55b9066
   translator: codex
   updated: "2026-08-04T00:00:00.000Z"
 ---
@@ -199,7 +199,7 @@ $$
 
 - - -
 
-对于偶指数 $n \in \mathbb{N}$ 的[幂函数](../powers/) $f(x) = x^n$，有：
+对于偶指数 $n \in \mathbb{N}$ 的[幂函数](../power-function/) $f(x) = x^n$，有：
 
 $$
 \begin{align}

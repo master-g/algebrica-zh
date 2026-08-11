@@ -1,46 +1,36 @@
-import { readFile, readdir, writeFile } from 'node:fs/promises';
-import { dirname, join } from 'node:path';
+import { readFile, rename, writeFile } from 'node:fs/promises';
+import { existsSync } from 'node:fs';
+import { dirname, join, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { fetchArticleGraph } from '../src/lib/article-graph.mjs';
+import { listArticleTargets } from '../src/lib/source-inventory.mjs';
 import { parseFrontmatter, splitFrontmatter } from './lib/frontmatter.mjs';
 import { resolveUpstreamSourceDir } from '../src/lib/upstream-source.mjs';
 
-const ROOT = join(dirname(fileURLToPath(import.meta.url)), '..');
+const MODULE_PATH = fileURLToPath(import.meta.url);
+const ROOT = join(dirname(MODULE_PATH), '..');
 const SOURCE_ROOT = resolveUpstreamSourceDir();
 const OUTPUT = join(ROOT, 'src/data/article-graphs.json');
 const CONCURRENCY = 8;
 const MAX_ATTEMPTS = 3;
 
-async function articleSources() {
+async function articleSources(sourceRoot = SOURCE_ROOT) {
   const entries = [];
-  const directories = await readdir(SOURCE_ROOT, { withFileTypes: true });
-
-  for (const directory of directories) {
-    if (!directory.isDirectory() || directory.name === 'pages') continue;
-    const dir = join(SOURCE_ROOT, directory.name);
-    for (const filename of await readdir(dir)) {
-      if (!filename.endsWith('.md')) continue;
-      const markdown = await readFile(join(dir, filename), 'utf8');
-      const data = parseFrontmatter(splitFrontmatter(markdown).frontmatter);
-      if (data?.source) {
-        entries.push({
-          slug: filename.slice(0, -3),
-          source: data.source,
-        });
-      }
-    }
+  for (const target of listArticleTargets(sourceRoot)) {
+    const markdown = await readFile(join(sourceRoot, target.section, `${target.slug}.md`), 'utf8');
+    const data = parseFrontmatter(splitFrontmatter(markdown).frontmatter);
+    if (data?.source) entries.push({ ...target, source: data.source });
   }
-
-  return entries.sort((left, right) => left.slug.localeCompare(right.slug));
+  return entries;
 }
 
-async function fetchHtml(url) {
+async function fetchHtmlWithRetry(url, fetchImpl = fetch) {
   let lastError;
   for (let attempt = 1; attempt <= MAX_ATTEMPTS; attempt += 1) {
     const controller = new AbortController();
     const timeout = setTimeout(() => controller.abort(), 30_000);
     try {
-      const response = await fetch(url, {
+      const response = await fetchImpl(url, {
         headers: { 'user-agent': 'algebrica-zh graph sync' },
         signal: controller.signal,
       });
@@ -49,7 +39,7 @@ async function fetchHtml(url) {
     } catch (error) {
       lastError = error;
       if (attempt < MAX_ATTEMPTS) {
-        await new Promise((resolve) => setTimeout(resolve, attempt * 500));
+        await new Promise((resolveDelay) => setTimeout(resolveDelay, attempt * 500));
       }
     } finally {
       clearTimeout(timeout);
@@ -58,14 +48,53 @@ async function fetchHtml(url) {
   throw new Error(`${url}: ${lastError?.message ?? 'request failed'}`);
 }
 
-async function main() {
-  const sources = await articleSources();
-  const graphs = {};
+function parseTarget(target) {
+  const [section, slug, ...rest] = String(target || '').split('/');
+  if (!section || !slug || rest.length > 0) {
+    throw new Error(`invalid graph target: ${target}`);
+  }
+  return { section, slug };
+}
+
+async function readGraphs(output) {
+  if (!existsSync(output)) return {};
+  return JSON.parse(await readFile(output, 'utf8'));
+}
+
+async function writeGraphs(output, graphs) {
+  const sorted = Object.fromEntries(
+    Object.entries(graphs).sort(([left], [right]) => left.localeCompare(right)),
+  );
+  const temporary = `${output}.tmp-${process.pid}`;
+  await writeFile(temporary, `${JSON.stringify(sorted, null, 2)}\n`);
+  await rename(temporary, output);
+}
+
+export async function syncArticleGraphs({
+  target = null,
+  sourceRoot = SOURCE_ROOT,
+  output = OUTPUT,
+  fetchHtml = fetchHtmlWithRetry,
+  log = console.log,
+} = {}) {
+  let sources = await articleSources(sourceRoot);
+  const existingGraphs = await readGraphs(output);
+  let graphs = {};
+
+  if (target) {
+    const requested = parseTarget(target);
+    sources = sources.filter(({ section, slug }) => (
+      section === requested.section && slug === requested.slug
+    ));
+    if (sources.length !== 1) throw new Error(`graph target not found: ${target}`);
+    graphs = existingGraphs;
+  }
+
+  log(`[article-graphs] checking ${sources.length} upstream article${sources.length === 1 ? '' : 's'}`);
+  const fetched = {};
   const errors = [];
   let cursor = 0;
   let completed = 0;
-
-  console.log(`[article-graphs] checking ${sources.length} upstream articles`);
 
   async function worker() {
     while (cursor < sources.length) {
@@ -73,28 +102,53 @@ async function main() {
       cursor += 1;
       try {
         const graph = await fetchArticleGraph({ ...article, fetchHtml });
-        if (graph) graphs[article.slug] = graph;
+        if (graph) {
+          const existingKey = Object.entries(existingGraphs)
+            .find(([, existingGraph]) => existingGraph?.source === graph.source)?.[0];
+          fetched[existingKey || article.slug] = graph;
+        } else if (target) {
+          throw new Error('graph module not found');
+        }
       } catch (error) {
         errors.push(`${article.source}: ${error.message}`);
       }
       completed += 1;
       if (completed % 20 === 0 || completed === sources.length) {
-        console.log(`[article-graphs] ${completed}/${sources.length}`);
+        log(`[article-graphs] ${completed}/${sources.length}`);
       }
     }
   }
 
-  await Promise.all(Array.from({ length: CONCURRENCY }, () => worker()));
+  const workerCount = target ? 1 : CONCURRENCY;
+  await Promise.all(Array.from({ length: workerCount }, () => worker()));
+  if (errors.length > 0) throw new Error(`Graph sync failed:\n${errors.join('\n')}`);
 
-  if (errors.length > 0) {
-    throw new Error(`Graph sync failed:\n${errors.join('\n')}`);
+  if (!target) {
+    const fetchedKeys = new Set(Object.keys(fetched));
+    const missingExisting = Object.keys(existingGraphs).filter((key) => !fetchedKeys.has(key));
+    if (Object.keys(fetched).length === 0) {
+      throw new Error('Graph sync failed: no graph modules were parsed');
+    }
+    if (missingExisting.length > 0) {
+      throw new Error(`Graph sync failed: ${missingExisting.length} existing graph modules disappeared`);
+    }
   }
 
-  const sortedGraphs = Object.fromEntries(
-    Object.entries(graphs).sort(([left], [right]) => left.localeCompare(right)),
-  );
-  await writeFile(OUTPUT, `${JSON.stringify(sortedGraphs, null, 2)}\n`);
-  console.log(`[article-graphs] wrote ${Object.keys(sortedGraphs).length} graphs to ${OUTPUT}`);
+  await writeGraphs(output, target ? { ...graphs, ...fetched } : fetched);
+  log(`[article-graphs] wrote ${Object.keys(target ? { ...graphs, ...fetched } : fetched).length} graphs to ${output}`);
+  return fetched;
 }
 
-await main();
+function cliTarget(args) {
+  const index = args.indexOf('--target');
+  if (index === -1) return null;
+  if (!args[index + 1]) throw new Error('--target requires section/slug');
+  return args[index + 1];
+}
+
+if (process.argv[1] && resolve(process.argv[1]) === MODULE_PATH) {
+  syncArticleGraphs({ target: cliTarget(process.argv.slice(2)) }).catch((error) => {
+    console.error(error);
+    process.exitCode = 1;
+  });
+}

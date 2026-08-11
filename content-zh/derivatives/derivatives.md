@@ -11,7 +11,7 @@ tags:
   - tangent-line
 translation:
   status: current
-  source_hash: 5d69d590cce9cb32691d8917d92a4bac791622e606a3b191efb0d29701a853f5
+  source_hash: aa70699d901f1370126914760c4af3d98bd70d4c84bf2175e3b0041d77001f28
   translator: omp
   updated: "2026-07-21T17:09:56.899Z"
 ---
@@ -132,7 +132,7 @@ $$f_{-}'(c) = \lim_{h \to 0^-} \frac{f(c+h)-f(c)}{h}$$
 
 ## 实数指数的幂法则
 
-表中列出了任意实数指数 $a$ 的 $f(x) = x^a$ 的导数，这是上面的几何注解无法证明的公式。当 $x > 0$ 时，幂具有等价形式 $x^a = e^{a\ln(x)}$，将其用指数函数和自然对数来表示，而这两个函数的导数已在上表中列出。应用[链式法则](../chain-rule/)，以外层函数 $e^t$、内层函数 $a\ln(x)$（其导数为 $a/x$），可得：
+表中列出了任意实数指数 $a$ 的[幂函数](../power-function/) $f(x) = x^a$ 的导数，这是上面的几何注解无法证明的公式。当 $x > 0$ 时，幂具有等价形式 $x^a = e^{a\ln(x)}$，将其用指数函数和自然对数来表示，而这两个函数的导数已在上表中列出。应用[链式法则](../chain-rule/)，以外层函数 $e^t$、内层函数 $a\ln(x)$（其导数为 $a/x$），可得：
 
 $$
 \begin{align}

@@ -10,13 +10,13 @@ tags:
   - squaring
 translation:
   status: current
-  source_hash: eeb54e360336ef9b20d23263507a26419902bfc4bfa0cd3321d311ade49e3f65
+  source_hash: e511d9162b78d1f2815df8d78dd06e4021c52984437ac2599e121cea55a578ed
   translator: omp
   updated: "2026-07-31T05:10:30.795Z"
 ---
 ## 定义
 
-无理不等式是未知数出现在[根式](../radicals/)内或具有分数[指数](../powers/)幂的不等式。更准确地说，无论严格与否、无论不等号方向如何，只要至少一项含有形如 $\sqrt[n]{f(x)}$ 或等价的 $f(x)^{p/q}$，其中 $p$、$q$ 为整数且 $q \geq 2$，就属于无理不等式。与[无理方程](../irrational-equations/)一样，根式会对[定义域](../determining-the-domain-of-a-function/)施加约束，而这些约束会影响不等式的方向。
+无理不等式是涉及[无理函数](../irrational-functions/)的不等式，其中未知数位于[根式](../radicals/)内或具有分数[指数](../powers/)。更准确地说，无论严格与否、无论不等号方向如何，只要至少一项含有形如 $\sqrt[n]{f(x)}$ 或等价的 $f(x)^{p/q}$，其中 $p$、$q$ 为整数且 $q \geq 2$，就属于无理不等式。与[无理方程](../irrational-equations/)一样，根式会对[定义域](../determining-the-domain-of-a-function/)施加约束，而这些约束会影响不等式的方向。
 
 区分无理不等式与其方程对应物的核心困难在于：将两边同时乘方是一种单调运算，但仅在某些特定的符号条件下才成立：
 

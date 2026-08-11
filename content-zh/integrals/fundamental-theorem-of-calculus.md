@@ -6,11 +6,13 @@ license: CC BY-NC 4.0
 tags:
   - accumulation-function
   - antiderivative
+  - average-value
   - change-of-variable
   - continuous-functions
   - definite-integral
   - derivatives
   - differentiation
+  - extreme-value-theorem
   - fundamental-theorem-of-calculus
   - indefinite-integral
   - integration
@@ -18,9 +20,9 @@ tags:
   - mean-value-theorem
 translation:
   status: current
-  source_hash: 7b84de4dc4bf0108ec0641963e1d9e869292038397e25685bf075ba234676b05
+  source_hash: 8e0847d0f763ba4f701fc9d42041dfa00f7630eb47aec9a2997a4a49fb78989f
   translator: codex
-  updated: "2026-08-03T00:00:00.000Z"
+  updated: "2026-08-11T00:00:00.000Z"
 ---
 ## 引言
 
@@ -30,6 +32,44 @@ translation:
 + 微积分基本定理第二部分
 
 > 微积分基本定理第一部分指出，闭区间上的每个连续函数都有一个由积分定义的反导数。第二部分指出，[定积分](../definite-integrals/)等于任意反导数在两个端点处的值之差。
+
+## 连续被积函数的界
+
+第一部分的证明使用了一个估计，它对闭有界区间上的任意连续被积函数都成立。设 $f$ 在 $[a,b]$ 上连续，并且 $a<b$。根据[魏尔斯特拉斯定理](../weierstrass-theorem/)，$f$ 存在最小值和最大值，分别在 $t_m,t_M\in[a,b]$ 处取得。将这两个极值记为：
+
+$$m = f(t_m) \qquad M = f(t_M)$$
+
+$f$ 在区间上的每个值都位于这两个数之间，所以对每个 $t\in[a,b]$ 都有 $m\leq f(t)\leq M$。对常值函数 $m$ 和 $M$ 应用[定积分](../definite-integrals/)的比较性质，得到：
+
+$$m(b - a) \leq \int_a^b f(t) \ dt \leq M(b - a)$$
+
+当 $f$ 非负时，外侧两个量是以 $[a,b]$ 为底边的矩形面积。高为 $m$ 的矩形包含在函数图像与横轴之间的区域内，而该区域包含在高为 $M$ 的矩形内。下图说明了这种情况。
+
+![图 1](/assets/integrals/svg/fundamental-theorem-of-calculus-1.zh.svg)
+
+> 两个矩形的高度都是 $f$ 在 $[a,b]$ 内取得的值。图中最小值和最大值都在区间内部取得，但任一极值也可能在端点取得。
+
+- - -
+
+有界的[黎曼可积](../riemann-integrability-criteria/)函数也满足同一不等式，只需把 $m$ 和 $M$ 分别换成 $f$ 在区间上的[下确界和上确界](../supremum-and-infimum/)。如果 $f$ 在闭有界区间上连续，它会取得两个极值。这个事实有两个推论。
+
+第一个推论涉及积分的符号。如果对每个 $t\in[a,b]$ 都有 $f(t)>0$，则 $m$ 是 $f$ 的一个函数值，因而为正，所以：
+
+$$0 < m(b - a) \leq \int_a^b f(t) \ dt$$
+
+正函数的下确界未必为正。在 $[0,1]$ 上定义 $g(0)=1$，并在 $t>0$ 时定义 $g(t)=t$。这个函数为正且黎曼可积，但下确界为 $0$，所以下界只能说明积分非负。闭区间 $[a,b]$ 上的连续正函数具有正的最小值，因此上面的不等式严格成立。对称地，如果 $f(t)<0$ 在 $[a,b]$ 上处处成立，则 $M<0$，积分为负。处处为正或处处为负的连续被积函数，其积分具有相同的符号。
+
+第二个推论涉及 $f$ 的平均值。把估计式除以 $b-a>0$，得到：
+
+$$m \leq \frac{1}{b - a} \int_a^b f(t) \ dt \leq M$$
+
+中间的量是 $f$ 在 $[a,b]$ 上的平均值。因为该平均值位于 $m$ 和 $M$ 之间，对端点为 $t_m$ 和 $t_M$ 的区间上的 $f$ 应用[介值定理](../intermediate-value-theorem/)，可得一点 $c$，使 $f(c)$ 等于该平均值：
+
+$$\int_a^b f(t) \ dt = f(c)(b - a)$$
+
+这个恒等式称为积分中值定理。$t_m$ 和 $t_M$ 都属于 $[a,b]$，因此 $c$ 也属于 $[a,b]$。
+
+> 总能在开区间 $(a,b)$ 中选取这样的点。假设平均值等于 $M$。函数 $M-f$ 连续、非负，并且在 $[a,b]$ 上的积分为零。如果它在某一点为正，就会在一个子区间上处处为正，上面的严格估计会推出其积分为正。因此，$f$ 在 $[a,b]$ 上是常值函数，每个内点都满足该恒等式。平均值等于最小值的情形与此对称。
 
 ## 微积分基本定理第一部分
 
@@ -41,9 +81,9 @@ $$F(x) = \int_a^x f(t) \ dt$$
 
 $$F'(x) = f(x)$$
 
-在 $a$ 和 $b$ 处，同一恒等式分别对右导数和左导数成立。为证明连续性，[魏尔斯特拉斯定理](../weierstrass-theorem/)给出一个常数 $M > 0$，使得 $|f(t)| \leq M$ 在 $[a, b]$ 上成立。对任意 $x, y \in [a, b]$，定积分的标准估计给出：
+在 $a$ 和 $b$ 处，同一恒等式分别对右导数和左导数成立。为证明连续性，令 $K=\max\{|m|,|M|\}$，其中 $m$ 和 $M$ 是上一节的两个极值，于是 $|f(t)|\leq K$ 在 $[a,b]$ 上成立。对任意 $x,y\in[a,b]$，定积分的标准估计给出：
 
-$$|F(y) - F(x)| = \left|\int_x^y f(t) \ dt\right| \leq M|y - x|$$
+$$|F(y) - F(x)| = \left|\int_x^y f(t) \ dt\right| \leq K|y - x|$$
 
 因此 $F$ 在 $[a, b]$ 上是[利普希茨连续](../uniform-continuity/)的。为证明导数恒等式，固定 $x \in (a, b)$，并对满足 $h \neq 0$ 且 $x + h \in [a, b]$ 的情形考虑[差商](../difference-quotient/)：
 
@@ -57,15 +97,15 @@ $$\int_a^b f(t) \ dt + \int_b^c f(t) \ dt = \int_a^c f(t) \ dt$$
 
 $$\frac{F(x + h) - F(x)}{h} = \frac{1}{h} \int_x^{x + h} f(t) \ dt$$
 
-由于 $f$ 在端点为 $x$ 和 $x + h$ 的区间上连续，[定积分](../definite-integrals/)页面讨论的积分中值定理给出一个点 $c$，它位于 $x$ 与 $x + h$ 之间，使得：
+上面证明的积分中值定理给出一点 $c_h$，它位于 $x$ 与 $x+h$ 之间，使得：
 
-$$\int_x^{x + h} f(t) \ dt = f(c) h$$
+$$\int_x^{x + h} f(t) \ dt = f(c_h) h$$
 
-于是：
+因此差商为：
 
-$$\frac{F(x + h) - F(x)}{h} = f(c)$$
+$$\frac{F(x + h) - F(x)}{h} = f(c_h)$$
 
-当 $h \to 0$ 时，点 $c \to x$。由 $f$ 的连续性可得：
+因为 $c_h$ 位于 $x$ 与 $x+h$ 之间，所以当 $h\to0$ 时，$c_h\to x$。由 $f$ 的连续性可得：
 
 $$\lim_{h \to 0} \frac{F(x + h) - F(x)}{h} = f(x)$$
 
@@ -73,13 +113,11 @@ $$\lim_{h \to 0} \frac{F(x + h) - F(x)}{h} = f(x)$$
 
 $$F_d(x) = \int_d^x f(t) \ dt$$
 
-由于 $F_d$ 与 $F$ 相差常数 $-F(d)$，它们具有相同的导数。以 $a$ 为基点时，公式为：
-
-$$F(x) = \int_a^x f(t) \ dt$$
+由于 $F_d$ 与 $F$ 相差常数 $-F(d)$，它们具有相同的导数。当 $d=a$ 时，这就是原来的累积函数 $F$。
 
 $F(x)$ 的值是从 $a$ 到 $x$ 累积的[有向面积](../finding-areas-by-integration/)。它的导数是该面积的变化率。当 $f(x) > 0$ 时，面积增加；当 $f(x) < 0$ 时，面积减少。
 
-![图 1](/assets/integrals/svg/fundamental-theorem-of-calculus-1.zh.svg)
+![图 2](/assets/integrals/svg/fundamental-theorem-of-calculus-2.zh.svg)
 
 > 阴影部分的有向面积是 $F(x)$。当 $f$ 为正时它增加，当 $f$ 为负时它减少。
 
@@ -117,13 +155,13 @@ $$\Phi(x) = \int_{x}^{x^2} \sin(t^2) \ dt$$
 
 $$\Phi'(x) = \sin\!\left((x^2)^2\right) \cdot 2x - \sin(x^2) \cdot 1 = 2x \sin(x^4) - \sin(x^2)$$
 
-被积函数 $\sin(t^2)$ 没有初等反导数，但莱布尼茨法则仍然给出了该积分的闭式导数。
+被积函数 $\sin(t^2)$ 没有[初等反导数](../integration-strategies/)，但莱布尼茨法则仍然给出了该积分的闭式导数。
 
 > 第一项来自移动的上限，第二项来自移动的下限。它们的符号由积分的方向决定。
 
 ## 微积分基本定理第二部分
 
-设 $f$ 在 $[a, b]$ 上连续，并设 $F$ 在 $[a, b]$ 上连续、在 $(a, b)$ 上可导，且满足 $F'(x) = f(x)$ 对每个 $x \in (a, b)$ 都成立。那么：
+设 $f$ 在 $[a,b]$ 上连续，并设 $F$ 在 $[a,b]$ 上连续、在 $(a,b)$ 上可导，且对每个 $x\in(a,b)$ 都满足 $F'(x)=f(x)$。那么端点公式为：
 
 $$\int_a^b f(x) \ dx = F(b) - F(a)$$
 
@@ -153,27 +191,29 @@ $$\int_a^b f(x) \ dx = G(b) = F(b) - F(a)$$
 
 $$\int_{\alpha}^{\beta} f(g(x))g'(x) \ dx = \int_{g(\alpha)}^{g(\beta)} f(u) \ du$$
 
-这里不需要对 $g$ 作单调性假设。若 $H(y) = \int_{g(\alpha)}^y f(u) \ du$，则[复合函数](../composite-functions/)满足 $(H \circ g)'(x) = f(g(x))g'(x)$。对 $H \circ g$ 应用微积分基本定理第二部分，即可证明该公式。
+这里不需要对 $g$ 作[单调性](../increasing-and-decreasing-functions/)假设。若 $H(y)=\int_{g(\alpha)}^y f(u)\,du$，则[复合函数](../composite-functions/)满足 $(H\circ g)'(x)=f(g(x))g'(x)$。对 $H\circ g$ 应用微积分基本定理第二部分，即可证明该公式。
+
+把端点公式应用于乘积求导法则，可以得到[分部积分法](../integration-by-parts/)。
 
 ## 连续性之外
 
- $f$ 的连续性足以保证上面两个部分成立。当 $f$ 只有黎曼可积性时，累积函数仍保留其中一些性质，但并非全部。
+$f$ 的连续性足以保证上面两个部分成立。当 $f$ 只有黎曼可积性时，累积函数具有其中一些性质，但并非全部。
 
 设 $f$ 为[黎曼可积](../riemann-integrability-criteria/)函数，定义在 $[a, b]$ 上，并定义累积函数：
 
 $$F(x) = \int_a^x f(t) \ dt$$
 
-函数 $F$ 对每个 $x \in [a, b]$ 都有定义。黎曼可积函数有界，因此 $|f|$ 有一个上界 $M$，在 $[a, b]$ 上成立。对 $x_1, x_2 \in [a, b]$ 且 $x_1 < x_2$，定积分的标准估计给出：
+函数 $F$ 对每个 $x\in[a,b]$ 都有定义。黎曼可积函数有界，因此 $|f|$ 在 $[a,b]$ 上有一个上界 $K$。这里 $f$ 未必取得最小值或最大值。对满足 $u<v$ 的 $u,v\in[a,b]$，定积分的标准估计给出：
 
-$$|F(x_2) - F(x_1)| = \left| \int_{x_1}^{x_2} f(t) \ dt \right| \leq M (x_2 - x_1)$$
+$$|F(v) - F(u)| = \left| \int_{u}^{v} f(t) \ dt \right| \leq K (v - u)$$
 
-由对称性，绝对值形式 $|x_2 - x_1|$ 下同样成立。因此 $F$ 在 $[a, b]$ 上是利普希茨连续的，利普希茨常数为 $M$，从而特别连续。
+由对称性，带 $|v-u|$ 的同一估计也成立。因此 $F$ 在 $[a,b]$ 上是利普希茨连续的，利普希茨常数为 $K$，从而特别连续。
 
-可导性取决于 $f$ 的局部行为。固定一点 $x_0 \in (a, b)$，假设 $f$ 在该点连续，并令 $\varepsilon > 0$。在 $x_0$ 处的连续性给出 $\delta > 0$，使得：
+可导性取决于 $f$ 的局部行为。固定一点 $x_0\in(a,b)$，假设 $f$ 在该点连续，并令 $\varepsilon>0$。由 $f$ 在 $x_0$ 处连续，可选取 $\delta>0$，使得当 $|t-x_0|<\delta$ 时，下面的不等式成立：
 
 $$|f(t) - f(x_0)| < \varepsilon$$
 
-只要 $|t - x_0| < \delta$。如果 $0 < |h| < \delta$ 且 $x_0 + h \in [a, b]$，那么：
+如果 $0<|h|<\delta$ 且 $x_0+h\in[a,b]$，那么：
 
 $$
 \begin{align}
@@ -192,7 +232,7 @@ $$
 f(t) = \begin{cases} -1 & t < 0 \\[6pt] 0 & t = 0 \\[6pt] 1 & t > 0 \end{cases}
 $$
 
-函数 $f$ 在 $[-1, 1]$ 上黎曼可积，因为一个间断点不会影响可积性。以 $-1$ 为基点，当 $x \in [-1, 0)$ 时，整个积分区间上的被积函数都是 $-1$，因此：
+函数 $f$ 在 $[-1,1]$ 上黎曼可积，因为它有界且只有一个间断点。以 $-1$ 为基点，当 $x\in[-1,0)$ 时，整个积分区间上的被积函数都是 $-1$，因此：
 
 $$F(x) = \int_{-1}^{x} (-1) \ dt = -x - 1$$
 
@@ -230,7 +270,7 @@ $$\sum_{i=1}^n m_i\Delta x_i \leq F(b) - F(a) \leq \sum_{i=1}^n M_i\Delta x_i$$
 
 当 $F$ 只在有限个点不可导时，只要 $F$ 连续且在其他每一点满足 $f = F'$，结论仍然成立。证明时将 $[a, b]$ 按这些例外点分割，并对每个子区间应用该公式。将所得恒等式相加时，内部端点处的值会抵消。对 $f$ 在例外点处的赋值不会改变其黎曼积分。
 
-> 如果 $f$ 属于 $C^k$ 类，对 $F' = f$ 反复求导可见，累积函数 $F$ 属于 $C^{k + 1}$ 类。
+> 如果 $f$ 属于 $C^k$ 类，对 $F'=f$ [反复求导](../higher-order-derivatives/)可见，累积函数 $F$ 属于 $C^{k+1}$ 类。
 
 ## 例 1
 
@@ -265,3 +305,21 @@ $$\frac{d}{dx} \int_1^x e^{-t^2} \ dt$$
 $$\frac{d}{dx} \int_1^x e^{-t^2} \ dt = e^{-x^2}$$
 
 > 这里不需要初等反导数。函数 $e^{-t^2}$ 没有初等反导数，但上面的导数是显式的。对该函数的固定定积分可能需要[数值积分](../numerical-integration/)或特殊函数。
+
+## 无穷小表述
+
+前面的论证使用了[艾普西隆-德尔塔极限](../limits/)。非标准分析在超实数域中表述相同内容。超实数域是包含 $\mathbb{R}$ 作为[真子域](../fields/)的有序域。无穷小量 $\varepsilon$ 对每个正实数 $r$ 都满足 $|\varepsilon|<r$，每个非零无穷小量的倒数都是无穷大。这里需要三个概念。两个超实数之差为无穷小量时，称二者无限接近。每个有限超实数 $z$ 都无限接近唯一的实数，该实数称为该数的标准部分，记为 $\mathrm{st}(z)$。转移原理指出，关于实数的[一阶命题](../first-order-logic/)成立，当且仅当其转移后的对应命题在超实数域中成立。
+
+在这种表述中，设 $x$ 为实数内点，$\Delta x$ 为非零无穷小量。实函数及其自然超实数扩张使用同一个符号。如果差商有限，并且其标准部分与 $\Delta x$ 的选择无关，则该标准部分就是导数：
+
+$$F'(x) = \mathrm{st}\!\left(\frac{F(x + \Delta x) - F(x)}{\Delta x}\right)$$
+
+根据转移原理，连续被积函数的界也适用于端点为 $x$ 和 $x+\Delta x$ 的区间。当 $\Delta x>0$ 时，令 $m$ 和 $M$ 为 $f$ 在该区间上的两个极值。所得不等式为：
+
+$$m\Delta x \leq F(x + \Delta x) - F(x) \leq M\Delta x$$
+
+除以 $\Delta x$ 后，差商位于 $m$ 和 $M$ 之间。因为 $f$ 在 $x$ 处连续，这两个极值都无限接近 $f(x)$。因此，差商无限接近 $f(x)$，其标准部分就是 $f(x)$。当 $\Delta x<0$ 时，交换端点后得到相同结论。这就是第二节使用的估计，其中以标准部分映射替代了极限 $h\to0$。
+
+两种表述使用不同的语言，但对实函数给出相同结论。无穷小表述用无限接近和标准部分映射替代艾普西隆-德尔塔估计。
+
+> 亚伯拉罕·鲁滨逊发展了非标准分析，并在 1966 年由 North-Holland 出版的《Non-Standard Analysis》中系统阐述。H. Jerome Keisler 的一年级教材[Elementary Calculus: An Infinitesimal Approach](https://people.math.wisc.edu/~hkeisler/calc.html)采用这种表述；其 1986 年第二版在第 4.2 节讨论微积分基本定理。

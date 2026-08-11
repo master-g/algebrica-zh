@@ -11,7 +11,7 @@ tags:
   - zero-theorem
 translation:
   status: current
-  source_hash: d718b2619a4323291e53e43c125e9213e666a0fc09b8a336e234cb56ee012b24
+  source_hash: e5ef96dd7e66dbc4be10ef2bfa4a582e69a1712925535f18d10aa01cb6559c31
   translator: codex
   updated: "2026-08-04T00:00:00.000Z"
 ---
@@ -79,7 +79,7 @@ $$g(x) = f(x) - y$$
 
 函数必须在整个[定义域](../determining-the-domain-of-a-function/)上连续，而且定义域必须是一个区间。去掉任一条件，结论都可能失败。
 
-在 $[-1,1]$ 上的一个反例是阶跃函数：
+在 $[-1,1]$ 上的一个反例是[亥维赛阶跃函数](../heaviside-function/)的一个变体：
 
 $$
 f(x) =
@@ -160,6 +160,6 @@ $f$ 的图像位于正方形 $[a,b]^2$ 中，连接其左边和右边，并且�
 
 + 在[不等式的符号分析](../sign-analysis-in-inequalities/)中，不含零点且包含在定义域内的每个子区间上，连续函数都保持固定符号。
 + 与[魏尔斯特拉斯定理](../weierstrass-theorem/)结合，该定理说明连续函数在闭有界区间上满足 $f([a,b]) = [m,M]$。
-+ [积分中值定理](../definite-integrals/)随之成立，因为连续函数的平均值位于最小值和最大值之间，因此一定能取得该平均值。
++ [积分中值定理](../fundamental-theorem-of-calculus/)随之成立，因为连续函数的平均值位于最小值和最大值之间，因此一定能取得该平均值。
 + 连续且[严格单调](../increasing-and-decreasing-functions/)的函数有一个定义域为区间的[逆函数](../inverse-function/)。
 + [达布定理](../darboux-theorem/)指出，每个导数都有介值性，包括不连续的导数。

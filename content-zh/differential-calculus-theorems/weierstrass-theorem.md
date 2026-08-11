@@ -11,7 +11,7 @@ tags:
   - weierstrass-theorem
 translation:
   status: current
-  source_hash: f63a94e72369585b47ec14cf00ed49693ea054aa9d07d9bd8a48d45c3f4db17f
+  source_hash: ebf5f252391d7d07878b27f911ffa6fb4785cb7ff55a39f0d10db1c4827a0121
   translator: codex
   updated: "2026-08-04T00:00:00.000Z"
 ---
@@ -133,4 +133,5 @@ $$
 + [费马定理](../fermat-theorem/)依靠它保证区间上确实存在最大值或最小值，然后才能断定该点处的导数必须为零。
 + [罗尔定理](../rolle-theorem/)利用它证明函数在闭区间上取得最大值和最小值，这是其证明的第一步。
 + [拉格朗日定理](../lagrange-theorem/)依赖罗尔定理，因此也间接依赖魏尔斯特拉斯定理。
++ [微积分基本定理](../fundamental-theorem-of-calculus/)利用已取得的最小值和最大值证明积分中值定理，进而证明累积函数的导数公式。
 + 连续函数的[黎曼可积性判据](../riemann-integrability-criteria/)在关键步骤上依赖魏尔斯特拉斯定理：连续函数在闭且有界区间上有界，而定理正是这一事实的保证，它使达布上和与下和定义良好且有限。

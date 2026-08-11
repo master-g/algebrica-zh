@@ -10,7 +10,7 @@ tags:
   - logarithms
 translation:
   status: current
-  source_hash: d1b19a0d24e345d77e5ce983a96d6cc623fd1e0e0be1a6fd85658fe8428d216e
+  source_hash: 55d5261c7697742c66e3679de802454c5083359d339588550418ab51c20c7bdd
   translator: codex
   updated: "2026-08-02T00:00:00.000Z"
 ---
@@ -167,7 +167,7 @@ $$\int e^x \ dx = e^x + c$$
 
 ## 渐近增长
 
-指数函数的增长速度快于任何[多项式](../polynomial-function/)或幂函数，但慢于[阶乘](../factorial/)。对于任意 $a > 1$ 和 $k > 0$：
+指数函数的增长速度快于任何[多项式](../polynomial-function/)或[幂函数](../power-function/)，但慢于[阶乘](../factorial/)。对于任意 $a > 1$ 和 $k > 0$：
 
 $$\lim_{x \to +\infty} \frac{x^k}{a^x} = 0 \qquad \lim_{x \to +\infty} \frac{a^x}{x!} = 0$$
 

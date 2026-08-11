@@ -11,7 +11,7 @@ tags:
   - vertical-tangent
 translation:
   status: current
-  source_hash: da24e19644a70e628bcf9c528baf269172c95ee17060653c851c756b3161721e
+  source_hash: 791beda65a5a63dee5fdc4c995e7f55aa1c11f96d261e76dd4093ae068714a74
   translator: codex
   updated: "2026-08-03T00:00:00.000Z"
 ---
@@ -39,7 +39,7 @@ $$f_{-}'(c) = f_{+}'(c) = -\infty$$
 
 ![图 1](/assets/derivatives/svg/points-of-non-differentiability-1.zh.svg)
 
-例如，考虑点 $c = 1$ 处的函数 $f(x) = \sqrt[3]{x-1}$。该函数在整个 $\mathbb{R}$ 上连续，并且当 $x \neq 1$ 时，其导数为：
+例如，考虑点 $c = 1$ 处的[无理函数](../irrational-functions/) $f(x) = \sqrt[3]{x-1}$。该函数在整个 $\mathbb{R}$ 上连续，并且当 $x \neq 1$ 时，其导数为：
 
 $$f'(x) = \frac{1}{3\sqrt[3]{(x-1)^2}}$$
 
@@ -65,7 +65,7 @@ $$f_{-}'(c) = -\infty \qquad f_{+}'(c) = +\infty$$
 
 $$f_{-}'(c) = +\infty \qquad f_{+}'(c) = -\infty$$
 
-一个典型例子是点 $c = 0$ 处的函数 $f(x) = x^{2/3} = \sqrt[3]{x^2}$。该函数在整个 $\mathbb{R}$ 上连续，并且当 $x \neq 0$ 时，其导数为：
+一个典型例子是点 $c = 0$ 处的[幂函数](../power-function/) $f(x) = x^{2/3} = \sqrt[3]{x^2}$。该函数在整个 $\mathbb{R}$ 上连续，并且当 $x \neq 0$ 时，其导数为：
 
 $$f'(x) = \frac{2}{3\sqrt[3]{x}}$$
 
@@ -91,7 +91,7 @@ $$f_{-}'(2) = -1 \qquad f_{+}'(2) = 1$$
 
 ![图 5](/assets/derivatives/svg/points-of-non-differentiability-5.zh.svg)
 
-角点还可能结合一个有限的单侧导数和一个无穷的单侧导数。考虑如下分段定义的函数：
+角点还可能结合一个有限的单侧导数和一个无穷的单侧导数。考虑如下[分段函数](../piecewise-functions/)：
 
 $$
 f(x) =

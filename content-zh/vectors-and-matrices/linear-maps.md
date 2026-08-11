@@ -18,7 +18,7 @@ tags:
   - vector-space
 translation:
   status: current
-  source_hash: 216ba23b01d7ef8ba420caf6a024fbeb8380bc3de776f143546516be94b11fd9
+  source_hash: 95773a0122fab842ae9e5b31720620b2a6c66a487b7e57959813b0b5a93372a4
   translator: codex
   updated: "2026-08-04T00:00:00.000Z"
 ---
@@ -42,7 +42,7 @@ $$T\left(\sum_{i=1}^{n} \alpha_i\mathbf{v}_i\right) = \sum_{i=1}^{n} \alpha_i T(
 
 齐次性有两个推论。取 $\alpha = 0$ 得到 $T(\mathbf{0}_V) = \mathbf{0}_W$，取 $\alpha = -1$ 得到 $T(-\mathbf{v}) = -T(\mathbf{v})$。因此，不保持原点不变的映射不是线性的。
 
-$V$ 的自同态是一个线性映射 $T : V \to V$，也称为线性算子。线性泛函或线性形式的陪域为 $F$，把它视为自身上的一维向量空间。双射线性映射是一个[同构](../homomorphisms-and-isomorphisms/)，而从 $V$ 到自身的同构是一个自同构。
+$V$ 的自同态是一个线性映射 $T : V \to V$，也称为线性算子。线性泛函或线性形式的陪域为 $F$，把它视为自身上的一维向量空间。双射线性映射是一个[同构](../homomorphisms-and-isomorphisms/)，而从 $V$ 到自身的同构是一个自同构。[单射、满射与双射](../injective-surjective-and-bijective-functions/)是在函数上定义并应用于底层集合之间映射的条件。
 
 > 仅有可加性就使 $T$ 成为底层加法[群](../groups/)的同态。齐次性要求它与标量乘法相容。二者结合起来，正是环上的[模](../modules/)同态所满足的条件。
 
@@ -214,7 +214,7 @@ $$[(S \circ T)(\mathbf{v})]_{\mathcal{D}} = B(A[\mathbf{v}]_{\mathcal{B}}) = (BA
 
 所以 $S \circ T$ 的矩阵是 $BA$。映射 $T$ 是同构，当且仅当 $A$ [可逆](../inverse-matrix/)，此时 $T^{-1}$ 的矩阵为 $A^{-1}$。
 
-$T$ 的秩是[矩阵的秩](../rank-of-a-matrix/)，而 $T$ 的核对应于[齐次方程组](../systems-of-linear-equations/) $A\mathbf{x} = \mathbf{0}$ 的解。矩阵取决于两组有序基。换基会将 $A$ 替换为 $Q^{-1}AP$，其中 $P$ 和 $Q$ 可逆。如果一个自同态的定义域和陪域使用同一组基，则换基形式为 $C^{-1}AC$。由这个公式关联的矩阵称为相似矩阵。如果自同态有一组由[特征向量](../eigenvalues-and-eigenvectors/)组成的基，则可以选择 $C$ 使 $C^{-1}AC$ 为对角矩阵，从而 $A$ [可对角化](../matrix-diagonalization/)。
+$T$ 的秩是[矩阵的秩](../rank-of-a-matrix/)，而 $T$ 的核对应于[齐次方程组](../systems-of-linear-equations/) $A\mathbf{x} = \mathbf{0}$ 的解。矩阵取决于两组有序基。[换基](../change-of-basis-matrix/)会将 $A$ 替换为 $Q^{-1}AP$，其中 $P$ 和 $Q$ 可逆。如果一个自同态的定义域和陪域使用同一组基，则换基形式为 $C^{-1}AC$。由这个公式关联的矩阵称为相似矩阵。如果自同态有一组由[特征向量](../eigenvalues-and-eigenvectors/)组成的基，则可以选择 $C$ 使 $C^{-1}AC$ 为对角矩阵，从而 $A$ [可对角化](../matrix-diagonalization/)。
 
 ## 一个完整例子
 

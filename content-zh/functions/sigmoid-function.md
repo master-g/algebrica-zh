@@ -6,11 +6,12 @@ license: CC BY-NC 4.0
 tags:
   - derivatives
   - functions
+  - heaviside-function
   - logistic-function
   - machine-learning
 translation:
   status: current
-  source_hash: 25821b71f383339e9fca0af69975625f0d1a745cf6119075cde13b9e6edcf894
+  source_hash: bf26e302affc2758d86f943ea5c2727d1e0927e9db7738c79e46e6a7454dba16
   translator: codex
   updated: "2026-08-02T00:00:00.000Z"
 ---
@@ -100,7 +101,7 @@ $$f(x) = \frac{L}{1 + e^{-k(x - x_0)}}$$
 
 ## 趋近阶跃函数
 
-对于缩放后的 Sigmoid 函数 $\sigma(kx) = \dfrac{1}{1 + e^{-kx}}$，较大的 $k$ 会压缩原点附近的过渡区域，而渐近值 $0$ 和 $1$ 保持不变。当 $k \to +\infty$ 时，函数逐点收敛到 Heaviside 阶跃函数：
+对于缩放后的 Sigmoid 函数 $\sigma(kx) = \dfrac{1}{1 + e^{-kx}}$，较大的 $k$ 会压缩原点附近的过渡区域，而渐近值 $0$ 和 $1$ 保持不变。当 $k \to +\infty$ 时，函数逐点收敛到[Heaviside 阶跃函数](../heaviside-function/)：
 
 $$
 \lim_{k \to +\infty} \sigma(kx) =

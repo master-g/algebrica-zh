@@ -10,7 +10,7 @@ tags:
   - inverse-function-theorem
 translation:
   status: current
-  source_hash: a6b62f5e8852a8a50b24db8221a97a2b17001c0f366356c7aa673e4b67e940d7
+  source_hash: 3396dcfa019563413cf060014903aeef69ee6265028eef89bc422362d9dda7d2
   translator: codex
   updated: "2026-08-04T00:00:00.000Z"
 ---
@@ -22,6 +22,8 @@ translation:
 + $Y$ 是陪域。
 + 如果对任意 $x_1, x_2 \in X$ 且 $x_1 \ne x_2$，都有 $f(x_1) \ne f(x_2)$，则函数是单射。等价地，对每个 $y \in Y$，至多存在一个 $x \in X$，使得 $f(x) = y$。
 + 如果对每个 $y \in Y$，至少存在一个 $x \in X$，使得 $f(x) = y$，则函数是满射。
+
+这两个条件及其推论详见[单射、满射与双射函数](../injective-surjective-and-bijective-functions/)。
 
 单射性可以直接从图像上理解。当且仅当没有任何水平线与函数图像相交超过一次时，函数才是单射。若水平线 $y = c$ 与图像在两个不同点相交，就会产生两个具有相同像 $c$ 的输入，这与单射性矛盾。
 
@@ -40,9 +42,9 @@ $$f^{-1} = g$$
 
 ## 通过限制定义域使函数可逆
 
-考虑定义在 $\mathbb{R}$ 上的函数 $f(x) = x^2$。这是一个二次函数，由笛卡尔平面原点处顶点的[抛物线](../parabola/)表示。在完整定义域 $\mathbb{R}$ 上，该函数不可逆，因为它不是单射：不同输入可能产生相同输出，例如 $f(-2) = f(2)$。
+考虑定义在 $\mathbb{R}$ 上的[幂函数](../power-function/) $f(x) = x^2$。这是一个二次函数，由笛卡尔平面原点处顶点的[抛物线](../parabola/)表示。在完整定义域 $\mathbb{R}$ 上，该函数不可逆，因为它不是单射：不同输入可能产生相同输出，例如 $f(-2) = f(2)$。
 
-如果将定义域限制为 $[0, +\infty)$，函数就变成双射，因而可逆。此时逆函数为：
+如果将定义域限制为 $[0, +\infty)$，函数就变成双射，因而可逆。它的逆函数是[平方根函数](../irrational-functions/)：
 
 $$
 f(x) = x^2 \rightarrow f^{-1}(x) = \sqrt{x} \quad (x \geq 0)

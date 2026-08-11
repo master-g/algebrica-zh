@@ -1,11 +1,11 @@
 #!/usr/bin/env node
-import { readFileSync, readdirSync, existsSync } from 'node:fs';
+import { readFileSync, existsSync } from 'node:fs';
 import { dirname, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { createHash } from 'node:crypto';
-import yaml from 'js-yaml';
 import { validateTranslation } from './lib/validate.mjs';
 import { splitFrontmatter, parseFrontmatter } from './lib/frontmatter.mjs';
+import { hashSource } from '../src/lib/translation-index.mjs';
+import { buildTranslationInventory } from '../src/lib/source-inventory.mjs';
 
 const MODULE_PATH = fileURLToPath(import.meta.url);
 const __dirname = dirname(MODULE_PATH);
@@ -14,10 +14,6 @@ const CONTENT_ZH = resolve(__dirname, '..', 'content-zh');
 const SECTIONS_YAML = resolve(__dirname, '..', 'sections.yaml');
 const DANGLING_FILE = resolve(__dirname, '..', 'src', 'lib', 'dangling-links.json');
 const FAILURES_FILE = resolve(__dirname, '..', 'translation-failures.json');
-
-function hashSource(raw) {
-  return createHash('sha256').update(raw).digest('hex');
-}
 
 function loadDangling() {
   if (!existsSync(DANGLING_FILE)) return { external: [], text: [] };
@@ -28,24 +24,8 @@ function loadDangling() {
   }
 }
 
-function listSourceTargets() {
-  const targets = [];
-  const sections = yaml.load(readFileSync(SECTIONS_YAML, 'utf8')) || { sections: [] };
-  for (const sec of sections.sections || []) {
-    for (const slug of sec.entries || []) {
-      targets.push({ section: sec.dir, slug });
-    }
-  }
-  // Pages
-  for (const slug of ['bibliography', 'editorial-process']) {
-    targets.push({ section: 'pages', slug });
-  }
-  return targets;
-}
-
-function sourcePath(section, slug) {
-  if (section === 'pages') return resolve(UPSTREAM, 'pages', `${slug}.md`);
-  return resolve(UPSTREAM, section, `${slug}.md`);
+function sourcePath(section, slug, upstream = UPSTREAM) {
+  return resolve(upstream, section, `${slug}.md`);
 }
 
 function normalizeTargetPart(value, label) {
@@ -124,26 +104,28 @@ export function findCurrentFailureConflicts(status, failures) {
 
 export async function collectTranslationStatus({
   verify = false,
-  targets = listSourceTargets(),
+  targets,
+  inventory,
+  upstream = UPSTREAM,
+  contentZh = CONTENT_ZH,
   dangling = loadDangling(),
   log = console.log,
 } = {}) {
   const current = [];
   const stale = [];
-  const missing = [];
+  const missingTranslation = [];
   let validationFailures = 0;
+  const resolvedInventory = inventory || (targets
+    ? { sourceTargets: targets, sourceAbsentTargets: [] }
+    : buildTranslationInventory({ sourceRoot: upstream, sectionsFile: SECTIONS_YAML }));
 
-  for (const { section, slug } of targets) {
-    const src = sourcePath(section, slug);
-    if (!existsSync(src)) {
-      missing.push({ section, slug, note: 'source missing upstream' });
-      continue;
-    }
+  for (const { section, slug } of resolvedInventory.sourceTargets) {
+    const src = sourcePath(section, slug, upstream);
     const raw = readFileSync(src, 'utf8');
     const expected = hashSource(raw);
-    const zhPath = resolve(CONTENT_ZH, section, `${slug}.md`);
+    const zhPath = resolve(contentZh, section, `${slug}.md`);
     if (!existsSync(zhPath)) {
-      missing.push({ section, slug });
+      missingTranslation.push({ section, slug });
       continue;
     }
     const zhText = readFileSync(zhPath, 'utf8');
@@ -171,7 +153,13 @@ export async function collectTranslationStatus({
     }
   }
 
-  return { current, stale, missing, validationFailures };
+  return {
+    current,
+    stale,
+    missingTranslation,
+    sourceAbsent: resolvedInventory.sourceAbsentTargets,
+    validationFailures,
+  };
 }
 
 function printStatus(status, log) {
@@ -179,10 +167,10 @@ function printStatus(status, log) {
   for (const t of status.current) log(`  ${t.section}/${t.slug}`);
   log(`stale: ${status.stale.length}`);
   for (const t of status.stale) log(`  ${t.section}/${t.slug}`);
-  log(`missing: ${status.missing.length}`);
-  for (const t of status.missing) {
-    log(`  ${t.section}/${t.slug}${t.note ? ` (${t.note})` : ''}`);
-  }
+  log(`missing_translation: ${status.missingTranslation.length}`);
+  for (const t of status.missingTranslation) log(`  ${t.section}/${t.slug}`);
+  log(`source_absent: ${status.sourceAbsent.length}`);
+  for (const t of status.sourceAbsent) log(`  ${t.section}/${t.slug}`);
 }
 
 export async function runTranslationStatus({

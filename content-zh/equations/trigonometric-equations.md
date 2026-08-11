@@ -14,7 +14,7 @@ tags:
   - unit-circle
 translation:
   status: current
-  source_hash: 234a79c5e00dc834731945094ffd36538b6368a7c81198732001f0a1505bb06f
+  source_hash: c533abcf3f2ebff0c70d1b63f43a90deae424075d6bc29e311922dd90d8d63ec
   translator: omp
   updated: "2026-07-30T11:41:04.547Z"
 ---
@@ -40,9 +40,9 @@ $$\sin(x) = m \tag{1}$$
 
 在[单位圆](../unit-circle/)上，该方程对应水平直线 $y = m$。当 $-1 < m < 1$ 时，该直线与圆相交于两个不同的点，关于纵轴对称，从而在 $[0, 2\pi)$ 中产生两个角：
 
-$$x = \alpha \quad \text{且} \quad x = \pi - \alpha$$
+$$x = \alpha, \qquad x = \pi - \alpha$$
 
-其中 $\alpha$ 是 $m$ 的[反正弦](../arcsine-and-arccosine/)，即在 $[-\pi/2, \pi/2]$ 中满足 $\sin(\alpha) = m$ 的唯一角。由于正弦函数以 $2\pi$ 为周期，完整的解集合为：
+其中 $\alpha$ 是 $m$ 的[反正弦](../arcsine-function/)，即在 $[-\pi/2, \pi/2]$ 中满足 $\sin(\alpha) = m$ 的唯一角。由于正弦函数以 $2\pi$ 为周期，完整的解集合为：
 
 $$
 \begin{align}
@@ -76,7 +76,7 @@ $$
 
 $$\cos(x) = m \tag{2}$$
 
-同样受到值域条件的约束，因为[余弦](../sine-and-cosine/)的取值也在 $[-1, 1]$ 内。当 $-1 < m < 1$ 时，直线 $x = m$ 与单位圆相交于两点，这两点关于横轴对称，对应两个相反的角。令 $\alpha = \arccos(m)$ 表示 $m$ 的[反余弦](../arcsine-and-arccosine/)，即 $[0, \pi]$ 中满足 $\cos(\alpha) = m$ 的唯一值，则通解为：
+同样受到值域条件的约束，因为[余弦](../sine-and-cosine/)的取值也在 $[-1, 1]$ 内。当 $-1 < m < 1$ 时，直线 $x = m$ 与单位圆相交于两点，这两点关于横轴对称，对应两个相反的角。令 $\alpha = \arccos(m)$ 表示 $m$ 的[反余弦](../arccosine-function/)，即 $[0, \pi]$ 中满足 $\cos(\alpha) = m$ 的唯一值，则通解为：
 
 $$x = \pm\alpha + 2k\pi, \quad k \in \mathbb{Z}$$
 

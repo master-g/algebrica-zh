@@ -20,7 +20,7 @@ tags:
   - uncountability
 translation:
   status: current
-  source_hash: 8dac4b527812a107d8a05a35ced83226c3eb52d83a89b9a2b2542a5ba7559940
+  source_hash: 32ee505033b622b742ed11d259879f7410eda5a67d0ced73a4521430e2469c77
   translator: codex
   updated: "2026-08-04T00:00:00.000Z"
 ---
@@ -96,7 +96,7 @@ $$
 
 一个等价的定量形式表明，对所有正实数 $x$ 和 $\varepsilon$，存在正整数 $M$，使得 $M\varepsilon>x$。将前一形式应用于 $x/\varepsilon$，便得到整数 $M>x/\varepsilon$。因此，任何固定的正量的反复累加最终都会超过任何给定的实数。
 
-每个实数还有唯一的整数部分。对每个 $x\in\mathbb{R}$，阿基米德性质将 $x$ 限制在两个整数之间，而不超过 $x$ 的整数中有最大元。记该整数为 $\lfloor x\rfloor$，则有：
+每个实数还有唯一的[整数部分](../floor-and-ceiling-functions/)。对每个 $x\in\mathbb{R}$，阿基米德性质将 $x$ 限制在两个整数之间，而不超过 $x$ 的整数中有最大元。记该整数为 $\lfloor x\rfloor$，则有：
 
 $$
 \lfloor x\rfloor\leq x<\lfloor x\rfloor+1

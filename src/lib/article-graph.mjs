@@ -39,19 +39,25 @@ function countBeforeLabel(html, label) {
 export function extractArticleGraph(html) {
   if (!html.includes('collapsible-tree')) return null;
 
-  const datasetMatch = html.match(
+  const scriptDatasetMatch = html.match(
     /\b(?:var|let|const)\s+dataset\s*=\s*(\{[\s\S]*?\})\s*;/,
   );
-  if (!datasetMatch) return null;
+  const attributeDatasetMatch = html.match(
+    /\bdata-collapsible-tree-data=(['"])([\s\S]*?)\1/i,
+  );
+  const datasetJson = scriptDatasetMatch?.[1]
+    || (attributeDatasetMatch ? decodeHtml(attributeDatasetMatch[2]) : null);
+  if (!datasetJson) return null;
 
   let dataset;
   try {
-    dataset = JSON.parse(datasetMatch[1]);
+    dataset = JSON.parse(datasetJson);
   } catch {
     return null;
   }
 
-  const canvasHeightMatch = html.match(/\bfixedCanvasHeight\s*=\s*(\d+)/);
+  const canvasHeightMatch = html.match(/\bfixedCanvasHeight\s*=\s*(\d+)/)
+    || html.match(/\bdata-collapsible-tree-height=['"](\d+)['"]/i);
   const difficultyMatch = html.match(
     /\bdifficulty-level\s+dl-(\d)\b[^>]*>(?:\s*<div[^>]*>\s*<\/div>){0,4}\s*([^<]+?)\s*<\/div>/i,
   );

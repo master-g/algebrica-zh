@@ -7,7 +7,7 @@ tags:
   []
 translation:
   status: current
-  source_hash: dcc25bbb396322ba7ee93c9ae24cc318315f21d76b63772125c995ccc494b552
+  source_hash: 41c566381edde8f8b50c1f0ae8188ec0eaea6008f7a554785fe56b0fcd750f55
   translator: codex
   updated: "2026-08-04T00:00:00.000Z"
 ---
@@ -35,6 +35,7 @@ translation:
 + [A Computational Introduction to Number Theory and Algebra](https://www.shoup.net/ntb/ntb-v2_1.pdf), Victor Shoup
 + [A Course in Universal Algebra](https://www.math.uwaterloo.ca/~snburris/htdocs/ualg.html), Stanley N. Burris, H. P. Sankappanavar
 + [Elementary Number Theory: Primes, Congruences, and Secrets](https://wstein.org/ent/ent.pdf), William Stein
++ [Foundations of Module and Ring Theory: A Handbook for Study and Research](https://www.math.uni-duesseldorf.de/~wisbauer/book.pdf), Robert Wisbauer
 + [Group Theory](https://www.jmilne.org/math/CourseNotes/GT.pdf), J. S. Milne
 + [Introduction to Modern Algebra](http://aleph0.clarku.edu/~djoyce/ma225/algebra.pdf), David Joyce
 + [Precalculus](https://www.pearson.com/en-us/subject-catalog/p/precalculus/P200000006127/9780137321667), Robert F. Blitzer
@@ -83,6 +84,7 @@ translation:
 + [Introduction to Analysis](https://www.math.ucdavis.edu/~hunter/intro_analysis_pdf/intro_analysis.html), John K. Hunter
 + [An Introduction to Measure Theory](https://terrytao.wordpress.com/wp-content/uploads/2012/12/gsm-126-tao5-measure-book.pdf), Terence Tao
 + [Introduction to Real Analysis](https://www.jirka.org/ra/realanal.pdf), Jiří Lebl
++ [Lecture Notes in Calculus I](https://bpb-us-w2.wpmucdn.com/faculty.umaine.edu/dist/1/19/files/2022/08/calculus.pdf), Jakob Streipel
 + [Lecture Notes on Mathematical Analysis](https://www.math.nthu.edu.tw/~hyliao/AnalysisLectureNotes.pdf), Hsuan-Yi Liao
 + [Measure, Integration & Real Analysis](https://measure.axler.net/MIRA.pdf), Sheldon Axler
 + [Methods of Real Analysis](https://openlibrary.org/books/OL5205094M/Methods_of_real_analysis), Richard R. Goldberg
@@ -105,6 +107,7 @@ translation:
 + [High-Dimensional Probability: An Introduction with Applications in Data Science](https://www.math.uci.edu/~rvershyn/papers/HDP-book/HDP-2.pdf), Roman Vershynin
 + [Introduction to Probability](https://math.dartmouth.edu/~prob/prob/prob.pdf), Charles M. Grinstead, J. Laurie Snell
 + [Introduction to Probability](http://probabilitybook.net), Joseph K. Blitzstein, Jessica Hwang
++ [Introduction to Probability](https://vfu.bg/en/e-Learning/Math--Bertsekas_Tsitsiklis_Introduction_to_probability.pdf), Dimitri P. Bertsekas, John N. Tsitsiklis
 + [An Introduction to Statistical Learning](https://www.statlearning.com/s/ISLR-Seventh-Printing.pdf), Gareth James, Daniela Witten, Trevor Hastie, Robert Tibshirani
 + [Lecture Notes on Probability, Statistics and Linear Algebra](https://people.math.harvard.edu/~knill/teaching/math19b_2011/handouts/chapters1-19.pdf), C. H. Taubes
 + [OpenIntro Statistics](https://leanpub.com/os), Christopher Barr, Mine Cetinkaya-Rundel, David Diez
@@ -151,8 +154,10 @@ translation:
 
 + [Algorithms and Complexity](https://www.math.upenn.edu/~wilf/AlgComp.pdf), Herbert S. Wilf
 + [Applied Combinatorics](https://trotter.math.gatech.edu/book.pdf), Mitchel T. Keller, William T. Trotter
++ [Discrete Structures](https://link.springer.com/book/10.1007/978-3-031-73434-2), Andreas Klappenecker, Hyunyoung Lee
 + [Exploring Combinatorial Mathematics](https://openmathbooks.org/ecm/ecm.html), Richard Grassl, Oscar Levin
 + [Foundations of Applied Mathematics](https://foundations-of-applied-mathematics.github.io), Jeffrey Humpherys, Tyler J. Jarvis
++ [Foundations of Computation](https://math.hws.edu/FoundationsOfComputation/FoundationsOfComputation_2.3.2_6x9.pdf), Carol Critchlow, David Eck
 + [Foundations of Data Science](https://www.cs.cornell.edu/jeh/book.pdf), Avrim Blum, John Hopcroft, Ravindran Kannan
 + [Graph Theory](https://daiwz.net/course/disc_math/2023/Diestel_Graph_Theory.pdf), Reinhard Diestel
 + [Graph Theory](https://roam.libraries.psu.edu/system/files/e-books/MATH485-Graph_Theory.pdf), Christopher Griffin
@@ -172,13 +177,16 @@ translation:
 + [Foundations of Machine Learning](https://cs.nyu.edu/~mohri/mlbook/), Mehryar Mohri, Afshin Rostamizadeh, Ameet Talwalkar
 + [Information Theory, Inference, and Learning Algorithms](https://www.inference.org.uk/itprnn/book.pdf), David J. C. MacKay
 + [An Introduction to Flow Matching and Diffusion Models](https://diffusion.csail.mit.edu/2026/docs/lecture_notes.pdf), Peter Holderrieth, Ezra Erives
++ [The Little Book of Generative AI Foundations: An Intuitive Mathematical Primer](https://arxiv.org/pdf/2605.29713), Tianhua Chen
 + [Machine Learning Systems, Volume I: Foundations](https://mlsysbook.ai/vol1/), Vijay Janapa Reddi
 + [Machine Learning Systems, Volume II: At Scale](https://mlsysbook.ai/vol2/assets/downloads/Machine-Learning-Systems-Vol2.pdf), Vijay Janapa Reddi
 + [Mathematical and Statistical Foundations of AI](https://zenodo.org/records/15713364), Saman Siadati
-+ [Mathematical Theory of Deep Learning](https://arxiv.org/abs/2407.18384), Philipp Petersen, Jakob Zech
++ [Mathematical Foundations of Deep Learning](https://arxiv.org/pdf/2603.18387), Xiaojing Ye
++ [Mathematical Theory of Deep Learning](https://arxiv.org/pdf/2407.18384), Philipp Petersen, Jakob Zech
 + [Mathematics for Machine Learning](https://mml-book.github.io/book/mml-book.pdf), Marc Peter Deisenroth, A. Aldo Faisal, Cheng Soon Ong
 + [Mathematics of Neural Networks](https://arxiv.org/abs/2403.04807), Bart M. N. Smets
 + [Pattern Recognition and Machine Learning](https://www.microsoft.com/en-us/research/wp-content/uploads/2006/01/Bishop-Pattern-Recognition-and-Machine-Learning-2006.pdf), Christopher M. Bishop
++ [Patterns, Predictions, and Actions](https://mlstory.org/pdf/patterns.pdf), Moritz Hardt, Benjamin Recht
 + [Transformers](https://web.stanford.edu/~jurafsky/slp3/8.pdf), Daniel Jurafsky, James H. Martin
 + [Understanding Deep Learning](https://udlbook.github.io/udlbook/), Simon J. D. Prince
 + [Understanding Machine Learning: From Theory to Algorithms](https://www.cs.huji.ac.il/~shais/UnderstandingMachineLearning/copy.html), Shai Shalev-Shwartz, Shai Ben-David

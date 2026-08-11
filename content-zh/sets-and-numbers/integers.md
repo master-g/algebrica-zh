@@ -28,7 +28,7 @@ tags:
   - unique-factorization
 translation:
   status: current
-  source_hash: 35b531676f04871fde0a7c2f668ad9dd3caca5cedaaa7c6b9f9441a0ae2dc4ef
+  source_hash: 344d87b94498efbc5cbe888827f407acf0e30bfa54387cd077ae45fae8ffca0d
   translator: codex
   updated: "2026-08-04T00:00:00.000Z"
 ---
@@ -269,7 +269,7 @@ $$
 a=bq+r \qquad 0\leq r<|b|
 $$
 
-整数 $q$ 是 $a$ 除以 $b$ 的商，$r$ 是余数。界中包含[绝对值](../absolute-value/) $|b|$，因此同时适用于正除数和负除数。[取模运算符](../modulo-operator/)将这个唯一余数赋给 $a$。对于域上的[多项式除法](../polynomial-division/)，相应的界比较余式次数和除式次数。
+整数 $q$ 是 $a$ 除以 $b$ 的商，$r$ 是余数。界中包含[绝对值](../absolute-value/) $|b|$，因此同时适用于正除数和负除数。[取模运算符](../modulo-operator/)将这个唯一余数赋给 $a$。对于正除数，[向下取整函数](../floor-and-ceiling-functions/)给出商和余数的显式公式。对于域上的[多项式除法](../polynomial-division/)，相应的界比较余式次数和除式次数。
 
 为证明存在性，令 $d=|b|$，于是 $d>0$，并考虑集合：
 

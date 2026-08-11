@@ -10,7 +10,7 @@ tags:
   - odd-function
 translation:
   status: current
-  source_hash: 5649fe9ebc7eec3461d4021a22420be9b7475382b6063ffe2cca479bf06ed692
+  source_hash: 79dc82ebcd2707614a8dddf2722bb5f1e852a51c329b11ac86c104b0a760f5d9
   translator: codex
   updated: "2026-08-02T00:00:00.000Z"
 ---
@@ -35,7 +35,7 @@ $$\cos(\pi) = \cos(-\pi) = -1$$
 
 另一个例子是[绝对值函数](../absolute-value-function/)，因为对每个实数 $x$ 都有 $|-x| = |x|$。
 
-考虑函数族 $f(x) = x^{n}$，其中 $n \in \mathbb{N}$。函数的奇偶性完全由指数决定：当 $n$ 为偶数[整数](../integers/)时，函数为偶函数；当 $n$ 为奇数时，函数为奇函数。
+考虑[幂函数](../power-function/)族 $f(x) = x^{n}$，其中 $n \in \mathbb{N}$。函数的奇偶性完全由指数决定：当 $n$ 为偶数[整数](../integers/)时，函数为偶函数；当 $n$ 为奇数时，函数为奇函数。
 
 ## 偶函数的定积分
 

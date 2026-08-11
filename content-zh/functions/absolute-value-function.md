@@ -13,13 +13,13 @@ tags:
   - sign-function
 translation:
   status: current
-  source_hash: 81569c1ce6a455061abfb2dd03fe55347421d28678c85b6986d748139d0a2f92
+  source_hash: 711a400b639f25dfd7ed410fef9f07b77e4d0420dbf97f426956218f53f06e44
   translator: codex
   updated: "2026-08-02T00:00:00.000Z"
 ---
 ## 绝对值的引入
 
-本文介绍[绝对值](../absolute-value/)，从它的定义开始：
+本文介绍[绝对值](../absolute-value/)，从它的[分段定义](../piecewise-functions/)开始：
 
 $$
 |x| =
