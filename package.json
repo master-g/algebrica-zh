@@ -22,7 +22,7 @@
     "sync:localized-svg-structure": "node scripts/sync-localized-svg-structure.mjs"
   },
   "dependencies": {
-    "@astrojs/markdown-remark": "^7.2.1",
+    "@astrojs/markdown-remark": "^7.2.2",
     "astro": "~7.1.0",
     "js-yaml": "^4.1.0",
     "katex": "^0.16.22",
