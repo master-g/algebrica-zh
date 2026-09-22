@@ -776,6 +776,74 @@
     "enables": 0,
     "canvasHeight": 420
   },
+  "arccotangent-function": {
+    "source": "https://algebrica.org/arccotangent-function/",
+    "dataset": {
+      "name": "root",
+      "children": [
+        {
+          "name": "definition",
+          "children": [
+            {
+              "name": "inverse of cotangent"
+            },
+            {
+              "name": "domain and range"
+            },
+            {
+              "name": "principal interval"
+            },
+            {
+              "name": "decreasing function"
+            }
+          ]
+        },
+        {
+          "name": "graph",
+          "children": [
+            {
+              "name": "horizontal asymptotes"
+            },
+            {
+              "name": "cotangent branch"
+            },
+            {
+              "name": "reflection in y = x"
+            },
+            {
+              "name": "intercepts"
+            }
+          ]
+        },
+        {
+          "name": "properties",
+          "children": [
+            {
+              "name": "continuity"
+            },
+            {
+              "name": "derivative"
+            },
+            {
+              "name": "inverse identities"
+            },
+            {
+              "name": "reference values"
+            }
+          ]
+        }
+      ]
+    },
+    "type": "Concept",
+    "description": "The structure of the entry is shown in the conceptual map, where each branch represents a core component and the sub-nodes highlight the specific notions discussed.",
+    "difficulty": {
+      "level": 2,
+      "label": "Intermediate"
+    },
+    "requires": 1,
+    "enables": 0,
+    "canvasHeight": 400
+  },
   "arcsine-and-arccosine": {
     "source": "https://algebrica.org/arcsine-and-arccosine/",
     "dataset": {
@@ -1030,6 +1098,80 @@
     "requires": 3,
     "enables": 2,
     "canvasHeight": 440
+  },
+  "arctangent-function": {
+    "source": "https://algebrica.org/arctangent-function/",
+    "dataset": {
+      "name": "root",
+      "children": [
+        {
+          "name": "definition",
+          "children": [
+            {
+              "name": "inverse tangent"
+            },
+            {
+              "name": "notation"
+            },
+            {
+              "name": "domain"
+            },
+            {
+              "name": "range"
+            },
+            {
+              "name": "principal values"
+            },
+            {
+              "name": "graph"
+            }
+          ]
+        },
+        {
+          "name": "properties",
+          "children": [
+            {
+              "name": "odd function"
+            },
+            {
+              "name": "monotonicity"
+            },
+            {
+              "name": "continuity"
+            },
+            {
+              "name": "asymptotes"
+            },
+            {
+              "name": "limits"
+            }
+          ]
+        },
+        {
+          "name": "calculus",
+          "children": [
+            {
+              "name": "derivative"
+            },
+            {
+              "name": "integral"
+            },
+            {
+              "name": "Maclaurin series"
+            }
+          ]
+        }
+      ]
+    },
+    "type": "Concept",
+    "description": "The structure of the entry is shown in the conceptual map, where each branch represents a core component and the sub-nodes highlight the specific notions discussed.",
+    "difficulty": {
+      "level": 2,
+      "label": "Intermediate"
+    },
+    "requires": 1,
+    "enables": 0,
+    "canvasHeight": 400
   },
   "arithmetic-mean": {
     "source": "https://algebrica.org/arithmetic-mean/",
@@ -3664,6 +3806,77 @@
     "requires": 1,
     "enables": 6,
     "canvasHeight": 440
+  },
+  "convergence-tests-for-improper-integrals": {
+    "source": "https://algebrica.org/convergence-tests-for-improper-integrals/",
+    "dataset": {
+      "name": "root",
+      "children": [
+        {
+          "name": "convergence criteria",
+          "children": [
+            {
+              "name": "cauchy criterion"
+            },
+            {
+              "name": "absolute convergence"
+            },
+            {
+              "name": "conditional convergence"
+            },
+            {
+              "name": "comparison principle"
+            }
+          ]
+        },
+        {
+          "name": "convergence tests",
+          "children": [
+            {
+              "name": "comparison test"
+            },
+            {
+              "name": "limit comparison test"
+            },
+            {
+              "name": "dirichlet test"
+            },
+            {
+              "name": "abel test"
+            }
+          ]
+        },
+        {
+          "name": "special cases",
+          "children": [
+            {
+              "name": "positive integrand"
+            },
+            {
+              "name": "oscillatory integral"
+            },
+            {
+              "name": "singular endpoint"
+            },
+            {
+              "name": "infinite interval"
+            },
+            {
+              "name": "cauchy principal value"
+            }
+          ]
+        }
+      ]
+    },
+    "type": "Technique",
+    "description": "The structure of the entry is shown in the conceptual map, where each branch represents a core component and the sub-nodes highlight the specific notions discussed.",
+    "difficulty": {
+      "level": 2,
+      "label": "Intermediate"
+    },
+    "requires": 2,
+    "enables": 0,
+    "canvasHeight": 400
   },
   "convergent-and-divergent-sequences": {
     "source": "https://algebrica.org/convergent-and-divergent-sequences/",
@@ -7381,6 +7594,92 @@
     "enables": 0,
     "canvasHeight": 420
   },
+  "gaussian-function": {
+    "source": "https://algebrica.org/gaussian-function/",
+    "dataset": {
+      "name": "root",
+      "children": [
+        {
+          "name": "definition and form",
+          "children": [
+            {
+              "name": "Gaussian function"
+            },
+            {
+              "name": "general form"
+            },
+            {
+              "name": "parameters"
+            },
+            {
+              "name": "amplitude"
+            },
+            {
+              "name": "center"
+            },
+            {
+              "name": "width"
+            }
+          ]
+        },
+        {
+          "name": "properties",
+          "children": [
+            {
+              "name": "bell shape"
+            },
+            {
+              "name": "symmetry"
+            },
+            {
+              "name": "maximum"
+            },
+            {
+              "name": "limits"
+            },
+            {
+              "name": "derivative"
+            },
+            {
+              "name": "integral"
+            }
+          ]
+        },
+        {
+          "name": "normal distribution",
+          "children": [
+            {
+              "name": "probability density"
+            },
+            {
+              "name": "mean"
+            },
+            {
+              "name": "standard deviation"
+            },
+            {
+              "name": "normalization"
+            },
+            {
+              "name": "standard Gaussian"
+            },
+            {
+              "name": "Gaussian integral"
+            }
+          ]
+        }
+      ]
+    },
+    "type": "Concept",
+    "description": "The structure of the entry is shown in the conceptual map, where each branch represents a core component and the sub-nodes highlight the specific notions discussed.",
+    "difficulty": {
+      "level": 2,
+      "label": "Intermediate"
+    },
+    "requires": 2,
+    "enables": 0,
+    "canvasHeight": 440
+  },
   "geometric-distribution": {
     "source": "https://algebrica.org/geometric-distribution/",
     "dataset": {
@@ -8701,6 +9000,169 @@
     "enables": 3,
     "canvasHeight": 440
   },
+  "hyperbolic-cosine-function": {
+    "source": "https://algebrica.org/hyperbolic-cosine-function/",
+    "dataset": {
+      "name": "hyperbolic cosine",
+      "children": [
+        {
+          "name": "foundations",
+          "children": [
+            {
+              "name": "definition"
+            },
+            {
+              "name": "exponential form"
+            },
+            {
+              "name": "domain and range"
+            },
+            {
+              "name": "even symmetry"
+            },
+            {
+              "name": "graph"
+            }
+          ]
+        },
+        {
+          "name": "properties",
+          "children": [
+            {
+              "name": "hyperbolic identities"
+            },
+            {
+              "name": "addition formulas"
+            },
+            {
+              "name": "double-angle formulas"
+            },
+            {
+              "name": "inverse function"
+            },
+            {
+              "name": "limits"
+            },
+            {
+              "name": "maclaurin series"
+            }
+          ]
+        },
+        {
+          "name": "calculus",
+          "children": [
+            {
+              "name": "derivative"
+            },
+            {
+              "name": "second derivative"
+            },
+            {
+              "name": "integral"
+            },
+            {
+              "name": "differential equation"
+            },
+            {
+              "name": "convexity"
+            }
+          ]
+        }
+      ]
+    },
+    "type": "Concept",
+    "description": "The structure of the entry is shown in the conceptual map, where each branch represents a core component and the sub-nodes highlight the specific notions discussed.",
+    "difficulty": {
+      "level": 2,
+      "label": "Intermediate"
+    },
+    "requires": 1,
+    "enables": 0,
+    "canvasHeight": 410
+  },
+  "hyperbolic-cotangent-function": {
+    "source": "https://algebrica.org/hyperbolic-cotangent-function/",
+    "dataset": {
+      "name": "root",
+      "children": [
+        {
+          "name": "definition",
+          "children": [
+            {
+              "name": "hyperbolic cotangent"
+            },
+            {
+              "name": "cosh/sinh ratio"
+            },
+            {
+              "name": "domain"
+            },
+            {
+              "name": "range"
+            },
+            {
+              "name": "odd function"
+            },
+            {
+              "name": "periodicity"
+            }
+          ]
+        },
+        {
+          "name": "properties",
+          "children": [
+            {
+              "name": "derivative"
+            },
+            {
+              "name": "limits"
+            },
+            {
+              "name": "asymptotes"
+            },
+            {
+              "name": "monotonicity"
+            },
+            {
+              "name": "inverse function"
+            },
+            {
+              "name": "identities"
+            }
+          ]
+        },
+        {
+          "name": "representations",
+          "children": [
+            {
+              "name": "exponential form"
+            },
+            {
+              "name": "graph"
+            },
+            {
+              "name": "series expansion"
+            },
+            {
+              "name": "Laurent series"
+            },
+            {
+              "name": "complex extension"
+            }
+          ]
+        }
+      ]
+    },
+    "type": "Concept",
+    "description": "The structure of the entry is shown in the conceptual map, where each branch represents a core component and the sub-nodes highlight the specific notions discussed.",
+    "difficulty": {
+      "level": 2,
+      "label": "Intermediate"
+    },
+    "requires": 1,
+    "enables": 0,
+    "canvasHeight": 420
+  },
   "hyperbolic-identities": {
     "source": "https://algebrica.org/hyperbolic-identities/",
     "dataset": {
@@ -8956,6 +9418,89 @@
     "enables": 2,
     "canvasHeight": 370
   },
+  "hyperbolic-sine-function": {
+    "source": "https://algebrica.org/hyperbolic-sine-function/",
+    "dataset": {
+      "name": "root",
+      "children": [
+        {
+          "name": "definition and properties",
+          "children": [
+            {
+              "name": "exponential definition"
+            },
+            {
+              "name": "domain and range"
+            },
+            {
+              "name": "odd symmetry"
+            },
+            {
+              "name": "monotonicity"
+            },
+            {
+              "name": "hyperbolic identity"
+            }
+          ]
+        },
+        {
+          "name": "calculus",
+          "children": [
+            {
+              "name": "limits"
+            },
+            {
+              "name": "derivatives"
+            },
+            {
+              "name": "integrals"
+            },
+            {
+              "name": "convexity and concavity"
+            },
+            {
+              "name": "inflection point"
+            },
+            {
+              "name": "Maclaurin series"
+            }
+          ]
+        },
+        {
+          "name": "relations and inverse",
+          "children": [
+            {
+              "name": "inverse function"
+            },
+            {
+              "name": "arsinh formula"
+            },
+            {
+              "name": "inverse derivative"
+            },
+            {
+              "name": "hyperbolic substitution"
+            },
+            {
+              "name": "circular sine relation"
+            },
+            {
+              "name": "complex argument"
+            }
+          ]
+        }
+      ]
+    },
+    "type": "Concept",
+    "description": "The structure of the entry is shown in the conceptual map, where each branch represents a core component and the sub-nodes highlight the specific notions discussed.",
+    "difficulty": {
+      "level": 2,
+      "label": "Intermediate"
+    },
+    "requires": 1,
+    "enables": 0,
+    "canvasHeight": 410
+  },
   "hyperbolic-tangent-and-cotangent": {
     "source": "https://algebrica.org/hyperbolic-tangent-and-cotangent/",
     "dataset": {
@@ -9035,6 +9580,89 @@
     "requires": 3,
     "enables": 1,
     "canvasHeight": 390
+  },
+  "hyperbolic-tangent-function": {
+    "source": "https://algebrica.org/hyperbolic-tangent-function/",
+    "dataset": {
+      "name": "root",
+      "children": [
+        {
+          "name": "definition & properties",
+          "children": [
+            {
+              "name": "definition"
+            },
+            {
+              "name": "exponential form"
+            },
+            {
+              "name": "domain and range"
+            },
+            {
+              "name": "odd symmetry"
+            },
+            {
+              "name": "monotonicity"
+            },
+            {
+              "name": "hyperbolic identity"
+            }
+          ]
+        },
+        {
+          "name": "calculus",
+          "children": [
+            {
+              "name": "limits"
+            },
+            {
+              "name": "asymptotes"
+            },
+            {
+              "name": "derivatives"
+            },
+            {
+              "name": "integrals"
+            },
+            {
+              "name": "differential equation"
+            },
+            {
+              "name": "convexity and concavity"
+            }
+          ]
+        },
+        {
+          "name": "inverse & series",
+          "children": [
+            {
+              "name": "inverse function"
+            },
+            {
+              "name": "artanh formula"
+            },
+            {
+              "name": "inverse derivative"
+            },
+            {
+              "name": "inverse asymptotes"
+            },
+            {
+              "name": "Maclaurin series"
+            }
+          ]
+        }
+      ]
+    },
+    "type": "Concept",
+    "description": "The structure of the entry is shown in the conceptual map, where each branch represents a core component and the sub-nodes highlight the specific notions discussed.",
+    "difficulty": {
+      "level": 2,
+      "label": "Intermediate"
+    },
+    "requires": 1,
+    "enables": 0,
+    "canvasHeight": 420
   },
   "hypergeometric-distribution": {
     "source": "https://algebrica.org/hypergeometric-distribution/",
@@ -10331,6 +10959,92 @@
     "requires": 2,
     "enables": 0,
     "canvasHeight": 440
+  },
+  "integrals-of-irrational-functions": {
+    "source": "https://algebrica.org/integrals-of-irrational-functions/",
+    "dataset": {
+      "name": "root",
+      "children": [
+        {
+          "name": "rationalization",
+          "children": [
+            {
+              "name": "irrational functions"
+            },
+            {
+              "name": "radical substitution"
+            },
+            {
+              "name": "linear binomial"
+            },
+            {
+              "name": "fractional expression"
+            },
+            {
+              "name": "multiple radicals"
+            },
+            {
+              "name": "rational integral"
+            }
+          ]
+        },
+        {
+          "name": "quadratic radicals",
+          "children": [
+            {
+              "name": "quadratic trinomial"
+            },
+            {
+              "name": "completing the square"
+            },
+            {
+              "name": "discriminant"
+            },
+            {
+              "name": "direct antiderivatives"
+            },
+            {
+              "name": "Euler substitutions"
+            },
+            {
+              "name": "undetermined coefficients"
+            }
+          ]
+        },
+        {
+          "name": "binomial differentials",
+          "children": [
+            {
+              "name": "binomial differential"
+            },
+            {
+              "name": "Chebyshev criterion"
+            },
+            {
+              "name": "integer exponent case"
+            },
+            {
+              "name": "elementary integrability"
+            },
+            {
+              "name": "substitution criteria"
+            },
+            {
+              "name": "choice of substitution"
+            }
+          ]
+        }
+      ]
+    },
+    "type": "Concept",
+    "description": "The structure of the entry is shown in the conceptual map, where each branch represents a core component and the sub-nodes highlight the specific notions discussed.",
+    "difficulty": {
+      "level": 3,
+      "label": "Advanced"
+    },
+    "requires": 1,
+    "enables": 0,
+    "canvasHeight": 420
   },
   "integration-by-parts": {
     "source": "https://algebrica.org/integration-by-parts/",
@@ -17424,6 +18138,95 @@
     "enables": 0,
     "canvasHeight": 440
   },
+  "reduction-formulas-for-integrals": {
+    "source": "https://algebrica.org/reduction-formulas/",
+    "dataset": {
+      "name": "root",
+      "children": [
+        {
+          "name": "foundations",
+          "children": [
+            {
+              "name": "reference angle"
+            },
+            {
+              "name": "unit circle"
+            },
+            {
+              "name": "angle θ"
+            },
+            {
+              "name": "acute angle α"
+            },
+            {
+              "name": "quadrants"
+            },
+            {
+              "name": "sign rules"
+            },
+            {
+              "name": "periodicity"
+            }
+          ]
+        },
+        {
+          "name": "transformations",
+          "children": [
+            {
+              "name": "π/2 ± α"
+            },
+            {
+              "name": "π ± α"
+            },
+            {
+              "name": "3π/2 ± α"
+            },
+            {
+              "name": "2π − α"
+            },
+            {
+              "name": "cofunction swap"
+            },
+            {
+              "name": "angle reduction"
+            },
+            {
+              "name": "coterminal angles"
+            }
+          ]
+        },
+        {
+          "name": "structure",
+          "children": [
+            {
+              "name": "reflection symmetry"
+            },
+            {
+              "name": "rotation 2π"
+            },
+            {
+              "name": "even odd functions"
+            },
+            {
+              "name": "sin cos relations"
+            },
+            {
+              "name": "tan cot relations"
+            }
+          ]
+        }
+      ]
+    },
+    "type": "Identity",
+    "description": "The structure of the entry is shown in the conceptual map, where each branch represents a core component and the sub-nodes highlight the specific notions discussed.",
+    "difficulty": {
+      "level": 2,
+      "label": "Intermediate"
+    },
+    "requires": 3,
+    "enables": 0,
+    "canvasHeight": 440
+  },
   "remarkable-limits": {
     "source": "https://algebrica.org/remarkable-limits/",
     "dataset": {
@@ -19782,6 +20585,92 @@
     "enables": 2,
     "canvasHeight": 440
   },
+  "surface-area-of-revolution": {
+    "source": "https://algebrica.org/surface-area-of-revolution/",
+    "dataset": {
+      "name": "root",
+      "children": [
+        {
+          "name": "geometric foundation",
+          "children": [
+            {
+              "name": "right circular cone"
+            },
+            {
+              "name": "slant height"
+            },
+            {
+              "name": "lateral area"
+            },
+            {
+              "name": "frustum of a cone"
+            },
+            {
+              "name": "mean radius"
+            },
+            {
+              "name": "circular sector"
+            }
+          ]
+        },
+        {
+          "name": "surface area formula",
+          "children": [
+            {
+              "name": "surface of revolution"
+            },
+            {
+              "name": "partition"
+            },
+            {
+              "name": "frustum approximation"
+            },
+            {
+              "name": "mean value theorem"
+            },
+            {
+              "name": "Riemann sum"
+            },
+            {
+              "name": "definite integral"
+            }
+          ]
+        },
+        {
+          "name": "surface element",
+          "children": [
+            {
+              "name": "arc length element"
+            },
+            {
+              "name": "surface element"
+            },
+            {
+              "name": "axis of revolution"
+            },
+            {
+              "name": "parametric curve"
+            },
+            {
+              "name": "sphere"
+            },
+            {
+              "name": "cycloid"
+            }
+          ]
+        }
+      ]
+    },
+    "type": "Technique",
+    "description": "The structure of the entry is shown in the conceptual map, where each branch represents a core component and the sub-nodes highlight the specific notions discussed.",
+    "difficulty": {
+      "level": 3,
+      "label": "Advanced"
+    },
+    "requires": 2,
+    "enables": 0,
+    "canvasHeight": 420
+  },
   "symmetric-group": {
     "source": "https://algebrica.org/symmetric-group/",
     "dataset": {
@@ -20470,6 +21359,86 @@
     "enables": 2,
     "canvasHeight": 420
   },
+  "techniques-for-computing-limits-of-sequences": {
+    "source": "https://algebrica.org/techniques-for-computing-limits-of-sequences/",
+    "dataset": {
+      "name": "sequence limits",
+      "children": [
+        {
+          "name": "dominant behavior",
+          "children": [
+            {
+              "name": "dominant terms"
+            },
+            {
+              "name": "polynomial ratios"
+            },
+            {
+              "name": "little-o notation"
+            },
+            {
+              "name": "growth hierarchy"
+            },
+            {
+              "name": "leading coefficients"
+            }
+          ]
+        },
+        {
+          "name": "asymptotic methods",
+          "children": [
+            {
+              "name": "asymptotic equivalence"
+            },
+            {
+              "name": "standard limits"
+            },
+            {
+              "name": "rationalization"
+            },
+            {
+              "name": "conjugate roots"
+            },
+            {
+              "name": "variable powers"
+            },
+            {
+              "name": "logarithmic transformation"
+            }
+          ]
+        },
+        {
+          "name": "bounded behavior",
+          "children": [
+            {
+              "name": "tail behavior"
+            },
+            {
+              "name": "oscillating sequences"
+            },
+            {
+              "name": "bounded perturbations"
+            },
+            {
+              "name": "squeeze theorem"
+            },
+            {
+              "name": "convergence control"
+            }
+          ]
+        }
+      ]
+    },
+    "type": "Technique",
+    "description": "The structure of the entry is shown in the conceptual map, where each branch represents a core component and the sub-nodes highlight the specific notions discussed.",
+    "difficulty": {
+      "level": 2,
+      "label": "Intermediate"
+    },
+    "requires": 1,
+    "enables": 0,
+    "canvasHeight": 440
+  },
   "telescoping-series": {
     "source": "https://algebrica.org/telescoping-series/",
     "dataset": {
@@ -20547,6 +21516,95 @@
     "enables": 0,
     "canvasHeight": 400
   },
+  "the-cartesian-coordinate-plane": {
+    "source": "https://algebrica.org/the-cartesian-coordinate-plane/",
+    "dataset": {
+      "name": "root",
+      "children": [
+        {
+          "name": "coordinates",
+          "children": [
+            {
+              "name": "coordinate axes"
+            },
+            {
+              "name": "origin"
+            },
+            {
+              "name": "abscissa and ordinate"
+            },
+            {
+              "name": "ordered pairs"
+            },
+            {
+              "name": "Cartesian product"
+            },
+            {
+              "name": "quadrants"
+            }
+          ]
+        },
+        {
+          "name": "distance and midpoint",
+          "children": [
+            {
+              "name": "Euclidean distance"
+            },
+            {
+              "name": "Pythagorean theorem"
+            },
+            {
+              "name": "horizontal and vertical distances"
+            },
+            {
+              "name": "midpoint formula"
+            },
+            {
+              "name": "finding an endpoint"
+            },
+            {
+              "name": "circle equation"
+            },
+            {
+              "name": "equidistant points"
+            }
+          ]
+        },
+        {
+          "name": "symmetry",
+          "children": [
+            {
+              "name": "central symmetry"
+            },
+            {
+              "name": "symmetry about the origin"
+            },
+            {
+              "name": "half-turn rotation"
+            },
+            {
+              "name": "reflection in the x-axis"
+            },
+            {
+              "name": "reflection in the y-axis"
+            },
+            {
+              "name": "successive reflections"
+            }
+          ]
+        }
+      ]
+    },
+    "type": "Concept",
+    "description": "The structure of the entry is shown in the conceptual map, where each branch represents a core component and the sub-nodes highlight the specific notions discussed.",
+    "difficulty": {
+      "level": 1,
+      "label": "Easy"
+    },
+    "requires": 2,
+    "enables": 6,
+    "canvasHeight": 440
+  },
   "the-disc-method": {
     "source": "https://algebrica.org/the-disc-method/",
     "dataset": {
@@ -20609,6 +21667,169 @@
             },
             {
               "name": "y-axis rotation"
+            }
+          ]
+        }
+      ]
+    },
+    "type": "Technique",
+    "description": "The structure of the entry is shown in the conceptual map, where each branch represents a core component and the sub-nodes highlight the specific notions discussed.",
+    "difficulty": {
+      "level": 3,
+      "label": "Advanced"
+    },
+    "requires": 1,
+    "enables": 0,
+    "canvasHeight": 400
+  },
+  "the-shell-method": {
+    "source": "https://algebrica.org/the-shell-method/",
+    "dataset": {
+      "name": "root",
+      "children": [
+        {
+          "name": "shell construction",
+          "children": [
+            {
+              "name": "cylindrical shell"
+            },
+            {
+              "name": "mean radius"
+            },
+            {
+              "name": "shell height"
+            },
+            {
+              "name": "shell thickness"
+            },
+            {
+              "name": "vertical strips"
+            },
+            {
+              "name": "Riemann sum"
+            }
+          ]
+        },
+        {
+          "name": "volume formula",
+          "children": [
+            {
+              "name": "rotation about y-axis"
+            },
+            {
+              "name": "definite integral"
+            },
+            {
+              "name": "radius times height"
+            },
+            {
+              "name": "region between curves"
+            },
+            {
+              "name": "rotation about x=c"
+            },
+            {
+              "name": "rotation about x-axis"
+            }
+          ]
+        },
+        {
+          "name": "method choice",
+          "children": [
+            {
+              "name": "disc method"
+            },
+            {
+              "name": "washer method"
+            },
+            {
+              "name": "parallel slices"
+            },
+            {
+              "name": "function inversion"
+            },
+            {
+              "name": "axis crossing"
+            },
+            {
+              "name": "integration variable"
+            }
+          ]
+        }
+      ]
+    },
+    "type": "Technique",
+    "description": "The structure of the entry is shown in the conceptual map, where each branch represents a core component and the sub-nodes highlight the specific notions discussed.",
+    "difficulty": {
+      "level": 3,
+      "label": "Advanced"
+    },
+    "requires": 1,
+    "enables": 0,
+    "canvasHeight": 420
+  },
+  "the-washer-method": {
+    "source": "https://algebrica.org/the-washer-method/",
+    "dataset": {
+      "name": "washer method",
+      "children": [
+        {
+          "name": "foundations",
+          "children": [
+            {
+              "name": "solid of revolution"
+            },
+            {
+              "name": "annular cross-section"
+            },
+            {
+              "name": "outer radius"
+            },
+            {
+              "name": "inner radius"
+            },
+            {
+              "name": "area difference"
+            }
+          ]
+        },
+        {
+          "name": "rotation",
+          "children": [
+            {
+              "name": "rotation about x-axis"
+            },
+            {
+              "name": "rotation about y-axis"
+            },
+            {
+              "name": "horizontal slice"
+            },
+            {
+              "name": "vertical slice"
+            },
+            {
+              "name": "distance from axis"
+            }
+          ]
+        },
+        {
+          "name": "volume",
+          "children": [
+            {
+              "name": "definite integral"
+            },
+            {
+              "name": "washer formula"
+            },
+            {
+              "name": "squared radii"
+            },
+            {
+              "name": "integration bounds"
+            },
+            {
+              "name": "volume calculation"
             }
           ]
         }
@@ -22361,6 +23582,83 @@
     "requires": 1,
     "enables": 0,
     "canvasHeight": 440
+  },
+  "volumes-from-parallel-cross-sections": {
+    "source": "https://algebrica.org/volumes-from-parallel-cross-sections/",
+    "dataset": {
+      "name": "root",
+      "children": [
+        {
+          "name": "cross-section method",
+          "children": [
+            {
+              "name": "parallel cross sections"
+            },
+            {
+              "name": "cross-sectional area"
+            },
+            {
+              "name": "riemann sum"
+            },
+            {
+              "name": "volume integral"
+            },
+            {
+              "name": "integrability"
+            }
+          ]
+        },
+        {
+          "name": "standard solids",
+          "children": [
+            {
+              "name": "pyramid"
+            },
+            {
+              "name": "homothety"
+            },
+            {
+              "name": "right circular cone"
+            },
+            {
+              "name": "sphere"
+            },
+            {
+              "name": "solid of revolution"
+            }
+          ]
+        },
+        {
+          "name": "applications",
+          "children": [
+            {
+              "name": "disc method"
+            },
+            {
+              "name": "washer method"
+            },
+            {
+              "name": "square cross sections"
+            },
+            {
+              "name": "cylindrical wedge"
+            },
+            {
+              "name": "slicing direction"
+            }
+          ]
+        }
+      ]
+    },
+    "type": "Technique",
+    "description": "The structure of the entry is shown in the conceptual map, where each branch represents a core component and the sub-nodes highlight the specific notions discussed.",
+    "difficulty": {
+      "level": 2,
+      "label": "Intermediate"
+    },
+    "requires": 1,
+    "enables": 0,
+    "canvasHeight": 410
   },
   "weierstrass-theorem": {
     "source": "https://algebrica.org/weierstrass-theorem/",
