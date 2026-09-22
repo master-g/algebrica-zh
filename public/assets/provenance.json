@@ -1,1620 +1,1774 @@
 {
   "schema_version": 1,
-  "upstream_commit": "9b54dbec9c31f0881b0dbaddec1b260ad8406cee",
+  "upstream_commit": "cb1685078f52293985c40f92909d7ef1aaa18099",
   "assets": [
     {
       "path": "public/assets/complex-numbers/svg/complex-numbers-2.zh.svg",
-      "source": "https://github.com/antoniolupetti/algebrica/blob/9b54dbec9c31f0881b0dbaddec1b260ad8406cee/complex-numbers/svg/complex-numbers-2.svg",
+      "source": "https://github.com/antoniolupetti/algebrica/blob/cb1685078f52293985c40f92909d7ef1aaa18099/complex-numbers/svg/complex-numbers-2.svg",
       "author": "Antonio Lupetti / Algebrica",
       "license": "CC BY-NC 4.0",
       "changes": "Chinese labels and/or typography"
     },
     {
       "path": "public/assets/complex-numbers/svg/roots-of-unity-1.zh.svg",
-      "source": "https://github.com/antoniolupetti/algebrica/blob/9b54dbec9c31f0881b0dbaddec1b260ad8406cee/complex-numbers/svg/roots-of-unity-1.svg",
+      "source": "https://github.com/antoniolupetti/algebrica/blob/cb1685078f52293985c40f92909d7ef1aaa18099/complex-numbers/svg/roots-of-unity-1.svg",
       "author": "Antonio Lupetti / Algebrica",
       "license": "CC BY-NC 4.0",
       "changes": "Chinese labels and/or typography"
     },
     {
       "path": "public/assets/derivatives/svg/difference-quotient-1.zh.svg",
-      "source": "https://github.com/antoniolupetti/algebrica/blob/9b54dbec9c31f0881b0dbaddec1b260ad8406cee/derivatives/svg/difference-quotient-1.svg",
+      "source": "https://github.com/antoniolupetti/algebrica/blob/cb1685078f52293985c40f92909d7ef1aaa18099/derivatives/svg/difference-quotient-1.svg",
       "author": "Antonio Lupetti / Algebrica",
       "license": "CC BY-NC 4.0",
       "changes": "Chinese labels and/or typography"
     },
     {
       "path": "public/assets/derivatives/svg/differential-of-a-function-1.zh.svg",
-      "source": "https://github.com/antoniolupetti/algebrica/blob/9b54dbec9c31f0881b0dbaddec1b260ad8406cee/derivatives/svg/differential-of-a-function-1.svg",
+      "source": "https://github.com/antoniolupetti/algebrica/blob/cb1685078f52293985c40f92909d7ef1aaa18099/derivatives/svg/differential-of-a-function-1.svg",
       "author": "Antonio Lupetti / Algebrica",
       "license": "CC BY-NC 4.0",
       "changes": "Chinese labels and/or typography"
     },
     {
       "path": "public/assets/derivatives/svg/maximum-minimum-inflection-points-1.zh.svg",
-      "source": "https://github.com/antoniolupetti/algebrica/blob/9b54dbec9c31f0881b0dbaddec1b260ad8406cee/derivatives/svg/maximum-minimum-inflection-points-1.svg",
+      "source": "https://github.com/antoniolupetti/algebrica/blob/cb1685078f52293985c40f92909d7ef1aaa18099/derivatives/svg/maximum-minimum-inflection-points-1.svg",
       "author": "Antonio Lupetti / Algebrica",
       "license": "CC BY-NC 4.0",
       "changes": "Chinese labels and/or typography"
     },
     {
       "path": "public/assets/derivatives/svg/maximum-minimum-inflection-points-2.zh.svg",
-      "source": "https://github.com/antoniolupetti/algebrica/blob/9b54dbec9c31f0881b0dbaddec1b260ad8406cee/derivatives/svg/maximum-minimum-inflection-points-2.svg",
+      "source": "https://github.com/antoniolupetti/algebrica/blob/cb1685078f52293985c40f92909d7ef1aaa18099/derivatives/svg/maximum-minimum-inflection-points-2.svg",
       "author": "Antonio Lupetti / Algebrica",
       "license": "CC BY-NC 4.0",
       "changes": "Chinese labels and/or typography"
     },
     {
       "path": "public/assets/derivatives/svg/maximum-minimum-inflection-points-3.zh.svg",
-      "source": "https://github.com/antoniolupetti/algebrica/blob/9b54dbec9c31f0881b0dbaddec1b260ad8406cee/derivatives/svg/maximum-minimum-inflection-points-3.svg",
+      "source": "https://github.com/antoniolupetti/algebrica/blob/cb1685078f52293985c40f92909d7ef1aaa18099/derivatives/svg/maximum-minimum-inflection-points-3.svg",
       "author": "Antonio Lupetti / Algebrica",
       "license": "CC BY-NC 4.0",
       "changes": "Chinese labels and/or typography"
     },
     {
       "path": "public/assets/derivatives/svg/maximum-minimum-inflection-points-4.zh.svg",
-      "source": "https://github.com/antoniolupetti/algebrica/blob/9b54dbec9c31f0881b0dbaddec1b260ad8406cee/derivatives/svg/maximum-minimum-inflection-points-4.svg",
+      "source": "https://github.com/antoniolupetti/algebrica/blob/cb1685078f52293985c40f92909d7ef1aaa18099/derivatives/svg/maximum-minimum-inflection-points-4.svg",
       "author": "Antonio Lupetti / Algebrica",
       "license": "CC BY-NC 4.0",
       "changes": "Chinese labels and/or typography"
     },
     {
       "path": "public/assets/derivatives/svg/maximum-minimum-inflection-points-5.zh.svg",
-      "source": "https://github.com/antoniolupetti/algebrica/blob/9b54dbec9c31f0881b0dbaddec1b260ad8406cee/derivatives/svg/maximum-minimum-inflection-points-5.svg",
+      "source": "https://github.com/antoniolupetti/algebrica/blob/cb1685078f52293985c40f92909d7ef1aaa18099/derivatives/svg/maximum-minimum-inflection-points-5.svg",
       "author": "Antonio Lupetti / Algebrica",
       "license": "CC BY-NC 4.0",
       "changes": "Chinese labels and/or typography"
     },
     {
       "path": "public/assets/derivatives/svg/maximum-minimum-inflection-points-6.zh.svg",
-      "source": "https://github.com/antoniolupetti/algebrica/blob/9b54dbec9c31f0881b0dbaddec1b260ad8406cee/derivatives/svg/maximum-minimum-inflection-points-6.svg",
+      "source": "https://github.com/antoniolupetti/algebrica/blob/cb1685078f52293985c40f92909d7ef1aaa18099/derivatives/svg/maximum-minimum-inflection-points-6.svg",
       "author": "Antonio Lupetti / Algebrica",
       "license": "CC BY-NC 4.0",
       "changes": "Chinese labels and/or typography"
     },
     {
       "path": "public/assets/derivatives/svg/maximum-minimum-inflection-points-7.zh.svg",
-      "source": "https://github.com/antoniolupetti/algebrica/blob/9b54dbec9c31f0881b0dbaddec1b260ad8406cee/derivatives/svg/maximum-minimum-inflection-points-7.svg",
+      "source": "https://github.com/antoniolupetti/algebrica/blob/cb1685078f52293985c40f92909d7ef1aaa18099/derivatives/svg/maximum-minimum-inflection-points-7.svg",
       "author": "Antonio Lupetti / Algebrica",
       "license": "CC BY-NC 4.0",
       "changes": "Chinese labels and/or typography"
     },
     {
       "path": "public/assets/derivatives/svg/maximum-minimum-inflection-points-8.zh.svg",
-      "source": "https://github.com/antoniolupetti/algebrica/blob/9b54dbec9c31f0881b0dbaddec1b260ad8406cee/derivatives/svg/maximum-minimum-inflection-points-8.svg",
+      "source": "https://github.com/antoniolupetti/algebrica/blob/cb1685078f52293985c40f92909d7ef1aaa18099/derivatives/svg/maximum-minimum-inflection-points-8.svg",
       "author": "Antonio Lupetti / Algebrica",
       "license": "CC BY-NC 4.0",
       "changes": "Chinese labels and/or typography"
     },
     {
       "path": "public/assets/derivatives/svg/points-of-non-differentiability-1.zh.svg",
-      "source": "https://github.com/antoniolupetti/algebrica/blob/9b54dbec9c31f0881b0dbaddec1b260ad8406cee/derivatives/svg/points-of-non-differentiability-1.svg",
+      "source": "https://github.com/antoniolupetti/algebrica/blob/cb1685078f52293985c40f92909d7ef1aaa18099/derivatives/svg/points-of-non-differentiability-1.svg",
       "author": "Antonio Lupetti / Algebrica",
       "license": "CC BY-NC 4.0",
       "changes": "Chinese labels and/or typography"
     },
     {
       "path": "public/assets/derivatives/svg/points-of-non-differentiability-2.zh.svg",
-      "source": "https://github.com/antoniolupetti/algebrica/blob/9b54dbec9c31f0881b0dbaddec1b260ad8406cee/derivatives/svg/points-of-non-differentiability-2.svg",
+      "source": "https://github.com/antoniolupetti/algebrica/blob/cb1685078f52293985c40f92909d7ef1aaa18099/derivatives/svg/points-of-non-differentiability-2.svg",
       "author": "Antonio Lupetti / Algebrica",
       "license": "CC BY-NC 4.0",
       "changes": "Chinese labels and/or typography"
     },
     {
       "path": "public/assets/derivatives/svg/points-of-non-differentiability-3.zh.svg",
-      "source": "https://github.com/antoniolupetti/algebrica/blob/9b54dbec9c31f0881b0dbaddec1b260ad8406cee/derivatives/svg/points-of-non-differentiability-3.svg",
+      "source": "https://github.com/antoniolupetti/algebrica/blob/cb1685078f52293985c40f92909d7ef1aaa18099/derivatives/svg/points-of-non-differentiability-3.svg",
       "author": "Antonio Lupetti / Algebrica",
       "license": "CC BY-NC 4.0",
       "changes": "Chinese labels and/or typography"
     },
     {
       "path": "public/assets/derivatives/svg/points-of-non-differentiability-4.zh.svg",
-      "source": "https://github.com/antoniolupetti/algebrica/blob/9b54dbec9c31f0881b0dbaddec1b260ad8406cee/derivatives/svg/points-of-non-differentiability-4.svg",
+      "source": "https://github.com/antoniolupetti/algebrica/blob/cb1685078f52293985c40f92909d7ef1aaa18099/derivatives/svg/points-of-non-differentiability-4.svg",
       "author": "Antonio Lupetti / Algebrica",
       "license": "CC BY-NC 4.0",
       "changes": "Chinese labels and/or typography"
     },
     {
       "path": "public/assets/derivatives/svg/points-of-non-differentiability-5.zh.svg",
-      "source": "https://github.com/antoniolupetti/algebrica/blob/9b54dbec9c31f0881b0dbaddec1b260ad8406cee/derivatives/svg/points-of-non-differentiability-5.svg",
+      "source": "https://github.com/antoniolupetti/algebrica/blob/cb1685078f52293985c40f92909d7ef1aaa18099/derivatives/svg/points-of-non-differentiability-5.svg",
       "author": "Antonio Lupetti / Algebrica",
       "license": "CC BY-NC 4.0",
       "changes": "Chinese labels and/or typography"
     },
     {
       "path": "public/assets/differential-calculus-theorems/svg/darboux-theorem-1.zh.svg",
-      "source": "https://github.com/antoniolupetti/algebrica/blob/9b54dbec9c31f0881b0dbaddec1b260ad8406cee/differential-calculus-theorems/svg/darboux-theorem-1.svg",
+      "source": "https://github.com/antoniolupetti/algebrica/blob/cb1685078f52293985c40f92909d7ef1aaa18099/differential-calculus-theorems/svg/darboux-theorem-1.svg",
       "author": "Antonio Lupetti / Algebrica",
       "license": "CC BY-NC 4.0",
       "changes": "Chinese labels and/or typography"
     },
     {
       "path": "public/assets/differential-calculus-theorems/svg/fermat-theorem-1.zh.svg",
-      "source": "https://github.com/antoniolupetti/algebrica/blob/9b54dbec9c31f0881b0dbaddec1b260ad8406cee/differential-calculus-theorems/svg/fermat-theorem-1.svg",
+      "source": "https://github.com/antoniolupetti/algebrica/blob/cb1685078f52293985c40f92909d7ef1aaa18099/differential-calculus-theorems/svg/fermat-theorem-1.svg",
       "author": "Antonio Lupetti / Algebrica",
       "license": "CC BY-NC 4.0",
       "changes": "Chinese labels and/or typography"
     },
     {
       "path": "public/assets/differential-calculus-theorems/svg/fermat-theorem-2.zh.svg",
-      "source": "https://github.com/antoniolupetti/algebrica/blob/9b54dbec9c31f0881b0dbaddec1b260ad8406cee/differential-calculus-theorems/svg/fermat-theorem-2.svg",
+      "source": "https://github.com/antoniolupetti/algebrica/blob/cb1685078f52293985c40f92909d7ef1aaa18099/differential-calculus-theorems/svg/fermat-theorem-2.svg",
       "author": "Antonio Lupetti / Algebrica",
       "license": "CC BY-NC 4.0",
       "changes": "Chinese labels and/or typography"
     },
     {
       "path": "public/assets/differential-calculus-theorems/svg/fermat-theorem-3.zh.svg",
-      "source": "https://github.com/antoniolupetti/algebrica/blob/9b54dbec9c31f0881b0dbaddec1b260ad8406cee/differential-calculus-theorems/svg/fermat-theorem-3.svg",
+      "source": "https://github.com/antoniolupetti/algebrica/blob/cb1685078f52293985c40f92909d7ef1aaa18099/differential-calculus-theorems/svg/fermat-theorem-3.svg",
       "author": "Antonio Lupetti / Algebrica",
       "license": "CC BY-NC 4.0",
       "changes": "Chinese labels and/or typography"
     },
     {
       "path": "public/assets/differential-calculus-theorems/svg/lagrange-theorem-1.zh.svg",
-      "source": "https://github.com/antoniolupetti/algebrica/blob/9b54dbec9c31f0881b0dbaddec1b260ad8406cee/differential-calculus-theorems/svg/lagrange-theorem-1.svg",
+      "source": "https://github.com/antoniolupetti/algebrica/blob/cb1685078f52293985c40f92909d7ef1aaa18099/differential-calculus-theorems/svg/lagrange-theorem-1.svg",
       "author": "Antonio Lupetti / Algebrica",
       "license": "CC BY-NC 4.0",
       "changes": "Chinese labels and/or typography"
     },
     {
       "path": "public/assets/differential-calculus-theorems/svg/rolle-theorem-1.zh.svg",
-      "source": "https://github.com/antoniolupetti/algebrica/blob/9b54dbec9c31f0881b0dbaddec1b260ad8406cee/differential-calculus-theorems/svg/rolle-theorem-1.svg",
+      "source": "https://github.com/antoniolupetti/algebrica/blob/cb1685078f52293985c40f92909d7ef1aaa18099/differential-calculus-theorems/svg/rolle-theorem-1.svg",
       "author": "Antonio Lupetti / Algebrica",
       "license": "CC BY-NC 4.0",
       "changes": "Chinese labels and/or typography"
     },
     {
       "path": "public/assets/differential-calculus-theorems/svg/weierstrass-theorem-1.zh.svg",
-      "source": "https://github.com/antoniolupetti/algebrica/blob/9b54dbec9c31f0881b0dbaddec1b260ad8406cee/differential-calculus-theorems/svg/weierstrass-theorem-1.svg",
+      "source": "https://github.com/antoniolupetti/algebrica/blob/cb1685078f52293985c40f92909d7ef1aaa18099/differential-calculus-theorems/svg/weierstrass-theorem-1.svg",
       "author": "Antonio Lupetti / Algebrica",
       "license": "CC BY-NC 4.0",
       "changes": "Chinese labels and/or typography"
     },
     {
       "path": "public/assets/differential-calculus-theorems/svg/weierstrass-theorem-2.zh.svg",
-      "source": "https://github.com/antoniolupetti/algebrica/blob/9b54dbec9c31f0881b0dbaddec1b260ad8406cee/differential-calculus-theorems/svg/weierstrass-theorem-2.svg",
+      "source": "https://github.com/antoniolupetti/algebrica/blob/cb1685078f52293985c40f92909d7ef1aaa18099/differential-calculus-theorems/svg/weierstrass-theorem-2.svg",
       "author": "Antonio Lupetti / Algebrica",
       "license": "CC BY-NC 4.0",
       "changes": "Chinese labels and/or typography"
     },
     {
       "path": "public/assets/equations/svg/exponential-equations-1.zh.svg",
-      "source": "https://github.com/antoniolupetti/algebrica/blob/9b54dbec9c31f0881b0dbaddec1b260ad8406cee/equations/svg/exponential-equations-1.svg",
+      "source": "https://github.com/antoniolupetti/algebrica/blob/cb1685078f52293985c40f92909d7ef1aaa18099/equations/svg/exponential-equations-1.svg",
       "author": "Antonio Lupetti / Algebrica",
       "license": "CC BY-NC 4.0",
       "changes": "Chinese labels and/or typography"
     },
     {
       "path": "public/assets/equations/svg/geometric-interpretation-quadratic-equations-1.zh.svg",
-      "source": "https://github.com/antoniolupetti/algebrica/blob/9b54dbec9c31f0881b0dbaddec1b260ad8406cee/equations/svg/geometric-interpretation-quadratic-equations-1.svg",
+      "source": "https://github.com/antoniolupetti/algebrica/blob/cb1685078f52293985c40f92909d7ef1aaa18099/equations/svg/geometric-interpretation-quadratic-equations-1.svg",
       "author": "Antonio Lupetti / Algebrica",
       "license": "CC BY-NC 4.0",
       "changes": "Chinese labels and/or typography"
     },
     {
       "path": "public/assets/equations/svg/geometric-interpretation-quadratic-equations-2.zh.svg",
-      "source": "https://github.com/antoniolupetti/algebrica/blob/9b54dbec9c31f0881b0dbaddec1b260ad8406cee/equations/svg/geometric-interpretation-quadratic-equations-2.svg",
+      "source": "https://github.com/antoniolupetti/algebrica/blob/cb1685078f52293985c40f92909d7ef1aaa18099/equations/svg/geometric-interpretation-quadratic-equations-2.svg",
       "author": "Antonio Lupetti / Algebrica",
       "license": "CC BY-NC 4.0",
       "changes": "Chinese labels and/or typography"
     },
     {
       "path": "public/assets/equations/svg/geometric-interpretation-quadratic-equations-3.zh.svg",
-      "source": "https://github.com/antoniolupetti/algebrica/blob/9b54dbec9c31f0881b0dbaddec1b260ad8406cee/equations/svg/geometric-interpretation-quadratic-equations-3.svg",
+      "source": "https://github.com/antoniolupetti/algebrica/blob/cb1685078f52293985c40f92909d7ef1aaa18099/equations/svg/geometric-interpretation-quadratic-equations-3.svg",
       "author": "Antonio Lupetti / Algebrica",
       "license": "CC BY-NC 4.0",
       "changes": "Chinese labels and/or typography"
     },
     {
       "path": "public/assets/equations/svg/incomplete-quadratic-equations.zh.svg",
-      "source": "https://github.com/antoniolupetti/algebrica/blob/9b54dbec9c31f0881b0dbaddec1b260ad8406cee/equations/svg/incomplete-quadratic-equations.svg",
+      "source": "https://github.com/antoniolupetti/algebrica/blob/cb1685078f52293985c40f92909d7ef1aaa18099/equations/svg/incomplete-quadratic-equations.svg",
       "author": "Antonio Lupetti / Algebrica",
       "license": "CC BY-NC 4.0",
       "changes": "Chinese labels and/or typography"
     },
     {
       "path": "public/assets/equations/svg/linear-equations-1.zh.svg",
-      "source": "https://github.com/antoniolupetti/algebrica/blob/9b54dbec9c31f0881b0dbaddec1b260ad8406cee/equations/svg/linear-equations-1.svg",
+      "source": "https://github.com/antoniolupetti/algebrica/blob/cb1685078f52293985c40f92909d7ef1aaa18099/equations/svg/linear-equations-1.svg",
       "author": "Antonio Lupetti / Algebrica",
       "license": "CC BY-NC 4.0",
       "changes": "Chinese labels and/or typography"
     },
     {
       "path": "public/assets/equations/svg/quadratic-equations.zh.svg",
-      "source": "https://github.com/antoniolupetti/algebrica/blob/9b54dbec9c31f0881b0dbaddec1b260ad8406cee/equations/svg/quadratic-equations.svg",
+      "source": "https://github.com/antoniolupetti/algebrica/blob/cb1685078f52293985c40f92909d7ef1aaa18099/equations/svg/quadratic-equations.svg",
       "author": "Antonio Lupetti / Algebrica",
       "license": "CC BY-NC 4.0",
       "changes": "Chinese labels and/or typography"
     },
     {
       "path": "public/assets/functions/svg/absolute-value-function-1.zh.svg",
-      "source": "https://github.com/antoniolupetti/algebrica/blob/9b54dbec9c31f0881b0dbaddec1b260ad8406cee/functions/svg/absolute-value-function-1.svg",
+      "source": "https://github.com/antoniolupetti/algebrica/blob/cb1685078f52293985c40f92909d7ef1aaa18099/functions/svg/absolute-value-function-1.svg",
       "author": "Antonio Lupetti / Algebrica",
       "license": "CC BY-NC 4.0",
       "changes": "Chinese labels and/or typography"
     },
     {
       "path": "public/assets/functions/svg/absolute-value-function-2.zh.svg",
-      "source": "https://github.com/antoniolupetti/algebrica/blob/9b54dbec9c31f0881b0dbaddec1b260ad8406cee/functions/svg/absolute-value-function-2.svg",
+      "source": "https://github.com/antoniolupetti/algebrica/blob/cb1685078f52293985c40f92909d7ef1aaa18099/functions/svg/absolute-value-function-2.svg",
       "author": "Antonio Lupetti / Algebrica",
       "license": "CC BY-NC 4.0",
       "changes": "Chinese labels and/or typography"
     },
     {
       "path": "public/assets/functions/svg/analyzing-functions-1.zh.svg",
-      "source": "https://github.com/antoniolupetti/algebrica/blob/9b54dbec9c31f0881b0dbaddec1b260ad8406cee/functions/svg/analyzing-functions-1.svg",
+      "source": "https://github.com/antoniolupetti/algebrica/blob/cb1685078f52293985c40f92909d7ef1aaa18099/functions/svg/analyzing-functions-1.svg",
       "author": "Antonio Lupetti / Algebrica",
       "license": "CC BY-NC 4.0",
       "changes": "Chinese labels and/or typography"
     },
     {
       "path": "public/assets/functions/svg/analyzing-functions-2.zh.svg",
-      "source": "https://github.com/antoniolupetti/algebrica/blob/9b54dbec9c31f0881b0dbaddec1b260ad8406cee/functions/svg/analyzing-functions-2.svg",
+      "source": "https://github.com/antoniolupetti/algebrica/blob/cb1685078f52293985c40f92909d7ef1aaa18099/functions/svg/analyzing-functions-2.svg",
       "author": "Antonio Lupetti / Algebrica",
       "license": "CC BY-NC 4.0",
       "changes": "Chinese labels and/or typography"
     },
     {
       "path": "public/assets/functions/svg/analyzing-functions-3.zh.svg",
-      "source": "https://github.com/antoniolupetti/algebrica/blob/9b54dbec9c31f0881b0dbaddec1b260ad8406cee/functions/svg/analyzing-functions-3.svg",
+      "source": "https://github.com/antoniolupetti/algebrica/blob/cb1685078f52293985c40f92909d7ef1aaa18099/functions/svg/analyzing-functions-3.svg",
       "author": "Antonio Lupetti / Algebrica",
       "license": "CC BY-NC 4.0",
       "changes": "Chinese labels and/or typography"
     },
     {
       "path": "public/assets/functions/svg/analyzing-functions-4.zh.svg",
-      "source": "https://github.com/antoniolupetti/algebrica/blob/9b54dbec9c31f0881b0dbaddec1b260ad8406cee/functions/svg/analyzing-functions-4.svg",
+      "source": "https://github.com/antoniolupetti/algebrica/blob/cb1685078f52293985c40f92909d7ef1aaa18099/functions/svg/analyzing-functions-4.svg",
+      "author": "Antonio Lupetti / Algebrica",
+      "license": "CC BY-NC 4.0",
+      "changes": "Chinese labels and/or typography"
+    },
+    {
+      "path": "public/assets/functions/svg/arccotangent-function-1.zh.svg",
+      "source": "https://github.com/antoniolupetti/algebrica/blob/cb1685078f52293985c40f92909d7ef1aaa18099/functions/svg/arccotangent-function-1.svg",
+      "author": "Antonio Lupetti / Algebrica",
+      "license": "CC BY-NC 4.0",
+      "changes": "Chinese labels and/or typography"
+    },
+    {
+      "path": "public/assets/functions/svg/arctangent-function-1.zh.svg",
+      "source": "https://github.com/antoniolupetti/algebrica/blob/cb1685078f52293985c40f92909d7ef1aaa18099/functions/svg/arctangent-function-1.svg",
       "author": "Antonio Lupetti / Algebrica",
       "license": "CC BY-NC 4.0",
       "changes": "Chinese labels and/or typography"
     },
     {
       "path": "public/assets/functions/svg/composite-functions-1.zh.svg",
-      "source": "https://github.com/antoniolupetti/algebrica/blob/9b54dbec9c31f0881b0dbaddec1b260ad8406cee/functions/svg/composite-functions-1.svg",
+      "source": "https://github.com/antoniolupetti/algebrica/blob/cb1685078f52293985c40f92909d7ef1aaa18099/functions/svg/composite-functions-1.svg",
       "author": "Antonio Lupetti / Algebrica",
       "license": "CC BY-NC 4.0",
       "changes": "Chinese labels and/or typography"
     },
     {
       "path": "public/assets/functions/svg/continuous-functions-1.zh.svg",
-      "source": "https://github.com/antoniolupetti/algebrica/blob/9b54dbec9c31f0881b0dbaddec1b260ad8406cee/functions/svg/continuous-functions-1.svg",
+      "source": "https://github.com/antoniolupetti/algebrica/blob/cb1685078f52293985c40f92909d7ef1aaa18099/functions/svg/continuous-functions-1.svg",
       "author": "Antonio Lupetti / Algebrica",
       "license": "CC BY-NC 4.0",
       "changes": "Chinese labels and/or typography"
     },
     {
       "path": "public/assets/functions/svg/continuous-functions-2.zh.svg",
-      "source": "https://github.com/antoniolupetti/algebrica/blob/9b54dbec9c31f0881b0dbaddec1b260ad8406cee/functions/svg/continuous-functions-2.svg",
+      "source": "https://github.com/antoniolupetti/algebrica/blob/cb1685078f52293985c40f92909d7ef1aaa18099/functions/svg/continuous-functions-2.svg",
       "author": "Antonio Lupetti / Algebrica",
       "license": "CC BY-NC 4.0",
       "changes": "Chinese labels and/or typography"
     },
     {
       "path": "public/assets/functions/svg/continuous-functions-3.zh.svg",
-      "source": "https://github.com/antoniolupetti/algebrica/blob/9b54dbec9c31f0881b0dbaddec1b260ad8406cee/functions/svg/continuous-functions-3.svg",
+      "source": "https://github.com/antoniolupetti/algebrica/blob/cb1685078f52293985c40f92909d7ef1aaa18099/functions/svg/continuous-functions-3.svg",
       "author": "Antonio Lupetti / Algebrica",
       "license": "CC BY-NC 4.0",
       "changes": "Chinese labels and/or typography"
     },
     {
       "path": "public/assets/functions/svg/convexity-and-concavity-of-functions-1.zh.svg",
-      "source": "https://github.com/antoniolupetti/algebrica/blob/9b54dbec9c31f0881b0dbaddec1b260ad8406cee/functions/svg/convexity-and-concavity-of-functions-1.svg",
+      "source": "https://github.com/antoniolupetti/algebrica/blob/cb1685078f52293985c40f92909d7ef1aaa18099/functions/svg/convexity-and-concavity-of-functions-1.svg",
       "author": "Antonio Lupetti / Algebrica",
       "license": "CC BY-NC 4.0",
       "changes": "Chinese labels and/or typography"
     },
     {
       "path": "public/assets/functions/svg/convexity-and-concavity-of-functions-2.zh.svg",
-      "source": "https://github.com/antoniolupetti/algebrica/blob/9b54dbec9c31f0881b0dbaddec1b260ad8406cee/functions/svg/convexity-and-concavity-of-functions-2.svg",
+      "source": "https://github.com/antoniolupetti/algebrica/blob/cb1685078f52293985c40f92909d7ef1aaa18099/functions/svg/convexity-and-concavity-of-functions-2.svg",
       "author": "Antonio Lupetti / Algebrica",
       "license": "CC BY-NC 4.0",
       "changes": "Chinese labels and/or typography"
     },
     {
       "path": "public/assets/functions/svg/discontinuities-of-real-functions-1.zh.svg",
-      "source": "https://github.com/antoniolupetti/algebrica/blob/9b54dbec9c31f0881b0dbaddec1b260ad8406cee/functions/svg/discontinuities-of-real-functions-1.svg",
+      "source": "https://github.com/antoniolupetti/algebrica/blob/cb1685078f52293985c40f92909d7ef1aaa18099/functions/svg/discontinuities-of-real-functions-1.svg",
       "author": "Antonio Lupetti / Algebrica",
       "license": "CC BY-NC 4.0",
       "changes": "Chinese labels and/or typography"
     },
     {
       "path": "public/assets/functions/svg/discontinuities-of-real-functions-2.zh.svg",
-      "source": "https://github.com/antoniolupetti/algebrica/blob/9b54dbec9c31f0881b0dbaddec1b260ad8406cee/functions/svg/discontinuities-of-real-functions-2.svg",
+      "source": "https://github.com/antoniolupetti/algebrica/blob/cb1685078f52293985c40f92909d7ef1aaa18099/functions/svg/discontinuities-of-real-functions-2.svg",
       "author": "Antonio Lupetti / Algebrica",
       "license": "CC BY-NC 4.0",
       "changes": "Chinese labels and/or typography"
     },
     {
       "path": "public/assets/functions/svg/discontinuities-of-real-functions-3.zh.svg",
-      "source": "https://github.com/antoniolupetti/algebrica/blob/9b54dbec9c31f0881b0dbaddec1b260ad8406cee/functions/svg/discontinuities-of-real-functions-3.svg",
+      "source": "https://github.com/antoniolupetti/algebrica/blob/cb1685078f52293985c40f92909d7ef1aaa18099/functions/svg/discontinuities-of-real-functions-3.svg",
       "author": "Antonio Lupetti / Algebrica",
       "license": "CC BY-NC 4.0",
       "changes": "Chinese labels and/or typography"
     },
     {
       "path": "public/assets/functions/svg/even-and-odd-functions-1.zh.svg",
-      "source": "https://github.com/antoniolupetti/algebrica/blob/9b54dbec9c31f0881b0dbaddec1b260ad8406cee/functions/svg/even-and-odd-functions-1.svg",
+      "source": "https://github.com/antoniolupetti/algebrica/blob/cb1685078f52293985c40f92909d7ef1aaa18099/functions/svg/even-and-odd-functions-1.svg",
       "author": "Antonio Lupetti / Algebrica",
       "license": "CC BY-NC 4.0",
       "changes": "Chinese labels and/or typography"
     },
     {
       "path": "public/assets/functions/svg/even-and-odd-functions-2.zh.svg",
-      "source": "https://github.com/antoniolupetti/algebrica/blob/9b54dbec9c31f0881b0dbaddec1b260ad8406cee/functions/svg/even-and-odd-functions-2.svg",
+      "source": "https://github.com/antoniolupetti/algebrica/blob/cb1685078f52293985c40f92909d7ef1aaa18099/functions/svg/even-and-odd-functions-2.svg",
       "author": "Antonio Lupetti / Algebrica",
       "license": "CC BY-NC 4.0",
       "changes": "Chinese labels and/or typography"
     },
     {
       "path": "public/assets/functions/svg/even-and-odd-functions-3.zh.svg",
-      "source": "https://github.com/antoniolupetti/algebrica/blob/9b54dbec9c31f0881b0dbaddec1b260ad8406cee/functions/svg/even-and-odd-functions-3.svg",
+      "source": "https://github.com/antoniolupetti/algebrica/blob/cb1685078f52293985c40f92909d7ef1aaa18099/functions/svg/even-and-odd-functions-3.svg",
       "author": "Antonio Lupetti / Algebrica",
       "license": "CC BY-NC 4.0",
       "changes": "Chinese labels and/or typography"
     },
     {
       "path": "public/assets/functions/svg/even-and-odd-functions-4.zh.svg",
-      "source": "https://github.com/antoniolupetti/algebrica/blob/9b54dbec9c31f0881b0dbaddec1b260ad8406cee/functions/svg/even-and-odd-functions-4.svg",
+      "source": "https://github.com/antoniolupetti/algebrica/blob/cb1685078f52293985c40f92909d7ef1aaa18099/functions/svg/even-and-odd-functions-4.svg",
       "author": "Antonio Lupetti / Algebrica",
       "license": "CC BY-NC 4.0",
       "changes": "Chinese labels and/or typography"
     },
     {
       "path": "public/assets/functions/svg/even-and-odd-functions-5.zh.svg",
-      "source": "https://github.com/antoniolupetti/algebrica/blob/9b54dbec9c31f0881b0dbaddec1b260ad8406cee/functions/svg/even-and-odd-functions-5.svg",
+      "source": "https://github.com/antoniolupetti/algebrica/blob/cb1685078f52293985c40f92909d7ef1aaa18099/functions/svg/even-and-odd-functions-5.svg",
       "author": "Antonio Lupetti / Algebrica",
       "license": "CC BY-NC 4.0",
       "changes": "Chinese labels and/or typography"
     },
     {
       "path": "public/assets/functions/svg/even-and-odd-functions-6.zh.svg",
-      "source": "https://github.com/antoniolupetti/algebrica/blob/9b54dbec9c31f0881b0dbaddec1b260ad8406cee/functions/svg/even-and-odd-functions-6.svg",
+      "source": "https://github.com/antoniolupetti/algebrica/blob/cb1685078f52293985c40f92909d7ef1aaa18099/functions/svg/even-and-odd-functions-6.svg",
       "author": "Antonio Lupetti / Algebrica",
       "license": "CC BY-NC 4.0",
       "changes": "Chinese labels and/or typography"
     },
     {
       "path": "public/assets/functions/svg/exponential-function-1.zh.svg",
-      "source": "https://github.com/antoniolupetti/algebrica/blob/9b54dbec9c31f0881b0dbaddec1b260ad8406cee/functions/svg/exponential-function-1.svg",
+      "source": "https://github.com/antoniolupetti/algebrica/blob/cb1685078f52293985c40f92909d7ef1aaa18099/functions/svg/exponential-function-1.svg",
       "author": "Antonio Lupetti / Algebrica",
       "license": "CC BY-NC 4.0",
       "changes": "Chinese labels and/or typography"
     },
     {
       "path": "public/assets/functions/svg/exponential-function-2.zh.svg",
-      "source": "https://github.com/antoniolupetti/algebrica/blob/9b54dbec9c31f0881b0dbaddec1b260ad8406cee/functions/svg/exponential-function-2.svg",
+      "source": "https://github.com/antoniolupetti/algebrica/blob/cb1685078f52293985c40f92909d7ef1aaa18099/functions/svg/exponential-function-2.svg",
       "author": "Antonio Lupetti / Algebrica",
       "license": "CC BY-NC 4.0",
       "changes": "Chinese labels and/or typography"
     },
     {
       "path": "public/assets/functions/svg/exponential-function-3.zh.svg",
-      "source": "https://github.com/antoniolupetti/algebrica/blob/9b54dbec9c31f0881b0dbaddec1b260ad8406cee/functions/svg/exponential-function-3.svg",
+      "source": "https://github.com/antoniolupetti/algebrica/blob/cb1685078f52293985c40f92909d7ef1aaa18099/functions/svg/exponential-function-3.svg",
       "author": "Antonio Lupetti / Algebrica",
       "license": "CC BY-NC 4.0",
       "changes": "Chinese labels and/or typography"
     },
     {
       "path": "public/assets/functions/svg/functions-1.zh.svg",
-      "source": "https://github.com/antoniolupetti/algebrica/blob/9b54dbec9c31f0881b0dbaddec1b260ad8406cee/functions/svg/functions-1.svg",
+      "source": "https://github.com/antoniolupetti/algebrica/blob/cb1685078f52293985c40f92909d7ef1aaa18099/functions/svg/functions-1.svg",
       "author": "Antonio Lupetti / Algebrica",
       "license": "CC BY-NC 4.0",
       "changes": "Chinese labels and/or typography"
     },
     {
       "path": "public/assets/functions/svg/functions-2.zh.svg",
-      "source": "https://github.com/antoniolupetti/algebrica/blob/9b54dbec9c31f0881b0dbaddec1b260ad8406cee/functions/svg/functions-2.svg",
+      "source": "https://github.com/antoniolupetti/algebrica/blob/cb1685078f52293985c40f92909d7ef1aaa18099/functions/svg/functions-2.svg",
       "author": "Antonio Lupetti / Algebrica",
       "license": "CC BY-NC 4.0",
       "changes": "Chinese labels and/or typography"
     },
     {
       "path": "public/assets/functions/svg/functions-3.zh.svg",
-      "source": "https://github.com/antoniolupetti/algebrica/blob/9b54dbec9c31f0881b0dbaddec1b260ad8406cee/functions/svg/functions-3.svg",
+      "source": "https://github.com/antoniolupetti/algebrica/blob/cb1685078f52293985c40f92909d7ef1aaa18099/functions/svg/functions-3.svg",
+      "author": "Antonio Lupetti / Algebrica",
+      "license": "CC BY-NC 4.0",
+      "changes": "Chinese labels and/or typography"
+    },
+    {
+      "path": "public/assets/functions/svg/gaussian-function-1.zh.svg",
+      "source": "https://github.com/antoniolupetti/algebrica/blob/cb1685078f52293985c40f92909d7ef1aaa18099/functions/svg/gaussian-function-1.svg",
+      "author": "Antonio Lupetti / Algebrica",
+      "license": "CC BY-NC 4.0",
+      "changes": "Chinese labels and/or typography"
+    },
+    {
+      "path": "public/assets/functions/svg/gaussian-function-2.zh.svg",
+      "source": "https://github.com/antoniolupetti/algebrica/blob/cb1685078f52293985c40f92909d7ef1aaa18099/functions/svg/gaussian-function-2.svg",
+      "author": "Antonio Lupetti / Algebrica",
+      "license": "CC BY-NC 4.0",
+      "changes": "Chinese labels and/or typography"
+    },
+    {
+      "path": "public/assets/functions/svg/hyperbolic-cosine-function-1.zh.svg",
+      "source": "https://github.com/antoniolupetti/algebrica/blob/cb1685078f52293985c40f92909d7ef1aaa18099/functions/svg/hyperbolic-cosine-function-1.svg",
+      "author": "Antonio Lupetti / Algebrica",
+      "license": "CC BY-NC 4.0",
+      "changes": "Chinese labels and/or typography"
+    },
+    {
+      "path": "public/assets/functions/svg/hyperbolic-cotangent-function-1.zh.svg",
+      "source": "https://github.com/antoniolupetti/algebrica/blob/cb1685078f52293985c40f92909d7ef1aaa18099/functions/svg/hyperbolic-cotangent-function-1.svg",
+      "author": "Antonio Lupetti / Algebrica",
+      "license": "CC BY-NC 4.0",
+      "changes": "Chinese labels and/or typography"
+    },
+    {
+      "path": "public/assets/functions/svg/hyperbolic-sine-function-1.zh.svg",
+      "source": "https://github.com/antoniolupetti/algebrica/blob/cb1685078f52293985c40f92909d7ef1aaa18099/functions/svg/hyperbolic-sine-function-1.svg",
+      "author": "Antonio Lupetti / Algebrica",
+      "license": "CC BY-NC 4.0",
+      "changes": "Chinese labels and/or typography"
+    },
+    {
+      "path": "public/assets/functions/svg/hyperbolic-tangent-function-1.zh.svg",
+      "source": "https://github.com/antoniolupetti/algebrica/blob/cb1685078f52293985c40f92909d7ef1aaa18099/functions/svg/hyperbolic-tangent-function-1.svg",
       "author": "Antonio Lupetti / Algebrica",
       "license": "CC BY-NC 4.0",
       "changes": "Chinese labels and/or typography"
     },
     {
       "path": "public/assets/functions/svg/increasing-and-decreasing-functions-1.zh.svg",
-      "source": "https://github.com/antoniolupetti/algebrica/blob/9b54dbec9c31f0881b0dbaddec1b260ad8406cee/functions/svg/increasing-and-decreasing-functions-1.svg",
+      "source": "https://github.com/antoniolupetti/algebrica/blob/cb1685078f52293985c40f92909d7ef1aaa18099/functions/svg/increasing-and-decreasing-functions-1.svg",
       "author": "Antonio Lupetti / Algebrica",
       "license": "CC BY-NC 4.0",
       "changes": "Chinese labels and/or typography"
     },
     {
       "path": "public/assets/functions/svg/increasing-and-decreasing-functions-2.zh.svg",
-      "source": "https://github.com/antoniolupetti/algebrica/blob/9b54dbec9c31f0881b0dbaddec1b260ad8406cee/functions/svg/increasing-and-decreasing-functions-2.svg",
+      "source": "https://github.com/antoniolupetti/algebrica/blob/cb1685078f52293985c40f92909d7ef1aaa18099/functions/svg/increasing-and-decreasing-functions-2.svg",
       "author": "Antonio Lupetti / Algebrica",
       "license": "CC BY-NC 4.0",
       "changes": "Chinese labels and/or typography"
     },
     {
       "path": "public/assets/functions/svg/increasing-and-decreasing-functions-3.zh.svg",
-      "source": "https://github.com/antoniolupetti/algebrica/blob/9b54dbec9c31f0881b0dbaddec1b260ad8406cee/functions/svg/increasing-and-decreasing-functions-3.svg",
+      "source": "https://github.com/antoniolupetti/algebrica/blob/cb1685078f52293985c40f92909d7ef1aaa18099/functions/svg/increasing-and-decreasing-functions-3.svg",
       "author": "Antonio Lupetti / Algebrica",
       "license": "CC BY-NC 4.0",
       "changes": "Chinese labels and/or typography"
     },
     {
       "path": "public/assets/functions/svg/inverse-function-1.zh.svg",
-      "source": "https://github.com/antoniolupetti/algebrica/blob/9b54dbec9c31f0881b0dbaddec1b260ad8406cee/functions/svg/inverse-function-1.svg",
+      "source": "https://github.com/antoniolupetti/algebrica/blob/cb1685078f52293985c40f92909d7ef1aaa18099/functions/svg/inverse-function-1.svg",
       "author": "Antonio Lupetti / Algebrica",
       "license": "CC BY-NC 4.0",
       "changes": "Chinese labels and/or typography"
     },
     {
       "path": "public/assets/functions/svg/polynomial-function-1.zh.svg",
-      "source": "https://github.com/antoniolupetti/algebrica/blob/9b54dbec9c31f0881b0dbaddec1b260ad8406cee/functions/svg/polynomial-function-1.svg",
+      "source": "https://github.com/antoniolupetti/algebrica/blob/cb1685078f52293985c40f92909d7ef1aaa18099/functions/svg/polynomial-function-1.svg",
       "author": "Antonio Lupetti / Algebrica",
       "license": "CC BY-NC 4.0",
       "changes": "Chinese labels and/or typography"
     },
     {
       "path": "public/assets/functions/svg/polynomial-function-2.zh.svg",
-      "source": "https://github.com/antoniolupetti/algebrica/blob/9b54dbec9c31f0881b0dbaddec1b260ad8406cee/functions/svg/polynomial-function-2.svg",
+      "source": "https://github.com/antoniolupetti/algebrica/blob/cb1685078f52293985c40f92909d7ef1aaa18099/functions/svg/polynomial-function-2.svg",
       "author": "Antonio Lupetti / Algebrica",
       "license": "CC BY-NC 4.0",
       "changes": "Chinese labels and/or typography"
     },
     {
       "path": "public/assets/functions/svg/polynomial-function-3.zh.svg",
-      "source": "https://github.com/antoniolupetti/algebrica/blob/9b54dbec9c31f0881b0dbaddec1b260ad8406cee/functions/svg/polynomial-function-3.svg",
+      "source": "https://github.com/antoniolupetti/algebrica/blob/cb1685078f52293985c40f92909d7ef1aaa18099/functions/svg/polynomial-function-3.svg",
       "author": "Antonio Lupetti / Algebrica",
       "license": "CC BY-NC 4.0",
       "changes": "Chinese labels and/or typography"
     },
     {
       "path": "public/assets/functions/svg/sigmoid-function-1.zh.svg",
-      "source": "https://github.com/antoniolupetti/algebrica/blob/9b54dbec9c31f0881b0dbaddec1b260ad8406cee/functions/svg/sigmoid-function-1.svg",
+      "source": "https://github.com/antoniolupetti/algebrica/blob/cb1685078f52293985c40f92909d7ef1aaa18099/functions/svg/sigmoid-function-1.svg",
       "author": "Antonio Lupetti / Algebrica",
       "license": "CC BY-NC 4.0",
       "changes": "Chinese labels and/or typography"
     },
     {
       "path": "public/assets/functions/svg/sigmoid-function-2.zh.svg",
-      "source": "https://github.com/antoniolupetti/algebrica/blob/9b54dbec9c31f0881b0dbaddec1b260ad8406cee/functions/svg/sigmoid-function-2.svg",
+      "source": "https://github.com/antoniolupetti/algebrica/blob/cb1685078f52293985c40f92909d7ef1aaa18099/functions/svg/sigmoid-function-2.svg",
       "author": "Antonio Lupetti / Algebrica",
       "license": "CC BY-NC 4.0",
       "changes": "Chinese labels and/or typography"
     },
     {
       "path": "public/assets/functions/svg/sign-function-1.zh.svg",
-      "source": "https://github.com/antoniolupetti/algebrica/blob/9b54dbec9c31f0881b0dbaddec1b260ad8406cee/functions/svg/sign-function-1.svg",
+      "source": "https://github.com/antoniolupetti/algebrica/blob/cb1685078f52293985c40f92909d7ef1aaa18099/functions/svg/sign-function-1.svg",
       "author": "Antonio Lupetti / Algebrica",
       "license": "CC BY-NC 4.0",
       "changes": "Chinese labels and/or typography"
     },
     {
       "path": "public/assets/functions/svg/sign-function-2.zh.svg",
-      "source": "https://github.com/antoniolupetti/algebrica/blob/9b54dbec9c31f0881b0dbaddec1b260ad8406cee/functions/svg/sign-function-2.svg",
+      "source": "https://github.com/antoniolupetti/algebrica/blob/cb1685078f52293985c40f92909d7ef1aaa18099/functions/svg/sign-function-2.svg",
       "author": "Antonio Lupetti / Algebrica",
       "license": "CC BY-NC 4.0",
       "changes": "Chinese labels and/or typography"
     },
     {
       "path": "public/assets/functions/svg/uniform-continuity-1.zh.svg",
-      "source": "https://github.com/antoniolupetti/algebrica/blob/9b54dbec9c31f0881b0dbaddec1b260ad8406cee/functions/svg/uniform-continuity-1.svg",
+      "source": "https://github.com/antoniolupetti/algebrica/blob/cb1685078f52293985c40f92909d7ef1aaa18099/functions/svg/uniform-continuity-1.svg",
       "author": "Antonio Lupetti / Algebrica",
       "license": "CC BY-NC 4.0",
       "changes": "Chinese labels and/or typography"
     },
     {
       "path": "public/assets/inequalities/svg/geometric-interpretation-quadratic-inequalities-1.zh.svg",
-      "source": "https://github.com/antoniolupetti/algebrica/blob/9b54dbec9c31f0881b0dbaddec1b260ad8406cee/inequalities/svg/geometric-interpretation-quadratic-inequalities-1.svg",
+      "source": "https://github.com/antoniolupetti/algebrica/blob/cb1685078f52293985c40f92909d7ef1aaa18099/inequalities/svg/geometric-interpretation-quadratic-inequalities-1.svg",
       "author": "Antonio Lupetti / Algebrica",
       "license": "CC BY-NC 4.0",
       "changes": "Chinese labels and/or typography"
     },
     {
       "path": "public/assets/inequalities/svg/geometric-interpretation-quadratic-inequalities-2.zh.svg",
-      "source": "https://github.com/antoniolupetti/algebrica/blob/9b54dbec9c31f0881b0dbaddec1b260ad8406cee/inequalities/svg/geometric-interpretation-quadratic-inequalities-2.svg",
+      "source": "https://github.com/antoniolupetti/algebrica/blob/cb1685078f52293985c40f92909d7ef1aaa18099/inequalities/svg/geometric-interpretation-quadratic-inequalities-2.svg",
       "author": "Antonio Lupetti / Algebrica",
       "license": "CC BY-NC 4.0",
       "changes": "Chinese labels and/or typography"
     },
     {
       "path": "public/assets/inequalities/svg/irrational-inequalities-1.zh.svg",
-      "source": "https://github.com/antoniolupetti/algebrica/blob/9b54dbec9c31f0881b0dbaddec1b260ad8406cee/inequalities/svg/irrational-inequalities-1.svg",
+      "source": "https://github.com/antoniolupetti/algebrica/blob/cb1685078f52293985c40f92909d7ef1aaa18099/inequalities/svg/irrational-inequalities-1.svg",
       "author": "Antonio Lupetti / Algebrica",
       "license": "CC BY-NC 4.0",
       "changes": "Chinese labels and/or typography"
     },
     {
       "path": "public/assets/inequalities/svg/quadratic-inequalities-1.zh.svg",
-      "source": "https://github.com/antoniolupetti/algebrica/blob/9b54dbec9c31f0881b0dbaddec1b260ad8406cee/inequalities/svg/quadratic-inequalities-1.svg",
+      "source": "https://github.com/antoniolupetti/algebrica/blob/cb1685078f52293985c40f92909d7ef1aaa18099/inequalities/svg/quadratic-inequalities-1.svg",
       "author": "Antonio Lupetti / Algebrica",
       "license": "CC BY-NC 4.0",
       "changes": "Chinese labels and/or typography"
     },
     {
       "path": "public/assets/inequalities/svg/quadratic-inequalities-2.zh.svg",
-      "source": "https://github.com/antoniolupetti/algebrica/blob/9b54dbec9c31f0881b0dbaddec1b260ad8406cee/inequalities/svg/quadratic-inequalities-2.svg",
+      "source": "https://github.com/antoniolupetti/algebrica/blob/cb1685078f52293985c40f92909d7ef1aaa18099/inequalities/svg/quadratic-inequalities-2.svg",
       "author": "Antonio Lupetti / Algebrica",
       "license": "CC BY-NC 4.0",
       "changes": "Chinese labels and/or typography"
     },
     {
       "path": "public/assets/inequalities/svg/quadratic-inequalities-3.zh.svg",
-      "source": "https://github.com/antoniolupetti/algebrica/blob/9b54dbec9c31f0881b0dbaddec1b260ad8406cee/inequalities/svg/quadratic-inequalities-3.svg",
+      "source": "https://github.com/antoniolupetti/algebrica/blob/cb1685078f52293985c40f92909d7ef1aaa18099/inequalities/svg/quadratic-inequalities-3.svg",
       "author": "Antonio Lupetti / Algebrica",
       "license": "CC BY-NC 4.0",
       "changes": "Chinese labels and/or typography"
     },
     {
       "path": "public/assets/inequalities/svg/quadratic-inequalities-4.zh.svg",
-      "source": "https://github.com/antoniolupetti/algebrica/blob/9b54dbec9c31f0881b0dbaddec1b260ad8406cee/inequalities/svg/quadratic-inequalities-4.svg",
+      "source": "https://github.com/antoniolupetti/algebrica/blob/cb1685078f52293985c40f92909d7ef1aaa18099/inequalities/svg/quadratic-inequalities-4.svg",
       "author": "Antonio Lupetti / Algebrica",
       "license": "CC BY-NC 4.0",
       "changes": "Chinese labels and/or typography"
     },
     {
       "path": "public/assets/inequalities/svg/quadratic-inequalities-5.zh.svg",
-      "source": "https://github.com/antoniolupetti/algebrica/blob/9b54dbec9c31f0881b0dbaddec1b260ad8406cee/inequalities/svg/quadratic-inequalities-5.svg",
+      "source": "https://github.com/antoniolupetti/algebrica/blob/cb1685078f52293985c40f92909d7ef1aaa18099/inequalities/svg/quadratic-inequalities-5.svg",
       "author": "Antonio Lupetti / Algebrica",
       "license": "CC BY-NC 4.0",
       "changes": "Chinese labels and/or typography"
     },
     {
       "path": "public/assets/inequalities/svg/sign-analysis-in-inequalities-1.zh.svg",
-      "source": "https://github.com/antoniolupetti/algebrica/blob/9b54dbec9c31f0881b0dbaddec1b260ad8406cee/inequalities/svg/sign-analysis-in-inequalities-1.svg",
+      "source": "https://github.com/antoniolupetti/algebrica/blob/cb1685078f52293985c40f92909d7ef1aaa18099/inequalities/svg/sign-analysis-in-inequalities-1.svg",
       "author": "Antonio Lupetti / Algebrica",
       "license": "CC BY-NC 4.0",
       "changes": "Chinese labels and/or typography"
     },
     {
       "path": "public/assets/inequalities/svg/trigonometric-inequalities-1.zh.svg",
-      "source": "https://github.com/antoniolupetti/algebrica/blob/9b54dbec9c31f0881b0dbaddec1b260ad8406cee/inequalities/svg/trigonometric-inequalities-1.svg",
+      "source": "https://github.com/antoniolupetti/algebrica/blob/cb1685078f52293985c40f92909d7ef1aaa18099/inequalities/svg/trigonometric-inequalities-1.svg",
       "author": "Antonio Lupetti / Algebrica",
       "license": "CC BY-NC 4.0",
       "changes": "Chinese labels and/or typography"
     },
     {
       "path": "public/assets/inequalities/svg/trigonometric-inequalities-2.zh.svg",
-      "source": "https://github.com/antoniolupetti/algebrica/blob/9b54dbec9c31f0881b0dbaddec1b260ad8406cee/inequalities/svg/trigonometric-inequalities-2.svg",
+      "source": "https://github.com/antoniolupetti/algebrica/blob/cb1685078f52293985c40f92909d7ef1aaa18099/inequalities/svg/trigonometric-inequalities-2.svg",
       "author": "Antonio Lupetti / Algebrica",
       "license": "CC BY-NC 4.0",
       "changes": "Chinese labels and/or typography"
     },
     {
       "path": "public/assets/inequalities/svg/trigonometric-inequalities-3.zh.svg",
-      "source": "https://github.com/antoniolupetti/algebrica/blob/9b54dbec9c31f0881b0dbaddec1b260ad8406cee/inequalities/svg/trigonometric-inequalities-3.svg",
+      "source": "https://github.com/antoniolupetti/algebrica/blob/cb1685078f52293985c40f92909d7ef1aaa18099/inequalities/svg/trigonometric-inequalities-3.svg",
       "author": "Antonio Lupetti / Algebrica",
       "license": "CC BY-NC 4.0",
       "changes": "Chinese labels and/or typography"
     },
     {
       "path": "public/assets/integrals/svg/arc-length-of-a-curve-1.zh.svg",
-      "source": "https://github.com/antoniolupetti/algebrica/blob/9b54dbec9c31f0881b0dbaddec1b260ad8406cee/integrals/svg/arc-length-of-a-curve-1.svg",
+      "source": "https://github.com/antoniolupetti/algebrica/blob/cb1685078f52293985c40f92909d7ef1aaa18099/integrals/svg/arc-length-of-a-curve-1.svg",
       "author": "Antonio Lupetti / Algebrica",
       "license": "CC BY-NC 4.0",
       "changes": "Chinese labels and/or typography"
     },
     {
       "path": "public/assets/integrals/svg/definite-integrals-1.zh.svg",
-      "source": "https://github.com/antoniolupetti/algebrica/blob/9b54dbec9c31f0881b0dbaddec1b260ad8406cee/integrals/svg/definite-integrals-1.svg",
+      "source": "https://github.com/antoniolupetti/algebrica/blob/cb1685078f52293985c40f92909d7ef1aaa18099/integrals/svg/definite-integrals-1.svg",
       "author": "Antonio Lupetti / Algebrica",
       "license": "CC BY-NC 4.0",
       "changes": "Chinese labels and/or typography"
     },
     {
       "path": "public/assets/integrals/svg/definite-integrals-2.zh.svg",
-      "source": "https://github.com/antoniolupetti/algebrica/blob/9b54dbec9c31f0881b0dbaddec1b260ad8406cee/integrals/svg/definite-integrals-2.svg",
+      "source": "https://github.com/antoniolupetti/algebrica/blob/cb1685078f52293985c40f92909d7ef1aaa18099/integrals/svg/definite-integrals-2.svg",
       "author": "Antonio Lupetti / Algebrica",
       "license": "CC BY-NC 4.0",
       "changes": "Chinese labels and/or typography"
     },
     {
       "path": "public/assets/integrals/svg/definite-integrals-3.zh.svg",
-      "source": "https://github.com/antoniolupetti/algebrica/blob/9b54dbec9c31f0881b0dbaddec1b260ad8406cee/integrals/svg/definite-integrals-3.svg",
+      "source": "https://github.com/antoniolupetti/algebrica/blob/cb1685078f52293985c40f92909d7ef1aaa18099/integrals/svg/definite-integrals-3.svg",
       "author": "Antonio Lupetti / Algebrica",
       "license": "CC BY-NC 4.0",
       "changes": "Chinese labels and/or typography"
     },
     {
       "path": "public/assets/integrals/svg/definite-integrals-4.zh.svg",
-      "source": "https://github.com/antoniolupetti/algebrica/blob/9b54dbec9c31f0881b0dbaddec1b260ad8406cee/integrals/svg/definite-integrals-4.svg",
+      "source": "https://github.com/antoniolupetti/algebrica/blob/cb1685078f52293985c40f92909d7ef1aaa18099/integrals/svg/definite-integrals-4.svg",
       "author": "Antonio Lupetti / Algebrica",
       "license": "CC BY-NC 4.0",
       "changes": "Chinese labels and/or typography"
     },
     {
       "path": "public/assets/integrals/svg/definite-integrals-5.zh.svg",
-      "source": "https://github.com/antoniolupetti/algebrica/blob/9b54dbec9c31f0881b0dbaddec1b260ad8406cee/integrals/svg/definite-integrals-5.svg",
+      "source": "https://github.com/antoniolupetti/algebrica/blob/cb1685078f52293985c40f92909d7ef1aaa18099/integrals/svg/definite-integrals-5.svg",
       "author": "Antonio Lupetti / Algebrica",
       "license": "CC BY-NC 4.0",
       "changes": "Chinese labels and/or typography"
     },
     {
       "path": "public/assets/integrals/svg/definite-integrals-6.zh.svg",
-      "source": "https://github.com/antoniolupetti/algebrica/blob/9b54dbec9c31f0881b0dbaddec1b260ad8406cee/integrals/svg/definite-integrals-6.svg",
+      "source": "https://github.com/antoniolupetti/algebrica/blob/cb1685078f52293985c40f92909d7ef1aaa18099/integrals/svg/definite-integrals-6.svg",
       "author": "Antonio Lupetti / Algebrica",
       "license": "CC BY-NC 4.0",
       "changes": "Chinese labels and/or typography"
     },
     {
       "path": "public/assets/integrals/svg/finding-areas-by-integration-1.zh.svg",
-      "source": "https://github.com/antoniolupetti/algebrica/blob/9b54dbec9c31f0881b0dbaddec1b260ad8406cee/integrals/svg/finding-areas-by-integration-1.svg",
+      "source": "https://github.com/antoniolupetti/algebrica/blob/cb1685078f52293985c40f92909d7ef1aaa18099/integrals/svg/finding-areas-by-integration-1.svg",
       "author": "Antonio Lupetti / Algebrica",
       "license": "CC BY-NC 4.0",
       "changes": "Chinese labels and/or typography"
     },
     {
       "path": "public/assets/integrals/svg/finding-areas-by-integration-2.zh.svg",
-      "source": "https://github.com/antoniolupetti/algebrica/blob/9b54dbec9c31f0881b0dbaddec1b260ad8406cee/integrals/svg/finding-areas-by-integration-2.svg",
+      "source": "https://github.com/antoniolupetti/algebrica/blob/cb1685078f52293985c40f92909d7ef1aaa18099/integrals/svg/finding-areas-by-integration-2.svg",
       "author": "Antonio Lupetti / Algebrica",
       "license": "CC BY-NC 4.0",
       "changes": "Chinese labels and/or typography"
     },
     {
       "path": "public/assets/integrals/svg/finding-areas-by-integration-3.zh.svg",
-      "source": "https://github.com/antoniolupetti/algebrica/blob/9b54dbec9c31f0881b0dbaddec1b260ad8406cee/integrals/svg/finding-areas-by-integration-3.svg",
+      "source": "https://github.com/antoniolupetti/algebrica/blob/cb1685078f52293985c40f92909d7ef1aaa18099/integrals/svg/finding-areas-by-integration-3.svg",
       "author": "Antonio Lupetti / Algebrica",
       "license": "CC BY-NC 4.0",
       "changes": "Chinese labels and/or typography"
     },
     {
       "path": "public/assets/integrals/svg/fundamental-theorem-of-calculus-1.zh.svg",
-      "source": "https://github.com/antoniolupetti/algebrica/blob/9b54dbec9c31f0881b0dbaddec1b260ad8406cee/integrals/svg/fundamental-theorem-of-calculus-1.svg",
+      "source": "https://github.com/antoniolupetti/algebrica/blob/cb1685078f52293985c40f92909d7ef1aaa18099/integrals/svg/fundamental-theorem-of-calculus-1.svg",
       "author": "Antonio Lupetti / Algebrica",
       "license": "CC BY-NC 4.0",
       "changes": "Chinese labels and/or typography"
     },
     {
       "path": "public/assets/integrals/svg/fundamental-theorem-of-calculus-2.zh.svg",
-      "source": "https://github.com/antoniolupetti/algebrica/blob/9b54dbec9c31f0881b0dbaddec1b260ad8406cee/integrals/svg/fundamental-theorem-of-calculus-2.svg",
+      "source": "https://github.com/antoniolupetti/algebrica/blob/cb1685078f52293985c40f92909d7ef1aaa18099/integrals/svg/fundamental-theorem-of-calculus-2.svg",
       "author": "Antonio Lupetti / Algebrica",
       "license": "CC BY-NC 4.0",
       "changes": "Chinese labels and/or typography"
     },
     {
       "path": "public/assets/integrals/svg/improper-integrals-1.zh.svg",
-      "source": "https://github.com/antoniolupetti/algebrica/blob/9b54dbec9c31f0881b0dbaddec1b260ad8406cee/integrals/svg/improper-integrals-1.svg",
+      "source": "https://github.com/antoniolupetti/algebrica/blob/cb1685078f52293985c40f92909d7ef1aaa18099/integrals/svg/improper-integrals-1.svg",
       "author": "Antonio Lupetti / Algebrica",
       "license": "CC BY-NC 4.0",
       "changes": "Chinese labels and/or typography"
     },
     {
       "path": "public/assets/integrals/svg/improper-integrals-2.zh.svg",
-      "source": "https://github.com/antoniolupetti/algebrica/blob/9b54dbec9c31f0881b0dbaddec1b260ad8406cee/integrals/svg/improper-integrals-2.svg",
+      "source": "https://github.com/antoniolupetti/algebrica/blob/cb1685078f52293985c40f92909d7ef1aaa18099/integrals/svg/improper-integrals-2.svg",
       "author": "Antonio Lupetti / Algebrica",
       "license": "CC BY-NC 4.0",
       "changes": "Chinese labels and/or typography"
     },
     {
       "path": "public/assets/integrals/svg/integration-by-parts-1.zh.svg",
-      "source": "https://github.com/antoniolupetti/algebrica/blob/9b54dbec9c31f0881b0dbaddec1b260ad8406cee/integrals/svg/integration-by-parts-1.svg",
+      "source": "https://github.com/antoniolupetti/algebrica/blob/cb1685078f52293985c40f92909d7ef1aaa18099/integrals/svg/integration-by-parts-1.svg",
       "author": "Antonio Lupetti / Algebrica",
       "license": "CC BY-NC 4.0",
       "changes": "Chinese labels and/or typography"
     },
     {
       "path": "public/assets/integrals/svg/numerical-integration-1.zh.svg",
-      "source": "https://github.com/antoniolupetti/algebrica/blob/9b54dbec9c31f0881b0dbaddec1b260ad8406cee/integrals/svg/numerical-integration-1.svg",
+      "source": "https://github.com/antoniolupetti/algebrica/blob/cb1685078f52293985c40f92909d7ef1aaa18099/integrals/svg/numerical-integration-1.svg",
       "author": "Antonio Lupetti / Algebrica",
       "license": "CC BY-NC 4.0",
       "changes": "Chinese labels and/or typography"
     },
     {
       "path": "public/assets/integrals/svg/numerical-integration-2.zh.svg",
-      "source": "https://github.com/antoniolupetti/algebrica/blob/9b54dbec9c31f0881b0dbaddec1b260ad8406cee/integrals/svg/numerical-integration-2.svg",
+      "source": "https://github.com/antoniolupetti/algebrica/blob/cb1685078f52293985c40f92909d7ef1aaa18099/integrals/svg/numerical-integration-2.svg",
       "author": "Antonio Lupetti / Algebrica",
       "license": "CC BY-NC 4.0",
       "changes": "Chinese labels and/or typography"
     },
     {
       "path": "public/assets/integrals/svg/riemann-integrability-criteria-1.zh.svg",
-      "source": "https://github.com/antoniolupetti/algebrica/blob/9b54dbec9c31f0881b0dbaddec1b260ad8406cee/integrals/svg/riemann-integrability-criteria-1.svg",
+      "source": "https://github.com/antoniolupetti/algebrica/blob/cb1685078f52293985c40f92909d7ef1aaa18099/integrals/svg/riemann-integrability-criteria-1.svg",
       "author": "Antonio Lupetti / Algebrica",
       "license": "CC BY-NC 4.0",
       "changes": "Chinese labels and/or typography"
     },
     {
       "path": "public/assets/integrals/svg/riemann-integrability-criteria-2.zh.svg",
-      "source": "https://github.com/antoniolupetti/algebrica/blob/9b54dbec9c31f0881b0dbaddec1b260ad8406cee/integrals/svg/riemann-integrability-criteria-2.svg",
+      "source": "https://github.com/antoniolupetti/algebrica/blob/cb1685078f52293985c40f92909d7ef1aaa18099/integrals/svg/riemann-integrability-criteria-2.svg",
       "author": "Antonio Lupetti / Algebrica",
       "license": "CC BY-NC 4.0",
       "changes": "Chinese labels and/or typography"
     },
     {
       "path": "public/assets/integrals/svg/riemann-integrability-criteria-3.zh.svg",
-      "source": "https://github.com/antoniolupetti/algebrica/blob/9b54dbec9c31f0881b0dbaddec1b260ad8406cee/integrals/svg/riemann-integrability-criteria-3.svg",
+      "source": "https://github.com/antoniolupetti/algebrica/blob/cb1685078f52293985c40f92909d7ef1aaa18099/integrals/svg/riemann-integrability-criteria-3.svg",
       "author": "Antonio Lupetti / Algebrica",
       "license": "CC BY-NC 4.0",
       "changes": "Chinese labels and/or typography"
     },
     {
       "path": "public/assets/integrals/svg/riemann-integrability-criteria-4.zh.svg",
-      "source": "https://github.com/antoniolupetti/algebrica/blob/9b54dbec9c31f0881b0dbaddec1b260ad8406cee/integrals/svg/riemann-integrability-criteria-4.svg",
+      "source": "https://github.com/antoniolupetti/algebrica/blob/cb1685078f52293985c40f92909d7ef1aaa18099/integrals/svg/riemann-integrability-criteria-4.svg",
       "author": "Antonio Lupetti / Algebrica",
       "license": "CC BY-NC 4.0",
       "changes": "Chinese labels and/or typography"
     },
     {
       "path": "public/assets/integrals/svg/the-disk-method-1.zh.svg",
-      "source": "https://github.com/antoniolupetti/algebrica/blob/9b54dbec9c31f0881b0dbaddec1b260ad8406cee/integrals/svg/the-disk-method-1.svg",
+      "source": "https://github.com/antoniolupetti/algebrica/blob/cb1685078f52293985c40f92909d7ef1aaa18099/integrals/svg/the-disk-method-1.svg",
       "author": "Antonio Lupetti / Algebrica",
       "license": "CC BY-NC 4.0",
       "changes": "Chinese labels and/or typography"
     },
     {
       "path": "public/assets/integrals/svg/the-disk-method-2.zh.svg",
-      "source": "https://github.com/antoniolupetti/algebrica/blob/9b54dbec9c31f0881b0dbaddec1b260ad8406cee/integrals/svg/the-disk-method-2.svg",
+      "source": "https://github.com/antoniolupetti/algebrica/blob/cb1685078f52293985c40f92909d7ef1aaa18099/integrals/svg/the-disk-method-2.svg",
       "author": "Antonio Lupetti / Algebrica",
       "license": "CC BY-NC 4.0",
       "changes": "Chinese labels and/or typography"
     },
     {
       "path": "public/assets/integrals/svg/the-disk-method-3.zh.svg",
-      "source": "https://github.com/antoniolupetti/algebrica/blob/9b54dbec9c31f0881b0dbaddec1b260ad8406cee/integrals/svg/the-disk-method-3.svg",
+      "source": "https://github.com/antoniolupetti/algebrica/blob/cb1685078f52293985c40f92909d7ef1aaa18099/integrals/svg/the-disk-method-3.svg",
+      "author": "Antonio Lupetti / Algebrica",
+      "license": "CC BY-NC 4.0",
+      "changes": "Chinese labels and/or typography"
+    },
+    {
+      "path": "public/assets/integrals/svg/the-shell-method-1.zh.svg",
+      "source": "https://github.com/antoniolupetti/algebrica/blob/cb1685078f52293985c40f92909d7ef1aaa18099/integrals/svg/the-shell-method-1.svg",
+      "author": "Antonio Lupetti / Algebrica",
+      "license": "CC BY-NC 4.0",
+      "changes": "Chinese labels and/or typography"
+    },
+    {
+      "path": "public/assets/integrals/svg/the-shell-method-2.zh.svg",
+      "source": "https://github.com/antoniolupetti/algebrica/blob/cb1685078f52293985c40f92909d7ef1aaa18099/integrals/svg/the-shell-method-2.svg",
+      "author": "Antonio Lupetti / Algebrica",
+      "license": "CC BY-NC 4.0",
+      "changes": "Chinese labels and/or typography"
+    },
+    {
+      "path": "public/assets/integrals/svg/the-washer-method-1.zh.svg",
+      "source": "https://github.com/antoniolupetti/algebrica/blob/cb1685078f52293985c40f92909d7ef1aaa18099/integrals/svg/the-washer-method-1.svg",
+      "author": "Antonio Lupetti / Algebrica",
+      "license": "CC BY-NC 4.0",
+      "changes": "Chinese labels and/or typography"
+    },
+    {
+      "path": "public/assets/integrals/svg/the-washer-method-2.zh.svg",
+      "source": "https://github.com/antoniolupetti/algebrica/blob/cb1685078f52293985c40f92909d7ef1aaa18099/integrals/svg/the-washer-method-2.svg",
+      "author": "Antonio Lupetti / Algebrica",
+      "license": "CC BY-NC 4.0",
+      "changes": "Chinese labels and/or typography"
+    },
+    {
+      "path": "public/assets/integrals/svg/the-washer-method-3.zh.svg",
+      "source": "https://github.com/antoniolupetti/algebrica/blob/cb1685078f52293985c40f92909d7ef1aaa18099/integrals/svg/the-washer-method-3.svg",
+      "author": "Antonio Lupetti / Algebrica",
+      "license": "CC BY-NC 4.0",
+      "changes": "Chinese labels and/or typography"
+    },
+    {
+      "path": "public/assets/integrals/svg/the-washer-method-4.zh.svg",
+      "source": "https://github.com/antoniolupetti/algebrica/blob/cb1685078f52293985c40f92909d7ef1aaa18099/integrals/svg/the-washer-method-4.svg",
       "author": "Antonio Lupetti / Algebrica",
       "license": "CC BY-NC 4.0",
       "changes": "Chinese labels and/or typography"
     },
     {
       "path": "public/assets/integrals/svg/trigonometric-substitution-for-integrals-1.zh.svg",
-      "source": "https://github.com/antoniolupetti/algebrica/blob/9b54dbec9c31f0881b0dbaddec1b260ad8406cee/integrals/svg/trigonometric-substitution-for-integrals-1.svg",
+      "source": "https://github.com/antoniolupetti/algebrica/blob/cb1685078f52293985c40f92909d7ef1aaa18099/integrals/svg/trigonometric-substitution-for-integrals-1.svg",
+      "author": "Antonio Lupetti / Algebrica",
+      "license": "CC BY-NC 4.0",
+      "changes": "Chinese labels and/or typography"
+    },
+    {
+      "path": "public/assets/integrals/svg/volumes-by-parallel-cross-sections-1.zh.svg",
+      "source": "https://github.com/antoniolupetti/algebrica/blob/cb1685078f52293985c40f92909d7ef1aaa18099/integrals/svg/volumes-by-parallel-cross-sections-1.svg",
+      "author": "Antonio Lupetti / Algebrica",
+      "license": "CC BY-NC 4.0",
+      "changes": "Chinese labels and/or typography"
+    },
+    {
+      "path": "public/assets/integrals/svg/volumes-by-parallel-cross-sections-2.zh.svg",
+      "source": "https://github.com/antoniolupetti/algebrica/blob/cb1685078f52293985c40f92909d7ef1aaa18099/integrals/svg/volumes-by-parallel-cross-sections-2.svg",
+      "author": "Antonio Lupetti / Algebrica",
+      "license": "CC BY-NC 4.0",
+      "changes": "Chinese labels and/or typography"
+    },
+    {
+      "path": "public/assets/integrals/svg/volumes-by-parallel-cross-sections-3.zh.svg",
+      "source": "https://github.com/antoniolupetti/algebrica/blob/cb1685078f52293985c40f92909d7ef1aaa18099/integrals/svg/volumes-by-parallel-cross-sections-3.svg",
       "author": "Antonio Lupetti / Algebrica",
       "license": "CC BY-NC 4.0",
       "changes": "Chinese labels and/or typography"
     },
     {
       "path": "public/assets/limits/svg/asymptotes-1.zh.svg",
-      "source": "https://github.com/antoniolupetti/algebrica/blob/9b54dbec9c31f0881b0dbaddec1b260ad8406cee/limits/svg/asymptotes-1.svg",
+      "source": "https://github.com/antoniolupetti/algebrica/blob/cb1685078f52293985c40f92909d7ef1aaa18099/limits/svg/asymptotes-1.svg",
       "author": "Antonio Lupetti / Algebrica",
       "license": "CC BY-NC 4.0",
       "changes": "Chinese labels and/or typography"
     },
     {
       "path": "public/assets/limits/svg/asymptotes-2.zh.svg",
-      "source": "https://github.com/antoniolupetti/algebrica/blob/9b54dbec9c31f0881b0dbaddec1b260ad8406cee/limits/svg/asymptotes-2.svg",
+      "source": "https://github.com/antoniolupetti/algebrica/blob/cb1685078f52293985c40f92909d7ef1aaa18099/limits/svg/asymptotes-2.svg",
       "author": "Antonio Lupetti / Algebrica",
       "license": "CC BY-NC 4.0",
       "changes": "Chinese labels and/or typography"
     },
     {
       "path": "public/assets/limits/svg/asymptotes-3.zh.svg",
-      "source": "https://github.com/antoniolupetti/algebrica/blob/9b54dbec9c31f0881b0dbaddec1b260ad8406cee/limits/svg/asymptotes-3.svg",
+      "source": "https://github.com/antoniolupetti/algebrica/blob/cb1685078f52293985c40f92909d7ef1aaa18099/limits/svg/asymptotes-3.svg",
       "author": "Antonio Lupetti / Algebrica",
       "license": "CC BY-NC 4.0",
       "changes": "Chinese labels and/or typography"
     },
     {
       "path": "public/assets/limits/svg/big-o-notation-1.zh.svg",
-      "source": "https://github.com/antoniolupetti/algebrica/blob/9b54dbec9c31f0881b0dbaddec1b260ad8406cee/limits/svg/big-o-notation-1.svg",
+      "source": "https://github.com/antoniolupetti/algebrica/blob/cb1685078f52293985c40f92909d7ef1aaa18099/limits/svg/big-o-notation-1.svg",
       "author": "Antonio Lupetti / Algebrica",
       "license": "CC BY-NC 4.0",
       "changes": "Chinese labels and/or typography"
     },
     {
       "path": "public/assets/limits/svg/limits-1.zh.svg",
-      "source": "https://github.com/antoniolupetti/algebrica/blob/9b54dbec9c31f0881b0dbaddec1b260ad8406cee/limits/svg/limits-1.svg",
+      "source": "https://github.com/antoniolupetti/algebrica/blob/cb1685078f52293985c40f92909d7ef1aaa18099/limits/svg/limits-1.svg",
       "author": "Antonio Lupetti / Algebrica",
       "license": "CC BY-NC 4.0",
       "changes": "Chinese labels and/or typography"
     },
     {
       "path": "public/assets/limits/svg/limits-2.zh.svg",
-      "source": "https://github.com/antoniolupetti/algebrica/blob/9b54dbec9c31f0881b0dbaddec1b260ad8406cee/limits/svg/limits-2.svg",
+      "source": "https://github.com/antoniolupetti/algebrica/blob/cb1685078f52293985c40f92909d7ef1aaa18099/limits/svg/limits-2.svg",
       "author": "Antonio Lupetti / Algebrica",
       "license": "CC BY-NC 4.0",
       "changes": "Chinese labels and/or typography"
     },
     {
       "path": "public/assets/limits/svg/limits-3.zh.svg",
-      "source": "https://github.com/antoniolupetti/algebrica/blob/9b54dbec9c31f0881b0dbaddec1b260ad8406cee/limits/svg/limits-3.svg",
+      "source": "https://github.com/antoniolupetti/algebrica/blob/cb1685078f52293985c40f92909d7ef1aaa18099/limits/svg/limits-3.svg",
       "author": "Antonio Lupetti / Algebrica",
       "license": "CC BY-NC 4.0",
       "changes": "Chinese labels and/or typography"
     },
     {
       "path": "public/assets/limits/svg/little-o-1.zh.svg",
-      "source": "https://github.com/antoniolupetti/algebrica/blob/9b54dbec9c31f0881b0dbaddec1b260ad8406cee/limits/svg/little-o-1.svg",
+      "source": "https://github.com/antoniolupetti/algebrica/blob/cb1685078f52293985c40f92909d7ef1aaa18099/limits/svg/little-o-1.svg",
       "author": "Antonio Lupetti / Algebrica",
       "license": "CC BY-NC 4.0",
       "changes": "Chinese labels and/or typography"
     },
     {
       "path": "public/assets/limits/svg/squeeze-theorem-1.zh.svg",
-      "source": "https://github.com/antoniolupetti/algebrica/blob/9b54dbec9c31f0881b0dbaddec1b260ad8406cee/limits/svg/squeeze-theorem-1.svg",
+      "source": "https://github.com/antoniolupetti/algebrica/blob/cb1685078f52293985c40f92909d7ef1aaa18099/limits/svg/squeeze-theorem-1.svg",
       "author": "Antonio Lupetti / Algebrica",
       "license": "CC BY-NC 4.0",
       "changes": "Chinese labels and/or typography"
     },
     {
       "path": "public/assets/lines-planes-conic-sections/svg/circumference-1.zh.svg",
-      "source": "https://github.com/antoniolupetti/algebrica/blob/9b54dbec9c31f0881b0dbaddec1b260ad8406cee/lines-planes-conic-sections/svg/circumference-1.svg",
+      "source": "https://github.com/antoniolupetti/algebrica/blob/cb1685078f52293985c40f92909d7ef1aaa18099/lines-planes-conic-sections/svg/circumference-1.svg",
       "author": "Antonio Lupetti / Algebrica",
       "license": "CC BY-NC 4.0",
       "changes": "Chinese labels and/or typography"
     },
     {
       "path": "public/assets/lines-planes-conic-sections/svg/circumference-2.zh.svg",
-      "source": "https://github.com/antoniolupetti/algebrica/blob/9b54dbec9c31f0881b0dbaddec1b260ad8406cee/lines-planes-conic-sections/svg/circumference-2.svg",
+      "source": "https://github.com/antoniolupetti/algebrica/blob/cb1685078f52293985c40f92909d7ef1aaa18099/lines-planes-conic-sections/svg/circumference-2.svg",
       "author": "Antonio Lupetti / Algebrica",
       "license": "CC BY-NC 4.0",
       "changes": "Chinese labels and/or typography"
     },
     {
       "path": "public/assets/lines-planes-conic-sections/svg/circumference-3.zh.svg",
-      "source": "https://github.com/antoniolupetti/algebrica/blob/9b54dbec9c31f0881b0dbaddec1b260ad8406cee/lines-planes-conic-sections/svg/circumference-3.svg",
+      "source": "https://github.com/antoniolupetti/algebrica/blob/cb1685078f52293985c40f92909d7ef1aaa18099/lines-planes-conic-sections/svg/circumference-3.svg",
       "author": "Antonio Lupetti / Algebrica",
       "license": "CC BY-NC 4.0",
       "changes": "Chinese labels and/or typography"
     },
     {
       "path": "public/assets/lines-planes-conic-sections/svg/circumference-4.zh.svg",
-      "source": "https://github.com/antoniolupetti/algebrica/blob/9b54dbec9c31f0881b0dbaddec1b260ad8406cee/lines-planes-conic-sections/svg/circumference-4.svg",
+      "source": "https://github.com/antoniolupetti/algebrica/blob/cb1685078f52293985c40f92909d7ef1aaa18099/lines-planes-conic-sections/svg/circumference-4.svg",
       "author": "Antonio Lupetti / Algebrica",
       "license": "CC BY-NC 4.0",
       "changes": "Chinese labels and/or typography"
     },
     {
       "path": "public/assets/lines-planes-conic-sections/svg/circumference-5.zh.svg",
-      "source": "https://github.com/antoniolupetti/algebrica/blob/9b54dbec9c31f0881b0dbaddec1b260ad8406cee/lines-planes-conic-sections/svg/circumference-5.svg",
+      "source": "https://github.com/antoniolupetti/algebrica/blob/cb1685078f52293985c40f92909d7ef1aaa18099/lines-planes-conic-sections/svg/circumference-5.svg",
       "author": "Antonio Lupetti / Algebrica",
       "license": "CC BY-NC 4.0",
       "changes": "Chinese labels and/or typography"
     },
     {
       "path": "public/assets/lines-planes-conic-sections/svg/circumference-6.zh.svg",
-      "source": "https://github.com/antoniolupetti/algebrica/blob/9b54dbec9c31f0881b0dbaddec1b260ad8406cee/lines-planes-conic-sections/svg/circumference-6.svg",
+      "source": "https://github.com/antoniolupetti/algebrica/blob/cb1685078f52293985c40f92909d7ef1aaa18099/lines-planes-conic-sections/svg/circumference-6.svg",
       "author": "Antonio Lupetti / Algebrica",
       "license": "CC BY-NC 4.0",
       "changes": "Chinese labels and/or typography"
     },
     {
       "path": "public/assets/lines-planes-conic-sections/svg/circumference-7.zh.svg",
-      "source": "https://github.com/antoniolupetti/algebrica/blob/9b54dbec9c31f0881b0dbaddec1b260ad8406cee/lines-planes-conic-sections/svg/circumference-7.svg",
+      "source": "https://github.com/antoniolupetti/algebrica/blob/cb1685078f52293985c40f92909d7ef1aaa18099/lines-planes-conic-sections/svg/circumference-7.svg",
       "author": "Antonio Lupetti / Algebrica",
       "license": "CC BY-NC 4.0",
       "changes": "Chinese labels and/or typography"
     },
     {
       "path": "public/assets/lines-planes-conic-sections/svg/ellipse-1.zh.svg",
-      "source": "https://github.com/antoniolupetti/algebrica/blob/9b54dbec9c31f0881b0dbaddec1b260ad8406cee/lines-planes-conic-sections/svg/ellipse-1.svg",
+      "source": "https://github.com/antoniolupetti/algebrica/blob/cb1685078f52293985c40f92909d7ef1aaa18099/lines-planes-conic-sections/svg/ellipse-1.svg",
       "author": "Antonio Lupetti / Algebrica",
       "license": "CC BY-NC 4.0",
       "changes": "Chinese labels and/or typography"
     },
     {
       "path": "public/assets/lines-planes-conic-sections/svg/ellipse-2.zh.svg",
-      "source": "https://github.com/antoniolupetti/algebrica/blob/9b54dbec9c31f0881b0dbaddec1b260ad8406cee/lines-planes-conic-sections/svg/ellipse-2.svg",
+      "source": "https://github.com/antoniolupetti/algebrica/blob/cb1685078f52293985c40f92909d7ef1aaa18099/lines-planes-conic-sections/svg/ellipse-2.svg",
       "author": "Antonio Lupetti / Algebrica",
       "license": "CC BY-NC 4.0",
       "changes": "Chinese labels and/or typography"
     },
     {
       "path": "public/assets/lines-planes-conic-sections/svg/ellipse-3.zh.svg",
-      "source": "https://github.com/antoniolupetti/algebrica/blob/9b54dbec9c31f0881b0dbaddec1b260ad8406cee/lines-planes-conic-sections/svg/ellipse-3.svg",
+      "source": "https://github.com/antoniolupetti/algebrica/blob/cb1685078f52293985c40f92909d7ef1aaa18099/lines-planes-conic-sections/svg/ellipse-3.svg",
       "author": "Antonio Lupetti / Algebrica",
       "license": "CC BY-NC 4.0",
       "changes": "Chinese labels and/or typography"
     },
     {
       "path": "public/assets/lines-planes-conic-sections/svg/hyperbola-1.zh.svg",
-      "source": "https://github.com/antoniolupetti/algebrica/blob/9b54dbec9c31f0881b0dbaddec1b260ad8406cee/lines-planes-conic-sections/svg/hyperbola-1.svg",
+      "source": "https://github.com/antoniolupetti/algebrica/blob/cb1685078f52293985c40f92909d7ef1aaa18099/lines-planes-conic-sections/svg/hyperbola-1.svg",
       "author": "Antonio Lupetti / Algebrica",
       "license": "CC BY-NC 4.0",
       "changes": "Chinese labels and/or typography"
     },
     {
       "path": "public/assets/lines-planes-conic-sections/svg/hyperbola-2.zh.svg",
-      "source": "https://github.com/antoniolupetti/algebrica/blob/9b54dbec9c31f0881b0dbaddec1b260ad8406cee/lines-planes-conic-sections/svg/hyperbola-2.svg",
+      "source": "https://github.com/antoniolupetti/algebrica/blob/cb1685078f52293985c40f92909d7ef1aaa18099/lines-planes-conic-sections/svg/hyperbola-2.svg",
       "author": "Antonio Lupetti / Algebrica",
       "license": "CC BY-NC 4.0",
       "changes": "Chinese labels and/or typography"
     },
     {
       "path": "public/assets/lines-planes-conic-sections/svg/hyperbola-3.zh.svg",
-      "source": "https://github.com/antoniolupetti/algebrica/blob/9b54dbec9c31f0881b0dbaddec1b260ad8406cee/lines-planes-conic-sections/svg/hyperbola-3.svg",
+      "source": "https://github.com/antoniolupetti/algebrica/blob/cb1685078f52293985c40f92909d7ef1aaa18099/lines-planes-conic-sections/svg/hyperbola-3.svg",
       "author": "Antonio Lupetti / Algebrica",
       "license": "CC BY-NC 4.0",
       "changes": "Chinese labels and/or typography"
     },
     {
       "path": "public/assets/lines-planes-conic-sections/svg/hyperbola-4.zh.svg",
-      "source": "https://github.com/antoniolupetti/algebrica/blob/9b54dbec9c31f0881b0dbaddec1b260ad8406cee/lines-planes-conic-sections/svg/hyperbola-4.svg",
+      "source": "https://github.com/antoniolupetti/algebrica/blob/cb1685078f52293985c40f92909d7ef1aaa18099/lines-planes-conic-sections/svg/hyperbola-4.svg",
       "author": "Antonio Lupetti / Algebrica",
       "license": "CC BY-NC 4.0",
       "changes": "Chinese labels and/or typography"
     },
     {
       "path": "public/assets/lines-planes-conic-sections/svg/hyperbola-5.zh.svg",
-      "source": "https://github.com/antoniolupetti/algebrica/blob/9b54dbec9c31f0881b0dbaddec1b260ad8406cee/lines-planes-conic-sections/svg/hyperbola-5.svg",
+      "source": "https://github.com/antoniolupetti/algebrica/blob/cb1685078f52293985c40f92909d7ef1aaa18099/lines-planes-conic-sections/svg/hyperbola-5.svg",
       "author": "Antonio Lupetti / Algebrica",
       "license": "CC BY-NC 4.0",
       "changes": "Chinese labels and/or typography"
     },
     {
       "path": "public/assets/lines-planes-conic-sections/svg/lines-1.zh.svg",
-      "source": "https://github.com/antoniolupetti/algebrica/blob/9b54dbec9c31f0881b0dbaddec1b260ad8406cee/lines-planes-conic-sections/svg/lines-1.svg",
+      "source": "https://github.com/antoniolupetti/algebrica/blob/cb1685078f52293985c40f92909d7ef1aaa18099/lines-planes-conic-sections/svg/lines-1.svg",
       "author": "Antonio Lupetti / Algebrica",
       "license": "CC BY-NC 4.0",
       "changes": "Chinese labels and/or typography"
     },
     {
       "path": "public/assets/lines-planes-conic-sections/svg/lines-2.zh.svg",
-      "source": "https://github.com/antoniolupetti/algebrica/blob/9b54dbec9c31f0881b0dbaddec1b260ad8406cee/lines-planes-conic-sections/svg/lines-2.svg",
+      "source": "https://github.com/antoniolupetti/algebrica/blob/cb1685078f52293985c40f92909d7ef1aaa18099/lines-planes-conic-sections/svg/lines-2.svg",
       "author": "Antonio Lupetti / Algebrica",
       "license": "CC BY-NC 4.0",
       "changes": "Chinese labels and/or typography"
     },
     {
       "path": "public/assets/lines-planes-conic-sections/svg/lines-3.zh.svg",
-      "source": "https://github.com/antoniolupetti/algebrica/blob/9b54dbec9c31f0881b0dbaddec1b260ad8406cee/lines-planes-conic-sections/svg/lines-3.svg",
+      "source": "https://github.com/antoniolupetti/algebrica/blob/cb1685078f52293985c40f92909d7ef1aaa18099/lines-planes-conic-sections/svg/lines-3.svg",
       "author": "Antonio Lupetti / Algebrica",
       "license": "CC BY-NC 4.0",
       "changes": "Chinese labels and/or typography"
     },
     {
       "path": "public/assets/lines-planes-conic-sections/svg/parabola-1.zh.svg",
-      "source": "https://github.com/antoniolupetti/algebrica/blob/9b54dbec9c31f0881b0dbaddec1b260ad8406cee/lines-planes-conic-sections/svg/parabola-1.svg",
+      "source": "https://github.com/antoniolupetti/algebrica/blob/cb1685078f52293985c40f92909d7ef1aaa18099/lines-planes-conic-sections/svg/parabola-1.svg",
       "author": "Antonio Lupetti / Algebrica",
       "license": "CC BY-NC 4.0",
       "changes": "Chinese labels and/or typography"
     },
     {
       "path": "public/assets/lines-planes-conic-sections/svg/parabola-2.zh.svg",
-      "source": "https://github.com/antoniolupetti/algebrica/blob/9b54dbec9c31f0881b0dbaddec1b260ad8406cee/lines-planes-conic-sections/svg/parabola-2.svg",
+      "source": "https://github.com/antoniolupetti/algebrica/blob/cb1685078f52293985c40f92909d7ef1aaa18099/lines-planes-conic-sections/svg/parabola-2.svg",
       "author": "Antonio Lupetti / Algebrica",
       "license": "CC BY-NC 4.0",
       "changes": "Chinese labels and/or typography"
     },
     {
       "path": "public/assets/lines-planes-conic-sections/svg/parabola-3.zh.svg",
-      "source": "https://github.com/antoniolupetti/algebrica/blob/9b54dbec9c31f0881b0dbaddec1b260ad8406cee/lines-planes-conic-sections/svg/parabola-3.svg",
+      "source": "https://github.com/antoniolupetti/algebrica/blob/cb1685078f52293985c40f92909d7ef1aaa18099/lines-planes-conic-sections/svg/parabola-3.svg",
       "author": "Antonio Lupetti / Algebrica",
       "license": "CC BY-NC 4.0",
       "changes": "Chinese labels and/or typography"
     },
     {
       "path": "public/assets/lines-planes-conic-sections/svg/parabola-4.zh.svg",
-      "source": "https://github.com/antoniolupetti/algebrica/blob/9b54dbec9c31f0881b0dbaddec1b260ad8406cee/lines-planes-conic-sections/svg/parabola-4.svg",
+      "source": "https://github.com/antoniolupetti/algebrica/blob/cb1685078f52293985c40f92909d7ef1aaa18099/lines-planes-conic-sections/svg/parabola-4.svg",
       "author": "Antonio Lupetti / Algebrica",
       "license": "CC BY-NC 4.0",
       "changes": "Chinese labels and/or typography"
     },
     {
       "path": "public/assets/lines-planes-conic-sections/svg/parabola-5.zh.svg",
-      "source": "https://github.com/antoniolupetti/algebrica/blob/9b54dbec9c31f0881b0dbaddec1b260ad8406cee/lines-planes-conic-sections/svg/parabola-5.svg",
+      "source": "https://github.com/antoniolupetti/algebrica/blob/cb1685078f52293985c40f92909d7ef1aaa18099/lines-planes-conic-sections/svg/parabola-5.svg",
       "author": "Antonio Lupetti / Algebrica",
       "license": "CC BY-NC 4.0",
       "changes": "Chinese labels and/or typography"
     },
     {
       "path": "public/assets/lines-planes-conic-sections/svg/parabola-6.zh.svg",
-      "source": "https://github.com/antoniolupetti/algebrica/blob/9b54dbec9c31f0881b0dbaddec1b260ad8406cee/lines-planes-conic-sections/svg/parabola-6.svg",
+      "source": "https://github.com/antoniolupetti/algebrica/blob/cb1685078f52293985c40f92909d7ef1aaa18099/lines-planes-conic-sections/svg/parabola-6.svg",
       "author": "Antonio Lupetti / Algebrica",
       "license": "CC BY-NC 4.0",
       "changes": "Chinese labels and/or typography"
     },
     {
       "path": "public/assets/lines-planes-conic-sections/svg/parabola-7.zh.svg",
-      "source": "https://github.com/antoniolupetti/algebrica/blob/9b54dbec9c31f0881b0dbaddec1b260ad8406cee/lines-planes-conic-sections/svg/parabola-7.svg",
+      "source": "https://github.com/antoniolupetti/algebrica/blob/cb1685078f52293985c40f92909d7ef1aaa18099/lines-planes-conic-sections/svg/parabola-7.svg",
       "author": "Antonio Lupetti / Algebrica",
       "license": "CC BY-NC 4.0",
       "changes": "Chinese labels and/or typography"
     },
     {
       "path": "public/assets/lines-planes-conic-sections/svg/parabola-8.zh.svg",
-      "source": "https://github.com/antoniolupetti/algebrica/blob/9b54dbec9c31f0881b0dbaddec1b260ad8406cee/lines-planes-conic-sections/svg/parabola-8.svg",
+      "source": "https://github.com/antoniolupetti/algebrica/blob/cb1685078f52293985c40f92909d7ef1aaa18099/lines-planes-conic-sections/svg/parabola-8.svg",
       "author": "Antonio Lupetti / Algebrica",
       "license": "CC BY-NC 4.0",
       "changes": "Chinese labels and/or typography"
     },
     {
       "path": "public/assets/lines-planes-conic-sections/svg/polar-coordinates-1.zh.svg",
-      "source": "https://github.com/antoniolupetti/algebrica/blob/9b54dbec9c31f0881b0dbaddec1b260ad8406cee/lines-planes-conic-sections/svg/polar-coordinates-1.svg",
+      "source": "https://github.com/antoniolupetti/algebrica/blob/cb1685078f52293985c40f92909d7ef1aaa18099/lines-planes-conic-sections/svg/polar-coordinates-1.svg",
       "author": "Antonio Lupetti / Algebrica",
       "license": "CC BY-NC 4.0",
       "changes": "Chinese labels and/or typography"
     },
     {
       "path": "public/assets/lines-planes-conic-sections/svg/polar-coordinates-2.zh.svg",
-      "source": "https://github.com/antoniolupetti/algebrica/blob/9b54dbec9c31f0881b0dbaddec1b260ad8406cee/lines-planes-conic-sections/svg/polar-coordinates-2.svg",
+      "source": "https://github.com/antoniolupetti/algebrica/blob/cb1685078f52293985c40f92909d7ef1aaa18099/lines-planes-conic-sections/svg/polar-coordinates-2.svg",
       "author": "Antonio Lupetti / Algebrica",
       "license": "CC BY-NC 4.0",
       "changes": "Chinese labels and/or typography"
     },
     {
       "path": "public/assets/lines-planes-conic-sections/svg/vector-and-parametric-equations-of-a-line-1.zh.svg",
-      "source": "https://github.com/antoniolupetti/algebrica/blob/9b54dbec9c31f0881b0dbaddec1b260ad8406cee/lines-planes-conic-sections/svg/vector-and-parametric-equations-of-a-line-1.svg",
+      "source": "https://github.com/antoniolupetti/algebrica/blob/cb1685078f52293985c40f92909d7ef1aaa18099/lines-planes-conic-sections/svg/vector-and-parametric-equations-of-a-line-1.svg",
       "author": "Antonio Lupetti / Algebrica",
       "license": "CC BY-NC 4.0",
       "changes": "Chinese labels and/or typography"
     },
     {
       "path": "public/assets/polynomials/svg/completing-the-square-1.zh.svg",
-      "source": "https://github.com/antoniolupetti/algebrica/blob/9b54dbec9c31f0881b0dbaddec1b260ad8406cee/polynomials/svg/completing-the-square-1.svg",
+      "source": "https://github.com/antoniolupetti/algebrica/blob/cb1685078f52293985c40f92909d7ef1aaa18099/polynomials/svg/completing-the-square-1.svg",
       "author": "Antonio Lupetti / Algebrica",
       "license": "CC BY-NC 4.0",
       "changes": "Chinese labels and/or typography"
     },
     {
       "path": "public/assets/polynomials/svg/polynomials-1.zh.svg",
-      "source": "https://github.com/antoniolupetti/algebrica/blob/9b54dbec9c31f0881b0dbaddec1b260ad8406cee/polynomials/svg/polynomials-1.svg",
+      "source": "https://github.com/antoniolupetti/algebrica/blob/cb1685078f52293985c40f92909d7ef1aaa18099/polynomials/svg/polynomials-1.svg",
       "author": "Antonio Lupetti / Algebrica",
       "license": "CC BY-NC 4.0",
       "changes": "Chinese labels and/or typography"
     },
     {
       "path": "public/assets/polynomials/svg/polynomials-2.zh.svg",
-      "source": "https://github.com/antoniolupetti/algebrica/blob/9b54dbec9c31f0881b0dbaddec1b260ad8406cee/polynomials/svg/polynomials-2.svg",
+      "source": "https://github.com/antoniolupetti/algebrica/blob/cb1685078f52293985c40f92909d7ef1aaa18099/polynomials/svg/polynomials-2.svg",
       "author": "Antonio Lupetti / Algebrica",
       "license": "CC BY-NC 4.0",
       "changes": "Chinese labels and/or typography"
     },
     {
       "path": "public/assets/polynomials/svg/polynomials-3.zh.svg",
-      "source": "https://github.com/antoniolupetti/algebrica/blob/9b54dbec9c31f0881b0dbaddec1b260ad8406cee/polynomials/svg/polynomials-3.svg",
+      "source": "https://github.com/antoniolupetti/algebrica/blob/cb1685078f52293985c40f92909d7ef1aaa18099/polynomials/svg/polynomials-3.svg",
       "author": "Antonio Lupetti / Algebrica",
       "license": "CC BY-NC 4.0",
       "changes": "Chinese labels and/or typography"
     },
     {
       "path": "public/assets/polynomials/svg/roots-of-a-polynomial-1.zh.svg",
-      "source": "https://github.com/antoniolupetti/algebrica/blob/9b54dbec9c31f0881b0dbaddec1b260ad8406cee/polynomials/svg/roots-of-a-polynomial-1.svg",
+      "source": "https://github.com/antoniolupetti/algebrica/blob/cb1685078f52293985c40f92909d7ef1aaa18099/polynomials/svg/roots-of-a-polynomial-1.svg",
       "author": "Antonio Lupetti / Algebrica",
       "license": "CC BY-NC 4.0",
       "changes": "Chinese labels and/or typography"
     },
     {
       "path": "public/assets/polynomials/svg/roots-of-a-polynomial-2.zh.svg",
-      "source": "https://github.com/antoniolupetti/algebrica/blob/9b54dbec9c31f0881b0dbaddec1b260ad8406cee/polynomials/svg/roots-of-a-polynomial-2.svg",
+      "source": "https://github.com/antoniolupetti/algebrica/blob/cb1685078f52293985c40f92909d7ef1aaa18099/polynomials/svg/roots-of-a-polynomial-2.svg",
       "author": "Antonio Lupetti / Algebrica",
       "license": "CC BY-NC 4.0",
       "changes": "Chinese labels and/or typography"
     },
     {
       "path": "public/assets/polynomials/svg/roots-of-a-polynomial-3.zh.svg",
-      "source": "https://github.com/antoniolupetti/algebrica/blob/9b54dbec9c31f0881b0dbaddec1b260ad8406cee/polynomials/svg/roots-of-a-polynomial-3.svg",
+      "source": "https://github.com/antoniolupetti/algebrica/blob/cb1685078f52293985c40f92909d7ef1aaa18099/polynomials/svg/roots-of-a-polynomial-3.svg",
       "author": "Antonio Lupetti / Algebrica",
       "license": "CC BY-NC 4.0",
       "changes": "Chinese labels and/or typography"
     },
     {
       "path": "public/assets/polynomials/svg/trinomials-1.zh.svg",
-      "source": "https://github.com/antoniolupetti/algebrica/blob/9b54dbec9c31f0881b0dbaddec1b260ad8406cee/polynomials/svg/trinomials-1.svg",
+      "source": "https://github.com/antoniolupetti/algebrica/blob/cb1685078f52293985c40f92909d7ef1aaa18099/polynomials/svg/trinomials-1.svg",
       "author": "Antonio Lupetti / Algebrica",
       "license": "CC BY-NC 4.0",
       "changes": "Chinese labels and/or typography"
     },
     {
       "path": "public/assets/powers-radicals-logarithms/svg/logarithms-1.zh.svg",
-      "source": "https://github.com/antoniolupetti/algebrica/blob/9b54dbec9c31f0881b0dbaddec1b260ad8406cee/powers-radicals-logarithms/svg/logarithms-1.svg",
+      "source": "https://github.com/antoniolupetti/algebrica/blob/cb1685078f52293985c40f92909d7ef1aaa18099/powers-radicals-logarithms/svg/logarithms-1.svg",
       "author": "Antonio Lupetti / Algebrica",
       "license": "CC BY-NC 4.0",
       "changes": "Chinese labels and/or typography"
     },
     {
       "path": "public/assets/powers-radicals-logarithms/svg/logarithms-2.zh.svg",
-      "source": "https://github.com/antoniolupetti/algebrica/blob/9b54dbec9c31f0881b0dbaddec1b260ad8406cee/powers-radicals-logarithms/svg/logarithms-2.svg",
+      "source": "https://github.com/antoniolupetti/algebrica/blob/cb1685078f52293985c40f92909d7ef1aaa18099/powers-radicals-logarithms/svg/logarithms-2.svg",
       "author": "Antonio Lupetti / Algebrica",
       "license": "CC BY-NC 4.0",
       "changes": "Chinese labels and/or typography"
     },
     {
       "path": "public/assets/probability-and-statistics/svg/continuous-random-variables-1.zh.svg",
-      "source": "https://github.com/antoniolupetti/algebrica/blob/9b54dbec9c31f0881b0dbaddec1b260ad8406cee/probability-and-statistics/svg/continuous-random-variables-1.svg",
+      "source": "https://github.com/antoniolupetti/algebrica/blob/cb1685078f52293985c40f92909d7ef1aaa18099/probability-and-statistics/svg/continuous-random-variables-1.svg",
       "author": "Antonio Lupetti / Algebrica",
       "license": "CC BY-NC 4.0",
       "changes": "Chinese labels and/or typography"
     },
     {
       "path": "public/assets/sequences/svg/arithmetic-sequence-1.zh.svg",
-      "source": "https://github.com/antoniolupetti/algebrica/blob/9b54dbec9c31f0881b0dbaddec1b260ad8406cee/sequences/svg/arithmetic-sequence-1.svg",
+      "source": "https://github.com/antoniolupetti/algebrica/blob/cb1685078f52293985c40f92909d7ef1aaa18099/sequences/svg/arithmetic-sequence-1.svg",
       "author": "Antonio Lupetti / Algebrica",
       "license": "CC BY-NC 4.0",
       "changes": "Chinese labels and/or typography"
     },
     {
       "path": "public/assets/sequences/svg/arithmetic-sequence-2.zh.svg",
-      "source": "https://github.com/antoniolupetti/algebrica/blob/9b54dbec9c31f0881b0dbaddec1b260ad8406cee/sequences/svg/arithmetic-sequence-2.svg",
+      "source": "https://github.com/antoniolupetti/algebrica/blob/cb1685078f52293985c40f92909d7ef1aaa18099/sequences/svg/arithmetic-sequence-2.svg",
       "author": "Antonio Lupetti / Algebrica",
       "license": "CC BY-NC 4.0",
       "changes": "Chinese labels and/or typography"
     },
     {
       "path": "public/assets/sequences/svg/cauchy-sequence-1.zh.svg",
-      "source": "https://github.com/antoniolupetti/algebrica/blob/9b54dbec9c31f0881b0dbaddec1b260ad8406cee/sequences/svg/cauchy-sequence-1.svg",
+      "source": "https://github.com/antoniolupetti/algebrica/blob/cb1685078f52293985c40f92909d7ef1aaa18099/sequences/svg/cauchy-sequence-1.svg",
       "author": "Antonio Lupetti / Algebrica",
       "license": "CC BY-NC 4.0",
       "changes": "Chinese labels and/or typography"
     },
     {
       "path": "public/assets/sequences/svg/convergent-and-divergent-sequences-1.zh.svg",
-      "source": "https://github.com/antoniolupetti/algebrica/blob/9b54dbec9c31f0881b0dbaddec1b260ad8406cee/sequences/svg/convergent-and-divergent-sequences-1.svg",
+      "source": "https://github.com/antoniolupetti/algebrica/blob/cb1685078f52293985c40f92909d7ef1aaa18099/sequences/svg/convergent-and-divergent-sequences-1.svg",
       "author": "Antonio Lupetti / Algebrica",
       "license": "CC BY-NC 4.0",
       "changes": "Chinese labels and/or typography"
     },
     {
       "path": "public/assets/sequences/svg/euler-number-limit-sequence-1.zh.svg",
-      "source": "https://github.com/antoniolupetti/algebrica/blob/9b54dbec9c31f0881b0dbaddec1b260ad8406cee/sequences/svg/euler-number-limit-sequence-1.svg",
+      "source": "https://github.com/antoniolupetti/algebrica/blob/cb1685078f52293985c40f92909d7ef1aaa18099/sequences/svg/euler-number-limit-sequence-1.svg",
       "author": "Antonio Lupetti / Algebrica",
       "license": "CC BY-NC 4.0",
       "changes": "Chinese labels and/or typography"
     },
     {
       "path": "public/assets/sequences/svg/geometric-sequence-1.zh.svg",
-      "source": "https://github.com/antoniolupetti/algebrica/blob/9b54dbec9c31f0881b0dbaddec1b260ad8406cee/sequences/svg/geometric-sequence-1.svg",
+      "source": "https://github.com/antoniolupetti/algebrica/blob/cb1685078f52293985c40f92909d7ef1aaa18099/sequences/svg/geometric-sequence-1.svg",
       "author": "Antonio Lupetti / Algebrica",
       "license": "CC BY-NC 4.0",
       "changes": "Chinese labels and/or typography"
     },
     {
       "path": "public/assets/sequences/svg/geometric-sequence-2.zh.svg",
-      "source": "https://github.com/antoniolupetti/algebrica/blob/9b54dbec9c31f0881b0dbaddec1b260ad8406cee/sequences/svg/geometric-sequence-2.svg",
+      "source": "https://github.com/antoniolupetti/algebrica/blob/cb1685078f52293985c40f92909d7ef1aaa18099/sequences/svg/geometric-sequence-2.svg",
       "author": "Antonio Lupetti / Algebrica",
       "license": "CC BY-NC 4.0",
       "changes": "Chinese labels and/or typography"
     },
     {
       "path": "public/assets/sequences/svg/geometric-sequence-3.zh.svg",
-      "source": "https://github.com/antoniolupetti/algebrica/blob/9b54dbec9c31f0881b0dbaddec1b260ad8406cee/sequences/svg/geometric-sequence-3.svg",
+      "source": "https://github.com/antoniolupetti/algebrica/blob/cb1685078f52293985c40f92909d7ef1aaa18099/sequences/svg/geometric-sequence-3.svg",
       "author": "Antonio Lupetti / Algebrica",
       "license": "CC BY-NC 4.0",
       "changes": "Chinese labels and/or typography"
     },
     {
       "path": "public/assets/sequences/svg/sequences-of-functions-1.zh.svg",
-      "source": "https://github.com/antoniolupetti/algebrica/blob/9b54dbec9c31f0881b0dbaddec1b260ad8406cee/sequences/svg/sequences-of-functions-1.svg",
+      "source": "https://github.com/antoniolupetti/algebrica/blob/cb1685078f52293985c40f92909d7ef1aaa18099/sequences/svg/sequences-of-functions-1.svg",
       "author": "Antonio Lupetti / Algebrica",
       "license": "CC BY-NC 4.0",
       "changes": "Chinese labels and/or typography"
     },
     {
       "path": "public/assets/series/svg/harmonic-series-1.zh.svg",
-      "source": "https://github.com/antoniolupetti/algebrica/blob/9b54dbec9c31f0881b0dbaddec1b260ad8406cee/series/svg/harmonic-series-1.svg",
+      "source": "https://github.com/antoniolupetti/algebrica/blob/cb1685078f52293985c40f92909d7ef1aaa18099/series/svg/harmonic-series-1.svg",
       "author": "Antonio Lupetti / Algebrica",
       "license": "CC BY-NC 4.0",
       "changes": "Chinese labels and/or typography"
     },
     {
       "path": "public/assets/series/svg/integral-test-for-series-convergence-1.zh.svg",
-      "source": "https://github.com/antoniolupetti/algebrica/blob/9b54dbec9c31f0881b0dbaddec1b260ad8406cee/series/svg/integral-test-for-series-convergence-1.svg",
+      "source": "https://github.com/antoniolupetti/algebrica/blob/cb1685078f52293985c40f92909d7ef1aaa18099/series/svg/integral-test-for-series-convergence-1.svg",
       "author": "Antonio Lupetti / Algebrica",
       "license": "CC BY-NC 4.0",
       "changes": "Chinese labels and/or typography"
     },
     {
       "path": "public/assets/series/svg/power-series-1.zh.svg",
-      "source": "https://github.com/antoniolupetti/algebrica/blob/9b54dbec9c31f0881b0dbaddec1b260ad8406cee/series/svg/power-series-1.svg",
+      "source": "https://github.com/antoniolupetti/algebrica/blob/cb1685078f52293985c40f92909d7ef1aaa18099/series/svg/power-series-1.svg",
       "author": "Antonio Lupetti / Algebrica",
       "license": "CC BY-NC 4.0",
       "changes": "Chinese labels and/or typography"
     },
     {
       "path": "public/assets/series/svg/power-series-2.zh.svg",
-      "source": "https://github.com/antoniolupetti/algebrica/blob/9b54dbec9c31f0881b0dbaddec1b260ad8406cee/series/svg/power-series-2.svg",
+      "source": "https://github.com/antoniolupetti/algebrica/blob/cb1685078f52293985c40f92909d7ef1aaa18099/series/svg/power-series-2.svg",
       "author": "Antonio Lupetti / Algebrica",
       "license": "CC BY-NC 4.0",
       "changes": "Chinese labels and/or typography"
     },
     {
       "path": "public/assets/sets-and-numbers/svg/absolute-value-1.zh.svg",
-      "source": "https://github.com/antoniolupetti/algebrica/blob/9b54dbec9c31f0881b0dbaddec1b260ad8406cee/sets-and-numbers/svg/absolute-value-1.svg",
+      "source": "https://github.com/antoniolupetti/algebrica/blob/cb1685078f52293985c40f92909d7ef1aaa18099/sets-and-numbers/svg/absolute-value-1.svg",
       "author": "Antonio Lupetti / Algebrica",
       "license": "CC BY-NC 4.0",
       "changes": "Chinese labels and/or typography"
     },
     {
       "path": "public/assets/sets-and-numbers/svg/real-numbers-1.zh.svg",
-      "source": "https://github.com/antoniolupetti/algebrica/blob/9b54dbec9c31f0881b0dbaddec1b260ad8406cee/sets-and-numbers/svg/real-numbers-1.svg",
+      "source": "https://github.com/antoniolupetti/algebrica/blob/cb1685078f52293985c40f92909d7ef1aaa18099/sets-and-numbers/svg/real-numbers-1.svg",
+      "author": "Antonio Lupetti / Algebrica",
+      "license": "CC BY-NC 4.0",
+      "changes": "Chinese labels and/or typography"
+    },
+    {
+      "path": "public/assets/sets-and-numbers/svg/the-cartesian-coordinate-plane-1.zh.svg",
+      "source": "https://github.com/antoniolupetti/algebrica/blob/cb1685078f52293985c40f92909d7ef1aaa18099/sets-and-numbers/svg/the-cartesian-coordinate-plane-1.svg",
+      "author": "Antonio Lupetti / Algebrica",
+      "license": "CC BY-NC 4.0",
+      "changes": "Chinese labels and/or typography"
+    },
+    {
+      "path": "public/assets/sets-and-numbers/svg/the-cartesian-coordinate-plane-2.zh.svg",
+      "source": "https://github.com/antoniolupetti/algebrica/blob/cb1685078f52293985c40f92909d7ef1aaa18099/sets-and-numbers/svg/the-cartesian-coordinate-plane-2.svg",
+      "author": "Antonio Lupetti / Algebrica",
+      "license": "CC BY-NC 4.0",
+      "changes": "Chinese labels and/or typography"
+    },
+    {
+      "path": "public/assets/sets-and-numbers/svg/the-cartesian-coordinate-plane-3.zh.svg",
+      "source": "https://github.com/antoniolupetti/algebrica/blob/cb1685078f52293985c40f92909d7ef1aaa18099/sets-and-numbers/svg/the-cartesian-coordinate-plane-3.svg",
+      "author": "Antonio Lupetti / Algebrica",
+      "license": "CC BY-NC 4.0",
+      "changes": "Chinese labels and/or typography"
+    },
+    {
+      "path": "public/assets/sets-and-numbers/svg/the-cartesian-coordinate-plane-4.zh.svg",
+      "source": "https://github.com/antoniolupetti/algebrica/blob/cb1685078f52293985c40f92909d7ef1aaa18099/sets-and-numbers/svg/the-cartesian-coordinate-plane-4.svg",
+      "author": "Antonio Lupetti / Algebrica",
+      "license": "CC BY-NC 4.0",
+      "changes": "Chinese labels and/or typography"
+    },
+    {
+      "path": "public/assets/sets-and-numbers/svg/the-cartesian-coordinate-plane-5.zh.svg",
+      "source": "https://github.com/antoniolupetti/algebrica/blob/cb1685078f52293985c40f92909d7ef1aaa18099/sets-and-numbers/svg/the-cartesian-coordinate-plane-5.svg",
       "author": "Antonio Lupetti / Algebrica",
       "license": "CC BY-NC 4.0",
       "changes": "Chinese labels and/or typography"
     },
     {
       "path": "public/assets/trigonometry/svg/angles-and-angular-measure-1.zh.svg",
-      "source": "https://github.com/antoniolupetti/algebrica/blob/9b54dbec9c31f0881b0dbaddec1b260ad8406cee/trigonometry/svg/angles-and-angular-measure-1.svg",
+      "source": "https://github.com/antoniolupetti/algebrica/blob/cb1685078f52293985c40f92909d7ef1aaa18099/trigonometry/svg/angles-and-angular-measure-1.svg",
       "author": "Antonio Lupetti / Algebrica",
       "license": "CC BY-NC 4.0",
       "changes": "Chinese labels and/or typography"
     },
     {
       "path": "public/assets/trigonometry/svg/angles-and-angular-measure-2.zh.svg",
-      "source": "https://github.com/antoniolupetti/algebrica/blob/9b54dbec9c31f0881b0dbaddec1b260ad8406cee/trigonometry/svg/angles-and-angular-measure-2.svg",
+      "source": "https://github.com/antoniolupetti/algebrica/blob/cb1685078f52293985c40f92909d7ef1aaa18099/trigonometry/svg/angles-and-angular-measure-2.svg",
       "author": "Antonio Lupetti / Algebrica",
       "license": "CC BY-NC 4.0",
       "changes": "Chinese labels and/or typography"
     },
     {
       "path": "public/assets/trigonometry/svg/arcsine-and-arccosine-1.zh.svg",
-      "source": "https://github.com/antoniolupetti/algebrica/blob/9b54dbec9c31f0881b0dbaddec1b260ad8406cee/trigonometry/svg/arcsine-and-arccosine-1.svg",
+      "source": "https://github.com/antoniolupetti/algebrica/blob/cb1685078f52293985c40f92909d7ef1aaa18099/trigonometry/svg/arcsine-and-arccosine-1.svg",
       "author": "Antonio Lupetti / Algebrica",
       "license": "CC BY-NC 4.0",
       "changes": "Chinese labels and/or typography"
     },
     {
       "path": "public/assets/trigonometry/svg/arcsine-and-arccosine-2.zh.svg",
-      "source": "https://github.com/antoniolupetti/algebrica/blob/9b54dbec9c31f0881b0dbaddec1b260ad8406cee/trigonometry/svg/arcsine-and-arccosine-2.svg",
+      "source": "https://github.com/antoniolupetti/algebrica/blob/cb1685078f52293985c40f92909d7ef1aaa18099/trigonometry/svg/arcsine-and-arccosine-2.svg",
       "author": "Antonio Lupetti / Algebrica",
       "license": "CC BY-NC 4.0",
       "changes": "Chinese labels and/or typography"
     },
     {
       "path": "public/assets/trigonometry/svg/arcsine-and-arccosine-3.zh.svg",
-      "source": "https://github.com/antoniolupetti/algebrica/blob/9b54dbec9c31f0881b0dbaddec1b260ad8406cee/trigonometry/svg/arcsine-and-arccosine-3.svg",
+      "source": "https://github.com/antoniolupetti/algebrica/blob/cb1685078f52293985c40f92909d7ef1aaa18099/trigonometry/svg/arcsine-and-arccosine-3.svg",
       "author": "Antonio Lupetti / Algebrica",
       "license": "CC BY-NC 4.0",
       "changes": "Chinese labels and/or typography"
     },
     {
       "path": "public/assets/trigonometry/svg/arcsine-and-arccosine-4.zh.svg",
-      "source": "https://github.com/antoniolupetti/algebrica/blob/9b54dbec9c31f0881b0dbaddec1b260ad8406cee/trigonometry/svg/arcsine-and-arccosine-4.svg",
+      "source": "https://github.com/antoniolupetti/algebrica/blob/cb1685078f52293985c40f92909d7ef1aaa18099/trigonometry/svg/arcsine-and-arccosine-4.svg",
       "author": "Antonio Lupetti / Algebrica",
       "license": "CC BY-NC 4.0",
       "changes": "Chinese labels and/or typography"
     },
     {
       "path": "public/assets/trigonometry/svg/arctangent-and-arccotangent-1.zh.svg",
-      "source": "https://github.com/antoniolupetti/algebrica/blob/9b54dbec9c31f0881b0dbaddec1b260ad8406cee/trigonometry/svg/arctangent-and-arccotangent-1.svg",
+      "source": "https://github.com/antoniolupetti/algebrica/blob/cb1685078f52293985c40f92909d7ef1aaa18099/trigonometry/svg/arctangent-and-arccotangent-1.svg",
       "author": "Antonio Lupetti / Algebrica",
       "license": "CC BY-NC 4.0",
       "changes": "Chinese labels and/or typography"
     },
     {
       "path": "public/assets/trigonometry/svg/arctangent-and-arccotangent-2.zh.svg",
-      "source": "https://github.com/antoniolupetti/algebrica/blob/9b54dbec9c31f0881b0dbaddec1b260ad8406cee/trigonometry/svg/arctangent-and-arccotangent-2.svg",
+      "source": "https://github.com/antoniolupetti/algebrica/blob/cb1685078f52293985c40f92909d7ef1aaa18099/trigonometry/svg/arctangent-and-arccotangent-2.svg",
       "author": "Antonio Lupetti / Algebrica",
       "license": "CC BY-NC 4.0",
       "changes": "Chinese labels and/or typography"
     },
     {
       "path": "public/assets/trigonometry/svg/hyperbolic-sine-and-cosine-1.zh.svg",
-      "source": "https://github.com/antoniolupetti/algebrica/blob/9b54dbec9c31f0881b0dbaddec1b260ad8406cee/trigonometry/svg/hyperbolic-sine-and-cosine-1.svg",
+      "source": "https://github.com/antoniolupetti/algebrica/blob/cb1685078f52293985c40f92909d7ef1aaa18099/trigonometry/svg/hyperbolic-sine-and-cosine-1.svg",
       "author": "Antonio Lupetti / Algebrica",
       "license": "CC BY-NC 4.0",
       "changes": "Chinese labels and/or typography"
     },
     {
       "path": "public/assets/trigonometry/svg/hyperbolic-sine-and-cosine-2.zh.svg",
-      "source": "https://github.com/antoniolupetti/algebrica/blob/9b54dbec9c31f0881b0dbaddec1b260ad8406cee/trigonometry/svg/hyperbolic-sine-and-cosine-2.svg",
+      "source": "https://github.com/antoniolupetti/algebrica/blob/cb1685078f52293985c40f92909d7ef1aaa18099/trigonometry/svg/hyperbolic-sine-and-cosine-2.svg",
       "author": "Antonio Lupetti / Algebrica",
       "license": "CC BY-NC 4.0",
       "changes": "Chinese labels and/or typography"
     },
     {
       "path": "public/assets/trigonometry/svg/hyperbolic-sine-and-cosine-3.zh.svg",
-      "source": "https://github.com/antoniolupetti/algebrica/blob/9b54dbec9c31f0881b0dbaddec1b260ad8406cee/trigonometry/svg/hyperbolic-sine-and-cosine-3.svg",
+      "source": "https://github.com/antoniolupetti/algebrica/blob/cb1685078f52293985c40f92909d7ef1aaa18099/trigonometry/svg/hyperbolic-sine-and-cosine-3.svg",
       "author": "Antonio Lupetti / Algebrica",
       "license": "CC BY-NC 4.0",
       "changes": "Chinese labels and/or typography"
     },
     {
       "path": "public/assets/trigonometry/svg/hyperbolic-sine-and-cosine-4.zh.svg",
-      "source": "https://github.com/antoniolupetti/algebrica/blob/9b54dbec9c31f0881b0dbaddec1b260ad8406cee/trigonometry/svg/hyperbolic-sine-and-cosine-4.svg",
+      "source": "https://github.com/antoniolupetti/algebrica/blob/cb1685078f52293985c40f92909d7ef1aaa18099/trigonometry/svg/hyperbolic-sine-and-cosine-4.svg",
       "author": "Antonio Lupetti / Algebrica",
       "license": "CC BY-NC 4.0",
       "changes": "Chinese labels and/or typography"
     },
     {
       "path": "public/assets/trigonometry/svg/hyperbolic-sine-and-cosine-5.zh.svg",
-      "source": "https://github.com/antoniolupetti/algebrica/blob/9b54dbec9c31f0881b0dbaddec1b260ad8406cee/trigonometry/svg/hyperbolic-sine-and-cosine-5.svg",
+      "source": "https://github.com/antoniolupetti/algebrica/blob/cb1685078f52293985c40f92909d7ef1aaa18099/trigonometry/svg/hyperbolic-sine-and-cosine-5.svg",
       "author": "Antonio Lupetti / Algebrica",
       "license": "CC BY-NC 4.0",
       "changes": "Chinese labels and/or typography"
     },
     {
       "path": "public/assets/trigonometry/svg/hyperbolic-tangent-and-cotangent-1.zh.svg",
-      "source": "https://github.com/antoniolupetti/algebrica/blob/9b54dbec9c31f0881b0dbaddec1b260ad8406cee/trigonometry/svg/hyperbolic-tangent-and-cotangent-1.svg",
+      "source": "https://github.com/antoniolupetti/algebrica/blob/cb1685078f52293985c40f92909d7ef1aaa18099/trigonometry/svg/hyperbolic-tangent-and-cotangent-1.svg",
       "author": "Antonio Lupetti / Algebrica",
       "license": "CC BY-NC 4.0",
       "changes": "Chinese labels and/or typography"
     },
     {
       "path": "public/assets/trigonometry/svg/hyperbolic-tangent-and-cotangent-2.zh.svg",
-      "source": "https://github.com/antoniolupetti/algebrica/blob/9b54dbec9c31f0881b0dbaddec1b260ad8406cee/trigonometry/svg/hyperbolic-tangent-and-cotangent-2.svg",
+      "source": "https://github.com/antoniolupetti/algebrica/blob/cb1685078f52293985c40f92909d7ef1aaa18099/trigonometry/svg/hyperbolic-tangent-and-cotangent-2.svg",
       "author": "Antonio Lupetti / Algebrica",
       "license": "CC BY-NC 4.0",
       "changes": "Chinese labels and/or typography"
     },
     {
       "path": "public/assets/trigonometry/svg/hyperbolic-tangent-and-cotangent-3.zh.svg",
-      "source": "https://github.com/antoniolupetti/algebrica/blob/9b54dbec9c31f0881b0dbaddec1b260ad8406cee/trigonometry/svg/hyperbolic-tangent-and-cotangent-3.svg",
+      "source": "https://github.com/antoniolupetti/algebrica/blob/cb1685078f52293985c40f92909d7ef1aaa18099/trigonometry/svg/hyperbolic-tangent-and-cotangent-3.svg",
       "author": "Antonio Lupetti / Algebrica",
       "license": "CC BY-NC 4.0",
       "changes": "Chinese labels and/or typography"
     },
     {
       "path": "public/assets/trigonometry/svg/hyperbolic-tangent-and-cotangent-4.zh.svg",
-      "source": "https://github.com/antoniolupetti/algebrica/blob/9b54dbec9c31f0881b0dbaddec1b260ad8406cee/trigonometry/svg/hyperbolic-tangent-and-cotangent-4.svg",
+      "source": "https://github.com/antoniolupetti/algebrica/blob/cb1685078f52293985c40f92909d7ef1aaa18099/trigonometry/svg/hyperbolic-tangent-and-cotangent-4.svg",
       "author": "Antonio Lupetti / Algebrica",
       "license": "CC BY-NC 4.0",
       "changes": "Chinese labels and/or typography"
     },
     {
       "path": "public/assets/trigonometry/svg/law-of-cosines-1.zh.svg",
-      "source": "https://github.com/antoniolupetti/algebrica/blob/9b54dbec9c31f0881b0dbaddec1b260ad8406cee/trigonometry/svg/law-of-cosines-1.svg",
+      "source": "https://github.com/antoniolupetti/algebrica/blob/cb1685078f52293985c40f92909d7ef1aaa18099/trigonometry/svg/law-of-cosines-1.svg",
       "author": "Antonio Lupetti / Algebrica",
       "license": "CC BY-NC 4.0",
       "changes": "Chinese labels and/or typography"
     },
     {
       "path": "public/assets/trigonometry/svg/pythagorean-theorem-1.zh.svg",
-      "source": "https://github.com/antoniolupetti/algebrica/blob/9b54dbec9c31f0881b0dbaddec1b260ad8406cee/trigonometry/svg/pythagorean-theorem-1.svg",
+      "source": "https://github.com/antoniolupetti/algebrica/blob/cb1685078f52293985c40f92909d7ef1aaa18099/trigonometry/svg/pythagorean-theorem-1.svg",
       "author": "Antonio Lupetti / Algebrica",
       "license": "CC BY-NC 4.0",
       "changes": "Chinese labels and/or typography"
     },
     {
       "path": "public/assets/trigonometry/svg/pythagorean-theorem-2.zh.svg",
-      "source": "https://github.com/antoniolupetti/algebrica/blob/9b54dbec9c31f0881b0dbaddec1b260ad8406cee/trigonometry/svg/pythagorean-theorem-2.svg",
+      "source": "https://github.com/antoniolupetti/algebrica/blob/cb1685078f52293985c40f92909d7ef1aaa18099/trigonometry/svg/pythagorean-theorem-2.svg",
       "author": "Antonio Lupetti / Algebrica",
       "license": "CC BY-NC 4.0",
       "changes": "Chinese labels and/or typography"
     },
     {
       "path": "public/assets/trigonometry/svg/pythagorean-theorem-3.zh.svg",
-      "source": "https://github.com/antoniolupetti/algebrica/blob/9b54dbec9c31f0881b0dbaddec1b260ad8406cee/trigonometry/svg/pythagorean-theorem-3.svg",
+      "source": "https://github.com/antoniolupetti/algebrica/blob/cb1685078f52293985c40f92909d7ef1aaa18099/trigonometry/svg/pythagorean-theorem-3.svg",
       "author": "Antonio Lupetti / Algebrica",
       "license": "CC BY-NC 4.0",
       "changes": "Chinese labels and/or typography"
     },
     {
       "path": "public/assets/trigonometry/svg/reduction-formulas-and-reference-angles-1.zh.svg",
-      "source": "https://github.com/antoniolupetti/algebrica/blob/9b54dbec9c31f0881b0dbaddec1b260ad8406cee/trigonometry/svg/reduction-formulas-and-reference-angles-1.svg",
+      "source": "https://github.com/antoniolupetti/algebrica/blob/cb1685078f52293985c40f92909d7ef1aaa18099/trigonometry/svg/reduction-formulas-and-reference-angles-1.svg",
       "author": "Antonio Lupetti / Algebrica",
       "license": "CC BY-NC 4.0",
       "changes": "Chinese labels and/or typography"
     },
     {
       "path": "public/assets/trigonometry/svg/reduction-formulas-and-reference-angles-2.zh.svg",
-      "source": "https://github.com/antoniolupetti/algebrica/blob/9b54dbec9c31f0881b0dbaddec1b260ad8406cee/trigonometry/svg/reduction-formulas-and-reference-angles-2.svg",
+      "source": "https://github.com/antoniolupetti/algebrica/blob/cb1685078f52293985c40f92909d7ef1aaa18099/trigonometry/svg/reduction-formulas-and-reference-angles-2.svg",
       "author": "Antonio Lupetti / Algebrica",
       "license": "CC BY-NC 4.0",
       "changes": "Chinese labels and/or typography"
     },
     {
       "path": "public/assets/trigonometry/svg/reduction-formulas-and-reference-angles-3.zh.svg",
-      "source": "https://github.com/antoniolupetti/algebrica/blob/9b54dbec9c31f0881b0dbaddec1b260ad8406cee/trigonometry/svg/reduction-formulas-and-reference-angles-3.svg",
+      "source": "https://github.com/antoniolupetti/algebrica/blob/cb1685078f52293985c40f92909d7ef1aaa18099/trigonometry/svg/reduction-formulas-and-reference-angles-3.svg",
       "author": "Antonio Lupetti / Algebrica",
       "license": "CC BY-NC 4.0",
       "changes": "Chinese labels and/or typography"
     },
     {
       "path": "public/assets/trigonometry/svg/reduction-formulas-and-reference-angles-4.zh.svg",
-      "source": "https://github.com/antoniolupetti/algebrica/blob/9b54dbec9c31f0881b0dbaddec1b260ad8406cee/trigonometry/svg/reduction-formulas-and-reference-angles-4.svg",
+      "source": "https://github.com/antoniolupetti/algebrica/blob/cb1685078f52293985c40f92909d7ef1aaa18099/trigonometry/svg/reduction-formulas-and-reference-angles-4.svg",
       "author": "Antonio Lupetti / Algebrica",
       "license": "CC BY-NC 4.0",
       "changes": "Chinese labels and/or typography"
     },
     {
       "path": "public/assets/trigonometry/svg/reduction-formulas-and-reference-angles-5.zh.svg",
-      "source": "https://github.com/antoniolupetti/algebrica/blob/9b54dbec9c31f0881b0dbaddec1b260ad8406cee/trigonometry/svg/reduction-formulas-and-reference-angles-5.svg",
+      "source": "https://github.com/antoniolupetti/algebrica/blob/cb1685078f52293985c40f92909d7ef1aaa18099/trigonometry/svg/reduction-formulas-and-reference-angles-5.svg",
       "author": "Antonio Lupetti / Algebrica",
       "license": "CC BY-NC 4.0",
       "changes": "Chinese labels and/or typography"
     },
     {
       "path": "public/assets/trigonometry/svg/reduction-formulas-and-reference-angles-6.zh.svg",
-      "source": "https://github.com/antoniolupetti/algebrica/blob/9b54dbec9c31f0881b0dbaddec1b260ad8406cee/trigonometry/svg/reduction-formulas-and-reference-angles-6.svg",
+      "source": "https://github.com/antoniolupetti/algebrica/blob/cb1685078f52293985c40f92909d7ef1aaa18099/trigonometry/svg/reduction-formulas-and-reference-angles-6.svg",
       "author": "Antonio Lupetti / Algebrica",
       "license": "CC BY-NC 4.0",
       "changes": "Chinese labels and/or typography"
     },
     {
       "path": "public/assets/trigonometry/svg/reduction-formulas-and-reference-angles-7.zh.svg",
-      "source": "https://github.com/antoniolupetti/algebrica/blob/9b54dbec9c31f0881b0dbaddec1b260ad8406cee/trigonometry/svg/reduction-formulas-and-reference-angles-7.svg",
+      "source": "https://github.com/antoniolupetti/algebrica/blob/cb1685078f52293985c40f92909d7ef1aaa18099/trigonometry/svg/reduction-formulas-and-reference-angles-7.svg",
       "author": "Antonio Lupetti / Algebrica",
       "license": "CC BY-NC 4.0",
       "changes": "Chinese labels and/or typography"
     },
     {
       "path": "public/assets/trigonometry/svg/right-triangle-trigonometry-1.zh.svg",
-      "source": "https://github.com/antoniolupetti/algebrica/blob/9b54dbec9c31f0881b0dbaddec1b260ad8406cee/trigonometry/svg/right-triangle-trigonometry-1.svg",
+      "source": "https://github.com/antoniolupetti/algebrica/blob/cb1685078f52293985c40f92909d7ef1aaa18099/trigonometry/svg/right-triangle-trigonometry-1.svg",
       "author": "Antonio Lupetti / Algebrica",
       "license": "CC BY-NC 4.0",
       "changes": "Chinese labels and/or typography"
     },
     {
       "path": "public/assets/trigonometry/svg/right-triangle-trigonometry-2.zh.svg",
-      "source": "https://github.com/antoniolupetti/algebrica/blob/9b54dbec9c31f0881b0dbaddec1b260ad8406cee/trigonometry/svg/right-triangle-trigonometry-2.svg",
+      "source": "https://github.com/antoniolupetti/algebrica/blob/cb1685078f52293985c40f92909d7ef1aaa18099/trigonometry/svg/right-triangle-trigonometry-2.svg",
       "author": "Antonio Lupetti / Algebrica",
       "license": "CC BY-NC 4.0",
       "changes": "Chinese labels and/or typography"
     },
     {
       "path": "public/assets/trigonometry/svg/right-triangle-trigonometry–3.zh.svg",
-      "source": "https://github.com/antoniolupetti/algebrica/blob/9b54dbec9c31f0881b0dbaddec1b260ad8406cee/trigonometry/svg/right-triangle-trigonometry–3.svg",
+      "source": "https://github.com/antoniolupetti/algebrica/blob/cb1685078f52293985c40f92909d7ef1aaa18099/trigonometry/svg/right-triangle-trigonometry–3.svg",
       "author": "Antonio Lupetti / Algebrica",
       "license": "CC BY-NC 4.0",
       "changes": "Chinese labels and/or typography"
     },
     {
       "path": "public/assets/trigonometry/svg/right-triangle-trigonometry–4.zh.svg",
-      "source": "https://github.com/antoniolupetti/algebrica/blob/9b54dbec9c31f0881b0dbaddec1b260ad8406cee/trigonometry/svg/right-triangle-trigonometry–4.svg",
+      "source": "https://github.com/antoniolupetti/algebrica/blob/cb1685078f52293985c40f92909d7ef1aaa18099/trigonometry/svg/right-triangle-trigonometry–4.svg",
       "author": "Antonio Lupetti / Algebrica",
       "license": "CC BY-NC 4.0",
       "changes": "Chinese labels and/or typography"
     },
     {
       "path": "public/assets/trigonometry/svg/right-triangle-trigonometry–5.zh.svg",
-      "source": "https://github.com/antoniolupetti/algebrica/blob/9b54dbec9c31f0881b0dbaddec1b260ad8406cee/trigonometry/svg/right-triangle-trigonometry–5.svg",
+      "source": "https://github.com/antoniolupetti/algebrica/blob/cb1685078f52293985c40f92909d7ef1aaa18099/trigonometry/svg/right-triangle-trigonometry–5.svg",
       "author": "Antonio Lupetti / Algebrica",
       "license": "CC BY-NC 4.0",
       "changes": "Chinese labels and/or typography"
     },
     {
       "path": "public/assets/trigonometry/svg/secant-and-cosecant-1.zh.svg",
-      "source": "https://github.com/antoniolupetti/algebrica/blob/9b54dbec9c31f0881b0dbaddec1b260ad8406cee/trigonometry/svg/secant-and-cosecant-1.svg",
+      "source": "https://github.com/antoniolupetti/algebrica/blob/cb1685078f52293985c40f92909d7ef1aaa18099/trigonometry/svg/secant-and-cosecant-1.svg",
       "author": "Antonio Lupetti / Algebrica",
       "license": "CC BY-NC 4.0",
       "changes": "Chinese labels and/or typography"
     },
     {
       "path": "public/assets/trigonometry/svg/secant-and-cosecant-2.zh.svg",
-      "source": "https://github.com/antoniolupetti/algebrica/blob/9b54dbec9c31f0881b0dbaddec1b260ad8406cee/trigonometry/svg/secant-and-cosecant-2.svg",
+      "source": "https://github.com/antoniolupetti/algebrica/blob/cb1685078f52293985c40f92909d7ef1aaa18099/trigonometry/svg/secant-and-cosecant-2.svg",
       "author": "Antonio Lupetti / Algebrica",
       "license": "CC BY-NC 4.0",
       "changes": "Chinese labels and/or typography"
     },
     {
       "path": "public/assets/trigonometry/svg/secant-and-cosecant-3.zh.svg",
-      "source": "https://github.com/antoniolupetti/algebrica/blob/9b54dbec9c31f0881b0dbaddec1b260ad8406cee/trigonometry/svg/secant-and-cosecant-3.svg",
+      "source": "https://github.com/antoniolupetti/algebrica/blob/cb1685078f52293985c40f92909d7ef1aaa18099/trigonometry/svg/secant-and-cosecant-3.svg",
       "author": "Antonio Lupetti / Algebrica",
       "license": "CC BY-NC 4.0",
       "changes": "Chinese labels and/or typography"
     },
     {
       "path": "public/assets/trigonometry/svg/secant-and-cosecant-4.zh.svg",
-      "source": "https://github.com/antoniolupetti/algebrica/blob/9b54dbec9c31f0881b0dbaddec1b260ad8406cee/trigonometry/svg/secant-and-cosecant-4.svg",
+      "source": "https://github.com/antoniolupetti/algebrica/blob/cb1685078f52293985c40f92909d7ef1aaa18099/trigonometry/svg/secant-and-cosecant-4.svg",
       "author": "Antonio Lupetti / Algebrica",
       "license": "CC BY-NC 4.0",
       "changes": "Chinese labels and/or typography"
     },
     {
       "path": "public/assets/trigonometry/svg/sine-and-cosine-1.zh.svg",
-      "source": "https://github.com/antoniolupetti/algebrica/blob/9b54dbec9c31f0881b0dbaddec1b260ad8406cee/trigonometry/svg/sine-and-cosine-1.svg",
+      "source": "https://github.com/antoniolupetti/algebrica/blob/cb1685078f52293985c40f92909d7ef1aaa18099/trigonometry/svg/sine-and-cosine-1.svg",
       "author": "Antonio Lupetti / Algebrica",
       "license": "CC BY-NC 4.0",
       "changes": "Chinese labels and/or typography"
     },
     {
       "path": "public/assets/trigonometry/svg/sine-and-cosine-2.zh.svg",
-      "source": "https://github.com/antoniolupetti/algebrica/blob/9b54dbec9c31f0881b0dbaddec1b260ad8406cee/trigonometry/svg/sine-and-cosine-2.svg",
+      "source": "https://github.com/antoniolupetti/algebrica/blob/cb1685078f52293985c40f92909d7ef1aaa18099/trigonometry/svg/sine-and-cosine-2.svg",
       "author": "Antonio Lupetti / Algebrica",
       "license": "CC BY-NC 4.0",
       "changes": "Chinese labels and/or typography"
     },
     {
       "path": "public/assets/trigonometry/svg/sine-and-cosine-3.zh.svg",
-      "source": "https://github.com/antoniolupetti/algebrica/blob/9b54dbec9c31f0881b0dbaddec1b260ad8406cee/trigonometry/svg/sine-and-cosine-3.svg",
+      "source": "https://github.com/antoniolupetti/algebrica/blob/cb1685078f52293985c40f92909d7ef1aaa18099/trigonometry/svg/sine-and-cosine-3.svg",
       "author": "Antonio Lupetti / Algebrica",
       "license": "CC BY-NC 4.0",
       "changes": "Chinese labels and/or typography"
     },
     {
       "path": "public/assets/trigonometry/svg/sine-and-cosine-4.zh.svg",
-      "source": "https://github.com/antoniolupetti/algebrica/blob/9b54dbec9c31f0881b0dbaddec1b260ad8406cee/trigonometry/svg/sine-and-cosine-4.svg",
+      "source": "https://github.com/antoniolupetti/algebrica/blob/cb1685078f52293985c40f92909d7ef1aaa18099/trigonometry/svg/sine-and-cosine-4.svg",
       "author": "Antonio Lupetti / Algebrica",
       "license": "CC BY-NC 4.0",
       "changes": "Chinese labels and/or typography"
     },
     {
       "path": "public/assets/trigonometry/svg/sine-and-cosine-5.zh.svg",
-      "source": "https://github.com/antoniolupetti/algebrica/blob/9b54dbec9c31f0881b0dbaddec1b260ad8406cee/trigonometry/svg/sine-and-cosine-5.svg",
+      "source": "https://github.com/antoniolupetti/algebrica/blob/cb1685078f52293985c40f92909d7ef1aaa18099/trigonometry/svg/sine-and-cosine-5.svg",
       "author": "Antonio Lupetti / Algebrica",
       "license": "CC BY-NC 4.0",
       "changes": "Chinese labels and/or typography"
     },
     {
       "path": "public/assets/trigonometry/svg/tangent-and-cotangent-1.zh.svg",
-      "source": "https://github.com/antoniolupetti/algebrica/blob/9b54dbec9c31f0881b0dbaddec1b260ad8406cee/trigonometry/svg/tangent-and-cotangent-1.svg",
+      "source": "https://github.com/antoniolupetti/algebrica/blob/cb1685078f52293985c40f92909d7ef1aaa18099/trigonometry/svg/tangent-and-cotangent-1.svg",
       "author": "Antonio Lupetti / Algebrica",
       "license": "CC BY-NC 4.0",
       "changes": "Chinese labels and/or typography"
     },
     {
       "path": "public/assets/trigonometry/svg/tangent-and-cotangent-2.zh.svg",
-      "source": "https://github.com/antoniolupetti/algebrica/blob/9b54dbec9c31f0881b0dbaddec1b260ad8406cee/trigonometry/svg/tangent-and-cotangent-2.svg",
+      "source": "https://github.com/antoniolupetti/algebrica/blob/cb1685078f52293985c40f92909d7ef1aaa18099/trigonometry/svg/tangent-and-cotangent-2.svg",
       "author": "Antonio Lupetti / Algebrica",
       "license": "CC BY-NC 4.0",
       "changes": "Chinese labels and/or typography"
     },
     {
       "path": "public/assets/trigonometry/svg/tangent-and-cotangent-3.zh.svg",
-      "source": "https://github.com/antoniolupetti/algebrica/blob/9b54dbec9c31f0881b0dbaddec1b260ad8406cee/trigonometry/svg/tangent-and-cotangent-3.svg",
+      "source": "https://github.com/antoniolupetti/algebrica/blob/cb1685078f52293985c40f92909d7ef1aaa18099/trigonometry/svg/tangent-and-cotangent-3.svg",
       "author": "Antonio Lupetti / Algebrica",
       "license": "CC BY-NC 4.0",
       "changes": "Chinese labels and/or typography"
     },
     {
       "path": "public/assets/trigonometry/svg/tangent-and-cotangent-4.zh.svg",
-      "source": "https://github.com/antoniolupetti/algebrica/blob/9b54dbec9c31f0881b0dbaddec1b260ad8406cee/trigonometry/svg/tangent-and-cotangent-4.svg",
+      "source": "https://github.com/antoniolupetti/algebrica/blob/cb1685078f52293985c40f92909d7ef1aaa18099/trigonometry/svg/tangent-and-cotangent-4.svg",
       "author": "Antonio Lupetti / Algebrica",
       "license": "CC BY-NC 4.0",
       "changes": "Chinese labels and/or typography"
     },
     {
       "path": "public/assets/trigonometry/svg/tangent-and-cotangent-5.zh.svg",
-      "source": "https://github.com/antoniolupetti/algebrica/blob/9b54dbec9c31f0881b0dbaddec1b260ad8406cee/trigonometry/svg/tangent-and-cotangent-5.svg",
+      "source": "https://github.com/antoniolupetti/algebrica/blob/cb1685078f52293985c40f92909d7ef1aaa18099/trigonometry/svg/tangent-and-cotangent-5.svg",
       "author": "Antonio Lupetti / Algebrica",
       "license": "CC BY-NC 4.0",
       "changes": "Chinese labels and/or typography"
     },
     {
       "path": "public/assets/trigonometry/svg/the-law-of-sines-1.zh.svg",
-      "source": "https://github.com/antoniolupetti/algebrica/blob/9b54dbec9c31f0881b0dbaddec1b260ad8406cee/trigonometry/svg/the-law-of-sines-1.svg",
+      "source": "https://github.com/antoniolupetti/algebrica/blob/cb1685078f52293985c40f92909d7ef1aaa18099/trigonometry/svg/the-law-of-sines-1.svg",
       "author": "Antonio Lupetti / Algebrica",
       "license": "CC BY-NC 4.0",
       "changes": "Chinese labels and/or typography"
     },
     {
       "path": "public/assets/trigonometry/svg/trigonometric-identities-1.zh.svg",
-      "source": "https://github.com/antoniolupetti/algebrica/blob/9b54dbec9c31f0881b0dbaddec1b260ad8406cee/trigonometry/svg/trigonometric-identities-1.svg",
+      "source": "https://github.com/antoniolupetti/algebrica/blob/cb1685078f52293985c40f92909d7ef1aaa18099/trigonometry/svg/trigonometric-identities-1.svg",
       "author": "Antonio Lupetti / Algebrica",
       "license": "CC BY-NC 4.0",
       "changes": "Chinese labels and/or typography"
     },
     {
       "path": "public/assets/trigonometry/svg/unit-circle-1.zh.svg",
-      "source": "https://github.com/antoniolupetti/algebrica/blob/9b54dbec9c31f0881b0dbaddec1b260ad8406cee/trigonometry/svg/unit-circle-1.svg",
+      "source": "https://github.com/antoniolupetti/algebrica/blob/cb1685078f52293985c40f92909d7ef1aaa18099/trigonometry/svg/unit-circle-1.svg",
       "author": "Antonio Lupetti / Algebrica",
       "license": "CC BY-NC 4.0",
       "changes": "Chinese labels and/or typography"
     },
     {
       "path": "public/assets/trigonometry/svg/unit-circle-2.zh.svg",
-      "source": "https://github.com/antoniolupetti/algebrica/blob/9b54dbec9c31f0881b0dbaddec1b260ad8406cee/trigonometry/svg/unit-circle-2.svg",
+      "source": "https://github.com/antoniolupetti/algebrica/blob/cb1685078f52293985c40f92909d7ef1aaa18099/trigonometry/svg/unit-circle-2.svg",
       "author": "Antonio Lupetti / Algebrica",
       "license": "CC BY-NC 4.0",
       "changes": "Chinese labels and/or typography"
     },
     {
       "path": "public/assets/trigonometry/svg/unit-circle-3.zh.svg",
-      "source": "https://github.com/antoniolupetti/algebrica/blob/9b54dbec9c31f0881b0dbaddec1b260ad8406cee/trigonometry/svg/unit-circle-3.svg",
+      "source": "https://github.com/antoniolupetti/algebrica/blob/cb1685078f52293985c40f92909d7ef1aaa18099/trigonometry/svg/unit-circle-3.svg",
       "author": "Antonio Lupetti / Algebrica",
       "license": "CC BY-NC 4.0",
       "changes": "Chinese labels and/or typography"
     },
     {
       "path": "public/assets/trigonometry/svg/unit-circle-4.zh.svg",
-      "source": "https://github.com/antoniolupetti/algebrica/blob/9b54dbec9c31f0881b0dbaddec1b260ad8406cee/trigonometry/svg/unit-circle-4.svg",
+      "source": "https://github.com/antoniolupetti/algebrica/blob/cb1685078f52293985c40f92909d7ef1aaa18099/trigonometry/svg/unit-circle-4.svg",
       "author": "Antonio Lupetti / Algebrica",
       "license": "CC BY-NC 4.0",
       "changes": "Chinese labels and/or typography"
     },
     {
       "path": "public/assets/vectors-and-matrices/svg/vectors-1.zh.svg",
-      "source": "https://github.com/antoniolupetti/algebrica/blob/9b54dbec9c31f0881b0dbaddec1b260ad8406cee/vectors-and-matrices/svg/vectors-1.svg",
+      "source": "https://github.com/antoniolupetti/algebrica/blob/cb1685078f52293985c40f92909d7ef1aaa18099/vectors-and-matrices/svg/vectors-1.svg",
       "author": "Antonio Lupetti / Algebrica",
       "license": "CC BY-NC 4.0",
       "changes": "Chinese labels and/or typography"
     },
     {
       "path": "public/assets/vectors-and-matrices/svg/vectors-2.zh.svg",
-      "source": "https://github.com/antoniolupetti/algebrica/blob/9b54dbec9c31f0881b0dbaddec1b260ad8406cee/vectors-and-matrices/svg/vectors-2.svg",
+      "source": "https://github.com/antoniolupetti/algebrica/blob/cb1685078f52293985c40f92909d7ef1aaa18099/vectors-and-matrices/svg/vectors-2.svg",
       "author": "Antonio Lupetti / Algebrica",
       "license": "CC BY-NC 4.0",
       "changes": "Chinese labels and/or typography"
     },
     {
       "path": "public/assets/vectors-and-matrices/svg/vectors-3.zh.svg",
-      "source": "https://github.com/antoniolupetti/algebrica/blob/9b54dbec9c31f0881b0dbaddec1b260ad8406cee/vectors-and-matrices/svg/vectors-3.svg",
+      "source": "https://github.com/antoniolupetti/algebrica/blob/cb1685078f52293985c40f92909d7ef1aaa18099/vectors-and-matrices/svg/vectors-3.svg",
       "author": "Antonio Lupetti / Algebrica",
       "license": "CC BY-NC 4.0",
       "changes": "Chinese labels and/or typography"
     },
     {
       "path": "public/assets/vectors-and-matrices/svg/vectors-4.zh.svg",
-      "source": "https://github.com/antoniolupetti/algebrica/blob/9b54dbec9c31f0881b0dbaddec1b260ad8406cee/vectors-and-matrices/svg/vectors-4.svg",
+      "source": "https://github.com/antoniolupetti/algebrica/blob/cb1685078f52293985c40f92909d7ef1aaa18099/vectors-and-matrices/svg/vectors-4.svg",
       "author": "Antonio Lupetti / Algebrica",
       "license": "CC BY-NC 4.0",
       "changes": "Chinese labels and/or typography"
     },
     {
       "path": "public/assets/vectors-and-matrices/svg/vectors-5.zh.svg",
-      "source": "https://github.com/antoniolupetti/algebrica/blob/9b54dbec9c31f0881b0dbaddec1b260ad8406cee/vectors-and-matrices/svg/vectors-5.svg",
+      "source": "https://github.com/antoniolupetti/algebrica/blob/cb1685078f52293985c40f92909d7ef1aaa18099/vectors-and-matrices/svg/vectors-5.svg",
       "author": "Antonio Lupetti / Algebrica",
       "license": "CC BY-NC 4.0",
       "changes": "Chinese labels and/or typography"
     },
     {
       "path": "public/assets/vectors-and-matrices/svg/vectors-6.zh.svg",
-      "source": "https://github.com/antoniolupetti/algebrica/blob/9b54dbec9c31f0881b0dbaddec1b260ad8406cee/vectors-and-matrices/svg/vectors-6.svg",
+      "source": "https://github.com/antoniolupetti/algebrica/blob/cb1685078f52293985c40f92909d7ef1aaa18099/vectors-and-matrices/svg/vectors-6.svg",
       "author": "Antonio Lupetti / Algebrica",
       "license": "CC BY-NC 4.0",
       "changes": "Chinese labels and/or typography"
