@@ -7,9 +7,9 @@ tags:
   []
 translation:
   status: current
-  source_hash: 41c566381edde8f8b50c1f0ae8188ec0eaea6008f7a554785fe56b0fcd750f55
-  translator: codex
-  updated: "2026-08-04T00:00:00.000Z"
+  source_hash: bd8ef884c6805ebb5d9507bf36a087fea0b8648a11ec64dcdef0bb012fa66b86
+  translator: claude
+  updated: "2026-10-03T00:00:00.000Z"
 ---
 ## 关于本参考书目的说明
 
@@ -36,28 +36,37 @@ translation:
 + [A Course in Universal Algebra](https://www.math.uwaterloo.ca/~snburris/htdocs/ualg.html), Stanley N. Burris, H. P. Sankappanavar
 + [Elementary Number Theory: Primes, Congruences, and Secrets](https://wstein.org/ent/ent.pdf), William Stein
 + [Foundations of Module and Ring Theory: A Handbook for Study and Research](https://www.math.uni-duesseldorf.de/~wisbauer/book.pdf), Robert Wisbauer
++ [The Great Story of Numbers](https://egbertrijke.github.io/elementary-number-theory-fall.pdf), Egbert Rijke
 + [Group Theory](https://www.jmilne.org/math/CourseNotes/GT.pdf), J. S. Milne
 + [Introduction to Modern Algebra](http://aleph0.clarku.edu/~djoyce/ma225/algebra.pdf), David Joyce
++ [An Invitation to General Algebra and Universal Constructions](https://math.berkeley.edu/~gbergman/245/3.2.pdf), George M. Bergman
 + [Precalculus](https://www.pearson.com/en-us/subject-catalog/p/precalculus/P200000006127/9780137321667), Robert F. Blitzer
 
 ## 线性代数
 
 + [Advanced Linear Algebra](https://link.springer.com/book/10.1007/978-0-387-72831-5), Steven Roman
++ [Discover Linear Algebra](https://sites.ualberta.ca/~jsylvest/books/pdf/JSylvestre-DiscoverLinearAlgebra1-2025-PreRelease-Electronic.pdf), Jeremy Sylvestre
++ [Fundamentals of Linear Algebra](https://personal.math.ubc.ca/~carrell/NB.pdf), James B. Carrell
 + [Fundamentals of Matrix Algebra](https://www.apexcalculus.com/downloads/MatrixAlgebra.pdf), Gregory Hartman
 + [Introduction to Applied Linear Algebra](https://web.stanford.edu/~boyd/vmls/vmls.pdf), Stephen Boyd, Lieven Vandenberghe
 + [Introduction to Vectors and Tensors](https://oaktrust.library.tamu.edu/server/api/core/bitstreams/06032ff0-a5bc-40d8-926d-965121f54d50/content), Ray M. Bowen, C.-C. Wang
++ [Lectures on Applied Mathematics Part 1: Linear Algebra](https://oaktrust.library.tamu.edu/bitstreams/43a7c801-5a35-41b6-a486-b8a8c3e1b16d/download), Ray M. Bowen
 + [Linear Algebra](https://hefferon.net/linearalgebra/), Jim Hefferon
 + [Linear Algebra](https://www.math.ucdavis.edu/~linear/linear-guest.pdf), David Cherney, Tom Denton, Rohit Thomas, Andrew Waldron
 + [Linear Algebra as an Introduction to Abstract Mathematics](https://www.math.ucdavis.edu/~anne/linear_algebra/mat67_course_notes.pdf), Isaiah Lankham, Bruno Nachtergaele, Anne Schilling
 + [Linear Algebra Done Right](https://linear.axler.net/LADR4e.pdf), Sheldon Axler
 + [Linear Algebra Done Wrong](https://sites.google.com/a/brown.edu/sergei-treil-homepage/linear-algebra-done-wrong), Sergei Treil
 + [Linear Algebra for Computer Science](https://la4cs.com/files/LA4CS-Free.pdf), Manoj Thulasidas
-+ [Linear Algebra with Applications](https://math.emory.edu/~lchen41/teaching/2020_Fall/Nicholson-OpenLAWA-2019A.pdf), W. Keith Nicholson
++ [Linear Algebra with Applications](https://collection.bccampus.ca/textbook/qTj4b4Ey/), W. Keith Nicholson
 + [Matrix Calculus for Machine Learning and Beyond](https://ocw.mit.edu/courses/18-s096-matrix-calculus-for-machine-learning-and-beyond-january-iap-2023/mit18_s096iap23_lec_full.pdf), Paige Bright, Alan Edelman, Steven G. Johnson
 
 ## 几何
 
 + [Analytic Geometry](https://djm.cc/library/Analytic_Geometry_Siceloff_Wentworth_Smith_edited.pdf), Lewis Parker Siceloff, George Wentworth, David Eugene Smith
++ [Beginning in Algebraic Geometry](https://link.springer.com/content/pdf/10.1007/978-3-031-88819-9.pdf), Emily Clader, Dustin Ross
++ [College Trigonometry](https://www.stitz-zeager.com/szct07042013.pdf), Carl Stitz, Jeff Zeager
++ [Differential Geometry: From Elastic Curves to Willmore Surfaces](https://link.springer.com/content/pdf/10.1007/978-3-031-39838-4.pdf), Ulrich Pinkall, Oliver Gross
++ [Elementary College Geometry](https://open.umn.edu/opentextbooks/textbooks/elementary-college-geometry), Henry Africk
 + [Elementary Geometry from an Advanced Standpoint](https://www.ime.usp.br/~toscano/disc/2021/Moise.pdf), Edwin E. Moise
 + [Plane Geometry](https://djm.cc/library/Plane_Geometry_Wentworth_Smith_edited.pdf), George Wentworth, David E. Smith
 + [The Rising Sea: Foundations of Algebraic Geometry](https://math.stanford.edu/~vakil/216blog/FOAGnov1817public.pdf), Ravi Vakil
@@ -73,24 +82,31 @@ translation:
 
 + [Active Calculus: Single Variable](https://activecalculus.org/single2e/frontmatter.html), Matthew Boelkins, David Austin, Christina Safranski, Steven Schlicker
 + [Advanced Calculus](https://people.math.harvard.edu/~shlomo/docs/Advanced_Calculus.pdf), Lynn H. Loomis, Shlomo Sternberg
++ [Advanced Calculus](https://sites.math.washington.edu/~folland/AdvCalc24.pdf), Gerald B. Folland
 + [Analysis of Functions of a Single Variable](https://spot.colorado.edu/~baggett/book.pdf), Lawrence W. Baggett
 + [Basic Real Analysis](https://www.math.stonybrook.edu/~aknapp/download/b2-realanal-inside.pdf), Anthony W. Knapp
 + [Calculus](https://ia800204.us.archive.org/28/items/CalculusSpivak/Calculus%20-%20Spivak_text.pdf), Michael Spivak
 + [Calculus](https://ocw.mit.edu/courses/res-18-001-calculus-fall-2023/mitres_18_001_f17_full_book.pdf), Gilbert Strang
 + [Calculus in Context](https://www.science.smith.edu/~callahan/cic/book.pdf), James Callahan, David Cox, Kenneth Hoffman, Donal O'Shea, Harriet Pollatsek, Lester Senechal
 + [Calculus: Early Transcendentals](https://open.umn.edu/opentextbooks/textbooks/415), David Guichard
++ [Differential Calculus: From Practice to Theory](https://milneopentextbooks.org/differential-calculus-from-practice-to-theory/), Eugene Boman, Robert Rogers
 + [Elementary Calculus: An Infinitesimal Approach](https://people.math.wisc.edu/~hkeisler/calc.html), H. Jerome Keisler
++ [Honors Calculus](https://academicweb.nd.edu/~andyp/teaching/2020FallMath10850/ClarkNotes.pdf), Pete L. Clark
 + [Integral Calculus: Mathematics 103](https://www.math.ucdavis.edu/~tjlewis/teaching/MAT17material/books/book_LEK/M103Fulltext.pdf), Leah Edelstein-Keshet
 + [Introduction to Analysis](https://www.math.ucdavis.edu/~hunter/intro_analysis_pdf/intro_analysis.html), John K. Hunter
 + [An Introduction to Measure Theory](https://terrytao.wordpress.com/wp-content/uploads/2012/12/gsm-126-tao5-measure-book.pdf), Terence Tao
 + [Introduction to Real Analysis](https://www.jirka.org/ra/realanal.pdf), Jiří Lebl
++ [Introduction to Real Analysis](https://digitalcommons.trinity.edu/cgi/viewcontent.cgi?article=1006&context=mono), William F. Trench
 + [Lecture Notes in Calculus I](https://bpb-us-w2.wpmucdn.com/faculty.umaine.edu/dist/1/19/files/2022/08/calculus.pdf), Jakob Streipel
 + [Lecture Notes on Mathematical Analysis](https://www.math.nthu.edu.tw/~hyliao/AnalysisLectureNotes.pdf), Hsuan-Yi Liao
++ [Mathematical Analysis, Volume I](http://www.trillia.com/dA/zakon-analysisI-us-one.pdf), Elias Zakon
 + [Measure, Integration & Real Analysis](https://measure.axler.net/MIRA.pdf), Sheldon Axler
 + [Methods of Real Analysis](https://openlibrary.org/books/OL5205094M/Methods_of_real_analysis), Richard R. Goldberg
++ [Univariate Real Analysis](https://arxiv.org/pdf/2508.19405), Martin Klazar
 
 ## 复分析
 
++ [Complex Analysis](https://complexanalysis.org/howell-complex-analysis-web.pdf), Russell W. Howell, John H. Mathews
 + [Complex Variables](https://people.math.sc.edu/girardi/m7034/book/AshComplexVariablesWithHyperlinks.pdf), Robert B. Ash, W. P. Novinger
 + [A First Course in Complex Analysis](https://matthbeck.github.io/papers/complex.pdf), Matthias Beck, Gerald Marchesi, Dennis Pixton, Lucas Sabalka
 + [Visual Complex Analysis](https://academic.oup.com/book/52945/chapter-abstract/421959366), Tristan Needham
@@ -112,11 +128,13 @@ translation:
 + [Lecture Notes on Probability, Statistics and Linear Algebra](https://people.math.harvard.edu/~knill/teaching/math19b_2011/handouts/chapters1-19.pdf), C. H. Taubes
 + [OpenIntro Statistics](https://leanpub.com/os), Christopher Barr, Mine Cetinkaya-Rundel, David Diez
 + [Probability and Statistics: The Science of Uncertainty](https://utstat.utoronto.ca/mikevans/jeffrosenthal/book.pdf), Michael J. Evans, Jeffrey S. Rosenthal
++ [Probability for Computer Scientists](https://chrispiech.github.io/probabilityForComputerScientists/en/ProbabilityForComputerScientists.pdf), Chris Piech
 + [Probability on Trees and Networks](https://rdlyons.pages.iu.edu/prbtree/book_online.pdf), Russell Lyons, Yuval Peres
 
 ## 优化
 
 + [Algorithms for Optimization](https://algorithmsbook.com/optimization/files/optimization.pdf), Mykel J. Kochenderfer, Tim A. Wheeler
++ [Branch-and-Price](https://link.springer.com/content/pdf/10.1007/978-3-031-96917-1.pdf), Jacques Desrosiers, Marco Lübbecke, Guy Desaulniers, Jean Bertrand Gauthier
 + [Convex Optimization](https://web.stanford.edu/~boyd/cvxbook/bv_cvxbook.pdf), Stephen Boyd, Lieven Vandenberghe
 + [Convex Optimization: Algorithms and Complexity](http://sbubeck.com/Bubeck15.pdf), Sébastien Bubeck
 + [Convex Optimization: EE227BT Lecture Notes](https://people.eecs.berkeley.edu/~elghaoui/Teaching/EE227BT/LectureNotes_EE227BT.pdf), Laurent El Ghaoui
@@ -124,6 +142,7 @@ translation:
 + [Introduction to Online Convex Optimization](https://arxiv.org/pdf/1909.05207), Elad Hazan
 + [Introduction to Optimization](https://scoop.iwr.uni-heidelberg.de/teaching/2022ws/short-course-optimization/introduction-to-optimization-lecture-notes-20230329.pdf), Roland Herzog
 + [An Introduction to Optimization Algorithms](https://thomasweise.github.io/aitoa/aitoa.pdf), Thomas Weise
++ [Introduction to Stochastic Gradient Methods](https://arxiv.org/pdf/2606.03953), Simon Weissmann
 + [Lecture Notes on Numerical Optimization](https://faculty.ucmerced.edu/mcarreira-perpinan/teaching/EECS260/lecture-notes.pdf), Miguel Á. Carreira-Perpiñán
 + [Lectures on Modern Convex Optimization](https://www2.isye.gatech.edu/~nemirovs/LMCOBookSIAM.pdf), Aharon Ben-Tal, Arkadi Nemirovski
 + [A Modern Introduction to Online Learning](https://arxiv.org/pdf/1912.13213), Francesco Orabona
@@ -132,6 +151,7 @@ translation:
 ## 数学物理
 
 + [Classical Mechanics](https://www.physics.rutgers.edu/~shapiro/507/book.pdf), Joel A. Shapiro
++ [Introduction to Advanced Engineering Mathematics and Analysis](https://open.oregonstate.education/app/uploads/sites/246/2023/06/Introduction_to_Advanced_Engineering_Mathematics_and_AnalysisA.pdf), Brian D. Wood
 + [Lectures on Classical Dynamics](https://www.damtp.cam.ac.uk/user/tong/dynamics/clas.pdf), David Tong
 + [Mathematical Methods for Physics](https://theory.physics.manchester.ac.uk/~godfrey/lecture/PHYS30672/Notes.pdf), Niels Walet
 + [Mathematics for Physics](https://people.physics.illinois.edu/stone/bookmaster.pdf), Michael Stone, Paul Goldbart
@@ -141,6 +161,7 @@ translation:
 + [Algebra, Topology, Differential Calculus, and Optimization Theory for Computer Science and Machine Learning](https://www.cis.upenn.edu/~jean/math-deep.pdf), Jean Gallier, Jocelyn Quaintance
 + [The Architecture of Mathematics](https://www.jstor.org/stable/2305937), Nicholas Bourbaki
 + [Book of Proof](https://richardhammack.github.io/BookOfProof/Main.pdf), Richard Hammack
++ [Everything You Always Wanted to Know About Mathematics (But Didn't Even Know to Ask)](https://www.math.cmu.edu/~jmackey/151_128/bws_book.pdf), Brendan W. Sullivan
 + [Handbook of Mathematical Functions](https://personal.math.ubc.ca/~cbm/aands/abramowitz_and_stegun.pdf), Milton Abramowitz, Irene A. Stegun
 + [An Introduction to Formal Logic](https://forallx.openlogicproject.org), Richard Zach
 + [Introduction to University Mathematics](https://courses.maths.ox.ac.uk/course/view.php?id=6023), James Munro
@@ -172,6 +193,7 @@ translation:
 + [Algorithms for Decision Making](https://drive.google.com/file/d/1drcYW3iJz4wnnCqjuVwQyc5a6eC7i6cu/view), Mykel J. Kochenderfer, Tim A. Wheeler, Kyle H. Wray
 + [Artificial Intelligence: A Modern Approach](https://aima.cs.berkeley.edu), Stuart Russell, Peter Norvig
 + [Computing Neural Network Gradients](https://web.stanford.edu/class/cs224n/readings/gradient-notes.pdf), Kevin Clark
++ [CS229 Lecture Notes on Machine Learning (Stanford)](https://cs229.stanford.edu/main_notes.pdf), Andrew Ng, Tengyu Ma
 + [Dive into Deep Learning](https://arxiv.org/pdf/2106.11342), Aston Zhang, Zachary C. Lipton, Mu Li, Alexander J. Smola
 + [Foundations of Large Language Models](https://arxiv.org/abs/2501.09223), Tong Xiao, Jingbo Zhu
 + [Foundations of Machine Learning](https://cs.nyu.edu/~mohri/mlbook/), Mehryar Mohri, Afshin Rostamizadeh, Ameet Talwalkar

@@ -702,7 +702,7 @@
       "label": "Advanced"
     },
     "requires": 4,
-    "enables": 0,
+    "enables": 1,
     "canvasHeight": 440
   },
   "arccosine-function": {
@@ -1950,7 +1950,7 @@
       "label": "Intermediate"
     },
     "requires": 1,
-    "enables": 2,
+    "enables": 3,
     "canvasHeight": 400
   },
   "binomial-distribution": {
@@ -2389,7 +2389,7 @@
       "label": "Advanced"
     },
     "requires": 2,
-    "enables": 0,
+    "enables": 1,
     "canvasHeight": 440
   },
   "cauchy-sequence": {
@@ -2916,7 +2916,7 @@
       "level": 1,
       "label": "Easy"
     },
-    "requires": 1,
+    "requires": 2,
     "enables": 1,
     "canvasHeight": 420
   },
@@ -3355,7 +3355,7 @@
       "level": 2,
       "label": "Intermediate"
     },
-    "requires": 2,
+    "requires": 3,
     "enables": 9,
     "canvasHeight": 420
   },
@@ -4403,7 +4403,7 @@
       "label": "Advanced"
     },
     "requires": 5,
-    "enables": 8,
+    "enables": 13,
     "canvasHeight": 440
   },
   "derivative-of-composite-power-functions": {
@@ -5567,7 +5567,7 @@
       "level": 1,
       "label": "Easy"
     },
-    "requires": 0,
+    "requires": 1,
     "enables": 0,
     "canvasHeight": 440
   },
@@ -5749,6 +5749,86 @@
     "requires": 3,
     "enables": 0,
     "canvasHeight": 390
+  },
+  "euclidean-division": {
+    "source": "https://algebrica.org/euclidean-division/",
+    "dataset": {
+      "name": "root",
+      "children": [
+        {
+          "name": "division theorem",
+          "children": [
+            {
+              "name": "quotient and remainder"
+            },
+            {
+              "name": "remainder bounds"
+            },
+            {
+              "name": "fractional representation"
+            },
+            {
+              "name": "exact division"
+            },
+            {
+              "name": "existence"
+            },
+            {
+              "name": "uniqueness"
+            }
+          ]
+        },
+        {
+          "name": "negative dividend",
+          "children": [
+            {
+              "name": "consecutive multiples"
+            },
+            {
+              "name": "nonnegative remainder"
+            },
+            {
+              "name": "quotient adjustment"
+            },
+            {
+              "name": "remainder adjustment"
+            },
+            {
+              "name": "zero remainder"
+            }
+          ]
+        },
+        {
+          "name": "Euclidean algorithm",
+          "children": [
+            {
+              "name": "common divisors"
+            },
+            {
+              "name": "successive divisions"
+            },
+            {
+              "name": "zero remainder"
+            },
+            {
+              "name": "final divisor"
+            },
+            {
+              "name": "greatest common divisor"
+            }
+          ]
+        }
+      ]
+    },
+    "type": "Concept",
+    "description": "The structure of the entry is shown in the conceptual map, where each branch represents a core component and the sub-nodes highlight the specific notions discussed.",
+    "difficulty": {
+      "level": 1,
+      "label": "Easy"
+    },
+    "requires": 1,
+    "enables": 0,
+    "canvasHeight": 420
   },
   "euler-formula": {
     "source": "https://algebrica.org/euler-formula/",
@@ -6195,7 +6275,7 @@
       "label": "Intermediate"
     },
     "requires": 1,
-    "enables": 5,
+    "enables": 6,
     "canvasHeight": 440
   },
   "exponential-inequalities": {
@@ -6366,7 +6446,7 @@
       "label": "Easy"
     },
     "requires": 0,
-    "enables": 2,
+    "enables": 3,
     "canvasHeight": 390
   },
   "factoring-polynomials-ac-method": {
@@ -6548,6 +6628,86 @@
     },
     "requires": 1,
     "enables": 0,
+    "canvasHeight": 440
+  },
+  "fermat-theorem": {
+    "source": "https://algebrica.org/fermat-theorem/",
+    "dataset": {
+      "name": "root",
+      "children": [
+        {
+          "name": "theorem",
+          "children": [
+            {
+              "name": "local extrema"
+            },
+            {
+              "name": "interior points"
+            },
+            {
+              "name": "differentiability"
+            },
+            {
+              "name": "stationary points"
+            },
+            {
+              "name": "necessary condition"
+            },
+            {
+              "name": "proof by one-sided limits"
+            }
+          ]
+        },
+        {
+          "name": "derivative tests",
+          "children": [
+            {
+              "name": "first derivative sign"
+            },
+            {
+              "name": "second derivative test"
+            },
+            {
+              "name": "inconclusive cases"
+            },
+            {
+              "name": "Taylor expansion"
+            },
+            {
+              "name": "higher derivatives"
+            }
+          ]
+        },
+        {
+          "name": "examples",
+          "children": [
+            {
+              "name": "cubic local extrema"
+            },
+            {
+              "name": "stationary inflection"
+            },
+            {
+              "name": "quartic local minimum"
+            },
+            {
+              "name": "absolute value minimum"
+            },
+            {
+              "name": "endpoint extrema"
+            }
+          ]
+        }
+      ]
+    },
+    "type": "Theorem",
+    "description": "The structure of the entry is shown in the conceptual map, where each branch represents a core component and the sub-nodes highlight the specific notions discussed.",
+    "difficulty": {
+      "level": 2,
+      "label": "Intermediate"
+    },
+    "requires": 3,
+    "enables": 1,
     "canvasHeight": 440
   },
   "fields": {
@@ -7327,7 +7487,7 @@
       "label": "Intermediate"
     },
     "requires": 1,
-    "enables": 45,
+    "enables": 46,
     "canvasHeight": 440
   },
   "fundamental-theorem-of-calculus": {
@@ -8996,7 +9156,7 @@
       "level": 1,
       "label": "Easy"
     },
-    "requires": 0,
+    "requires": 1,
     "enables": 3,
     "canvasHeight": 440
   },
@@ -9415,8 +9575,8 @@
       "label": "Intermediate"
     },
     "requires": 2,
-    "enables": 2,
-    "canvasHeight": 370
+    "enables": 4,
+    "canvasHeight": 410
   },
   "hyperbolic-sine-function": {
     "source": "https://algebrica.org/hyperbolic-sine-function/",
@@ -9578,7 +9738,7 @@
       "label": ""
     },
     "requires": 3,
-    "enables": 1,
+    "enables": 3,
     "canvasHeight": 390
   },
   "hyperbolic-tangent-function": {
@@ -9836,7 +9996,78 @@
       "label": "Advanced"
     },
     "requires": 2,
-    "enables": 1,
+    "enables": 2,
+    "canvasHeight": 440
+  },
+  "inclusion-exclusion-principle": {
+    "source": "https://algebrica.org/inclusion-exclusion-principle/",
+    "dataset": {
+      "name": "root",
+      "children": [
+        {
+          "name": "principle",
+          "children": [
+            {
+              "name": "two sets"
+            },
+            {
+              "name": "three sets"
+            },
+            {
+              "name": "finite unions"
+            },
+            {
+              "name": "alternating signs"
+            },
+            {
+              "name": "complement"
+            }
+          ]
+        },
+        {
+          "name": "proof",
+          "children": [
+            {
+              "name": "index sets"
+            },
+            {
+              "name": "element contributions"
+            },
+            {
+              "name": "pairwise cancellation"
+            },
+            {
+              "name": "binomial identity"
+            }
+          ]
+        },
+        {
+          "name": "applications",
+          "children": [
+            {
+              "name": "counting multiples"
+            },
+            {
+              "name": "least common multiples"
+            },
+            {
+              "name": "derangements"
+            },
+            {
+              "name": "factorials"
+            }
+          ]
+        }
+      ]
+    },
+    "type": "Concept",
+    "description": "The structure of the entry is shown in the conceptual map, where each branch represents a core component and the sub-nodes highlight the specific notions discussed.",
+    "difficulty": {
+      "level": 2,
+      "label": "Intermediate"
+    },
+    "requires": 4,
+    "enables": 0,
     "canvasHeight": 440
   },
   "incomplete-quadratic-equations": {
@@ -10100,7 +10331,7 @@
       "label": "Advanced"
     },
     "requires": 1,
-    "enables": 9,
+    "enables": 10,
     "canvasHeight": 440
   },
   "indeterminate-forms": {
@@ -10619,7 +10850,7 @@
       "label": "Easy"
     },
     "requires": 1,
-    "enables": 4,
+    "enables": 5,
     "canvasHeight": 440
   },
   "integral-of-rational-functions": {
@@ -11221,7 +11452,7 @@
       "label": "Advanced"
     },
     "requires": 2,
-    "enables": 2,
+    "enables": 3,
     "canvasHeight": 440
   },
   "integration-strategies": {
@@ -11986,7 +12217,7 @@
       "label": "Intermediate"
     },
     "requires": 2,
-    "enables": 0,
+    "enables": 1,
     "canvasHeight": 440
   },
   "irrational-inequalities": {
@@ -12668,7 +12899,7 @@
       "label": "Intermediate"
     },
     "requires": 2,
-    "enables": 24,
+    "enables": 25,
     "canvasHeight": 440
   },
   "linear-combinations": {
@@ -13201,8 +13432,8 @@
       "level": 1,
       "label": "Easy"
     },
-    "requires": 0,
-    "enables": 3,
+    "requires": 1,
+    "enables": 4,
     "canvasHeight": 440
   },
   "little-o-notation": {
@@ -15144,7 +15375,7 @@
       "level": 2,
       "label": "Intermediate"
     },
-    "requires": 1,
+    "requires": 2,
     "enables": 2,
     "canvasHeight": 440
   },
@@ -18046,7 +18277,7 @@
       "label": ""
     },
     "requires": 3,
-    "enables": 18,
+    "enables": 19,
     "canvasHeight": 420
   },
   "reduction-formulas-and-reference-angles": {
@@ -18659,7 +18890,7 @@
       "level": 2,
       "label": "Intermediate"
     },
-    "requires": 4,
+    "requires": 5,
     "enables": 2,
     "canvasHeight": 420
   },
@@ -19351,7 +19582,7 @@
       "label": "Intermediate"
     },
     "requires": 1,
-    "enables": 10,
+    "enables": 11,
     "canvasHeight": 440
   },
   "sequences-of-functions": {
@@ -19704,7 +19935,7 @@
       "label": "Intermediate"
     },
     "requires": 0,
-    "enables": 13,
+    "enables": 14,
     "canvasHeight": 440
   },
   "sigmoid-function": {
