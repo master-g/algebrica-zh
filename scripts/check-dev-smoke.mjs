@@ -159,8 +159,16 @@ async function runScenario(siteBase) {
   }
 }
 
+// Each base is a full cold content render; CI narrows this to the deployed base.
+function readSiteBases() {
+  const raw = process.env.DEV_SMOKE_BASES?.trim();
+  const bases = raw ? raw.split(',').map((base) => base.trim()).filter(Boolean) : ['/', '/algebrica-zh/'];
+  if (bases.length === 0) throw new Error(`DEV_SMOKE_BASES lists no site base: ${raw}`);
+  return bases.map(normalizeSiteBase);
+}
+
 async function main() {
-  for (const siteBase of ['/', '/algebrica-zh/'].map(normalizeSiteBase)) {
+  for (const siteBase of readSiteBases()) {
     await runScenario(siteBase);
   }
 }

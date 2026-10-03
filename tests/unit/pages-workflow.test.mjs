@@ -16,15 +16,15 @@ describe('GitHub Pages workflow', () => {
     }
   });
 
-  it('reads the upstream lock and validates both deployment bases', () => {
+  it('reads the upstream lock and smoke-tests the deployment base', () => {
     assert.match(workflowText, /upstream-lock\.json/);
     assert.match(workflowText, /npm run test:smoke/);
     assert.match(workflowText, /npm run check:public-history/);
-    assert.equal(
-      workflow.jobs.validate.steps.find((step) => step.name === 'Run dual-base development smoke gates').env
-        .DEV_SMOKE_STARTUP_TIMEOUT_MS,
-      1200000,
-    );
+    const smokeEnv = workflow.jobs.validate.steps.find(
+      (step) => step.name === 'Run deployment-base development smoke gate',
+    ).env;
+    assert.equal(smokeEnv.DEV_SMOKE_STARTUP_TIMEOUT_MS, 1200000);
+    assert.equal(smokeEnv.DEV_SMOKE_BASES, '/${{ github.event.repository.name }}/');
     assert.match(workflowText, /SITE_BASE: \/\$\{\{ github\.event\.repository\.name \}\}\//);
     assert.match(workflowText, /npm run check:public-release/);
   });

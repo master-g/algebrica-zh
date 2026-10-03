@@ -12,7 +12,7 @@
 - Markdown 管线：`remark-math` + `rehype-mathjax`（`mathjax-full`）+ `rehype-sanitize`，另有 `katex`、`js-yaml`；自定义插件在 `src/plugins/`。
 - 测试用 Node 内置 `node --test`，无测试框架。
 - 硬性前置：英文上游仓库 checkout，默认 `../algebrica`，可用 `ALGEBRICA_SOURCE_DIR` 覆盖；其 HEAD 必须等于 `upstream-lock.json` 的提交（`src/lib/upstream-source.mjs`）。
-- 其他环境变量：`SITE_URL`、`SITE_BASE`（Pages 子路径构建用）。
+- 其他环境变量：`SITE_URL`、`SITE_BASE`（Pages 子路径构建用）；`DEV_SMOKE_BASES`（逗号分隔，限定 `test:smoke` 测哪些站点前缀，默认 `/` 和 `/algebrica-zh/`，CI 只测部署前缀）。
 
 ## 命令
 

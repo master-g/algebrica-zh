@@ -48,9 +48,10 @@ jobs:
       - name: Check public Git history
         run: npm run check:public-history
 
-      - name: Run dual-base development smoke gates
+      - name: Run deployment-base development smoke gate
         env:
           ALGEBRICA_SOURCE_DIR: upstream
+          DEV_SMOKE_BASES: /${{ github.event.repository.name }}/
           DEV_SMOKE_STARTUP_TIMEOUT_MS: 1200000
         run: npm run test:smoke
 
