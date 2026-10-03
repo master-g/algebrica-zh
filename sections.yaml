@@ -1,4 +1,14 @@
 sections:
+  - dir: introduction
+    name_en: Introduction
+    name_zh: 导言
+    order: 0
+    entries:
+      - learning-mathematics
+    description_en: |
+      
+    description_zh: |
+      关于如何学习数学的导引文章。
   - dir: sets-and-numbers
     name_en: "Sets and Numbers"
     name_zh: 集合与数

@@ -57,7 +57,7 @@ const path = (value) => withSiteBase(value, import.meta.env.BASE_URL);
 
     <header class="article-header">
       <div>
-        <span class="page-kicker">第 {sectionMeta?.order || '—'} 编 · 第 {articleNumber} 篇</span>
+        <span class="page-kicker">第 {sectionMeta?.order ?? '—'} 编 · 第 {articleNumber} 篇</span>
         <h1 class="article-title" lang={pageLang}>{entry.data.title}</h1>
       </div>
       <aside class="article-meta">
