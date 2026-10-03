@@ -8,9 +8,9 @@ tags:
   - trigonometry
 translation:
   status: current
-  source_hash: 6bc43737a3b59770f9d9b36af46454af8dfef7c8baa2a32faa79b7befdf571b5
-  translator: omp
-  updated: "2026-07-25T06:08:45.469Z"
+  source_hash: 50a1cdd2a2d86ab91c899d107a915df14672458961e77ca6ffee7119d9ff58d5
+  translator: claude
+  updated: "2026-10-03T00:00:00.000Z"
 ---
 ## 引言
 
@@ -55,7 +55,7 @@ $$
 
 ## 参考角与反射
 
-[参考角](../identities-using-reference-angles/)法，有时也称反射法，是一族恒等式，它能把非锐角的三角函数用笛卡尔平面第一象限中的相应锐角表示出来。任何三角函数，不论是[正弦](../sine-and-cosine/)、[余弦](../sine-and-cosine/)、[正切](../tangent-and-cotangent/)还是[余切](../tangent-and-cotangent/)，当其自变量形如：
+[参考角](../identities-using-reference-angles/)法，有时也称反射法，是一族恒等式，它能把非锐角的三角函数用[笛卡尔平面](../the-cartesian-coordinate-plane/)第一象限中的相应锐角表示出来。任何三角函数，不论是[正弦](../sine-and-cosine/)、[余弦](../sine-and-cosine/)、[正切](../tangent-and-cotangent/)还是[余切](../tangent-and-cotangent/)，当其自变量形如：
 
 $$
 \frac{\pi}{2} \pm \alpha, \quad \pi \pm \alpha, \quad \frac{3\pi}{2} \pm \alpha, \quad 2\pi - \alpha

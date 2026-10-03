@@ -11,9 +11,9 @@ tags:
   - rational-function
 translation:
   status: current
-  source_hash: 887454959f2f66e9a02f32b7bc6ad7a4999c745b585fe6bec4096b86348e2f02
-  translator: omp
-  updated: "2026-07-25T23:27:50.936Z"
+  source_hash: 01ff5eb1123bab0b8a1fbbf69446c1ba72c1a344c5062422b2c6c12cf4bdc57a
+  translator: claude
+  updated: "2026-10-03T00:00:00.000Z"
 ---
 ## 引言
 
@@ -157,7 +157,7 @@ $$
 \frac{Bx + C}{x^{2} + ax + b}
 $$
 
-分子是一次多项式，因为分母次数为二；具有这样分母的真分式，其分子次数至多为一次。若该二次因式重复 $k$ 次，则分解中包含完整的序列：
+分子是一次多项式，因为分母次数为二；具有这样分母的真分式，其分子次数至多为一次。若该[二次因式重复 $k$ 次](../reduction-formulas/)，则分解中包含完整的序列：
 
 $$
 \frac{B_{1}x + C_{1}}{x^{2} + ax + b}

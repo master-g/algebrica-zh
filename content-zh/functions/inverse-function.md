@@ -10,9 +10,9 @@ tags:
   - inverse-function-theorem
 translation:
   status: current
-  source_hash: 3396dcfa019563413cf060014903aeef69ee6265028eef89bc422362d9dda7d2
-  translator: codex
-  updated: "2026-08-04T00:00:00.000Z"
+  source_hash: e6b598ab653dc98292feef5588e98bbbdef11dacbda1488fee8c4366d10ba906
+  translator: claude
+  updated: "2026-10-03T00:00:00.000Z"
 ---
 ## 逆函数的定义
 
@@ -42,7 +42,7 @@ $$f^{-1} = g$$
 
 ## 通过限制定义域使函数可逆
 
-考虑定义在 $\mathbb{R}$ 上的[幂函数](../power-function/) $f(x) = x^2$。这是一个二次函数，由笛卡尔平面原点处顶点的[抛物线](../parabola/)表示。在完整定义域 $\mathbb{R}$ 上，该函数不可逆，因为它不是单射：不同输入可能产生相同输出，例如 $f(-2) = f(2)$。
+考虑定义在 $\mathbb{R}$ 上的[幂函数](../power-function/) $f(x) = x^2$。这是一个二次函数，由[笛卡尔平面](../the-cartesian-coordinate-plane/)原点处顶点的[抛物线](../parabola/)表示。在完整定义域 $\mathbb{R}$ 上，该函数不可逆，因为它不是单射：不同输入可能产生相同输出，例如 $f(-2) = f(2)$。
 
 如果将定义域限制为 $[0, +\infty)$，函数就变成双射，因而可逆。它的逆函数是[平方根函数](../irrational-functions/)：
 
@@ -136,7 +136,7 @@ $$
 基础分析中的一个有用结果是一维逆函数定理。它的内容很直观：在区间上行为规整的函数可以顺利求逆。设函数 $f$ 在区间 $I$ 上[连续](../continuous-functions/)且可导，并且其[导数](../derivatives/)永不为零：
 
 $$
-f'(x) \neq 0 \quad \forall \, x \in I
+f'(x) \neq 0 \quad \forall x \in I
 $$
 
 在 $I$ 上保持固定符号的导数使函数[严格单调](../increasing-and-decreasing-functions/)，而严格单调性使 $f$ 成为单射。因此，逆函数 $f^{-1}$ 存在于 $f(I)$ 上，并且连续且可导。其导数满足：

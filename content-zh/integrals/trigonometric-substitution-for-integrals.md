@@ -14,9 +14,9 @@ tags:
   - trigonometric-substitution
 translation:
   status: current
-  source_hash: fb88dc24114c6e964848843aa6112180be7c562e0718216981b5e6e555743640
-  translator: codex
-  updated: "2026-08-03T00:00:00.000Z"
+  source_hash: f68daa74d7e5d52d7a8e24100980073e908bfc6356b32ae6e40daec2740f99d8
+  translator: claude
+  updated: "2026-10-03T00:00:00.000Z"
 ---
 ## 三角换元的原理
 
@@ -40,7 +40,7 @@ $$1 + \tan^2\theta = \sec^2\theta$$
 
 $$\sec^2\theta - 1 = \tan^2\theta$$
 
-> 每种情形中的换元都经过选择，使根式内的项与这些恒等式之一的左侧相匹配，从而把根式化为不含根号的表达式。含有 $\sin x$ 和 $\cos x$ 的有理函数积分通常改用[魏尔斯特拉斯换元](../weierstrass-substitution/)，将三角表达式转化为新变量的有理函数。
+> 每种情形中的换元都经过选择，使根式内的项与这些恒等式之一的左侧相匹配，从而把根式化为不含根号的表达式。含有 $\sin x$ 和 $\cos x$ 的有理函数积分通常改用[魏尔斯特拉斯换元](../the-weierstrass-substitution/)，将三角表达式转化为新变量的有理函数。
 
 - - -
 
@@ -421,4 +421,4 @@ $$\int \frac{dx}{\sqrt{x^2 + 4x + 5}} = \ln\!\left(\sqrt{x^2 + 4x + 5} + x + 2\r
 + 计算所得的三角积分。对于定积分形式，要按照[换元积分](../integration-by-substitution/)页面中的说明，根据换元更新积分上下限。
 + 对于不定积分，通过直角三角形或反三角函数代回，返回原变量 $x$。
 
-> 当被积函数是 $x$ 的[有理函数](../rational-functions/)，而不是二次式的根式时，应使用[部分分式分解](../partial-fraction-decomposition/)以及[有理函数的积分](../integral-of-rational-functions/)页面中的技巧。对于 $\sin x$ 和 $\cos x$ 的有理函数，[魏尔斯特拉斯换元](../weierstrass-substitution/)提供了一种系统的替代方法。
+> 当被积函数是 $x$ 的[有理函数](../rational-functions/)，而不是二次式的根式时，应使用[部分分式分解](../partial-fraction-decomposition/)以及[有理函数的积分](../integral-of-rational-functions/)页面中的技巧。对于 $\sin x$ 和 $\cos x$ 的有理函数，[魏尔斯特拉斯换元](../the-weierstrass-substitution/)提供了一种系统的替代方法。

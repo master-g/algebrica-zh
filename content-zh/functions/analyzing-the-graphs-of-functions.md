@@ -11,9 +11,9 @@ tags:
   - rational-functions
 translation:
   status: current
-  source_hash: ebfa665183514ec25c0fa9a7895d3d1c8391a054e2b459da0fcb281b68731207
-  translator: codex
-  updated: "2026-08-02T00:00:00.000Z"
+  source_hash: c32b93c07cbde354ceec70b84d288fed676df80bbeec92f0237fca31329dbb95
+  translator: claude
+  updated: "2026-10-03T00:00:00.000Z"
 ---
 ## 引言
 
@@ -21,7 +21,7 @@ translation:
 
 + 确定[定义域](../determining-the-domain-of-a-function/)，即 $f$ 有定义的实数集合。
 + 检验函数关于 $y$ 轴或原点的[对称性](../even-and-odd-functions/)。
-+ 求出与坐标轴的交点。
++ 求出与[坐标轴](../the-cartesian-coordinate-plane/)的交点。
 + 研究 $f$ 的符号，找出图像位于 $x$ 轴上方和下方的区域。
 + 找出[渐近线](../asymptotes/)，包括竖直、水平或斜渐近线。
 + 利用一阶导数找出[单调性](../increasing-and-decreasing-functions/)区间和局部极值。

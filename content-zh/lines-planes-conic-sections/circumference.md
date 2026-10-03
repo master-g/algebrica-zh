@@ -14,9 +14,9 @@ tags:
   - tangent-line
 translation:
   status: current
-  source_hash: 1a0e3cba54b6cf0563bea0c855c6116bd806944c97e7825345872c67af48cfe6
-  translator: codex
-  updated: "2026-08-04T00:00:00.000Z"
+  source_hash: a3bc28cb0b5c103eb9e906461b0e5ddd69b5d79bac6d3b296fdfc684a8d851c4
+  translator: claude
+  updated: "2026-10-03T00:00:00.000Z"
 ---
 ## 圆锥曲线简介
 
@@ -62,7 +62,7 @@ $$d(P, C) = r \qquad r \in \mathbb{R},\ r > 0$$
 
 ![图 2](/assets/lines-planes-conic-sections/svg/circumference-2.zh.svg)
 
-设 $C = (x_0, y_0)$ 为圆心的坐标，$P = (x, y)$ 为圆周上的一般点。利用平面上两点间的距离公式，条件 $d(P, C) = r$ 变为：
+设 $C = (x_0, y_0)$ 为圆心的坐标，$P = (x, y)$ 为圆周上的一般点。利用[平面上两点间的距离公式](../the-cartesian-coordinate-plane/)，条件 $d(P, C) = r$ 变为：
 
 $$\sqrt{(x - x_0)^2 + (y - y_0)^2} = r$$
 

@@ -14,9 +14,9 @@ tags:
   - planes
 translation:
   status: current
-  source_hash: 5e27c1e3ddf6fc76e5ed46a1055d589c333e02df98ad230a6b41f8e07483ded4
-  translator: codex
-  updated: "2026-08-04T00:00:00.000Z"
+  source_hash: 1929540432106dac63d943e20970b084d7fa45ae06885f0a795fdbae11983fc1
+  translator: claude
+  updated: "2026-10-03T00:00:00.000Z"
 ---
 
 ## 平面的决定条件
@@ -55,7 +55,7 @@ $$\mathbf{n}\cdot(P-P_0) = 0$$
 
 基点满足该方程，因为在此处 $P-P_0=\mathbf{0}$，而任意向量与零向量的点积都为零。反过来，满足该方程的点 $P$ 使 $P-P_0$ 与 $\mathbf{n}$ 正交，因而位于 $\pi$ 内，所以 $P$ 属于 $\pi$。解集就是平面 $\pi$。
 
-> 在[笛卡尔平面](../lines/)中，方程 $ax+by+c=0$ 描述一条直线，$(a,b)$ 是它的法向量。这是高一维的同一构造，此时法向量有三个分量。一个[线性方程](../linear-equations/)从环境空间中去掉一个自由度，因此在 $\mathbb{R}^2$ 中留下直线，在 $\mathbb{R}^3$ 中留下平面。
+> 在[笛卡尔平面](../the-cartesian-coordinate-plane/)中，方程 $ax+by+c=0$ 描述一条直线，$(a,b)$ 是它的法向量。这是高一维的同一构造，此时法向量有三个分量。一个[线性方程](../linear-equations/)从环境空间中去掉一个自由度，因此在 $\mathbb{R}^2$ 中留下直线，在 $\mathbb{R}^3$ 中留下平面。
 
 ## 标量方程
 

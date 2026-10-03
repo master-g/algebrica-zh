@@ -10,9 +10,9 @@ tags:
   - trigonometry
 translation:
   status: current
-  source_hash: 3ea14055d6ab13764ff55dcc2e127222157f79f0d5bc516e6b2075c8b6a91d68
-  translator: omp
-  updated: "2026-07-24T17:22:46.137Z"
+  source_hash: da6d1f73834b03b2d6c28a7da208b27da33851804d1cd4fb5f6f40a97d4e0399
+  translator: claude
+  updated: "2026-10-03T00:00:00.000Z"
 ---
 ## 反正切的定义
 
@@ -70,7 +70,7 @@ $$
 
 ## 反正切函数
 
-反正切函数 $f(x) = \arctan(x)$ 为每个实数 $x \in \mathbb{R}$ 指定了唯一的角 $\theta \in \left(-\pi/2, \pi/2\right)$，其正切等于 $x$。它的图像是一条连续、严格递增的曲线，有两条水平渐近线，即 $y = -\pi/2$ 与 $y = \pi/2$。该函数是正切限制在其主值区间 $\left(-\pi/2, \pi/2\right)$ 上的[反函数](../inverse-function/)，在该区间上正切是严格递增且双射的。
+[反正切函数](../arctangent-function/) $f(x) = \arctan(x)$ 为每个实数 $x \in \mathbb{R}$ 指定了唯一的角 $\theta \in \left(-\pi/2, \pi/2\right)$，其正切等于 $x$。它的图像是一条连续、严格递增的曲线，有两条水平渐近线，即 $y = -\pi/2$ 与 $y = \pi/2$。该函数是正切限制在其主值区间 $\left(-\pi/2, \pi/2\right)$ 上的[反函数](../inverse-function/)，在该区间上正切是严格递增且双射的。
 
 + 定义域：$x \in \mathbb{R}$
 + 值域：$y \in \left(-\frac{\pi}{2}, \frac{\pi}{2}\right)$
@@ -191,7 +191,7 @@ $$
 
 ## 反余切函数
 
-反余切函数 $f(x) = \mathrm{arccot}(x)$ 将每个实数 $x \in \mathbb{R}$ 对应到余切等于 $x$ 的唯一角 $\theta \in (0, \pi)$。它的图像是一条连续且严格递减的曲线，有两条水平渐近线，即 $y = 0$ 与 $y = \pi$。该函数是余切限制在其主值定义域 $(0, \pi)$ 上的[反函数](../inverse-function/)；在该定义域上余切严格递减且为双射。
+[反余切函数](../arccotangent-function/) $f(x) = \mathrm{arccot}(x)$ 将每个实数 $x \in \mathbb{R}$ 对应到余切等于 $x$ 的唯一角 $\theta \in (0, \pi)$。它的图像是一条连续且严格递减的曲线，有两条水平渐近线，即 $y = 0$ 与 $y = \pi$。该函数是余切限制在其主值定义域 $(0, \pi)$ 上的[反函数](../inverse-function/)；在该定义域上余切严格递减且为双射。
 
 + 定义域：$x \in \mathbb{R}$
 + 值域：$y \in (0, \pi)$

@@ -10,9 +10,9 @@ tags:
   - intervals
 translation:
   status: current
-  source_hash: ce2da08796edfae2495dd444aa7144c763c555278ec72fa5101c067d04334c63
-  translator: codex
-  updated: "2026-08-02T00:00:00.000Z"
+  source_hash: ec082f99744913c7dddfce75db0f1fa78f359460f4244cc728616ddc626170da
+  translator: claude
+  updated: "2026-10-03T00:00:00.000Z"
 ---
 ## 系统确定函数定义域的方法
 
@@ -31,7 +31,7 @@ translation:
 定义域总能表示为实数[区间](../intervals/)的并集，因此我们先回顾这些集合如何定义。区间描述实数轴上的连续部分，以紧凑的方式指定允许哪些 $x$ 值。第一类是开区间，它包含严格位于两个端点之间的所有点，但不包含端点本身。描述性形式写作：
 
 $$
-\{\,x : a < x < b\,\}
+\{\ x : a < x < b\ \}
 $$
 
 区间记号写作：
@@ -52,7 +52,7 @@ $$
 第二类是闭区间，它包含两个端点。描述性形式写作：
 
 $$
-\{\,x : a \le x \le b\,\}
+\{\ x : a \le x \le b\ \}
 $$
 
 相应的区间记号写作：
@@ -167,7 +167,7 @@ $$2 + \sin x > 0$$
 
 由于 $\sin x$ 的取值介于 $-1$ 和 $1$ 之间，这个表达式能取得的最小值是 $2 - 1 = 1$，已经为正。因此，对数不会引入限制，因为对每个实数 $x$，其真数都为正。
 
-向外推进一步，对数出现在分数的分子中，分母是[双曲正弦](../hyperbolic-sine-and-cosine/) $\sinh(x)$。分母不能为零，因为除以零在[实数](../real-numbers/)中没有定义，所以要排除满足 $\sinh(x) = 0$ 的 $x$ 值。双曲正弦仅在 $x = 0$ 时为零，因此必须从定义域中移除这一点。
+向外推进一步，对数出现在分数的分子中，分母是[双曲正弦](../hyperbolic-sine-function/) $\sinh(x)$。分母不能为零，因为除以零在[实数](../real-numbers/)中没有定义，所以要排除满足 $\sinh(x) = 0$ 的 $x$ 值。双曲正弦仅在 $x = 0$ 时为零，因此必须从定义域中移除这一点。
 
 最后，整个分数位于平方根下，因此其被开方数必须非负。
 
@@ -177,7 +177,7 @@ $$2 + \sin x > 0$$
 综合这些观察，定义域由所有大于零的 $x$，以及 $\sin x = -1$ 时的离散点组成。因此定义域为：
 
 $$
-(0, +\infty) \;\cup\; \left\{ -\frac{\pi}{2} + 2k\pi \,\middle|\, k \in \mathbb{Z} \right\}
+(0, +\infty) \;\cup\; \left\{ -\frac{\pi}{2} + 2k\pi \ \middle|\ k \in \mathbb{Z} \right\}
 $$
 
 ## 例 3
@@ -220,7 +220,7 @@ $$
 解集包含在 $\left(-\frac{5}{2}, \frac{5}{2}\right)$ 中，因为在该区间之外对数无定义。对两个要求取交集，定义域就是该区间中同时满足被开方数条件的点集：
 
 $$
-\mathrm{dom}(f) = \left\{\, x \in \left(-\tfrac{5}{2}, \tfrac{5}{2}\right) \ \middle|\ \cos^{2}(3x - 1) \ge \log(5 - |2x|) \,\right\}
+\mathrm{dom}(f) = \left\{\ x \in \left(-\tfrac{5}{2}, \tfrac{5}{2}\right) \ \middle|\ \cos^{2}(3x - 1) \ge \log(5 - |2x|) \ \right\}
 $$
 
 最后这个不等式没有初等闭式解，必须用数值或图形方法考察。例如在 $x = 0$ 附近，$\log 5 \approx 1.61$，大于 $\cos^{2}(1) \approx 0.29$，所以原点附近的一段区域被排除。因此定义域是 $\left(-\frac{5}{2}, \frac{5}{2}\right)$ 的真子集。

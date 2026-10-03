@@ -13,9 +13,9 @@ tags:
   - vertex
 translation:
   status: current
-  source_hash: 4fa7217d2853d6e760c9b431b4922fc7af89d00ea533d0a331cf9f7c8c5f3f46
-  translator: codex
-  updated: "2026-08-11T00:00:00.000Z"
+  source_hash: 2c2bb8af40bc7a806d24b2ab9906a199d5eeaff41cc5588e93834622e965d0ef
+  translator: claude
+  updated: "2026-10-03T00:00:00.000Z"
 ---
 ## 圆锥曲线
 
@@ -62,7 +62,7 @@ $$(ax + by + c)(a'x + b'y + c') = 0$$
 
 ![图 2](/assets/lines-planes-conic-sections/svg/parabola-2.zh.svg)
 
-过焦点且垂直于准线的直线称为抛物线的轴。抛物线与其轴的交点 $V$ 称为顶点。顶点在原点、轴沿 $y$ 轴的抛物线的方程为：
+过焦点且垂直于准线的直线称为抛物线的轴。抛物线与其轴的交点 $V$ 称为顶点。顶点在[原点](../the-cartesian-coordinate-plane/)、轴沿 $y$ 轴的抛物线的方程为：
 
 $$y = ax^2, \quad a \neq 0$$
 

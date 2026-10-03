@@ -10,9 +10,9 @@ tags:
   - logarithms
 translation:
   status: current
-  source_hash: 55d5261c7697742c66e3679de802454c5083359d339588550418ab51c20c7bdd
-  translator: codex
-  updated: "2026-08-02T00:00:00.000Z"
+  source_hash: b280b924153f4a2240518bc84ca7aaac26ac02bb44b16ac59135923ad899512c
+  translator: claude
+  updated: "2026-10-03T00:00:00.000Z"
 ---
 ## 引言
 
@@ -190,7 +190,7 @@ $$\log x \ll x^k \ll a^x \ll x!$$
 
 ## 由指数函数导出的双曲函数
 
-结合 $e^x$ 与 $e^{-x}$ 可以得到双曲函数，它们出现在分析和几何中。三个主要函数是[双曲正弦与双曲余弦](../hyperbolic-sine-and-cosine/)以及[双曲正切](../hyperbolic-tangent-and-cotangent/)，定义如下：
+结合 $e^x$ 与 $e^{-x}$ 可以得到双曲函数，它们出现在分析和几何中。三个主要函数是[双曲正弦](../hyperbolic-sine-function/)、[双曲余弦](../hyperbolic-sine-and-cosine/)和[双曲正切](../hyperbolic-tangent-function/)，定义如下：
 
 $$\cosh(x) = \frac{e^{x} + e^{-x}}{2} \quad x \in \mathbb{R}$$
 

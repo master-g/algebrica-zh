@@ -11,9 +11,9 @@ tags:
   - vertex
 translation:
   status: current
-  source_hash: 95192ca3802cb22b2171b97e94d461161ea58534f3e84a012015e3ba545759cf
-  translator: omp
-  updated: "2026-07-26T04:16:42.535Z"
+  source_hash: f19829b65238a66c4c49a427144de011e1ff6983911b875c7b020e09e81a8819
+  translator: claude
+  updated: "2026-10-03T00:00:00.000Z"
 ---
 ## 从方程到曲线
 
@@ -25,7 +25,7 @@ $$ax^2 + bx + c = 0, \quad a \neq 0$$
 
 $$y = ax^2 + bx + c$$
 
-满足这一关系的数对 $(x, y)$ 在笛卡儿平面中构成一条[抛物线](../parabola/)。于是，求解原方程等价于询问：$x$ 取何值时输出 $y$ 等于零，从而把求根这一代数问题转化为确定抛物线与水平轴交点位置的几何问题。
+满足这一关系的数对 $(x, y)$ 在[笛卡儿平面](../the-cartesian-coordinate-plane/)中构成一条[抛物线](../parabola/)。于是，求解原方程等价于询问：$x$ 取何值时输出 $y$ 等于零，从而把求根这一代数问题转化为确定抛物线与水平轴交点位置的几何问题。
 
 ![图 1](/assets/equations/svg/quadratic-equations.zh.svg)
 

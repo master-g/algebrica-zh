@@ -21,9 +21,9 @@ tags:
   - universal-set
 translation:
   status: current
-  source_hash: 3d6246854ead51e3f2ebd88e53aa3451ee1c2b98e857f4d464aea4a85179e732
-  translator: codex
-  updated: "2026-08-04T00:00:00.000Z"
+  source_hash: 936a110cc60f28061996a77980d8bf0d67bd0f4b400545b968aa9ceba8c78ad1
+  translator: claude
+  updated: "2026-10-03T00:00:00.000Z"
 ---
 ## 引言
 
@@ -430,7 +430,7 @@ $$
 (a, b) = (a', b') \iff a = a' \land b = b'
 $$
 
-一般而言，$A \times B$ 和 $B \times A$ 不是同一个集合。如果 $A$ 含有 $m$ 个元素而 $B$ 含有 $n$ 个元素，那么 $A \times B$ 含有 $mn$ 个元素。例如，[实数](../real-numbers/)的所有有序对组成 $\mathbb{R} \times \mathbb{R}$，这就是笛卡尔平面 $\mathbb{R}^2$。
+一般而言，$A \times B$ 和 $B \times A$ 不是同一个集合。如果 $A$ 含有 $m$ 个元素而 $B$ 含有 $n$ 个元素，那么 $A \times B$ 含有 $mn$ 个元素。例如，[实数](../real-numbers/)的所有有序对组成 $\mathbb{R} \times \mathbb{R}$，这就是[笛卡尔平面](../the-cartesian-coordinate-plane/) $\mathbb{R}^2$。
 
 给定集合 $A_1, A_2, \ldots, A_n$，它们的笛卡尔积是所有有序 $n$ 元组构成的集合：
 

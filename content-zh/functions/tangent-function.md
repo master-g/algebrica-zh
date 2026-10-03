@@ -10,9 +10,9 @@ tags:
   - trigonometry
 translation:
   status: current
-  source_hash: 2e44a96b5b227f680e621673272d5969fad4faecf7c85a7a97d99e239dd35dd7
-  translator: codex
-  updated: "2026-08-02T00:00:00.000Z"
+  source_hash: 62fda3680fe66bb608fe7cf7698a17f8875d820c00f48fcf035806e96902f8ce
+  translator: claude
+  updated: "2026-10-03T00:00:00.000Z"
 ---
 ## 引言
 
@@ -70,7 +70,7 @@ $$\tan(x) = \frac{e^{ix} - e^{-ix}}{i\left(e^{ix} + e^{-ix}\right)}$$
 
 ## 反函数
 
-在整个定义域上，正切不是单射，因为周期 $\pi$ 使它在每个分支上重复取遍相同的值。将定义域限制在开区间 $\left(-\frac{\pi}{2}, \frac{\pi}{2}\right)$ 后，正切函数连续且严格递增，是到 $\mathbb{R}$ 的双射，并且存在[反函数](../inverse-function)，即[反正切](../arctangent-and-arccotangent/)：
+在整个定义域上，正切不是单射，因为周期 $\pi$ 使它在每个分支上重复取遍相同的值。将定义域限制在开区间 $\left(-\frac{\pi}{2}, \frac{\pi}{2}\right)$ 后，正切函数连续且严格递增，是到 $\mathbb{R}$ 的双射，并且存在[反函数](../inverse-function)，即[反正切](../arctangent-function/)：
 
 $$\arctan : \mathbb{R} \to \left(-\frac{\pi}{2}, \frac{\pi}{2}\right)$$
 

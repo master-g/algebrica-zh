@@ -9,9 +9,9 @@ tags:
   - trigonometry
 translation:
   status: current
-  source_hash: 0f1e2c875942d9e728573c23fac9be2783b5bb2c6ce055d060483991637cb934
-  translator: codex
-  updated: "2026-08-04T00:00:00.000Z"
+  source_hash: db8a88858397fbe83d0ba7c827a05b7dc99a8888de28d53fc770cc5a7f396fbd
+  translator: claude
+  updated: "2026-10-03T00:00:00.000Z"
 ---
 ## 引言
 
@@ -58,7 +58,7 @@ $$
 
 ## 奇偶性与对称性
 
-三角函数由于单位圆的象限而拥有一族丰富的[诱导公式](../reduction-formulas-and-reference-angles/)，而定义于等轴双曲线单一右支上的双曲函数，则具有一个仅由其变元奇偶性决定的更简单的对称结构。双曲正弦是奇函数，双曲余弦是偶函数：
+三角函数由于单位圆的象限而拥有一族丰富的[诱导公式](../reduction-formulas-and-reference-angles/)，而定义于等轴双曲线单一右支上的双曲函数，则具有一个仅由其变元奇偶性决定的更简单的对称结构。[双曲正弦](../hyperbolic-sine-function/)是奇函数，双曲余弦是偶函数：
 
 $$
 \begin{align}
@@ -332,7 +332,7 @@ $$
 sR\sinh(x + \varphi) = sR\cosh(\varphi)\sinh(x) + sR\sinh(\varphi)\cosh(x)
 $$
 
-将 $\sinh(x)$ 与 $\cosh(x)$ 的系数与原组合逐一匹配，得到 $sR\cosh(\varphi)=a$ 与 $sR\sinh(\varphi)=b$。两式平方后相减得到 $R=\sqrt{a^2-b^2}$；两式相除确定移位 $\varphi$，因为双曲正切是实数轴到 $(-1,1)$ 的双射。
+将 $\sinh(x)$ 与 $\cosh(x)$ 的系数与原组合逐一匹配，得到 $sR\cosh(\varphi)=a$ 与 $sR\sinh(\varphi)=b$。两式平方后相减得到 $R=\sqrt{a^2-b^2}$；两式相除确定移位 $\varphi$，因为[双曲正切](../hyperbolic-tangent-function/)是实数轴到 $(-1,1)$ 的双射。
 
 若 $|b|>|a|$，则相应表示采用单个双曲余弦：
 

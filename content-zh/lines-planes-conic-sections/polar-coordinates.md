@@ -10,13 +10,13 @@ tags:
   - spherical-coordinates
 translation:
   status: current
-  source_hash: 6cdbe52fd0592d53db05ca7fe12755b80bf251e78f94300c3bbb6306dc93bf7e
-  translator: omp
-  updated: "2026-07-31T09:30:28.370Z"
+  source_hash: 9ecb3f604378cfd491bd3d3dfd3bfe335f937dcc7dbabc0854310410573aa9d8
+  translator: claude
+  updated: "2026-10-03T00:00:00.000Z"
 ---
 ## 点的径向与角向描述
 
-笛卡尔坐标系通过将平面中的点投影到两条相互垂直的坐标轴上来描述该点，这赋予了水平和垂直方向以特殊地位。在许多问题中，到一个固定点的距离以及相对于一条固定射线的方向是更自然的描述量，由此引出了极坐标系。在平面中固定如下要素：
+[笛卡尔坐标系](../the-cartesian-coordinate-plane/)通过将平面中的点投影到两条相互垂直的坐标轴上来描述该点，这赋予了水平和垂直方向以特殊地位。在许多问题中，到一个固定点的距离以及相对于一条固定射线的方向是更自然的描述量，由此引出了极坐标系。在平面中固定如下要素：
 
 + 一个点 $O$，称为极点
 + 从 $O$ 出发的一条参考半直线，称为极轴

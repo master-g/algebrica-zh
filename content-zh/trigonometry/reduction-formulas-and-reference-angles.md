@@ -10,9 +10,9 @@ tags:
   - trigonometry
 translation:
   status: current
-  source_hash: eae4f881460a5e284e3d9a5370c94afe4d69235ee3ff7eb4c0e34155d70d9313
-  translator: omp
-  updated: "2026-07-25T08:50:19.742Z"
+  source_hash: 193426546403a6a282c741c9eacc3c041e5246c076882071d0eb1139fa964c9e
+  translator: claude
+  updated: "2026-10-03T00:00:00.000Z"
 ---
 ## 使用参考角改写角度
 
@@ -46,7 +46,7 @@ $$
 
 ## $\pi/2 + \alpha$ 的诱导公式
 
-考虑形如 $\pi/2+\alpha$ 的角，其中 $\alpha$ 表示从正 $x$ 轴量起的锐角。从对应竖直方向的 $\frac{\pi}{2}$ 出发，加上 $\alpha$ 后，终边会向竖轴左侧略微旋转，如下图所示。所得角严格介于 $\frac{\pi}{2}$ 与 $\pi$ 之间，因此其终边落在笛卡尔平面的第二象限内。
+考虑形如 $\pi/2+\alpha$ 的角，其中 $\alpha$ 表示从正 $x$ 轴量起的锐角。从对应竖直方向的 $\frac{\pi}{2}$ 出发，加上 $\alpha$ 后，终边会向竖轴左侧略微旋转，如下图所示。所得角严格介于 $\frac{\pi}{2}$ 与 $\pi$ 之间，因此其终边落在[笛卡尔平面](../the-cartesian-coordinate-plane/)的第二象限内。
 
 ![图 1](/assets/trigonometry/svg/reduction-formulas-and-reference-angles-1.zh.svg)
 

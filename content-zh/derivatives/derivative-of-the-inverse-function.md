@@ -11,9 +11,9 @@ tags:
   - vertical-tangent
 translation:
   status: current
-  source_hash: bdf5bbe1584f78e8aee7bc08ed0d2f2805934a2ab9b375841a9d8b486ec544c1
-  translator: codex
-  updated: "2026-08-04T00:00:00.000Z"
+  source_hash: ea36a5ad3a34b2f5fd159f61728f81b72d7e810f9133c7603aec63a6aecb8c9d
+  translator: claude
+  updated: "2026-10-03T00:00:00.000Z"
 ---
 ## 引言
 
@@ -133,11 +133,11 @@ $$D[\arccos(x)] = \frac{1}{-\sin(\arccos(x))} = -\frac{1}{\sqrt{1 - x^2}}$$
 
 - - -
 
-[反正切函数](../arctangent-and-arccotangent/)是[正切函数](../tangent-function/)在 $(-\pi/2, \pi/2)$ 上的限制的逆函数；在这个区间内正切严格递增，并且取遍所有实数。它的导数为 $1 + \tan^2(t)$，至少为 $1$，因而永不为零，所以反正切函数在整个 $\mathbb{R}$ 上可微。令 $t = \arctan(x)$ 且 $\tan(t) = x$，结果中不再有三角函数或平方根：
+[反正切函数](../arctangent-function/)是[正切函数](../tangent-function/)在 $(-\pi/2, \pi/2)$ 上的限制的逆函数；在这个区间内正切严格递增，并且取遍所有实数。它的导数为 $1 + \tan^2(t)$，至少为 $1$，因而永不为零，所以反正切函数在整个 $\mathbb{R}$ 上可微。令 $t = \arctan(x)$ 且 $\tan(t) = x$，结果中不再有三角函数或平方根：
 
 $$D[\arctan(x)] = \frac{1}{1 + \tan^2(\arctan(x))} = \frac{1}{1 + x^2}$$
 
-[余切函数](../cotangent-function/)在 $(0, \pi)$ 上的限制的导数为 $-\bigl(1 + \cot^2(t)\bigr)$，同样的代入得到反余切函数的导数：
+[余切函数](../cotangent-function/)在 $(0, \pi)$ 上的限制的导数为 $-\bigl(1 + \cot^2(t)\bigr)$，同样的代入得到[反余切函数](../arccotangent-function/)的导数：
 
 $$D[\mathrm{arccot}(x)] = -\frac{1}{1 + x^2}$$
 

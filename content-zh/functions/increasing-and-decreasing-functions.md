@@ -10,9 +10,9 @@ tags:
   - strict-monotonicity
 translation:
   status: current
-  source_hash: c98bd17493c0f71ed074cce7a90d20ffee5e601a7929b0d31f1a277ecd1762a8
-  translator: codex
-  updated: "2026-08-04T00:00:00.000Z"
+  source_hash: 459f5ee6092382ef8026a1560fc815fe609a5c8f5641a1bd5131673f79e77010
+  translator: claude
+  updated: "2026-10-03T00:00:00.000Z"
 ---
 ## 引言
 
@@ -20,7 +20,7 @@ translation:
 
 - - -
 
-**定义 1。** 设 $y = f(x)$ 是定义在[定义域](../determining-the-domain-of-a-function/) $X \subseteq \mathbb{R}$ 上的函数。如果对区间 $I \subseteq X$ 中任意两个满足 $x_1 < x_2$ 的值 $x_1, x_2 \in I$，都有：
+定义 1。设 $y = f(x)$ 是定义在[定义域](../determining-the-domain-of-a-function/) $X \subseteq \mathbb{R}$ 上的函数。如果对区间 $I \subseteq X$ 中任意两个满足 $x_1 < x_2$ 的值 $x_1, x_2 \in I$，都有：
 
 $$
 f(x_1) < f(x_2)
@@ -32,7 +32,7 @@ $$
 
 - - -
 
-**定义 2。** 设 $y = f(x)$ 是定义在定义域 $X \subseteq \mathbb{R}$ 上的函数。如果对区间 $I \subseteq X$ 中任意两个满足 $x_1 < x_2$ 的值 $x_1, x_2 \in I$，都有：
+定义 2。设 $y = f(x)$ 是定义在定义域 $X \subseteq \mathbb{R}$ 上的函数。如果对区间 $I \subseteq X$ 中任意两个满足 $x_1 < x_2$ 的值 $x_1, x_2 \in I$，都有：
 
 $$
 f(x_1) > f(x_2)
@@ -128,7 +128,7 @@ $$x^2 - 1 > 0 \implies x < -1 \lor x > 1$$
 
 单调性对函数的局部行为施加了足够强的约束，使函数在每个内部点都存在左右两个[极限](../limits/)，即使函数在该点不连续。
 
-**定义 3。** 设 $f$ 在开[区间](../intervals/) $(a, b)$ 上递增。对每个 $x_0 \in (a, b)$，两个单侧极限都存在并满足：
+定义 3。设 $f$ 在开[区间](../intervals/) $(a, b)$ 上递增。对每个 $x_0 \in (a, b)$，两个单侧极限都存在并满足：
 
 $$
 \sup_{a < t < x_0} f(t) = f(x_0^-) \leq f(x_0) \leq f(x_0^+) = \inf_{x_0 < t < b} f(t)

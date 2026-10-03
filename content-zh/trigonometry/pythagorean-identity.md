@@ -10,9 +10,9 @@ tags:
   - unit-circle
 translation:
   status: current
-  source_hash: 5c66a62ec52c944aa28d77cdbd4ce59db16b8a9dbb6c1e63bee7c401cf180899
-  translator: omp
-  updated: "2026-07-25T07:17:22.640Z"
+  source_hash: ec277578b6f863174f95cc3bbb2bb87474701caacce1613f7f0bc2b927108342
+  translator: claude
+  updated: "2026-10-03T00:00:00.000Z"
 ---
 ## 定义
 
@@ -160,7 +160,7 @@ $$\sin^2\theta + 2\sin\theta\cos\theta + \cos^2\theta$$
 
 类似地，由 $1 + \cot^2\theta = \csc^2\theta$ 可得 $\cot^2\theta = \csc^2\theta - 1$，使得含有 $\cot\theta$ 和 $\csc\theta$ 的表达式可以仅用 $\csc\theta$ 表示。
 
-许多标准的[积分](../definite-integrals/)要求先将被积函数写成与某个已知模式匹配的形式，才能施行代换。例如，$\tan^2\theta$ 的积分无法直接用初等规则化简。代入 $\tan^2\theta = \sec^2\theta - 1$ 后，被积函数被改写为两项之差，每一项都易于积分：
+许多标准的[积分](../definite-integrals/)要求先将被积函数写成与某个已知模式匹配的形式，才能施行代换。例如，[$\tan^2\theta$ 的积分](../reduction-formulas/)无法直接用初等规则化简。代入 $\tan^2\theta = \sec^2\theta - 1$ 后，被积函数被改写为两项之差，每一项都易于积分：
 
 $$
 \begin{align}

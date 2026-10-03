@@ -10,9 +10,9 @@ tags:
   - trigonometry
 translation:
   status: current
-  source_hash: e6ab2dcc813d57b725f20eba8a918fcc7ba3b2ee801f42af5ceb3b32f4eea44f
-  translator: omp
-  updated: "2026-07-25T04:16:28.623Z"
+  source_hash: 8667e24ea76ecc746af0a79f30af6494b7e4618714b88eaa4f28da93900c2f2f
+  translator: claude
+  updated: "2026-10-03T00:00:00.000Z"
 ---
 ## 双曲正割
 
@@ -52,7 +52,7 @@ $$
 
 ## 双曲正割的双曲恒等式
 
-支配双曲正割的恒等式源于其作为双曲余弦倒数的定义。将基本双曲恒等式 $\cosh^{2}(x) - \sinh^{2}(x) = 1$ 除以 $\cosh^{2}(x)$，便得到联系双曲正割与双曲正切的关系，而余弦的偶对称性直接传递到正割。下面汇集的关系概括了这些联系以及计算中最常遇到的代数形式。
+支配双曲正割的恒等式源于其作为双曲余弦倒数的定义。将基本双曲恒等式 $\cosh^{2}(x) - \sinh^{2}(x) = 1$ 除以 $\cosh^{2}(x)$，便得到联系双曲正割与[双曲正切](../hyperbolic-tangent-function/)的关系，而余弦的偶对称性直接传递到正割。下面汇集的关系概括了这些联系以及计算中最常遇到的代数形式。
 
 $$
 \begin{align}
@@ -68,7 +68,7 @@ $$
 
 ## 双曲余割
 
-与上面的构造平行，双曲余割定义为双曲正弦的倒数。再次从等轴双曲线右支上的点 $P(\cosh(x), \sinh(x))$ 出发，$x$ 的双曲余割是 $P$ 纵坐标的倒数：
+与上面的构造平行，双曲余割定义为[双曲正弦](../hyperbolic-sine-function/)的倒数。再次从等轴双曲线右支上的点 $P(\cosh(x), \sinh(x))$ 出发，$x$ 的双曲余割是 $P$ 纵坐标的倒数：
 
 $$
 \mathrm{csch}(x) := \frac{1}{\sinh(x)}
@@ -118,7 +118,7 @@ $$
 
 ## 双曲正割的解析表达式
 
-借助 [双曲余弦](../hyperbolic-sine-and-cosine/) 以 [指数函数](../exponential-function/) 表示的解析式，双曲正割可以写成由 $e^{x}$ 与 $e^{-x}$ 表达的闭式。将
+借助[双曲余弦](../hyperbolic-sine-and-cosine/)以[指数函数](../exponential-function/)表示的解析式，双曲正割可以写成由 $e^{x}$ 与 $e^{-x}$ 表达的闭式。将
 
 $$
 \cosh(x) = \frac{e^{x} + e^{-x}}{2}

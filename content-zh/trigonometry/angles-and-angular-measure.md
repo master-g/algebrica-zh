@@ -11,9 +11,9 @@ tags:
   - trigonometry
 translation:
   status: current
-  source_hash: 1b9558ef82ef8727b78b167a91c70bd5427f45fa755cb9326f1508ee51727473
-  translator: omp
-  updated: "2026-07-24T12:37:40.879Z"
+  source_hash: 880fe46812603d7639c082badd2658a1df8ba96bf8fe2428e77c09194ed43582
+  translator: claude
+  updated: "2026-10-03T00:00:00.000Z"
 ---
 ## 定义
 
@@ -29,7 +29,7 @@ translation:
 
 ## 标准位置
 
-**定义 2。** 当角的顶点与笛卡尔平面的原点重合，且角的一条边——称为始边——沿 $x$ 轴正方向时，称该角处于标准位置。另一条边——称为终边——由旋转的大小和方向决定。在此构型中，终边的位置只能确定该角所属的同终边角类；要唯一确定一个有向角，还需记录转过的完整周数或角的具体度量值。
+**定义 2。** 当角的顶点与[笛卡尔平面](../the-cartesian-coordinate-plane/)的原点重合，且角的一条边——称为始边——沿 $x$ 轴正方向时，称该角处于标准位置。另一条边——称为终边——由旋转的大小和方向决定。在此构型中，终边的位置只能确定该角所属的同终边角类；要唯一确定一个有向角，还需记录转过的完整周数或角的具体度量值。
 
 ![标准位置角：始边沿 x 轴正方向，终边由旋转确定](/assets/trigonometry/svg/angles-and-angular-measure-2.zh.svg)
 

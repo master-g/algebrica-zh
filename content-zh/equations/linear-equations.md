@@ -10,9 +10,9 @@ tags:
   - linear-equations
 translation:
   status: current
-  source_hash: b71ebada12b8294088517361599efe63849527685ba5c757bc9fffac75b9a3da
-  translator: codex
-  updated: "2026-08-04T00:00:00.000Z"
+  source_hash: 5ae1f524c40f0de0bc0592196f22760e5f6c06eae3b3032990f31981af96fed9
+  translator: claude
+  updated: "2026-10-03T00:00:00.000Z"
 ---
 ## 定义
 
@@ -116,7 +116,7 @@ $$x = \frac{1}{3}$$
 
 $$ax + by = c$$
 
-在该表达式中 $a, b, c \in \mathbb{R}$，其中 $a$ 与 $b$ 至少有一个不为零。在几何上，其解集是笛卡尔平面上的一条[直线](../lines/)，而该方程就是这条直线的隐式表示。常数项 $c$ 决定了直线的位置：当 $c \neq 0$ 时直线不经过原点，而当 $c = 0$ 时方程退化为齐次形式，对应的直线经过原点。
+在该表达式中 $a, b, c \in \mathbb{R}$，其中 $a$ 与 $b$ 至少有一个不为零。在几何上，其解集是[笛卡尔平面](../the-cartesian-coordinate-plane/)上的一条[直线](../lines/)，而该方程就是这条直线的隐式表示。常数项 $c$ 决定了直线的位置：当 $c \neq 0$ 时直线不经过原点，而当 $c = 0$ 时方程退化为齐次形式，对应的直线经过原点。
 
 通解可通过将其中一个未知数取为自由参数得到。假设 $b \neq 0$ 且令 $x = \lambda$，则方程给出：
 

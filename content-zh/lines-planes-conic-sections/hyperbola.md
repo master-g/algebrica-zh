@@ -13,9 +13,9 @@ tags:
   - vertex
 translation:
   status: current
-  source_hash: 2c1fc9776bbd708966662ad5af9a57989a9828ac76ff4fa0825980bb4a0b2058
-  translator: codex
-  updated: "2026-08-04T00:00:00.000Z"
+  source_hash: f7cbeec4f8a3188b1c0a47c1f69821f63b94ac776161953f5ee231f7aa25f524
+  translator: claude
+  updated: "2026-10-03T00:00:00.000Z"
 ---
 ## 什么是双曲线
 
@@ -52,7 +52,7 @@ $$\left| PF_1 - PF_2 \right| = k$$
 
 ![图 2](/assets/lines-planes-conic-sections/svg/hyperbola-2.zh.svg)
 
-$F_1$ 和 $F_2$ 是焦点，$k$ 是该常数。线段 $\overline{F_1F_2}$ 的中点是中心，此处与笛卡尔坐标轴的原点重合。
+$F_1$ 和 $F_2$ 是焦点，$k$ 是该常数。线段 $\overline{F_1F_2}$ 的中点是中心，此处与[笛卡尔坐标轴](../the-cartesian-coordinate-plane/)的原点重合。
 
 过两个焦点的直线是实轴所在直线，此处为 $x$ 轴。它与双曲线交于两个顶点 $A(a, 0)$ 和 $A'(-a, 0)$，因此 $a$ 是实半轴长。过中心且与实轴垂直的直线是虚轴所在直线，即 $y$ 轴。曲线不与它相交，点 $B(0, b)$ 和 $B'(0, -b)$ 是虚轴端点，$b$ 是虚半轴长。
 

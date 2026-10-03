@@ -9,13 +9,13 @@ tags:
   - unit-circle
 translation:
   status: current
-  source_hash: b799bdd3053e73ad3df510c40bc3c853bee9a6acd3e3c3fb08ef7f7c53b4f68a
-  translator: omp
-  updated: "2026-07-24T15:08:14.918Z"
+  source_hash: 05e1a1b896df8e62fa1116e7ca77e068571c51c0635d96c9e905af3f8e004b3f
+  translator: claude
+  updated: "2026-10-03T00:00:00.000Z"
 ---
 ## 定义
 
-单位圆（又称三角圆）是以笛卡尔平面原点为圆心、半径为一的[圆](../circumference/)。它作为表示角及其位置的几何参照，为描述旋转、方向以及圆上点随角变化的关系提供了精确的方式。
+单位圆（又称三角圆）是以[笛卡尔平面](../the-cartesian-coordinate-plane/)原点为圆心、半径为一的[圆](../circumference/)。它作为表示角及其位置的几何参照，为描述旋转、方向以及圆上点随角变化的关系提供了精确的方式。
 
 **定义 1。** 具体地，考虑以原点 $O$ 为圆心、单位半径的圆，设 $P$ 为圆上一点。线段 $\overline{OP}$ 长度为一，与正 $x$ 轴成角 $\theta$，$R$ 表示从 $P$ 向 $x$ 轴所作垂线的垂足。
 

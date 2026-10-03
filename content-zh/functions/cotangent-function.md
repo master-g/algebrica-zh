@@ -10,9 +10,9 @@ tags:
   - trigonometry
 translation:
   status: current
-  source_hash: bf87c529573f08efcab630313aefe6a6b4a09222c69981749e3a8b6d9532369e
-  translator: codex
-  updated: "2026-08-02T00:00:00.000Z"
+  source_hash: ccf48b844e5c245609742c4cd1b5b784a657cd2a0db832b6bc82cbda194d2fbd
+  translator: claude
+  updated: "2026-10-03T00:00:00.000Z"
 ---
 ## 引言
 
@@ -70,7 +70,7 @@ $$\cot(x) = \frac{i\left(e^{ix} + e^{-ix}\right)}{e^{ix} - e^{-ix}}$$
 
 ## 反函数
 
-在整个定义域上，余切不是单射，因为周期 $\pi$ 使它在每个分支上重复取遍相同的值。将定义域限制在开区间 $\left(0, \pi\right)$ 后，余切函数连续且严格递减，是到 $\mathbb{R}$ 的双射，并且存在[反函数](../inverse-function)，即[反余切](../arctangent-and-arccotangent/)：
+在整个定义域上，余切不是单射，因为周期 $\pi$ 使它在每个分支上重复取遍相同的值。将定义域限制在开区间 $\left(0, \pi\right)$ 后，余切函数连续且严格递减，是到 $\mathbb{R}$ 的双射，并且存在[反函数](../inverse-function)，即[反余切](../arccotangent-function/)：
 
 $$\mathrm{arccot} : \mathbb{R} \to \left(0, \pi\right)$$
 

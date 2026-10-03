@@ -10,9 +10,9 @@ tags:
   - sign-of-a-polynomial
 translation:
   status: current
-  source_hash: 1efc97d0e597b428f2bfdaa92a9fbe56c1dc008774675871c3ae990cdeed25be
-  translator: omp
-  updated: "2026-07-31T03:20:13.387Z"
+  source_hash: a6556454f220fe24359a9417a7aacde68b39ee937aaf14b187c63fffbfc7ded4
+  translator: claude
+  updated: "2026-10-03T00:00:00.000Z"
 ---
 ## 从不等式到曲线
 
@@ -24,7 +24,7 @@ $$ax^2 + bx + c > 0, \quad a \neq 0$$
 
 $$y = ax^2 + bx + c$$
 
-满足该关系的数对 $(x, y)$ 在笛卡儿平面上构成一条[抛物线](../parabola/)，而不等式 $ax^2 + bx + c > 0$ 所求的，是使输出值 $y$ 为正的那些 $x$ 的值。于是，求多项式取正值范围这一代数问题，便转化为确定抛物线位于水平轴上方区域的几何问题。抛物线的形状与位置由三个系数决定。
+满足该关系的数对 $(x, y)$ 在[笛卡儿平面](../the-cartesian-coordinate-plane/)上构成一条[抛物线](../parabola/)，而不等式 $ax^2 + bx + c > 0$ 所求的，是使输出值 $y$ 为正的那些 $x$ 的值。于是，求多项式取正值范围这一代数问题，便转化为确定抛物线位于水平轴上方区域的几何问题。抛物线的形状与位置由三个系数决定。
 
 + 系数 $a$ 控制曲线的开口方向与宽窄。其符号决定抛物线开口向上还是向下，$|a|$ 的值越大图像越窄，值越小则越宽。
 + 系数 $b$ 与 $a$ 共同确定对称轴从而也确定顶点的水平位置，其横坐标为 $-b/2a$。

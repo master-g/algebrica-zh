@@ -11,9 +11,9 @@ tags:
   - taylor-polynomial
 translation:
   status: current
-  source_hash: 46bb9e1d87f2debfe339fc0b65b9e341770fcd60b837b6eb9f42c2e2701b6167
-  translator: codex
-  updated: "2026-08-04T00:00:00.000Z"
+  source_hash: 37623809c3d8f83493a757be76430b6db4c661610b3833543e79c678b763d613
+  translator: claude
+  updated: "2026-10-03T00:00:00.000Z"
 ---
 ## 从切线到高次多项式
 
@@ -210,7 +210,7 @@ $$\sin x = x - \frac{x^3}{3!} + \frac{x^5}{5!} - \cdots + (-1)^n \frac{x^{2n+1}}
 
 $$\cos x = 1 - \frac{x^2}{2!} + \frac{x^4}{4!} - \cdots + (-1)^n \frac{x^{2n}}{(2n)!} + o(x^{2n+1})$$
 
-在这两种情形中，余项的指数比最后写出的幂高一阶，因为第一个省略项高两阶。[双曲正弦和余弦](../hyperbolic-sine-and-cosine/)遵循同样的模式，只是符号不再交替：
+在这两种情形中，余项的指数比最后写出的幂高一阶，因为第一个省略项高两阶。[双曲正弦](../hyperbolic-sine-function/)和[双曲余弦](../hyperbolic-sine-and-cosine/)遵循同样的模式，只是符号不再交替：
 
 $$\sinh x = x + \frac{x^3}{3!} + \frac{x^5}{5!} + \cdots + \frac{x^{2n+1}}{(2n+1)!} + o(x^{2n+2})$$
 

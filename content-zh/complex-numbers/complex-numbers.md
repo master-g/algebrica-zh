@@ -13,9 +13,9 @@ tags:
   - modulus
 translation:
   status: current
-  source_hash: c78f7bbe5d4b3b8050541f0e985d836f5296581b4a35df72d82502bd0e322c3e
-  translator: omp
-  updated: "2026-07-23T09:29:04.973Z"
+  source_hash: fe8d0c1ed4acaecae1539046487c8c282b7a8bb5ace2caeac592e13bf5c2bf92
+  translator: claude
+  updated: "2026-10-03T00:00:00.000Z"
 ---
 ## 引言
 
@@ -33,7 +33,7 @@ $$ i^2 = -1 $$
 
 复数的引入有时被当作记号上的权宜之计，仿佛只需规定符号 $i$ 满足 $i^2 = -1$，问题便已解决。这种做法留下了一个重要问题未答：这样的对象是否确实存在？若存在，又是以何种数学意义存在？要回答这个问题，需要对从[实数](../real-numbers/)构造 $\mathbb{C}$ 的过程作一简要考察。
 
-出发点是笛卡尔积 $\mathbb{R}^2$，即所有实数有序对的集合。该集合中的每个元素都是形如 $(a, b)$ 的有序对，其中 $a, b \in \mathbb{R}$。这个[集合](../sets/)就是熟知的欧几里得平面，但在此我们想为它配备一种代数结构，使其成为一个[域](../fields/)。为此，必须在 $\mathbb{R}^2$ 上定义加法和乘法。
+出发点是笛卡尔积 $\mathbb{R}^2$，即所有实数有序对的集合。该集合中的每个元素都是形如 $(a, b)$ 的有序对，其中 $a, b \in \mathbb{R}$。这个[集合](../sets/)就是熟知的[欧几里得平面](../the-cartesian-coordinate-plane/)，但在此我们想为它配备一种代数结构，使其成为一个[域](../fields/)。为此，必须在 $\mathbb{R}^2$ 上定义加法和乘法。
 
 加法按分量定义。给定两个有序对 $(a, b)$ 和 $(c, d)$，它们的和为：
 

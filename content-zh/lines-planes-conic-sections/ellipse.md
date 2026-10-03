@@ -9,9 +9,9 @@ tags:
   - ellipse
 translation:
   status: current
-  source_hash: e9a9e5bbf99071337327c6a16cbad7f42d4203a823be413b8921057df3ea7fb9
-  translator: codex
-  updated: "2026-08-04T00:00:00.000Z"
+  source_hash: bbb06f3181b7c90829804cb538a4b2f801350c4a6f1b0ff3e3d53e8a62b7fe8f
+  translator: claude
+  updated: "2026-10-03T00:00:00.000Z"
 ---
 ## 什么是椭圆
 
@@ -60,7 +60,7 @@ $$\overline{PF_1} + \overline{PF_2} = k$$
 
 $$\overline{F_1P} + \overline{F_2P} = (a+c) + (a-c) = 2a$$
 
-为得到曲线的方程，我们将这一条件施加于一般点 $P=(x,y)$。用距离公式分别写出两个距离，得：
+为得到曲线的方程，我们将这一条件施加于一般点 $P=(x,y)$。用[距离公式](../the-cartesian-coordinate-plane/)分别写出两个距离，得：
 
 $$\sqrt{(x+c)^2+y^2} + \sqrt{(x-c)^2+y^2} = 2a$$
 

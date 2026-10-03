@@ -10,9 +10,9 @@ tags:
   - vectors
 translation:
   status: current
-  source_hash: 31d45e4b65aa5c20fab693ae9381e10c5141d4ec49547a89adc0c85fb470bdc0
-  translator: codex
-  updated: "2026-08-04T00:00:00.000Z"
+  source_hash: 0417e6f6434af7374fa53f828960c4f4c98756fe068321f2c8448b52eca6906d
+  translator: claude
+  updated: "2026-10-03T00:00:00.000Z"
 ---
 ## 从笛卡尔形式到向量形式
 
@@ -32,7 +32,7 @@ $$P-P_0 = t\vec{v}, \qquad t \in \mathbb{R}$$
 
 ## 从向量形式到参数形式
 
-现在我们取定一个[标准正交基](../inner-product-spaces/)，即一个各坐标轴互相垂直、且定义向量的长度均为一的参考系。这就是标准的笛卡尔平面，其中 x 轴沿 $\vec{i}=(1,0)$ 方向，y 轴沿 $\vec{j}=(0,1)$ 方向。
+现在我们取定一个[标准正交基](../inner-product-spaces/)，即一个各坐标轴互相垂直、且定义向量的长度均为一的参考系。这就是标准的[笛卡尔平面](../the-cartesian-coordinate-plane/)，其中 x 轴沿 $\vec{i}=(1,0)$ 方向，y 轴沿 $\vec{j}=(0,1)$ 方向。
 
 我们将定点 $P_0$ 和一般点 $P$ 用坐标表示为：
 

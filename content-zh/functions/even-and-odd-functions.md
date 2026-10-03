@@ -10,9 +10,9 @@ tags:
   - odd-function
 translation:
   status: current
-  source_hash: 79dc82ebcd2707614a8dddf2722bb5f1e852a51c329b11ac86c104b0a760f5d9
-  translator: codex
-  updated: "2026-08-02T00:00:00.000Z"
+  source_hash: 1326561acd487341db462dc40d7a0d9a8ef0d356219781fb4f81e5ac8cff61a6
+  translator: claude
+  updated: "2026-10-03T00:00:00.000Z"
 ---
 
 ## 偶函数
@@ -129,7 +129,7 @@ $$
 
 这种分解是唯一的。设 $f = g + h$，其中 $g$ 为偶函数、$h$ 为奇函数。在 $-x$ 处取值可得 $f(-x) = g(x) - h(x)$；解关于 $g$ 和 $h$ 的两个方程，会恰好重新得到上面的公式。因此，函数的偶部与奇部是唯一确定的。
 
-指数函数是标准例子。它的偶部与奇部是[双曲余弦和双曲正弦](../hyperbolic-sine-and-cosine/)：
+指数函数是标准例子。它的偶部与奇部是[双曲余弦](../hyperbolic-sine-and-cosine/)和[双曲正弦](../hyperbolic-sine-function/)：
 
 $$
 e^x = \underbrace{\frac{e^x + e^{-x}}{2}}_{\cosh x} + \underbrace{\frac{e^x - e^{-x}}{2}}_{\sinh x}

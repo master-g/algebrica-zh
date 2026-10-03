@@ -10,9 +10,9 @@ tags:
   - trigonometry
 translation:
   status: current
-  source_hash: 4cc0dfbd2bf3aed3c82f1dc293472727d7ef8773921f485ce12fbe3711b61826
-  translator: omp
-  updated: "2026-07-24T15:49:26.064Z"
+  source_hash: 24a27d4f2d357262fae0018bf483bb342705d6e6b4958f4b050ecfc7285f331c
+  translator: claude
+  updated: "2026-10-03T00:00:00.000Z"
 ---
 ## 引言
 
@@ -133,7 +133,7 @@ $$
 
 ![正切函数图像](/assets/trigonometry/svg/tangent-and-cotangent-4.zh.svg)
 
-+ 定义域：$\left\{ x \in \mathbb{R} : x \neq \frac{\pi}{2} + k\pi \text{ 对所有 } k \in \mathbb{Z} \right\}$
++ 定义域：$\left\{ x \in \mathbb{R} : x \neq \frac{\pi}{2} + k\pi,\ \forall k \in \mathbb{Z} \right\}$
 + 值域：$y \in \mathbb{R}$
 + 周期性：最小正周期为 $\pi$
 + 奇偶性：[奇函数](../even-and-odd-functions/)，$\tan(-x) = -\tan(x)$
@@ -142,7 +142,7 @@ $$
 
 ![余切函数图像](/assets/trigonometry/svg/tangent-and-cotangent-5.zh.svg)
 
-+ 定义域：$\left\{ x \in \mathbb{R} : x \neq k\pi \text{ 对所有 } k \in \mathbb{Z} \right\}$
++ 定义域：$\left\{ x \in \mathbb{R} : x \neq k\pi,\ \forall k \in \mathbb{Z} \right\}$
 + 值域：$y \in \mathbb{R}$
 + 周期性：最小正周期为 $\pi$
 + 奇偶性：[奇函数](../even-and-odd-functions/)，$\cot(-x) = -\cot(x)$
@@ -177,7 +177,7 @@ $$
 \tan(\theta) = \frac{\sin\theta}{\cos\theta} = \frac{e^{i\theta} - e^{-i\theta}}{i(e^{i\theta} + e^{-i\theta})}
 $$
 
-该表达式与[双曲正切](../hyperbolic-tangent-and-cotangent/)（定义为 $\tanh(x) = (e^x - e^{-x})/(e^x + e^{-x})$）的结构相对应，并表明二者通过代换 $x \to i\theta$ 相联系：
+该表达式与[双曲正切](../hyperbolic-tangent-function/)（定义为 $\tanh(x) = (e^x - e^{-x})/(e^x + e^{-x})$）的结构相对应，并表明二者通过代换 $x \to i\theta$ 相联系：
 
 $$
 \tan(\theta) = -i\tanh(i\theta)

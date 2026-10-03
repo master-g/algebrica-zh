@@ -13,9 +13,9 @@ tags:
   - trigonometric-identities
 translation:
   status: current
-  source_hash: e53680a56ea06586cf071e7055aa5e4b8e0be1847bd15c1715de286cf4d39871
-  translator: omp
-  updated: "2026-07-23T10:10:53.335Z"
+  source_hash: 8b5cf2d7397e8330c768ebb20f2b8a12c1f299ca7166de4aeec60660cf96aef2
+  translator: claude
+  updated: "2026-10-03T00:00:00.000Z"
 ---
 ## 引言
 
@@ -77,7 +77,7 @@ i^3 &= -i
 \end{align}
 $$
 
-从四次幂起循环重复，因为 $i^4 = (i^2)^2 = 1$，从而对每个 $n$ 有 $i^{n+4} = i^n$。因此 $i^n$ 的值只依赖于 $n$ [模 $4$](../modules/) 的余数。
+从四次幂起循环重复，因为 $i^4 = (i^2)^2 = 1$，从而对每个 $n$ 有 $i^{n+4} = i^n$。因此 $i^n$ 的值只依赖于 $n$ [模 $4$](../modules/)的余数。
 
 现在根据下标的奇偶性拆分级数。对偶数项令 $n = 2k$，对奇数项令 $n = 2k+1$，则 $i$ 的相应幂分别为 $i^{2k} = (i^2)^k = (-1)^k$ 和 $i^{2k+1} = i \cdot (-1)^k$。两部分可以分别归并：
 
@@ -158,7 +158,7 @@ $$\cos\theta = \frac{e^{i\theta} + e^{-i\theta}}{2}$$
 
 $$\sin\theta = \frac{e^{i\theta} - e^{-i\theta}}{2i}$$
 
-这些公式是将三角函数推广到复变元的出发点。用同样的表达式对 $z \in \mathbb{C}$ 定义 $\cos z$ 和 $\sin z$，所得函数在 $\mathbb{R}$ 上与实余弦、实正弦一致，并继承指数函数的代数恒等式。这一视角统一了三角函数与双曲函数，因为作代换 $\theta = iy$ 即得 $\cos(iy) = \cosh y$ 与 $\sin(iy) = i\sinh y$，这种关系在[实数情形](../real-numbers/)中没有对应物。
+这些公式是将三角函数推广到复变元的出发点。用同样的表达式对 $z \in \mathbb{C}$ 定义 $\cos z$ 和 $\sin z$，所得函数在 $\mathbb{R}$ 上与实余弦、实正弦一致，并继承指数函数的代数恒等式。这一视角把三角函数与双曲余弦和[双曲正弦](../hyperbolic-sine-function/)联系起来，因为作代换 $\theta = iy$ 即得 $\cos(iy) = \cosh y$ 与 $\sin(iy) = i\sinh y$，这种关系在[实数情形](../real-numbers/)中没有对应物。
 
 欧拉公式的一个推论是正弦和余弦的[加法公式](../reduction-formulas-and-reference-angles/)的推导。由指数函数的乘法规律可得：
 

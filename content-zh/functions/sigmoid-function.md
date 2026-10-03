@@ -11,9 +11,9 @@ tags:
   - machine-learning
 translation:
   status: current
-  source_hash: bf26e302affc2758d86f943ea5c2727d1e0927e9db7738c79e46e6a7454dba16
-  translator: codex
-  updated: "2026-08-02T00:00:00.000Z"
+  source_hash: 31b5de93906846e34138330ed36109033ba726daf21d459ac20a283a88f35105
+  translator: claude
+  updated: "2026-10-03T00:00:00.000Z"
 ---
 ## 定义
 
@@ -116,7 +116,7 @@ $$
 
 ## 与双曲正切的关系
 
-Sigmoid 函数与[双曲正切](../hyperbolic-tangent-and-cotangent/) $\tanh$ 满足恒等式：
+Sigmoid 函数与[双曲正切](../hyperbolic-tangent-function/) $\tanh$ 满足恒等式：
 
 $$\sigma(x) = \frac{1 + \tanh\left(\dfrac{x}{2}\right)}{2}$$
 

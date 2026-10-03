@@ -13,9 +13,9 @@ tags:
   - two-variables
 translation:
   status: current
-  source_hash: 55a9f268a6c25a943cfa9c54a50f600d157dbdfde5e68c2144271d066aaa0f7c
-  translator: codex
-  updated: "2026-08-04T00:00:00.000Z"
+  source_hash: bc88867971b2bc0de5d0fc75b683c5e0c61f241b590ab76707e7c0e175b4af6c
+  translator: claude
+  updated: "2026-10-03T00:00:00.000Z"
 ---
 ## 引言
 
@@ -28,7 +28,7 @@ a_2x + b_2y = c_2
 \end{cases}
 $$
 
-在每个方程中，未知数的系数至少有一个非零。解是同时满足两个方程的有序对 $(x,y)$。含有两个变量的每个一次方程的[解集](../sets/)都是坐标平面中的一条[直线](../lines/)，所以方程组的解就是两条直线的公共点。
+在每个方程中，未知数的系数至少有一个非零。解是同时满足两个方程的有序对 $(x,y)$。含有两个变量的每个一次方程的[解集](../sets/)都是[坐标平面](../the-cartesian-coordinate-plane/)中的一条[直线](../lines/)，所以方程组的解就是两条直线的公共点。
 
 可能有三种结果。两条相交的不同直线有一个公共点，两条不同的平行线没有公共点，而重合直线的每个点都是公共点。这些情形的一般分类及其矩阵形式见[线性方程组](../systems-of-linear-equations/)一文。本文介绍三种求解并分类二元方程组解的方法。多一个未知数时对应的方法见[三元一次方程组](../systems-of-linear-equations-in-three-variables/)。
 

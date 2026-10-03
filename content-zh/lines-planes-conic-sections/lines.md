@@ -14,13 +14,13 @@ tags:
   - slope
 translation:
   status: current
-  source_hash: 362a1441957fdc996704fbeea9163b743039a46cafbe60abe4282eb3c548801c
-  translator: codex
-  updated: "2026-08-04T00:00:00.000Z"
+  source_hash: 2a995a43bb5580eed30760287507f53e8f56f26038dafc5cb15873fd0c3cb6f8
+  translator: claude
+  updated: "2026-10-03T00:00:00.000Z"
 ---
 ## 坐标平面中的直线
 
-直线是向两个相反方向无限延伸的点的集合，没有厚度，也没有端点。两个不同的点确定唯一一条直线。在笛卡尔平面上，直线是关于变量 $x$ 和 $y$ 的[一次方程](../linear-equations/)的[解集](../equations/)。
+直线是向两个相反方向无限延伸的点的集合，没有厚度，也没有端点。两个不同的点确定唯一一条直线。在[笛卡尔平面](../the-cartesian-coordinate-plane/)上，直线是关于变量 $x$ 和 $y$ 的[一次方程](../linear-equations/)的[解集](../equations/)。
 
 $$ax + by + c = 0$$
 

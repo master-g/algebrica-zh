@@ -10,9 +10,9 @@ tags:
   - trigonometry
 translation:
   status: current
-  source_hash: ed8ffd67925a4abf9ddc2d36f13f02117f287cab5a5605a2cf0fa6795c466579
-  translator: codex
-  updated: "2026-08-04T00:00:00.000Z"
+  source_hash: 09420f5632c0280e27e6f3ae824df3319654ad2c76d48b0f3cd99a27b3380722
+  translator: claude
+  updated: "2026-10-03T00:00:00.000Z"
 ---
 ## 双曲正弦与双曲余弦简介
 
@@ -280,7 +280,7 @@ $$
 
 ## 双曲正弦与双曲余弦函数
 
-双曲正弦函数 $f(x) = \sinh(x)$ 将每个[实数](../types-of-numbers/) $x$ 对应到一个由指数函数导出的值。与圆正弦不同，它不作振荡：当 $x$ 取绝对值很大的正值或负值时，其绝对值按指数速度增大；图像以斜率 $1$ 穿过原点。函数 $f(x) = \sinh(x)$ 在所有实数上都有定义，其值域也覆盖整个实数轴。
+[双曲正弦函数](../hyperbolic-sine-function/) $f(x) = \sinh(x)$ 将每个[实数](../types-of-numbers/) $x$ 对应到一个由指数函数导出的值。与圆正弦不同，它不作振荡：当 $x$ 取绝对值很大的正值或负值时，其绝对值按指数速度增大；图像以斜率 $1$ 穿过原点。函数 $f(x) = \sinh(x)$ 在所有实数上都有定义，其值域也覆盖整个实数轴。
 
 ![图 4](/assets/trigonometry/svg/hyperbolic-sine-and-cosine-4.zh.svg)
 
