@@ -122,6 +122,13 @@
       "changes": "Chinese labels and/or typography"
     },
     {
+      "path": "public/assets/differential-calculus-theorems/svg/cauchy-theorem-1.zh.svg",
+      "source": "https://github.com/antoniolupetti/algebrica/blob/5148aa263d37bcf6bbe7ec398a042d6c51b074dc/differential-calculus-theorems/svg/cauchy-theorem-1.svg",
+      "author": "Antonio Lupetti / Algebrica",
+      "license": "CC BY-NC 4.0",
+      "changes": "Chinese labels and/or typography"
+    },
+    {
       "path": "public/assets/differential-calculus-theorems/svg/darboux-theorem-1.zh.svg",
       "source": "https://github.com/antoniolupetti/algebrica/blob/5148aa263d37bcf6bbe7ec398a042d6c51b074dc/differential-calculus-theorems/svg/darboux-theorem-1.svg",
       "author": "Antonio Lupetti / Algebrica",
@@ -276,8 +283,22 @@
       "changes": "Chinese labels and/or typography"
     },
     {
+      "path": "public/assets/functions/svg/arccosine-function-1.zh.svg",
+      "source": "https://github.com/antoniolupetti/algebrica/blob/5148aa263d37bcf6bbe7ec398a042d6c51b074dc/functions/svg/arccosine-function-1.svg",
+      "author": "Antonio Lupetti / Algebrica",
+      "license": "CC BY-NC 4.0",
+      "changes": "Chinese labels and/or typography"
+    },
+    {
       "path": "public/assets/functions/svg/arccotangent-function-1.zh.svg",
       "source": "https://github.com/antoniolupetti/algebrica/blob/5148aa263d37bcf6bbe7ec398a042d6c51b074dc/functions/svg/arccotangent-function-1.svg",
+      "author": "Antonio Lupetti / Algebrica",
+      "license": "CC BY-NC 4.0",
+      "changes": "Chinese labels and/or typography"
+    },
+    {
+      "path": "public/assets/functions/svg/arcsine-function-1.zh.svg",
+      "source": "https://github.com/antoniolupetti/algebrica/blob/5148aa263d37bcf6bbe7ec398a042d6c51b074dc/functions/svg/arcsine-function-1.svg",
       "author": "Antonio Lupetti / Algebrica",
       "license": "CC BY-NC 4.0",
       "changes": "Chinese labels and/or typography"
@@ -416,6 +437,27 @@
       "changes": "Chinese labels and/or typography"
     },
     {
+      "path": "public/assets/functions/svg/floor-and-ceiling-functions-1.zh.svg",
+      "source": "https://github.com/antoniolupetti/algebrica/blob/5148aa263d37bcf6bbe7ec398a042d6c51b074dc/functions/svg/floor-and-ceiling-functions-1.svg",
+      "author": "Antonio Lupetti / Algebrica",
+      "license": "CC BY-NC 4.0",
+      "changes": "Chinese labels and/or typography"
+    },
+    {
+      "path": "public/assets/functions/svg/floor-and-ceiling-functions-2.zh.svg",
+      "source": "https://github.com/antoniolupetti/algebrica/blob/5148aa263d37bcf6bbe7ec398a042d6c51b074dc/functions/svg/floor-and-ceiling-functions-2.svg",
+      "author": "Antonio Lupetti / Algebrica",
+      "license": "CC BY-NC 4.0",
+      "changes": "Chinese labels and/or typography"
+    },
+    {
+      "path": "public/assets/functions/svg/floor-and-ceiling-functions-3.zh.svg",
+      "source": "https://github.com/antoniolupetti/algebrica/blob/5148aa263d37bcf6bbe7ec398a042d6c51b074dc/functions/svg/floor-and-ceiling-functions-3.svg",
+      "author": "Antonio Lupetti / Algebrica",
+      "license": "CC BY-NC 4.0",
+      "changes": "Chinese labels and/or typography"
+    },
+    {
       "path": "public/assets/functions/svg/functions-1.zh.svg",
       "source": "https://github.com/antoniolupetti/algebrica/blob/5148aa263d37bcf6bbe7ec398a042d6c51b074dc/functions/svg/functions-1.svg",
       "author": "Antonio Lupetti / Algebrica",
@@ -446,6 +488,27 @@
     {
       "path": "public/assets/functions/svg/gaussian-function-2.zh.svg",
       "source": "https://github.com/antoniolupetti/algebrica/blob/5148aa263d37bcf6bbe7ec398a042d6c51b074dc/functions/svg/gaussian-function-2.svg",
+      "author": "Antonio Lupetti / Algebrica",
+      "license": "CC BY-NC 4.0",
+      "changes": "Chinese labels and/or typography"
+    },
+    {
+      "path": "public/assets/functions/svg/heaviside-function-1.zh.svg",
+      "source": "https://github.com/antoniolupetti/algebrica/blob/5148aa263d37bcf6bbe7ec398a042d6c51b074dc/functions/svg/heaviside-function-1.svg",
+      "author": "Antonio Lupetti / Algebrica",
+      "license": "CC BY-NC 4.0",
+      "changes": "Chinese labels and/or typography"
+    },
+    {
+      "path": "public/assets/functions/svg/heaviside-function-2.zh.svg",
+      "source": "https://github.com/antoniolupetti/algebrica/blob/5148aa263d37bcf6bbe7ec398a042d6c51b074dc/functions/svg/heaviside-function-2.svg",
+      "author": "Antonio Lupetti / Algebrica",
+      "license": "CC BY-NC 4.0",
+      "changes": "Chinese labels and/or typography"
+    },
+    {
+      "path": "public/assets/functions/svg/heaviside-function-3.zh.svg",
+      "source": "https://github.com/antoniolupetti/algebrica/blob/5148aa263d37bcf6bbe7ec398a042d6c51b074dc/functions/svg/heaviside-function-3.svg",
       "author": "Antonio Lupetti / Algebrica",
       "license": "CC BY-NC 4.0",
       "changes": "Chinese labels and/or typography"
@@ -500,8 +563,99 @@
       "changes": "Chinese labels and/or typography"
     },
     {
+      "path": "public/assets/functions/svg/injective-surjective-and-bijective-functions-1.zh.svg",
+      "source": "https://github.com/antoniolupetti/algebrica/blob/5148aa263d37bcf6bbe7ec398a042d6c51b074dc/functions/svg/injective-surjective-and-bijective-functions-1.svg",
+      "author": "Antonio Lupetti / Algebrica",
+      "license": "CC BY-NC 4.0",
+      "changes": "Chinese labels and/or typography"
+    },
+    {
+      "path": "public/assets/functions/svg/injective-surjective-and-bijective-functions-2.zh.svg",
+      "source": "https://github.com/antoniolupetti/algebrica/blob/5148aa263d37bcf6bbe7ec398a042d6c51b074dc/functions/svg/injective-surjective-and-bijective-functions-2.svg",
+      "author": "Antonio Lupetti / Algebrica",
+      "license": "CC BY-NC 4.0",
+      "changes": "Chinese labels and/or typography"
+    },
+    {
+      "path": "public/assets/functions/svg/injective-surjective-and-bijective-functions-3.zh.svg",
+      "source": "https://github.com/antoniolupetti/algebrica/blob/5148aa263d37bcf6bbe7ec398a042d6c51b074dc/functions/svg/injective-surjective-and-bijective-functions-3.svg",
+      "author": "Antonio Lupetti / Algebrica",
+      "license": "CC BY-NC 4.0",
+      "changes": "Chinese labels and/or typography"
+    },
+    {
+      "path": "public/assets/functions/svg/injective-surjective-and-bijective-functions-4.zh.svg",
+      "source": "https://github.com/antoniolupetti/algebrica/blob/5148aa263d37bcf6bbe7ec398a042d6c51b074dc/functions/svg/injective-surjective-and-bijective-functions-4.svg",
+      "author": "Antonio Lupetti / Algebrica",
+      "license": "CC BY-NC 4.0",
+      "changes": "Chinese labels and/or typography"
+    },
+    {
+      "path": "public/assets/functions/svg/injective-surjective-and-bijective-functions-5.zh.svg",
+      "source": "https://github.com/antoniolupetti/algebrica/blob/5148aa263d37bcf6bbe7ec398a042d6c51b074dc/functions/svg/injective-surjective-and-bijective-functions-5.svg",
+      "author": "Antonio Lupetti / Algebrica",
+      "license": "CC BY-NC 4.0",
+      "changes": "Chinese labels and/or typography"
+    },
+    {
+      "path": "public/assets/functions/svg/injective-surjective-and-bijective-functions-6.zh.svg",
+      "source": "https://github.com/antoniolupetti/algebrica/blob/5148aa263d37bcf6bbe7ec398a042d6c51b074dc/functions/svg/injective-surjective-and-bijective-functions-6.svg",
+      "author": "Antonio Lupetti / Algebrica",
+      "license": "CC BY-NC 4.0",
+      "changes": "Chinese labels and/or typography"
+    },
+    {
       "path": "public/assets/functions/svg/inverse-function-1.zh.svg",
       "source": "https://github.com/antoniolupetti/algebrica/blob/5148aa263d37bcf6bbe7ec398a042d6c51b074dc/functions/svg/inverse-function-1.svg",
+      "author": "Antonio Lupetti / Algebrica",
+      "license": "CC BY-NC 4.0",
+      "changes": "Chinese labels and/or typography"
+    },
+    {
+      "path": "public/assets/functions/svg/irrational-functions-1.zh.svg",
+      "source": "https://github.com/antoniolupetti/algebrica/blob/5148aa263d37bcf6bbe7ec398a042d6c51b074dc/functions/svg/irrational-functions-1.svg",
+      "author": "Antonio Lupetti / Algebrica",
+      "license": "CC BY-NC 4.0",
+      "changes": "Chinese labels and/or typography"
+    },
+    {
+      "path": "public/assets/functions/svg/irrational-functions-2.zh.svg",
+      "source": "https://github.com/antoniolupetti/algebrica/blob/5148aa263d37bcf6bbe7ec398a042d6c51b074dc/functions/svg/irrational-functions-2.svg",
+      "author": "Antonio Lupetti / Algebrica",
+      "license": "CC BY-NC 4.0",
+      "changes": "Chinese labels and/or typography"
+    },
+    {
+      "path": "public/assets/functions/svg/irrational-functions-3.zh.svg",
+      "source": "https://github.com/antoniolupetti/algebrica/blob/5148aa263d37bcf6bbe7ec398a042d6c51b074dc/functions/svg/irrational-functions-3.svg",
+      "author": "Antonio Lupetti / Algebrica",
+      "license": "CC BY-NC 4.0",
+      "changes": "Chinese labels and/or typography"
+    },
+    {
+      "path": "public/assets/functions/svg/irrational-functions-4.zh.svg",
+      "source": "https://github.com/antoniolupetti/algebrica/blob/5148aa263d37bcf6bbe7ec398a042d6c51b074dc/functions/svg/irrational-functions-4.svg",
+      "author": "Antonio Lupetti / Algebrica",
+      "license": "CC BY-NC 4.0",
+      "changes": "Chinese labels and/or typography"
+    },
+    {
+      "path": "public/assets/functions/svg/piecewise-functions-1.zh.svg",
+      "source": "https://github.com/antoniolupetti/algebrica/blob/5148aa263d37bcf6bbe7ec398a042d6c51b074dc/functions/svg/piecewise-functions-1.svg",
+      "author": "Antonio Lupetti / Algebrica",
+      "license": "CC BY-NC 4.0",
+      "changes": "Chinese labels and/or typography"
+    },
+    {
+      "path": "public/assets/functions/svg/piecewise-functions-2.zh.svg",
+      "source": "https://github.com/antoniolupetti/algebrica/blob/5148aa263d37bcf6bbe7ec398a042d6c51b074dc/functions/svg/piecewise-functions-2.svg",
+      "author": "Antonio Lupetti / Algebrica",
+      "license": "CC BY-NC 4.0",
+      "changes": "Chinese labels and/or typography"
+    },
+    {
+      "path": "public/assets/functions/svg/piecewise-functions-3.zh.svg",
+      "source": "https://github.com/antoniolupetti/algebrica/blob/5148aa263d37bcf6bbe7ec398a042d6c51b074dc/functions/svg/piecewise-functions-3.svg",
       "author": "Antonio Lupetti / Algebrica",
       "license": "CC BY-NC 4.0",
       "changes": "Chinese labels and/or typography"
@@ -523,6 +677,34 @@
     {
       "path": "public/assets/functions/svg/polynomial-function-3.zh.svg",
       "source": "https://github.com/antoniolupetti/algebrica/blob/5148aa263d37bcf6bbe7ec398a042d6c51b074dc/functions/svg/polynomial-function-3.svg",
+      "author": "Antonio Lupetti / Algebrica",
+      "license": "CC BY-NC 4.0",
+      "changes": "Chinese labels and/or typography"
+    },
+    {
+      "path": "public/assets/functions/svg/power-function-1.zh.svg",
+      "source": "https://github.com/antoniolupetti/algebrica/blob/5148aa263d37bcf6bbe7ec398a042d6c51b074dc/functions/svg/power-function-1.svg",
+      "author": "Antonio Lupetti / Algebrica",
+      "license": "CC BY-NC 4.0",
+      "changes": "Chinese labels and/or typography"
+    },
+    {
+      "path": "public/assets/functions/svg/power-function-2.zh.svg",
+      "source": "https://github.com/antoniolupetti/algebrica/blob/5148aa263d37bcf6bbe7ec398a042d6c51b074dc/functions/svg/power-function-2.svg",
+      "author": "Antonio Lupetti / Algebrica",
+      "license": "CC BY-NC 4.0",
+      "changes": "Chinese labels and/or typography"
+    },
+    {
+      "path": "public/assets/functions/svg/power-function-3.zh.svg",
+      "source": "https://github.com/antoniolupetti/algebrica/blob/5148aa263d37bcf6bbe7ec398a042d6c51b074dc/functions/svg/power-function-3.svg",
+      "author": "Antonio Lupetti / Algebrica",
+      "license": "CC BY-NC 4.0",
+      "changes": "Chinese labels and/or typography"
+    },
+    {
+      "path": "public/assets/functions/svg/power-function-4.zh.svg",
+      "source": "https://github.com/antoniolupetti/algebrica/blob/5148aa263d37bcf6bbe7ec398a042d6c51b074dc/functions/svg/power-function-4.svg",
       "author": "Antonio Lupetti / Algebrica",
       "license": "CC BY-NC 4.0",
       "changes": "Chinese labels and/or typography"
@@ -768,6 +950,13 @@
     {
       "path": "public/assets/integrals/svg/integration-by-parts-1.zh.svg",
       "source": "https://github.com/antoniolupetti/algebrica/blob/5148aa263d37bcf6bbe7ec398a042d6c51b074dc/integrals/svg/integration-by-parts-1.svg",
+      "author": "Antonio Lupetti / Algebrica",
+      "license": "CC BY-NC 4.0",
+      "changes": "Chinese labels and/or typography"
+    },
+    {
+      "path": "public/assets/integrals/svg/mean-value-theorem-for-integrals-1.zh.svg",
+      "source": "https://github.com/antoniolupetti/algebrica/blob/5148aa263d37bcf6bbe7ec398a042d6c51b074dc/integrals/svg/mean-value-theorem-for-integrals-1.svg",
       "author": "Antonio Lupetti / Algebrica",
       "license": "CC BY-NC 4.0",
       "changes": "Chinese labels and/or typography"
@@ -1074,6 +1263,13 @@
       "changes": "Chinese labels and/or typography"
     },
     {
+      "path": "public/assets/lines-planes-conic-sections/svg/introduction-to-conics-1.zh.svg",
+      "source": "https://github.com/antoniolupetti/algebrica/blob/5148aa263d37bcf6bbe7ec398a042d6c51b074dc/lines-planes-conic-sections/svg/introduction-to-conics-1.svg",
+      "author": "Antonio Lupetti / Algebrica",
+      "license": "CC BY-NC 4.0",
+      "changes": "Chinese labels and/or typography"
+    },
+    {
       "path": "public/assets/lines-planes-conic-sections/svg/lines-1.zh.svg",
       "source": "https://github.com/antoniolupetti/algebrica/blob/5148aa263d37bcf6bbe7ec398a042d6c51b074dc/lines-planes-conic-sections/svg/lines-1.svg",
       "author": "Antonio Lupetti / Algebrica",
@@ -1244,6 +1440,13 @@
     {
       "path": "public/assets/probability-and-statistics/svg/continuous-random-variables-1.zh.svg",
       "source": "https://github.com/antoniolupetti/algebrica/blob/5148aa263d37bcf6bbe7ec398a042d6c51b074dc/probability-and-statistics/svg/continuous-random-variables-1.svg",
+      "author": "Antonio Lupetti / Algebrica",
+      "license": "CC BY-NC 4.0",
+      "changes": "Chinese labels and/or typography"
+    },
+    {
+      "path": "public/assets/probability-and-statistics/svg/student-t-distribution-1.zh.svg",
+      "source": "https://github.com/antoniolupetti/algebrica/blob/5148aa263d37bcf6bbe7ec398a042d6c51b074dc/probability-and-statistics/svg/student-t-distribution-1.svg",
       "author": "Antonio Lupetti / Algebrica",
       "license": "CC BY-NC 4.0",
       "changes": "Chinese labels and/or typography"
