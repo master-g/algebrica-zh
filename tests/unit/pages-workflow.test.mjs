@@ -23,7 +23,7 @@ describe('GitHub Pages workflow', () => {
     assert.equal(
       workflow.jobs.validate.steps.find((step) => step.name === 'Run dual-base development smoke gates').env
         .DEV_SMOKE_STARTUP_TIMEOUT_MS,
-      600000,
+      1200000,
     );
     assert.match(workflowText, /SITE_BASE: \/\$\{\{ github\.event\.repository\.name \}\}\//);
     assert.match(workflowText, /npm run check:public-release/);

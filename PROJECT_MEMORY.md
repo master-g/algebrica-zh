@@ -12,6 +12,8 @@
 - [2026-10-03] sections.yaml 新增 introduction 分区（order 0，导言）以修复 learning-mathematics 的 /category/introduction/ 断链；[slug].astro 用 ?? 取 order，否则 0 会显示成“—”
 - [2026-10-03] 单行 $$…$$ 公式全站不居中：site.css 中 p > mjx-container:not([display]) 的 inline-block 规则覆盖了 p.standalone-math 的居中规则（definite-integrals 等未改动文章同样如此），属既有样式问题
 
+- [2026-10-03] CI 冒烟慢的原因：astro dev 启动时整套内容（英文约 294 篇 + 中文约 279 篇）带 MathJax 全量渲染，换 SITE_BASE 会清空内容缓存，所以两种前缀加构建共渲染三遍；本地每遍约 70 秒，CI 约慢 6 倍（构建同步实测 6.5 分钟），单遍贴近旧的 600 秒上限，已调到 1200 秒
+
 ## 失败尝试
 
 <!-- 追加：走不通的路径及原因，每条一行。 -->
@@ -19,12 +21,11 @@
 
 ## 上次会话
 <!-- 整块改写：分支、验证命令及实际结果、停在何处；任务细节只留一行指向证据目录。 -->
-- [2026-10-03] main，已提交未推送：上游同步至 5148aa2（重写 12 篇、新译 2 篇、同步参考文献页），并新增导言分区
-  test:unit 191 通过；build --force、rendered-content、check:public-release、test:smoke、translation-status --verify 均通过（current 219 / stale 59 / missing 18）
-  14 篇文章桌面与移动视口无溢出、无坏图、无公式错误
+- [2026-10-03] main，已推送：上游同步至 5148aa2、导言分区、冒烟启动上限调到 1200 秒；部署结果以 gh run list --workflow deploy-pages.yml 为准
+  本地 test:unit、build --force、check:public-release、test:smoke、translation-status --verify 均通过（current 219 / stale 59 / missing 18）
 
 ## 下次运行
 <!-- 整块改写：接下来的任务和优先级，含仍受阻的项。 -->
-- [2026-10-03] 推送需用户确认；上次 main 的 CI 在 smoke 步骤启动超时（600 秒），推送后留意是否复现
+- [2026-10-03] 冒烟耗时随内容线性增长，调上限只是缓解；可选的根治方向：CI 只测部署用的前缀、缓存 .astro、或缩小英文集合的渲染范围
   待决：单行公式居中的样式修复；存量 59 篇过期、18 篇缺失译文
   squeeze-theorem 上游把 squeeze-theorem-3.svg 引用了两次、-4.svg 未引用，译文照搬，上游修正后跟进
