@@ -14,7 +14,7 @@
             <line x1="86.5" y1="130.5" x2="86.5" y2="221.5" stroke="#BEB8B7" stroke-linecap="round" stroke-linejoin="round"></line>
             <line x1="190.5" y1="161.5" x2="190.5" y2="221.5" stroke="#BEB8B7" stroke-linecap="round" stroke-linejoin="round"></line>
             <text font-size="11" font-weight="normal" line-spacing="13" fill="#636060">
-                    <tspan x="14.746" y="233.362015">该区域位于 x 轴上方，</tspan>
+                    <tspan x="14.746" y="233.362015">该区域位于横轴上方，</tspan>
                     <tspan x="18.893" y="246.362015">因此对 F(x) 的贡献</tspan>
                     <tspan x="22.831" y="259.362015">为正。</tspan>
                 </text>

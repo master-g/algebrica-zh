@@ -12,415 +12,378 @@ tags:
   - range
 translation:
   status: current
-  source_hash: 11d0eae5d98999c9848ba5116cb92b6ff98641cdf5859d5a8b19d2639c06f457
-  translator: codex
-  updated: "2026-08-11T00:00:00.000Z"
+  source_hash: 777141ff7240897b82f1d90295d87d91bd5b954a4a4390be3b77c65ebb988089
+  translator: claude
+  updated: "2026-10-03T00:00:00.000Z"
 ---
 ## 定义
 
-本文讨论定义域 $A \subseteq \mathbb{R}$ 和陪域 $B \subseteq \mathbb{R}$ 均非空的函数；二者都是[实数](../real-numbers/)的[子集](../sets/)。从 $A$ 到 $B$ 的函数 $f$，为每个 $x \in A$ 指定唯一的值 $f(x) \in B$。这种指定写成：
+设 $A$ 和 $B$ 是[实数](../real-numbers/)的非空[子集](../sets/)。$A$ 的元素是输入，$B$ 的元素是可能的输出。函数 $f$ 给每个 $x \in A$ 指定唯一一个值 $f(x) \in B$。记作：
 
 $$
 f \colon A \to B
 $$
 
-+ 集合 $A$ 称为函数的[定义域](../determining-the-domain-of-a-function/)；
-+ 集合 $B$ 称为陪域；
-+ 对每个 $x \in A$，函数指定唯一的值 $f(x) \in B$；
-+ 当输出记作 $y = f(x)$ 时，$x$ 是自变量，$y$ 是因变量。
++ 集合 $A$ 是函数的[定义域](../determining-the-domain-of-a-function/)。
++ 集合 $B$ 是陪域。
++ 对每个 $x \in A$，值 $f(x) \in B$ 是 $x$ 在 $f$ 下的像。
++ $x$ 是自变量，$y=f(x)$ 是因变量。
 
-例如，定义函数 $f \colon \mathbb{R} \to \mathbb{R}$ 为 $f(x) = 2x - 1$。记号 $x \mapsto 2x - 1$ 表示同一个对应关系。用 $3$ 代入 $x$ 得 $f(3) = 2 \cdot 3 - 1 = 5$。符号 $f$ 表示整个函数，$f(3)$ 表示该函数的一个值。
+一次法则 $2x - 1$ 定义了函数：
 
-这种对应关系可以由公式、表格、图示或[分段规则](../piecewise-functions/)指定。
+$$
+f \colon \mathbb{R} \to \mathbb{R}, \quad f(x) = 2x - 1
+$$
+
+写成 $x \mapsto 2x - 1$ 表示同一个对应，只是没有给函数命名。在输入 $3$ 处，它的值为：
+
+$$
+f(3) = 2 \cdot 3 - 1 = 5
+$$
+
+符号 $f$ 表示整个对应，而 $f(3)$ 是特定输入 $3$ 的像。
 
 ![图 1](/assets/functions/svg/functions-1.zh.svg)
 
-> 满足存在性和唯一性条件的规则定义了一个定义良好的函数。如果一个关系没有为 $A$ 中某个元素赋值，或为它赋予多个值，则它不是函数。
+> 唯一性是对每个固定的输入要求的。不同的输入可以有相同的像。
 
 - - -
 
-函数 $f$ 的图像是由所有把输入与输出配对的有序对组成的集合：
+函数 $f \colon A \to B$ 可能具有下列性质：
 
-$$
-G_f = \{\ (x, f(x)) \mid x \in A \ \}
-$$
++ 如果 $B$ 的每个元素至多是 $A$ 中一个元素的像，也就是说，对任意满足 $x_1 \neq x_2$ 的 $x_1, x_2 \in A$ 都有 $f(x_1) \neq f(x_2)$，则称函数是单射。等价地，对每个 $y \in B$，至多有一个 $x \in A$ 使得 $f(x) = y$。
++ 如果 $B$ 的每个元素至少是 $A$ 中一个元素的像，也就是说，对每个 $y \in B$ 至少存在一个 $x \in A$ 使得 $f(x) = y$，则称函数是满射。等价地，$f(A) = B$。
++ 如果函数既是单射又是满射，也就是说，对每个 $y \in B$ 存在唯一的 $x \in A$ 使得 $f(x) = y$，则称函数是双射，或等价地称为可逆的。
 
-因此 $G_f \subseteq A \times B$，并且每个 $x \in A$ 恰好作为一个有序对的第一坐标出现。
-
-- - -
-
-函数 $f \colon A \to B$ 可以具有下列性质：
-
-+ 如果 $B$ 中每个元素至多是 $A$ 中一个元素的像，则称该函数为单射；也就是说，对任意 $x_1, x_2 \in A$，只要 $x_1 \neq x_2$，就有 $f(x_1) \neq f(x_2)$。等价地，对每个 $y \in B$，至多存在一个 $x \in A$ 使 $f(x) = y$；
-+ 如果 $B$ 中每个元素至少是 $A$ 中一个元素的像，则称该函数为满射；也就是说，对每个 $y \in B$，至少存在一个 $x \in A$ 使 $f(x) = y$。等价地，$f(A) = B$；
-+ 如果函数既是单射又是满射，则称它为双射；也就是说，对每个 $y \in B$，存在唯一的 $x \in A$ 使 $f(x) = y$。
-
-这三个条件、它们在图像上的含义及其与单侧逆的关系详见[单射、满射与双射函数](../injective-surjective-and-bijective-functions/)。
-
-从 $\mathbb{R}$ 到 $\mathbb{Z}$ 的[向下取整函数与向上取整函数](../floor-and-ceiling-functions/)都是满射，但不是单射。对任一函数，每个整数的原像都是长度为 $1$ 的半开区间。
-
-双射 $A \to B$ 证明 $|A| = |B|$，单射 $A \to B$ 证明 $|A| \leq |B|$。[基数与可数集](../cardinality-and-countable-sets/)条目利用这些映射比较无限集合，并建立可数性判据。
+这些性质在[单射、满射与双射函数](../injective-surjective-and-bijective-functions/)条目中有详细讨论。
 
 - - -
 
-恒等函数和常值函数是最简单的两种情形。集合 $A$ 上的恒等函数把每个元素映射到自身：
+每个集合 $A$ 都有一个恒等函数。它在任意 $x \in A$ 处的值就是 $x$ 本身：
 
 $$
 \mathrm{id}_A \colon A \to A, \quad \mathrm{id}_A(x) = x
 $$
 
-它是双射，因为不同的输入给出不同的输出，并且 $A$ 中每个元素都能取到。对固定值 $c \in B$，从 $A$ 到 $B$ 的常值函数定义为：
+它是双射，因为不同的输入给出不同的输出，并且 $A$ 的每个元素都被取到。对固定的值 $c \in B$，从 $A$ 到 $B$ 的常值函数定义为：
 
 $$
 f \colon A \to B, \quad f(x) = c
 $$
 
-当 $A$ 含有多个元素时，常值函数不是单射；当且仅当 $B = \{\ c \ \}$ 时，它是满射。
+当 $A$ 的元素多于一个时，常值函数不是单射；它是满射恰好当 $B = \{\ c \ \}$。
 
 - - -
 
-函数 $f \colon A \to B$ 是双射，当且仅当它有双侧逆，即存在函数 $g \colon B \to A$，使得：
-
-$$(g \circ f)(x) = x, \quad \forall \ x \in A$$
-$$(f \circ g)(y) = y, \quad \forall \ y \in B$$
-
-这里 $(g \circ f)(x) = g(f(x))$。等式右侧分别是 $A$ 和 $B$ 上的恒等函数，因此两个条件可以写成 $g \circ f = \mathrm{id}_A$ 和 $f \circ g = \mathrm{id}_B$。只要这样的函数 $g$ 存在，它就是唯一的。它是 $f$ 的[逆函数](../inverse-function/)，记作 $f^{-1}$。
-
-> 对任意满足 $a > 0$ 且 $a \neq 1$ 的底数，从 $\mathbb{R}$ 到 $(0,+\infty)$ 的[指数函数](../exponential-function/) $x \mapsto a^x$，与从 $(0,+\infty)$ 到 $\mathbb{R}$ 的[对数函数](../logarithmic-function/) $\log_a$ 互为逆函数。
-
-一个函数可能在整个 $A$ 上不是单射，但仍然可以在较小的定义域上求逆。给定 $E \subseteq A$，限制 $f|_E$ 是在 $E$ 的每一点都与 $f$ 一致的函数：
+给定 $E \subseteq A$，$f \colon A \to B$ 在 $E$ 上的限制定义为：
 
 $$
 f|_E \colon E \to B, \quad f|_E(x) = f(x)
 $$
 
-如果 $f$ 在 $E$ 上是单射，则同一个对应关系以 $f(E)$ 为陪域时，定义了从 $E$ 到 $f(E)$ 的双射，因此存在逆函数。正弦函数在 $\mathbb{R}$ 上不是单射。把它限制到 $[-\pi/2, \pi/2]$，并把陪域取为 $[-1, 1]$，得到：
-
-$$
-\sin|_{[-\pi/2, \pi/2]} \colon [-\pi/2, \pi/2] \to [-1, 1]
-$$
-
-这个限制是双射，其逆函数是[反正弦函数](../arcsine-function/) $\arcsin \colon [-1, 1] \to [-\pi/2, \pi/2]$。
-
-## 什么不是函数
-
-关系 $R \subseteq A \times B$ 只有在每个 $x \in A$ 都恰好对应一个 $y \in B$ 时，才定义从 $A$ 到 $B$ 的函数。如果某个 $x$ 没有对应值，或有多个对应值，这个关系就不满足函数的条件。
-
-![图 2](/assets/functions/svg/functions-2.zh.svg)
-
-图中显示了第二种失败情形。单个元素 $x_0$ 对应陪域中的两个不同值，因此该关系不是函数。所需的存在性和唯一性条件为：
-
-$$
-\forall x \in A,\ \exists! y \in B:\ (x, y) \in R
-$$
-
-图示关系同时包含 $(x_0, y_1)$ 和 $(x_0, y_2)$，二者都属于 $R$，并且 $y_1 \neq y_2$，所以它违反唯一性。下面的表格给出一个数值例子：
-
-| X | -3 |  1 | -3 |  5 |  2 |
-|----|----|----|----|----|----|
-| Y |  7 |  4 | 10 | -2 |  8 |
-
-这个关系不是函数，因为 $x = -3$ 同时对应 $7$ 和 $10$，而不是恰好对应一个值。
+限制定义域可以使一个非单射的函数变成单射。如果 $f|_E$ 是单射，那么以 $f(E)$ 为陪域的同一个对应定义了从 $E$ 到 $f(E)$ 的双射，因而有[反函数](../inverse-function/)。
 
 - - -
 
-平面曲线在其向 $x$ 轴投影所得的集合上是函数图像，当且仅当每条竖直线与它至多相交于一点。这个判据称为垂线测试。
+$f$ 的图像是有序对 $(x, f(x))$ 的集合，这些有序对是把每个输入与指定给它的输出配对得到的：
+
+$$
+G_f = \{\ (x, f(x)) \mid x \in A \ \}
+$$
+
+于是 $G_f \subseteq A \times B$，并且每个 $x \in A$ 恰好作为一个有序对的第一个坐标出现。
+
+## 什么不是函数
+
+关系 $R \subseteq A \times B$ 是从 $A$ 到 $B$ 的函数，仅当每个 $x \in A$ 恰好与一个值 $y \in B$ 相关联。
+
+![图 2](/assets/functions/svg/functions-2.zh.svg)
+
+在图中，单个元素 $x_0$ 对应陪域中两个不同的值，所以这个关系不是函数。用形式化的语言说，所要求的存在唯一性条件是：
+
+$$
+\forall \ x \in A,\ \exists! \ y \in B\ \vert \ (x, y) \in R
+$$
+
+在图示的关系中，$(x_0, y_1)$ 和 $(x_0, y_2)$ 都属于 $R$，且 $y_1 \neq y_2$，这违反了唯一性。下表中出现了同样的问题：
+
+| X  | -3 |  1 | -3 |  5 |  2 |
+|----|----|----|----|----|----|
+| Y  |  7 |  4 | 10 | -2 |  8 |
+
+这个关系不是函数，因为 $x = -3$ 同时与 $7$ 和 $10$ 相关联，而不是恰好与一个值相关联。
+
+- - -
+
+要判断平面上的一条曲线是否是定义在它到 $x$ 轴的投影上的某个函数的图像，可以用竖线检验法：曲线通过检验，恰好当每条竖直线与曲线至多交于一点。
 
 ![图 3](/assets/functions/svg/functions-3.zh.svg)
 
-图中左侧的曲线是[抛物线](../parabola/)，表示一个函数，因为每个 $x$ 都对应唯一的 $y$；右侧的曲线不是函数，因为对于 $x_2$，$y$ 有多个可能值。
+左边的曲线是一条[抛物线](../parabola/)，它是函数的图像，因为每个 $x$ 恰好对应一个 $y$。右边的曲线不是函数的图像，因为 $x_2$ 对应不止一个 $y$ 值。
 
 ## 陪域与值域的区别
 
-对函数 $f \colon A \to B$，陪域是声明的目标集合 $B$。
+对于函数 $f \colon A \to B$，陪域是事先指明的目标集合 $B$。
 
-值域（或像集）是函数实际取得的值组成的集合，即 $f(A)$，并且总是 $B$ 的子集。
+$f$ 的值域，也称为函数的像，是所取到的值的集合 $f(A)$。它总是 $B$ 的子集。
 
-考虑函数 $f \colon \mathbb{R} \to \mathbb{R}$，其中 $f(x) = x^2$。它的陪域是 $\mathbb{R}$，值域是 $[0,+\infty)$，所以它不是满射。保持同一对应规则并把陪域改为 $[0,+\infty)$，所得函数是满射，但不是单射，因为 $f(-1) = f(1) = 1$。如果定义域和陪域都取为 $[0,+\infty)$，同一公式定义一个双射。
+考虑由 $f(x) = x^2$ 定义的函数 $f \colon \mathbb{R} \to \mathbb{R}$。它的陪域是 $\mathbb{R}$，而值域是 $[0, +\infty)$，所以它不是满射。以 $[0, +\infty)$ 为陪域的同一个对应定义了一个满射函数，但它不是单射，因为 $f(-1) = f(1) = 1$。当定义域和陪域都取为 $[0, +\infty)$ 时，同一个法则定义了一个双射。
 
-更一般地，子集 $E \subseteq A$ 的像是该子集各点产生的输出集合：
+对于子集 $E \subseteq A$，它的像定义为：
 
 $$
 f(E) = \{\ f(x) \mid x \in E \ \}
 $$
 
-因此值域就是整个定义域的像。反过来，子集 $F \subseteq B$ 的原像定义为：
+取 $E = A$ 就得到值域 $f(A)$。对于子集 $F \subseteq B$，它的原像定义为：
 
 $$
 f^{-1}(F) = \{\ x \in A \mid f(x) \in F \ \}
 $$
 
-记号 $f^{-1}(F)$ 表示一个集合，并不要求 $f$ 可逆。函数 $f \colon A \to f(A)$ 是满射，因为 $f(A)$ 中每个元素按构造都能取到。
+记号 $f^{-1}(F)$ 表示一个集合，并不要求 $f$ 可逆。函数 $f \colon A \to f(A)$ 是满射，因为按照构造，$f(A)$ 的每个元素都被取到。
 
 ## 函数相等与零点
 
-按本文采用的约定，定义域和陪域都是函数数据的一部分。两个函数相等，是指这些集合相同，并且函数在每一点的值相同。对 $f,g \colon D \to B$，逐点条件为：
+按照这里采用的约定，定义域和陪域是函数的组成部分。当这些集合相同，并且两个函数在每一点处的值都相同时，两个函数相等。对于 $f,g \colon D \to B$，逐点的条件是：
 
 $$
 f(x) = g(x) \quad \forall \ x \in D
 $$
 
-如果点 $a \in D$ 使函数在该点为零：
+如果函数在点 $a \in D$ 处为零，则称该点是 $f$ 的零点：
 
 $$
 f(a) = 0
 $$
 
-就称该点为 $f$ 的零点。此时函数图像在点 $(a,0)$ 处与 $x$ 轴相交。求零点等价于求解[方程](../equations/) $f(x) = 0$。在[符号分析](../sign-analysis-in-inequalities/)中，每个零点都必须作为正负区间的潜在边界来检查，但函数符号不一定在该点改变。
+求零点相当于解[方程](../equations/) $f(x)=0$。每个解 $a$ 确定了图像与 $x$ 轴的一个交点 $(a,0)$。在[符号分析](../sign-analysis-in-inequalities/)中，每个零点都必须作为 $f$ 取正值的区间与取负值的区间之间可能的分界点来考察。符号在零点处不一定改变，因为图像可能与轴相切后仍留在同一侧。
 
-## 对称函数
+## 对称函数与有界函数
 
-[奇偶函数](../even-and-odd-functions/)描述函数关于原点反射时的行为。设 $A \subseteq \mathbb{R}$ 是关于原点对称的定义域，即 $x \in A \Rightarrow -x \in A$。函数 $f : A \to \mathbb{R}$ 称为：
+[偶函数和奇函数](../even-and-odd-functions/)描述函数在变换 $x \mapsto -x$ 下的行为。设 $A \subseteq \mathbb{R}$ 关于原点对称，即 $x \in A \Rightarrow -x \in A$。对于函数 $f \colon A \to \mathbb{R}$，两种情形是：
 
-+ 偶函数，如果对所有 $x \in A$ 都有 $f(-x) = f(x)$；
-+ 奇函数，如果对所有 $x \in A$ 都有 $f(-x) = -f(x)$。
++ 如果对所有 $x \in A$ 都有 $f(-x) = f(x)$，则函数是偶函数（关于 $y$ 轴对称）。
++ 如果对所有 $x \in A$ 都有 $f(-x) = -f(x)$，则函数是奇函数（关于原点对称）
 
-偶函数的图像关于 $y$ 轴对称，奇函数的图像关于原点对称。对[幂函数](../power-function/) $f(x) = x^n$，其中 $n$ 是正整数，恒等式 $f(-x) = (-1)^n x^n$ 表明：$n$ 为偶数时 $f$ 恰为偶函数，$n$ 为奇数时 $f$ 恰为奇函数。
+- - -
 
-## 有界函数
-
-对函数 $f \colon A \to \mathbb{R}$，其中 $A \subseteq \mathbb{R}$，有界性定义如下：
-
-+ 有上界，如果存在 $M \in \mathbb{R}$，使得对所有 $x \in A$ 都有 $f(x) \leq M$；
-+ 有下界，如果存在 $m \in \mathbb{R}$，使得对所有 $x \in A$ 都有 $m \leq f(x)$；
-+ 有界，如果同时满足上述两个条件，即对所有 $x \in A$ 都有 $m \leq f(x) \leq M$。
-
-有界表示值域包含在某个[有界区间](../intervals/) $[m,M]$ 中，并不意味着函数存在全局[最大值或最小值](../maximum-minimum-and-inflection-points/)。
-
-全局最大值是函数能够取到的[上界](../supremum-and-infimum/)，全局最小值是函数能够取到的下界。有界函数可能两者都不存在。[反正切函数](../arctangent-and-arccotangent/)就是一个例子：
+对于函数 $f \colon A \to \mathbb{R}$（$A \subseteq \mathbb{R}$），如果存在 $m, M \in \mathbb{R}$ 使得下式成立，则称函数有界：
 
 $$
-f(x) = \arctan x
+m \leq f(x) \leq M \quad \forall \ x \in A
 $$
 
-对每个实数 $x$，它满足 $-\frac{\pi}{2} < \arctan x < \frac{\pi}{2}$，所以它有界。它没有全局最大值或全局最小值，因为当 $x \to +\infty$ 时，$\arctan x \to \frac{\pi}{2}$；当 $x \to -\infty$ 时，$\arctan x \to -\frac{\pi}{2}$，但两个极限值都取不到。
+如果存在 $M \in \mathbb{R}$ 使得对每个 $x \in A$ 都有 $f(x) \leq M$，则函数有上界；如果存在 $m \in \mathbb{R}$ 使得对每个 $x \in A$ 都有 $m \leq f(x)$，则函数有下界。
 
-## 单调函数
+有界意味着值域落在某个[有界区间](../intervals/) $[m, M]$ 内。它并不蕴含全局[最大值或最小值](../maximum-minimum-and-inflection-points/)的存在。全局最大值是函数取到的[上界](../supremum-and-infimum/)，全局最小值是函数取到的下界（[反正切](../arctangent-function/)就是一个例子）。
 
-[递增、递减与单调函数](../increasing-and-decreasing-functions/)比较有序点处的函数值。对函数 $f \colon A \to \mathbb{R}$，下面前四项中的不等式都必须对任意满足 $x_1 < x_2$ 的 $x_1,x_2 \in A$ 成立：
+## 单调函数与周期函数
 
-+ 递增函数，如果 $f(x_1) \leq f(x_2)$；
-+ 严格递增函数，如果 $f(x_1) < f(x_2)$；
-+ 递减函数，如果 $f(x_1) \geq f(x_2)$；
-+ 严格递减函数，如果 $f(x_1) > f(x_2)$；
-+ 单调函数，如果它在整个定义域上递增或递减；
-+ 严格单调函数，如果它在整个定义域上严格递增或严格递减。
+[递增、递减与单调函数](../increasing-and-decreasing-functions/)比较函数在有序的点处的值。对于函数 $f \colon A \to \mathbb{R}$，下面前四个定义中的不等式都必须对每一对满足 $x_1 < x_2$ 的 $x_1, x_2 \in A$ 成立：
 
-## 周期函数
++ 如果 $f(x_1) \leq f(x_2)$，则函数递增。
++ 如果 $f(x_1) < f(x_2)$，则函数严格递增。
++ 如果 $f(x_1) \geq f(x_2)$，则函数递减。
++ 如果 $f(x_1) > f(x_2)$，则函数严格递减。
++ 如果函数在整个定义域上递增或递减，则它是单调的。
++ 如果函数在整个定义域上严格递增或严格递减，则它是严格单调的。
 
-函数 $f \colon X \to \mathbb{R}$ 称为周期函数，是指存在 $T > 0$，使平移 $x \mapsto x+T$ 把 $X$ 双射到自身，并且对每个 $x \in X$ 都有：
+- - -
+
+对于函数 $f \colon X \to \mathbb{R}$，如果存在 $T > 0$，使得平移 $x \mapsto x + T$ 把 $X$ 映成它自身，并且下面的恒等式对每个 $x \in X$ 成立，则称函数是周期函数：
 
 $$
 f(x + T) = f(x)
 $$
 
-每个满足这些条件的正数 $T$ 都是 $f$ 的周期。如果所有正周期中存在最小元素，该元素称为基本周期。[正弦函数和余弦函数](../sine-and-cosine/)的基本周期都是 $2\pi$。
+每个满足这些条件的正数 $T$ 都是 $f$ 的一个周期。如果正周期的集合有最小元，这个元素就是基本周期。[正弦函数和余弦函数](../sine-and-cosine/)的基本周期都是 $2\pi$。
 
-## 函数的分类
+## 代数函数与超越函数
 
-下面的代数函数与超越函数之分适用于非退化区间上的初等实函数。如果存在一个实系数二元非零多项式 $P$，且该多项式关于 $y$ 的次数为正，并使 $P(x,f(x)) = 0$ 在整个区间上成立，则实值函数 $f$ 在该区间上称为代数函数。例如，在 $[0,+\infty)$ 上，函数 $f(x) = \sqrt{x}$ 满足 $f(x)^2-x=0$。常见的代数函数类别包括：
+对连续实函数分类的一种方式是借助多项式关系。设 $f \colon D \to \mathbb{R}$，其中 $D \subseteq \mathbb{R}$ 包含一个非退化的[区间](../intervals/)。如果存在一个二元非零多项式 $P$，它的系数为实数、关于 $y$ 的次数为正，使得对每个 $x \in D$ 都有 $P(x, f(x)) = 0$，则称函数是代数函数。例如，$f(x) = \sqrt{x}$ 在 $[0, +\infty)$ 上是代数函数，因为 $f(x)^2 - x = 0$。
 
-+ [多项式函数](../polynomial-function/)具有关于 $x$ 的常系数[多项式](../polynomials/)表达式；
-+ [有理函数](../rational-functions/)是两个多项式之比；
-+ 从有理函数出发，经过有限次算术运算和[开方](../radicals/)得到的函数是代数函数。[无理函数](../irrational-functions/)条目说明了用于 $\sqrt{x}$ 等表达式的较窄初等约定。
+每个[多项式函数](../polynomial-function/)都是[有理函数](../rational-functions/)，因为它可以写成分母为 $1$ 的形式；每个有理函数 $f(x) = N(x)/Q(x)$ 都是代数函数，因为 $Q(x)f(x) - N(x) = 0$。因此，多项式函数、有理函数、代数函数这三类依次包含：
 
-这些类别不能穷尽全部代数函数。有些代数函数不能用根式表示，即不能从有理函数出发，通过有限次算术运算和开方得到。超越函数是非代数函数。标准函数 $x \mapsto a^x$ 和 $x \mapsto \log_a x$（其中 $a>0$ 且 $a\neq1$），以及标准正弦函数和余弦函数，都是超越函数。
+$$
+\mathrm{Pol} \subseteq \mathrm{Rat} \subseteq \mathrm{Alg}
+$$
+
+这里考虑的[无理函数](../irrational-functions/)构成非有理代数函数的一个子类。它们的最简表达式在根号内含有变量，并且只用到有限次开方。它们并没有穷尽代数函数，因为有些代数函数不能用根式表示。
+
+不满足任何这种多项式关系的连续实函数是超越函数。标准的初等例子包括[指数函数](../exponential-function/)和[对数函数](../logarithmic-function/)、[三角函数](../sine-and-cosine/)和反三角函数，以及[双曲函数](../hyperbolic-sine-and-cosine/)。在这里，超越的意思是非代数，而不是非初等。
 
 ## 主要函数的定义域
 
-函数包含一个声明的定义域。如果一个实数公式没有声明定义域，它的自然定义域是使公式中每一步运算都有定义且取实值的最大 $\mathbb{R}$ 子集。同一公式也可以定义在更小的声明定义域上。当表达式施加多个限制时，所有限制必须同时满足。[系统方法](../determining-the-domain-of-a-function/)说明如何合并这些条件。
+一个实表达式的自然定义域是 $\mathbb{R}$ 的最大子集，在其上表达式中的每个运算都有定义并且取实值。当表达式施加多个限制时，它的自然定义域通过[合并所有定义域条件](../determining-the-domain-of-a-function/)得到。
 
 - - -
 
-[多项式函数](../polynomial-function/)具有如下形式：
+[多项式函数](../polynomial-function/)的形式为：
 
 $$
 y = \sum_{k=0}^{n} a_kx^k
 $$
 
-在这个表达式中，$a_0,a_1,\dots,a_n$ 是实系数，$n$ 是非负整数。当多项式的次数为 $n$ 时，首项系数满足 $a_n \neq 0$；零多项式的所有系数都为零。这里 $x^0$ 表示常数单项式 $1$，包括 $x=0$ 时。每个多项式的自然定义域都是 $\mathbb{R}$，因为常数项和正整数次幂对每个实数都有定义。例如：
+系数 $a_0, a_1, \dots, a_n$ 是实数，$n$ 是非负整数。当多项式的次数为 $n$ 时，它的首项系数是 $a_n$，且 $a_n \neq 0$。零多项式的所有系数都等于零。单项式 $x^0$ 是常数单项式 $1$。常数项和各个正整数次幂对每个实数 $x$ 都有定义，包括 $x = 0$。因此每个多项式的自然定义域都是 $\mathbb{R}$。考虑三次多项式：
 
 $$
 y = 2x^3 - 5x^2 + 3x - 1
 $$
 
-每一项都对每个实数 $x$ 有定义，所以这个多项式的定义域也是 $\mathbb{R}$。
+每一项对每个实数 $x$ 都有定义，所以这个多项式的定义域也是 $\mathbb{R}$。
 
 - - -
 
-[有理函数](../rational-functions/)具有如下形式：
+在[有理函数](../rational-functions/)中，分子 $N(x)$ 和分母 $D(x)$ 都是多项式，且 $D$ 不是零多项式。有理函数的形式为：
 
 $$
 y = \frac{N(x)}{D(x)}
 $$
 
-其中 $N(x)$ 和 $D(x)$ 是多项式，并且 $D$ 不是零多项式。函数在满足 $D(x) \neq 0$ 的实数 $x$ 处有定义。例如：
+这个商恰好在满足 $D(x) \neq 0$ 的那些实数 $x$ 处有定义。考虑有理函数：
 
 $$
 y = \frac{x^2 - 4}{x - 2}
 $$
 
-分母在 $x=2$ 时为零，所以定义域是 $\mathbb{R}\setminus\{\ 2\ \}$。虽然表达式在 $x\neq2$ 时可以约成 $x+2$，但约分不会把 $2$ 加回原表达式的定义域。
+分母在 $x = 2$ 处为零，所以定义域是 $\mathbb{R} \setminus \{\ 2 \ \}$。虽然当 $x \neq 2$ 时表达式可以化简为 $x + 2$，但这种约分并不会把 $2$ 加进原来的定义域。
 
 - - -
 
-分析定义域时，考虑下面的[根式表达式](../radicals/)，其中 $f \colon D \to \mathbb{R}$，$n$ 是满足 $n\geq2$ 的整数：
+设 $f \colon D \to \mathbb{R}$，并设 $n \geq 2$ 是整数。指数为 $n$ 的[根式](../radicals/)形式为：
 
 $$
 y = \sqrt[n]{f(x)}
 $$
 
-定义域取决于 $n$ 的奇偶性。如果 $n$ 为偶数，被开方数必须非负，因此定义域为：
+定义域取决于 $n$ 的奇偶性。如果 $n$ 是偶数，被开方式必须非负，所以定义域是：
 
 $$
-\{\ x \in D \mid f(x) \geq 0\ \}
+\{\ x \in D \mid f(x) \geq 0 \ \}
 $$
 
-偶数根指数的一个例子是：
+对于偶数指数 $n = 2$，考虑：
 
 $$
 y = \sqrt{x - 2}
 $$
 
-被开方数必须非负，因此定义域是 $[2,+\infty)$。如果 $n$ 为奇数，根式不增加限制，定义域就是 $D$。奇数根指数的例子是：
+被开方式必须非负，所以定义域是 $[2, +\infty)$。如果 $n$ 是奇数，根式不施加进一步的限制，定义域是 $D$。对于奇数指数 $n = 3$，考虑：
 
 $$
 y = \sqrt[3]{x - 2}
 $$
 
-立方根对负数和非负数被开方数都有定义，所以定义域是 $\mathbb{R}$。
+立方根对负的和非负的被开方式都有定义，所以它的定义域是 $\mathbb{R}$。
 
 - - -
 
-对 $f \colon D \to \mathbb{R}$，含[对数](../logarithms/)的表达式具有如下形式：
+对于 $f \colon D \to \mathbb{R}$，含有[对数](../logarithms/)的表达式形式为：
 
 $$
 y = \log_a{f(x)}, \quad a > 0, \quad a \neq 1
 $$
 
-对数的真数必须严格为正，因此定义域为：
+对数的真数必须严格为正，所以定义域是：
 
 $$
-\{\ x \in D \mid f(x) > 0\ \}
+\{\ x \in D \mid f(x) > 0 \ \}
 $$
 
-例如：
+对于底数 $2$，考虑：
 
 $$
 y = \log_2(x - 1)
 $$
 
-这个函数只有在 $x-1>0$ 时有定义，所以定义域是 $(1,+\infty)$。当 $x\leq1$ 时，表达式没有定义，因为非正数的实对数不存在。另一个例子是：
+这个函数只在 $x - 1 > 0$ 时有定义，所以定义域是 $(1, +\infty)$。对任何 $x \leq 1$，表达式没有定义，因为非正数的对数在实数范围内不存在。第二个例子使用自然对数：
 
 $$
 y = \ln(3x + 6)
 $$
 
-这里真数 $3x+6$ 必须为正，所以定义域是 $(-2,+\infty)$。
+由不等式 $3x + 6 > 0$ 得到 $x > -2$，所以定义域是 $(-2, +\infty)$。
 
 - - -
 
-对 $f \colon D \to \mathbb{R}$，常数底数的[指数表达式](../exponential-function/)具有如下形式：
+对于 $f \colon D \to \mathbb{R}$，底数为常数的[指数表达式](../exponential-function/)形式为：
 
 $$
 y = a^{f(x)}, \quad a > 0, \quad a \neq 1
 $$
 
-它的定义域是 $D$。例如：
+它的定义域是 $D$。取 $a = 2$ 和 $f(x) = x$，得到：
 
 $$
 y = 2^x
 $$
 
-因为 $2>0$，这个函数对每个实数 $x$ 都有定义。它的定义域是 $\mathbb{R}$，值域是 $(0,+\infty)$。
+由于 $2 > 0$，这个函数的定义域是 $\mathbb{R}$，值域是 $(0, +\infty)$。
 
 - - -
 
-底数和指数都为变量的表达式具有如下形式：
+底数和指数都含变量的表达式形式为：
 
 $$
 y = [f(x)]^{g(x)}
 $$
 
-[实数幂的标准定义](../powers/) $[f(x)]^{g(x)}=\exp(g(x)\ln f(x))$ 要求 $f(x)>0$。按这个约定，如果 $f$ 和 $g$ 的定义域分别是 $D_f$ 和 $D_g$，则表达式的定义域为：
+如果[实数幂](../powers/)由 $[f(x)]^{g(x)} = \exp(g(x)\ln f(x))$ 定义，就要求 $f(x) > 0$。在这个定义下，如果 $f$ 和 $g$ 的定义域分别是 $D_f$ 和 $D_g$，那么定义域是：
 
 $$
-\{\ x \in D_f \cap D_g \mid f(x) > 0\ \}
+\{\ x \in D_f \cap D_g \mid f(x) > 0 \ \}
 $$
 
-对非正底数，实数定义域取决于指数的值，必须逐种情况确定。
+对于非正的底数，实定义域取决于指数的取值，必须逐一情形确定。
 
 - - -
 
-对 $f \colon D \to \mathbb{R}$，指数为无理数 $\alpha \in \mathbb{R}\setminus\mathbb{Q}$ 的幂具有形式：
+对于 $f \colon D \to \mathbb{R}$，指数为无理数 $\alpha \in \mathbb{R} \setminus \mathbb{Q}$ 的幂形式为：
 
 $$
 f(x)^{\alpha}
 $$
 
-它的定义域分为下面两种情况：
+它的定义域由下面两种情形给出：
 
 $$
-\{\ x \in D \mid f(x) \geq 0\ \}, \quad \alpha > 0
+\{\ x \in D \mid f(x) \geq 0 \ \}, \quad \alpha > 0
 $$
 $$
-\{\ x \in D \mid f(x) > 0\ \}, \quad \alpha < 0
+\{\ x \in D \mid f(x) > 0 \ \}, \quad \alpha < 0
 $$
-
-当 $\alpha<0$ 时使用严格不等式，是为了排除会导致除以零的底数 $0$。标准实数幂函数不定义负数的无理数次幂，因此负底数也被排除。
 
 - - -
 
-三角函数的定义域如下：
-
-+ $y = \sin x$ 和 $y = \cos x$ 的定义域是 $\mathbb{R}$；
-+ [正切函数](../tangent-function/) $y = \tan x$ 的定义域是 $\mathbb{R}\setminus\left\{\ \frac{\pi}{2}+k\pi \mid k\in\mathbb{Z}\ \right\}$；
-+ [余切函数](../cotangent-function/) $y = \cot x$ 的定义域是 $\mathbb{R}\setminus\left\{\ k\pi \mid k\in\mathbb{Z}\ \right\}$；
-+ $y = \arcsin x$ 和 $y = \arccos x$ 的定义域是 $[-1, 1]$；
-+ $y = \arctan x$ 和 $y = \mathrm{arccot}\ x$ 的定义域是 $\mathbb{R}$。
-
-> 对由多个初等函数构成的表达式，其定义域是各组成部分施加的限制的交集。求解[方程](../equations/)或[不等式](../inequalities/)，以及[分析函数图像](../analyzing-the-graphs-of-functions/)之前，必须先施加这些限制；[系统方法](../determining-the-domain-of-a-function/)说明了具体步骤。
++ [正弦函数](../sine-function/) $y = \sin x$ 和[余弦函数](../cosine-function/) $y = \cos x$ 的定义域是 $\mathbb{R}$。
++ [正切函数](../tangent-function/) $y = \tan x$ 的定义域是 $\mathbb{R} \setminus \left\{\ \pi/2 + k\pi \mid k \in \mathbb{Z}\ \right\}$。
++ [余切函数](../cotangent-function/) $y = \cot x$ 的定义域是 $\mathbb{R} \setminus \left\{\ k\pi \mid k \in \mathbb{Z}\ \right\}$。
++ [反正弦函数](../arcsine-function/) $y = \arcsin x$ 和[反余弦函数](../arccosine-function/) $y = \arccos x$ 的定义域是 $[-1, 1]$。
++ [反正切函数](../arctangent-function/) $y = \arctan x$ 和[反余切函数](../arccotangent-function/) $y = \mathrm{arccot}\ x$ 的定义域是 $\mathbb{R}$。
 
 ## 函数之间的运算
 
-设 $f$ 和 $g$ 的定义域分别是 $X_1\subseteq\mathbb{R}$ 和 $X_2\subseteq\mathbb{R}$：
+设 $f \colon X_1 \to \mathbb{R}$ 和 $g \colon X_2 \to \mathbb{R}$，其中 $X_1 \subseteq \mathbb{R}$、$X_2 \subseteq \mathbb{R}$，并令 $X=X_1 \cap X_2$。
+
+和、差、积在 $X$ 上逐点定义：
 
 $$
-f \colon X_1 \to \mathbb{R}, \quad g \colon X_2 \to \mathbb{R}
+\begin{align}
+(f + g)(x) &= f(x) + g(x) \\[6pt]
+(f - g)(x) &= f(x) - g(x) \\[6pt]
+(f \cdot g)(x) &= f(x)g(x)
+\end{align}
 $$
 
-它们的公共定义域是 $X=X_1\cap X_2$。和、差、积在 $X$ 上定义，商的定义域可能更小。
-
-两个函数 $f$ 和 $g$ 的和定义为：
-
-$$
-(f + g)(x) = f(x) + g(x)
-$$
-
-两个函数的差为：
-
-$$
-(f - g)(x) = f(x) - g(x)
-$$
-
-两个函数的积为：
-
-$$
-(f \cdot g)(x) = f(x)g(x)
-$$
-
-两个函数的商为：
+两个函数 $f(x)$ 和 $g(x)$ 的商，定义域是 $\{\ x \in X \mid g(x) \neq 0 \ \}$，定义为：
 
 $$
 \left(\frac{f}{g}\right)(x) = \frac{f(x)}{g(x)}
 $$
 
-它只在满足 $g(x)\neq0$ 的 $x\in X$ 处有定义。其定义域要从 $X$ 中排除所有使分母为零的点。
-
-复合函数的定义域由另一项条件确定。它由 $X_1$ 中满足 $f(x)$ 属于 $X_2$ 的点组成：
+函数之间的另一种运算是[复合](../composite-functions/)。如果 $f \colon A \to B$ 且 $g \colon B \to C$，那么复合函数 $g \circ f$ 先应用 $f$，再对结果应用 $g$：
 
 $$
-C = \{\ x \in X_1 \mid f(x) \in X_2\ \}
+(g \circ f)(x)=g(f(x))
 $$
-
-对每个 $x\in C$，复合函数为 $(g\circ f)(x)=g(f(x))$。[复合函数](../composite-functions/)条目详细说明了这项运算。
