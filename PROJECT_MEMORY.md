@@ -13,8 +13,10 @@
 - [2026-10-03] 单行 $$…$$ 公式全站不居中：site.css 中 p > mjx-container:not([display]) 的 inline-block 规则覆盖了 p.standalone-math 的居中规则（definite-integrals 等未改动文章同样如此），属既有样式问题
 
 - [2026-10-03] CI 冒烟慢的原因：astro dev 启动时整套内容（英文约 294 篇 + 中文约 279 篇）带 MathJax 全量渲染，换 SITE_BASE 会清空内容缓存，所以两种前缀加构建共渲染三遍；本地每遍约 70 秒，CI 约慢 6 倍（构建同步实测 6.5 分钟），上限已调到 1200 秒，CI 冒烟只测部署前缀（DEV_SMOKE_BASES）；ef44696 的 CI 实测两种前缀共 1329 秒、构建 621 秒；同前缀重启也不复用缓存，缓存 .astro 无效
-- [2026-10-03] 公式里的文字：validate-translation 同时拒绝 \text{} 内的中文和英文散文，译文改用符号（\forall、\mathrm 缩写）或把说明移到正文
+- [2026-10-08] 公式里的文字：validate-translation 同时拒绝 \text{} 内的中文和英文散文，译文改用符号或把说明移到正文；“中文被压到亚像素”的原因是净化剥掉 <text> 的 font-size 与 scale(1,-1)，属性已恢复但未视觉验证，规则是否放宽待用户决定
 - [2026-10-03] 公式拓扑审计（audit-latex-topology）在 9 篇早期译文上不通过（前任译者有意增删公式：unit-circle、tangent-and-cotangent、trigonometric-identities、hyperbolic-secant/tangent 等）；用户决定保留 current 标记，不重写
+- [2026-10-08] 净化白名单（src/lib/math-sanitize-schema.mjs，astro.config 与 _render-page 共用）的键须按 hast 实际写法：SVG 表现属性带连字符（stroke-width、font-size），只有 data-* 是驼峰；写成 strokeWidth 之类不会匹配。新放行属性前先对比净化前后的属性集
+- [2026-10-08] scripts/check-math.mjs 不在 CI 中，修复前后都以 1 退出（公式数量偏差）；放行 data-mjx-error 后它能看到上游英文 arctangent-and-arccotangent 的 6 处 MathJax 报错，中文构建产物无报错
 
 ## 失败尝试
 
@@ -23,11 +25,10 @@
 
 ## 上次会话
 <!-- 整块改写：分支、验证命令及实际结果、停在何处；任务细节只留一行指向证据目录。 -->
-- [2026-10-03] main：存量过期译文 59 → 1、缺失译文 18 → 0（current 295），分三个提交（补链接 / 重写 / 新译）经短分支快进合并后推送
-  逐篇 validate-translation 通过；test:unit 191 通过，build --force、check:public-release、check:public-history、translation-status --verify、test:smoke（部署前缀）均通过；18 个新页面桌面与手机视口无公式报错和断图
+- [2026-10-08] main（已提交，未推送）：修复矩阵括号断开——净化剥掉了拉伸定界符嵌套 <svg> 的 x/y，同批补回表格线、\boxed 边框、<text> 的属性，白名单合并为单一模块
+  test:unit 192 通过；build --force 通过；dist 中 861 个拉伸定界符均带 y；无头 Chrome 截图确认 matrices 括号、factoring-quadratic-equations 表格线、binomial-coefficient 方框；test:smoke 未运行
 
 ## 下次运行
 <!-- 整块改写：接下来的任务和优先级，含仍受阻的项。 -->
-- [2026-10-03] 确认本次推送的 CI 与部署结果；35 篇重写和新译未经人工通读，docs/qa 未写验收记录
-  functions/composite-functions 故意保持过期：上游唯一改动是把标题 “## Definition” 写坏成 “f## Definition”，等上游修正后只需重盖 source_hash
-  待决：单行公式居中的样式修复；手机视口下 .table-1 内过宽公式被裁切（integration-strategies 有理化换元表首行，overflow hidden 所致）；squeeze-theorem 上游 -3.svg 引用两次
+- [2026-10-08] 上游落后 7 个提交（锁定 5148aa2，远端 81d44d7，2026-10-07）：sets-and-numbers 拆为 numbers/ 与 sets/，新增 cartesian-product、de-morgan-laws 及 sets-6/7 图，sets、hopital-rule、big-o、little-o 大改；同步牵动 sections.yaml、译文路径和图谱，需单独做
+  沿用未决项：35 篇重写和新译未经人工通读、docs/qa 无验收记录；composite-functions 等上游修标题；单行公式居中；手机视口 .table-1 过宽公式被裁切；squeeze-theorem 上游 -3.svg 引用两次

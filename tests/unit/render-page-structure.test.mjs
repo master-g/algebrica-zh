@@ -173,4 +173,18 @@ y &> 2
     assert.match(html, /<div class="sign-plus-right-in -closed -highlight"><\/div>/);
     assert.doesNotMatch(html, /\[\/?field_math|sign\+/);
   });
+
+  it('keeps the positioning attributes MathJax puts on stretched delimiters', async () => {
+    const html = await renderPageMarkdown(`## Matrix
+
+$$
+A = \\begin{pmatrix} a \\\\ b \\\\ c \\\\ d \\end{pmatrix}
+$$
+`);
+
+    // 拉伸括号的中段是嵌套 <svg>,靠 x/y 落在上下两段之间;净化时剥掉就会断开。
+    const nested = html.match(/<svg(?![^>]*role="img")[^>]*>/g) || [];
+    assert.ok(nested.length > 0);
+    for (const tag of nested) assert.match(tag, / y="/);
+  });
 });

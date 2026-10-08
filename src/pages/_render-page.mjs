@@ -2,99 +2,18 @@ import yaml from 'js-yaml';
 import { createMarkdownProcessor } from '@astrojs/markdown-remark';
 import remarkMath from 'remark-math';
 import rehypeMathjax from 'rehype-mathjax/svg';
-import rehypeSanitize, { defaultSchema } from 'rehype-sanitize';
+import rehypeSanitize from 'rehype-sanitize';
 import remarkIntervalsShortcode from '../plugins/remark-intervals-shortcode.mjs';
 import rehypeMarkStandaloneMath from '../plugins/rehype-mark-standalone-math.mjs';
 import rehypeNotesToSidenotes from '../plugins/rehype-notes-to-sidenotes.mjs';
 import rehypeRewriteAlgebrica from '../plugins/rehype-rewrite-algebrica.mjs';
 import rehypeSectionizeAlgebrica from '../plugins/rehype-sectionize-algebrica.mjs';
 import dangling from '../lib/dangling-links.json' with { type: 'json' };
+import { mathSanitizeSchema } from '../lib/math-sanitize-schema.mjs';
 import { buildSlugMap } from '../lib/slug-map.mjs';
 import { normalizeSiteBase } from '../lib/site-path.mjs';
 
 const slugMap = buildSlugMap({ source: 'fs', strictCollisions: true, strictEmpty: true, silent: true });
-
-function makeMathSchema(base) {
-  return {
-    ...base,
-    // 关闭 id/name 的 user-content- 前缀改写(同 astro.config.mjs:防止字形引用悬空)。
-    clobber: [],
-    tagNames: [
-      ...(base.tagNames || []),
-      // MathJax SVG 的伴随 <style> 块必须保留为元素(同 astro.config.mjs)。
-      'style',
-      'aside',
-      'mjx-container',
-      'mjx-assistive-mml',
-      'mjx-math',
-      'mjx-mrow',
-      'mjx-mi',
-      'mjx-mo',
-      'mjx-mn',
-      'mjx-mtext',
-      'mjx-mspace',
-      'mjx-msub',
-      'mjx-msup',
-      'mjx-msubsup',
-      'mjx-mfrac',
-      'mjx-msqrt',
-      'mjx-mroot',
-      'mjx-munder',
-      'mjx-mover',
-      'mjx-munderover',
-      'mjx-mtable',
-      'mjx-mtr',
-      'mjx-mtd',
-      'mjx-semantics',
-      'mjx-annotation',
-      'svg',
-      'g',
-      'path',
-      'defs',
-      'use',
-      'line',
-      'rect',
-      'circle',
-      'ellipse',
-      'polygon',
-      'polyline',
-      'text',
-      'tspan',
-      'clipPath',
-      'linearGradient',
-      'radialGradient',
-      'stop',
-      'symbol',
-    ],
-    attributes: {
-      ...(base.attributes || {}),
-      'mjx-container': ['class', 'jax', 'display', 'justify', 'width', 'role', 'style', 'tabIndex'],
-      'mjx-assistive-mml': ['role'],
-      'mjx-math': ['xmlns', 'display', 'alttext'],
-      svg: ['xmlns', 'width', 'height', 'role', 'focusable', 'viewBox', 'xmlnsXLink', 'style', 'preserveAspectRatio'],
-      g: ['stroke', 'fill', 'strokeWidth', 'transform', 'dataMmlNode', 'style'],
-      path: ['id', 'd'],
-      use: ['dataC', 'xLinkHref', 'href', 'transform'],
-      line: ['x1', 'y1', 'x2', 'y2', 'stroke', 'strokeWidth'],
-      rect: ['x', 'y', 'width', 'height', 'rx', 'ry', 'stroke', 'strokeWidth', 'fill'],
-      circle: ['cx', 'cy', 'r'],
-      ellipse: ['cx', 'cy', 'rx', 'ry'],
-      polygon: ['points'],
-      polyline: ['points'],
-      text: ['x', 'y', 'dx', 'dy', 'fontSize', 'fontFamily', 'textAnchor'],
-      tspan: ['x', 'y', 'dx', 'dy'],
-      clipPath: ['id'],
-      linearGradient: ['id', 'x1', 'y1', 'x2', 'y2'],
-      radialGradient: ['id', 'cx', 'cy', 'r'],
-      stop: ['offset', 'stopColor'],
-      symbol: ['id'],
-      a: ['href', 'title', 'target', 'rel', 'class'],
-      aside: ['className', 'role'],
-      section: ['dataFootnotes', ['className', 'footnotes', 'article-section']],
-      '*': [...(base.attributes?.['*'] || []), 'className', 'class'],
-    },
-  };
-}
 
 const processors = new Map();
 
@@ -112,7 +31,7 @@ function getProcessor(currentSection = null) {
           [rehypeRewriteAlgebrica, { slugMap, dangling, currentSection, siteBase }],
           rehypeSectionizeAlgebrica,
           rehypeNotesToSidenotes,
-          [rehypeSanitize, makeMathSchema(defaultSchema)],
+          [rehypeSanitize, mathSanitizeSchema],
         ],
       }),
     );
