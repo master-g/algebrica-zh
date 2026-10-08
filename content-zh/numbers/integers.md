@@ -44,7 +44,7 @@ $$
 
 虽然 $\mathbb{N}$ 是 $\mathbb{Z}$ 的真子集，但两个集合具有相同的基数。它们之间的一个显式双射见[基数与可数集](../cardinality-and-countable-sets/)。
 
-![IMG. 1](/assets/sets-and-numbers/svg/integers-1.svg)
+![IMG. 1](/assets/numbers/svg/integers-1.svg)
 
 包含关系 $\mathbb{N} \subset \mathbb{Z} \subset \mathbb{Q} \subset \mathbb{R} \subset \mathbb{C}$ 记录了逐次的扩充，每次扩充都使前一个系统中不可用的某种运算或方程成为可能。
 

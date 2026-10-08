@@ -17,6 +17,10 @@
 - [2026-10-03] 公式拓扑审计（audit-latex-topology）在 9 篇早期译文上不通过（前任译者有意增删公式：unit-circle、tangent-and-cotangent、trigonometric-identities、hyperbolic-secant/tangent 等）；用户决定保留 current 标记，不重写
 - [2026-10-08] 净化白名单（src/lib/math-sanitize-schema.mjs，astro.config 与 _render-page 共用）的键须按 hast 实际写法：SVG 表现属性带连字符（stroke-width、font-size），只有 data-* 是驼峰；写成 strokeWidth 之类不会匹配。新放行属性前先对比净化前后的属性集
 - [2026-10-08] scripts/check-math.mjs 不在 CI 中，修复前后都以 1 退出（公式数量偏差）；放行 data-mjx-error 后它能看到上游英文 arctangent-and-arccotangent 的 6 处 MathJax 报错，中文构建产物无报错
+- [2026-10-08] 上游 81d44d7 把 sets-and-numbers 拆成 numbers/ 与 sets/，但 functions/absolute-value-function.md 仍引用旧目录的两张图，Astro 构建报 ImageNotFound；astro.config.mjs 里的 remarkFixMovedUpstreamImages 临时改写，上游修正后删除
+- [2026-10-08] 上游删除或改名 SVG 时两个 sync:localized-svg 脚本会因读不到文件崩溃，已加 --diff-filter=d；改名文件按新增处理、不会自动迁移，.zh.svg 需手工 git mv 到新分区并改译文里的 /assets/<section>/ 路径
+- [2026-10-08] sections.yaml 的 entries 顺序取自 algebrica.org/category/<dir>/ 页面的文章顺序；上游旧地址 /category/sets-and-numbers/ 仍可访问，本站该地址在拆分后为 404，未加重定向
+- [2026-10-08] sets/sets 译文保留 $\{a\}$ 为“单元素集”，上游 81d44d7 该处误写成 $a$；validate-translation 与拓扑审计不比较公式内容，故能通过
 
 ## 失败尝试
 
@@ -25,10 +29,10 @@
 
 ## 上次会话
 <!-- 整块改写：分支、验证命令及实际结果、停在何处；任务细节只留一行指向证据目录。 -->
-- [2026-10-08] main（已提交，未推送）：修复矩阵括号断开——净化剥掉了拉伸定界符嵌套 <svg> 的 x/y，同批补回表格线、\boxed 边框、<text> 的属性，白名单合并为单一模块
-  test:unit 192 通过；build --force 通过；dist 中 861 个拉伸定界符均带 y；无头 Chrome 截图确认 matrices 括号、factoring-quadratic-equations 表格线、binomial-coefficient 方框；test:smoke 未运行
+- [2026-10-08] main（经短分支快进合并）：同步上游至 81d44d7——分区拆分、新译 cartesian-product 与 de-morgan-laws、重写 hopital-rule / big-o / little-o、收缩 sets、6 篇小补丁、补 3 条中文图谱
+  逐篇 validate-translation 与拓扑审计通过；test:unit 192 通过；build --force、check:public-release、check:public-history、translation-status --verify、test:smoke（部署前缀）通过；12 个页面在 1440x900 与 390x844 下无公式报错、无坏图、无页面溢出
 
 ## 下次运行
 <!-- 整块改写：接下来的任务和优先级，含仍受阻的项。 -->
-- [2026-10-08] 上游落后 7 个提交（锁定 5148aa2，远端 81d44d7，2026-10-07）：sets-and-numbers 拆为 numbers/ 与 sets/，新增 cartesian-product、de-morgan-laws 及 sets-6/7 图，sets、hopital-rule、big-o、little-o 大改；同步牵动 sections.yaml、译文路径和图谱，需单独做
-  沿用未决项：35 篇重写和新译未经人工通读、docs/qa 无验收记录；composite-functions 等上游修标题；单行公式居中；手机视口 .table-1 过宽公式被裁切；squeeze-theorem 上游 -3.svg 引用两次
+- [2026-10-08] 待用户决定：是否为 /category/sets-and-numbers/ 加重定向；\text{} 内中文规则是否放宽
+  沿用未决项：本次 6 篇与此前 35 篇重写和新译未经人工通读、docs/qa 无验收记录；composite-functions 等上游修标题；单行公式居中；手机视口 .table-1 过宽公式被裁切；23 篇文章有英文图谱而无中文图谱

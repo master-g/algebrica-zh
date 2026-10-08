@@ -1870,6 +1870,83 @@
     "enables": 0,
     "canvasHeight": 440
   },
+  "big-o-notation": {
+    "source": "https://algebrica.org/big-o-notation/",
+    "dataset": {
+      "name": "root",
+      "children": [
+        {
+          "name": "foundations",
+          "children": [
+            {
+              "name": "definition"
+            },
+            {
+              "name": "bounded ratios"
+            },
+            {
+              "name": "limit superior"
+            },
+            {
+              "name": "O(1)"
+            },
+            {
+              "name": "comparison with little-o"
+            }
+          ]
+        },
+        {
+          "name": "properties",
+          "children": [
+            {
+              "name": "constant factors"
+            },
+            {
+              "name": "addition"
+            },
+            {
+              "name": "multiplication"
+            },
+            {
+              "name": "positive powers"
+            },
+            {
+              "name": "transitivity"
+            },
+            {
+              "name": "nested big-O"
+            }
+          ]
+        },
+        {
+          "name": "Taylor expansions",
+          "children": [
+            {
+              "name": "remainder bounds"
+            },
+            {
+              "name": "standard expansions"
+            },
+            {
+              "name": "indeterminate forms"
+            },
+            {
+              "name": "exponential limit"
+            }
+          ]
+        }
+      ]
+    },
+    "type": "Definition",
+    "description": "The structure of the entry is shown in the conceptual map, where each branch represents a core component and the sub-nodes highlight the specific notions discussed.",
+    "difficulty": {
+      "level": 3,
+      "label": "Advanced"
+    },
+    "requires": 2,
+    "enables": 0,
+    "canvasHeight": 440
+  },
   "binomial-coefficient": {
     "source": "https://algebrica.org/binomial-coefficient/",
     "dataset": {
@@ -2390,6 +2467,89 @@
     },
     "requires": 2,
     "enables": 1,
+    "canvasHeight": 440
+  },
+  "cartesian-product": {
+    "source": "https://algebrica.org/cartesian-product/",
+    "dataset": {
+      "name": "root",
+      "children": [
+        {
+          "name": "definition",
+          "children": [
+            {
+              "name": "ordered pair"
+            },
+            {
+              "name": "set membership"
+            },
+            {
+              "name": "cardinality"
+            },
+            {
+              "name": "empty factor"
+            },
+            {
+              "name": "cartesian plane"
+            }
+          ]
+        },
+        {
+          "name": "properties",
+          "children": [
+            {
+              "name": "factor order"
+            },
+            {
+              "name": "equality of products"
+            },
+            {
+              "name": "union"
+            },
+            {
+              "name": "intersection"
+            },
+            {
+              "name": "difference"
+            },
+            {
+              "name": "set inclusion"
+            }
+          ]
+        },
+        {
+          "name": "generalizations",
+          "children": [
+            {
+              "name": "ordered n-tuple"
+            },
+            {
+              "name": "cartesian power"
+            },
+            {
+              "name": "binary sequence"
+            },
+            {
+              "name": "power set"
+            },
+            {
+              "name": "indexed product"
+            },
+            {
+              "name": "empty product"
+            }
+          ]
+        }
+      ]
+    },
+    "type": "",
+    "description": "The structure of the entry is shown in the conceptual map, where each branch represents a core component and the sub-nodes highlight the specific notions discussed.",
+    "difficulty": {
+      "level": 1,
+      "label": "Easy"
+    },
+    "requires": 3,
+    "enables": 0,
     "canvasHeight": 440
   },
   "cauchy-sequence": {
@@ -4315,6 +4475,80 @@
     },
     "requires": 2,
     "enables": 1,
+    "canvasHeight": 420
+  },
+  "de-morgan-laws": {
+    "source": "https://algebrica.org/de-morgan-laws/",
+    "dataset": {
+      "name": "root",
+      "children": [
+        {
+          "name": "set identities",
+          "children": [
+            {
+              "name": "universal set"
+            },
+            {
+              "name": "complement of a union"
+            },
+            {
+              "name": "complement of an intersection"
+            },
+            {
+              "name": "indexed families"
+            },
+            {
+              "name": "empty family"
+            }
+          ]
+        },
+        {
+          "name": "logical equivalences",
+          "children": [
+            {
+              "name": "negated disjunction"
+            },
+            {
+              "name": "negated conjunction"
+            },
+            {
+              "name": "truth tables"
+            },
+            {
+              "name": "proof by membership"
+            }
+          ]
+        },
+        {
+          "name": "worked example",
+          "children": [
+            {
+              "name": "union and intersection"
+            },
+            {
+              "name": "complements"
+            },
+            {
+              "name": "first law verification"
+            },
+            {
+              "name": "inclusion-exclusion"
+            },
+            {
+              "name": "symmetric difference"
+            }
+          ]
+        }
+      ]
+    },
+    "type": "Concept",
+    "description": "The structure of the entry is shown in the conceptual map, where each branch represents a core component and the sub-nodes highlight the specific notions discussed.",
+    "difficulty": {
+      "level": 1,
+      "label": "Easy"
+    },
+    "requires": 1,
+    "enables": 0,
     "canvasHeight": 420
   },
   "definite-integrals": {
@@ -16942,7 +17176,7 @@
       "label": "Easy"
     },
     "requires": 1,
-    "enables": 13,
+    "enables": 14,
     "canvasHeight": 440
   },
   "propositional-logic": {
@@ -18277,7 +18511,7 @@
       "label": ""
     },
     "requires": 3,
-    "enables": 19,
+    "enables": 20,
     "canvasHeight": 420
   },
   "reduction-formulas-and-reference-angles": {
@@ -19935,7 +20169,7 @@
       "label": "Intermediate"
     },
     "requires": 0,
-    "enables": 14,
+    "enables": 16,
     "canvasHeight": 440
   },
   "sigmoid-function": {

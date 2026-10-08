@@ -28,7 +28,7 @@ function git(args, { allowFailure = false } = {}) {
 const lock = JSON.parse(readFileSync(join(ROOT, 'upstream-lock.json'), 'utf8'));
 const head = git(['rev-parse', 'HEAD']);
 const paths = git([
-  '-c', 'core.quotePath=false', 'diff', '--name-only', `${lock.commit}..${head}`, '--', '*.svg',
+  '-c', 'core.quotePath=false', 'diff', '--name-only', '--diff-filter=d', `${lock.commit}..${head}`, '--', '*.svg',
 ]).split('\n').filter(Boolean);
 
 let eligible = 0;

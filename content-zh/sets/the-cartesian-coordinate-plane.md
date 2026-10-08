@@ -12,9 +12,9 @@ tags:
   - symmetry
 translation:
   status: current
-  source_hash: a4b3431a3ce7a10015364f73ad2f113757e43c2c43a3496b6aeec06c27f40502
+  source_hash: 1199fce82af62b900a190cd41268c73ea922a9fd9f086b2bc5c4ffa73c7b3b22
   translator: pi
-  updated: "2026-09-22T12:43:32.000Z"
+  updated: "2026-10-08T00:00:00.000Z"
 ---
 ## 构造
 
@@ -24,7 +24,7 @@ translation:
 
 $$P(a,b) \tag{1}$$
 
-这个构造也可以反过来进行。给定两个实数 $a$ 与 $b$，过 $(a,0)$ 的竖直线与过 $(0,b)$ 的水平线交于唯一的一点，这一点就是我们的 $P$。这给出了平面上的点与指明其位置的有序实数对之间的[一一对应](../injective-surjective-and-bijective-functions/)。这些数对的集合是 $\mathbb{R}$ 与自身的[笛卡尔积](../sets/)，因此可以写成：
+这个构造也可以反过来进行。给定两个实数 $a$ 与 $b$，过 $(a,0)$ 的竖直线与过 $(0,b)$ 的水平线交于唯一的一点，这一点就是我们的 $P$。这给出了平面上的点与指明其位置的有序实数对之间的[一一对应](../injective-surjective-and-bijective-functions/)。这些数对的集合是 $\mathbb{R}$ 与自身的[笛卡尔积](../cartesian-product/)，因此可以写成：
 
 $$\mathbb{R}^2 = \mathbb{R} \times \mathbb{R} = \{(x,y) \mid x \in \mathbb{R},\ y \in \mathbb{R}\}$$
 
@@ -39,7 +39,7 @@ $$ (a,b)=(c,d) \quad \Longleftrightarrow \quad a=c \land b=d $$
 + III：$x<0$ 且 $y<0$
 + IV：$x>0$ 且 $y<0$
 
-![图 1](/assets/sets-and-numbers/svg/the-cartesian-coordinate-plane-1.zh.svg)
+![图 1](/assets/sets/svg/the-cartesian-coordinate-plane-1.zh.svg)
 
 例如，点 $R(-3,2)$ 位于第二象限，满足条件 $x<0$ 且 $y>0$。点 $S(-3/2,-\sqrt{2})$ 位于第三象限，满足条件 $x<0$ 且 $y<0$。
 
@@ -66,7 +66,7 @@ $$d(A,B)=\sqrt{(x_2-x_1)^2+(y_2-y_1)^2} \tag{3}$$
 
 公式 $(3)$ 给出平面内任意两点之间的距离。把它应用于一个具体的例子：$A=(-3,1)$，$B=(3,5)$。从 $A$ 到 $B$，水平变化为 $3-(-3)=6$，竖直变化为 $5-1=4$。图中展示了由这两个变化构成的[直角三角形](../right-triangle-trigonometry/)。
 
-![图 2](/assets/sets-and-numbers/svg/the-cartesian-coordinate-plane-2.zh.svg)
+![图 2](/assets/sets/svg/the-cartesian-coordinate-plane-2.zh.svg)
 
 直角边 $AH$ 长为 $|3-(-3)|=6$，直角边 $HB$ 长为 $|5-1| = 4$。把这些值代入 $(3)$，得：
 
@@ -116,7 +116,7 @@ $$
 
 正如我们对中点定义的预期，两个距离都是 $\sqrt{13}$。图展示了这一计算：
 
-![图 3](/assets/sets-and-numbers/svg/the-cartesian-coordinate-plane-3.zh.svg)
+![图 3](/assets/sets/svg/the-cartesian-coordinate-plane-3.zh.svg)
 
 这个计算也可以反过来进行。若已知 $A=(x_1,y_1)$ 和中点 $M=(u,v)$，由等式 $2u=x_1+x_2$ 与 $2v=y_1+y_2$ 可以直接求出另一个端点：
 
@@ -144,7 +144,7 @@ $$P_y=(-a,b)$$
 
 举个具体的例子，考虑 $P=(3,2)$。关于 $x$-轴的反射给出 $P_x=(3,-2)$，关于 $y$-轴的反射给出 $P_y=(-3,2)$，关于原点的中心对称给出 $P_O=(-3,-2)$。在图中，这四个点是以原点为中心的矩形的顶点。
 
-![图 4](/assets/sets-and-numbers/svg/the-cartesian-coordinate-plane-4.zh.svg)
+![图 4](/assets/sets/svg/the-cartesian-coordinate-plane-4.zh.svg)
 
 如你所见，先关于一条轴、再关于另一条轴反射，会使两个坐标都变号，从而产生中心对称。原点是关于 $O$ 的中心对称下唯一保持不动的点，因为条件 $a=-a$ 与 $b=-b$ 要求 $a=b=0$。
 
@@ -181,6 +181,6 @@ d(E,B)&=\sqrt{(-1)^2+(-5)^2}=\sqrt{26}
 \end{align}
 $$
 
-![图 5](/assets/sets-and-numbers/svg/the-cartesian-coordinate-plane-5.zh.svg)
+![图 5](/assets/sets/svg/the-cartesian-coordinate-plane-5.zh.svg)
 
 点 $E$ 与 $A$、$B$ 等距，但它不是线段的中点。在前面的例子中，我们求得 $M=(0,3)$，它与 $E$ 不同。这个例子解释了为什么中点的定义还必须要求该点在线段上。

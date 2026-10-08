@@ -10,7 +10,7 @@ import { resolveUpstreamSourceDir } from '../src/lib/upstream-source.mjs';
 
 const ALGEBRICA_BASE = resolveUpstreamSourceDir();
 const TORTURE_FILES = [
-  'sets-and-numbers/properties-of-real-numbers.md',
+  'numbers/properties-of-real-numbers.md',
   'probability-and-statistics/median-and-quantiles.md',
   'equations/irrational-equations.md',
   'limits/limits.md',

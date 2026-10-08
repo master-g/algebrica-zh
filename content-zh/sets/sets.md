@@ -7,11 +7,9 @@ tags:
   - bijection
   - cardinality
   - cartesian-product
-  - de-morgan-laws
   - disjoint-union
   - inclusion-exclusion
   - indexed-family
-  - indexed-product
   - ordered-pair
   - partition
   - power-set
@@ -21,9 +19,9 @@ tags:
   - universal-set
 translation:
   status: current
-  source_hash: 936a110cc60f28061996a77980d8bf0d67bd0f4b400545b968aa9ceba8c78ad1
+  source_hash: 25be55f285c2b1da0f6373a7ce446f43e66e29aa8da0e6944b909882076bbcb3
   translator: claude
-  updated: "2026-10-03T00:00:00.000Z"
+  updated: "2026-10-08T00:00:00.000Z"
 ---
 ## 引言
 
@@ -75,7 +73,7 @@ $$
 
 对于无限集合，即使两个集合都不是有限的，双射仍然定义了基数相等。[基数与可数集合](../cardinality-and-countable-sets/)将这一概念扩展到无限集合，并包括与幂集的比较。
 
-两个有限集合 $A$ 和 $B$ 的笛卡尔积基数为：
+两个有限集合 $A$ 和 $B$ 的[笛卡尔积](../cartesian-product/)基数为：
 
 $$
 |A \times B| = |A| \cdot |B|
@@ -186,20 +184,20 @@ $$
 
 $A$ 与 $B$ 的并集是属于两个集合中至少一个的所有元素构成的集合。属于 $A$ 和 $B$ 的公共元素只列出一次，因为集合不允许重复。
 
-![图 1](/assets/sets-and-numbers/svg/sets-1.svg)
+![图 1](/assets/sets/svg/sets-1.svg)
 
 $$
-A \cup B = \\{x \mid x \in A \lor x \in B\\}
+A \cup B = \{x \mid x \in A \lor x \in B\}
 $$
 
 - - -
 
 $A$ 与 $B$ 的交集是同时属于两个集合的元素构成的集合：
 
-![图 2](/assets/sets-and-numbers/svg/sets-2.svg)
+![图 2](/assets/sets/svg/sets-2.svg)
 
 $$
-A \cap B = \\{x \mid x \in A \land x \in B\\}
+A \cap B = \{x \mid x \in A \land x \in B\}
 $$
 
 如果 $A \cap B = \emptyset$，则两个集合不相交，不含公共元素。
@@ -209,10 +207,10 @@ $$
 $A$ 关于全集 $U$ 的补集，是 $U$ 中所有不属于 $A$ 的元素构成的集合，记为：
 
 $$
-A^c = \\{x \in U \mid x \notin A\\}
+A^c = \{x \in U \mid x \notin A\}
 $$
 
-![图 3](/assets/sets-and-numbers/svg/sets-3.svg)
+![图 3](/assets/sets/svg/sets-3.svg)
 
 $A$ 的补集也可表示为 $\overline{A}$ 或 $U \setminus A$。当 $U$ 改变时，同一个集合可能有不同的补集，因为补集中的元素随所选全集而变化。
 
@@ -220,17 +218,17 @@ $A$ 的补集也可表示为 $\overline{A}$ 或 $U \setminus A$。当 $U$ 改变
 
 $A$ 与 $B$ 的差集记为 $A \setminus B$，是属于 $A$ 但不属于 $B$ 的元素构成的集合：
 
-![图 4](/assets/sets-and-numbers/svg/sets-4.svg)
+![图 4](/assets/sets/svg/sets-4.svg)
 
 $$
-A \setminus B = \\{x \mid x \in A \land x \notin B\\}
+A \setminus B = \{x \mid x \in A \land x \notin B\}
 $$
 
 一般而言，$A \setminus B \neq B \setminus A$，因为两个集合的差集运算不满足交换律。对于包含 $A$ 和 $B$ 的任意全集，恒等式 $A \setminus B = A \cap B^c$ 成立，它用补集表达了差集。
 
 $A$ 与 $B$ 的对称差记为 $A \triangle B$，是属于两个集合之一但不同时属于两者的元素构成的集合：
 
-![图 5](/assets/sets-and-numbers/svg/sets-5.svg)
+![图 5](/assets/sets/svg/sets-5.svg)
 
 $$
 A \triangle B = (A \setminus B) \cup (B \setminus A)
@@ -301,155 +299,6 @@ A \cap A^c &= \emptyset \\[6pt]
 \end{align}
 $$
 
-## 德摩根律
-
-德摩根律是描述并集和交集在补集运算下如何变化的代数恒等式。这些恒等式可以把集合表达式改写为等价形式，并有助于简化运算。
-
-$$
-\begin{align}
-(A \cup B)^c &= A^c \cap B^c \\[6pt]
-(A \cap B)^c &= A^c \cup B^c
-\end{align}
-$$
-
-第一条定律指出，并集的补集等于各补集的交集。元素不属于 $A \cup B$，当且仅当它既不属于 $A$ 也不属于 $B$，这等价于它同时属于 $A^c$ 和 $B^c$。
-
-![图 6](/assets/sets-and-numbers/svg/sets-6.svg)
-
-第二条定律指出，元素不属于交集 $A \cap B$，当且仅当它至少不属于两个集合中的一个，因此它属于 $A^c \cup B^c$。
-
-这些定律可以推广到任意集族 $(A_i)_{i\in I}$，而不受指标集 $I$ 大小的限制：
-
-$$
-\begin{align}
-\left(\bigcup_{i \in I} A_i\right)^c &= \bigcap_{i \in I} A_i^c \\[6pt]
-\left(\bigcap_{i \in I} A_i\right)^c &= \bigcup_{i \in I} A_i^c
-\end{align}
-$$
-
-集合的代数结构与逻辑联结词的代数结构之间存在对应关系。德摩根律对应于联结词 $\land$ 和 $\lor$ 的以下等价式：
-
-$$
-\neg(P \lor Q) \equiv \neg P \land \neg Q
-$$
-
-$$
-\neg(P \land Q) \equiv \neg P \lor \neg Q
-$$
-
-这些等价式的真值表解释见[命题逻辑](../propositional-logic/)。
-
-## 示例
-
-设 $U = \\{1, 2, 3, 4, 5, 6, 7, 8, 9, 10\\}$ 为全集，并定义以下两个子集：
-
-$$
-\begin{align}
-A &= \{1, 2, 3, 4, 6\} \\[6pt]
-B &= \{2, 4, 6, 8, 10\}
-\end{align}
-$$
-
-两个集合的并集和交集可直接由定义计算：
-
-$$
-\begin{align}
-A \cup B &= \{1, 2, 3, 4, 6, 8, 10\} \\[6pt]
-A \cap B &= \{2, 4, 6\}
-\end{align}
-$$
-
-关于 $U$ 的补集收集了各集合中被排除的元素：
-
-$$
-\begin{align}
-A^c &= \{5, 7, 8, 9, 10\} \\[6pt]
-B^c &= \{1, 3, 5, 7, 9\}
-\end{align}
-$$
-
-现在验证第一条德摩根律。并集的补集为：
-
-$$
-(A \cup B)^c = U \setminus (A \cup B) = \\{5, 7, 9\\}
-$$
-
-各补集的交集为：
-
-$$
-\begin{align}
-A^c \cap B^c &= \{5, 7, 8, 9, 10\} \cap \{1, 3, 5, 7, 9\} \\[6pt]
-&= \{5, 7, 9\}
-\end{align}
-$$
-
-两个集合一致，验证了第一条德摩根律。下面用基数验证容斥原理：
-
-$$
-|A| = 5 \quad |B| = 5 \quad |A \cap B| = 3
-$$
-
-$$
-|A \cup B| = 5 + 5 - 3 = 7
-$$
-
-直接计算 $A \cup B = \\{1, 2, 3, 4, 6, 8, 10\\}$ 中的元素，确认 $|A \cup B| = 7$。
-
-下面计算对称差，并检查它与其他运算的关系：
-
-$$
-A \triangle B = (A \setminus B) \cup (B \setminus A)
-$$
-
-两个差集分别是 $A \setminus B = \\{1, 3\\}$ 和 $B \setminus A = \\{8, 10\\}$，因此：
-
-$$
-A \triangle B = \\{1, 3, 8, 10\\}
-$$
-
-使用并集和交集的等价刻画，可以得到相同结果：
-
-$$
-\begin{align}
-(A \cup B) \setminus (A \cap B) &= \{1, 2, 3, 4, 6, 8, 10\} \setminus \{2, 4, 6\} \\[6pt]
-&= \{1, 3, 8, 10\}
-\end{align}
-$$
-
-## 笛卡尔积
-
-给定两个集合 $A$ 和 $B$，笛卡尔积 $A \times B$ 是所有有序对 $(a, b)$ 构成的集合，其中 $a$ 属于 $A$ 且 $b$ 属于 $B$：
-
-$$
-A \times B = \\{(a, b) \mid a \in A,\ b \in B\\}
-$$
-
-有序对是不对称的：当 $a$ 和 $b$ 不相同时，$(a, b)$ 不同于 $(b, a)$。两个有序对相等，当且仅当对应分量相等：
-
-$$
-(a, b) = (a', b') \iff a = a' \land b = b'
-$$
-
-一般而言，$A \times B$ 和 $B \times A$ 不是同一个集合。如果 $A$ 含有 $m$ 个元素而 $B$ 含有 $n$ 个元素，那么 $A \times B$ 含有 $mn$ 个元素。例如，[实数](../real-numbers/)的所有有序对组成 $\mathbb{R} \times \mathbb{R}$，这就是[笛卡尔平面](../the-cartesian-coordinate-plane/) $\mathbb{R}^2$。
-
-给定集合 $A_1, A_2, \ldots, A_n$，它们的笛卡尔积是所有有序 $n$ 元组构成的集合：
-
-$$
-A_1 \times A_2 \times \cdots \times A_n = \\{(a_1, a_2, \ldots, a_n) \mid a_i \in A_i,\ i = 1, \ldots, n\\}
-$$
-
-$n$ 元组 $(a_1, \ldots, a_n)$ 是由 $n$ 个元素组成的有序序列；两个 $n$ 元组相等，当且仅当所有对应分量相等。如果所有集合都相同，即对每个 $i$ 都有 $A_i = A$，则乘积为 $A^n$。空间 $\mathbb{R}^n$ 是 $\mathbb{R}$ 与自身的 $n$ 重笛卡尔积，其元素是实数的 $n$ 元组。
-
-笛卡尔积可以推广到指标集族 $(A_i)_{i\in I}$。指标积的一个元素对每个指标 $i$ 都有一个分量 $a_i\in A_i$。该乘积定义为：
-
-$$
-\prod_{i\in I}A_i=\{\ (a_i)_{i\in I}\mid a_i\in A_i\ \}
-$$
-
-等价地，$\prod_{i\in I}A_i$ 的一个元素是函数 $a\colon I\to\bigcup_{i\in I}A_i$，满足对每个 $i\in I$ 都有 $a(i)\in A_i$。当 $I=\{1,\ldots,n\}$ 时，这一定义给出前面的有限笛卡尔积。如果有一个因子为空，整个乘积就为空，因为无法从该因子中选择元素。
-
-> 对于任意由非空集合组成的指标集族，“笛卡尔积非空”这一断言等价于选择公理。有限集族不需要这一公理。
-
 ## 不交并
 
 普通并集只保留同时属于 $A$ 和 $B$ 的元素的一个出现。不交并为这样的元素保留两个带标签的版本，分别来自两个源集合。一种构造为：
@@ -473,19 +322,19 @@ $$
 到目前为止，有序对 $(a, b)$ 被当作直观概念，即第一分量为 $a$、第二分量为 $b$ 的对象对。在形式上，有序对可以用集合论定义为一个包含两个元素的集合：
 
 $$
-(a, b) = \\{\\{a\\}, \ \\{a, b\\}\\}
+(a, b) = \{\{a\}, \ \{a, b\}\}
 $$
 
-项 $\\{a\\}$ 是单元素集，$\\{a, b\\}$ 是无序对。元素 $a$ 同时出现在两者中，而 $b$ 只出现在其中一个中。以下结果说明了这个定义的合理性：
+项 $\{a\}$ 是单元素集，$\{a, b\}$ 是无序对。元素 $a$ 同时出现在两者中，而 $b$ 只出现在其中一个中。以下结果说明了这个定义的合理性：
 
 $$
 (a, b) = (c, d) \implies a = c \land b = d
 $$
 
-为验证这一性质，假设 $\\{\\{a\\}, \\{a, b\\}\\} = \\{\\{c\\}, \\{c, d\\}\\}$。根据 $a = b$ 或 $a \neq b$，分两种情况讨论。
+为验证这一性质，假设 $\{\{a\}, \{a, b\}\} = \{\{c\}, \{c, d\}\}$。根据 $a = b$ 或 $a \neq b$，分两种情况讨论。
 
-第一种情况是 $a = b$。此时 $\\{a, b\\} = \\{a\\}$，所以左侧变为单元素集 $\\{\\{a\\}\\}$。为了相等，右侧也必须是单元素集，这要求 $\\{c\\} = \\{c, d\\}$，从而 $c = d$。两侧的唯一元素必须相同，因此 $\\{a\\} = \\{c\\}$，于是 $a = c$。由于 $b = a = c = d$，可得 $a = c$ 且 $b = d$。
+第一种情况是 $a = b$。此时 $\{a, b\} = \{a\}$，所以左侧变为单元素集 $\{\{a\}\}$。为了相等，右侧也必须是单元素集，这要求 $\{c\} = \{c, d\}$，从而 $c = d$。两侧的唯一元素必须相同，因此 $\{a\} = \{c\}$，于是 $a = c$。由于 $b = a = c = d$，可得 $a = c$ 且 $b = d$。
 
-如果 $a \neq b$，那么左侧含有两个不同的元素：$\\{a\\}$ 和 $\\{a, b\\}$。单元素集 $\\{a\\}$ 必须对应右侧的 $\\{c\\}$ 或 $\\{c, d\\}$。如果 $\\{a\\} = \\{c, d\\}$，那么 $c = d = a$，这会使 $\\{c\\} = \\{c, d\\}$，从而右侧成为单元素集，与左侧含有两个不同元素相矛盾。因此 $\\{a\\} = \\{c\\}$，所以 $a = c$。于是 $\\{a, b\\} = \\{c, d\\} = \\{a, d\\}$，又因为 $a \neq b$，必有 $b = d$。
+如果 $a \neq b$，那么左侧含有两个不同的元素：$\{a\}$ 和 $\{a, b\}$。单元素集 $\{a\}$ 必须对应右侧的 $\{c\}$ 或 $\{c, d\}$。如果 $\{a\} = \{c, d\}$，那么 $c = d = a$，这会使 $\{c\} = \{c, d\}$，从而右侧成为单元素集，与左侧含有两个不同元素相矛盾。因此 $\{a\} = \{c\}$，所以 $a = c$。于是 $\{a, b\} = \{c, d\} = \{a, d\}$，又因为 $a \neq b$，必有 $b = d$。
 
 在两种情况下，都有 $a = c$ 且 $b = d$，这正是所需结论。反向结论显然成立，因为如果 $a = c$ 且 $b = d$，那么通过代入两个集合完全相同。

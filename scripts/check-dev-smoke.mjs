@@ -127,7 +127,7 @@ async function runScenario(siteBase) {
     }
 
     const checks = [];
-    for (const path of ['/', '/sets/', '/category/sets-and-numbers/', '/search.json']) {
+    for (const path of ['/', '/sets/', '/category/sets/', '/search.json']) {
       const requestPath = withSiteBase(path, siteBase);
       const body = await requestPage(baseUrl, requestPath);
       checks.push(`${requestPath} HTTP 200 (${Buffer.byteLength(body)} bytes)`);

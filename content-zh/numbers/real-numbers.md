@@ -43,7 +43,7 @@ $$
 
 实数在一条直线上有几何表示。任取一点标记为 $0$，再在其右侧取一点标记为 $1$。每个实数 $x$ 对应唯一的点。正数位于 $0$ 的右侧，负数位于左侧，它们到原点的距离为[绝对值](../absolute-value/)$|x|$。
 
-![IMG. 1](/assets/sets-and-numbers/svg/real-numbers-1.svg)
+![IMG. 1](/assets/numbers/svg/real-numbers-1.svg)
 
 这一对应是 $\mathbb{R}$ 与直线上各点之间的双射，并且保持序。关系 $x < y$ 成立当且仅当 $x$ 对应的点位于 $y$ 对应的点的左侧。
 

@@ -7,9 +7,9 @@ tags:
   []
 translation:
   status: current
-  source_hash: bd8ef884c6805ebb5d9507bf36a087fea0b8648a11ec64dcdef0bb012fa66b86
+  source_hash: 3c96092e770b692a383d8da9de6438e16e419f9343c2d1939dfbbd937d51c39f
   translator: claude
-  updated: "2026-10-03T00:00:00.000Z"
+  updated: "2026-10-08T00:00:00.000Z"
 ---
 ## 关于本参考书目的说明
 
@@ -96,7 +96,7 @@ translation:
 + [Introduction to Analysis](https://www.math.ucdavis.edu/~hunter/intro_analysis_pdf/intro_analysis.html), John K. Hunter
 + [An Introduction to Measure Theory](https://terrytao.wordpress.com/wp-content/uploads/2012/12/gsm-126-tao5-measure-book.pdf), Terence Tao
 + [Introduction to Real Analysis](https://www.jirka.org/ra/realanal.pdf), Jiří Lebl
-+ [Introduction to Real Analysis](https://digitalcommons.trinity.edu/cgi/viewcontent.cgi?article=1006&context=mono), William F. Trench
++ [Introduction to Real Analysis](https://digitalcommons.trinity.edu/mono/7/), William F. Trench
 + [Lecture Notes in Calculus I](https://bpb-us-w2.wpmucdn.com/faculty.umaine.edu/dist/1/19/files/2022/08/calculus.pdf), Jakob Streipel
 + [Lecture Notes on Mathematical Analysis](https://www.math.nthu.edu.tw/~hyliao/AnalysisLectureNotes.pdf), Hsuan-Yi Liao
 + [Mathematical Analysis, Volume I](http://www.trillia.com/dA/zakon-analysisI-us-one.pdf), Elias Zakon
@@ -187,6 +187,7 @@ translation:
 + [Mathematics for Computer Science](https://people.csail.mit.edu/meyer/mcs.pdf), Eric Lehman, F. Thomson Leighton, Albert R. Meyer
 + [Open Data Structures](https://opendatastructures.org/ods-python.pdf), Pat Morin
 + [Scientific Computing](https://www.math.hkust.edu.hk/~machas/scientific-computing.pdf), Jeffrey R. Chasnov
++ [A Spiral Workbook for Discrete Mathematics](https://milneopentextbooks.org/a-spiral-workbook-for-discrete-mathematics/), Harris Kwong
 
 ## 机器学习与人工智能
 

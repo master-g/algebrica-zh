@@ -45,7 +45,7 @@ $$
 
 上界如果存在，通常不唯一。若 $M$ 是 $A$ 的上界，则 $M + 1$ 和 $M + 100$ 也是上界。下界的情况对称地相同。若 $m$ 是 $A$ 的下界，则 $m - 1$ 也是下界。最小上界称为上确界，最大下界称为下确界。
 
-![Img. 1](/assets/sets-and-numbers/svg/supremum-and-infimum-1.svg)
+![Img. 1](/assets/numbers/svg/supremum-and-infimum-1.svg)
 
 + 若 $A$ 非空但无上界，则按惯例将上确界定义为 $\sup A = +\infty$。
 + 若 $A$ 无下界，则将下确界设为 $\inf A = -\infty$。
@@ -115,7 +115,7 @@ $$
 
 因为端点包含在集合中。
 
-![Img. 2](/assets/sets-and-numbers/svg/supremum-and-infimum-2.svg)
+![Img. 2](/assets/numbers/svg/supremum-and-infimum-2.svg)
 
 一般地，以下蕴含关系成立：
 

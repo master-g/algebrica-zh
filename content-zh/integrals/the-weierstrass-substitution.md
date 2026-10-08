@@ -15,9 +15,9 @@ tags:
   - weierstrass-substitution
 translation:
   status: current
-  source_hash: dcf816a52ce711fd780f30a7e1ea8cbe683fbf252055cda48100f353cf0cd3f7
+  source_hash: d8e56bd78d504800e9b875ff68984cc73cdc88e82fe5633f2fd6b1df9191c2e4
   translator: claude
-  updated: "2026-10-03T00:00:00.000Z"
+  updated: "2026-10-08T00:00:00.000Z"
 ---
 ## 何时使用这种换元
 
@@ -200,6 +200,8 @@ $$\int \frac{dt}{t^2+t+1} = \frac{2}{\sqrt{3}}\arctan\left(\frac{2t+1}{\sqrt{3}}
 $$\int \frac{dx}{2+\sin x} = \frac{2}{\sqrt{3}}\arctan\left(\frac{2\tan(x/2)+1}{\sqrt{3}}\right) + c$$
 
 > 这里同样可以看到，换元之后，被积函数变成 $t$ 的有理函数，比原来的更简单，它的原函数可能含有[反正切](../arctangent-function/)和[对数](../logarithms/)，这两者在[有理函数的积分](../integral-of-rational-functions/)中很常见。
+
+
 
 ## 定义域条件
 

@@ -9,34 +9,51 @@ sections:
       
     description_zh: |
       关于如何学习数学的导引文章。
-  - dir: sets-and-numbers
-    name_en: "Sets and Numbers"
-    name_zh: 集合与数
+  - dir: sets
+    name_en: "Sets"
+    name_zh: 集合
     order: 1
     entries:
       - sets
+      - cardinality-and-countable-sets
+      - inclusion-exclusion-principle
+      - cartesian-product
+      - the-cartesian-coordinate-plane
+      - de-morgan-laws
+    description_en: |
+      
+    description_zh: |
+      集合论基础主题，包括集合运算、基数与可数集、容斥原理、笛卡尔积与德摩根律。
+
+  - dir: numbers
+    name_en: "Numbers"
+    name_zh: 数
+    order: 2
+    entries:
       - types-of-numbers
       - natural-numbers
       - integers
+      - euclidean-division
       - modulo-operator
       - rational-numbers
       - irrational-numbers
       - real-numbers
       - properties-of-real-numbers
+      - topology-of-the-real-line
       - absolute-value
       - intervals
       - supremum-and-infimum
       - factorial
       - binomial-coefficient
     description_en: |
-      Archive of topics on sets and number systems, including natural numbers, integers, rational and irrational numbers, and the structure of the real and complex number systems.
+      
     description_zh: |
-      集合与数系主题，包括自然数、整数、有理数、无理数，以及实数系与复数系的结构。
+      数系主题，包括自然数、整数、有理数、无理数，以及实数系的结构与性质。
 
   - dir: algebraic-structures
     name_en: "Algebraic Structures"
     name_zh: 代数结构
-    order: 2
+    order: 3
     entries:
       - groups
       - rings
@@ -52,7 +69,7 @@ sections:
   - dir: powers-radicals-logarithms
     name_en: "Powers, Radicals and Logarithms"
     name_zh: 幂根与对数
-    order: 3
+    order: 4
     entries:
       - powers
       - radicals
@@ -65,7 +82,7 @@ sections:
   - dir: complex-numbers
     name_en: "Complex Numbers"
     name_zh: 复数
-    order: 4
+    order: 5
     entries:
       - complex-numbers
       - complex-number-operations
@@ -84,7 +101,7 @@ sections:
   - dir: trigonometry
     name_en: Trigonometry
     name_zh: 三角学
-    order: 5
+    order: 6
     entries:
       - angles-and-angular-measure
       - unit-circle
@@ -112,7 +129,7 @@ sections:
   - dir: polynomials
     name_en: Polynomials
     name_zh: 多项式
-    order: 6
+    order: 7
     entries:
       - polynomials
       - monomials
@@ -138,7 +155,7 @@ sections:
   - dir: equations
     name_en: Equations
     name_zh: 方程
-    order: 7
+    order: 8
     entries:
       - equations
       - polynomial-equations
@@ -170,7 +187,7 @@ sections:
   - dir: inequalities
     name_en: Inequalities
     name_zh: 不等式
-    order: 8
+    order: 9
     entries:
       - inequalities
       - polynomial-inequalities
@@ -194,7 +211,7 @@ sections:
   - dir: lines-planes-conic-sections
     name_en: "Lines, Planes and Conic Sections"
     name_zh: 直线平面与圆锥曲线
-    order: 9
+    order: 10
     entries:
       - lines
       - vector-and-parametric-equations-of-a-line
@@ -212,7 +229,7 @@ sections:
   - dir: vectors-and-matrices
     name_en: "Vectors and Matrices"
     name_zh: 向量与矩阵
-    order: 10
+    order: 11
     entries:
       - vectors
       - matrices
@@ -231,7 +248,7 @@ sections:
   - dir: linear-systems
     name_en: "Linear Systems"
     name_zh: 线性方程组
-    order: 11
+    order: 12
     entries:
       - systems-of-linear-equations
       - cramers-rule
@@ -245,7 +262,7 @@ sections:
   - dir: sequences
     name_en: Sequences
     name_zh: 数列
-    order: 12
+    order: 13
     entries:
       - principle-of-mathematical-induction
       - sequences
@@ -265,7 +282,7 @@ sections:
   - dir: series
     name_en: Series
     name_zh: 级数
-    order: 13
+    order: 14
     entries:
       - series
       - series-with-positive-terms
@@ -291,7 +308,7 @@ sections:
   - dir: functions
     name_en: Functions
     name_zh: 函数
-    order: 14
+    order: 15
     entries:
       - functions
       - determining-the-domain-of-a-function
@@ -334,7 +351,7 @@ sections:
   - dir: limits
     name_en: Limits
     name_zh: 极限
-    order: 15
+    order: 16
     entries:
       - limits
       - theorems-on-limits
@@ -353,7 +370,7 @@ sections:
   - dir: derivatives
     name_en: Derivatives
     name_zh: 导数
-    order: 16
+    order: 17
     entries:
       - difference-quotient
       - derivatives
@@ -373,7 +390,7 @@ sections:
   - dir: differential-calculus-theorems
     name_en: "Differential Calculus Theorems"
     name_zh: 微分学定理
-    order: 17
+    order: 18
     entries:
       - weierstrass-theorem
       - fermat-theorem
@@ -390,7 +407,7 @@ sections:
   - dir: integrals
     name_en: Integrals
     name_zh: 积分
-    order: 18
+    order: 19
     entries:
       - indefinite-integrals
       - definite-integrals
@@ -418,7 +435,7 @@ sections:
   - dir: differential-equations
     name_en: "Differential Equations"
     name_zh: 微分方程
-    order: 19
+    order: 20
     entries:
       - differential-equations
       - first-order-differential-equations
@@ -431,7 +448,7 @@ sections:
   - dir: probability-and-statistics
     name_en: "Probability and Statistics"
     name_zh: 概率与统计
-    order: 20
+    order: 21
     entries:
       - probability
       - introduction-to-the-mean
@@ -469,7 +486,7 @@ sections:
   - dir: kinematics
     name_en: Kinematics
     name_zh: 运动学
-    order: 21
+    order: 22
     entries:
       - velocity
     description_en: |
@@ -480,7 +497,7 @@ sections:
   - dir: logic
     name_en: Logic
     name_zh: 数理逻辑
-    order: 22
+    order: 23
     entries:
       - propositional-logic
       - first-order-logic
@@ -494,7 +511,7 @@ sections:
   - dir: various
     name_en: Various
     name_zh: 杂项
-    order: 23
+    order: 24
     entries:
       - cosine-similarity
       - backpropagation

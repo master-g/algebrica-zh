@@ -26,9 +26,9 @@ tags:
   - well-formed-formula
 translation:
   status: current
-  source_hash: 8c521bda9fc61773bdd3210d456b13d1239952ba0cb97707dbac8627f3e3f0a1
+  source_hash: 7f8b541586fbe1865485dc96720a616896163bb992f18013f03b10a9ac9a8b8a
   translator: codex
-  updated: "2026-08-11T00:00:00.000Z"
+  updated: "2026-10-08T00:00:00.000Z"
 ---
 ## 命题语言
 
@@ -279,7 +279,7 @@ $$
 
 在任一范式中，只出现 $\neg$、$\wedge$ 和 $\lor$，并且每个否定的作用域都是一个原子命题。单个文字既是子句也是项，因此既是 CNF 公式也是 DNF 公式。
 
-每个命题公式都逻辑等价于某个 CNF 公式，也逻辑等价于某个 DNF 公式。一种转换方法是先去除 $\rightarrow$、$\leftrightarrow$ 和 $\oplus$，再利用双重否定和德摩根律把每个否定向内移动，最后应用分配律。
+每个命题公式都逻辑等价于某个 CNF 公式，也逻辑等价于某个 DNF 公式。一种转换方法是先去除 $\rightarrow$、$\leftrightarrow$ 和 $\oplus$，再利用双重否定和[德摩根律](../de-morgan-laws/)把每个否定向内移动，最后应用分配律。
 
 例如，考虑 $\neg(p \lor q) \rightarrow r$。等价式 $\varphi \rightarrow \psi \equiv \neg\varphi \lor \psi$ 给出如下计算：
 

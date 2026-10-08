@@ -27,7 +27,7 @@ $$
 \mathbb{N} \subset \mathbb{Z} \subset \mathbb{Q} \subset \mathbb{R} \subset \mathbb{C}, \qquad \mathbb{I} \subset \mathbb{R}
 $$
 
-![IMG. 1](/assets/sets-and-numbers/svg/types-of-numbers-1.svg)
+![IMG. 1](/assets/numbers/svg/types-of-numbers-1.svg)
 
 另一种分类方式横贯这一层级，将 $\mathbb{R}$ 划分为代数数 $\mathbb{A}$ 和超越数，并细化了有理数与无理数的区分。每一次扩展都解决了前一层的局限，直至到达 $\mathbb{C}$，在其内每一个[多项式方程](../polynomial-equations/)都有解。
 

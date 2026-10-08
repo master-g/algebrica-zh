@@ -32,7 +32,7 @@ $$
 
 绝对值函数把每个实数对应到它在数轴上与零的距离。由于距离从不为负，负数会映射到相应的正数，而正数保持不变。
 
-![图 1](/assets/sets-and-numbers/svg/real-numbers-1.zh.svg)
+![图 1](/assets/numbers/svg/real-numbers-1.zh.svg)
 
 更一般地，$|x - a|$ 表示数轴上点 $x$ 与点 $a$ 之间的距离：
 
@@ -52,7 +52,7 @@ y = |x| =
 \end{cases}
 $$
 
-![图 2](/assets/sets-and-numbers/svg/absolute-value-1.zh.svg)
+![图 2](/assets/numbers/svg/absolute-value-1.zh.svg)
 
 它的图像由两条在原点相接的半直线组成，形成 V 形。图像关于 $y$ 轴对称，因此函数是[偶函数](../even-and-odd-functions/)，并满足：
 

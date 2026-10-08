@@ -29,7 +29,7 @@ $$
 
 自然数的集合记为 $\mathbb{N}$，它是 $(1)$ 所示层级中的第一个集合，非形式地说，它源于对物体计数的需要。自然数可以表示为[实数轴](../real-numbers/)上的离散点。从 $0$ 开始（按照约定我们把它包含在 $\mathbb{N}$ 中），它们向右占据等间距的位置，对应于 $0, 1, 2, 3, \dots$，并沿这个方向无限延伸。
 
-![图 1](/assets/sets-and-numbers/svg/integers-2.zh.svg)
+![图 1](/assets/numbers/svg/integers-2.zh.svg)
 
 离散性是把[整数](../integers/)与[有理数](../rational-numbers/)和[无理数](../irrational-numbers/)区分开来的性质之一，后两者在数轴上稠密分布，可以位于两个整数之间。如图所示，图中略去了负整数，它们不属于 $\mathbb{N}$，是在把自然数扩充到 $\mathbb{Z}$ 时引入的。
 

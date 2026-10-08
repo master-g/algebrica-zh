@@ -24,9 +24,9 @@ tags:
   - universal-instantiation
 translation:
   status: current
-  source_hash: 4200711d8961bdc7b324ad6aabfbc184eff09462b24f2b9c14bd592743027435
+  source_hash: 50a8e0a6f1cbb948b32c36166381a28d99f514f1d179fc47f4df221694e9d25f
   translator: claude
-  updated: "2026-10-03T00:00:00.000Z"
+  updated: "2026-10-08T00:00:00.000Z"
 ---
 ## 量词
 
@@ -184,7 +184,7 @@ $$
 归结适用的范围超出确定子句片段，但它要求子句。因此任意的一阶句子必须先作转换。转换有六步，依次进行。
 
 + 用等价式 $\varphi \leftrightarrow \psi \equiv (\varphi \rightarrow \psi) \wedge (\psi \rightarrow \varphi)$ 和 $\varphi \rightarrow \psi \equiv \neg\varphi \lor \psi$ 消去 $\leftrightarrow$ 和 $\rightarrow$。
-+ 用双重否定律、德摩根律以及量词对偶律 $\neg\forall x\varphi \equiv \exists x \neg\varphi$ 和 $\neg\exists x\varphi \equiv \forall x \neg\varphi$ 把每个否定向内移。
++ 用双重否定律、[德摩根律](../de-morgan-laws/)以及量词对偶律 $\neg\forall x\varphi \equiv \exists x \neg\varphi$ 和 $\neg\exists x\varphi \equiv \forall x \neg\varphi$ 把每个否定向内移。
 + 作变量分离，使每个量词约束的变量不在别处出现，并把所有量词移到最前面，得到前束范式。
 + 斯科伦化，按下面的说明把每个存在量化的变量换成一个项。
 + 去掉全称量词，它们约束剩下的每个变量。

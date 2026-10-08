@@ -156,7 +156,7 @@ function makeZhFile(overrides = {}) {
 
 describe('validateTranslation', () => {
   it('passes a minimal valid zh file', async () => {
-    const body = `这是正文。公式 $x+y=z$ 成对，还有内部链接 [集合](../sets-and-numbers/sets/)。\n`;
+    const body = `这是正文。公式 $x+y=z$ 成对，还有内部链接 [集合](../sets/sets/)。\n`;
     const result = await validateTranslation('example.md', makeZhFile({ body }), { dangling: { external: [], text: [] } });
     assert.equal(result.ok, true);
     assert.deepEqual(result.errors, []);

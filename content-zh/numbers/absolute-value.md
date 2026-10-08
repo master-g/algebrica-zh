@@ -54,7 +54,7 @@ $$
 因此在这种情形下，坐标 $x$ 与 $a$ 之差的绝对值恰好给出两点之间的距离。
 
 
-![图 1](/assets/sets-and-numbers/svg/real-numbers-1.svg)
+![图 1](/assets/numbers/svg/real-numbers-1.svg)
 
 
 更一般地，$(4)$ 中的距离满足下面的对称关系，因为交换两点不改变它们之间的距离。
@@ -78,7 +78,7 @@ y = |x| =
 $$
 
 
-![图 1](/assets/sets-and-numbers/svg/absolute-value-1.svg)
+![图 1](/assets/numbers/svg/absolute-value-1.svg)
 
 如图所示，它的图像由在原点相交的两条射线组成，并且关于 $y$ 轴对称，所以它是[偶函数](../even-and-odd-functions/)，满足下面的关系：
 
