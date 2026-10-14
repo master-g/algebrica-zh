@@ -117,7 +117,7 @@ $$\lim_{x \to x_0^\pm} R(x) = \pm\infty$$
 
 - - -
 
-另一种情况是分子和分母在同一点为零，这会产生[不定式](../indeterminate-forms/)：
+另一种情况是分子和分母在同一点为零，这会产生[未定式](../indeterminate-forms/)：
 
 $$\frac{0}{0}$$
 

@@ -7,7 +7,6 @@ tags:
   - bezout-identity
   - cancellation-law
   - cayley-table
-  - chinese-remainder-theorem
   - congruence
   - division-algorithm
   - equivalence-relation
@@ -25,9 +24,9 @@ tags:
   - zero-divisor
 translation:
   status: current
-  source_hash: ba82c8802813798366ff74eafd9c5edf52b13cac971518d00f55bdb1c77b0f66
+  source_hash: d2735cc27c894a72366eff1dc2c559206ae4208d9eb646135277675063c2dcf4
   translator: codex
-  updated: "2026-08-04T00:00:00.000Z"
+  updated: "2026-10-14T00:00:00.000Z"
 ---
 
 ## 定义
@@ -190,6 +189,8 @@ $$
 
 系数 $a/g$ 与模数 $n/g$ 互素，因此约化后的同余在模 $n/g$ 下只有一个解类。这个解类对应于模 $n$ 下的 $g$ 个类。例如，考虑 $6x \equiv 9 \pmod{15}$。这里 $g = 3$ 整除 $9$，约化后的同余为 $2x \equiv 3 \pmod 5$。$2$ 模 $5$ 的逆元是 $3$，所以 $x \equiv 9 \equiv 4 \pmod 5$。原同余在模 $15$ 下有三个解：$x = 4$、$x = 9$ 和 $x = 14$。
 
+涉及多个模数的同余方程组见[中国剩余定理](../chinese-remainder-theorem/)。
+
 ## 费马小定理与欧拉定理
 
 费马小定理讨论模素数下的幂。如果 $p$ 是素数且 $a$ 不被 $p$ 整除，则有：
@@ -207,37 +208,6 @@ a^{\varphi(n)} \equiv 1 \pmod n
 $$
 
 当 $n = p$ 为素数时，范围 $1 \le k \le p - 1$ 中的每个整数都与 $p$ 互素，因此 $\varphi(p) = p - 1$，欧拉定理就退化为费马小定理。
-
-## 中国剩余定理
-
-中国剩余定理给出了模数两两互素的同余方程组的存在性与唯一性。假设整数 $n_1, n_2, \ldots, n_k$ 两两互素，而 $a_1, a_2, \ldots, a_k$ 是任意整数。考虑方程组：
-
-$$
-\begin{align}
-x &\equiv a_1 \pmod{n_1} \\[6pt]
-x &\equiv a_2 \pmod{n_2} \\[6pt]
-  &\ \vdots \\[6pt]
-x &\equiv a_k \pmod{n_k}
-\end{align}
-$$
-
-定理断言，这样的整数一定存在，并且在模 $N = n_1n_2 \cdots n_k$ 下唯一。对于两个互素模数，贝祖等式给出整数 $s$ 和 $t$，使得 $sn_1 + tn_2 = 1$。令 $e_1 = tn_2$、$e_2 = sn_1$。整数 $e_1$ 是 $n_2$ 的倍数，并且与 $1$ 相差 $n_1$ 的倍数 $sn_1$，所以 $e_1 \equiv 1 \pmod{n_1}$、$e_1 \equiv 0 \pmod{n_2}$。同理，$e_2 \equiv 0 \pmod{n_1}$ 且 $e_2 \equiv 1 \pmod{n_2}$。一个解为：
-
-$$
-x = a_1e_1 + a_2e_2
-$$
-
-模 $n_1$ 时，第二项同余于零，第一项同余于 $a_1$；模 $n_2$ 时，第一项同余于零，第二项同余于 $a_2$。因此 $x$ 同时满足两个同余。如果 $x'$ 是另一个解，则 $n_1$ 和 $n_2$ 都整除 $x - x'$，由互素性可知 $n_1n_2$ 整除 $x - x'$。
-
-重复这个构造即可证明任意有限个同余的情形。用[环](../rings/)的语言，定理给出以下[同构](../homomorphisms-and-isomorphisms/)：
-
-$$
-\mathbb{Z}/N\mathbb{Z} \cong \mathbb{Z}/n_1\mathbb{Z} \times \mathbb{Z}/n_2\mathbb{Z} \times \cdots \times \mathbb{Z}/n_k\mathbb{Z}
-$$
-
-这个同构把模 $N$ 的加法和乘法分别对应到各因子 $n_i$ 上按分量进行的加法和乘法。
-
-考虑方程组 $x \equiv 2 \pmod 3$ 和 $x \equiv 3 \pmod 5$。贝祖等式 $2 \cdot 3 - 1 \cdot 5 = 1$ 给出 $s = 2$、$t = -1$，因此 $e_1 = -5$、$e_2 = 6$。代入公式得到 $x = 2 \cdot (-5) + 3 \cdot 6 = 8$。等式 $8 = 2 \cdot 3 + 2$ 和 $8 = 1 \cdot 5 + 3$ 验证了两个同余。解集是剩余类 $[8]_{15} = \{ \ldots, -7, 8, 23, 38, \ldots \}$。
 
 ## 示例
 

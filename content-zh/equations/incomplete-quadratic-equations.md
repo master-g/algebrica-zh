@@ -15,7 +15,7 @@ translation:
 ---
 ## 定义
 
-当 [二次方程](../quadratic-equations/) 的标准形式 $ax^2 + bx + c = 0$ 中缺少 $bx$ 与 $c$ 这两项中的一项或两项，而 $ax^2$ 这一项仍存在时，该方程就是不完全的。这类方程存在直接求解的方法，无需使用[求根公式](../quadratic-formula/)或[因式分解](../factoring-quadratic-equations/)。
+当[二次方程](../quadratic-equations/)的标准形式 $ax^2 + bx + c = 0$ 中缺少 $bx$ 与 $c$ 这两项中的一项或两项，而 $ax^2$ 这一项仍存在时，该方程就是不完全的。这类方程存在直接求解的方法，无需使用[求根公式](../quadratic-formula/)或[因式分解](../factoring-quadratic-equations/)。
 
 当 $b$ 与 $c$ 都等于零时，方程化为：
 

@@ -2994,6 +2994,95 @@
     "enables": 0,
     "canvasHeight": 440
   },
+  "chinese-remainder-theorem": {
+    "source": "https://algebrica.org/chinese-remainder-theorem/",
+    "dataset": {
+      "name": "root",
+      "children": [
+        {
+          "name": "two coprime moduli",
+          "children": [
+            {
+              "name": "congruence"
+            },
+            {
+              "name": "Bézout's identity"
+            },
+            {
+              "name": "solution construction"
+            },
+            {
+              "name": "uniqueness modulo the product"
+            },
+            {
+              "name": "substitution method"
+            }
+          ]
+        },
+        {
+          "name": "general systems",
+          "children": [
+            {
+              "name": "pairwise coprime moduli"
+            },
+            {
+              "name": "modular inverses"
+            },
+            {
+              "name": "constructive formula"
+            },
+            {
+              "name": "three-modulus example"
+            },
+            {
+              "name": "non-coprime moduli"
+            },
+            {
+              "name": "compatibility condition"
+            },
+            {
+              "name": "least common multiple"
+            }
+          ]
+        },
+        {
+          "name": "ring interpretation",
+          "children": [
+            {
+              "name": "residue classes"
+            },
+            {
+              "name": "product of rings"
+            },
+            {
+              "name": "well-defined map"
+            },
+            {
+              "name": "surjectivity"
+            },
+            {
+              "name": "injectivity"
+            },
+            {
+              "name": "preservation of operations"
+            },
+            {
+              "name": "ring isomorphism"
+            }
+          ]
+        }
+      ]
+    },
+    "type": "Theorem",
+    "description": "The structure of the entry is shown in the conceptual map, where each branch represents a core component and the sub-nodes highlight the specific notions discussed.",
+    "difficulty": {
+      "level": 2,
+      "label": "Intermediate"
+    },
+    "requires": 2,
+    "enables": 0,
+    "canvasHeight": 440
+  },
   "circumference": {
     "source": "https://algebrica.org/circumference/",
     "dataset": {
@@ -14898,7 +14987,7 @@
       "label": ""
     },
     "requires": 1,
-    "enables": 0,
+    "enables": 1,
     "canvasHeight": 440
   },
   "monomials": {
@@ -22568,6 +22657,92 @@
       ]
     },
     "type": "Concept",
+    "description": "The structure of the entry is shown in the conceptual map, where each branch represents a core component and the sub-nodes highlight the specific notions discussed.",
+    "difficulty": {
+      "level": 2,
+      "label": "Intermediate"
+    },
+    "requires": 1,
+    "enables": 0,
+    "canvasHeight": 440
+  },
+  "transformations-of-functions": {
+    "source": "https://algebrica.org/transformations-of-functions/",
+    "dataset": {
+      "name": "root",
+      "children": [
+        {
+          "name": "translations and scaling",
+          "children": [
+            {
+              "name": "vertical translation"
+            },
+            {
+              "name": "horizontal translation"
+            },
+            {
+              "name": "vertical stretch"
+            },
+            {
+              "name": "vertical compression"
+            },
+            {
+              "name": "horizontal stretch"
+            },
+            {
+              "name": "horizontal compression"
+            }
+          ]
+        },
+        {
+          "name": "reflections",
+          "children": [
+            {
+              "name": "reflection across the x-axis"
+            },
+            {
+              "name": "reflection across the y-axis"
+            },
+            {
+              "name": "symmetry about the origin"
+            },
+            {
+              "name": "even and odd functions"
+            },
+            {
+              "name": "absolute value of the function"
+            },
+            {
+              "name": "absolute value of the argument"
+            }
+          ]
+        },
+        {
+          "name": "combined",
+          "children": [
+            {
+              "name": "general formula"
+            },
+            {
+              "name": "point mapping"
+            },
+            {
+              "name": "order of transformations"
+            },
+            {
+              "name": "transformed domain"
+            },
+            {
+              "name": "transformed range"
+            },
+            {
+              "name": "square root example"
+            }
+          ]
+        }
+      ]
+    },
+    "type": "Technique",
     "description": "The structure of the entry is shown in the conceptual map, where each branch represents a core component and the sub-nodes highlight the specific notions discussed.",
     "difficulty": {
       "level": 2,

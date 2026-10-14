@@ -268,4 +268,4 @@ $$
 P(x) = Q(x) \cdot D(x) + R(x) \qquad \deg R < \deg D
 $$
 
-当余式为零时，因式分解 $P=QD$ 是精确的，且 $D$ 是 $P$ 的一个因式。具体的因式分解方法结合了乘法、除法以及 $P$ 的[根](../roots-of-a-polynomial/)的信息。相关页面介绍了 [AC 法](../factoring-polynomials-ac-method/)、[配方法](../completing-the-square/)与[综合除法](../synthetic-division/)。
+当余式为零时，因式分解 $P=QD$ 是精确的，且 $D$ 是 $P$ 的一个因式。具体的因式分解方法结合了乘法、除法以及 $P$ 的[根](../roots-of-a-polynomial/)的信息。相关页面介绍了[AC 法](../factoring-polynomials-ac-method/)、[配方法](../completing-the-square/)与[综合除法](../synthetic-division/)。

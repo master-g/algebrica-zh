@@ -187,7 +187,7 @@ $$f(x) = f(x_0) + f'(x_0)(x - x_0) + \frac{f''(x_0)}{2!}(x - x_0)^2 + \cdots + \
 
 [/class]
 
-这些展开式对计算含[不定式](../indeterminate-forms/)的极限很有用，因为代入函数的 Taylor 展开后，所得表达式中余项的贡献趋于零。例如：
+这些展开式对计算含[未定式](../indeterminate-forms/)的极限很有用，因为代入函数的 Taylor 展开后，所得表达式中余项的贡献趋于零。例如：
 
 $$\lim_{x \to 0} \frac{e^x - 1 - x}{x^2} = \lim_{x \to 0} \frac{\dfrac{x^2}{2} + o(x^2)}{x^2} = \frac{1}{2}$$
 

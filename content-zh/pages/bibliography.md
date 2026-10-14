@@ -7,9 +7,9 @@ tags:
   []
 translation:
   status: current
-  source_hash: 3c96092e770b692a383d8da9de6438e16e419f9343c2d1939dfbbd937d51c39f
+  source_hash: 2c6470b6ce22a43246363f2a1831e07259737c81540aef38c5749a6382174065
   translator: claude
-  updated: "2026-10-08T00:00:00.000Z"
+  updated: "2026-10-14T00:00:00.000Z"
 ---
 ## 关于本参考书目的说明
 
@@ -35,10 +35,11 @@ translation:
 + [A Computational Introduction to Number Theory and Algebra](https://www.shoup.net/ntb/ntb-v2_1.pdf), Victor Shoup
 + [A Course in Universal Algebra](https://www.math.uwaterloo.ca/~snburris/htdocs/ualg.html), Stanley N. Burris, H. P. Sankappanavar
 + [Elementary Number Theory: Primes, Congruences, and Secrets](https://wstein.org/ent/ent.pdf), William Stein
-+ [Foundations of Module and Ring Theory: A Handbook for Study and Research](https://www.math.uni-duesseldorf.de/~wisbauer/book.pdf), Robert Wisbauer
++ [Foundations of Module and Ring Theory](https://www.math.uni-duesseldorf.de/~wisbauer/book.pdf), Robert Wisbauer
 + [The Great Story of Numbers](https://egbertrijke.github.io/elementary-number-theory-fall.pdf), Egbert Rijke
 + [Group Theory](https://www.jmilne.org/math/CourseNotes/GT.pdf), J. S. Milne
 + [Introduction to Modern Algebra](http://aleph0.clarku.edu/~djoyce/ma225/algebra.pdf), David Joyce
++ [Introduction to Modern Algebra](https://www.cip.ifi.lmu.de/~grinberg/t/19s/notes.pdf), Darij Grinberg
 + [An Invitation to General Algebra and Universal Constructions](https://math.berkeley.edu/~gbergman/245/3.2.pdf), George M. Bergman
 + [Precalculus](https://www.pearson.com/en-us/subject-catalog/p/precalculus/P200000006127/9780137321667), Robert F. Blitzer
 

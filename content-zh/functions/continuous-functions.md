@@ -96,7 +96,7 @@ $$
 \end{align}
 $$
 
-例如，将[平方根函数](../irrational-functions/) $f(x) = \sqrt{x}$ 限制在 $[0, 4]$ 上，它在每个内部点处连续，因为 $\sqrt{x}$ 在 $(0, +\infty)$ 上连续。
+例如，将[平方根函数](../irrational-functions/) $f(x) = \sqrt{x}$ 限制在 $[0, 4]$ 上，它在每个内点处连续，因为 $\sqrt{x}$ 在 $(0, +\infty)$ 上连续。
 
 ![图 3](/assets/functions/svg/continuous-functions-3.zh.svg)
 

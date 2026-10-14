@@ -27,9 +27,9 @@ translation:
 
 实数轴的拓扑是 $\mathbb{R}$ 的开[子集](../sets/)所组成的族。在[实数轴](../real-numbers/)上，这些集合通过两点之间的距离 $|x-y|$ 定义。当集合中的每一点都是该集合所含某个开区间的中心时，这个集合是开集。所有这类集合组成 $\mathbb{R}$ 的标准拓扑；开集中的隶属关系描述了接近程度，而不必引用距离。
 
-这些概念包括邻域、内部点与边界点、聚点与孤立点、开集与闭集、闭包与内部。海涅–博雷尔定理指出，$\mathbb{R}$ 的子集是紧的，当且仅当它既闭又有界。
+这些概念包括邻域、内点与边界点、聚点与孤立点、开集与闭集、闭包与内部。海涅–博雷尔定理指出，$\mathbb{R}$ 的子集是紧的，当且仅当它既闭又有界。
 
-## 邻域、内部点与边界点
+## 邻域、内点与边界点
 
 给定点 $x\in\mathbb{R}$ 和半径 $\varepsilon>0$，$x$ 的 $\varepsilon$-邻域是开[区间](../intervals/)：
 
@@ -49,19 +49,19 @@ $$
 
 设 $E\subseteq\mathbb{R}$，$x$ 是实数轴上的一点。以下三种情形恰有一种成立。
 
-+ 以 $x$ 为中心的某个邻域包含于 $E$ 时，$x$ 是内部点。
++ 以 $x$ 为中心的某个邻域包含于 $E$ 时，$x$ 是内点。
 + 当 $x$ 的某个邻域包含于补集 $\mathbb{R}\setminus E$ 时，$x$ 是 $E$ 的外部点。
 + 当 $x$ 的每个邻域都至少包含一个 $E$ 中的点和一个 $\mathbb{R}\setminus E$ 中的点时，$x$ 是 $E$ 的边界点。
 
-这三个类别两两不交并覆盖 $\mathbb{R}$。内部点的集合称为 $E$ 的内部，记为 $E^{\circ}$；边界点的集合称为 $E$ 的边界，记为 $\partial E$。内部点属于 $E$，外部点不属于 $E$，而边界点可能属于 $E$，也可能属于其补集。
+这三个类别两两不交并覆盖 $\mathbb{R}$。内点的集合称为 $E$ 的内部，记为 $E^{\circ}$；边界点的集合称为 $E$ 的边界，记为 $\partial E$。内点属于 $E$，外部点不属于 $E$，而边界点可能属于 $E$，也可能属于其补集。
 
-当 $E=(0,1]$ 时，内部为 $(0,1)$，外部为 $(-\infty,0)\cup(1,+\infty)$，边界为 $\{0,1\}$，其中 $1\in E$ 而 $0\notin E$。当 $E=\mathbb{Q}$ 时，每个实数的邻域都同时包含有理数和无理数，因此没有点是 $\mathbb{Q}$ 的内部点或外部点，并且 $\partial\mathbb{Q}=\mathbb{R}$。
+当 $E=(0,1]$ 时，内部为 $(0,1)$，外部为 $(-\infty,0)\cup(1,+\infty)$，边界为 $\{0,1\}$，其中 $1\in E$ 而 $0\notin E$。当 $E=\mathbb{Q}$ 时，每个实数的邻域都同时包含有理数和无理数，因此没有点是 $\mathbb{Q}$ 的内点或外部点，并且 $\partial\mathbb{Q}=\mathbb{R}$。
 
 ## 开集
 
-集合 $A\subseteq\mathbb{R}$ 是开集，当且仅当 $A$ 中每一点都是 $A$ 的内部点，也就是 $A=A^{\circ}$。对每个 $x\in A$，存在一个依赖于 $x$ 的半径 $\varepsilon>0$，使得 $I_\varepsilon(x)\subseteq A$。
+集合 $A\subseteq\mathbb{R}$ 是开集，当且仅当 $A$ 中每一点都是 $A$ 的内点，也就是 $A=A^{\circ}$。对每个 $x\in A$，存在一个依赖于 $x$ 的半径 $\varepsilon>0$，使得 $I_\varepsilon(x)\subseteq A$。
 
-有界区间 $(a,b)$ 是开集。取 $x\in(a,b)$，令 $\varepsilon=\min\{x-a,b-x\}$；由于 $a < x < b$，这是一个正数。若 $|y-x| < \varepsilon$，则 $y > x-\varepsilon\geq a$ 且 $y < x+\varepsilon\leq b$，所以 $I_\varepsilon(x)\subseteq(a,b)$。无界区间 $(a,+\infty)$ 和 $(-\infty,b)$ 也是开集，分别取 $\varepsilon=x-a$ 与 $\varepsilon=b-x$。空集是开集，因为其中没有点需要检验；$\mathbb{R}$ 是开集，因为它包含每个邻域。闭区间 $[a,b]$ 不是开集，因为对任意 $\varepsilon>0$，点 $a-\varepsilon/2$ 都位于 $I_\varepsilon(a)$ 中却不在 $[a,b]$ 中，所以 $a$ 不是内部点。
+有界区间 $(a,b)$ 是开集。取 $x\in(a,b)$，令 $\varepsilon=\min\{x-a,b-x\}$；由于 $a < x < b$，这是一个正数。若 $|y-x| < \varepsilon$，则 $y > x-\varepsilon\geq a$ 且 $y < x+\varepsilon\leq b$，所以 $I_\varepsilon(x)\subseteq(a,b)$。无界区间 $(a,+\infty)$ 和 $(-\infty,b)$ 也是开集，分别取 $\varepsilon=x-a$ 与 $\varepsilon=b-x$。空集是开集，因为其中没有点需要检验；$\mathbb{R}$ 是开集，因为它包含每个邻域。闭区间 $[a,b]$ 不是开集，因为对任意 $\varepsilon>0$，点 $a-\varepsilon/2$ 都位于 $I_\varepsilon(a)$ 中却不在 $[a,b]$ 中，所以 $a$ 不是内点。
 
 两种运算保持开性。任意开集的并是开集，有限个开集的交也是开集。
 
@@ -109,7 +109,7 @@ $\mathbb{R}$ 的每个非空开子集都是一族可数个两两不交的开区�
 + 区间 $[a,b]$ 是闭集，因为其补集 $(-\infty,a)\cup(b,+\infty)$ 是两个开集的并。
 + 有限集和 $\mathbb{Z}$ 没有聚点，因此都是闭集。
 + 集合 $\{1/n \mid n\in\mathbb{N}\}$ 不是闭集，因为 $0$ 是不属于它的聚点。集合 $\{0\}\cup\{1/n \mid n\in\mathbb{N}\}$ 是闭集。
-+ 区间 $[0,1)$ 既不是开集也不是闭集，因为 $0$ 不是内部点，而 $1$ 是集合外部的聚点。
++ 区间 $[0,1)$ 既不是开集也不是闭集，因为 $0$ 不是内点，而 $1$ 是集合外部的聚点。
 + 集合 $\emptyset$ 和 $\mathbb{R}$ 既是开集又是闭集，并且它们是具有此性质的 $\mathbb{R}$ 的唯一子集。这等价于实数轴的[连通性](../intervals/)。
 
 根据[德摩根定律](../de-morgan-laws/)，任意闭集的交是闭集，有限个闭集的并是闭集。并集必须是有限的。对每个 $n\in\mathbb{N}$，集合 $[1/n,1]$ 都是闭集，但所有这些集合的并是 $(0,1]$，不是闭集。

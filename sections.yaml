@@ -35,6 +35,7 @@ sections:
       - integers
       - euclidean-division
       - modulo-operator
+      - chinese-remainder-theorem
       - rational-numbers
       - irrational-numbers
       - real-numbers
@@ -314,6 +315,7 @@ sections:
       - determining-the-domain-of-a-function
       - even-and-odd-functions
       - increasing-and-decreasing-functions
+      - transformations-of-functions
       - convexity-and-concavity-of-functions
       - composite-functions
       - inverse-function
