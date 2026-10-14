@@ -17,7 +17,11 @@ Second paragraph.
     assert.equal(sections.length, 2);
     assert.match(
       html,
-      /<section class="article-section"><h2[^>]*>Introduction<\/h2>\s*<p>First paragraph\.<\/p>\s*<\/section>/,
+      /<section class="article-section"><h2[^>]*>Introduction<\/h2><aside class="article-outline"[^]*?<\/aside>\s*<p>First paragraph\.<\/p>\s*<\/section>/,
+    );
+    assert.match(
+      html,
+      /<aside class="article-outline" role="navigation"><strong>本页大纲<\/strong><ol><li><a href="#introduction">Introduction<\/a><\/li><li><a href="#properties">Properties<\/a><\/li><\/ol><\/aside>/,
     );
     assert.match(
       html,
@@ -36,19 +40,47 @@ $x + y$
     assert.equal((html.match(/<section class="article-section">/g) || []).length, 1);
   });
 
-  it('marks paragraph-only inline MathJax output for display-style centering', async () => {
+  it('renders single-line $$ paragraphs as display math with equation tags', async () => {
     const html = await renderPageMarkdown(`## Formula
 
-$$x + y$$
+$$x + y \\tag{1}$$
 
-The value $x + y$ stays inline.
+The value $x + y$ and $$z$$ stay inline.
+`);
+
+    assert.match(
+      html,
+      /<mjx-container class="MathJax" jax="SVG" display="true" width="full"/,
+    );
+    assert.doesNotMatch(html, /<p class="standalone-math">/);
+    assert.equal((html.match(/<mjx-container[^>]*display="true"/g) || []).length, 1);
+  });
+
+  it('keeps one copy of each MathJax glyph and every glyph reference resolvable', async () => {
+    const html = await renderPageMarkdown(`## Formula
+
+$x + x$ and $x$
+`);
+
+    const paths = [...html.matchAll(/<path id="([^"]+)" d="([^"]+)"/g)];
+    const ids = paths.map((match) => match[1]);
+    const shapes = paths.map((match) => match[2]);
+    const refs = [...html.matchAll(/xlink:href="#([^"]+)"/g)].map((match) => match[1]);
+    assert.ok(paths.length > 0);
+    assert.equal(shapes.length, new Set(shapes).size);
+    assert.ok(refs.every((ref) => ids.includes(ref)));
+  });
+
+  it('marks paragraph-only single-dollar math for display-style centering', async () => {
+    const html = await renderPageMarkdown(`## Formula
+
+$x + y$
 `);
 
     assert.match(
       html,
       /<p class="standalone-math"><mjx-container class="MathJax" jax="SVG">/,
     );
-    assert.doesNotMatch(html, /<p class="standalone-math">The value/);
   });
 
   it('renders editorial supplements as semantic sidenotes', async () => {

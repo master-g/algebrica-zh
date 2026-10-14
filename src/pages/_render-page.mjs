@@ -3,7 +3,10 @@ import { createMarkdownProcessor } from '@astrojs/markdown-remark';
 import remarkMath from 'remark-math';
 import rehypeMathjax from 'rehype-mathjax/svg';
 import rehypeSanitize from 'rehype-sanitize';
+import remarkDisplayMath from '../plugins/remark-display-math.mjs';
 import remarkIntervalsShortcode from '../plugins/remark-intervals-shortcode.mjs';
+import rehypeArticleOutline from '../plugins/rehype-article-outline.mjs';
+import rehypeDedupeMathGlyphs from '../plugins/rehype-dedupe-math-glyphs.mjs';
 import rehypeMarkStandaloneMath from '../plugins/rehype-mark-standalone-math.mjs';
 import rehypeNotesToSidenotes from '../plugins/rehype-notes-to-sidenotes.mjs';
 import rehypeRewriteAlgebrica from '../plugins/rehype-rewrite-algebrica.mjs';
@@ -24,12 +27,14 @@ function getProcessor(currentSection = null) {
     processors.set(
       processorKey,
       createMarkdownProcessor({
-        remarkPlugins: [remarkMath, remarkIntervalsShortcode],
+        remarkPlugins: [remarkMath, remarkDisplayMath, remarkIntervalsShortcode],
         rehypePlugins: [
           rehypeMathjax,
           rehypeMarkStandaloneMath,
           [rehypeRewriteAlgebrica, { slugMap, dangling, currentSection, siteBase }],
           rehypeSectionizeAlgebrica,
+          rehypeArticleOutline,
+          rehypeDedupeMathGlyphs,
           rehypeNotesToSidenotes,
           [rehypeSanitize, mathSanitizeSchema],
         ],
