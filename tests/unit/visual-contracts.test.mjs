@@ -1,6 +1,7 @@
 import { describe, it } from 'node:test';
 import assert from 'node:assert/strict';
-import { existsSync, readFileSync } from 'node:fs';
+import { existsSync, readdirSync, readFileSync } from 'node:fs';
+import { join } from 'node:path';
 
 const baseLayout = readFileSync('src/layouts/BaseLayout.astro', 'utf8');
 const homePage = readFileSync('src/pages/index.astro', 'utf8');
@@ -9,6 +10,7 @@ const articlePage = readFileSync('src/pages/[slug].astro', 'utf8');
 const searchBox = readFileSync('src/components/SearchBox.astro', 'utf8');
 const articleGraph = readFileSync('src/components/ArticleGraph.astro', 'utf8');
 const siteCss = readFileSync('src/styles/site.css', 'utf8');
+const CJK_CHARS = /[\u3000-\u303f\u3400-\u4dbf\u4e00-\u9fff\uff00-\uffef]/g;
 
 describe('public redesign visual contracts', () => {
   it('keeps copied upstream visual assets and snapshots out of the repository', () => {
@@ -61,6 +63,23 @@ describe('public redesign visual contracts', () => {
     assert.match(siteCss, /--font-serif:\s*"Noto Serif SC Algebrica"/);
     assert.match(siteCss, /font-synthesis:\s*none/);
     assert.doesNotMatch(siteCss, /\.article-(?:title|deck|section-title)[^{]*\{[^}]*font-style:\s*italic/s);
+  });
+
+  it('covers every Chinese character in content and templates with the font subset', () => {
+    const subset = new Set(readFileSync('src/assets/fonts/noto-serif-sc-algebrica.chars.txt', 'utf8').trim());
+    const files = ['sections.yaml', 'glossary.yaml'];
+    for (const [dir, pattern] of [['content-zh', /\.md$/], ['src', /\.(?:astro|mjs|ts|json|css)$/]]) {
+      for (const name of readdirSync(dir, { recursive: true })) {
+        if (pattern.test(name)) files.push(join(dir, name));
+      }
+    }
+    const missing = new Set();
+    for (const file of files) {
+      for (const char of readFileSync(file, 'utf8').match(CJK_CHARS) || []) {
+        if (!subset.has(char)) missing.add(char);
+      }
+    }
+    assert.equal([...missing].sort().join(''), '', 'regenerate the subset per src/assets/fonts/README.md');
   });
 
   it('keeps the full ordered section index on home and category pages', () => {
