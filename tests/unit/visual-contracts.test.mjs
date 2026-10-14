@@ -60,7 +60,8 @@ describe('public redesign visual contracts', () => {
   it('loads the accepted OFL Chinese serif subset and forbids synthetic italics', () => {
     assert.match(siteCss, /@font-face\s*\{[^}]*font-family:\s*"Noto Serif SC Algebrica"/s);
     assert.match(siteCss, /url\("\.\.\/assets\/fonts\/noto-serif-sc-algebrica\.woff2"\)/);
-    assert.match(siteCss, /--font-serif:\s*"Noto Serif SC Algebrica"/);
+    assert.match(siteCss, /--font-serif:\s*"STIX Two Text", "Noto Serif SC Algebrica"/);
+    assert.match(siteCss, /url\("\.\.\/assets\/fonts\/STIXTwoText-Regular\.woff2"\)/);
     assert.match(siteCss, /font-synthesis:\s*none/);
     assert.doesNotMatch(siteCss, /\.article-(?:title|deck|section-title)[^{]*\{[^}]*font-style:\s*italic/s);
   });

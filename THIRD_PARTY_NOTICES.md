@@ -22,6 +22,9 @@
 
 - Noto Serif SC 的中文字体子集按 SIL Open Font License 1.1 分发。许可证见
   `LICENSES/OFL-Noto-Serif-SC.txt`。
+- STIX Two Text v2.13b171 的 Regular 与 SemiBold WOFF2 原样取自
+  https://github.com/stipub/stixfonts ，按 SIL Open Font License 1.1 分发。许可证见
+  `LICENSES/OFL-STIX-Two-Text.txt`。
 - 搜索图标取自 Lucide 的 Search 图标。Lucide 将该图标列为 Feather 衍生图标；
   对应 ISC 和 MIT 声明见 `LICENSES/LUCIDE.txt`。
 

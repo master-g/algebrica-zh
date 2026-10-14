@@ -23,6 +23,8 @@ CC BY-NC 4.0 提供。使用时必须署名 Antonio Lupetti 与 Algebrica，链�
 
 - Noto Serif SC 子集采用 SIL Open Font License 1.1。见
   [`LICENSES/OFL-Noto-Serif-SC.txt`](LICENSES/OFL-Noto-Serif-SC.txt)。
+- STIX Two Text 拉丁正文字体（未修改的上游 WOFF2）采用 SIL Open Font License 1.1。见
+  [`LICENSES/OFL-STIX-Two-Text.txt`](LICENSES/OFL-STIX-Two-Text.txt)。
 - Lucide 搜索图标及其 Feather 来源采用 ISC/MIT 许可。见
   [`LICENSES/LUCIDE.txt`](LICENSES/LUCIDE.txt)。
 

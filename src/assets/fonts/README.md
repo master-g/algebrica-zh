@@ -31,3 +31,12 @@ python3 -m fontTools.subset 'NotoSerifSC[wght].ttf' --unicodes-file=unicodes.txt
 ```
 
 生成后更新本文件的子集 SHA-256 与字符数。
+
+# STIX Two Text
+
+正文的拉丁字母、数字和西文标点用 STIX Two Text，搭配方式参照 tufte-reader。两个文件原样取自 STIX 上游发布，未修改。
+
+- 上游：https://github.com/stipub/stixfonts ，标签 `v2.13b171`，目录 `fonts/static_otf_woff2/`
+- `STIXTwoText-Regular.woff2` SHA-256：`d709865ddc3a546589dd9e83d8157e0a104d1ac6870763331badaa74014db563`
+- `STIXTwoText-SemiBold.woff2` SHA-256：`90af809bebec509532250f34b3f37125c52e743bd8f3fa1d856ee0e9e5d4c155`
+- 许可证：SIL Open Font License 1.1（保留字体名为 “TM Math”），见 `LICENSES/OFL-STIX-Two-Text.txt`；STIX Fonts 另是 IEEE 的商标，因此不做子集、不改文件

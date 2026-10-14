@@ -13,6 +13,7 @@
 - [2026-10-14] 单行 $$…$$ 被 remark-math 6 解析为行内公式（\tag 丢失、不居中），已由 src/plugins/remark-display-math.mjs 提升为块级；21 篇（如 inequalities-with-absolute-value）把多行公式开头 $$ 与内容写在同一行，配对被打乱，仍按行内渲染，属上游写法
 - [2026-10-14] 改 Markdown 管线（astro.config 或 _render-page 的插件）后必须 npm run build -- --force：内容层按文件摘要缓存渲染结果，未改动的文章会沿用旧 HTML，普通构建看不出插件是否生效
 - [2026-10-14] Astro 在自定义 rehype 插件之后才给标题加 id，且保留已有 id；rehype-article-outline 用 github-slugger 按同一规则先行赋 id，大纲链接才能拿到 href
+- [2026-10-14] 字体按 tufte-reader 拆成拉丁 STIX Two Text + 中文 Noto Serif SC；STIX 用上游 WOFF2 原样分发、不子集：OFL 保留名是 TM Math，不禁止子集沿用原名，但 STIX Fonts 是 IEEE 商标，保守起见不修改；公式容器钉在 Noto 上，否则 ex 随拉丁字体变、公式整体缩小约 8%
 
 - [2026-10-03] CI 冒烟慢的原因：astro dev 启动时整套内容（英文约 294 篇 + 中文约 279 篇）带 MathJax 全量渲染，换 SITE_BASE 会清空内容缓存，所以两种前缀加构建共渲染三遍；本地每遍约 70 秒，CI 约慢 6 倍（构建同步实测 6.5 分钟），上限已调到 1200 秒，CI 冒烟只测部署前缀（DEV_SMOKE_BASES）；ef44696 的 CI 实测两种前缀共 1329 秒、构建 621 秒；同前缀重启也不复用缓存，缓存 .astro 无效
 - [2026-10-08] 公式里的文字：validate-translation 同时拒绝 \text{} 内的中文和英文散文，译文改用符号或把说明移到正文；“中文被压到亚像素”的原因是净化剥掉 <text> 的 font-size 与 scale(1,-1)，属性已恢复但未视觉验证，规则是否放宽待用户决定
@@ -30,10 +31,10 @@
 
 ## 上次会话
 <!-- 整块改写：分支、验证命令及实际结果、停在何处；任务细节只留一行指向证据目录。 -->
-- [2026-10-14] main（经短分支快进合并，未推送）：修单行显示公式、同步上游 4de32f4（新译 2 篇 + 13 张中文图、重译 2 篇、modulo-operator/bibliography 小补丁）、统一未定式/内点、修 38 处链接空格、加页内大纲与字形去重、暗色主题插图反色
-  test:unit 194 通过；build --force、check:public-release、check:public-history、check:upstream、translation-status --verify 通过；5 篇 validate-translation 通过；1440 与 390 宽截图及暗色截图已看过；新增 Makefile（make help）
+- [2026-10-14] main（未推送，领先 origin 5 个提交）：上游 4de32f4 同步、显示公式、大纲、Makefile 之后，重新生成中文字体子集（补 235 缺字，加覆盖门禁），正文拉丁字体换 STIX Two Text、strong 650→600
+  test:unit 195 通过；build、check:licenses、check:public-release、check:static-site 通过；无头 Chrome 确认三份字体已加载、公式 ex/em 仍为 0.516、390 宽 9 篇无溢出，桌面、手机、暗色截图已看过
 
 ## 下次运行
 <!-- 整块改写：接下来的任务和优先级，含仍受阻的项。 -->
-- [2026-10-14] 待用户：确认后推送 main（触发 CI 与 Pages 部署）；\text{} 内中文规则（17 篇失败的主因）；sets-and-numbers 重定向
+- [2026-10-14] 待用户：确认后推送 main（触发 CI 与 Pages 部署）；是否照 tufte-reader 把正文改为 20px/1.75（会同比放大全部公式，加重手机 .table-1 裁切）；\text{} 内中文规则；sets-and-numbers 重定向
   沿用未决项：modulo-operator 等早期译文公式计数漂移（拓扑审计不过）；glossary 定“互素”但 integers 等 2 篇写“互质”；手机 .table-1 公式裁切；23 篇缺中文图谱；5 篇 source_absent 来源不明

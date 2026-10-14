@@ -17,6 +17,7 @@ describe('public repository release boundary', () => {
       'LICENSES/MIT.txt',
       'LICENSES/CC-BY-NC-4.0.txt',
       'LICENSES/OFL-Noto-Serif-SC.txt',
+      'LICENSES/OFL-STIX-Two-Text.txt',
       'LICENSES/LUCIDE.txt',
       'README.md',
       'THIRD_PARTY_NOTICES.md',
@@ -28,6 +29,7 @@ describe('public repository release boundary', () => {
     assert.match(scope, /原创软件代码[\s\S]*MIT/);
     assert.match(scope, /中文译文[\s\S]*CC BY-NC 4\.0/);
     assert.match(scope, /Noto Serif SC[\s\S]*SIL Open Font License 1\.1/);
+    assert.match(scope, /STIX Two Text[\s\S]*SIL Open Font License 1\.1/);
     assert.match(scope, /Lucide[\s\S]*(?:ISC|MIT)/);
   });
 
